@@ -2,31 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour                                     //https://www.youtube.com/watch?v=rxyvB-97h4I
+public class Player : MonoBehaviour               //https://stackoverflow.com/questions/46760846/how-to-move-2d-object-with-wasd-in-unity
 {
-    public float speed = 10.4f;
-    
-    public void Update()
-    {
-        Vector3 pos = transform.position;
+   public float speed;
+   public Rigidbody2D rb;
 
-        if(Input.GetKey("w"))
-        {
-            pos.y += speed * Time.deltaTime; //for 3D can use pos.z
-        }
-        if(Input.GetKey("s"))
-        {
-             pos.y -= speed * Time.deltaTime;
-        }
-        if(Input.GetKey("d"))
-        {
-             pos.x += speed * Time.deltaTime;
-        }
-        if(Input.GetKey("a"))
-        {
-             pos.x -= speed * Time.deltaTime;
-        }
+   public void FixedUpdate()
+   {
+      float h = Input.GetAxis("Horizontal");
+      float v = Input.GetAxis("Vertical");
 
-        transform.position = pos;
-    }
+      Vector3 tempVect = new Vector3(h, v, 0);
+      tempVect = tempVect.normalized * speed * Time.deltaTime;
+      rb.MovePosition(rb.transform.position + tempVect);
+   }
+
+   /*public Vector3 targetPosition;               //https://forum.unity.com/threads/2d-mouse-point-click-movement-system-quick-tutorial.217886/
+   void Update () {
+ 
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+           {
+            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * 10);
+   }*/
 }
+
+
+
