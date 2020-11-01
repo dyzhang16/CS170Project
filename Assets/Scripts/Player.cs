@@ -7,6 +7,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
    public float speed;
    public Rigidbody2D rb;
 
+   
    public void FixedUpdate()
    {
       float h = Input.GetAxis("Horizontal");
@@ -15,8 +16,26 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
       Vector3 tempVect = new Vector3(h, v, 0);
       tempVect = tempVect.normalized * speed * Time.deltaTime;
       rb.MovePosition(rb.transform.position + tempVect);
+      Menu();
    }
 
+   void Menu()
+   {  
+      if(Input.GetKeyDown(KeyCode.Tab))
+      {
+         GameObject ip = Inventory.instance.inventoryPanel;
+
+         if(!ip.activeSelf)
+         {
+            ip.SetActive(true);
+         }
+         else
+         {
+             ip.SetActive(false);
+         }
+      }
+
+   }
    /*public Vector3 targetPosition;               //https://forum.unity.com/threads/2d-mouse-point-click-movement-system-quick-tutorial.217886/
    void Update () {
  
