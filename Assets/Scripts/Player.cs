@@ -34,7 +34,6 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
              ip.SetActive(false);
          }
       }
-
    }
    /*public Vector3 targetPosition;               //https://forum.unity.com/threads/2d-mouse-point-click-movement-system-quick-tutorial.217886/
    void Update () {
