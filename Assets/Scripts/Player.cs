@@ -6,44 +6,52 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 {
    public float speed;
    public Rigidbody2D rb;
-
+   public float mouseSpeed;
    
-   public void FixedUpdate()
+   public void Update()
+   {
+      if(Input.GetKey(KeyCode.Mouse0)) {
+         Mouse();
+      } else {
+         Keyboard();
+      }
+
+      if(Input.GetKeyDown(KeyCode.Tab)){
+         Menu();
+      }
+   }
+
+   void Mouse()
+   {
+      Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+      var direction = targetPosition - transform.position;
+
+      rb.AddForce(direction * Time.deltaTime * this.mouseSpeed);
+   }
+
+   void Keyboard()
    {
       float h = Input.GetAxis("Horizontal");
       float v = Input.GetAxis("Vertical");
 
-      Vector3 tempVect = new Vector3(h, v, 0);
-      tempVect = tempVect.normalized * speed * Time.deltaTime;
-      rb.MovePosition(rb.transform.position + tempVect);
-      Menu();
+      Vector3 movement = new Vector3(h, v, 0) * this.speed * Time.deltaTime;
+      rb.MovePosition(transform.position + movement);
    }
 
    void Menu()
    {  
-      if(Input.GetKeyDown(KeyCode.Tab))
-      {
-         GameObject ip = Inventory.instance.inventoryPanel;
+      GameObject ip = Inventory.instance.inventoryPanel;
 
-         if(!ip.activeSelf)
-         {
+      switch(ip.activeSelf) {
+         case false:
             ip.SetActive(true);
-         }
-         else
-         {
-             ip.SetActive(false);
-         }
+            break;
+         case true:
+            ip.SetActive(false);
+            break;
       }
    }
-   /*public Vector3 targetPosition;               //https://forum.unity.com/threads/2d-mouse-point-click-movement-system-quick-tutorial.217886/
-   void Update () {
- 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-           {
-            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        }
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * 10);
-   }*/
 }
 
 
