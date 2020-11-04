@@ -7,14 +7,15 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
    public float speed;
    public Rigidbody2D rb;
    public float mouseSpeed;
+   private bool invActive;
    
    public void Update()
    {
-      if(Input.GetKey(KeyCode.Mouse0)) {
+      if(Input.GetKey(KeyCode.Mouse0) && !invActive) {
          Mouse();
-      } else {
-         Keyboard();
       }
+
+      Keyboard();
 
       if(Input.GetKeyDown(KeyCode.Tab)){
          Menu();
@@ -46,9 +47,11 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
       switch(ip.activeSelf) {
          case false:
             ip.SetActive(true);
+            invActive = true;
             break;
          case true:
             ip.SetActive(false);
+            invActive = false;
             break;
       }
    }
