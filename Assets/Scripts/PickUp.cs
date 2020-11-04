@@ -14,6 +14,7 @@ public class PickUp : MonoBehaviour
     {
 
     }
+
     void OnTriggerStay2D(Collider2D collider)
     {
         if(Input.GetKeyDown(KeyCode.Space))

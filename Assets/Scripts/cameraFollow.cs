@@ -36,6 +36,7 @@ public class cameraFollow : MonoBehaviour
         float moveSpeed = rb.velocity.magnitude > speed ? rb.velocity.magnitude : speed;
         transform.position = Vector3.MoveTowards(transform.position, newPosition, moveSpeed * Time.deltaTime);
     }
+    
     private Vector3 calculateThreshold(){
         Rect aspect = Camera.main.pixelRect;
         Vector2 t = new Vector2(Camera.main.orthographicSize * aspect.width / aspect.height, Camera.main.orthographicSize);
@@ -43,6 +44,7 @@ public class cameraFollow : MonoBehaviour
         t.y -= followOffset.y;
         return t;
     }
+
     private void OnDrawGizmos() {
         Gizmos.color = Color.blue;
         Vector2 border = calculateThreshold();
