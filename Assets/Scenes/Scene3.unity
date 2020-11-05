@@ -592,7 +592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &311111856
 Transform:
   m_ObjectHideFlags: 0
@@ -2342,7 +2342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1467970841
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2539,8 +2539,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followObject: {fileID: 2875367029536886229}
-  followOffset: {x: 40, y: 15}
-  speed: 12
+  followOffset: {x: 30, y: 10}
+  speed: 20
 --- !u!1 &1726545618
 GameObject:
   m_ObjectHideFlags: 0
@@ -3372,7 +3372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 150
   rb: {fileID: 2875367029536886224}
-  mouseSpeed: 45
+  mouseSpeed: 3000
 --- !u!212 &2875367029536886226
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3625,6 +3625,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 5516862020619721688, guid: f1d89d2755e6b7d4a8181c7c13d89207,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5516862020732374285, guid: f1d89d2755e6b7d4a8181c7c13d89207,
         type: 3}
       propertyPath: m_FontData.m_BestFit
@@ -3644,6 +3649,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516862020732374285, guid: f1d89d2755e6b7d4a8181c7c13d89207,
+        type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5516862020732374323, guid: f1d89d2755e6b7d4a8181c7c13d89207,
         type: 3}

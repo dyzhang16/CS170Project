@@ -5,9 +5,9 @@ using Yarn.Unity;
 
 public class YarnTest : MonoBehaviour
 {
-    DialogueRunner diaRun = null;
-    public string startNode = null;
-    public YarnProgram loadScript = null;
+    DialogueRunner diaRun;
+    public string startNode;
+    public YarnProgram loadScript;
 
     // Start is called before the first frame update
     void Start()
