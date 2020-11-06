@@ -12,10 +12,9 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
    public void Update()
    {
       if(Input.GetKey(KeyCode.Mouse0) && !invActive) {
-         Mouse();
+         Keyboard();
       }
 
-      Keyboard();
 
       if(Input.GetKeyDown(KeyCode.Tab)){
          Menu();

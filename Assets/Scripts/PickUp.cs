@@ -17,7 +17,7 @@ public class PickUp : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
         {
             Inventory.instance.Add(Flowers);
             Destroy(gameObject);
