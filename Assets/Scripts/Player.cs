@@ -11,7 +11,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
    
    public void Update()
    {
-      if(Input.GetKey(KeyCode.Mouse0) && !invActive) {
+      if(!invActive) {
          Keyboard();
       }
 
