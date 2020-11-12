@@ -11,9 +11,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
    
    public void Update()
    {
-      if(!invActive) {
-         Keyboard();
-      }
+      Keyboard();
 
 
       if(Input.GetKeyDown(KeyCode.Tab)){

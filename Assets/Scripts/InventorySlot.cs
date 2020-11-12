@@ -25,18 +25,22 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         Item droppedItem = Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()];
+        // if on itself
         if (eventData.pointerDrag.transform.parent.name == gameObject.name)
         {
+            Debug.Log("on itself");
             return;
-        }
-        if (Inventory.instance.itemList[transform.GetSiblingIndex()] == null)
+        } 
+        else if (Inventory.instance.itemList[transform.GetSiblingIndex()] == null)  // empty slot
         {
+            Debug.Log("on empty slot");
             Inventory.instance.itemList[transform.GetSiblingIndex()] = droppedItem;
             Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()] = null;
             Inventory.instance.UpdateSlotUI();
         }
-        else
+        else //non-empty slot
         {
+            Debug.Log("on non-empty slot");
             Item tempItem = Inventory.instance.itemList[transform.GetSiblingIndex()];
             Inventory.instance.itemList[transform.GetSiblingIndex()] = droppedItem;
             Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()] = tempItem;

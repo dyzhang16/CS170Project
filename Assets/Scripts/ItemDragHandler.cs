@@ -7,25 +7,24 @@ public class ItemDragHandler : MonoBehaviour, IPointerDownHandler, IDragHandler,
 {
 
     private Transform originalParent;
-    private bool isDragging = false;
     public void OnPointerDown(PointerEventData eventData)
     {
         if (Inventory.instance.itemList[transform.parent.GetSiblingIndex()] != null)
         {
             if (eventData.button == PointerEventData.InputButton.Left)
             {
-                isDragging = true;
+                GetComponent<CanvasGroup>().alpha = 0.5f;
                 originalParent = transform.parent;
                 transform.SetParent(transform.parent.parent);
                 GetComponent<CanvasGroup>().blocksRaycasts = false;
             }
         }
     }
+
     public void OnDrag(PointerEventData eventData)
     {
         if (Inventory.instance.itemList[originalParent.transform.GetSiblingIndex()] != null && eventData.button == PointerEventData.InputButton.Left)
         {
-            //setalpha(0.6)
             //Debug.Log("Dragging");
             transform.position = Input.mousePosition;
         }
@@ -34,8 +33,7 @@ public class ItemDragHandler : MonoBehaviour, IPointerDownHandler, IDragHandler,
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            //setalpha(1)
-            isDragging = false;
+            GetComponent<CanvasGroup>().alpha = 1f;
             transform.SetParent(originalParent);
             transform.localPosition = Vector3.zero;
             GetComponent<CanvasGroup>().blocksRaycasts = true;
