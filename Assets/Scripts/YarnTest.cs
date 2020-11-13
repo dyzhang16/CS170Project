@@ -7,13 +7,20 @@ public class YarnTest : MonoBehaviour
 {
     DialogueRunner diaRun;
     public string startNode;
-    public YarnProgram loadScript;
+    public YarnProgram[] scriptsToLoad;
 
     // Start is called before the first frame update
     void Start()
     {
         diaRun = FindObjectOfType<DialogueRunner>();        //finds dialouge runner component
-        diaRun.Add(loadScript);                             //loads script
+
+      //   for(int i = 0;i < scriptsToLoad.Length;i++){
+      //      diaRun.Add(scriptsToLoad[i]);
+      //   }
+
+        foreach(YarnProgram scripts in scriptsToLoad){
+            diaRun.Add(scripts);
+        }
         diaRun.StartDialogue(startNode);                    //starts running the system w/ the script
     }
 
