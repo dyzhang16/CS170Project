@@ -7,7 +7,6 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
    public float speed;
    public Rigidbody2D rb;
    public float mouseSpeed;
-   private bool invActive;
    
    public void Update()
    {
@@ -41,16 +40,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
    {  
       GameObject ip = Inventory.instance.inventoryPanel;
 
-      switch(ip.activeSelf) {
-         case false:
-            ip.SetActive(true);
-            invActive = true;
-            break;
-         case true:
-            ip.SetActive(false);
-            invActive = false;
-            break;
-      }
+      ip.SetActive(!ip.activeSelf);
    }
 }
 

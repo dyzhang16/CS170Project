@@ -16,6 +16,7 @@ public class Inventory : MonoBehaviour
         instance = this;
         UpdateSlotUI();
     }
+
     private bool Add(Item item)
     {
         for (int i = 0; i < itemList.Length; i++)
@@ -28,6 +29,20 @@ public class Inventory : MonoBehaviour
         }
         return false;
     }
+
+    private bool Remove(Item item)
+    {
+        for (int i = 0; i < itemList.Length; i++)
+        {
+            if (itemList[i] == item)
+            {
+                itemList[i] = null;
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void UpdateSlotUI()
     {
         for (int i = 0; i < inventorySlots.Length; i++)
@@ -35,11 +50,19 @@ public class Inventory : MonoBehaviour
             inventorySlots[i].UpdateSlot();
         }
     }
+
     public void AddItem(Item item)
     {
         bool hasAdded = Add(item);
         if (hasAdded)
         {
+            UpdateSlotUI();
+        }
+    }
+
+    public void RemoveItem(Item item) 
+    {
+        if (Remove(item)) {
             UpdateSlotUI();
         }
     }

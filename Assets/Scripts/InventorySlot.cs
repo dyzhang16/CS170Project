@@ -7,7 +7,6 @@ using UnityEngine.UIElements;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
-
     public GameObject icon;
 
     public void UpdateSlot()
@@ -28,19 +27,19 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         // if on itself
         if (eventData.pointerDrag.transform.parent.name == gameObject.name)
         {
-            Debug.Log("on itself");
+            //Debug.Log("on itself");
             return;
         } 
         else if (Inventory.instance.itemList[transform.GetSiblingIndex()] == null)  // empty slot
         {
-            Debug.Log("on empty slot");
+            //Debug.Log("on empty slot");
             Inventory.instance.itemList[transform.GetSiblingIndex()] = droppedItem;
             Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()] = null;
             Inventory.instance.UpdateSlotUI();
         }
         else //non-empty slot
         {
-            Debug.Log("on non-empty slot");
+            //Debug.Log("on non-empty slot");
             Item tempItem = Inventory.instance.itemList[transform.GetSiblingIndex()];
             Inventory.instance.itemList[transform.GetSiblingIndex()] = droppedItem;
             Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()] = tempItem;
