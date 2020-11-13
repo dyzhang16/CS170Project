@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class Dropper : MonoBehaviour
 {
     public List<Item> keyItems;
-    public string name;
-    public string description;
+    public string itemName;
+    public string itemDescription;
 
     private Item recievedItem;
 

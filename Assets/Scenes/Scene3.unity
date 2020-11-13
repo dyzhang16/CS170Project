@@ -2178,6 +2178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1154660162}
+  - component: {fileID: 1154660167}
   - component: {fileID: 1154660164}
   - component: {fileID: 1154660163}
   - component: {fileID: 1154660166}
@@ -2312,6 +2313,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1154660167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154660161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640fb77639c55c2468dc0941bd13c40b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCName: Gardener
+  NPCInteract: Gardener
+  scriptToLoad: {fileID: 2480198943629176163, guid: 92a4f3998a2c80d48810bac4a87978f1,
+    type: 3}
 --- !u!1 &1215619840
 GameObject:
   m_ObjectHideFlags: 0
