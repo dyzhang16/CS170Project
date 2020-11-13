@@ -7,7 +7,7 @@ public class ItemDragHandler : MonoBehaviour, IPointerDownHandler, IDragHandler,
 {
 
     private Transform originalParent;
-    public GameObject dropper;
+    public List<GameObject> droppers = new List<GameObject>();
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -46,23 +46,10 @@ public class ItemDragHandler : MonoBehaviour, IPointerDownHandler, IDragHandler,
         // Debug.Log(eventData.position);
         // Debug.Log(Camera.main.ScreenToWorldPoint(eventData.position));
 
-        RectTransform rectTrans = dropper.transform as RectTransform;
-        Vector2 worldVec = Camera.main.ScreenToWorldPoint(eventData.position);
+        Item droppedItem = Inventory.instance.itemList[transform.parent.GetSiblingIndex()];
 
-        if (RectTransformUtility.RectangleContainsScreenPoint(rectTrans, worldVec))
-        {
-            Item droppedItem = Inventory.instance.itemList[transform.parent.GetSiblingIndex()];
-
-            // Debug.Log(droppedItem.name);
-
-            if (droppedItem.name == "Flower")
-            {
-                Inventory.instance.RemoveItem(droppedItem);
-            }
-        }
-        else
-        {
-            // Debug.Log("outside place");
+        foreach (GameObject drop in droppers) {
+            drop.GetComponent<Dropper>().CheckForRecievedDrop(eventData.position, droppedItem);
         }
     }
 }
