@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class ChangeMainScene2 : MonoBehaviour
 {
+    public DialogueRunner dialogueRunner;
+    public Player player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +23,8 @@ public class ChangeMainScene2 : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)                          //https://www.youtube.com/watch?v=Bc9lmHjqLZc
     {
         if(collider.gameObject.CompareTag("Player")){
-            SceneManager.LoadScene("Scene1");
+            dialogueRunner.StartDialogue("Test");
+            //SceneManager.LoadScene("Scene1");
             //Debug.Log("Collision Detected.");
         }
     }

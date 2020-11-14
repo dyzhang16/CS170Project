@@ -7,14 +7,18 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
    public float speed;
    public Rigidbody2D rb;
    public float mouseSpeed;
+   public GameObject player;
+   private bool active = true;
    
    public void Update()
    {
-      Keyboard();
+      if (active) {
+         Keyboard();
 
 
-      if(Input.GetKeyDown(KeyCode.Tab)){
-         Menu();
+         if(Input.GetKeyDown(KeyCode.Tab)){
+            Menu();
+         }
       }
    }
 
@@ -41,6 +45,10 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
       GameObject ip = Inventory.instance.inventoryPanel;
 
       ip.SetActive(!ip.activeSelf);
+   }
+
+   public void changeActive(){
+      active = !active;
    }
 }
 

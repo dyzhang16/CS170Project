@@ -621,54 +621,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &100220328
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 100220329}
-  - component: {fileID: 100220330}
-  m_Layer: 0
-  m_Name: ScriptManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &100220329
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100220328}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 569.34485, y: 274.4806, z: -1163.9688}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2095296643}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &100220330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100220328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7313fadb1a4510843bcaf16adfadc5cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startNode: Test
-  scriptsToLoad:
-  - {fileID: 2480198943629176163, guid: 92a4f3998a2c80d48810bac4a87978f1, type: 3}
-  npcs:
-  - {fileID: 1154660161}
 --- !u!1 &216743536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,6 +1443,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2875367029536886225}
+        m_MethodName: changeActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onLineFinishDisplaying:
     m_PersistentCalls:
       m_Calls: []
@@ -1525,6 +1488,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1953626054}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2875367029536886225}
+        m_MethodName: changeActive
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1573,7 +1547,7 @@ MonoBehaviour:
   variableStorage: {fileID: 739597928}
   dialogueUI: {fileID: 739597927}
   startNode: Test
-  startAutomatically: 1
+  startAutomatically: 0
   onNodeStart:
     m_PersistentCalls:
       m_Calls:
@@ -2292,6 +2266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c74adae617d014183ab2ca4f8ea6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 739597929}
+  player: {fileID: 2875367029536886225}
 --- !u!50 &1154660166
 Rigidbody2D:
   serializedVersion: 4
@@ -3990,7 +3966,6 @@ Transform:
   - {fileID: 739597930}
   - {fileID: 578922571}
   - {fileID: 1277462892}
-  - {fileID: 100220329}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4393,6 +4368,7 @@ MonoBehaviour:
   speed: 150
   rb: {fileID: 2875367029536886224}
   mouseSpeed: 3000
+  player: {fileID: 2875367029536886229}
 --- !u!212 &2875367029536886226
 SpriteRenderer:
   m_ObjectHideFlags: 0
