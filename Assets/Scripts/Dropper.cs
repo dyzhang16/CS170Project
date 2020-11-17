@@ -20,17 +20,17 @@ public class Dropper : MonoBehaviour
             foreach (Item i in keyItems) {
                 if (i == item) {
                     recievedItem = item;
-                    Debug.Log("good item");
+                    //Debug.Log("good item");
                     return true;
                 }
             }
 
-            Debug.Log("inside rect, not correct item");
+            //Debug.Log("inside rect, not correct item");
             return false;
         }
         else
         {
-            Debug.Log("outside of rect");
+            //Debug.Log("outside of rect");
             return false;
         }
     }
