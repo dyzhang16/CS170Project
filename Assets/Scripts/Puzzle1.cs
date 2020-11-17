@@ -6,13 +6,11 @@ using UnityEngine.EventSystems;
 
 public class Puzzle1 : MonoBehaviour, IDropHandler
 {
-    public Sprite newSprite;
+    public Sprite completeSprite;
     public GameObject puzzlePanel;
+    public GameObject FlowerA, FlowerB, FlowerC, FlowerD;
     public static Puzzle1 instance;
-    bool flowerASet = false;
-    bool flowerBSet = false;
-    bool flowerCSet = false;
-    bool flowerDSet = false;
+    bool flowerASet, flowerBSet, flowerCSet, flowerDSet = false;
     private void Start()
     {
         instance = this;
@@ -21,16 +19,11 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
     {
         if (flowerASet == true && flowerBSet == true && flowerCSet == true && flowerDSet == true)
         {
-            gameObject.GetComponent<UnityEngine.UI.Image>().sprite = newSprite;
+            gameObject.GetComponent<UnityEngine.UI.Image>().sprite = completeSprite;
             Hide();
         }
     }
 
-    public void setActive()
-    {
-        puzzlePanel.gameObject.SetActive(true);
-
-    }
     public void Hide()
     {
         Debug.Log("Close");
@@ -42,6 +35,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         if (droppedItem.itemName == "FlowerA")
         {
             flowerASet = true;
+            FlowerA.SetActive(true);
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();
             //Debug.Log(flowerASet);
@@ -49,6 +43,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         else if (droppedItem.itemName == "FlowerB")
         {
             flowerBSet = true;
+            FlowerB.SetActive(true);
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();
             //Debug.Log(flowerBSet);
@@ -56,6 +51,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         else if (droppedItem.itemName == "FlowerC")
         {
             flowerCSet = true;
+            FlowerC.SetActive(true);
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();
             //Debug.Log(flowerCSet);
@@ -63,6 +59,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         else if (droppedItem.itemName == "FlowerD")
         {
             flowerDSet = true;
+            FlowerD.SetActive(true);
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();
             //Debug.Log(flowerDSet);
@@ -72,5 +69,4 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
             //Debug.Log("NotCorrectItem");
         }
     }
-
 }
