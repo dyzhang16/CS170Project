@@ -8,12 +8,14 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public Rigidbody2D rb;
     public float mouseSpeed;
     public GameObject player;
-    private bool active = true;
+    public bool active = true;
+    public bool invActive = false;
 
     private void Start()
     {
-        Inventory.instance.inventoryPanel.SetActive(false);
+        
     }
+
     public void Update()
     {
         if (active)
@@ -47,6 +49,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     void Menu()
     {
         GameObject ip = Inventory.instance.inventoryPanel;
+        invActive = !invActive;
         ip.SetActive(!ip.activeSelf);
     }
 

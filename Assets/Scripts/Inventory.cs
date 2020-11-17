@@ -10,11 +10,11 @@ public class Inventory : MonoBehaviour
     public InventorySlot[] inventorySlots = new InventorySlot[6];
     public static Inventory instance;
 
-
     private void Start()
     {
         instance = this;
         UpdateSlotUI();
+        Inventory.instance.inventoryPanel.SetActive(false);
     }
 
     private bool Add(Item item)

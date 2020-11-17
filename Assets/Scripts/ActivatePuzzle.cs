@@ -12,4 +12,8 @@ public class ActivatePuzzle : MonoBehaviour
             puzzlePanel.SetActive(true);
         }
     }
+
+    void OnTriggerExit2D(Collider2D other) {
+        puzzlePanel.SetActive(false);
+    }
 }
