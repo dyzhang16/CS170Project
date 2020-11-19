@@ -7,10 +7,10 @@ public class ActivatePuzzle : MonoBehaviour
     public GameObject puzzlePanel;
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
             puzzlePanel.SetActive(true);
-        }
+        //}
     }
 
     void OnTriggerExit2D(Collider2D other) {

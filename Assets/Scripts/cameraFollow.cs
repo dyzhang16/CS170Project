@@ -11,11 +11,17 @@ public class cameraFollow : MonoBehaviour
     public float speed;
     private Vector2 threshold;
     private Rigidbody2D rb;
+    public bool mouse;
 
     // Start is called before the first frame update
     void Start(){
         threshold = calculateThreshold();
         rb = followObject.GetComponent<Rigidbody2D>();
+
+        if (mouse) {
+            Player p = followObject.GetComponent<Player>();
+            p.mouseMovement = true;
+        }
     }
 
     // Update is called once per frame
@@ -45,7 +51,7 @@ public class cameraFollow : MonoBehaviour
         return t;
     }
 
-    private void OnDrawGizmos() {
+    void OnDrawGizmos() {
         Gizmos.color = Color.blue;
         Vector2 border = calculateThreshold();
         Gizmos.DrawWireCube(transform.position, new Vector3(border.x * 2, border.y * 2, 1));

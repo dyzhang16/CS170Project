@@ -9,6 +9,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public float mouseSpeed;
     public GameObject player;
     public bool active = true;
+    public bool mouseMovement = false;
     public bool invActive = false;
 
     private void Start()
@@ -20,9 +21,16 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     {
         if (active)
         {
-            Keyboard();
-            if (Input.GetKeyDown(KeyCode.Tab))
-            {
+            if (mouseMovement) {
+                if (Input.GetMouseButton(0) && !invActive){
+                    Mouse();
+                }
+            } else {
+                Keyboard();
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.Tab)) {
                 Menu();
             }
         }
@@ -32,9 +40,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     {
         Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        var direction = targetPosition - transform.position;
-
-        rb.AddForce(direction * Time.deltaTime * this.mouseSpeed);
+        rb.MovePosition(Vector3.MoveTowards(transform.position, targetPosition, mouseSpeed));
     }
 
     void Keyboard()
