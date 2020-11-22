@@ -22,7 +22,7 @@ public class PickUp : MonoBehaviour, IPointerDownHandler
 
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerStay2D(Collider2D collider)
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {

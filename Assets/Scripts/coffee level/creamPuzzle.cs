@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class creamPuzzle : MonoBehaviour
 {
-    public GameObject coffeeUI, creamUI, sweetnerUI, sugar, cream;
+    public GameObject creamPuzzlePanel, coffeeUI, creamUI, sweetnerUI, sugar, cream;
     public int creamAdded, sweetnerAdded = 0;
     public bool sweetShaking, creamShaking = false;
+    public GameObject player;
+    private Player p;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public void Start(){
+        p = player.GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Tab) && !p.invActive && creamPuzzlePanel.activeSelf){
+            creamPuzzlePanel.SetActive(false);
+        }
     }
 
     public void addCream(){

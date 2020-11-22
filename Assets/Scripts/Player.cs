@@ -11,6 +11,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public bool active = true;
     public bool mouseMovement = false;
     public bool invActive = false;
+    public bool moving = false;
 
     private void Start()
     {
@@ -22,10 +23,12 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         if (active)
         {
             if (mouseMovement) {
+                moving = false;
                 if (Input.GetMouseButton(0) && !invActive){
                     Mouse();
                 }
             } else {
+                moving = false;
                 Keyboard();
             }
 
@@ -41,6 +44,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         rb.MovePosition(Vector3.MoveTowards(transform.position, targetPosition, mouseSpeed));
+
+        moving = true;
     }
 
     void Keyboard()
@@ -50,6 +55,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
         Vector3 movement = new Vector3(h, v, 0) * this.speed * Time.deltaTime;
         rb.MovePosition(transform.position + movement);
+
+        moving = true;
     }
 
     void Menu()
