@@ -1,0 +1,16 @@
+﻿title: Introduction
+tags:
+---
+
+<<if visited("Introduction") is false>>
+    Ghost: Where am I? 
+    Grave: You are dead. 
+    Ghost: No... this can't be!
+    Ghost: But how?
+    Ghost: (Press Space bar to interact, WASD to move around.)
+<<else>>
+    Ghost: It seems like I need some flowers here.... 
+    <<Show PuzzlePanel>>
+<<endif>>
+<<close>>
+===
