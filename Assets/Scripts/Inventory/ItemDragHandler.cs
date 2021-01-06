@@ -54,11 +54,5 @@ public class ItemDragHandler : MonoBehaviour, IPointerDownHandler, IDragHandler,
         // Debug.Log(eventData.pointerDrag.transform.parent);
         // Debug.Log(eventData.position);
         // Debug.Log(Camera.main.ScreenToWorldPoint(eventData.position));
-
-        Item droppedItem = Inventory.instance.itemList[transform.parent.GetSiblingIndex()];
-
-        foreach (GameObject drop in droppers) {
-            drop.GetComponent<Dropper>().CheckForRecievedDrop(eventData.position, droppedItem);
-        }
     }
 }

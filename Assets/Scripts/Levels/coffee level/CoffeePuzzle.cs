@@ -13,6 +13,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
 
     public void Start(){
         p = player.GetComponent<Player>();
+        p.moving = false;
     }
 
     // Update is called once per frame
