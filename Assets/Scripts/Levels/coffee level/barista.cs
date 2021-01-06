@@ -17,6 +17,7 @@ public class barista : MonoBehaviour
     void Start()
     {
         p = player.GetComponent<Player>();
+        p.moving = false;
     }
 
     // Update is called once per frame
@@ -38,6 +39,8 @@ public class barista : MonoBehaviour
                 resetScene();
             }
         }
+
+        Debug.Log(p.moving);
     }
 
     void switchState() {

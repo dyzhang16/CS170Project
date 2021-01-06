@@ -3,29 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
-
-public class ChangeMainScene2 : MonoBehaviour
+public class DialogueNPC : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     public Player player;
+    public string dialogueToRun;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
     void OnTriggerEnter2D(Collider2D collider)                          //https://www.youtube.com/watch?v=Bc9lmHjqLZc
     {
-        if(collider.gameObject.CompareTag("Player")){
-            dialogueRunner.StartDialogue("Test");
-            //SceneManager.LoadScene("Scene1");
-            //Debug.Log("Collision Detected.");
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            dialogueRunner.StartDialogue(dialogueToRun);
         }
     }
 }

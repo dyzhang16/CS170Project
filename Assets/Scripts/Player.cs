@@ -8,7 +8,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public Rigidbody2D rb;
     public float mouseSpeed;
     public GameObject player;
-    public bool active = true;
+    
+    public bool allowMovement = true;
     public bool mouseMovement = false;
     public bool invActive = false;
     public bool moving = false;
@@ -20,7 +21,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     public void Update()
     {
-        if (active)
+        if (allowMovement)
         {
             if (mouseMovement) {
                 moving = false;
@@ -29,13 +30,18 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                 }
             } else {
                 moving = false;
-                Keyboard();
+
+                float h = Input.GetAxis("Horizontal");
+                float v = Input.GetAxis("Vertical");
+
+                if (h != 0 || v != 0){
+                    Keyboard(h, v);
+                }
             }
+        }
 
-
-            if (Input.GetKeyDown(KeyCode.Tab)) {
+        if (Input.GetKeyDown(KeyCode.Tab)) {
                 Menu();
-            }
         }
     }
 
@@ -48,11 +54,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         moving = true;
     }
 
-    void Keyboard()
+    void Keyboard(float h, float v)
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
         Vector3 movement = new Vector3(h, v, 0) * this.speed * Time.deltaTime;
         rb.MovePosition(transform.position + movement);
 
@@ -66,9 +69,9 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         ip.SetActive(!ip.activeSelf);
     }
 
-    public void changeActive()
+    public void changeAllowMovement()
     {
-        active = !active;
+        allowMovement = !allowMovement;
     }
 }
 

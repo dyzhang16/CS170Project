@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 328690}
   - component: {fileID: 328692}
   - component: {fileID: 328689}
+  - component: {fileID: 328693}
   m_Layer: 0
   m_Name: Grave
   m_TagString: Untagged
@@ -283,6 +284,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 739597929}
   player: {fileID: 2875367029536886225}
+  dialogueToRun: Introduction
+--- !u!114 &328693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4fcfb2ecca5c94a94bb4335a3a1f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzlePanel: {fileID: 2088677838}
 --- !u!1 &12867419
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,13 +3068,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1154660162}
-  - component: {fileID: 1154660167}
   - component: {fileID: 1154660164}
   - component: {fileID: 1154660163}
   - component: {fileID: 1154660166}
   - component: {fileID: 1154660165}
+  - component: {fileID: 1154660167}
+  - component: {fileID: 1154660168}
   m_Layer: 0
-  m_Name: Exit
+  m_Name: Gravekeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3164,11 +3180,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1154660161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6c74adae617d014183ab2ca4f8ea6cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ef986b420694c644a809663c0ca049d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 739597929}
   player: {fileID: 2875367029536886225}
+  dialogueToRun: Test
 --- !u!50 &1154660166
 Rigidbody2D:
   serializedVersion: 4
@@ -3206,6 +3223,19 @@ MonoBehaviour:
   NPCInteract: Gardener
   scriptToLoad: {fileID: 2480198943629176163, guid: 92a4f3998a2c80d48810bac4a87978f1,
     type: 3}
+--- !u!114 &1154660168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154660161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9016229b8c073514b9bc2d9bcf3c3301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToChange: CoffeeScene
 --- !u!1 &1215619840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4859,7 +4889,6 @@ GameObject:
   - component: {fileID: 2088677841}
   - component: {fileID: 2088677840}
   - component: {fileID: 2088677842}
-  - component: {fileID: 2088677843}
   m_Layer: 5
   m_Name: PuzzlePanel
   m_TagString: Untagged
@@ -4941,19 +4970,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &2088677843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088677838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4fcfb2ecca5c94a94bb4335a3a1f17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzlePanel: {fileID: 2088677838}
 --- !u!1 &2095296642
 GameObject:
   m_ObjectHideFlags: 0
