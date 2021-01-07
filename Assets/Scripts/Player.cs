@@ -41,7 +41,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         }
 
         if (Input.GetKeyDown(KeyCode.Tab)) {
-                Menu();
+            Menu();
         }
     }
 
