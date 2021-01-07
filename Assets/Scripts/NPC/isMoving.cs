@@ -18,7 +18,7 @@ public class isMoving : MonoBehaviour
     {
         if (Character.GetComponent<YarnCommand>().isWalking)
         {
-            Debug.Log("Movin");
+            //Debug.Log("Movin");
             Vector3 distance = Character.transform.position - Destination.transform.position;
             distance = -distance.normalized;
             Character.transform.position += distance * Speed * Time.deltaTime;

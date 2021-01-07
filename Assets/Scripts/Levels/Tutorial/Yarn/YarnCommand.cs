@@ -7,6 +7,8 @@ using Yarn.Unity;
 public class YarnCommand : MonoBehaviour
 {
     public GameObject puzzlePanel;
+    public GameObject CharacterImage;
+    public GameObject TalkingCharacter;
     public string sceneToChange;
     public bool isWalking;
 
@@ -26,5 +28,10 @@ public class YarnCommand : MonoBehaviour
     {
         isWalking = true;
     }
-
+    [YarnCommand("Chat")]
+    public void Conversation(string Person)
+    {
+        TalkingCharacter = GameObject.Find(Person);
+        CharacterImage.GetComponent<UnityEngine.UI.Image>().sprite = TalkingCharacter.GetComponent<SpriteRenderer>().sprite;
+    }
 }

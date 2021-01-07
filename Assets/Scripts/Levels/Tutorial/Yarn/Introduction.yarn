@@ -3,15 +3,24 @@ tags:
 ---
 
 <<if visited("Introduction") is false>>
+    <<Chat Grave Player>>
     Ghost: Where am I? 
+
+    <<Chat Grave Grave>>
     Grave: You are dead. 
+    
+    <<Chat Grave Player>>
     Ghost: No... this can't be!
     Ghost: But how?
     Ghost: (Press Space bar to interact, WASD to move around.)
     <<MoveNPC Gravekeeper>>
+    <<Chat Grave Gravekeeper>>
+    Gravekeeper: *Whistling*
 <<else>>
+    <<Chat Grave Player>>
     Ghost: It seems like I need some flowers here.... 
     <<Show Grave>>
 <<endif>>
 <<close>>
 ===
+
