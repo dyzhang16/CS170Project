@@ -8,6 +8,7 @@ public class DialogueNPC : MonoBehaviour
     public DialogueRunner dialogueRunner;
     public Player player;
     public string dialogueToRun;
+    public bool startInstantly;
 
     private bool runDialogue;
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class DialogueNPC : MonoBehaviour
                 if (!dialogueRunner.IsDialogueRunning){
                     dialogueRunner.StartDialogue(dialogueToRun);
                     runDialogue = false;
+                    Debug.Log("running" + dialogueToRun);
                 }
             }
         }
@@ -31,10 +33,16 @@ public class DialogueNPC : MonoBehaviour
 
     void OnTriggerStay(Collider collider)                          //https://www.youtube.com/watch?v=Bc9lmHjqLZc
     {
-        if (collider.gameObject.CompareTag("Player") && !runDialogue)
-        {
-            runDialogue = true;
+        if (startInstantly){
+            dialogueRunner.StartDialogue(dialogueToRun);
+            startInstantly = false;
+        } else {
+            if (collider.gameObject.CompareTag("Player") && !runDialogue)
+            {
+                runDialogue = true;
+            }
         }
+        
     }
 
     void OnTriggerExit(Collider collider){

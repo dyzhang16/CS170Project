@@ -131,11 +131,11 @@ GameObject:
   m_Component:
   - component: {fileID: 328687}
   - component: {fileID: 328688}
-  - component: {fileID: 328692}
-  - component: {fileID: 328689}
-  - component: {fileID: 328693}
   - component: {fileID: 328690}
   - component: {fileID: 328691}
+  - component: {fileID: 328689}
+  - component: {fileID: 328693}
+  - component: {fileID: 328692}
   m_Layer: 0
   m_Name: Grave
   m_TagString: Untagged
@@ -155,7 +155,7 @@ Transform:
   m_LocalScale: {x: 2.1644487, y: 2.2711093, z: 1}
   m_Children: []
   m_Father: {fileID: 493771255}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &328688
 SpriteRenderer:
@@ -267,6 +267,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 739597929}
   player: {fileID: 2875367029536886225}
   dialogueToRun: prologue_begin
+  startInstantly: 1
 --- !u!114 &328693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,6 +624,7 @@ GameObject:
   - component: {fileID: 91982215}
   - component: {fileID: 91982216}
   - component: {fileID: 91982217}
+  - component: {fileID: 91982218}
   m_Layer: 0
   m_Name: FlowerFieldA
   m_TagString: Untagged
@@ -642,7 +644,7 @@ RectTransform:
   m_LocalScale: {x: 1.742503, y: 1.6485182, z: 1}
   m_Children: []
   m_Father: {fileID: 493771255}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -758,6 +760,24 @@ MonoBehaviour:
   dialogueRunner: {fileID: 739597929}
   player: {fileID: 2875367029536886225}
   dialogueToRun: Flower1
+  startInstantly: 0
+--- !u!114 &91982218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91982211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4fcfb2ecca5c94a94bb4335a3a1f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzlePanel: {fileID: 0}
+  CharacterImage: {fileID: 458545431}
+  TalkingCharacter: {fileID: 0}
+  sceneToChange: 
+  isWalking: 0
 --- !u!1 &216743536
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,7 +1015,7 @@ Transform:
   - {fileID: 752068705}
   - {fileID: 44011547}
   m_Father: {fileID: 493771255}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &422748250
 GameObject:
@@ -1022,11 +1042,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422748250}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 14.44, y: -3.566, z: -66.21}
+  m_LocalPosition: {x: -3.09, y: -3.566, z: -55.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 493771255}
-  m_RootOrder: 9
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &422748252
 SpriteRenderer:
@@ -1379,6 +1399,7 @@ Transform:
   m_Children:
   - {fileID: 1946651272}
   - {fileID: 2875367029536886230}
+  - {fileID: 422748251}
   - {fileID: 1154660162}
   - {fileID: 311111856}
   - {fileID: 328687}
@@ -1386,7 +1407,6 @@ Transform:
   - {fileID: 1026249391}
   - {fileID: 999544061}
   - {fileID: 616105304}
-  - {fileID: 422748251}
   - {fileID: 993207724}
   m_Father: {fileID: 1538851750}
   m_RootOrder: 0
@@ -1860,7 +1880,7 @@ RectTransform:
   m_LocalScale: {x: 1.742503, y: 1.6485182, z: 1}
   m_Children: []
   m_Father: {fileID: 493771255}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1976,6 +1996,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 739597929}
   player: {fileID: 2875367029536886225}
   dialogueToRun: Flower4
+  startInstantly: 0
 --- !u!1 &654998857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,7 +2582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993207723}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -23.7, y: -4.2, z: -87.3}
+  m_LocalPosition: {x: -23.7, y: -3.52, z: -86.65}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 493771255}
@@ -2582,6 +2603,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 739597929}
   player: {fileID: 2875367029536886225}
   dialogueToRun: Checkpoint1
+  startInstantly: 0
 --- !u!114 &993207726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2676,7 +2698,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &993207730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2727,7 +2749,7 @@ RectTransform:
   m_LocalScale: {x: 1.742503, y: 1.6485182, z: 1}
   m_Children: []
   m_Father: {fileID: 493771255}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2843,6 +2865,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 739597929}
   player: {fileID: 2875367029536886225}
   dialogueToRun: Flower3
+  startInstantly: 0
 --- !u!1 &1026249390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,7 +2899,7 @@ RectTransform:
   m_LocalScale: {x: 1.742503, y: 1.6485182, z: 1}
   m_Children: []
   m_Father: {fileID: 493771255}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2992,6 +3015,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 739597929}
   player: {fileID: 2875367029536886225}
   dialogueToRun: Flower2
+  startInstantly: 0
 --- !u!1 &1031218266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,11 +3412,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154660161}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 55.23, y: -3.1060004, z: -66.21}
+  m_LocalPosition: {x: 50.56, y: -3.1060004, z: -55.25}
   m_LocalScale: {x: 1.483672, y: 1.5351341, z: 1}
   m_Children: []
   m_Father: {fileID: 493771255}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!65 &1154660163
 BoxCollider:
@@ -3472,6 +3496,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 739597929}
   player: {fileID: 2875367029536886225}
   dialogueToRun: Test
+  startInstantly: 0
 --- !u!114 &1154660167
 MonoBehaviour:
   m_ObjectHideFlags: 0
