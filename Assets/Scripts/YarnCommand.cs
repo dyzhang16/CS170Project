@@ -12,7 +12,6 @@ public class YarnCommand : MonoBehaviour
     public string sceneToChange;
     public bool isWalking;
 
-
     [YarnCommand("Show")]
     public void ShowPuzzle()
     {
