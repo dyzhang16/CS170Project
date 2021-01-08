@@ -33,4 +33,9 @@ public class YarnCommand : MonoBehaviour
         TalkingCharacter = GameObject.Find(Person);
         CharacterImage.GetComponent<UnityEngine.UI.Image>().sprite = TalkingCharacter.GetComponent<SpriteRenderer>().sprite;
     }
+    [YarnCommand("Destroy")]
+    public void Destroy(string Object)
+    {
+        Destroy(GameObject.Find(Object));
+    }
 }

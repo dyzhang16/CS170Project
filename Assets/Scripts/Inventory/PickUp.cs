@@ -26,7 +26,6 @@ public class PickUp : MonoBehaviour, IPointerDownHandler
         if (runPickUp){
             if (Input.GetKeyDown(KeyCode.Space)){
                 Inventory.instance.AddItem(item);
-                Destroy(gameObject);
                 runPickUp = false;
             }
         }
