@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Yarn.Unity;
 
 public class Puzzle1 : MonoBehaviour, IDropHandler
 {
     public Sprite completeSprite;
+    public VariableStorageBehaviour CustomVariableStorage;
     public GameObject puzzlePanel;
     public GameObject FlowerA, FlowerB, FlowerC, FlowerD;
     public static Puzzle1 instance;
@@ -20,6 +22,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         if (flowerASet == true && flowerBSet == true && flowerCSet == true && flowerDSet == true)
         {
             gameObject.GetComponent<UnityEngine.UI.Image>().sprite = completeSprite;
+            CustomVariableStorage.SetValue("$puzzle", 1);
             Hide();
         }
     }

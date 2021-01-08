@@ -622,6 +622,7 @@ GameObject:
   - component: {fileID: 91982214}
   - component: {fileID: 91982215}
   - component: {fileID: 91982216}
+  - component: {fileID: 91982217}
   m_Layer: 0
   m_Name: FlowerFieldA
   m_TagString: Untagged
@@ -742,6 +743,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.3199997, y: 4.89, z: 0.2}
   m_Center: {x: 0, y: 2.445, z: -0.0000009536743}
+--- !u!114 &91982217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91982211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef986b420694c644a809663c0ca049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 739597929}
+  player: {fileID: 2875367029536886225}
+  dialogueToRun: Flower1
 --- !u!1 &216743536
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,6 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completeSprite: {fileID: 21300000, guid: 8fda2adf6849f9d4fb02ab5276a5e9a7, type: 3}
+  CustomVariableStorage: {fileID: 739597928}
   puzzlePanel: {fileID: 2088677838}
   FlowerA: {fileID: 465640671}
   FlowerB: {fileID: 2097695258}
@@ -1823,6 +1840,7 @@ GameObject:
   - component: {fileID: 616105306}
   - component: {fileID: 616105307}
   - component: {fileID: 616105305}
+  - component: {fileID: 616105309}
   m_Layer: 0
   m_Name: FlowerFieldD
   m_TagString: Untagged
@@ -1838,7 +1856,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616105303}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: -40.6}
+  m_LocalPosition: {x: 0, y: 0, z: -76.4}
   m_LocalScale: {x: 1.742503, y: 1.6485182, z: 1}
   m_Children: []
   m_Father: {fileID: 493771255}
@@ -1943,6 +1961,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &616105309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616105303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef986b420694c644a809663c0ca049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 739597929}
+  player: {fileID: 2875367029536886225}
+  dialogueToRun: Flower4
 --- !u!1 &654998857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2528,7 +2561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993207723}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -23.7, y: 0, z: -87.3}
+  m_LocalPosition: {x: -23.7, y: -4.2, z: -87.3}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 493771255}
@@ -2674,6 +2707,7 @@ GameObject:
   - component: {fileID: 999544063}
   - component: {fileID: 999544064}
   - component: {fileID: 999544062}
+  - component: {fileID: 999544066}
   m_Layer: 0
   m_Name: FlowerFieldC
   m_TagString: Untagged
@@ -2794,6 +2828,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &999544066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999544060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef986b420694c644a809663c0ca049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 739597929}
+  player: {fileID: 2875367029536886225}
+  dialogueToRun: Flower3
 --- !u!1 &1026249390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,6 +2856,7 @@ GameObject:
   - component: {fileID: 1026249393}
   - component: {fileID: 1026249394}
   - component: {fileID: 1026249392}
+  - component: {fileID: 1026249396}
   m_Layer: 0
   m_Name: FlowerFieldB
   m_TagString: Untagged
@@ -2927,6 +2977,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1026249396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026249390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef986b420694c644a809663c0ca049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 739597929}
+  player: {fileID: 2875367029536886225}
+  dialogueToRun: Flower2
 --- !u!1 &1031218266
 GameObject:
   m_ObjectHideFlags: 0
