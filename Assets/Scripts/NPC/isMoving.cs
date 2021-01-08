@@ -8,6 +8,7 @@ public class isMoving : MonoBehaviour
     public GameObject Character;
     public GameObject Destination;
     public float Speed;
+
     void Start()
     {
 
@@ -22,6 +23,9 @@ public class isMoving : MonoBehaviour
             Vector3 distance = Character.transform.position - Destination.transform.position;
             distance = -distance.normalized;
             Character.transform.position += distance * Speed * Time.deltaTime;
+
+            Character.transform.Rotate(0,0,60*Time.deltaTime);
+
             if (distance.y >= 0 && distance.x >= 0)          //Changes based on Positioning
             {
                 Character.GetComponent<YarnCommand>().isWalking = false;
