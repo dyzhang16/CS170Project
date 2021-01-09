@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Yarn.Unity;
 
 public class PickUp : MonoBehaviour, IPointerDownHandler
 {
     public Item item;
     Inventory inventory;
     RectTransform rectTrans;
+
     public GameObject player;
     private Player p;
-    public bool coffee = false;
 
+    public bool coffee = false;
     private bool runPickUp = false;
+
+    public DialogueRunner dialogueRunner;
 
     void Start()
     {
@@ -23,7 +27,7 @@ public class PickUp : MonoBehaviour, IPointerDownHandler
     // Update is called once per frame
     void Update()
     {
-        if (runPickUp){
+        if (runPickUp && !dialogueRunner.IsDialogueRunning){
             if (Input.GetKeyDown(KeyCode.Space)){
                 Inventory.instance.AddItem(item);
                 runPickUp = false;
