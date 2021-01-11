@@ -7,14 +7,28 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public float speed;
     public Rigidbody rb;
     public GameObject player;
-    
+
+    //gravestone
+    public GameObject gravestone;
+
+    //fade in 
+    private SpriteRenderer render;
+
     public bool allowMovement = true;
     public bool invActive = false;
     public bool moving = false;
+    public bool goingToFade;
 
-    private void Start()
+    void Start()
     {
-        
+        if (goingToFade){
+            allowMovement = false;
+            render = GetComponent<SpriteRenderer>();
+            Color c = render.material.color;
+            c.a = 0f;
+            render.material.color = c;
+            StartCoroutine(FadeIn());
+        }
     }
 
     public void Update()
@@ -67,6 +81,19 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public void AllowMove(bool allow)
     {
         allowMovement = allow;
+    }
+
+    private IEnumerator FadeIn(){
+        for (float f = 0.05f; f <= 1f; f += 0.05f){
+            Color c = render.material.color;
+            c.a = f;
+            render.material.color = c;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        DialogueNPC dia = gravestone.GetComponent<DialogueNPC>();
+        dia.startInstantly = true;
+        allowMovement = true;
     }
 }
 

@@ -267,7 +267,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 739597929}
   player: {fileID: 2875367029536886225}
   dialogueToRun: prologue_begin
-  startInstantly: 1
+  startInstantly: 0
 --- !u!114 &328693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +284,6 @@ MonoBehaviour:
   CharacterImage: {fileID: 458545431}
   TalkingCharacter: {fileID: 0}
   sceneToChange: 
-  isWalking: 0
 --- !u!1 &12867419
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +524,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44011546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.813, y: 0, z: 126.5}
+  m_LocalPosition: {x: 2.813, y: -0.372, z: 199.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 311111856}
@@ -558,7 +557,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7, y: 1, z: 1}
+  m_Size: {x: 8, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &44011550
 SpriteRenderer:
@@ -648,7 +647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40.67, y: -4.2}
+  m_AnchoredPosition: {x: -89.8, y: -4.2}
   m_SizeDelta: {x: 6.32, y: 4.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &91982213
@@ -778,7 +777,6 @@ MonoBehaviour:
   CharacterImage: {fileID: 458545431}
   TalkingCharacter: {fileID: 0}
   sceneToChange: 
-  isWalking: 0
 --- !u!1 &216743536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1877,7 +1875,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616105303}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: -76.4}
+  m_LocalPosition: {x: 0, y: 0, z: -108.45}
   m_LocalScale: {x: 1.742503, y: 1.6485182, z: 1}
   m_Children: []
   m_Father: {fileID: 493771255}
@@ -1885,7 +1883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -4.2}
+  m_AnchoredPosition: {x: 27.11, y: -4.2}
   m_SizeDelta: {x: 6.32, y: 4.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!54 &616105305
@@ -2062,7 +2060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueContainer: {fileID: 2037983910}
-  textSpeed: 0.025
+  textSpeed: 0.05
   optionButtons: []
   onDialogueStart:
     m_PersistentCalls:
@@ -2096,15 +2094,15 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2875367029536886225}
-        m_MethodName: changeActive
-        m_Mode: 1
+        m_MethodName: AllowMove
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
   onLineFinishDisplaying:
     m_PersistentCalls:
@@ -2149,15 +2147,15 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2875367029536886225}
-        m_MethodName: changeActive
-        m_Mode: 1
+        m_MethodName: AllowMove
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   onOptionsStart:
     m_PersistentCalls:
@@ -2294,7 +2292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752068704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.517, y: 0, z: 76.02}
+  m_LocalPosition: {x: 6.82, y: -0.385, z: 79.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 311111856}
@@ -2327,7 +2325,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 1, z: 225}
+  m_Size: {x: 0.5, y: 1, z: 250}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &752068708
 SpriteRenderer:
@@ -2584,7 +2582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993207723}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -23.7, y: -3.52, z: -86.65}
+  m_LocalPosition: {x: -23.7, y: -3.52, z: -115.03}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 493771255}
@@ -2717,7 +2715,6 @@ MonoBehaviour:
   CharacterImage: {fileID: 458545431}
   TalkingCharacter: {fileID: 0}
   sceneToChange: 
-  isWalking: 0
 --- !u!1 &999544060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,7 +2752,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.25, y: -4.2}
+  m_AnchoredPosition: {x: 30.88, y: -4.2}
   m_SizeDelta: {x: 6.32, y: 4.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!54 &999544062
@@ -2898,7 +2895,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026249390}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: -57.45}
+  m_LocalPosition: {x: 0, y: 0, z: -91.56}
   m_LocalScale: {x: 1.742503, y: 1.6485182, z: 1}
   m_Children: []
   m_Father: {fileID: 493771255}
@@ -2906,7 +2903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.9, y: -4.2}
+  m_AnchoredPosition: {x: -67.91, y: -4.2}
   m_SizeDelta: {x: 6.32, y: 4.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!54 &1026249392
@@ -3398,9 +3395,9 @@ GameObject:
   - component: {fileID: 1154660164}
   - component: {fileID: 1154660165}
   - component: {fileID: 1154660167}
-  - component: {fileID: 1154660170}
   - component: {fileID: 1154660169}
   - component: {fileID: 1154660163}
+  - component: {fileID: 1154660166}
   m_Layer: 0
   m_Name: Gravekeeper
   m_TagString: Untagged
@@ -3501,6 +3498,24 @@ MonoBehaviour:
   player: {fileID: 2875367029536886225}
   dialogueToRun: Test
   startInstantly: 0
+--- !u!114 &1154660166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154660161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab612c8fdfdb45448a7a6c2d1363d35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 1154660161}
+  Destination: {fileID: 422748250}
+  gravestone: {fileID: 328686}
+  player: {fileID: 2875367029536886229}
+  isWalking: 0
+  Speed: 10
 --- !u!114 &1154660167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3533,22 +3548,6 @@ MonoBehaviour:
   CharacterImage: {fileID: 458545431}
   TalkingCharacter: {fileID: 0}
   sceneToChange: CoffeeScene
-  isWalking: 0
---- !u!114 &1154660170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154660161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa31ef68e4cc84a4cbeeb7c15a632587, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Character: {fileID: 1154660161}
-  Destination: {fileID: 422748250}
-  Speed: 10
 --- !u!1 &1277462891
 GameObject:
   m_ObjectHideFlags: 0
@@ -4085,7 +4084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917287473}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.813, y: 0, z: -0}
+  m_LocalPosition: {x: 2.813, y: -0.7, z: -36.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 311111856}
@@ -4102,7 +4101,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7, y: 1, z: 1}
+  m_Size: {x: 8, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1917287476
 Rigidbody:
@@ -4757,6 +4756,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 493771255}
     m_Modifications:
+    - target: {fileID: 4082150130277126512, guid: ad9b45256d828ee4982f2e5d85b896c6,
+        type: 3}
+      propertyPath: goingToFade
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082150130277126512, guid: ad9b45256d828ee4982f2e5d85b896c6,
+        type: 3}
+      propertyPath: gravestone
+      value: 
+      objectReference: {fileID: 328686}
     - target: {fileID: 4082150130277126516, guid: ad9b45256d828ee4982f2e5d85b896c6,
         type: 3}
       propertyPath: m_Name
