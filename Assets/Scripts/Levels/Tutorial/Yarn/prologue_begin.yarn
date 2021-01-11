@@ -13,9 +13,22 @@
 
 <<MoveNPC Gravekeeper>>
 
-	Hello! Hi! ...Excuse me?
+<<else>>
 
-	Hmm. I guess the living can’t see me. That person must have been the one who dug my grave.
+	//if the Player examines the Tombstone at this time-
+<<Chat Grave Grave>>
+	(Use WASD to move around and SPACE to interact with objects)
+<<Chat Grave Player>>
+	Hmm...Looking kind of empty.
+<<endif>>
+
+===
+
+title: prologue_gravekeeper
+---
+Hello! Hi! ...Excuse me?
+
+Hmm. I guess the living can’t see me. That person must have been the one who dug my grave.
 
 	Let’s check out my gravestone! I wonder what’s been written about me...
 
@@ -28,16 +41,6 @@
 	...Wait a second. But that’s not my name?
 
 	No, that’s not important right now. I should take a look around for others like me. Maybe they can tell me more about this place.
-
-<<else>>
-
-	//if the Player examines the Tombstone at this time-
-<<Chat Grave Grave>>
-	(Use WASD to move around and SPACE to interact with objects)
-<<Chat Grave Player>>
-	Hmm...Looking kind of empty.
-<<endif>>
-
 ===
 
 title: prologue_doneExplore

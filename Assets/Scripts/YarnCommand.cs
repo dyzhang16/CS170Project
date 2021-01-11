@@ -10,7 +10,6 @@ public class YarnCommand : MonoBehaviour
     public GameObject CharacterImage;
     public GameObject TalkingCharacter;
     public string sceneToChange;
-    public bool isWalking;
 
     [YarnCommand("Show")]
     public void ShowPuzzle()
@@ -22,11 +21,7 @@ public class YarnCommand : MonoBehaviour
     {
         SceneManager.LoadScene(sceneToChange);
     }
-    [YarnCommand("MoveNPC")]
-    public void MoveNPC()
-    {
-        isWalking = true;
-    }
+
     [YarnCommand("Chat")]
     public void Conversation(string Person)
     {
