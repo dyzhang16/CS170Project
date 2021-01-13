@@ -16,11 +16,6 @@ public class YarnCommand : MonoBehaviour
     {
         puzzlePanel.GetComponent<CanvasGroup>().alpha = 1;
     }
-    [YarnCommand("ChangeScene")]
-    public void ChangeScene()
-    {
-        SceneManager.LoadScene(sceneToChange);
-    }
 
     [YarnCommand("Chat")]
     public void Conversation(string Person)
@@ -32,5 +27,11 @@ public class YarnCommand : MonoBehaviour
     public void Destroy(string Object)
     {
         Destroy(GameObject.Find(Object));
+    }
+
+    [YarnCommand("ChangeScene")]
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene(sceneToChange);
     }
 }
