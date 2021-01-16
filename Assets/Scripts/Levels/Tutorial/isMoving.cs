@@ -32,7 +32,7 @@ public class isMoving : MonoBehaviour
 
     IEnumerator restartText(){
         yield return new WaitForSeconds(2);
-        DialogueNPC dia = gravestone.GetComponent<DialogueNPC>();
+        RunDialogue dia = gravestone.GetComponent<RunDialogue>();
         dia.dialogueRunner.StartDialogue("prologue_gravekeeper");
     }
 

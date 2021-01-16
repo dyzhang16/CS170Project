@@ -5,7 +5,7 @@
 <<endif>>
 <<if visited("prologue_begin") is false>>
 	//for later - function for animating Ghost fwooshing into existence from the grave
-<<Chat Grave Player>>
+<<ChangeSpeaker Player>>
 
 	Whew, that was a long ride! I can finally breathe, Well- not, really.
 
@@ -16,9 +16,9 @@
 <<else>>
 
 	//if the Player examines the Tombstone at this time-
-<<Chat Grave Grave>>
+<<ChangeSpeaker Grave>>
 	(Use WASD to move around and SPACE to interact with objects)
-<<Chat Grave Player>>
+<<ChangeSpeaker Player>>
 	Hmm...Looking kind of empty.
 <<endif>>
 
@@ -26,17 +26,18 @@
 
 title: prologue_gravekeeper
 ---
+<<ChangeSpeaker Player>>
 Hello! Hi! ...Excuse me?
 
 Hmm. I guess the living can’t see me. That person must have been the one who dug my grave.
 
 	Let’s check out my gravestone! I wonder what’s been written about me...
 
-<<Chat Grave Grave>>
+<<ChangeSpeaker Grave>>
 
 	(Use WASD to move around and SPACE to interact with objects)
 
-<<Chat Grave Player>>
+<<ChangeSpeaker Player>>
 
 	...Wait a second. But that’s not my name?
 
@@ -50,7 +51,7 @@ title: prologue_doneExplore
 <<endif>>
 //play once the Player has explored the whole area-
 <<if visited("prologue_doneExplore") is false>>
-<<Chat Grave Player>>
+<<ChangeSpeaker Player>>
 	It doesn’t look like anyone else was buried here. So...I’m alone in this graveyard with a sad little gravestone that doesn’t even say anything meaningful...
 
 	I have to get out of here; surely I’ll be able to find others outside of this cemetery, right?
@@ -70,7 +71,7 @@ title: prologue_doneFlowers
 ---
 
 //upon finishing putting the flowers in place-
-<<Chat Grave Player>>
+<<ChangeSpeaker Player>>
 	Aaaand, there! Looking better already. I should make my way out now.
 
 ===

@@ -133,9 +133,8 @@ GameObject:
   - component: {fileID: 328688}
   - component: {fileID: 328690}
   - component: {fileID: 328691}
-  - component: {fileID: 328689}
-  - component: {fileID: 328693}
   - component: {fileID: 328692}
+  - component: {fileID: 328689}
   m_Layer: 0
   m_Name: Grave
   m_TagString: Untagged
@@ -216,13 +215,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 328686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640fb77639c55c2468dc0941bd13c40b, type: 3}
+  m_Script: {fileID: 11500000, guid: f55e91cfd72b54446806518b3a3169aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPCName: Gravestone
-  NPCInteract: Gravestone
-  scriptToLoad: {fileID: 2480198943629176163, guid: af93ea5d828c7d749839efaa58bfd55c,
-    type: 3}
+  puzzlePanel: {fileID: 2088677838}
 --- !u!65 &328690
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -268,22 +264,8 @@ MonoBehaviour:
   player: {fileID: 2875367029536886225}
   dialogueToRun: prologue_begin
   startInstantly: 0
---- !u!114 &328693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4fcfb2ecca5c94a94bb4335a3a1f17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzlePanel: {fileID: 2088677838}
-  CharacterImage: {fileID: 458545431}
-  TalkingCharacter: {fileID: 0}
-  sceneToChange: 
+  NPCName: 
+  NPCInteract: 
 --- !u!1 &12867419
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +605,6 @@ GameObject:
   - component: {fileID: 91982215}
   - component: {fileID: 91982216}
   - component: {fileID: 91982217}
-  - component: {fileID: 91982218}
   m_Layer: 0
   m_Name: FlowerFieldA
   m_TagString: Untagged
@@ -761,22 +742,8 @@ MonoBehaviour:
   player: {fileID: 2875367029536886225}
   dialogueToRun: Flower1
   startInstantly: 0
---- !u!114 &91982218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 91982211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4fcfb2ecca5c94a94bb4335a3a1f17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzlePanel: {fileID: 0}
-  CharacterImage: {fileID: 458545431}
-  TalkingCharacter: {fileID: 0}
-  sceneToChange: 
+  NPCName: 
+  NPCInteract: 
 --- !u!1 &216743536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,8 +1098,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -271.4, y: 2.368}
-  m_SizeDelta: {x: 170, y: 170}
+  m_AnchoredPosition: {x: -571, y: 0}
+  m_SizeDelta: {x: 225, y: 225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458545433
 MonoBehaviour:
@@ -1559,10 +1526,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1718,11 +1685,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 38
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 50
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1754,8 +1721,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.3, y: -1.3113}
-  m_SizeDelta: {x: 410.5475, y: 177.35861}
+  m_AnchoredPosition: {x: 61.5, y: -0.0000033379}
+  m_SizeDelta: {x: 988.1337, y: 265.95712}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &606248081
 GameObject:
@@ -1997,6 +1964,8 @@ MonoBehaviour:
   player: {fileID: 2875367029536886225}
   dialogueToRun: Flower4
   startInstantly: 0
+  NPCName: 
+  NPCInteract: 
 --- !u!1 &654998857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2192,11 +2161,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yarnScripts: []
+  yarnScripts:
+  - {fileID: 2480198943629176163, guid: af93ea5d828c7d749839efaa58bfd55c, type: 3}
+  - {fileID: 2480198943629176163, guid: 7041b33f729551746b273b54389b6d6e, type: 3}
+  - {fileID: 2480198943629176163, guid: 26f8b3d221d332845892dbf07746b353, type: 3}
   textLanguage: 
   variableStorage: {fileID: 739597928}
   dialogueUI: {fileID: 739597927}
-  startNode: Introduction
+  startNode: prologue_begin
   startAutomatically: 0
   onNodeStart:
     m_PersistentCalls:
@@ -2564,9 +2536,7 @@ GameObject:
   - component: {fileID: 993207729}
   - component: {fileID: 993207728}
   - component: {fileID: 993207727}
-  - component: {fileID: 993207726}
   - component: {fileID: 993207725}
-  - component: {fileID: 993207730}
   m_Layer: 0
   m_Name: Checkpoint1
   m_TagString: Untagged
@@ -2604,22 +2574,8 @@ MonoBehaviour:
   player: {fileID: 2875367029536886225}
   dialogueToRun: Checkpoint1
   startInstantly: 0
---- !u!114 &993207726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993207723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640fb77639c55c2468dc0941bd13c40b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPCName: Checkpoint1
-  NPCInteract: Checkpoint1
-  scriptToLoad: {fileID: 2480198943629176163, guid: 7041b33f729551746b273b54389b6d6e,
-    type: 3}
+  NPCName: 
+  NPCInteract: 
 --- !u!54 &993207727
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2699,22 +2655,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &993207730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993207723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4fcfb2ecca5c94a94bb4335a3a1f17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzlePanel: {fileID: 0}
-  CharacterImage: {fileID: 458545431}
-  TalkingCharacter: {fileID: 0}
-  sceneToChange: 
 --- !u!1 &999544060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,6 +2806,8 @@ MonoBehaviour:
   player: {fileID: 2875367029536886225}
   dialogueToRun: Flower3
   startInstantly: 0
+  NPCName: 
+  NPCInteract: 
 --- !u!1 &1026249390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,6 +2959,8 @@ MonoBehaviour:
   player: {fileID: 2875367029536886225}
   dialogueToRun: Flower2
   startInstantly: 0
+  NPCName: 
+  NPCInteract: 
 --- !u!1 &1031218266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3027,6 +2971,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1031218268}
   - component: {fileID: 1031218267}
+  - component: {fileID: 1031218270}
+  - component: {fileID: 1031218269}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -3061,6 +3007,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1031218269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031218266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62e4e7803c280b543affaccf791c5755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 739597929}
+--- !u!114 &1031218270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031218266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428df806492f59a4f80111b3a9e11021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 739597929}
+  CharacterImage: {fileID: 458545431}
+  TalkingCharacter: {fileID: 0}
 --- !u!1 &1045353051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,8 +3368,6 @@ GameObject:
   - component: {fileID: 1154660162}
   - component: {fileID: 1154660164}
   - component: {fileID: 1154660165}
-  - component: {fileID: 1154660167}
-  - component: {fileID: 1154660169}
   - component: {fileID: 1154660163}
   - component: {fileID: 1154660166}
   m_Layer: 0
@@ -3498,6 +3470,8 @@ MonoBehaviour:
   player: {fileID: 2875367029536886225}
   dialogueToRun: Test
   startInstantly: 0
+  NPCName: 
+  NPCInteract: 
 --- !u!114 &1154660166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3516,38 +3490,6 @@ MonoBehaviour:
   player: {fileID: 2875367029536886229}
   isWalking: 0
   Speed: 10
---- !u!114 &1154660167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154660161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640fb77639c55c2468dc0941bd13c40b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPCName: Gardener
-  NPCInteract: Gardener
-  scriptToLoad: {fileID: 2480198943629176163, guid: 92a4f3998a2c80d48810bac4a87978f1,
-    type: 3}
---- !u!114 &1154660169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154660161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4fcfb2ecca5c94a94bb4335a3a1f17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzlePanel: {fileID: 0}
-  CharacterImage: {fileID: 458545431}
-  TalkingCharacter: {fileID: 0}
-  sceneToChange: CoffeeScene
 --- !u!1 &1277462891
 GameObject:
   m_ObjectHideFlags: 0
@@ -4304,8 +4246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000095367, y: 0.00008773804}
-  m_SizeDelta: {x: 555.66956, y: 221.51045}
+  m_AnchoredPosition: {x: -0.0018005, y: 1.8663}
+  m_SizeDelta: {x: 1135.8557, y: 305.69177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1953626056
 MonoBehaviour:
@@ -4509,8 +4451,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 189.3, y: -155.3}
-  m_SizeDelta: {x: 555.6694, y: 221.51022}
+  m_AnchoredPosition: {x: 353, y: -346}
+  m_SizeDelta: {x: 1135.8516, y: 301.95914}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2037983912
 MonoBehaviour:

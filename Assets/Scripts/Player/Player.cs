@@ -91,7 +91,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             yield return new WaitForSeconds(0.05f);
         }
 
-        DialogueNPC dia = gravestone.GetComponent<DialogueNPC>();
+        RunDialogue dia = gravestone.GetComponent<RunDialogue>();
         dia.startInstantly = true;
         allowMovement = true;
     }

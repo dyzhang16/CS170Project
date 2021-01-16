@@ -1,0 +1,132 @@
+﻿title: Cup
+tags:
+---
+<<ChangeSpeaker Cup>>
+	
+	This is a cup. 
+	
+	Do you want take it?
+	[[Take the cup.|TakeCup]]
+	[[Leave it alone.|PutitDown]]
+===
+
+title: TakeCup
+---
+<<ChangeSpeaker Player>>
+	You add the cup to your inventory.
+<<Add Cup>>
+<<Destroy Cup>>
+<<stop>>
+===
+
+title: Cream
+tags:
+---
+<<ChangeSpeaker Cream>>
+	
+	This is creamer. 
+	
+	Do you want take it?
+	[[Take the creamer.|TakeCream]]
+	[[Leave it alone.|PutitDown]]
+===
+
+title: TakeCream
+---
+<<ChangeSpeaker Player>>
+	You add the cream to your inventory.
+<<Add Cream>>
+<<Destroy Cream>>
+<<stop>>
+===
+
+title: CoffeeGrounds
+tags:
+---
+<<ChangeSpeaker Coffee_Grounds>>
+	
+	These are coffee beans. 
+	
+	Do you want take it?
+	[[Take the coffee beans.|TakeCoffeeGrounds]]
+	[[Leave it alone.|PutitDown]]
+===
+
+title: TakeCoffeeGrounds
+---
+<<ChangeSpeaker Player>>
+	You add the coffee beans to your inventory.
+<<Add Coffee_Grounds>>
+<<Destroy Coffee_Grounds>>
+<<stop>>
+===
+
+title: Sweetner
+tags:
+---
+<<ChangeSpeaker Sweenter>>
+	
+	These is sweetner. 
+	
+	Do you want take it?
+	[[Take the sweetner.|TakeSweetner]]
+	[[Leave it alone.|PutitDown]]
+===
+
+title: TakeSweetner
+---
+<<ChangeSpeaker Player>>
+	You add the Sweetner to your inventory.
+<<Add Sweetner>>
+<<Destroy Sweetner>>
+<<stop>>
+===
+
+title: PaperFilter
+tags:
+---
+<<ChangeSpeaker Paper_Filter>>
+	
+	These is a paper filter. 
+	
+	Do you want take it?
+	[[Take the paper filter.|TakePaperFilter]]
+	[[Leave it alone.|PutitDown]]
+===
+
+title: TakePaperFilter
+---
+<<ChangeSpeaker Paper_Filter>>
+	You add the paper filter to your inventory.
+<<Add Paper_Filter>>
+<<Destroy Paper_Filter>>
+<<stop>>
+===
+
+title: CupSleeve
+tags:
+---
+<<ChangeSpeaker Cup_Sleeve>>
+	
+	These are cup sleeves. 
+	
+	Do you want take it?
+	[[Take the cup sleeves.|TakeCupSleeves]]
+	[[Leave it alone.|PutitDown]]
+===
+
+title: TakeCupSleeves
+---
+<<ChangeSpeaker Cup_Sleeves>>
+	You add the cup sleeves to your inventory.
+<<Add Cup_Sleeve>>
+<<Destroy Cup_Sleeve>>
+<<stop>>
+===
+
+title: PutitDown
+---
+<<ChangeSpeaker Player>>
+	You leave it alone.
+<<stop>>
+===

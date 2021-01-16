@@ -8,12 +8,8 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
     public GameObject puzzlePanel;
     public bool cupThere, filterThere, groundsThere, sleeveThere, complete = false;
     public GameObject cup, filter, grounds, sleeve, completedCup;
-    public GameObject player;
-    private Player p;
 
-    public void Start(){
-        p = player.GetComponent<Player>();
-        p.moving = false;
+    public void Start() { 
     }
 
     // Update is called once per frame
@@ -21,10 +17,6 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
     {
         if (cupThere && filterThere && groundsThere && sleeveThere) {
             complete = true;
-        }
-
-        if(Input.GetKeyDown(KeyCode.Tab) && !p.invActive && puzzlePanel.activeSelf) {
-            puzzlePanel.SetActive(false);
         }
     }
 
