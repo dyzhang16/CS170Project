@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class HighlightSprite : MonoBehaviour
 {
@@ -8,10 +9,13 @@ public class HighlightSprite : MonoBehaviour
     public Sprite Sprite1;
     public Sprite Sprite2;
     public Item item;
+
+    private DialogueRunner diaRun = null;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        diaRun = GameObject.Find("DiaSystem/DialogueRunner").GetComponent<DialogueRunner>();
     }
 
     // Update is called once per frame
@@ -21,7 +25,7 @@ public class HighlightSprite : MonoBehaviour
     }
     public void OnMouseOver()
     {
-        if (interact.tag == "Item")
+        if (interact.tag == "Item" && diaRun != null && !diaRun.IsDialogueRunning)
         {
             interact.GetComponent<SpriteRenderer>().color = Color.yellow;
             //interact.GetComponent<SpriteRenderer>().sprite = Sprite1;
