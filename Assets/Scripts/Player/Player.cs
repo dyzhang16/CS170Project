@@ -12,7 +12,10 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public GameObject gravestone;
 
     //fade in 
-    private SpriteRenderer render;
+    public SpriteRenderer render;
+
+    //animator
+    //public Animator animator;
 
     public bool allowMovement = true;
     public bool invActive = false;
@@ -23,7 +26,6 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     {
         if (goingToFade){
             allowMovement = false;
-            render = GetComponent<SpriteRenderer>();
             Color c = render.material.color;
             c.a = 0f;
             render.material.color = c;
@@ -45,6 +47,13 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
             if (h != 0 || v != 0){
                 Keyboard(h, v);
+                //animator.SetFloat("Speed", Mathf.Abs(h)+Mathf.Abs(v));
+
+                if (h > 0){
+                    render.flipX = true;
+                } else {
+                    render.flipX = false;
+                }
             }
         }
 
