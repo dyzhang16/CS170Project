@@ -24,7 +24,7 @@ public class YarnInventory : MonoBehaviour
     {
         string Object = parameters[0];
         GameObject PotentialObject = GameObject.Find(Object);
-        Inventory.instance.AddItem(PotentialObject.GetComponent<HighlightSprite>().item);
+        Inventory.instance.AddItem(PotentialObject.GetComponent<ItemAssignment>().item);
     }
     private void DestroyObject(string[] parameters)
     {

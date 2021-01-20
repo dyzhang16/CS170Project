@@ -15,7 +15,7 @@ title: TakeCup
 <<ChangeSpeaker Player>>
 	You add the cup to your inventory.
 <<Add Cup>>
-<<Destroy Cup>>
+
 <<stop>>
 ===
 
@@ -36,7 +36,7 @@ title: TakeCream
 <<ChangeSpeaker Player>>
 	You add the cream to your inventory.
 <<Add Cream>>
-<<Destroy Cream>>
+
 <<stop>>
 ===
 
@@ -57,7 +57,7 @@ title: TakeCoffeeGrounds
 <<ChangeSpeaker Player>>
 	You add the coffee beans to your inventory.
 <<Add Coffee_Grounds>>
-<<Destroy Coffee_Grounds>>
+
 <<stop>>
 ===
 
@@ -78,7 +78,7 @@ title: TakeSweetner
 <<ChangeSpeaker Player>>
 	You add the Sweetner to your inventory.
 <<Add Sweetner>>
-<<Destroy Sweetner>>
+
 <<stop>>
 ===
 
@@ -99,7 +99,7 @@ title: TakePaperFilter
 <<ChangeSpeaker Paper_Filter>>
 	You add the paper filter to your inventory.
 <<Add Paper_Filter>>
-<<Destroy Paper_Filter>>
+
 <<stop>>
 ===
 
@@ -120,7 +120,28 @@ title: TakeCupSleeves
 <<ChangeSpeaker Cup_Sleeves>>
 	You add the cup sleeves to your inventory.
 <<Add Cup_Sleeve>>
-<<Destroy Cup_Sleeve>>
+
+<<stop>>
+===
+
+title: CupLid
+tags:
+---
+<<ChangeSpeaker Cup_Lid>>
+	
+	These are cup lids. 
+	
+	Do you want take it?
+	[[Take the cup lid.|TakeCupLids]]
+	[[Leave it alone.|PutitDown]]
+===
+
+title: TakeCupLids
+---
+<<ChangeSpeaker Cup_Lid>>
+	You add the cup lid to your inventory.
+<<Add Cup_Lid>>
+
 <<stop>>
 ===
 
@@ -128,5 +149,15 @@ title: PutitDown
 ---
 <<ChangeSpeaker Player>>
 	You leave it alone.
+<<stop>>
+===
+
+title: TakeCoffee
+tags:
+---
+<<ChangeSpeaker Player>>
+	You put the completed coffee into your inventory. 
+<<Add Completed_Coffee>>
+<<Destroy Completed_Coffee>>
 <<stop>>
 ===

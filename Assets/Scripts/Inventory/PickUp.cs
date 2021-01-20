@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
 
-public class PickUp : MonoBehaviour, IPointerDownHandler
+public class PickUp : MonoBehaviour
 {
     public Item item;
     Inventory inventory;
@@ -65,13 +65,4 @@ public class PickUp : MonoBehaviour, IPointerDownHandler
     //         }
     //     }
     // }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        if (coffee)
-        {
-            Inventory.instance.AddItem(item);
-            Destroy(gameObject);
-        }
-    }
 }
