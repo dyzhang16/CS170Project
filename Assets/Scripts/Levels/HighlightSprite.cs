@@ -8,7 +8,6 @@ public class HighlightSprite : MonoBehaviour
     public GameObject interact;
     public Sprite Sprite1;
     public Sprite Sprite2;
-    public Item item;
 
     private DialogueRunner diaRun = null;
 
