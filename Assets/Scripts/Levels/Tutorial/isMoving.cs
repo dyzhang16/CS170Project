@@ -11,10 +11,13 @@ public class isMoving : MonoBehaviour
     public GameObject Destination;
     public GameObject gravestone;
     public GameObject player;
+    Player p;
+    //public GameObject key;
+
     public bool isWalking;
     public float Speed;
 
-    private Vector3 offmap = new Vector3(115, -3, -55);
+    private Vector3 offmap = new Vector3(150, -3, -55);
     private bool left = true;
 
     void Start()
@@ -26,7 +29,7 @@ public class isMoving : MonoBehaviour
     public void MoveNPC()
     {
         isWalking = true;
-        Player p = player.GetComponent<Player>();
+        p = player.GetComponent<Player>();
         StartCoroutine(restartText());
     }
 
@@ -45,6 +48,7 @@ public class isMoving : MonoBehaviour
             Vector3 distance;
             if (left){
                 distance = Character.transform.position - Destination.transform.position;
+                p.AllowMove(false);
             } else {
                 distance = Character.transform.position - offmap;
             }
@@ -65,9 +69,11 @@ public class isMoving : MonoBehaviour
     IEnumerator doneWalking(){
         if (left){
             left = false;
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1);
+            p.AllowMove(true);
             Destroy(Destination);
             isWalking = true;
+            //key.SetActive(true);
         }
     }
 }

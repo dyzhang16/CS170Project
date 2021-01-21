@@ -1,0 +1,17 @@
+﻿title: gate
+tags:
+---
+<<if $puzzle is 1>>
+    <<ChangeSpeaker Player>>
+
+    The key fits! I can finally get out of here.
+
+    <<ChangeScene Gate Street>>
+<<else>>
+
+    <<ChangeSpeaker Player>>
+
+    The gate seems locked, maybe there is a key somewhere...
+<<endif>>
+
+===

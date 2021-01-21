@@ -13,6 +13,9 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
     public GameObject FlowerA, FlowerB, FlowerC, FlowerD;
     public static Puzzle1 instance;
     bool flowerASet, flowerBSet, flowerCSet, flowerDSet = false;
+    
+    public Item key;
+
     private void Start()
     {
         instance = this;
@@ -23,6 +26,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         {
             gameObject.GetComponent<UnityEngine.UI.Image>().sprite = completeSprite;
             CustomVariableStorage.SetValue("$puzzle", 1);
+            Inventory.instance.AddItem(key);
             Hide();
         }
     }

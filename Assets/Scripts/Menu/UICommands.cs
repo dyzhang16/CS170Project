@@ -3,24 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class UICommands : MonoBehaviour
 {
 
     public RawImage blackscreen;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        blackscreen.enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    [YarnCommand("ChangeScene")]
     public void ChangeScene(string sceneToChange){
         StartCoroutine(FadeImage(false, sceneToChange));
     }
