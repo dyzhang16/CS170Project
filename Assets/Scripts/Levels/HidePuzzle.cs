@@ -10,5 +10,6 @@ public class HidePuzzle : MonoBehaviour
     public void Hide()
     {
         puzzlePanel.GetComponent<CanvasGroup>().alpha = 0;
+        puzzlePanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 }
