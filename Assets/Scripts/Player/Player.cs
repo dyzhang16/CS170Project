@@ -18,6 +18,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     //public Animator animator;
 
     public bool allowMovement = true;
+    public Vector3 movement = new Vector3(0, 0, 0);
+
     public bool invActive = false;
     public bool moving = false;
     public bool goingToFade;
@@ -25,6 +27,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     void Start()
     {
         if (goingToFade){
+            transform.Find("collider").gameObject.SetActive(false);
             allowMovement = false;
             Color c = render.material.color;
             c.a = 0f;
@@ -46,8 +49,10 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             float v = Input.GetAxis("Vertical");
 
             if (h != 0 || v != 0){
-                Keyboard(h, v);
-                //animator.SetFloat("Speed", Mathf.Abs(h)+Mathf.Abs(v));
+                movement.x = h;
+                movement.z = v;
+
+                moving = true;
 
                 if (h > 0){
                     render.flipX = true;
@@ -62,21 +67,16 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         }
     }
 
+    void FixedUpdate() {
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+    }
+
     void Mouse()
     {
         Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         rb.MovePosition(Vector3.MoveTowards(transform.position, targetPosition, 1f));
 
-        moving = true;
-    }
-
-    void Keyboard(float h, float v)
-    {
-        // Vector3 movement = new Vector3(h, 0, v) * this.speed * Time.deltaTime;
-        // rb.MovePosition(transform.position + movement);
-
-        rb.velocity = new Vector3(h, 0, v) * this.speed;
         moving = true;
     }
 
@@ -100,9 +100,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             yield return new WaitForSeconds(0.05f);
         }
 
-        RunDialogue dia = gravestone.GetComponent<RunDialogue>();
-        dia.startInstantly = true;
-        allowMovement = true;
+        transform.Find("collider").gameObject.SetActive(true);
     }
 }
 

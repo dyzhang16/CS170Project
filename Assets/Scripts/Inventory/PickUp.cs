@@ -31,6 +31,7 @@ public class PickUp : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space)){
                 Inventory.instance.AddItem(item);
                 runPickUp = false;
+                p.movement = new Vector3(0, 0, 0);
             }
         }
     }
