@@ -38,11 +38,6 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     public void Update()
     {
-        if (moving){
-            moving = false;
-            rb.velocity = new Vector3(0, 0, 0);
-        }
-
         if (allowMovement)
         {
             float h = Input.GetAxis("Horizontal");
@@ -59,6 +54,9 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                 } else {
                     render.flipX = false;
                 }
+            } else {
+                moving = false;
+                rb.velocity = new Vector3(0, 0, 0);
             }
         }
 
@@ -90,6 +88,10 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public void AllowMove(bool allow)
     {
         allowMovement = allow;
+    }
+
+    public void stopMove(){
+        movement = new Vector3(0, 0, 0);
     }
 
     private IEnumerator FadeIn(){
