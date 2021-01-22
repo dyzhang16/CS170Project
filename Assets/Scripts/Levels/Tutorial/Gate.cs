@@ -11,4 +11,11 @@ public class Gate : MonoBehaviour
             dia.dialogueRunner.StartDialogue("gate");
         }
     }
+
+    void OnCollisionStay(Collision collision){
+        if (collision.gameObject.CompareTag("Player")){
+            RunDialogue dia = GetComponent<RunDialogue>();
+            dia.dialogueRunner.StartDialogue("gate");
+        }
+    }
 }

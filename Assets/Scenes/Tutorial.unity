@@ -233,7 +233,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &328692
 MonoBehaviour:
@@ -806,11 +806,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93638307}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.6841476, y: 3.0011225, z: 2.9154625}
-  m_Center: {x: -0.1584972, y: 0.74016446, z: 0.67011327}
+  m_Size: {x: 3.6841476, y: 3.0011225, z: 2.324358}
+  m_Center: {x: -0.15849718, y: 0.9371995, z: 0.27604347}
 --- !u!1 &211343197
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,13 +835,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211343197}
-  m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 1.82, z: -11.9}
+  m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
+  m_LocalPosition: {x: 0, y: 1.82, z: -2.9}
   m_LocalScale: {x: 35, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 216743537}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -30, y: 0, z: 0}
 --- !u!65 &211343199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -880,14 +880,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216743536}
-  m_LocalRotation: {x: 0.38266882, y: 0.008062287, z: -0.0033395085, w: 0.92384434}
+  m_LocalRotation: {x: 0.25880924, y: 0.008429207, z: -0.0022585995, w: 0.96588904}
   m_LocalPosition: {x: -17.6, y: -3.43, z: -5}
   m_LocalScale: {x: 9, y: 9, z: 1}
   m_Children:
   - {fileID: 211343198}
   m_Father: {fileID: 831332548}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 45, y: 1, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 1, z: 0}
 --- !u!212 &216743538
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1065,7 +1065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255355348}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -13.172522, y: 41.981853, z: -105.41267}
+  m_LocalPosition: {x: -15.792522, y: 41.981853, z: -109.09266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1215015838}
@@ -1166,6 +1166,7 @@ MonoBehaviour:
   FlowerB: {fileID: 2097695258}
   FlowerC: {fileID: 1045353051}
   FlowerD: {fileID: 2015253575}
+  key: {fileID: 0}
 --- !u!1 &304312853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,7 +1376,6 @@ GameObject:
   - component: {fileID: 454199819}
   - component: {fileID: 454199818}
   - component: {fileID: 454199820}
-  - component: {fileID: 454199821}
   - component: {fileID: 454199822}
   m_Layer: 0
   m_Name: Gate
@@ -1495,18 +1495,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
---- !u!114 &454199821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454199815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cbd51465e92c3b4690d6d0dc52cfffe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &454199822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1900,7 +1888,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -816683911
-  m_SortingLayer: -4
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 10187765adc419e498848a7f24242049, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2777,6 +2765,17 @@ MonoBehaviour:
       - m_Target: {fileID: 2875367029536886225}
         m_MethodName: AllowMove
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2875367029536886225}
+        m_MethodName: stopMove
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6193,7 +6192,7 @@ PrefabInstance:
     - target: {fileID: 4082150130277126519, guid: ad9b45256d828ee4982f2e5d85b896c6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.9
+      value: -13.52
       objectReference: {fileID: 0}
     - target: {fileID: 4082150130277126519, guid: ad9b45256d828ee4982f2e5d85b896c6,
         type: 3}
@@ -6203,7 +6202,7 @@ PrefabInstance:
     - target: {fileID: 4082150130277126519, guid: ad9b45256d828ee4982f2e5d85b896c6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -61.58
+      value: -65.26
       objectReference: {fileID: 0}
     - target: {fileID: 4082150130277126519, guid: ad9b45256d828ee4982f2e5d85b896c6,
         type: 3}
