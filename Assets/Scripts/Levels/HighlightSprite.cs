@@ -24,7 +24,9 @@ public class HighlightSprite : MonoBehaviour
     }
     public void OnMouseOver()
     {
-        if (interact.tag == "Item" && diaRun != null && !diaRun.IsDialogueRunning)
+        // Bottom URL links to how to block UI stuff
+        // https://answers.unity.com/questions/822273/how-to-prevent-raycast-when-clicking-46-ui.html?childToView=862598#answer-862598
+        if (interact.tag == "Item" && diaRun != null && !diaRun.IsDialogueRunning && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
             interact.GetComponent<SpriteRenderer>().color = Color.yellow;
             //interact.GetComponent<SpriteRenderer>().sprite = Sprite1;

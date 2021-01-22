@@ -10,5 +10,6 @@ public class ShowPuzzle : MonoBehaviour
     public void Puzzle()
     {
         puzzlePanel.GetComponent<CanvasGroup>().alpha = 1;
+        puzzlePanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 }
