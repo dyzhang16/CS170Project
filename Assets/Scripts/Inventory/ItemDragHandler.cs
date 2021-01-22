@@ -7,21 +7,11 @@ public class ItemDragHandler : MonoBehaviour, IPointerDownHandler, IDragHandler,
 {
 
     private Transform originalParent;
-    public List<GameObject> droppers = new List<GameObject>();
-    public bool coffee = false;
-    public GameObject creamPuzzle;
 
     public void OnPointerDown(PointerEventData eventData)
     {
         if (Inventory.instance.itemList[transform.parent.GetSiblingIndex()] != null)
         {
-            Item pickedItem = Inventory.instance.itemList[transform.parent.GetSiblingIndex()];
-
-            if (pickedItem.name == "coffee"){
-                coffee = !coffee;
-                creamPuzzle.SetActive(coffee);
-            }
-            
             if (eventData.button == PointerEventData.InputButton.Left)
             {
                 GetComponent<CanvasGroup>().alpha = 0.5f;
