@@ -835,13 +835,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211343197}
-  m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 1.82, z: -11.9}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.82, z: -2.9}
   m_LocalScale: {x: 35, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 216743537}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &211343199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -880,14 +880,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216743536}
-  m_LocalRotation: {x: 0.38266882, y: 0.008062287, z: -0.0033395085, w: 0.92384434}
+  m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
   m_LocalPosition: {x: -17.6, y: -3.43, z: -5}
   m_LocalScale: {x: 9, y: 9, z: 1}
   m_Children:
   - {fileID: 211343198}
   m_Father: {fileID: 831332548}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 45, y: 1, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
 --- !u!212 &216743538
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1166,6 +1166,7 @@ MonoBehaviour:
   FlowerB: {fileID: 2097695258}
   FlowerC: {fileID: 1045353051}
   FlowerD: {fileID: 2015253575}
+  key: {fileID: 0}
 --- !u!1 &304312853
 GameObject:
   m_ObjectHideFlags: 0
