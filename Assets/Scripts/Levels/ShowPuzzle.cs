@@ -11,5 +11,9 @@ public class ShowPuzzle : MonoBehaviour
     {
         puzzlePanel.GetComponent<CanvasGroup>().alpha = 1;
         puzzlePanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        // block background interactions
+        GameObject blocker = GameObject.Find("Canvas/Blocker");
+        blocker.GetComponent<CanvasGroup>().alpha = 1;
+        blocker.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 }

@@ -11,5 +11,9 @@ public class HidePuzzle : MonoBehaviour
     {
         puzzlePanel.GetComponent<CanvasGroup>().alpha = 0;
         puzzlePanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        // allow background interactions
+        GameObject blocker = GameObject.Find("Canvas/Blocker");
+        blocker.GetComponent<CanvasGroup>().alpha = 0;
+        blocker.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 }
