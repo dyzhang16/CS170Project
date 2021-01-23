@@ -1,31 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemDragHandler : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
+public class ItemDragHandler : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
-
     private Transform originalParent;
+    public bool isDragging;
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        isDragging = false;
         if (Inventory.instance.itemList[transform.parent.GetSiblingIndex()] != null)
         {
             if (eventData.button == PointerEventData.InputButton.Left)
             {
-                GetComponent<CanvasGroup>().alpha = 0.5f;
                 originalParent = transform.parent;
                 transform.SetParent(transform.parent.parent);
-                GetComponent<CanvasGroup>().blocksRaycasts = false;
             }
         }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        isDragging = true;
         if (Inventory.instance.itemList[originalParent.transform.GetSiblingIndex()] != null && eventData.button == PointerEventData.InputButton.Left)
         {
+            GetComponent<CanvasGroup>().alpha = 0.5f;
+            GetComponent<CanvasGroup>().blocksRaycasts = false;
             //Debug.Log("Dragging");
             transform.position = Input.mousePosition;
         }

@@ -66,4 +66,11 @@ public class Inventory : MonoBehaviour
             UpdateSlotUI();
         }
     }
+    public void UseItem(Item item)
+    {
+        if (item != null)
+        {
+            item.Use();
+        }
+    }
 }

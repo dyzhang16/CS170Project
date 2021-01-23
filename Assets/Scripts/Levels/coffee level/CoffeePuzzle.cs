@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Yarn.Unity;
 
 public class CoffeePuzzle : MonoBehaviour, IDropHandler
 {
     public GameObject puzzlePanel;
+    public VariableStorageBehaviour CustomVariableStorage;
     public bool cupThere, filterThere, groundsThere, brewed, lidThere;
     public GameObject cup, filter, grounds, brewedCup, lid, completedCup;
 
@@ -58,6 +60,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 completedCup.SetActive(true);
                 Inventory.instance.RemoveItem(droppedItem);
                 Inventory.instance.UpdateSlotUI();
+                CustomVariableStorage.SetValue("$Coffeepuzzle", 1);
             }
             else
             {

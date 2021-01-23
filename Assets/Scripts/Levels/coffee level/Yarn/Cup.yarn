@@ -19,27 +19,6 @@ title: TakeCup
 <<stop>>
 ===
 
-title: Cream
-tags:
----
-<<ChangeSpeaker Cream>>
-	
-	This is creamer. 
-	
-	Do you want take it?
-	[[Take the creamer.|TakeCream]]
-	[[Leave it alone.|PutitDown]]
-===
-
-title: TakeCream
----
-<<ChangeSpeaker Player>>
-	You add the cream to your inventory.
-<<Add Cream>>
-
-<<stop>>
-===
-
 title: CoffeeGrounds
 tags:
 ---
@@ -61,33 +40,12 @@ title: TakeCoffeeGrounds
 <<stop>>
 ===
 
-title: Sweetner
-tags:
----
-<<ChangeSpeaker Sweenter>>
-	
-	These is sweetner. 
-	
-	Do you want take it?
-	[[Take the sweetner.|TakeSweetner]]
-	[[Leave it alone.|PutitDown]]
-===
-
-title: TakeSweetner
----
-<<ChangeSpeaker Player>>
-	You add the Sweetner to your inventory.
-<<Add Sweetner>>
-
-<<stop>>
-===
-
 title: PaperFilter
 tags:
 ---
 <<ChangeSpeaker Paper_Filter>>
 	
-	These is a paper filter. 
+	There are paper filters in the cabinet. 
 	
 	Do you want take it?
 	[[Take the paper filter.|TakePaperFilter]]
@@ -177,5 +135,15 @@ tags:
 	You threw it away.
 
 <<Trash Confirm>>
+<<stop>>
+===
+
+title: RecipeBook
+tags:
+---
+<<ChangeSpeaker RecipeBook>>
+	Here's a list of a recipes.
+
+//<<Show Recipe_Book>>
 <<stop>>
 ===
