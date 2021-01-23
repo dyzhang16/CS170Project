@@ -7,11 +7,39 @@ tags:
     The key fits! I can finally get out of here.
 
     <<ChangeScene Gate Street>>
+
 <<else>>
 
     <<ChangeSpeaker Player>>
 
     The gate seems locked, maybe there is a key somewhere...
+
+<<endif>>
+
+===
+
+title: gate_approach
+tags:
+---
+<<if $puzzle is 1 and visited("gate_approach") is false>>
+    <<ChangeSpeaker Gravekeeper>>
+    What on earth?!
+
+    Last I looked, there were no flowers here.
+
+    No one’s bee in or out of this place. I’m the only one with the key.
+
+    Can it be?
+
+    No.
+
+    No, there’s no such thing.
+
+    ...
+
+    ...Is there?
+
+    I’m not sticking around to find out. I’m out.
 <<endif>>
 
 ===

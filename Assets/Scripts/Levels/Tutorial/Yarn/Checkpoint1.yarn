@@ -8,24 +8,40 @@ tags:
 title: Flower1
 ---
 <<ChangeSpeaker Player>>
-    Oh! That's pretty!
-    <<Destroy FlowerFieldA>>
+    <<if visited("prologue_doneExplore") is true>>
+        Oh! That's pretty!
+        <<Destroy FlowerFieldA>>
+    <<else>>
+        It's a flower.
+    <<endif>>
 ===
 title: Flower2
 ---
 <<ChangeSpeaker Player>>
-    This one wil look nice on the grave.
-    <<Destroy FlowerFieldB>>
+    <<if visited("prologue_doneExplore") is true>>
+        This one wil look nice on the grave.
+        <<Destroy FlowerFieldB>>
+    <<else>>
+        I bet it would smell nice if I could smell.
+    <<endif>>
 ===
 title: Flower3
 ---
 <<ChangeSpeaker Player>>
-    How about this flower?
-    <<Destroy FlowerFieldC>>
+    <<if visited("prologue_doneExplore") is true>>
+        How about this flower?
+        <<Destroy FlowerFieldC>>
+    <<else>>
+        You’ll be replaced with a grave, one day.
+    <<endif>>
 ===
 title: Flower4
 ---
 <<ChangeSpeaker Player>>
-    I like this one!
-    <<Destroy FlowerFieldD>>
+    <<if visited("prologue_doneExplore") is true>>
+        I like this one!
+        <<Destroy FlowerFieldD>>
+    <<else>>
+        Not just some weed.
+    <<endif>>
 ===

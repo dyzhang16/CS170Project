@@ -426,9 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f257052c88782c4ca692c429ae92f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droppers: []
-  coffee: 0
-  creamPuzzle: {fileID: 0}
+  isDragging: 0
 --- !u!114 &38536882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1394,7 +1392,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 65.67, y: 0.35, z: -52.78}
   m_LocalScale: {x: 5, y: 5, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1357284621}
   m_Father: {fileID: 493771255}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -1666,9 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f257052c88782c4ca692c429ae92f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droppers: []
-  coffee: 0
-  creamPuzzle: {fileID: 0}
+  isDragging: 0
 --- !u!114 &464217192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3856,9 +3853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f257052c88782c4ca692c429ae92f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droppers: []
-  coffee: 0
-  creamPuzzle: {fileID: 0}
+  isDragging: 0
 --- !u!114 &1053138216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4029,9 +4024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f257052c88782c4ca692c429ae92f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droppers: []
-  coffee: 0
-  creamPuzzle: {fileID: 0}
+  isDragging: 0
 --- !u!114 &1134953574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4302,6 +4295,82 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!1 &1357284620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1357284621}
+  - component: {fileID: 1357284623}
+  - component: {fileID: 1357284622}
+  - component: {fileID: 1357284624}
+  m_Layer: 0
+  m_Name: Gate Approach
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1357284621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357284620}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: -0.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 454199816}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1357284622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357284620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306fed8abd2cb4144873c907be61457d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 739597929}
+  customVariableStorage: {fileID: 739597928}
+--- !u!65 &1357284623
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357284620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.26248, y: 2.9800155, z: 19.275444}
+  m_Center: {x: 0.73496324, y: 0.12157726, z: -9.137722}
+--- !u!54 &1357284624
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357284620}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1399871819
 GameObject:
   m_ObjectHideFlags: 0
@@ -4575,9 +4644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f257052c88782c4ca692c429ae92f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droppers: []
-  coffee: 0
-  creamPuzzle: {fileID: 0}
+  isDragging: 0
 --- !u!114 &1514995537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6398,9 +6465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f257052c88782c4ca692c429ae92f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droppers: []
-  coffee: 0
-  creamPuzzle: {fileID: 0}
+  isDragging: 0
 --- !u!114 &2602872232497341172
 MonoBehaviour:
   m_ObjectHideFlags: 0
