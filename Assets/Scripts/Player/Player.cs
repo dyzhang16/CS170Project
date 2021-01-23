@@ -49,6 +49,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
                 moving = true;
 
+                //animantor.SetFloat("Speed", Mathf.Abs(v) + Mathf.Abs(h));
+
                 if (h > 0){
                     render.flipX = true;
                 } else {
