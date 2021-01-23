@@ -5,3 +5,22 @@ tags:
 	//Ghost: 
 	Looks like the barista is sleeping....
 ===
+
+title: RecipeBook
+tags:
+---
+<<ChangeSpeaker Recipe_Book>>
+	Here's a list of a recipes.
+
+<<Show Recipe_Book>>
+<<stop>>
+===
+
+title: Note
+tags:
+---
+	<<ChangeSpeaker Player>>
+	//Ghost:
+	Hmm what's this? Maybe it will help me look for some ingredients to make the coffee!
+<<Show Note>>
+===
