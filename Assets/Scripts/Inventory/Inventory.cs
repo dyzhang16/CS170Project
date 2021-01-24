@@ -23,7 +23,9 @@ public class Inventory : MonoBehaviour
         {
             if (itemList[i] == null)
             {
+                
                 itemList[i] = item;
+                SoundManagerScript.PlaySound("pickup_flower_2"); // plays sound when item added to inventory
                 return true;
             }
         }

@@ -7,6 +7,7 @@ public class Gate : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player")){
+            SoundManagerScript.PlaySound("wall_bump"); // play wall bump sound
             RunDialogue dia = GetComponent<RunDialogue>();
             dia.dialogueRunner.StartDialogue("gate");
         }
