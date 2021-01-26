@@ -110,13 +110,39 @@ title: PutitDown
 <<stop>>
 ===
 
-title: TakeCoffee
+title: TakeCoffeeCM
 tags:
 ---
 <<ChangeSpeaker Player>>
-	You put the completed coffee into your inventory. 
-<<Add Completed_Coffee>>
-<<Destroy Completed_Coffee>>
+	You put the coffee into your inventory.
+<<set $takenCoffee to 1>>
+<<Add Coffee>>
+<<HideObject Completed_Coffee>>
+<<HidePanel CoffeeMachine>>
+<<stop>>
+===
+
+title: TakeCoffeeSugar
+tags:
+---
+<<ChangeSpeaker Player>>
+	You put the coffee into your inventory.
+<<AddCoffee Completed_Coffee>>
+<<HideObject Completed_Coffee>>
+<<ResetSugar AddSugar>>
+<<HidePanel AddSugar>>
+<<stop>>
+===
+
+title: TakeCoffeeCream
+tags:
+---
+<<ChangeSpeaker Player>>
+	You put the coffee into your inventory.
+<<AddCoffee Completed_Coffee>>
+<<HideObject Completed_Coffee>>
+<<ResetCream AddCream>>
+<<HidePanel AddCream>>
 <<stop>>
 ===
 

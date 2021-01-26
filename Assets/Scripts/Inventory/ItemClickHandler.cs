@@ -10,5 +10,9 @@ public class ItemClickHandler : MonoBehaviour
         {
             Inventory.instance.UseItem(Inventory.instance.itemList[transform.GetSiblingIndex()]);
         }
+        else
+        {
+            Debug.Log("DraggingSomething");
+        }
     }
 }
