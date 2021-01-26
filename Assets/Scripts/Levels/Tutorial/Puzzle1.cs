@@ -25,6 +25,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         if (flowerASet == true && flowerBSet == true && flowerCSet == true && flowerDSet == true)
         {
             gameObject.GetComponent<UnityEngine.UI.Image>().sprite = completeSprite;
+            SoundManagerScript.PlaySound("flower_success"); // plays sound tutorial puzzle complete
             CustomVariableStorage.SetValue("$puzzle", 1);
             Inventory.instance.AddItem(key);
             Hide();
@@ -35,6 +36,11 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
     {
         Debug.Log("Close");
         puzzlePanel.SetActive(false);
+    }
+
+    public void sound()
+    {
+        SoundManagerScript.PlaySound("pickup_flower_2"); // pickup item sound
     }
     public void OnDrop(PointerEventData eventData)
     {
