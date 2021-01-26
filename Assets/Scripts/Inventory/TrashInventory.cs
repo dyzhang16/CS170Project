@@ -58,7 +58,8 @@ public class TrashInventory : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 		{
 			// line of code used from InventorySlot.OnDrop
 			itemToTrash = Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()];
-			dialogueRunner.StartDialogue("TrashItem");
+			// If KeyItem, do not trash. Otherwise, give trash option.
+			dialogueRunner.StartDialogue((itemToTrash is KeyItem)?"CannotTrash":"TrashItem");
 		}
 		// Set trash to be closed
 		showOpenTrash = false;
