@@ -58,7 +58,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                 }
             } else {
                 moving = false;
-                rb.velocity = new Vector3(0, 0, 0);
+                movement = new Vector3(0, 0, 0);
             }
         }
 
