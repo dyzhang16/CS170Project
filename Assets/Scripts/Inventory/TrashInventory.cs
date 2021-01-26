@@ -9,8 +9,8 @@ public class TrashInventory : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	// dialogue runner
 	public DialogueRunner dialogueRunner;
 
-	// current item ready to trash
-	private Item itemToTrash;
+	// current item ready to trash (static due to DoTrashItem function)
+	private static Item itemToTrash;
 
 	// Images for trash open and trash closed
 	public Sprite trashOpened = null;
@@ -18,18 +18,6 @@ public class TrashInventory : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
 	// affects what Image should be shown
 	private bool showOpenTrash = false;
-	
-	void Awake()
-	{
-		// add the trash command to DialogueRunner
-		if (dialogueRunner)
-		{
-			dialogueRunner.AddCommandHandler(
-				"Trash",
-				DoTrashItem
-			);
-		}
-	}
 
 	void Update()
 	{
@@ -77,7 +65,8 @@ public class TrashInventory : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	}
 
 	// Function that will trash the item
-	private void DoTrashItem(string[] parameters)
+	// This was made static so that YarnInventory.cs can call it.
+	public static void DoTrashItem(string[] parameters)
 	{
 		if (parameters[0] == "Confirm" && itemToTrash)
 		{

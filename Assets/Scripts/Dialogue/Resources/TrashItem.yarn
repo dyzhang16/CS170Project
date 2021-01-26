@@ -1,0 +1,26 @@
+﻿title: TrashItem
+tags:
+---
+<<ChangeSpeaker Player>>
+	Would you like to throw this away?
+	[[Throw it away.|TrashIt]]
+	[[Leave it alone.|PutitDown]]
+===
+
+title: TrashIt
+tags:
+---
+<<ChangeSpeaker Player>>
+	You threw it away.
+
+<<Trash Confirm>>
+<<stop>>
+===
+
+title: CannotTrash
+tags:
+---
+<<ChangeSpeaker Player>>
+  You can't throw this away.
+<<stop>>
+===

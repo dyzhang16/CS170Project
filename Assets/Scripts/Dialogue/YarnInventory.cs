@@ -27,6 +27,10 @@ public class YarnInventory : MonoBehaviour
         "Destroy",     // the name of the command
         DestroyObject // the method to run
         );
+        dialogueRunner.AddCommandHandler(
+        "Trash",
+        TrashInventory.DoTrashItem
+        );
     }
 
     private void AddtoInventory(string[] parameters)
