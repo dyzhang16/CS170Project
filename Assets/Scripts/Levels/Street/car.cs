@@ -18,23 +18,23 @@ public class car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 distance;
+        Vector3 target;
         if (cycle == 0){
-            distance = transform.position - DestinationTopLeft.transform.position;
+            target = DestinationTopLeft.transform.position;
             render.flipX = true;
         } else if (cycle == 1){
-            distance = transform.position - DestinationBotLeft.transform.position;
+            target = DestinationBotLeft.transform.position;
         } else if (cycle == 2){
-            distance = transform.position - DestinationBotRight.transform.position;
+            target = DestinationBotRight.transform.position;
             render.flipX = false;
         } else {
-            distance = transform.position - DestinationTopRight.transform.position;
+            target = DestinationTopRight.transform.position;
         }
 
-        distance = -distance.normalized;
-        transform.position += distance * Speed * Time.deltaTime;
+        float step = Speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, target, step);
 
-        if (distance.z >= 0 && distance.x >= 0)          //Changes based on Positioning
+        if (Vector3.Distance(transform.position, target) < 0.001f)          //Changes based on Positioning
         {
             cycle = (++cycle)%4;
         }
