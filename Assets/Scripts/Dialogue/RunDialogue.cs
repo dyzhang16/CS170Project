@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
-
 public class RunDialogue : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
@@ -37,7 +36,6 @@ public class RunDialogue : MonoBehaviour
                 if (!dialogueRunner.IsDialogueRunning && player.allowMovement)
                 {
                     dialogueRunner.StartDialogue(dialogueToRun);
-                    player.movement = new Vector3(0, 0, 0);
 
                     if (box.isTrigger){
                         runDialogue = false;

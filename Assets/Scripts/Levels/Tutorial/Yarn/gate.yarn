@@ -1,7 +1,7 @@
 ﻿title: gate
 tags:
 ---
-<<if $puzzle is 1>>
+<<if $key is 1>>
     <<ChangeSpeaker Player>>
 
     The key fits! I can finally get out of here.
@@ -22,6 +22,14 @@ title: gate_approach
 tags:
 ---
 <<if $puzzle is 1 and visited("gate_approach") is false>>
+    <<walkBack Gravekeeper>>
+
+    <<ChangeSpeaker Player>>
+
+    ...
+
+    <<wait 8>>
+
     <<ChangeSpeaker Gravekeeper>>
     What on earth?!
 
@@ -40,6 +48,20 @@ tags:
     ...Is there?
 
     I’m not sticking around to find out. I’m out.
+
+    <<dropKey Gravekeeper>>
+
 <<endif>>
 
+===
+
+title: key
+---
+<<ChangeSpeaker Player>>
+
+It's a key... The gravekeeper must have dropped it.
+
+<<Destroy Key>>
+<<pickUpItem Key>>
+<<set $key to 1>>
 ===
