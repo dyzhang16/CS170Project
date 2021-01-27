@@ -37,6 +37,7 @@ public class RunDialogue : MonoBehaviour
                 if (!dialogueRunner.IsDialogueRunning && player.allowMovement)
                 {
                     dialogueRunner.StartDialogue(dialogueToRun);
+                    player.movement = new Vector3(0, 0, 0);
 
                     if (box.isTrigger){
                         runDialogue = false;
