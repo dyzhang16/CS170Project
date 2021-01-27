@@ -56,12 +56,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LookaheadTime: 0.25
+  m_LookaheadTime: 0.1
   m_LookaheadSmoothing: 25
   m_LookaheadIgnoreY: 0
-  m_XDamping: 2
-  m_YDamping: 2
-  m_ZDamping: 2
+  m_XDamping: 1
+  m_YDamping: 1
+  m_ZDamping: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 75
@@ -112,7 +112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589655525532243725}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -216.98047, y: 53.25785, z: -190.23302}
+  m_LocalPosition: {x: -15.792522, y: 52.588455, z: -119.699265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 589655526476837006}
@@ -228,7 +228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589655526476837041}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.10747719, y: 18.371204, z: 22.94682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 589655525350137282}
@@ -253,8 +253,10 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 4082150130277126519, guid: ad9b45256d828ee4982f2e5d85b896c6,
+    type: 3}
+  m_Follow: {fileID: 4082150130277126519, guid: ad9b45256d828ee4982f2e5d85b896c6,
+    type: 3}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 10

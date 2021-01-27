@@ -20,6 +20,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public bool allowMovement = true;
     public Vector3 movement = new Vector3(0, 0, 0);
 
+    public bool allowInv = true;
+
     public bool invActive = false;
     public bool moving = false;
     public bool goingToFade;
@@ -62,8 +64,10 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab)) {
-            Menu();
+        if (allowInv){
+            if (Input.GetKeyDown(KeyCode.Tab)) {
+                Menu();
+            }
         }
     }
 
@@ -82,14 +86,22 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     void Menu()
     {
-        GameObject ip = Inventory.instance.inventoryPanel;
         invActive = !invActive;
-        ip.SetActive(!ip.activeSelf);
+        Inventory.instance.inventoryPanel.SetActive(invActive);
+    }
+
+    public void activateMenu(){
+        invActive = true;
+        Inventory.instance.inventoryPanel.SetActive(true);
     }
 
     public void AllowMove(bool allow)
     {
         allowMovement = allow;
+    }
+
+    public void AllowInv(bool allow){
+        allowInv = allow;
     }
 
     public void stopMove(){
