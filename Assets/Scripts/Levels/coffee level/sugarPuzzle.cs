@@ -21,6 +21,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
         sweetShaking = false;
         sugarAdded = 0;
         sugarUI.transform.rotation = originalRotation;
+        coffeeUI.SetActive(false);
     }
     public void Awake()
     {

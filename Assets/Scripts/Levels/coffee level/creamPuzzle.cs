@@ -20,6 +20,7 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         creamShaking = false;
         creamAdded = 0;
         creamUI.transform.rotation = originalRotation;
+        coffeeUI.SetActive(false);
     }
     public void Awake()
     { 

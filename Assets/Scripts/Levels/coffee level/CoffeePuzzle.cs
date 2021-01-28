@@ -8,16 +8,17 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
 {
     public GameObject puzzlePanel;
     public VariableStorageBehaviour CustomVariableStorage;
-    public bool cupThere, filterThere, groundsThere, brewed, lidThere;
-    public GameObject cup, filter, grounds, brewedCup, lid, completedCup;
+    public bool cupThere, filterThere, groundsThere;
+    public GameObject cup, filter, grounds, brewedCoffee;
+   
+    [YarnCommand("ResetCoffee")]
 
-    public void Start() { 
-    }
-
-    // Update is called once per frame
-    void Update()
+    public void Reset()
     {
-        
+        cupThere = false;
+        filterThere = false;
+        groundsThere = false;
+        brewedCoffee.SetActive(false);
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -46,22 +47,6 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 Inventory.instance.RemoveItem(droppedItem);
                 Inventory.instance.UpdateSlotUI();
             }
-            else if (droppedItem.itemName == "Lid" && brewed)
-            {
-                brewedCup.SetActive(false);
-                lidThere = true;
-                lid.SetActive(true);
-                Inventory.instance.RemoveItem(droppedItem);
-                Inventory.instance.UpdateSlotUI();
-            }
-            else if (droppedItem.itemName == "Sleeve" && lidThere && brewed)
-            {
-                lid.SetActive(false);
-                completedCup.SetActive(true);
-                Inventory.instance.RemoveItem(droppedItem);
-                Inventory.instance.UpdateSlotUI();
-                CustomVariableStorage.SetValue("$Coffeepuzzle", 1);
-            }
             else
             {
                 Debug.Log("Cannot be Dropped");
@@ -79,9 +64,8 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
             filter.SetActive(false);
             groundsThere = false;
             grounds.SetActive(false);
-            brewed = true;
 
-            brewedCup.SetActive(true);
+            brewedCoffee.SetActive(true);
         }
         else 
         {

@@ -1,24 +1,29 @@
 ﻿title: CoffeeMachine
 tags:
 ---
-<<ChangeSpeaker Coffee_Machine>>
+<<ChangeSpeaker Coffee_Machine>>						//Changes Image for Speaker character
 	I am your Coffee Machine overlord 9000. 
-<<Show Coffee_Machine>>
+<<Show Coffee_Machine>>									
+===
+
+title: TakeCoffeeCM
+tags:
+---
+<<ChangeSpeaker Player>>
+	You put the coffee into your inventory.
+<<Add Coffee>>
+<<ResetCoffee CoffeeMachine>>
+<<HidePanel CoffeeMachine>>
+<<stop>>
 ===
 
 title: Creamer
 tags:
 ---
 <<ChangeSpeaker Creamer>>
-
-<<if $Coffeepuzzle is 1>>
 	Do you want to add some creamer to the coffee?
 	[[Add the cream.|AddCream]]
 	[[Leave it alone.|PutitDown]]
-<<else>>
-	This is creamer.
-<<endif>>
-
 ===
 
 title: AddCream
@@ -31,19 +36,44 @@ title: Sugar
 tags:
 ---
 <<ChangeSpeaker Sugar>>
-<<if $Coffeepuzzle is 1>>
 	Do you want to add some sugar to the coffee?
 	
 	[[Add the sugar.|AddSugar]]
 	[[Leave it alone.|PutitDown]]
-<<else>>
-	This is sugar.
-<<endif>>
 ===
 
 title: AddSugar
 tags:
 ---
 <<Show Sugar>>
+<<stop>>
+===
+
+title: PutitDown
+---
+<<ChangeSpeaker Player>>
+	You leave it alone.
+<<stop>>
+===
+
+title: TakeCoffeeCream
+tags:
+---
+<<ChangeSpeaker Player>>
+	You put the coffee into your inventory.
+<<AddCoffee Completed_Coffee>>
+<<ResetCream AddCream>>
+<<HidePanel AddCream>>
+<<stop>>
+===
+
+title: TakeCoffeeSugar
+tags:
+---
+<<ChangeSpeaker Player>>
+	You put the coffee into your inventory.
+<<AddCoffee Completed_Coffee>>
+<<ResetSugar AddSugar>>
+<<HidePanel AddSugar>>
 <<stop>>
 ===

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class Item : ScriptableObject
@@ -8,16 +9,16 @@ public class Item : ScriptableObject
     public string itemDescription;
     public Sprite icon;
 
-    public virtual void Display()
-    {
-        //Debug.Log("Displaying: " + itemName);
-    }
-    public virtual void HideDisplay()
-    {
-        //Debug.Log("Hiding Display: " + itemName);
-    }
     public virtual void Use()
     {
         Debug.Log("Using: " + itemName);
+    }
+    public virtual string DisplayInfo()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.Append("<color=green>").Append("<size=30>").Append(itemName).Append("</color>").Append("</size>").AppendLine();
+        builder.Append(itemDescription).AppendLine();
+       
+        return builder.ToString();
     }
 }

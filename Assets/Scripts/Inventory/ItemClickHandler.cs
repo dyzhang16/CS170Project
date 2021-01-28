@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ItemClickHandler : MonoBehaviour
 {
+    
     public void OnItemClicked()
     {
         if (!GetComponent<ItemDragHandler>().isDragging)
         {
-            Inventory.instance.UseItem(Inventory.instance.itemList[transform.GetSiblingIndex()]);
+            Inventory.instance.UseItem(Inventory.instance.itemList[transform.parent.GetSiblingIndex()]);
         }
         else
         {

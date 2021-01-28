@@ -20,18 +20,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             icon.SetActive(false);
         }
     }
-    public void OnDisplay()
-    {
-        Item item = Inventory.instance.itemList[transform.GetSiblingIndex()];
-        item.Display();
-    }
-
-    public void OnExit()
-    {
-        Item item = Inventory.instance.itemList[transform.GetSiblingIndex()];
-        item.HideDisplay();
-    }
-
     public void OnDrop(PointerEventData eventData)
     {
         Item droppedItem = Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()];

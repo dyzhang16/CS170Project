@@ -42,6 +42,7 @@ public class YarnInventory : MonoBehaviour
             Debug.Log("Adding Drink!");
             var so = ScriptableObject.CreateInstance<Drink>();
             so.itemName = "Random Coffee";
+            so.itemDescription = "This is a Random Drink!";
             so.icon = PotentialObject.GetComponent<SpriteRenderer>().sprite;
             so.Sugar = 0;
             so.Cream = 0;

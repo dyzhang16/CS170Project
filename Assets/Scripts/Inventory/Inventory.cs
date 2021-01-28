@@ -75,4 +75,32 @@ public class Inventory : MonoBehaviour
             item.Use();
         }
     }
+    public string DisplayItemName(Item item)
+    {
+        if (item != null)
+        {
+            string text = null;
+            //string text = item.DisplayName();
+            return text;
+        }
+        else
+        {
+            Debug.Log("Text Could not be found");
+            return null;
+        }
+    }
+    public string DisplayItemDescription(Item item)
+    {
+        if (item != null)
+        {
+            string text = null;
+            //string text = item.DisplayDescription();
+            return text;
+        }
+        else
+        {
+            Debug.Log("Text Could not be found");
+            return null;
+        }
+    }
 }
