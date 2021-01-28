@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 162147335}
   m_Layer: 0
   m_Name: Recipe_Book
-  m_TagString: Item
+  m_TagString: World Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -788,7 +788,7 @@ Transform:
   m_LocalScale: {x: 1.2375613, y: 1.0580857, z: 1}
   m_Children: []
   m_Father: {fileID: 1310173487}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &162147330
 MonoBehaviour:
@@ -1288,6 +1288,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5299666707177996259}
+  - {fileID: 2136782267}
   - {fileID: 1310173487}
   - {fileID: 374252143}
   m_Father: {fileID: 0}
@@ -1322,7 +1323,7 @@ Transform:
   m_Children:
   - {fileID: 1982046675}
   m_Father: {fileID: 327336717}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412317121
 GameObject:
@@ -1746,7 +1747,7 @@ GameObject:
   - component: {fileID: 566090594}
   m_Layer: 0
   m_Name: Cup_Sleeve
-  m_TagString: Item
+  m_TagString: World Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1763,7 +1764,7 @@ Transform:
   m_LocalScale: {x: 3.3656847, y: 3.1791463, z: 1}
   m_Children: []
   m_Father: {fileID: 1310173487}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &566090589
 MonoBehaviour:
@@ -1921,7 +1922,7 @@ GameObject:
   - component: {fileID: 573497467}
   m_Layer: 0
   m_Name: Paper_Filter
-  m_TagString: Item
+  m_TagString: Inventory Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1938,7 +1939,7 @@ Transform:
   m_LocalScale: {x: 4.2476263, y: 3.0932071, z: 1}
   m_Children: []
   m_Father: {fileID: 1310173487}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &573497462
 MonoBehaviour:
@@ -2314,7 +2315,7 @@ GameObject:
   - component: {fileID: 675745802}
   m_Layer: 0
   m_Name: Cup_Lid
-  m_TagString: Item
+  m_TagString: World Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2331,7 +2332,7 @@ Transform:
   m_LocalScale: {x: 1.6932461, y: 2.238549, z: 1}
   m_Children: []
   m_Father: {fileID: 1310173487}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &675745797
 MonoBehaviour:
@@ -2610,7 +2611,7 @@ GameObject:
   - component: {fileID: 774655057}
   m_Layer: 0
   m_Name: Sugar
-  m_TagString: Item
+  m_TagString: World Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2627,7 +2628,7 @@ Transform:
   m_LocalScale: {x: 2.1496003, y: 1.7565039, z: 1}
   m_Children: []
   m_Father: {fileID: 1310173487}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &774655052
 MonoBehaviour:
@@ -2785,7 +2786,7 @@ GameObject:
   - component: {fileID: 787298352}
   m_Layer: 0
   m_Name: Cup
-  m_TagString: Item
+  m_TagString: Inventory Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2802,7 +2803,7 @@ Transform:
   m_LocalScale: {x: 3.1871166, y: 3.580828, z: 1}
   m_Children: []
   m_Father: {fileID: 1310173487}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &787298347
 MonoBehaviour:
@@ -3490,7 +3491,7 @@ GameObject:
   - component: {fileID: 963717608}
   m_Layer: 0
   m_Name: Creamer
-  m_TagString: Item
+  m_TagString: World Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3507,7 +3508,7 @@ Transform:
   m_LocalScale: {x: 1.243176, y: 1.0989833, z: 1}
   m_Children: []
   m_Father: {fileID: 1310173487}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963717603
 MonoBehaviour:
@@ -4226,7 +4227,7 @@ GameObject:
   - component: {fileID: 1118629190}
   m_Layer: 0
   m_Name: PotentialFriendOne
-  m_TagString: Item
+  m_TagString: Special
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4243,7 +4244,7 @@ Transform:
   m_LocalScale: {x: 2.025184, y: 2.040538, z: 1}
   m_Children: []
   m_Father: {fileID: 1310173487}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1118629190
 MonoBehaviour:
@@ -4665,7 +4666,7 @@ GameObject:
   - component: {fileID: 1261314101}
   m_Layer: 0
   m_Name: Coffee_Grounds
-  m_TagString: Item
+  m_TagString: Inventory Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4682,7 +4683,7 @@ Transform:
   m_LocalScale: {x: 6.912029, y: 5.49357, z: 1}
   m_Children: []
   m_Father: {fileID: 1310173487}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1261314096
 MonoBehaviour:
@@ -4850,7 +4851,6 @@ Transform:
   m_LocalPosition: {x: 21.007807, y: -10.011145, z: 43.757812}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2136782267}
   - {fileID: 787298346}
   - {fileID: 774655051}
   - {fileID: 573497461}
@@ -4864,7 +4864,7 @@ Transform:
   - {fileID: 1118629189}
   - {fileID: 4316658647069958708}
   m_Father: {fileID: 327336717}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1313996395
 GameObject:
@@ -7500,7 +7500,7 @@ GameObject:
   - component: {fileID: 2038101707}
   m_Layer: 0
   m_Name: Note
-  m_TagString: Item
+  m_TagString: World Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7517,7 +7517,7 @@ Transform:
   m_LocalScale: {x: 0.58448875, y: 0.5991255, z: 1}
   m_Children: []
   m_Father: {fileID: 1310173487}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2038101707
 MonoBehaviour:
@@ -7841,7 +7841,7 @@ GameObject:
   - component: {fileID: 2119695935}
   m_Layer: 0
   m_Name: Coffee_Machine
-  m_TagString: Item
+  m_TagString: World Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7854,11 +7854,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119695928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -162, y: 26.1, z: 0}
-  m_LocalScale: {x: 1.7010974, y: 1.4148507, z: 1}
+  m_LocalPosition: {x: -158.19, y: 29.96, z: 0}
+  m_LocalScale: {x: 6.420334, y: 6.1326, z: 1}
   m_Children: []
   m_Father: {fileID: 1310173487}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2119695930
 MonoBehaviour:
@@ -7908,18 +7908,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.123491764, y: 0.27933455}
+  m_Offset: {x: 0.12229526, y: 0.113948345}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.48, y: 20.490005}
+    oldSize: {x: 4.12, y: 4.29}
     newSize: {x: 20.48, y: 20.490005}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.086207, y: 15.524062}
+  m_Size: {x: 4.3409824, y: 4.354597}
   m_EdgeRadius: 0
 --- !u!114 &2119695933
 MonoBehaviour:
@@ -7975,7 +7975,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d555c18bd04e95542abd47168c1c1578, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eabc5f6af47a02c4bba34b99e1f2a767, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8125,8 +8125,8 @@ RectTransform:
   - {fileID: 1647846074}
   - {fileID: 1869227312}
   - {fileID: 1620194978}
-  m_Father: {fileID: 1310173487}
-  m_RootOrder: 0
+  m_Father: {fileID: 327336717}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
