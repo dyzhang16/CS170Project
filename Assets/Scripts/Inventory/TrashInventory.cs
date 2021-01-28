@@ -11,6 +11,7 @@ public class TrashInventory : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
 	// current item ready to trash (static due to DoTrashItem function)
 	private static Item itemToTrash;
+	private static int indexToTrash;
 
 	// Images for trash open and trash closed
 	public Sprite trashOpened = null;
@@ -57,7 +58,8 @@ public class TrashInventory : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 		if (dialogueRunner && !dialogueRunner.IsDialogueRunning)
 		{
 			// line of code used from InventorySlot.OnDrop
-			itemToTrash = Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()];
+			indexToTrash = eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex();
+			itemToTrash = Inventory.instance.itemList[indexToTrash];
 			// If KeyItem, do not trash. Otherwise, give trash option.
 			dialogueRunner.StartDialogue((itemToTrash is KeyItem)?"CannotTrash":"TrashItem");
 		}
@@ -69,10 +71,11 @@ public class TrashInventory : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	// This was made static so that YarnInventory.cs can call it.
 	public static void DoTrashItem(string[] parameters)
 	{
-		if (parameters[0] == "Confirm" && itemToTrash)
+		if (parameters[0] == "Confirm" && itemToTrash && indexToTrash >= 0)
 		{
-			Inventory.instance.RemoveItem(itemToTrash);
+			Inventory.instance.RemoveItem(indexToTrash);
 			itemToTrash = null;
+			indexToTrash = -1;
 		}
 	}
 }

@@ -44,6 +44,15 @@ public class Inventory : MonoBehaviour
         }
         return false;
     }
+    private bool Remove(int index)
+    {
+        if (itemList[index] != null)
+        {
+            itemList[index] = null;
+            return true;
+        }
+        return false;
+    }
 
     public void UpdateSlotUI()
     {
@@ -65,6 +74,13 @@ public class Inventory : MonoBehaviour
     public void RemoveItem(Item item) 
     {
         if (Remove(item)) {
+            UpdateSlotUI();
+        }
+    }
+    public void RemoveItem(int index)
+    {
+        if (Remove(index))
+        {
             UpdateSlotUI();
         }
     }
