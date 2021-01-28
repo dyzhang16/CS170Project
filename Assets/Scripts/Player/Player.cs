@@ -118,6 +118,12 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
         transform.Find("collider").gameObject.SetActive(true);
     }
+
+    public void OnCollisionEnter(Collision col)
+    {
+        //if(col.gameObject.tag == "wall")
+        SoundManagerScript.PlaySound("wall_bump");
+    }
 }
 
 

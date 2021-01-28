@@ -6,6 +6,7 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip pickFlower;
     public static AudioClip flowerSuccess;
     public static AudioClip wallBump;
+    public static AudioClip click;
     static AudioSource audioSrc;
 
 
@@ -14,7 +15,8 @@ public class SoundManagerScript : MonoBehaviour {
     {
         pickFlower = Resources.Load<AudioClip>("pickup_flower_2");
         flowerSuccess = Resources.Load<AudioClip>("flower_success");
-        wallBump = Resources.Load<AudioClip>("wall_bump");
+        wallBump = Resources.Load<AudioClip>("wallbump_1");
+       // click = Resources.Load<AudioClip>("button_click");
 
 
         audioSrc = GetComponent<AudioSource>();
@@ -39,6 +41,9 @@ public class SoundManagerScript : MonoBehaviour {
                 break;
             case "wall_bump":
                 audioSrc.PlayOneShot(wallBump);
+                break;
+            case "click":
+                audioSrc.PlayOneShot(click);
                 break;
         }
     }
