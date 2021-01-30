@@ -27,6 +27,16 @@ public class YarnInventory : MonoBehaviour
         "Trash",
         TrashInventory.DoTrashItem
         );
+
+        // adding function to test inventory size
+        dialogueRunner.AddFunction(
+            "IsInventoryFull",
+            0,
+            (Yarn.Value[] parameters) =>
+            {
+                return Inventory.instance.IsFull();
+            }
+        );
     }
 
     private void AddtoInventory(string[] parameters)
