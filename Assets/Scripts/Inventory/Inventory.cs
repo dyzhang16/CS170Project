@@ -1,6 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -10,13 +10,13 @@ public class Inventory : MonoBehaviour
     public InventorySlot[] inventorySlots = new InventorySlot[6];
     public static Inventory instance;
 
+
     private void Start()
     {
         instance = this;
         UpdateSlotUI();
         Inventory.instance.inventoryPanel.SetActive(false);
     }
-
     private bool Add(Item item)
     {
         for (int i = 0; i < itemList.Length; i++)
@@ -91,6 +91,16 @@ public class Inventory : MonoBehaviour
             item.Use();
         }
     }
+    public bool CheckItem(string Name)
+    {
+        return Array.Exists(itemList, itemList => itemList != null && itemList.itemName == Name);
+    }
+    public Item FindItem(string Name)
+    {
+        Item item = Array.Find(itemList, itemList => itemList != null && itemList.itemName == Name);  //https://stackoverflow.com/questions/41348249/null-exception-with-array-findindex-searching-in-a-string-array-in-c-sharp
+        return item;
+    }
+
     public string DisplayItemName(Item item)
     {
         if (item != null)

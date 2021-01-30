@@ -6,13 +6,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new Drink", menuName = "Items/Drink")]
 public class Drink : Item
 {
+    public Sprite lidOnIcon;
+    public Sprite sleeveOnIcon;
+    public Sprite sleeveAndLidIcon;
+    public bool lidOn;
+    public bool sleeveOn;
     public int Sugar { get { return s_Added; } set { s_Added = value; } }
     [SerializeField]
     private int s_Added = 0;
     public int Cream { get { return c_Added; } set { c_Added = value; } }
     [SerializeField]
     private int c_Added = 0;
-
+   
     public override void Use()
     {
         Debug.Log("Sugar Added: " + Sugar);

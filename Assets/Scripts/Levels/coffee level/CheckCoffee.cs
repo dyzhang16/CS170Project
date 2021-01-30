@@ -6,17 +6,15 @@ using UnityEngine.EventSystems;
 public class CheckCoffee : MonoBehaviour , IDropHandler
 {
     public GameObject puzzlePanel;
-    public Drink droppedItem;
+
     public void OnDrop(PointerEventData eventData)
     {
+        Item droppedItem = Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()];
         if (puzzlePanel.GetComponent<CanvasGroup>().alpha == 1)
         {
-            if (droppedItem.itemName == "Coffee")
+            if (droppedItem.itemName == "Milk™")
             {
-                if (droppedItem.Sugar == 10 && droppedItem.Cream == 10) 
-                {
-                    Debug.Log("You gave the right coffee!");
-                }
+                Debug.Log("You gave the right coffee!");
             }
             else 
             {

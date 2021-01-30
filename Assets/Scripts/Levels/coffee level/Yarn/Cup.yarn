@@ -25,20 +25,29 @@ title: TakePaperFilter
 <<stop>>
 ===
 
-title: TakeCupSleeve
+title: PutSleeveOn
 ---
 <<ChangeSpeaker Cup_Sleeve>>
-	You add the cup sleeves to your inventory.
-<<Add Cup_Sleeve>>
-
+<<Check Random>>
+<<if $DrinkExists is 1>>
+	You put the sleeve on your coffee.
+<<Sleeve Random>>
+<<else>>
+	You find the cup sleeves messily spread around. 
+<<endif>>
 <<stop>>
 ===
 
-title: TakeCupLid
+title: PutLidOn
 ---
 <<ChangeSpeaker Cup_Lid>>
-	You add the cup lid to your inventory.
-<<Add Cup_Lid>>
+<<Check Random>>
+<<if $DrinkExists is 1>>
+	You put the lid on your coffee.
+<<Lid Random>>
+<<else>>
+	You find the cup lids stacked nicely in a tower.
+<<endif>>
 
 <<stop>>
 ===

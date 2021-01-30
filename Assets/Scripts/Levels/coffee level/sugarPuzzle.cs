@@ -40,7 +40,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
             {
                 var boa = droppedItem as Drink;
                 Debug.Log("This is the Drink: " + boa);
-                if (droppedItem.itemName == "Random Coffee")
+                if (droppedItem.itemName == "Random")
                 {
                     sugarAdded = boa.Sugar;
                     cupThere = true;
@@ -62,7 +62,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
                 ++sugarAdded;
                 setSugar();
                 Debug.Log("You've added: " + sugarAdded);
-                Vector3 pos = new Vector3(sugarUI.transform.position.x + 70, sugarUI.transform.position.y, sugarUI.transform.position.z);
+                Vector3 pos = new Vector3(sugarUI.transform.position.x + 125, sugarUI.transform.position.y, sugarUI.transform.position.z);
                 GameObject sugs = Instantiate(sugar, pos, sugarUI.transform.localRotation, transform);
             }
             else

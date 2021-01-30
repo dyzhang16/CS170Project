@@ -39,8 +39,8 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
             if (droppedItem is Drink)
             {
                 var boa = droppedItem as Drink;
-                Debug.Log("This is the Drink: " + boa);
-                if (droppedItem.itemName == "Random Coffee")
+                Debug.Log("This is the Drink: " + droppedItem.itemName);
+                if (droppedItem.itemName == "Random")
                 {
                     creamAdded = boa.Cream;
                     cupThere = true;
@@ -62,7 +62,7 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
                 ++creamAdded;
                 setCream();
                 Debug.Log("You've added" + creamAdded);
-                Vector3 pos = new Vector3(creamUI.transform.position.x - 70, creamUI.transform.position.y, creamUI.transform.position.z);
+                Vector3 pos = new Vector3(creamUI.transform.position.x - 125, creamUI.transform.position.y, creamUI.transform.position.z);
                 GameObject creams = Instantiate(cream, pos, creamUI.transform.localRotation, transform);
             }
             else
