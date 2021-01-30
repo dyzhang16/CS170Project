@@ -10,7 +10,8 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
     public int creamAdded;
     public bool creamShaking, cupThere;
     public Item droppedItem;
-    
+
+    private UnityEngine.UI.Button exitButton;
     private Quaternion originalRotation;
     [YarnCommand("ResetCream")]
 
@@ -21,10 +22,27 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         creamAdded = 0;
         creamUI.transform.rotation = originalRotation;
         coffeeUI.SetActive(false);
+        // set exitButton to be interactable
+        exitButton.interactable = true;
     }
     public void Awake()
     { 
         originalRotation = creamUI.transform.rotation;
+    }
+    public void Start()
+    {
+        // get the exitButton from all of this GameObject's puzzle's children
+        // https://answers.unity.com/questions/594210/get-all-children-gameobjects.html
+        foreach (Transform child in transform)
+        {
+            // if child has the HidePuzzle component (seen in GameObjects for exiting a puzzle)
+            if (child.GetComponent<HidePuzzle>())
+            {
+                // assign the exit button
+                exitButton = child.GetComponent<UnityEngine.UI.Button>();
+                break;
+            }
+        }
     }
     public void OnDrop(PointerEventData eventData)
     {
@@ -47,6 +65,9 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
                     coffeeUI.SetActive(true);
                     Inventory.instance.RemoveItem(droppedItem);
                     Inventory.instance.UpdateSlotUI();
+
+                    // prevent user from selecting the exit button
+                    exitButton.interactable = false;
                 }
             }
         }
