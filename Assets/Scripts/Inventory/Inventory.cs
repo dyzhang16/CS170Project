@@ -17,6 +17,22 @@ public class Inventory : MonoBehaviour
         UpdateSlotUI();
         Inventory.instance.inventoryPanel.SetActive(false);
     }
+
+    public bool IsFull()
+    {
+        // loop through all items in itemList
+        for (int i = 0; i < itemList.Length; i++)
+        {
+            // if there is an open space, then it is not full
+            if (itemList[i] == null)
+            {
+                return false;
+            }
+        }
+        // if this point is reached, then the inventory is full
+        return true;
+    }
+
     private bool Add(Item item)
     {
         for (int i = 0; i < itemList.Length; i++)

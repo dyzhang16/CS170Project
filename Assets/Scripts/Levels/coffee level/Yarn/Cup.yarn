@@ -1,7 +1,11 @@
 ﻿title: TakeCup
 ---
 <<ChangeSpeaker Player>>
+<<if IsInventoryFull() is true>>
+  [[CannotTake]]
+<<else>>
 	You add the cup to your inventory.
+<<endif>>
 <<Add Cup>>
 
 <<stop>>
@@ -10,7 +14,11 @@
 title: TakeCoffeeGrounds
 ---
 <<ChangeSpeaker Player>>
+<<if IsInventoryFull() is true>>
+  [[CannotTake]]
+<<else>>
 	You add the coffee beans to your inventory.
+<<endif>>
 <<Add Coffee_Grounds>>
 
 <<stop>>
@@ -19,9 +27,20 @@ title: TakeCoffeeGrounds
 title: TakePaperFilter
 ---
 <<ChangeSpeaker Paper_Filter>>
+<<if IsInventoryFull() is true>>
+  [[CannotTake]]
+<<else>>
 	You add the paper filter to your inventory.
+<<endif>>
 <<Add Paper_Filter>>
 
+<<stop>>
+===
+
+title: CannotTake
+---
+<<ChangeSpeaker Player>>
+  You have too much stuff in your inventory!
 <<stop>>
 ===
 
