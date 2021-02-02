@@ -7,6 +7,7 @@ public class HidePuzzle : MonoBehaviour
 {
     public GameObject puzzlePanel;
     public Button RemoveButton;
+
     public void Hide()
     {
         puzzlePanel.GetComponent<CanvasGroup>().alpha = 0;
