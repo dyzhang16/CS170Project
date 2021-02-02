@@ -18,5 +18,28 @@ public class ShowPuzzle : MonoBehaviour
             blocker.GetComponent<CanvasGroup>().alpha = 1;
             blocker.GetComponent<CanvasGroup>().blocksRaycasts = true;
         }
+
+        // show inventory (only if InventoryController or Player exists)
+        GameObject inventoryController = GameObject.Find("InventoryController");
+        GameObject player = GameObject.Find("Player");
+        // Show inventory using an existing InventoryController GameObject (first-person)
+        if (inventoryController)
+        {
+            OpenInventory openInventory = inventoryController.GetComponent<OpenInventory>();
+            if (openInventory && !openInventory.invActive)
+            {
+                // open the inventory if the InventoryController has OpenInventory
+                inventoryController.GetComponent<OpenInventory>().Menu();
+            }
+        }
+        // Show inventory using existing Player GameObject
+        else if (player)
+        {
+            Player playerScript = player.GetComponent<Player>();
+            if (playerScript && !playerScript.invActive)
+            {
+                playerScript.activateMenu();
+            }
+        }
     }
 }

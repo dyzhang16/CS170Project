@@ -14,7 +14,8 @@ public class OpenInventory : MonoBehaviour
         }
     }
 
-    void Menu()
+    // made public to be accessed by ShowPuzzle.cs
+    public void Menu()
     {
         GameObject ip = Inventory.instance.inventoryPanel;
         Tooltip.GetComponent<ToolTipDisplay>().HideInfo();
