@@ -8,9 +8,6 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public Rigidbody rb;
     public GameObject player;
 
-    //gravestone
-    public GameObject gravestone;
-
     //fade in 
     public SpriteRenderer render;
 

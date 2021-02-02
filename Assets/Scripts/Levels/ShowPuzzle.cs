@@ -6,6 +6,7 @@ using Yarn.Unity;
 public class ShowPuzzle : MonoBehaviour
 {
     public GameObject puzzlePanel;
+
     [YarnCommand("Show")]
     public void Puzzle()
     {
