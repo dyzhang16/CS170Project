@@ -57,6 +57,13 @@ public class ClawMovement : MonoBehaviour
 	/// </summary>
 	void OnTriggerEnter2D(Collider2D col)
 	{
+		Debug.Log(col.gameObject.name);
+		if (col.gameObject.name.Contains("Hole Separator"))
+		{
+			StopAllCoroutines();
+			StartCoroutine(RiseCoroutine());
+			return;
+		}
 		CranePrize prize = col.gameObject.GetComponent<CranePrize>();
 		if (prize && !prize.isFalling)
 		{
@@ -93,7 +100,7 @@ public class ClawMovement : MonoBehaviour
 
 	/// <summary>
 	/// This Coroutine will drop the claw's y position until it reaches
-	/// the BOTTOM_LIMIT, where it will then wait and then start
+	/// the BOTTOM_LIMIT, where it will start
 	/// another Coroutine, RiseCoroutine().
 	/// </summary>
 	IEnumerator DropCoroutine()
@@ -108,17 +115,17 @@ public class ClawMovement : MonoBehaviour
 			claw.transform.localPosition = clawTransform;
 			yield return null;
 		}
-		yield return new WaitForSeconds(2);
 		yield return StartCoroutine(RiseCoroutine());
 	}
 
 	/// <summary>
-	/// This Coroutine will increase the claw's y position until it reaches
+	/// This Coroutine will first wait, then increase the claw's y position until it reaches
 	/// the TOP_LIMIT, where it will then change the boolean to isDropping
 	/// to false and allowing the joystickSlider to be interactable.
 	/// </summary>
 	IEnumerator RiseCoroutine()
 	{
+		yield return new WaitForSeconds(2);
 		// rising
 		while (claw.transform.localPosition.y < TOP_LIMIT)
 		{
@@ -129,6 +136,25 @@ public class ClawMovement : MonoBehaviour
 			yield return null;
 		}
 		// no longer rising
+		yield return StartCoroutine(ReturnToStartCoroutine());
+	}
+
+	/// <summary>
+	/// This Coroutine will return the claw to the starting position (which
+	/// is at the upper right, where the prize hole is). This will also call
+	/// DropPrize().
+	/// </summary>
+	IEnumerator ReturnToStartCoroutine()
+	{
+		while (claw.transform.localPosition.x < RIGHT_LIMIT)
+		{
+			Vector3 clawTransform = claw.transform.localPosition;
+			clawTransform.x += clawSpeed;
+			clawTransform.y = Mathf.Clamp(clawTransform.y, LEFT_LIMIT, RIGHT_LIMIT);
+			claw.transform.localPosition = clawTransform;
+			yield return null;
+		}
+		// Now the claw should be at the starting position
 		isDropping = false;
 		joystickSlider.interactable = true; // joystick slider is set to interactable
 		DropPrize();
