@@ -11,6 +11,9 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     //fade in 
     public SpriteRenderer render;
 
+    public GameObject pausePanel;
+    public bool paused;
+
     //animator
     //public Animator animator;
 
@@ -37,34 +40,40 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     public void Update()
     {
-        if (allowMovement)
-        {
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
+        if(!paused){
+            if (allowMovement)
+            {
+                float h = Input.GetAxis("Horizontal");
+                float v = Input.GetAxis("Vertical");
 
-            if (h != 0 || v != 0){
-                movement.x = h;
-                movement.z = v;
+                if (h != 0 || v != 0){
+                    movement.x = h;
+                    movement.z = v;
 
-                moving = true;
+                    moving = true;
 
-                //animantor.SetFloat("Speed", Mathf.Abs(v) + Mathf.Abs(h));
+                    //animantor.SetFloat("Speed", Mathf.Abs(v) + Mathf.Abs(h));
 
-                if (h > 0){
-                    render.flipX = true;
+                    if (h > 0){
+                        render.flipX = true;
+                    } else {
+                        render.flipX = false;
+                    }
                 } else {
-                    render.flipX = false;
+                    moving = false;
+                    movement = new Vector3(0, 0, 0);
                 }
-            } else {
-                moving = false;
-                movement = new Vector3(0, 0, 0);
+            }
+
+            if (allowInv){
+                if (Input.GetKeyDown(KeyCode.Tab)) {
+                    Menu();
+                }
             }
         }
 
-        if (allowInv){
-            if (Input.GetKeyDown(KeyCode.Tab)) {
-                Menu();
-            }
+        if (Input.GetKeyDown(KeyCode.P)){
+            Pause();
         }
     }
 
@@ -85,6 +94,18 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     {
         invActive = !invActive;
         Inventory.instance.inventoryPanel.SetActive(invActive);
+    }
+
+    void Pause(){
+        if (paused){
+            Time.timeScale = 1;
+        } else {
+            stopMove();
+            Time.timeScale = 0;
+        }
+
+        paused = !paused;
+        pausePanel.SetActive(paused);
     }
 
     public void activateMenu(){
