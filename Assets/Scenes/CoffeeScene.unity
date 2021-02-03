@@ -767,6 +767,7 @@ GameObject:
   - component: {fileID: 132209489}
   - component: {fileID: 132209488}
   - component: {fileID: 132209487}
+  - component: {fileID: 132209491}
   m_Layer: 5
   m_Name: ExitPuzzle
   m_TagString: Untagged
@@ -787,11 +788,11 @@ RectTransform:
   m_Children:
   - {fileID: 1734595828}
   m_Father: {fileID: 2136782267}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54, y: 0.000007629395}
+  m_AnchoredPosition: {x: 54, y: 0}
   m_SizeDelta: {x: 899.0918, y: 874.2344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &132209487
@@ -807,6 +808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 132209485}
+  CustomVariableStorage: {fileID: 1124219127}
 --- !u!225 &132209488
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -856,6 +858,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132209485}
   m_CullTransparentMesh: 0
+--- !u!114 &132209491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132209485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e05b35d2b721f549b41bacb2b41de54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzlePanel: {fileID: 132209485}
+  RemoveButton: {fileID: 1734595829}
 --- !u!1 &162147328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5787,7 +5803,7 @@ RectTransform:
   m_Children:
   - {fileID: 1605022136}
   m_Father: {fileID: 2136782267}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5881,7 +5897,7 @@ RectTransform:
   - {fileID: 649099269}
   - {fileID: 1330951188}
   m_Father: {fileID: 2136782267}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5903,7 +5919,7 @@ MonoBehaviour:
   inventoryPanel: {fileID: 1647846073}
   itemList:
   - {fileID: 11400000, guid: cbe3d857f1cd2c749bb712af10f1f491, type: 2}
-  - {fileID: 11400000, guid: 8abd4e5d8a27ff64aab966b958e15d25, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -6919,7 +6935,7 @@ RectTransform:
   m_Children:
   - {fileID: 129494568}
   m_Father: {fileID: 2136782267}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8383,10 +8399,10 @@ RectTransform:
   - {fileID: 211362153}
   - {fileID: 258097540}
   - {fileID: 1087914912}
+  - {fileID: 132209486}
   - {fileID: 1647846074}
   - {fileID: 1869227312}
   - {fileID: 1620194978}
-  - {fileID: 132209486}
   m_Father: {fileID: 327336717}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -2,11 +2,21 @@
 tags:
 ---
 <<ChangeSpeaker PotentialFriendOne>>
+<<if $CoffeePuzzle is 1>>
+	[[CorrectCoffee]]
+<<endif>>
 <<if $DrinkExists>>
 	Put my milk in front of me.
 <<Show PotentialFriendOne>>
 <<else>>
 	Where's my coffee!
 <<endif>>
+<<stop>>
+===
+title: CorrectCoffee
+tags:
+---
+<<ChangeSpeaker PotentialFriendOne>>
+	My Milk! It's been too long.
 <<stop>>
 ===
