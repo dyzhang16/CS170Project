@@ -13,7 +13,7 @@ namespace FreeDraw
     public class Drawable : MonoBehaviour
     {
         // PEN COLOUR
-        public static Color Pen_Colour = Color.red;     // Change these to change the default drawing settings
+        public static Color Pen_Colour = Color.black;     // Change these to change the default drawing settings
         // PEN WIDTH (actually, it's a radius, in pixels)
         public static int Pen_Width = 3;
 
@@ -143,7 +143,8 @@ namespace FreeDraw
             if (mouse_held_down && !no_drawing_on_current_drag)
             {
                 // Convert mouse coordinates to world coordinates
-                Vector2 mouse_world_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                //Vector2 mouse_world_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 mouse_world_position = Input.mousePosition;
 
                 // Check if the current mouse position overlaps our image
                 Collider2D hit = Physics2D.OverlapPoint(mouse_world_position, Drawing_Layers.value);
