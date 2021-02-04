@@ -9,16 +9,41 @@ tags:
 title: Documents
 tags:
 ---
+<<if $DocumentsFinished is 1>>
 <<ChangeSpeaker Player>>
+	I should fix the computer.
+<<else>>
+<<ChangeSpeaker Player>>
+<<if $StampAdded and $PenAdded is 1>>
 	Time to get to work!
+	You can left click to sign a document, or use right click to stamp a document.
 <<Show Documents>>
+<<else>> 
+	I am missing some tools....
+<<endif>>
+<<endif>>
 <<stop>>
 ===
 title: Cabinet
 tags:
 ---
 <<ChangeSpeaker Player>>
-	You find a pen in the cabinet.
+<<if $StampAdded is 1>>
+	You find nothing of importance in the cabinet.
+<<else>>
+	You find a stamp in the cabinet.
 <<Add Cabinet>>
+<<set $StampAdded to 1>>
+<<endif>>
+<<stop>>
+===
+title: Pen
+tags:
+---
+<<ChangeSpeaker Player>>
+	You find a pen on the table.
+<<set $PenAdded to 1>>
+<<Add Pen>>
+<<Destroy Pen>>
 <<stop>>
 ===

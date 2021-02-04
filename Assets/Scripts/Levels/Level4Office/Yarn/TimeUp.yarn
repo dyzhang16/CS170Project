@@ -1,0 +1,25 @@
+﻿title: TimeUp
+tags:
+---
+<<HidePanel Document>>
+<<ChangeSpeaker Player>>
+	Wow that was much more exciting!
+<<ChangeSpeaker Friend>>
+	Let's work on the repairing the computer after. 
+<<set $DocumentsFinished to 1>>
+<<stop>>
+===
+title: BoringDocuments
+tags:
+---
+<<ChangeSpeaker Player>>
+<<HidePanel Document>>
+	Man this is so boring....
+<<ChangeSpeaker Friend>> 
+	How about this, I'll race you to see who can finish first in 30 seconds!
+<<ChangeSpeaker Player>> 
+	Ok, you're on!
+<<Show Documents>>
+<<ShowTimer Documents>>
+<<stop>>
+===

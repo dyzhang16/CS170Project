@@ -17,7 +17,7 @@ public class DocumentSpawner : MonoBehaviour
     }
     private void Awake()
     {
-        Vector3 pos = new Vector3(DocumentUI.transform.position.x, DocumentUI.transform.position.y, DocumentUI.transform.position.z);
+        Vector3 pos = new Vector3(DocumentUI.transform.position.x, DocumentUI.transform.position.y-20, DocumentUI.transform.position.z);
         GameObject SpawnedDocument = Instantiate(Document, pos, DocumentUI.transform.localRotation, transform);
     }
 }

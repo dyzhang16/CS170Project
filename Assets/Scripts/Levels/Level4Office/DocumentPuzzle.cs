@@ -3,23 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Yarn;
+using Yarn.Unity;
 
 public class DocumentPuzzle : MonoBehaviour,IPointerClickHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
     private Transform originalParent;
     public bool isDragging;
+    public GameObject Stamps, Signature;
+
     public void Start()
     {
         Debug.Log("Created a new Document");
     }
     public void Stamp()
     {
-
-
+        var mousePos = Input.mousePosition;
+        Instantiate(Stamps, mousePos, transform.localRotation, transform);
     }
     public void Sign()
-    { 
-    
+    {
+        var mousePos = Input.mousePosition;
+        Instantiate(Signature, mousePos, transform.localRotation, transform);
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -27,12 +32,12 @@ public class DocumentPuzzle : MonoBehaviour,IPointerClickHandler, IDragHandler, 
         {
             if (eventData.button == PointerEventData.InputButton.Left)
             {
-                //Sign
+                Sign();
                 Debug.Log("Left click");
             }
             else if (eventData.button == PointerEventData.InputButton.Right)
-            { 
-                //Stamp
+            {
+                Stamp();
                 Debug.Log("Right click");
             }
         }
