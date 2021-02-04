@@ -1,0 +1,44 @@
+﻿title: Table
+tags:
+---
+
+<<ChangeSpeaker Player>>
+
+<<if IsInventoryFull() is true>>
+    [[CannotTake]]
+<<else>>
+    It's a table.
+
+    You now have the table.
+<<endif>>
+
+<<Add Table>>
+<<HideObject Table>>
+
+<<stop>>
+===
+
+title: Maze
+---
+
+<<ChangeSpeaker Player>>
+
+<<if IsInventoryFull() is true>>
+    [[CannotTake]]
+<<else>>
+    It's a maze.
+
+    You now have the maze.
+<<endif>>
+
+<<Add Maze>>
+<<HideObject Maze>>
+
+===
+
+title: CannotTake
+---
+<<ChangeSpeaker Player>>
+  You have too much stuff in your inventory!
+<<stop>>
+===
