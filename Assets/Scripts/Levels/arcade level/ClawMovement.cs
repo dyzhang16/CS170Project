@@ -16,6 +16,12 @@ public class ClawMovement : MonoBehaviour
 	public EventSystem eventSystem; // EventSystem
 	public GameObject currentPrize; // GameObject with PrizeMovement component
 	private Slider joystickSlider; // UI Slider from joystick GameObject
+	// Willpower stuff
+	public Button willpowerButton;
+	public Slider willpowerBar;
+	private float willpowerDecay = 0.0015f; // per frame decay
+	private readonly float willpowerDecayReduction = 0.25f; // reduce the decay by this percentage when willpower check fails
+	private readonly float willpowerIncrease = 0.05f; // when button is clicked
 
 	// speed in which claw moves
 	public readonly float clawSpeed = 1;
@@ -29,8 +35,12 @@ public class ClawMovement : MonoBehaviour
 	public static readonly float TOP_LIMIT = 190;
 
 	// to check whether to the claw is currently dropping/rising
-	private bool isDropping;
+	public bool isDropping { get; private set; }
 	private bool isMoving;
+
+	// willpower stuff
+	private static readonly float START_WILLPOWER_VALUE = 0.1f;
+	private bool isWillpowering;
 
 	/// <summary>
 	/// Initialize some variables
@@ -39,6 +49,8 @@ public class ClawMovement : MonoBehaviour
 	{
 		joystickSlider = joystick.GetComponent<Slider>();
 		isDropping = false;
+		// willpower stuff
+		DisableWillpower();
 	}
 
 	/// <summary>
@@ -82,6 +94,7 @@ public class ClawMovement : MonoBehaviour
 		{
 			// set currentPrize as long as there is no other currentPrize
 			currentPrize = prize;
+			EnableWillpower();
 		}
 	}
 
@@ -95,6 +108,7 @@ public class ClawMovement : MonoBehaviour
 		{
 			StartCoroutine(currentPrize.GetComponent<CranePrize>().FallCoroutine());
 			currentPrize = null;
+			DisableWillpower();
 		}
 	}
 
@@ -130,9 +144,14 @@ public class ClawMovement : MonoBehaviour
 		while (claw.transform.localPosition.y < TOP_LIMIT)
 		{
 			Vector3 clawTransform = claw.transform.localPosition;
-			clawTransform.y += riseSpeed;
+			clawTransform.y += riseSpeed * (isWillpowering ? willpowerBar.value : 1);
 			clawTransform.y = Mathf.Clamp(clawTransform.y, BOTTOM_LIMIT, TOP_LIMIT);
 			claw.transform.localPosition = clawTransform;
+			// reduce willpower
+			if (isWillpowering)
+			{
+				DecayWillpower();
+			}
 			yield return null;
 		}
 		// no longer rising
@@ -149,14 +168,18 @@ public class ClawMovement : MonoBehaviour
 		while (claw.transform.localPosition.x < RIGHT_LIMIT)
 		{
 			Vector3 clawTransform = claw.transform.localPosition;
-			clawTransform.x += clawSpeed;
+			clawTransform.x += clawSpeed * (isWillpowering ? willpowerBar.value : 1);
 			clawTransform.y = Mathf.Clamp(clawTransform.y, LEFT_LIMIT, RIGHT_LIMIT);
 			claw.transform.localPosition = clawTransform;
+			// reduce willpower
+			if (isWillpowering)
+			{
+				DecayWillpower();
+			}
 			yield return null;
 		}
 		// Now the claw should be at the starting position
 		isDropping = false;
-		joystickSlider.interactable = true; // joystick slider is set to interactable
 		DropPrize();
 	}
 
@@ -188,7 +211,6 @@ public class ClawMovement : MonoBehaviour
 	/// </summary>
 	public void DoDrop()
 	{
-		joystickSlider.interactable = false;
 		if (!isDropping)
 		{
 			StartCoroutine(DropCoroutine());
@@ -216,5 +238,54 @@ public class ClawMovement : MonoBehaviour
 	public void StopMove()
 	{
 		isMoving = false;
+	}
+
+	/// <summary>
+	/// Enable the willpower UI elements, also resetting willpowerBar's value
+	/// </summary>
+	public void EnableWillpower()
+	{
+		isWillpowering = true;
+		willpowerBar.gameObject.SetActive(true);
+		willpowerBar.value = START_WILLPOWER_VALUE;
+		willpowerButton.gameObject.SetActive(true);
+	}
+
+	/// <summary>
+	/// Disable the willpower UI elements
+	/// </summary>
+	public void DisableWillpower()
+	{
+		isWillpowering = false;
+		willpowerBar.gameObject.SetActive(false);
+		willpowerButton.gameObject.SetActive(false);
+	}
+
+	/// <summary>
+	/// Adds to the willpower bar
+	/// </summary>
+	public void BoostWillpower()
+	{
+		willpowerBar.value += willpowerIncrease;
+	}
+
+	/// <summary>
+	/// Removes from the willpower bar, and also checks if the player
+	/// has enough willpower
+	/// </summary>
+	public void DecayWillpower()
+	{
+		if (isWillpowering && willpowerBar.value > willpowerBar.minValue)
+		{
+			willpowerBar.value -= willpowerDecay;
+		}
+		// Willpower failed!
+		if (willpowerBar.value == 0)
+		{
+			DropPrize();
+			willpowerDecay = willpowerDecay * (1 - willpowerDecayReduction);
+			Debug.Log("Willpower failed. Willpower decay now at " + willpowerDecay);
+			DisableWillpower();
+		}
 	}
 }
