@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour               //https://stackoverflow.com/questions/46760846/how-to-move-2d-object-with-wasd-in-unity
 {
+    static AudioSource audioSrc; // audioSource for player talk sound
+    public static AudioClip playerTalk;
+    
+
     public float speed;
     public Rigidbody rb;
     public GameObject player;
@@ -18,6 +22,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     //public Animator animator;
 
     public bool allowMovement = true;
+    public bool playTalkSound = true;
     public Vector3 movement = new Vector3(0, 0, 0);
 
     public bool allowInv = true;
@@ -28,6 +33,9 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     void Start()
     {
+        playerTalk = Resources.Load<AudioClip>("player_talk");// loads talk sound
+        audioSrc = GetComponent<AudioSource>();
+
         if (goingToFade){
             transform.Find("collider").gameObject.SetActive(false);
             allowMovement = false;
@@ -70,6 +78,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                     Menu();
                 }
             }
+
+            
         }
 
         if (Input.GetKeyDown(KeyCode.P)){
@@ -124,6 +134,19 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     public void stopMove(){
         movement = new Vector3(0, 0, 0);
+    }
+
+    public void stopTalkSound()
+    {
+        audioSrc.Stop();
+    }
+
+    public void startTalkSound()
+    {
+  
+        audioSrc.Play();
+        audioSrc.loop = true;
+
     }
 
     private IEnumerator FadeIn(){
