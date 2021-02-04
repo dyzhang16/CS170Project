@@ -15,7 +15,7 @@ public class RunDialogue : MonoBehaviour
 
     private BoxCollider box;
 
-    private bool runDialogue;
+    public bool runDialogue;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +35,11 @@ public class RunDialogue : MonoBehaviour
             {
                 if (!dialogueRunner.IsDialogueRunning && player.allowMovement)
                 {
-                    dialogueRunner.StartDialogue(dialogueToRun);
-
                     if (box.isTrigger){
                         runDialogue = false;
                     }
+
+                    dialogueRunner.StartDialogue(dialogueToRun);
                     // Debug.Log("running" + dialogueToRun);
                 }
             }
