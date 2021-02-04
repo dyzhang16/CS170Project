@@ -7,6 +7,10 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip flowerSuccess;
     public static AudioClip wallBump;
     public static AudioClip click;
+    public static AudioClip playerTalk;
+    public static AudioClip pourCoffee;
+    public static AudioClip plopSound;
+
     static AudioSource audioSrc;
 
 
@@ -16,7 +20,10 @@ public class SoundManagerScript : MonoBehaviour {
         pickFlower = Resources.Load<AudioClip>("pickup_flower_2");
         flowerSuccess = Resources.Load<AudioClip>("flower_success");
         wallBump = Resources.Load<AudioClip>("wallbump_1");
-       // click = Resources.Load<AudioClip>("button_click");
+        playerTalk = Resources.Load<AudioClip>("player_talk");
+        pourCoffee = Resources.Load<AudioClip>("pour_coffee");
+        plopSound = Resources.Load<AudioClip>("plop");
+        // click = Resources.Load<AudioClip>("button_click");
 
 
         audioSrc = GetComponent<AudioSource>();
@@ -45,6 +52,16 @@ public class SoundManagerScript : MonoBehaviour {
             case "click":
                 audioSrc.PlayOneShot(click);
                 break;
-        }
+            case "player_talk":
+                audioSrc.PlayOneShot(playerTalk);
+                break;
+            case "pour_coffee":
+                audioSrc.PlayOneShot(pourCoffee);
+                break;
+            case "plop":
+                audioSrc.PlayOneShot(plopSound);
+                break;
+        }      
+        
     }
 }

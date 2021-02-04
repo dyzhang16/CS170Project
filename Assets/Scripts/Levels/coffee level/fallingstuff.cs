@@ -25,6 +25,7 @@ public class fallingstuff : MonoBehaviour
 
         if(id.y <= c.position.y + c.rect.height*1.75) {
             Destroy(gameObject);
+            SoundManagerScript.PlaySound("plop");
         }
     }
 }

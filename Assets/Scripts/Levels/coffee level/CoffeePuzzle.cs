@@ -58,6 +58,8 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
     {
         if (cupThere && filterThere && groundsThere)
         {
+            SoundManagerScript.PlaySound("pour_coffee"); 
+            
             cupThere = false;
             cup.SetActive(false);
             filterThere = false;
@@ -66,6 +68,8 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
             grounds.SetActive(false);
 
             brewedCoffee.SetActive(true);
+
+            
         }
         else 
         {
