@@ -9,13 +9,12 @@ public class Inventory : MonoBehaviour
     public Item[] itemList = new Item[6];
     public InventorySlot[] inventorySlots = new InventorySlot[6];
     public static Inventory instance;
-
+    public Animator anim;
 
     private void Start()
     {
         instance = this;
         UpdateSlotUI();
-        Inventory.instance.inventoryPanel.SetActive(false);
     }
 
     public bool IsFull()

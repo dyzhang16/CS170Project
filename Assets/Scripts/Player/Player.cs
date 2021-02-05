@@ -103,7 +103,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     void Menu()
     {
         invActive = !invActive;
-        Inventory.instance.inventoryPanel.SetActive(invActive);
+        Inventory.instance.anim.SetBool("Inventory", invActive);
     }
 
     void Pause(){
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     public void activateMenu(){
         invActive = true;
-        Inventory.instance.inventoryPanel.SetActive(true);
+        Inventory.instance.anim.SetBool("Inventory", invActive);
     }
 
     public void AllowMove(bool allow)

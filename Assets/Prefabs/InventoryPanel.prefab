@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3265424261069468128}
   - component: {fileID: 3265424261069468129}
   - component: {fileID: 3265424261069468134}
+  - component: {fileID: 98895820016560785}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -42,7 +43,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -660, y: -148.5}
+  m_AnchoredPosition: {x: -659.44904, y: 0}
   m_SizeDelta: {x: -1318.8981, y: -297.31085}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3265424261069468128
@@ -109,6 +110,26 @@ MonoBehaviour:
   - {fileID: 3265424261192459872}
   - {fileID: 3265424261162904793}
   - {fileID: 3265424262201387867}
+  anim: {fileID: 98895820016560785}
+--- !u!95 &98895820016560785
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265424261069468132}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22c93862165a34948aeb8b7cc3ec31d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3265424261120769850
 GameObject:
   m_ObjectHideFlags: 0
