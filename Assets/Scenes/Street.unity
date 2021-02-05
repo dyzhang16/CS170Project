@@ -4432,6 +4432,7 @@ MonoBehaviour:
   startInstantly: 1
   NPCName: 
   NPCInteract: 
+  runDialogue: 0
 --- !u!1 &754284284
 GameObject:
   m_ObjectHideFlags: 0
@@ -4698,18 +4699,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5021110830579105968}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &795299703 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6823328105446783849, guid: aaf043c15791b664fac358de6b5254f7,
-    type: 3}
-  m_PrefabInstance: {fileID: 5021110830579105968}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &808541792
 GameObject:
   m_ObjectHideFlags: 0
@@ -9993,7 +9982,6 @@ GameObject:
   - component: {fileID: 1681206284}
   - component: {fileID: 1681206287}
   - component: {fileID: 1681206286}
-  - component: {fileID: 1681206288}
   m_Layer: 0
   m_Name: CoffeeStand
   m_TagString: Untagged
@@ -10084,6 +10072,7 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
+  runDialogue: 0
 --- !u!54 &1681206287
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10100,19 +10089,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 1
---- !u!114 &1681206288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681206283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f2a432226deafd48a2aa20eede576b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackscreen: {fileID: 795299703}
 --- !u!1 &1685204564
 GameObject:
   m_ObjectHideFlags: 0

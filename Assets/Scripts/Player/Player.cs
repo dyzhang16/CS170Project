@@ -6,7 +6,6 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 {
     static AudioSource audioSrc; // audioSource for player talk sound
     public static AudioClip playerTalk;
-    
 
     public float speed;
     public Rigidbody rb;
@@ -15,8 +14,12 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     //fade in 
     public SpriteRenderer render;
 
-    public GameObject pausePanel;
     public bool paused;
+    public GameObject buttonPanel;
+    public GameObject menuPanel;
+    public bool settings;
+    public GameObject settingsPanel;
+    public GameObject menuButtonsPanel;
 
     //animator
     //public Animator animator;
@@ -75,7 +78,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
             if (allowInv){
                 if (Input.GetKeyDown(KeyCode.Tab)) {
-                    Menu();
+                    openInventory();
                 }
             }
 
@@ -83,7 +86,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         }
 
         if (Input.GetKeyDown(KeyCode.P)){
-            Pause();
+            openMenu();
         }
     }
 
@@ -100,13 +103,15 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         moving = true;
     }
 
-    void Menu()
+    public void openInventory()
     {
-        invActive = !invActive;
-        Inventory.instance.inventoryPanel.SetActive(invActive);
+        if (allowInv){
+            invActive = !invActive;
+            Inventory.instance.anim.SetBool("Inventory", invActive);
+        }
     }
 
-    void Pause(){
+    public void openMenu(){
         if (paused){
             Time.timeScale = 1;
         } else {
@@ -114,13 +119,22 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             Time.timeScale = 0;
         }
 
+        allowInv = paused;
+        allowMovement = paused;
+        buttonPanel.SetActive(paused);
         paused = !paused;
-        pausePanel.SetActive(paused);
+        menuPanel.SetActive(paused);
+    }
+
+    public void openSettings(){
+        menuButtonsPanel.SetActive(settings);
+        settings = !settings;
+        settingsPanel.SetActive(settings);
     }
 
     public void activateMenu(){
         invActive = true;
-        Inventory.instance.inventoryPanel.SetActive(true);
+        Inventory.instance.anim.SetBool("Inventory", invActive);
     }
 
     public void AllowMove(bool allow)
