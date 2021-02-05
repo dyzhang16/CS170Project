@@ -11,6 +11,9 @@ public class Transitions : MonoBehaviour
     public Animator transition;
     public float transitionSpeed = 1f;
 
+    public GameObject buttonPanel;
+    public GameObject menuPanel;
+
     [YarnCommand("ChangeScene")]
     public void ChangeScene(string sceneToChange){
         LoadNextScene(sceneToChange);
