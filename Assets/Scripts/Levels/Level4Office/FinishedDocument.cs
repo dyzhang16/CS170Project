@@ -16,8 +16,35 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag.transform.tag == "Document")
         {
+            if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().SignArea && eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampArea)
+            {
+                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedSpace && eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpace)
+                {
+                    ++documentFinished;
+                    Debug.Log("Correct Document Finished: " + documentFinished);
+                }
+            }
+            else if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().SignArea)
+            {
+                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedSpace)
+                {
+                    ++documentFinished;
+                    Debug.Log("Correct Document Finished: " + documentFinished);
+                }
+            }
+            else if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampArea)
+            {
+                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpace)
+                {
+                    ++documentFinished;
+                    Debug.Log("Correct Document Finished: " + documentFinished);
+                }
+            }
+            else 
+            {
+                Debug.Log("Incorrect Document");
+            }
             Destroy(eventData.pointerDrag.transform.gameObject);
-            documentFinished++;
             SpawnDocument();
            
             if (documentFinished == 5)
@@ -33,7 +60,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
     }
     public void SpawnDocument()
     {
-        Vector3 pos = new Vector3(DocumentUI.transform.position.x, DocumentUI.transform.position.y-20, DocumentUI.transform.position.z);
+        Vector3 pos = new Vector3(DocumentUI.transform.position.x, DocumentUI.transform.position.y, DocumentUI.transform.position.z);
         int x = Random.Range(1, 4);
         switch (x)
         {

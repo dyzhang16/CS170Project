@@ -37,6 +37,6 @@ public class Timer : MonoBehaviour //https://gamedevbeginner.com/how-to-make-cou
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         float milliSeconds = (timeToDisplay % 1) * 1000;
 
-        timeText.text = string.Format("Time Remaing: {0:00}:{1:00}", minutes, seconds);
+        timeText.text = string.Format("Time Remaining: {0:00}:{1:00}", minutes, seconds);
     }
 }
