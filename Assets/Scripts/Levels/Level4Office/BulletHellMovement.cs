@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletHellMovement : MonoBehaviour
+public class BulletHellMovement : MonoBehaviour //https://answers.unity.com/questions/604198/shooting-in-direction-of-mouse-cursor-2d.html
 {
     public float speed;
     public Rigidbody2D rb;

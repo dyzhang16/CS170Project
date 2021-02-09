@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Virus : MonoBehaviour
+public class Virus : MonoBehaviour //https://answers.unity.com/questions/1369351/unity-2d-random-movement.html
 {
     public float accelerationTime = 30f;
     public float maxSpeed = 30f;

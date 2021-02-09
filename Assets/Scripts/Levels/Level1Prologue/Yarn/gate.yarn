@@ -1,0 +1,77 @@
+﻿title: gate
+tags:
+---
+<<if $key is 1>>
+<<ChangeSpeaker Player>>
+    //kachink noise of lock unlocking sound effect
+    The key fits! I can finally get out of here.
+
+    //animation of ghost doing like a celebratory loop de loop, but they phase through the gate during it accidentally, shows ghost can go through stuff
+    <<wait 3>>
+   ...Oh. I suppose that works, too.
+
+<<ChangeScene BlackScreen Street>>
+<<elseif visited("prologue_doneFlowers") is true>>
+<<ChangeSpeaker Player>>
+    
+    I should see what the gravekeeper dropped. 
+
+<<elseif visited("prologue_doneExplore") is true>>
+<<ChangeSpeaker Player>>
+
+     I want to freshen up my grave a little bit before I go.
+
+<<else>>
+<<ChangeSpeaker Player>>
+   
+   I should familiarize myself with my new home. Maybe I’ll find someone.
+    
+<<endif>>
+===
+
+title: gate_approach
+tags:
+---
+<<if $puzzle is 1 and visited("gate_approach") is false>>
+<<walkBack Gravekeeper>>
+<<ChangeSpeaker Player>>
+
+    ...//Camera pans back to grave, where the gravekeeper is now standing
+    //gate door opens
+<<wait 8>>
+<<ChangeSpeaker Gravekeeper>>
+    
+    What on earth?!
+
+    Last I looked, there were no flowers here.
+
+    No one’s been in or out of this place. I’m the only one with the key.
+
+    Can it be?
+
+    No.
+
+    No, there’s no such thing.
+
+    ...
+    //dramatic spooky sound effect, perhaps? Like the one from vicente’s video lol
+    ...Is there?
+
+    I’m not sticking around to find out. I’m out.
+
+    <<dropKey Gravekeeper>>
+
+<<endif>>
+
+===
+
+title: key
+---
+<<ChangeSpeaker Player>>
+
+    Ah ha! The gravekeeper dropped the key. With this, I can get out!
+
+<<Destroy Key>>
+<<pickUpItem Key>>
+<<set $key to 1>>
+===
