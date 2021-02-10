@@ -47,3 +47,14 @@ tags:
 <<Destroy Pen>>
 <<stop>>
 ===
+title: Monitor
+tags:
+---
+//check to determine if players finished document puzzle
+<<ChangeSpeaker Player>>
+	You turn on the monitor.
+<<ChangeSpeaker Computer>>
+	VIRUS HAS BEEN DETECTED ON THIS MACHINE pLEaSe REmOVe aSAp!
+<<ChangeScene BlackScreen ComputerScreenScene>>
+<<stop>>
+===

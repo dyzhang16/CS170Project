@@ -6,25 +6,18 @@ using UnityEngine.UI;
 using Yarn;
 using Yarn.Unity;
 
-public class DocumentPuzzle : MonoBehaviour,IPointerClickHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
+
+    public GameObject Stamps, Signature, SignArea, StampArea;
+    public bool isDragging = false;
+    [HideInInspector] public bool stampedSpace, signedSpace = false;
     private Transform originalParent;
-    public bool isDragging;
-    public GameObject Stamps, Signature;
+    private bool stamp, sign = false;
 
     public void Start()
     {
         Debug.Log("Created a new Document");
-    }
-    public void Stamp()
-    {
-        var mousePos = Input.mousePosition;
-        Instantiate(Stamps, mousePos, transform.localRotation, transform);
-    }
-    public void Sign()
-    {
-        var mousePos = Input.mousePosition;
-        Instantiate(Signature, mousePos, transform.localRotation, transform);
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -33,14 +26,40 @@ public class DocumentPuzzle : MonoBehaviour,IPointerClickHandler, IDragHandler, 
             if (eventData.button == PointerEventData.InputButton.Left)
             {
                 Sign();
-                Debug.Log("Left click");
+                if (SignArea.GetComponent<mouseOver>().isMouseOver && !sign)
+                {
+                    signedSpace = true;
+                }
+                else
+                {
+                    signedSpace = false;
+                    sign = true;
+                }
             }
-            else if (eventData.button == PointerEventData.InputButton.Right)
+            if (eventData.button == PointerEventData.InputButton.Right)
             {
                 Stamp();
-                Debug.Log("Right click");
+                if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamp)
+                {
+                    stampedSpace = true;
+                }
+                else
+                {
+                    stampedSpace = false;
+                    stamp = true;
+                }
             }
         }
+    }
+    private void Stamp()
+    {
+        var mousePos = Input.mousePosition;
+        Instantiate(Stamps, mousePos, transform.localRotation, transform);
+    }
+    private void Sign()
+    {
+        var mousePos = Input.mousePosition;
+        Instantiate(Signature, mousePos, transform.localRotation, transform);
     }
     public void OnPointerDown(PointerEventData eventData)
     {

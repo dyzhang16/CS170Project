@@ -1,0 +1,84 @@
+﻿title: prologue_begin
+---
+<<if $checkpoint_1 is 1>>
+	
+	[[prologue_doneExplore]]
+
+<<endif>>
+<<if visited("prologue_begin") is false>>
+<<ChangeSpeaker Player>>
+
+	Whew, that was a long ride! I can finally breathe, Well- not, really.
+
+	Where is this? I don’t recognise this place. Where is everyone?
+
+<<MoveNPC Gravekeeper>>
+<<else>>
+
+	//if the Player examines the Tombstone at this time-
+<<ChangeSpeaker Grave>>
+	
+	(Use WASD to move around and SPACE to interact with objects. Use Tab to open your Inventory.)
+
+<<ChangeSpeaker Player>>
+
+	Hmm...Looking kind of empty.
+
+<<endif>>
+<<stop>>
+===
+
+title: prologue_gravekeeper
+---
+<<ChangeSpeaker Player>>
+	
+	Hello! Hi! ...Excuse me?
+
+	Hmm. I guess the living can’t see me. That person must have been the one who dug my grave.
+
+	Let’s check out my gravestone! I wonder what’s been written about me...
+
+<<ChangeSpeaker Grave>>
+
+	(Use WASD to move around and SPACE to interact with objects. Use Tab to open your Inventory.)
+
+<<ChangeSpeaker Player>>
+
+	...Wait a second. But that’s not my name?
+
+	No, that’s not important right now. I should take a look around for others like me. Maybe they can tell me more about this place.
+
+<<stop>>
+===
+
+title: prologue_doneExplore
+---
+<<if $puzzle is 1>>
+	
+	[[prologue_doneFlowers]]
+
+<<endif>>
+<<if visited("prologue_doneExplore") is false>>
+<<ChangeSpeaker Player>>
+	
+	I have to get out of here. Surely I’ll be able to find others outside of this cemetery, right?
+
+	But before I leave, I think I’ll brighten up my grave first.
+
+	I think I saw some pretty flowers lying around earlier…
+
+	Yes. I think some nice flowers will make my grave look better.
+
+<<else>>
+<<Show Grave>>
+<<set $puzzle to 0>>
+<<endif>>
+===
+title: prologue_doneFlowers
+---
+<<ChangeSpeaker Player>>
+
+	Aaaand, there! Looking better already. Now I can go out and find other ghosts.
+
+<<stop>>
+===

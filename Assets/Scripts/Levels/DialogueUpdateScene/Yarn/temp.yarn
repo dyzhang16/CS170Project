@@ -1,0 +1,122 @@
+﻿title: test_focus
+tags:
+---
+<<ChangeSpeaker Player Friend>>
+<<Focus FIRST>>
+I am ghost.
+
+<<Focus SECOND>>
+I am friend.
+
+<<Focus BOTH>>
+And together, we're...
+
+<<Focus NONE>>
+The ghost and the friend did not know what they were.
+
+[[test_options]]
+===
+
+title: test_options
+tags:
+---
+<<ChangeSpeaker Car Horse>>
+<<Focus NONE>>
+This is the next scene. We see Mr. Car and Mr. Horse in conversation.
+
+<<Focus FIRST>>
+Hello Mr. Horse.
+
+<<Focus SECOND>>
+Hello Mr. Car. Say, how much horsepower do you have.
+
+<<Focus FIRST>>
+Thank you for asking. I have around 100 horsepower.
+
+<<Focus SECOND>>
+That is a lot of horses. For me, I have only one horse.
+
+That's me!
+
+<<Focus BOTH>>
+*laughter ensues*
+
+<<Focus NONE>>
+Was that an enjoyable joke?
+-> Yes! I truly enjoyed that.
+  Thank you so much. I am glad to hear.
+  [[test_solo]]
+-> No. I did not enjoy that joke.
+  Oh, then maybe you would like to hear it again?
+  [[test_options]]
+===
+
+title: test_solo
+tags:
+---
+<<ChangeSpeaker Car>>
+<<Focus FIRST>>
+I am car.
+
+I will now try to change the focus incorrectly.
+
+<<Focus SECOND>>
+Changing focus to "SECOND".
+
+You should see a logged error. This does not break the dialogue, however.
+
+<<Focus BOTH>>
+Changning focus to "BOTH"
+
+This should still work fine. There just isn't a second person.
+
+<<Focus NONE>>
+The focus is now set to "NONE".
+
+Now I am not in focus.
+
+<<Focus FIRST>>
+Now I am in focus. Thank you for participating in this test.
+
+[[test_name]]
+===
+
+title: test_name
+tags:
+---
+<<ChangeSpeaker Car Horse>>
+<<Focus NONE>>
+Testing the Focus yarn command but with names instead.
+
+<<Focus Car>>
+I am the car and I should be in focus.
+
+Hello.
+
+<<Focus Horse>>
+I am the horse, and I should be in focus.
+
+<<Focus ThisIsAnError>>
+There should be a logged error, because I tried to focus on something that didn't exist.
+
+<<ChangeSpeaker Player Friend>>
+<<Focus NONE>>
+This is the next scene, with two new people.
+<<Focus Player>>
+I am player.
+<<Focus Friend>>
+I am friend.
+<<Focus NONE>>
+Now I will try to focus on the horse and car again from the previous scene.
+
+You will see two logged errors.
+
+<<Focus Car>>
+Focusing on Car
+<<Focus Horse>>
+Focusing on Horse
+<<Focus BOTH>>
+Now I have set the focus to BOTH.
+
+This is the end of the test.
+===
