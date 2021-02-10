@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class ChangeSpeaker : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
+    public Text txt;
     public GameObject CharacterImage; // character on the left
     public GameObject SecondCharacterImage; // character on the right
     public GameObject TalkingCharacter;
@@ -17,7 +19,7 @@ public class ChangeSpeaker : MonoBehaviour
 
     public void Awake()
     {
-
+        txt = txt.GetComponent<Text>();
         // Create a new command called 'camera_look', which looks at a target.
         dialogueRunner.AddCommandHandler(
             "ChangeSpeaker",     // the name of the command
@@ -49,6 +51,7 @@ public class ChangeSpeaker : MonoBehaviour
                 return;
             }
             Debug.Log($"{talkingCharacter}: is talking.");
+            Debug.Log("This is stored in text: " + txt.text);
             characterImage.GetComponent<UnityEngine.UI.Image>().sprite = talkingCharacter.GetComponent<SpriteRenderer>().sprite;
         };
 
