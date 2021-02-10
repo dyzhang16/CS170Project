@@ -7,7 +7,14 @@ public class friend1 : MonoBehaviour
 {
 
     public GameObject friend;
-    public GameObject firstHitbox;
+
+    void Awake(){
+        if (GameManager.instance != null){
+            if (GameManager.instance.notFriend == 1){
+                Destroy(friend);
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +30,6 @@ public class friend1 : MonoBehaviour
 
     [YarnCommand("GetCoffee")]
     public void GetCoffee(){
-        firstHitbox.SetActive(false);
         friend.transform.position = new Vector3(390, 0, -240);
     }
 }

@@ -2,7 +2,7 @@
 tags:
 ---
 
-<<ChangeSpeaker Player>>
+<<ChangeSpeaker Player friend>>
 
 I guess I'm done?
 
@@ -18,11 +18,15 @@ title: CleanRoom
 
 title: DoneCleaningRoom
 ---
-<<ChangeSpeaker Player>>
+<<ChangeSpeaker Player friend>>
 
 I finished cleaning your room!
 
 <<set $apartment_puzzle_finished to 1>>
+
+<<ChangeVariable Environment notFriend 1>>
+
+<<ChangeScene BlackScreen Street>>
 
 <<stop>>
 ===
@@ -36,7 +40,7 @@ title: apartment_puzzle_start
 
 <<if $apartment_start is 0>>
 
-    <<ChangeSpeaker friend>>
+    <<ChangeSpeaker friend Player>>
 
     Hey can you help me clean my room?
 

@@ -476,7 +476,7 @@ PrefabInstance:
     - target: {fileID: 6823328105446783851, guid: aaf043c15791b664fac358de6b5254f7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf043c15791b664fac358de6b5254f7, type: 3}
@@ -626,6 +626,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1759857099}
     m_Modifications:
+    - target: {fileID: 1314759459205102341, guid: 89dbd1ef645abef4887d4d0bdec6e9e9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8252827194867817562, guid: 89dbd1ef645abef4887d4d0bdec6e9e9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -740,13 +745,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 89dbd1ef645abef4887d4d0bdec6e9e9, type: 3}
 --- !u!224 &774212494 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8252827194867817562, guid: 89dbd1ef645abef4887d4d0bdec6e9e9,
-    type: 3}
-  m_PrefabInstance: {fileID: 774212493}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &774212495 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8252827194867817563, guid: 89dbd1ef645abef4887d4d0bdec6e9e9,
+  m_CorrespondingSourceObject: {fileID: 1314759459205102341, guid: 89dbd1ef645abef4887d4d0bdec6e9e9,
     type: 3}
   m_PrefabInstance: {fileID: 774212493}
   m_PrefabAsset: {fileID: 0}
@@ -1743,7 +1742,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2a432226deafd48a2aa20eede576b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackscreen: {fileID: 0}
+  transition: {fileID: 0}
+  transitionSpeed: 1
+  buttonPanel: {fileID: 0}
+  menuPanel: {fileID: 0}
 --- !u!1 &1371438883 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 589655525532243725, guid: 54a1007ac4bb7bf42b2d750654f51876,
@@ -1989,6 +1991,11 @@ PrefabInstance:
       propertyPath: CharacterImage
       value: 
       objectReference: {fileID: 1933950437}
+    - target: {fileID: 6386934102897756427, guid: b71716d8888efca45a8977e962ddd7f4,
+        type: 3}
+      propertyPath: SecondCharacterImage
+      value: 
+      objectReference: {fileID: 1933950439}
     - target: {fileID: 6386934102897756430, guid: b71716d8888efca45a8977e962ddd7f4,
         type: 3}
       propertyPath: dialogueRunner
@@ -2177,6 +2184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1933950439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8750872218124420720, guid: e68f5026167454e4680bc8ecad2058e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1933950435}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1944504701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2343,7 +2356,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pausePanel
       value: 
-      objectReference: {fileID: 774212495}
+      objectReference: {fileID: 0}
     - target: {fileID: 4082150130277126516, guid: ad9b45256d828ee4982f2e5d85b896c6,
         type: 3}
       propertyPath: m_Name
