@@ -4,17 +4,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class HandHighlight : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
-{ 
-    public GameObject Option1;
-    public GameObject Option2;
+{
+    public GameObject Highlight;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+       
     }
 }
