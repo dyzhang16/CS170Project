@@ -10,6 +10,7 @@ public class ShowPuzzle : MonoBehaviour
     [YarnCommand("Show")]
     public void Puzzle()
     {
+        Debug.Log("Showing puzzle");
         puzzlePanel.GetComponent<CanvasGroup>().alpha = 1;
         puzzlePanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         // block background interactions

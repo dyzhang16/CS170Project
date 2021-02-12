@@ -22,6 +22,7 @@ public class NodeVisitedTracker : MonoBehaviour
         dialogueRunner.AddFunction("visited", 1, delegate (Yarn.Value[] parameters)
         {
             var nodeName = parameters[0];
+            Debug.Log("Added Node:" + nodeName);
             return _visitedNodes.Contains(nodeName.AsString);
         });
 
@@ -33,6 +34,7 @@ public class NodeVisitedTracker : MonoBehaviour
     {
         // Log that the node has been run.
         _visitedNodes.Add(nodeName);
+        Debug.Log("These exist is visitedNodes: " + _visitedNodes);
     }
 
 
