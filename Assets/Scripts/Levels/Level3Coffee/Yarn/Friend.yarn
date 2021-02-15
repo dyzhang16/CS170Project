@@ -1,7 +1,8 @@
 ﻿title: Friend
 tags:
 ---
-<<ChangeSpeaker PotentialFriendOne>>
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
 <<if $CoffeePuzzle is 1>>
 	[[CorrectCoffee]]
 <<endif>>
@@ -16,7 +17,8 @@ tags:
 title: CorrectCoffee
 tags:
 ---
-<<ChangeSpeaker PotentialFriendOne>>
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
 	My Milk! It's been too long.
 <<stop>>
 ===

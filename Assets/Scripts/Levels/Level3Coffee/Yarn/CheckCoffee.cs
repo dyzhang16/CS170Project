@@ -27,6 +27,7 @@ public class CheckCoffee : MonoBehaviour , IDropHandler
                     blocker.GetComponent<CanvasGroup>().alpha = 0;
                     blocker.GetComponent<CanvasGroup>().blocksRaycasts = false;
                 }
+                Inventory.instance.RemoveItem(droppedItem);
             }
             else 
             {

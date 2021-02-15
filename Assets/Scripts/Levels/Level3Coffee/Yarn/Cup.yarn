@@ -26,7 +26,7 @@ title: TakeCoffeeGrounds
 
 title: TakePaperFilter
 ---
-<<ChangeSpeaker Paper_Filter>>
+<<ChangeSpeaker Player>>
 <<if IsInventoryFull() is true>>
   [[CannotTake]]
 <<else>>
@@ -46,7 +46,7 @@ title: CannotTake
 
 title: PutSleeveOn
 ---
-<<ChangeSpeaker Cup_Sleeve>>
+<<ChangeSpeaker Player>>
 <<Check Random>>
 <<if $DrinkExists is 1>>
 	You put the sleeve on your coffee.
@@ -59,7 +59,7 @@ title: PutSleeveOn
 
 title: PutLidOn
 ---
-<<ChangeSpeaker Cup_Lid>>
+<<ChangeSpeaker Player>>
 <<Check Random>>
 <<if $DrinkExists is 1>>
 	You put the lid on your coffee.
