@@ -6,7 +6,10 @@ using Yarn.Unity;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public int notFriend;
+    //0 = not completed, 1 = completed
+    public int flowerPuzzle = 0;
+    //2 = friend is gone
+    public int coffeePuzzle = 0;
 
     void Awake(){
         instance = this;
@@ -26,9 +29,9 @@ public class GameManager : MonoBehaviour
             Debug.Log("No value given");
         } else {
             switch(variables[0]){
-                case "notFriend":
-                    notFriend = int.Parse(variables[1]);
-                    break;
+                // case "":
+                //      = int.Parse(variables[1]);
+                //     break;
                 default:
                     break;
             }

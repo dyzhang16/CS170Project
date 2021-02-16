@@ -9,11 +9,7 @@ public class friend1 : MonoBehaviour
     public GameObject friend;
 
     void Awake(){
-        if (GameManager.instance != null){
-            if (GameManager.instance.notFriend == 1){
-                Destroy(friend);
-            }
-        }
+        
     }
 
     // Start is called before the first frame update
