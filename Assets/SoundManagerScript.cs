@@ -10,6 +10,9 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip playerTalk;
     public static AudioClip pourCoffee;
     public static AudioClip plopSound;
+    public static AudioClip placeCup;
+    public static AudioClip placeFilter;
+    public static AudioClip placeCoffee;
 
     static AudioSource audioSrc;
 
@@ -23,6 +26,9 @@ public class SoundManagerScript : MonoBehaviour {
         playerTalk = Resources.Load<AudioClip>("player_talk");
         pourCoffee = Resources.Load<AudioClip>("pour_coffee");
         plopSound = Resources.Load<AudioClip>("plop");
+        placeCup = Resources.Load<AudioClip>("place_cup");
+        placeFilter = Resources.Load<AudioClip>("place_filter");
+        placeCoffee = Resources.Load<AudioClip>("coffee_sound");
         // click = Resources.Load<AudioClip>("button_click");
 
 
@@ -61,6 +67,16 @@ public class SoundManagerScript : MonoBehaviour {
             case "plop":
                 audioSrc.PlayOneShot(plopSound);
                 break;
+            case "place_cup":
+                audioSrc.PlayOneShot(placeCup);
+                break;
+            case "place_filter":
+                audioSrc.PlayOneShot(placeFilter);
+                break;
+            case "place_coffee":
+                audioSrc.PlayOneShot(placeCoffee);
+                break;
+
         }      
         
     }
