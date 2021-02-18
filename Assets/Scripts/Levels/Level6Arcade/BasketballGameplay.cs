@@ -9,6 +9,7 @@ public class BasketballGameplay : MonoBehaviour
 	public BasketballMovement basketball;
 	public BasketballNet basketballNet;
 	public Button startButton;
+	public Button exitButton;
 	// scoreboard
 	public GameObject scoreboard; // this will contain the timer and score UI elements
 	[HideInInspector]
@@ -98,6 +99,7 @@ public class BasketballGameplay : MonoBehaviour
 		UpdateScore();
 		basketballNet.trackMouse = true;
 		startButton.interactable = false;
+		exitButton.interactable = false;
 
 		// Start Coroutines
 		StartCoroutine(DelayedStartRoutine());
@@ -112,6 +114,7 @@ public class BasketballGameplay : MonoBehaviour
 		// reset variables
 		basketballNet.trackMouse = false;
 		startButton.interactable = true;
+		exitButton.interactable = true;
 
 		// update highscore if needed
 		if (playerScore > highScore)

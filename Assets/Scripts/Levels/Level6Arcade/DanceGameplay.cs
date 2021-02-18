@@ -23,6 +23,7 @@ public class DanceGameplay : MonoBehaviour
 	public Text overallAccuracy; // accuracy overall
 	public Text roundCounter;
 	public GameObject resultsPanel; // to show at end of game (shows results)
+	public Button exitButton;
 
 	// bool for checking if the moves are ready to show
 	private bool readyToShow = false;
@@ -60,6 +61,7 @@ public class DanceGameplay : MonoBehaviour
 	/// </summary>
 	public void InitializeNewGame()
 	{
+		exitButton.interactable = false;
 		numCurrentCorrectMoves = 0;
 		numTotalCorrectMoves = 0;
 		totalMoves = 0;
@@ -100,6 +102,7 @@ public class DanceGameplay : MonoBehaviour
 		opponent.DisplayDefault();
 		roundCounter.enabled = false;
 		endGameButton.gameObject.SetActive(false);
+		exitButton.interactable = true;
 	}
 
 	/// <summary>

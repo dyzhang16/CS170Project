@@ -6,6 +6,7 @@ using Yarn.Unity;
 public class ShowPuzzle : MonoBehaviour
 {
     public GameObject puzzlePanel;
+    public bool DoNotOpenInventory = false;
 
     [YarnCommand("Show")]
     public void Puzzle()
@@ -21,26 +22,30 @@ public class ShowPuzzle : MonoBehaviour
             blocker.GetComponent<CanvasGroup>().blocksRaycasts = true;
         }
 
-        // show inventory (only if InventoryController or Player exists)
-        GameObject inventoryController = GameObject.Find("InventoryController");
-        GameObject player = GameObject.Find("Player");
-        // Show inventory using an existing InventoryController GameObject (first-person)
-        if (inventoryController)
+        // if do not show inventory is on, do nothing else here, otherwise open the inventory
+        if (!DoNotOpenInventory)
         {
-            OpenInventory openInventory = inventoryController.GetComponent<OpenInventory>();
-            if (openInventory && !openInventory.invActive)
+            // show inventory (only if InventoryController or Player exists)
+            GameObject inventoryController = GameObject.Find("InventoryController");
+            GameObject player = GameObject.Find("Player");
+            // Show inventory using an existing InventoryController GameObject (first-person)
+            if (inventoryController)
             {
-                // open the inventory if the InventoryController has OpenInventory
-                inventoryController.GetComponent<OpenInventory>().Menu();
+                OpenInventory openInventory = inventoryController.GetComponent<OpenInventory>();
+                if (openInventory && !openInventory.invActive)
+                {
+                    // open the inventory if the InventoryController has OpenInventory
+                    inventoryController.GetComponent<OpenInventory>().Menu();
+                }
             }
-        }
-        // Show inventory using existing Player GameObject
-        else if (player)
-        {
-            Player playerScript = player.GetComponent<Player>();
-            if (playerScript && !playerScript.invActive)
+            // Show inventory using existing Player GameObject
+            else if (player)
             {
-                playerScript.activateMenu();
+                Player playerScript = player.GetComponent<Player>();
+                if (playerScript && !playerScript.invActive)
+                {
+                    playerScript.activateMenu();
+                }
             }
         }
     }
