@@ -22,11 +22,12 @@ public class isMoving : MonoBehaviour
     private bool alreadyWalkedBack = false;
     public float Speed;
 
-    private Vector3 offmap = new Vector3(150, -3, -55);
-    private bool left = true;
+    private Vector3 offmap;
+    private int cycle = 0;
 
     void Start(){
         target = Destination.transform.position;
+        offmap = transform.position;
     }
 
     [YarnCommand("MoveNPC")]
@@ -38,7 +39,7 @@ public class isMoving : MonoBehaviour
     }
 
     IEnumerator restartText(){
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f);
         RunDialogue dia = gravestone.GetComponent<RunDialogue>();
         dia.dialogueRunner.StartDialogue("prologue_gravekeeper");
     }
@@ -48,65 +49,65 @@ public class isMoving : MonoBehaviour
     {
         if (isWalking)
         {
-            //Debug.Log("Movin");
-            Vector3 distance;
-            if (left){
-                distance = Character.transform.position - target;
-                p.AllowMove(false);
-            } else {
-                distance = Character.transform.position - offmap;
-            }
-
-            distance = -distance.normalized;
-            Character.transform.position += distance * Speed * Time.deltaTime;
-
-            Character.transform.Rotate(0,0,60*Time.deltaTime);
-
-            if (distance.y >= 0 && distance.x >= 0)          //Changes based on Positioning
-            {
-                isWalking = false;
-                StartCoroutine(doneWalking());
-            }
-        } else if (timeToWalkBack){
             float step = Speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target, step);
 
-            p.AllowMove(false);
+            if (cycle == 0){
+                transform.position = Vector3.MoveTowards(transform.position, target, step);
+                p.AllowMove(false);
+            } else if (cycle == 1){
+                transform.position = Vector3.MoveTowards(transform.position, offmap, step);
+            } else if (cycle == 2){
+                transform.position = Vector3.MoveTowards(transform.position, target, step);
+                p.AllowMove(false);
+            } else if (cycle == 3){
+                transform.position = Vector3.MoveTowards(transform.position, offmap, step);
+                p.AllowMove(false);
+            }
 
             Character.transform.Rotate(0,0,60*Time.deltaTime);
 
-            if (Vector3.Distance(transform.position, target) < 0.001f)
-            {
-                timeToWalkBack = false;
+            if (cycle == 0 || cycle == 2){
+                if (Vector3.Distance(transform.position, target) < 0.001f)
+                {
+                    isWalking = false;
+                    StartCoroutine(doneWalking());
+                }
+            } else {
+                if (Vector3.Distance(transform.position, offmap) < 0.001f)
+                {
+                    isWalking = false;
+                    StartCoroutine(doneWalking());
+                }
             }
+            
         }
     }
 
     IEnumerator doneWalking(){
-        if (left){
-            left = false;
+        if (cycle == 0){
             yield return new WaitForSeconds(1);
             if (!dia.IsDialogueRunning)
                 p.AllowMove(true);
             Destroy(Destination);
-        }
-        
-        if (alreadyWalkedBack){
-            isWalking = false;
-        } else {
+            isWalking = true;
+        } else if (cycle == 2){
+            if (!dia.IsDialogueRunning)
+                p.AllowMove(true);
             isWalking = true;
         }
+
+        ++cycle;
+        Debug.Log(cycle);
     }
 
     [YarnCommand("walkBack")]
     public void walkBack(){
-        timeToWalkBack = true;
-        alreadyWalkedBack = true;
+        //GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        isWalking = true;
     }
 
     [YarnCommand("dropKey")]
     public void dropKey(){
-        timeToWalkBack = false;
         key.SetActive(true);
         isWalking = true;
     }
