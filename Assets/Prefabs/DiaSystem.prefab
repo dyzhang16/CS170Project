@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1572214809403439238
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1195,15 +1195,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yarnScripts:
+  - {fileID: 2480198943629176163, guid: 2f0d3ec9612f9e3488dc23495cb0157f, type: 3}
   - {fileID: 2480198943629176163, guid: 4190cc03f81b55b438f24739cb205d17, type: 3}
-  - {fileID: 2480198943629176163, guid: af93ea5d828c7d749839efaa58bfd55c, type: 3}
-  - {fileID: 2480198943629176163, guid: 9a753bbddbbd0ae4685eab4fa7cb2bab, type: 3}
-  - {fileID: 2480198943629176163, guid: 7041b33f729551746b273b54389b6d6e, type: 3}
   textLanguage: 
   variableStorage: {fileID: 3544879331058583942}
   dialogueUI: {fileID: 3544879331058583943}
-  startNode: prologue_begin
-  startAutomatically: 0
+  startNode: test_options
+  startAutomatically: 1
   onNodeStart:
     m_PersistentCalls:
       m_Calls:
@@ -1433,6 +1431,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1572214810349171456}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3544879329839192006}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
