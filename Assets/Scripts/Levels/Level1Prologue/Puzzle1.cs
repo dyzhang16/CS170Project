@@ -28,7 +28,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
             SoundManagerScript.PlaySound("flower_success"); // plays sound tutorial puzzle complete
             CustomVariableStorage.SetValue("$puzzle", 1);
             GameManager.instance.flowerPuzzle = 1;
-            Inventory.instance.AddItem(key);
+            //Inventory.instance.AddItem(key);
             Hide();
         }
     }
