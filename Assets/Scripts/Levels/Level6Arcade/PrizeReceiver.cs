@@ -11,6 +11,7 @@ public class PrizeReceiver : MonoBehaviour
         if (prize)
         {
             // This is where the prize should be collected and added to inventory
+            Inventory.instance.AddItem(prize.prizeItem);
             col.gameObject.SetActive(false);
         }
     }
