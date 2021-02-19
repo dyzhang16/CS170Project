@@ -150,6 +150,11 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         movement = new Vector3(0, 0, 0);
     }
 
+    public void closeInv(){
+        invActive = false;
+        Inventory.instance.anim.SetBool("Inventory", false);
+    }
+
     public void stopTalkSound()
     {
         audioSrc.Stop();

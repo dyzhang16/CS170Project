@@ -61,7 +61,6 @@ public class isMoving : MonoBehaviour
                 p.AllowMove(false);
             } else if (cycle == 3){
                 transform.position = Vector3.MoveTowards(transform.position, offmap, step);
-                p.AllowMove(false);
             }
 
             Character.transform.Rotate(0,0,60*Time.deltaTime);
@@ -90,10 +89,9 @@ public class isMoving : MonoBehaviour
                 p.AllowMove(true);
             Destroy(Destination);
             isWalking = true;
-        } else if (cycle == 2){
+        } else if (cycle == 3){
             if (!dia.IsDialogueRunning)
                 p.AllowMove(true);
-            isWalking = true;
         }
 
         ++cycle;
