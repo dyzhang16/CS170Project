@@ -8,6 +8,8 @@ public class Street : MonoBehaviour
     public NodeVisitedTracker tracker;
     public VariableStorageBehaviour CustomVariableStorage;
 
+    public GameObject player;
+
     public GameObject friend;
     public GameObject coffeeStand;
 
@@ -27,7 +29,7 @@ public class Street : MonoBehaviour
                 Vector3 pos = new Vector3(coffeeStand.transform.position.x + 4, coffeeStand.transform.position.y, coffeeStand.transform.position.z -6);
                 friend.transform.position = pos;
 
-
+                //set player position
             }
         }
     }
