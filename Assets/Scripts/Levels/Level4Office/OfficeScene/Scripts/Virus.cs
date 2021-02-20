@@ -43,6 +43,7 @@ public class Virus : MonoBehaviour //https://answers.unity.com/questions/1369351
     {
         Destroy(gameObject);
         transform.GetComponentInParent<BulletHellPuzzle>().enemy = false;
+        transform.GetComponentInParent<BulletHellPuzzle>().destroyed++;
     }
 
 }
