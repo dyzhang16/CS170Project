@@ -31,11 +31,11 @@ public class ShowPuzzle : MonoBehaviour
             // Show inventory using an existing InventoryController GameObject (first-person)
             if (inventoryController)
             {
-                OpenInventory openInventory = inventoryController.GetComponent<OpenInventory>();
+                OpenMenus openInventory = inventoryController.GetComponent<OpenMenus>();
                 if (openInventory && !openInventory.invActive)
                 {
                     // open the inventory if the InventoryController has OpenInventory
-                    inventoryController.GetComponent<OpenInventory>().Menu();
+                    inventoryController.GetComponent<OpenMenus>().OpenInventory();
                 }
             }
             // Show inventory using existing Player GameObject

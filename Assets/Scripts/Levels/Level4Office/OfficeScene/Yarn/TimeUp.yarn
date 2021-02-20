@@ -2,9 +2,10 @@
 tags:
 ---
 <<HidePanel Document>>
-<<ChangeSpeaker Player>>
+<<ChangeSpeaker Player Friend>>
+<<Focus FIRST>>
 	Wow that was much more exciting!
-<<ChangeSpeaker Friend>>
+<<Focus SECOND>>
 	Let's work on the repairing the computer after. 
 <<set $DocumentsFinished to 1>>
 <<stop>>
@@ -22,4 +23,9 @@ tags:
 <<Show Documents>>
 <<ShowTimer Documents>>
 <<stop>>
+===
+title: CleanedVirus
+tags:
+---
+<<ChangeScene BlackScreen OfficeScene>>
 ===

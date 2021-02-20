@@ -2,7 +2,7 @@
 tags:
 ---
 <<ChangeSpeaker Player>>
-	Here's a list of the tasks George has to do... Let's see!
+	Here's a list of the tasks Frederick has to do... Let's see!
 <<Show Sticky_Note>>
 <<stop>>
 ===
@@ -16,7 +16,7 @@ tags:
 <<ChangeSpeaker Player>>
 <<if $StampAdded and $PenAdded is 1>>
 	Time to get to work!
-	You can left click to sign a document, or use right click to stamp a document.
+	You can left click to sign a document in the green area, or use right click to stamp a document in the purple area.
 <<Show Documents>>
 <<else>> 
 	I am missing some tools....
@@ -50,11 +50,15 @@ tags:
 title: Monitor
 tags:
 ---
-//check to determine if players finished document puzzle
+<<if $DocumentsFinished is 1>>
 <<ChangeSpeaker Player>>
 	You turn on the monitor.
 <<ChangeSpeaker Computer>>
 	VIRUS HAS BEEN DETECTED ON THIS MACHINE pLEaSe REmOVe aSAp!
 <<ChangeScene BlackScreen ComputerScreenScene>>
+<<else>>
+<<ChangeSpeaker Player>>
+	I should work on the documents first.
+<<endif>>
 <<stop>>
 ===
