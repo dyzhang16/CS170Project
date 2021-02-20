@@ -2,15 +2,9 @@
 tags:
 ---
 <<if $key is 1>>
-<<ChangeSpeaker Player>>
-    //kachink noise of lock unlocking sound effect
-    The key fits! I can finally get out of here.
 
-    //animation of ghost doing like a celebratory loop de loop, but they phase through the gate during it accidentally, shows ghost can go through stuff
-    <<wait 3>>
-   ...Oh. I suppose that works, too.
+    [[done_gate]]
 
-<<ChangeScene BlackScreen Street>>
 <<elseif visited("prologue_doneFlowers") is true>>
 <<ChangeSpeaker Player>>
     
@@ -27,6 +21,30 @@ tags:
    I should familiarize myself with my new home. Maybe I’ll find someone.
     
 <<endif>>
+===
+
+title: done_gate
+---
+<<ChangeSpeaker Player>>
+    //kachink noise of lock unlocking sound effect
+    The key fits! I can finally get out of here.
+
+    //animation of ghost doing like a celebratory loop de loop, but they phase through the gate during it accidentally, shows ghost can go through stuff
+    <<wait 3>>
+   ...Oh. I suppose that works, too.
+
+<<ChangeScene BlackScreen Street>>
+===
+
+title: return_gate
+---
+
+<<ChangeSpeaker Player>>
+
+Back to the Streets for me!
+
+<<ChangeScene BlackScreen Street>>
+
 ===
 
 title: gate_approach

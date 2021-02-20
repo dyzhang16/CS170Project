@@ -5,6 +5,7 @@
 	[[prologue_doneExplore]]
 
 <<endif>>
+
 <<if visited("prologue_begin") is false>>
 <<ChangeSpeaker Player>>
 
@@ -68,7 +69,6 @@ title: prologue_doneExplore
 
 <<else>>
 <<Show Grave>>
-<<set $puzzle to 0>>
 <<endif>>
 ===
 title: prologue_doneFlowers

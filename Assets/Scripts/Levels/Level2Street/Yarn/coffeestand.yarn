@@ -2,18 +2,27 @@
 tags:
 ---
 
-<<if visited("coffeestand") is false>>
+<<if visited("coffeestand") is false and visited("friend_meeting") is true>>
     <<ChangeSpeaker Player>>
 
-    Its a coffee stand.
+    You enter the coffeestand
 
     <<ChangeScene BlackScreen CoffeeScene>>
-<<else>>
+<<elseif visited("coffeestand") is false>>
 
     <<ChangeSpeaker Player>>
 
-    The barista is still sleeping....
+    Its a coffee stand, but where is that weird angry person?
 
 <<endif>>
+
+===
+
+title: coffee_done
+---
+
+<<ChangeSpeaker Player>>
+
+The barista is still sleeping...
 
 ===
