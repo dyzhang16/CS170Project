@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int flowerPuzzle = 0;
     //2 = friend is gone
     public int coffeePuzzle = 0;
+    public int officePuzzle = 0;
 
     void Awake(){
         instance = this;
