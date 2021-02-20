@@ -40,7 +40,7 @@ public class DanceGameplay : MonoBehaviour
 	public readonly int MAX_LEVEL = 7;
 
 	// Number of rounds to play
-	public readonly int NUM_ROUNDS = 2;
+	public readonly int NUM_ROUNDS = 10;
 	public int round = 0; // increments on GenerateMoves call
 
 	// Fields used in calculating accuracy
