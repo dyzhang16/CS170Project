@@ -2,10 +2,18 @@
 tags:
 ---
 
-<<ChangeSpeaker CoffeeStand>>
+<<if visited("coffeestand") is false>>
+    <<ChangeSpeaker Player>>
 
-Its a coffee stand.
+    Its a coffee stand.
 
-<<ChangeScene BlackScreen CoffeeScene>>
+    <<ChangeScene BlackScreen CoffeeScene>>
+<<else>>
+
+    <<ChangeSpeaker Player>>
+
+    The barista is still sleeping....
+
+<<endif>>
 
 ===

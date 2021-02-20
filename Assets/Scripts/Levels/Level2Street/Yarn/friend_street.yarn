@@ -2,10 +2,31 @@
 tags:
 ---
 
-<<ChangeSpeaker Friend1>>
+<<if visited("friend_street") is false>>
+    <<ChangeSpeaker Friend>>
 
-GOTTA GET THE COFFEE
+    Meet ya at the coffee stand!
 
-<<GetCoffee Friend1>>
+    <<GetCoffee Friend1>>
+
+    <<set $coffeepuzzle to 0>>
+
+<<elseif $coffeepuzzle is 0>>
+
+    <<ChangeSpeaker Friend>>
+
+    I want ma coffeeeeeeeeeeeeeeeeeeeee
+
+<<elseif $coffeepuzzle is 1>>
+
+    <<ChangeSpeaker Friend>>
+
+    I gotta go to work I'm gonna be late!
+
+    (for some reason you feel compelled to follow the friend, please follow the friend we have no animation here yet)
+
+    <<MoveToOffice Friend1>>
+
+<<endif>>
 
 ===

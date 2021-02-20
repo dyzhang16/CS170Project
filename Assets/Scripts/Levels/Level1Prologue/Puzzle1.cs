@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
+using UnityEngine.UI;
 
 public class Puzzle1 : MonoBehaviour, IDropHandler
 {
-    public Sprite completeSprite;
     public VariableStorageBehaviour CustomVariableStorage;
     public GameObject puzzlePanel;
     public GameObject FlowerA, FlowerB, FlowerC, FlowerD;
     public static Puzzle1 instance;
     bool flowerASet, flowerBSet, flowerCSet, flowerDSet = false;
+
+    public Sprite flowerAComplete, flowerBComplete, flowerCComplete, flowerDComplete;
     
     public Item key;
 
@@ -24,11 +26,9 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
     {
         if (flowerASet == true && flowerBSet == true && flowerCSet == true && flowerDSet == true)
         {
-            gameObject.GetComponent<UnityEngine.UI.Image>().sprite = completeSprite;
             SoundManagerScript.PlaySound("flower_success"); // plays sound tutorial puzzle complete
             CustomVariableStorage.SetValue("$puzzle", 1);
             GameManager.instance.flowerPuzzle = 1;
-            //Inventory.instance.AddItem(key);
             Hide();
         }
     }
@@ -46,37 +46,33 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         Item droppedItem = Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()];
-        if (droppedItem.itemName == "FlowerA")
+        if (droppedItem.itemName == "White Flower")
         {
             flowerASet = true;
-            FlowerA.SetActive(true);
+            FlowerA.transform.GetComponent<Image>().sprite = flowerAComplete;
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();
-            //Debug.Log(flowerASet);
         }
-        else if (droppedItem.itemName == "FlowerB")
+        else if (droppedItem.itemName == "Red Flower")
         {
             flowerBSet = true;
-            FlowerB.SetActive(true);
+            FlowerB.transform.GetComponent<Image>().sprite = flowerBComplete;
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();
-            //Debug.Log(flowerBSet);
         }
-        else if (droppedItem.itemName == "FlowerC")
+        else if (droppedItem.itemName == "Yellow Flower")
         {
             flowerCSet = true;
-            FlowerC.SetActive(true);
+            FlowerC.transform.GetComponent<Image>().sprite = flowerCComplete;
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();
-            //Debug.Log(flowerCSet);
         }
-        else if (droppedItem.itemName == "FlowerD")
+        else if (droppedItem.itemName == "Purple Flower")
         {
             flowerDSet = true;
-            FlowerD.SetActive(true);
+            FlowerD.transform.GetComponent<Image>().sprite = flowerDComplete;
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();
-            //Debug.Log(flowerDSet);
         }
         else
         {
