@@ -81,8 +81,6 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                     openInventory();
                 }
             }
-
-            
         }
 
         if (Input.GetKeyDown(KeyCode.P)){
