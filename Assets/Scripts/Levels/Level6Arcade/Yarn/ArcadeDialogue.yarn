@@ -2,24 +2,68 @@
 tags:
 ---
 <<ChangeSpeaker Player>>
-it is i the programmer.
-
-apologies but there is a lot of placeholder stuff here.
+it is i the programmer. apologies but there is a lot of placeholder stuff here.
 
 the three colored art represent arcade machines.
 
-have fun!
-
-if you want to leave, there is a placeholder exit to the right.
+have fun! if you want to leave, there is a placeholder exit to the right.
 ===
+
+title: PromptCrane
+tags:
+---
+<<ChangeSpeaker Player>>
+Do you want to play the crane game?
+-> Yes
+    <<Show CranePuzzlePanel>>
+    <<set $playedCrane to true>>
+-> No
+    <<stop>>
+===
+
+title: PromptBasketball
+tags:
+---
+<<ChangeSpeaker Player>>
+Do you want to play basketball?
+-> Yes
+    <<Show BasketballPanel>>
+    <<set $playedBasketball to true>>
+-> No
+    <<stop>>
+===
+
+title: PromptDance
+tags:
+---
+<<ChangeSpeaker Player>>
+Do you want to play the dancing game?
+-> Yes
+    <<Show DanceGamePuzzlePanel>>
+    <<set $playedDance to true>>
+-> No
+    <<stop>>
+===
+
 
 title: ArcadeLeave
 tags:
 ---
-<<ChangeSpeaker Player>>
-Do you want to go outside?
--> Yes.
-    <<ChangeScene BlackScreen Street>>
--> No.
-    <<exit>>
+<<if ($playedCrane is true and $playedBasketball is true and $playedDance is true)>>
+    <<ChangeSpeaker Player>>
+    Do you want to go exit?
+    -> Yes.
+        
+        Thank you for playing the game.
+
+        Goodbye!
+
+        <<ExitGame>>
+        // <<ChangeScene BlackScreen Street>>
+    -> No.
+        <<exit>>
+<<else>>
+    <<ChangeSpeaker Player>>
+    There are still some games I haven't tried yet.
+<<endif>>
 ===
