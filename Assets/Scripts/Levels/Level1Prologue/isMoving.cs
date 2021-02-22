@@ -24,8 +24,9 @@ public class isMoving : MonoBehaviour
 
     private Vector3 offmap;
     private int cycle = 0;
+    public bool whistle_on = false;
 
-    void Start(){
+    void Start() {
         target = Destination.transform.position;
         offmap = transform.position;
     }
@@ -38,17 +39,40 @@ public class isMoving : MonoBehaviour
         StartCoroutine(restartText());
     }
 
-    IEnumerator restartText(){
+    IEnumerator restartText() {
         yield return new WaitForSeconds(1.5f);
         RunDialogue dia = gravestone.GetComponent<RunDialogue>();
         dia.dialogueRunner.StartDialogue("prologue_gravekeeper");
     }
 
+    public void playWhistle() // plays whistle sound when gravekeeper is moving
+    {
+        if (isWalking == false) 
+        { 
+            whistle_on = false; 
+        }
+
+        if (isWalking)
+        {
+
+            if(whistle_on == false)
+            {
+                SoundManagerScript.PlaySound("whistle");
+                whistle_on = true;
+            }
+            
+        }
+    }
+    
+
+
     // Update is called once per frame
     void Update()
     {
         if (isWalking)
+
         {
+            
             float step = Speed * Time.deltaTime;
 
             if (cycle == 0){
@@ -78,7 +102,8 @@ public class isMoving : MonoBehaviour
                     StartCoroutine(doneWalking());
                 }
             }
-            
+            playWhistle();
+
         }
     }
 
