@@ -25,7 +25,10 @@ public class GateApproach : MonoBehaviour
 				// run gate_approach node if puzzle is 1
 				if (!dialogueRunner.IsDialogueRunning)
 				{
+					
 					dialogueRunner.StartDialogue("gate_approach");
+
+					
 				}
 			}
 		}
