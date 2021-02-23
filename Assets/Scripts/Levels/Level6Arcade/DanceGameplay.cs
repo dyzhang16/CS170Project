@@ -61,6 +61,7 @@ public class DanceGameplay : MonoBehaviour
 	/// </summary>
 	public void InitializeNewGame()
 	{
+		Debug.Log("Dance Gameplay Started");
 		exitButton.interactable = false;
 		numCurrentCorrectMoves = 0;
 		numTotalCorrectMoves = 0;

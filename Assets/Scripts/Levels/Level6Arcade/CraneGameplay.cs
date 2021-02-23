@@ -106,6 +106,7 @@ public class CraneGameplay : MonoBehaviour
 	{
 		isPlaying = true;
 		activeTries--;
+		Debug.Log("Crane Gameplay Started");
 	}
 
 	/// <summary>
