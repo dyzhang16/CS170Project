@@ -2,11 +2,9 @@
 tags:
 ---
 <<ChangeSpeaker Player>>
-it is i the programmer. apologies but there is a lot of placeholder stuff here.
+    So this is the arcade. All the machines here seem to look the same with the same placeholder art...
 
-the three colored art represent arcade machines.
-
-have fun! if you want to leave, there is a placeholder exit to the right.
+    There were three games I wanted to take a look at while I'm here.
 ===
 
 title: PromptCrane
@@ -53,11 +51,6 @@ tags:
     <<ChangeSpeaker Player>>
     Do you want to go exit?
     -> Yes.
-        
-        Thank you for playing the game.
-
-        Goodbye!
-
         <<ExitGame>>
         // <<ChangeScene BlackScreen Street>>
     -> No.
@@ -66,4 +59,20 @@ tags:
     <<ChangeSpeaker Player>>
     There are still some games I haven't tried yet.
 <<endif>>
+===
+
+title: ArcadeUnusable
+tags:
+---
+<<ChangeSpeaker Player>>
+    Looks like I can't use this machine.
+<<exit>>
+===
+
+title: PrizeBooth
+tags:
+---
+<<ChangeSpeaker Player>>
+    This is the prize booth. Too bad I don't have any tickets.
+<<exit>>
 ===
