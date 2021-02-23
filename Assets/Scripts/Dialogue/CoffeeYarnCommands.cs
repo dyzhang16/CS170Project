@@ -84,6 +84,8 @@ public class CoffeeYarnCommands : MonoBehaviour
             boa.icon = boa.sleeveAndLidIcon;
             boa.sleeveOn = true;
             Inventory.instance.AddItem(creation);
+            dialogueRunner.StartDialogue(creation.name);
+
         }
         else
         {
@@ -105,6 +107,7 @@ public class CoffeeYarnCommands : MonoBehaviour
             boa.icon = boa.sleeveAndLidIcon;
             boa.lidOn = true;
             Inventory.instance.AddItem(creation);
+            dialogueRunner.StartDialogue(creation.name);
         }
         else
         {
