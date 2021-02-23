@@ -92,6 +92,7 @@ public class BasketballGameplay : MonoBehaviour
 	/// </summary>
 	public void StartGame()
 	{
+		Debug.Log("Basketball Gameplay Started");
 		// initialize some fields
 		timer = MAX_TIME;
 		UpdateTimer();
