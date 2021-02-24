@@ -9,7 +9,7 @@ public class Transitions : MonoBehaviour
 {
 
     public Animator transition;
-    public float transitionSpeed = 1f;
+    public float transitionSpeed = 0.5f;
 
     // public GameObject buttonPanel;
     // public GameObject menuPanel;
@@ -24,6 +24,7 @@ public class Transitions : MonoBehaviour
     }
 
     public void LoadNextScene(string sceneToChange){
+        GameManager.instance.saveItems();
         StartCoroutine(FadeScene(sceneToChange));
     }
 

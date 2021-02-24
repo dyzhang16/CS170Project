@@ -26,6 +26,7 @@ public class apartment_puzzle : MonoBehaviour
 
     }
 
+    [YarnCommand("checkIfComplete")]
     public void checkIfComplete(){
         foreach(bool key in dic.Values){
             if (!key){
@@ -36,5 +37,10 @@ public class apartment_puzzle : MonoBehaviour
 
         puzzleComplete = true;
         CustomVariableStorage.SetValue("$apartment_puzzle", 1);
+    }
+
+    [YarnCommand("pickUpObj")]
+    public void AddPuzzle(string obj){
+        dic[obj] = false;
     }
 }

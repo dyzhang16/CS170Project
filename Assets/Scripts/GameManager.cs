@@ -6,6 +6,8 @@ using Yarn.Unity;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    //inventory itemList
+    public Item[] items;
     //0 = not completed, 1 = completed
     public int flowerPuzzle = 0;
     //2 = friend is gone
@@ -17,10 +19,28 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Start(){
+        if (items.Length == 0){
+            items = new Item[Inventory.instance.itemList.Length];
+        }
+    }
+
+    public void saveItems(){
+        for (int i = 0; i < items.Length; ++i) {
+            items[i] = Inventory.instance.itemList[i];
+        }
+    }
+
+    public void loadItems(){
+        for (int i = 0; i < items.Length; ++i) {
+            Inventory.instance.AddItem(items[i]);
+        }
+    }
+
+    public void deleteItems(){
+        for (int i = 0; i < items.Length; ++i) {
+            items[i] = null;
+        }
     }
 
     [YarnCommand("ChangeVariable")]
