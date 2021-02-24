@@ -87,8 +87,6 @@ public class isMoving : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, offmap, step);
             }
 
-            Character.transform.Rotate(0,0,60*Time.deltaTime);
-
             if (cycle == 0 || cycle == 2){
                 if (Vector3.Distance(transform.position, target) < 0.001f)
                 {
@@ -114,13 +112,20 @@ public class isMoving : MonoBehaviour
                 p.AllowMove(true);
             Destroy(Destination);
             isWalking = true;
-        } else if (cycle == 3){
-            if (!dia.IsDialogueRunning)
+            GetComponent<SpriteRenderer>().flipX = true;
+        } else if (cycle == 1){
+            GetComponent<SpriteRenderer>().flipX = false;
+        } else if (cycle == 2){
+            if (!dia.IsDialogueRunning){
                 p.AllowMove(true);
+                isWalking = true;
+            }
+
+            GetComponent<SpriteRenderer>().flipX = true;
         }
 
         ++cycle;
-        Debug.Log(cycle);
+        // Debug.Log(cycle);
     }
 
     [YarnCommand("walkBack")]

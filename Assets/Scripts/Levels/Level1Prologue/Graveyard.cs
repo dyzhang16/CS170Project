@@ -16,6 +16,7 @@ public class Graveyard : MonoBehaviour
     public GameObject flowerB;
     public GameObject flowerC;
     public GameObject flowerD;
+    public GameObject bouqet;
     public GameObject key;
     public GameObject gateApproach;
     public GameObject gate;
@@ -48,6 +49,9 @@ public class Graveyard : MonoBehaviour
 
                 //destroy key
                 Destroy(key);
+
+                //reveal bouqet
+                bouqet.SetActive(true);
 
                 //gravestone start instantly = false;
                 RunDialogue dia = gravestone.GetComponent<RunDialogue>();

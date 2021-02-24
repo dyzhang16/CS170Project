@@ -32,6 +32,8 @@ I finished cleaning your room!
 title: apartment_puzzle_start
 ---
 
+<<checkIfComplete Level>>
+
 <<if $apartment_puzzle_finished is 1>>
     [[DoneCleaningRoom]]
 <<endif>>
@@ -57,4 +59,15 @@ title: apartment_puzzle_start
 
     <<endif>>
 <<endif>>
+===
+
+title: start_puzzle
+---
+
+<<ChangeSpeaker Player>>
+
+I'm in Fredrick's apartment now.
+
+Guess I should talk to them.
+
 ===

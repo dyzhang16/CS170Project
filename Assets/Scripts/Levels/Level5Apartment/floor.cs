@@ -31,7 +31,6 @@ public class floor : MonoBehaviour, IDropHandler
             Inventory.instance.UpdateSlotUI();
 
             puzzle.dic[droppedItem.itemName] = true;
-            puzzle.checkIfComplete();
         }
     }
 }

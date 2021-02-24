@@ -32,4 +32,13 @@ public class Street : MonoBehaviour
             }
         }
     }
+
+    void Start(){
+        //load inventory stuff
+        GameManager.instance.loadItems();
+        Item key = Inventory.instance.FindItem("Key");
+        if (key){
+            Inventory.instance.RemoveItem(key);
+        }
+    }
 }

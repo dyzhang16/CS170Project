@@ -14,6 +14,8 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
     public static Puzzle1 instance;
     bool flowerASet, flowerBSet, flowerCSet, flowerDSet = false;
 
+    public GameObject bouqet;
+
     public Sprite flowerAComplete, flowerBComplete, flowerCComplete, flowerDComplete;
     
     public Item key;
@@ -28,6 +30,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         {
             SoundManagerScript.PlaySound("flower_success"); // plays sound tutorial puzzle complete
             CustomVariableStorage.SetValue("$puzzle", 1);
+            bouqet.SetActive(true);
             GameManager.instance.flowerPuzzle = 1;
             Hide();
         }
