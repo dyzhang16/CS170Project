@@ -7,9 +7,11 @@ using Yarn.Unity;
 public class CoffeePuzzle : MonoBehaviour, IDropHandler
 {
     public GameObject puzzlePanel;
+    public DialogueRunner dialogueRunner;
     public VariableStorageBehaviour CustomVariableStorage;
-    public bool cupThere, filterThere, groundsThere;
     public GameObject cup, filter, grounds, brewedCoffee;
+    [HideInInspector] public bool cupThere, filterThere, groundsThere, waterThere;
+    
    
     [YarnCommand("ResetCoffee")]
 
@@ -18,6 +20,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
         cupThere = false;
         filterThere = false;
         groundsThere = false;
+        waterThere = false;
         brewedCoffee.SetActive(false);
     }
 
@@ -50,20 +53,28 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 Inventory.instance.UpdateSlotUI();
                 SoundManagerScript.PlaySound("place_coffee"); // coffee sound
             }
+            else if (droppedItem.itemName == "Blender" && !waterThere)
+            {
+                waterThere = true;
+                Inventory.instance.RemoveItem(droppedItem);
+                Inventory.instance.UpdateSlotUI();
+                SoundManagerScript.PlaySound("pour_coffee"); // coffee sound
+            }
             else
             {
-                Debug.Log("Cannot be Dropped");
+                dialogueRunner.StartDialogue("WrongStep");
             }
         }
     }
 
     public void brewCoffee()
     {
-        if (cupThere && filterThere && groundsThere)
+        if (cupThere && filterThere && groundsThere && waterThere)
         {
             SoundManagerScript.PlaySound("pour_coffee"); 
             
             cupThere = false;
+            waterThere = false;
             cup.SetActive(false);
             filterThere = false;
             filter.SetActive(false);
@@ -71,12 +82,10 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
             grounds.SetActive(false);
 
             brewedCoffee.SetActive(true);
-
-            
         }
         else 
         {
-            Debug.Log("Missing something");
+            dialogueRunner.StartDialogue("MissingSomething");
         }
     }
 }

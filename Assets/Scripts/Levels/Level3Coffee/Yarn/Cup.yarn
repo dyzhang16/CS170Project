@@ -37,6 +37,19 @@ title: TakePaperFilter
 <<stop>>
 ===
 
+title: Blender
+---
+<<ChangeSpeaker Player>>
+<<if IsInventoryFull() is true>>
+  [[CannotTake]]
+<<else>>
+	You add the blender filled with water to your inventory.
+<<endif>>
+<<Add Blender>>
+
+
+===
+
 title: CannotTake
 ---
 <<ChangeSpeaker Player>>
@@ -52,7 +65,7 @@ title: PutSleeveOn
 	You put the sleeve on your coffee.
 <<Sleeve Random>>
 <<else>>
-	You find the cup sleeves messily spread around. 
+	 I’m pretty sure the sleeve goes on the cup after the drink is made.
 <<endif>>
 <<stop>>
 ===
@@ -65,7 +78,7 @@ title: PutLidOn
 	You put the lid on your coffee.
 <<Lid Random>>
 <<else>>
-	You find the cup lids stacked nicely in a tower.
+	 I have no coffee to cover with the lid yet.
 <<endif>>
 ===
 
