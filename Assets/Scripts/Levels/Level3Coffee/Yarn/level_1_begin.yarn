@@ -12,6 +12,7 @@ tags:
 	But I don’t actually know how to make coffee…
 	
 	Is there an employee instruction manual anywhere?
+<<ChangeVariable GameManager visitedCoffee 1>>
 ===
 
 title: RecipeBook
@@ -46,4 +47,10 @@ tags:
 	//Ghost:
 	Hmm what's this? Maybe it will help me look for some ingredients to make the coffee!
 <<Show Note>>
+===
+
+title: LeaveCoffee
+tags:
+---
+<<ChangeScene BlackScreen Street>>
 ===

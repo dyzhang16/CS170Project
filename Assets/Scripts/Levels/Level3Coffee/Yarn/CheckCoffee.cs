@@ -15,7 +15,7 @@ public class CheckCoffee : MonoBehaviour , IDropHandler
         Item droppedItem = Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()];
         if (puzzlePanel.GetComponent<CanvasGroup>().alpha == 1)
         {
-            if (droppedItem.itemName == "Milk™")
+            if (droppedItem.itemName == "Moo-cha™")
             {
                 Debug.Log("You gave the right coffee!");
                 CustomVariableStorage.SetValue("$CoffeePuzzle", 1);

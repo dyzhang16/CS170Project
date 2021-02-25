@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     //2 = friend is gone
     public int coffeePuzzle = 0;
     public int officePuzzle = 0;
+    public int visitedCoffee = 0;
+    public int blender = 0;
 
     void Awake(){
         instance = this;
@@ -50,9 +52,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("No value given");
         } else {
             switch(variables[0]){
-                // case "":
-                //      = int.Parse(variables[1]);
-                //     break;
+                case "Blender":
+                   blender = int.Parse(variables[1]);
+                     break;
+                case "visitedCoffee":
+                    visitedCoffee = int.Parse(variables[1]);
+                    break;
                 default:
                     break;
             }

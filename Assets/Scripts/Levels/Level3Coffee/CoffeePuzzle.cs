@@ -53,7 +53,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 Inventory.instance.UpdateSlotUI();
                 SoundManagerScript.PlaySound("place_coffee"); // coffee sound
             }
-            else if (droppedItem.itemName == "Blender" && !waterThere)
+            else if (droppedItem.itemName == "Blender")
             {
                 waterThere = true;
                 Inventory.instance.RemoveItem(droppedItem);
