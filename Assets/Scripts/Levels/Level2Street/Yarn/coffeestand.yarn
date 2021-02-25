@@ -2,13 +2,13 @@
 tags:
 ---
 
-<<if visited("coffeestand") is false and visited("friend_meeting") is true>>
+<<if visited("friend_meeting") is true>>
     <<ChangeSpeaker Player>>
 
     You enter the coffeestand
 
     <<ChangeScene BlackScreen CoffeeScene>>
-<<elseif visited("coffeestand") is false>>
+<<else>>
 
     <<ChangeSpeaker Player>>
 

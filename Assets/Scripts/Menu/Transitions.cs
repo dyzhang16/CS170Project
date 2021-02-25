@@ -36,4 +36,12 @@ public class Transitions : MonoBehaviour
 
         SceneManager.LoadScene(sceneToChange);
     }
+
+    IEnumerator FadeArea(){
+        // transition.SetTrigger("");
+
+        yield return new WaitForSeconds(transitionSpeed);
+
+        // transition.SetTrigger("");
+    }
 }

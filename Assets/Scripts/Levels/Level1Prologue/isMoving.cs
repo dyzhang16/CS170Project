@@ -3,46 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class isMoving : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject Character;
     public GameObject Destination;
-    private Vector3 target;
+    public GameObject insideGraveyard;
+    public GameObject gate;
+    public GameObject outsideGraveyard;
+
     public GameObject gravestone;
+    public GameObject key;
     public GameObject player;
     Player p;
-    public GameObject key;
 
     public DialogueRunner dia;
+
+    public GameObject cam;
+    CinemachineVirtualCamera c;
 
     public bool isWalking;
     public bool timeToWalkBack;
     private bool alreadyWalkedBack = false;
     public float Speed;
 
-    private Vector3 offmap;
     private int cycle = 0;
     public bool whistle_on = false;
 
-    void Start() {
-        target = Destination.transform.position;
-        offmap = transform.position;
+    void Awake(){
+        p = player.GetComponent<Player>();
+        c = cam.GetComponent<CinemachineVirtualCamera>();
     }
 
     [YarnCommand("MoveNPC")]
     public void MoveNPC()
     {
         isWalking = true;
-        p = player.GetComponent<Player>();
         StartCoroutine(restartText());
     }
 
     IEnumerator restartText() {
         yield return new WaitForSeconds(1.5f);
-        RunDialogue dia = gravestone.GetComponent<RunDialogue>();
-        dia.dialogueRunner.StartDialogue("prologue_gravekeeper");
+        RunDialogue dialogue = gravestone.GetComponent<RunDialogue>();
+        dialogue.dialogueRunner.StartDialogue("prologue_gravekeeper");
     }
 
     public void playWhistle() // plays whistle sound when gravekeeper is moving
@@ -70,58 +74,77 @@ public class isMoving : MonoBehaviour
     void Update()
     {
         if (isWalking)
-
         {
-            
+            //distance traveled per frame
             float step = Speed * Time.deltaTime;
 
+            //first flower
             if (cycle == 0){
-                transform.position = Vector3.MoveTowards(transform.position, target, step);
+                transform.position = Vector3.MoveTowards(transform.position, Destination.transform.position, step);
                 p.AllowMove(false);
-            } else if (cycle == 1){
-                transform.position = Vector3.MoveTowards(transform.position, offmap, step);
-            } else if (cycle == 2){
-                transform.position = Vector3.MoveTowards(transform.position, target, step);
-                p.AllowMove(false);
-            } else if (cycle == 3){
-                transform.position = Vector3.MoveTowards(transform.position, offmap, step);
-            }
-
-            if (cycle == 0 || cycle == 2){
-                if (Vector3.Distance(transform.position, target) < 0.001f)
+    
+                if (Vector3.Distance(transform.position, Destination.transform.position) < 0.001f)
                 {
                     isWalking = false;
                     StartCoroutine(doneWalking());
                 }
-            } else {
-                if (Vector3.Distance(transform.position, offmap) < 0.001f)
+            } else if (cycle == 1){ //diggy hole or something
+                transform.position = Vector3.MoveTowards(transform.position, insideGraveyard.transform.position, step);
+
+                if (Vector3.Distance(transform.position, insideGraveyard.transform.position) < 0.001f)
                 {
                     isWalking = false;
                     StartCoroutine(doneWalking());
                 }
-            }
-            playWhistle();
+            } else if (cycle == 2){ //key
+                transform.position = Vector3.MoveTowards(transform.position, key.transform.position, step);
+                p.AllowMove(false);
 
+                if (Vector3.Distance(transform.position, key.transform.position) < 0.001f)
+                {
+                    isWalking = false;
+                    StartCoroutine(doneWalking());
+                }
+            } else if (cycle == 3){ //gate
+                transform.position = Vector3.MoveTowards(transform.position, gate.transform.position, step);
+
+                if (Vector3.Distance(transform.position, gate.transform.position) < 0.001f)
+                {
+                    isWalking = false;
+                    StartCoroutine(doneWalking());
+                }
+            } else if (cycle == 4) {//outside graveyard
+                transform.position = Vector3.MoveTowards(transform.position, outsideGraveyard.transform.position, step);
+
+                if (Vector3.Distance(transform.position, outsideGraveyard.transform.position) < 0.001f)
+                {
+                    isWalking = false;
+                    StartCoroutine(doneWalking());
+                }
+
+            }
+
+            if (cycle == 0 || cycle == 1){
+                playWhistle();
+            }
         }
     }
 
     IEnumerator doneWalking(){
         if (cycle == 0){
             yield return new WaitForSeconds(1);
-            if (!dia.IsDialogueRunning)
-                p.AllowMove(true);
             Destroy(Destination);
             isWalking = true;
-            GetComponent<SpriteRenderer>().flipX = true;
         } else if (cycle == 1){
-            GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<SpriteRenderer>().flipX = true;
         } else if (cycle == 2){
             if (!dia.IsDialogueRunning){
                 p.AllowMove(true);
                 isWalking = true;
             }
-
-            GetComponent<SpriteRenderer>().flipX = true;
+        } else if (cycle == 3){
+            yield return new WaitForSeconds(0.5f);
+            isWalking = true;
         }
 
         ++cycle;
@@ -130,13 +153,14 @@ public class isMoving : MonoBehaviour
 
     [YarnCommand("walkBack")]
     public void walkBack(){
-        //GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         isWalking = true;
+        c.Follow = this.transform;
     }
 
     [YarnCommand("dropKey")]
     public void dropKey(){
         key.SetActive(true);
         isWalking = true;
+        c.Follow = player.transform;
     }
 }

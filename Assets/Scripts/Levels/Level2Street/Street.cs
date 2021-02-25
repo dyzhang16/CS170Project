@@ -23,22 +23,29 @@ public class Street : MonoBehaviour
                 //set the friend dialogue to complete
                 friend.GetComponent<RunDialogue>().dialogueToRun = "friend_after_coffee";
 
-                //set friend position
-                Vector3 pos = new Vector3(coffeeStand.transform.position.x -18, coffeeStand.transform.position.y, coffeeStand.transform.position.z -6);
-                friend.transform.position = pos;
-
                 //set player position
-                player.transform.position = pos + new Vector3(30, 0, 0);
+                player.transform.position = friend.transform.position + new Vector3(30, 0, 0);
+            } else if (GameManager.instance.visitedCoffee == 1){
+                //set player position
+                player.transform.position = friend.transform.position + new Vector3(30, 0, 0);
+
+                //change friend dialogue   
+                tracker.NodeComplete("friend_meeting");
+            } else if (GameManager.instance.visitedAfterCoffee == 1){
+
             }
         }
     }
 
     void Start(){
-        //load inventory stuff
-        GameManager.instance.loadItems();
-        Item key = Inventory.instance.FindItem("Key");
-        if (key){
-            Inventory.instance.RemoveItem(key);
+        if (GameManager.instance != null){
+            //load inventory stuff
+            GameManager.instance.loadItems();
+            Item key = Inventory.instance.FindItem("Key");
+            if (key){
+                Inventory.instance.RemoveItem(key);
+            }
+            GameManager.instance.deleteItems();
         }
     }
 }

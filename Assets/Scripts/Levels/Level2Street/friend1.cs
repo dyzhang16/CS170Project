@@ -8,6 +8,9 @@ public class friend1 : MonoBehaviour
 
     public GameObject friend;
     public GameObject coffeeStand;
+    public GameObject receipt;
+    public GameObject collider;
+    public VariableStorageBehaviour CustomVariableStorage;
 
     public bool isWalking = false;
     public float Speed;
@@ -32,14 +35,14 @@ public class friend1 : MonoBehaviour
         }
     }
 
-    [YarnCommand("GetCoffee")]
-    public void GetCoffee(){
-        Vector3 pos = new Vector3(coffeeStand.transform.position.x -18, coffeeStand.transform.position.y, coffeeStand.transform.position.z -6);
-        friend.transform.position = pos;
-    }
-
     [YarnCommand("MoveToOffice")]
     public void MoveToOffice(){
         isWalking = true;
+    }
+
+    [YarnCommand("DropReceipt")]
+    public void DropReceipt(){
+        receipt.SetActive(true);
+        receipt.GetComponent<Animator>().SetTrigger("ReceiptFall");
     }
 }
