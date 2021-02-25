@@ -80,10 +80,12 @@ public class CraneGameplay : MonoBehaviour
 		if (isPlaying || claw.isDropping || currentPrize != null)
 		{
 			exitButton.interactable = false;
+			coinButton.interactable = false;
 		}
 		else
 		{
 			exitButton.interactable = true;
+			coinButton.interactable = true;
 		}
 	}
 
