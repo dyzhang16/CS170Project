@@ -20,7 +20,6 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
         cupThere = false;
         filterThere = false;
         groundsThere = false;
-        waterThere = false;
         brewedCoffee.SetActive(false);
     }
 
