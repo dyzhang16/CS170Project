@@ -68,6 +68,10 @@ public class ChangeSpeaker : MonoBehaviour
         // ChangeImage for second parameter (if it exists)
         if (parameters.Length >= 2)
         {
+            if (parameters[0] == "None")
+            {
+                characterImage.gameObject.SetActive(false);
+            }
             // Show the second character image if it does exist
             secondCharacterImage.gameObject.SetActive(true);
             // Do the image change

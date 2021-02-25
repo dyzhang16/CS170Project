@@ -2,48 +2,58 @@
 ---
 <<ChangeSpeaker Player>>
 <<if IsInventoryFull() is true>>
+
   [[CannotTake]]
+
 <<else>>
+
 	You add the cup to your inventory.
+
 <<endif>>
 <<Add Cup>>
-
-<<stop>>
 ===
 
 title: TakeCoffeeGrounds
 ---
 <<ChangeSpeaker Player>>
 <<if IsInventoryFull() is true>>
+
   [[CannotTake]]
+
 <<else>>
+
 	You add the coffee beans to your inventory.
+
 <<endif>>
 <<Add Coffee_Grounds>>
-
-<<stop>>
 ===
 
 title: TakePaperFilter
 ---
 <<ChangeSpeaker Player>>
 <<if IsInventoryFull() is true>>
+
   [[CannotTake]]
+
 <<else>>
+
 	You add the paper filter to your inventory.
+
 <<endif>>
 <<Add Paper_Filter>>
-
-<<stop>>
 ===
 
 title: Blender
 ---
 <<ChangeSpeaker Player>>
 <<if IsInventoryFull() is true>>
+
   [[CannotTake]]
+
 <<else>>
+
 	You add the blender filled with water to your inventory.
+
 <<endif>>
 <<Add Blender>>
 <<ChangeVariable GameManager Blender 1>>
@@ -54,8 +64,8 @@ title: Blender
 title: CannotTake
 ---
 <<ChangeSpeaker Player>>
+
   You have too much stuff in your inventory!
-<<stop>>
 ===
 
 title: PutSleeveOn
@@ -63,10 +73,13 @@ title: PutSleeveOn
 <<ChangeSpeaker Player>>
 <<Check Random>>
 <<if $DrinkExists is 1>>
+
 	You put the sleeve on your coffee.
 <<Sleeve Random>>
 <<else>>
+
 	 I’m pretty sure the sleeve goes on the cup after the drink is made.
+
 <<endif>>
 <<stop>>
 ===
@@ -74,12 +87,16 @@ title: PutSleeveOn
 title: PutLidOn
 ---
 <<ChangeSpeaker Player>>
-<<Check Random>>
+<<Check Random Coffee>>
 <<if $DrinkExists is 1>>
+
 	You put the lid on your coffee.
-<<Lid Random>>
+
+<<Lid Random Coffee>>
 <<else>>
+
 	 I have no coffee to cover with the lid yet.
+
 <<endif>>
 ===
 

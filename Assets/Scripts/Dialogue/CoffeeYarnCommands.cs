@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using System.Linq;
 using UnityEngine;
 using Yarn.Unity;
@@ -27,7 +28,7 @@ public class CoffeeYarnCommands : MonoBehaviour
         RecipeBook.Add((7, 6), Coffee4);
         RecipeBook.Add((10, 10), Coffee5);
         so = Instantiate(BizarreCoffee);
-        so.itemName = "BizarreCoffee";
+        so.itemName = "Bizarre Coffee";
         so.itemDescription = "There is a varying amounts of sugar and cream in this coffee.";
 
         dialogueRunner.AddCommandHandler(
@@ -53,13 +54,13 @@ public class CoffeeYarnCommands : MonoBehaviour
     {
         Debug.Log("Adding Drink!");
         var so = Instantiate(cloneItem);
-        so.itemName = "Random";
+        so.itemName = "Random Coffee";
         so.itemDescription = "You can add sugar and cream to this coffee!";
         Inventory.instance.AddItem(so);
     }
     public void CheckCoffee(string[] parameters)
     {
-        string Object = parameters[0];     
+        string Object = string.Join(" ", parameters);
         if (Inventory.instance.CheckItem(Object))
         {
             Debug.Log("Found item");
@@ -74,7 +75,7 @@ public class CoffeeYarnCommands : MonoBehaviour
     }
     private void CoffeeSleeve(string[] parameters)
     {
-        string Object = parameters[0];
+        string Object = string.Join(" ", parameters);
         Item item = Inventory.instance.FindItem(Object);
         var boa = item as Drink;
         (int, int) received = (boa.Cream, boa.Sugar);
@@ -97,7 +98,7 @@ public class CoffeeYarnCommands : MonoBehaviour
     }
     private void CoffeeLid(string[] parameters)
     {
-        string Object = parameters[0];
+        string Object = string.Join(" ", parameters);
         Item item = Inventory.instance.FindItem(Object);
         var boa = item as Drink;
         (int, int) received = (boa.Cream, boa.Sugar);
