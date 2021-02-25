@@ -1,25 +1,4 @@
-﻿title: friend_street
-tags:
----
-
-<<if visited("friend_street") is false>>
-    <<ChangeSpeaker Friend>>
-
-    Meet ya at the coffee stand!
-
-    <<GetCoffee Friend1>>
-
-    <<set $coffeepuzzle to 0>>
-
-<<elseif $coffeepuzzle is 0>>
-
-    [[friend_meeting]]
-
-<<endif>>
-
-===
-
-title: friend_meeting
+﻿title: friend_meeting
 ---
 
 <<if visited("friend_meeting") is false>>
@@ -67,14 +46,14 @@ title: friend_meeting
     <<Focus SECOND>>
     Hey, I don’t have the time to deal with whatever the heck you’re talking about. Leave me alone.
 
-    <<Focus FIRST>>
+    <<ChangeSpeaker Player>>
     ...I need to find a way to get this person to talk to me.
-
 
     But they won’t talk to me unless they have their coffee...
 
-
     Where am I supposed to get them coffee?
+
+    <<DropReceipt Friend1>>
 
 <<else>>
 
@@ -100,6 +79,7 @@ title: friend_after_coffee
     (for some reason you feel compelled to follow the friend, please follow the friend we have no animation here yet)
 
     <<MoveToOffice Friend1>>
+    <<ChangeVariable GameManager visitedAfterCoffee 1>>
 <<else>>
 
     <<ChangeSpeaker Friend>>

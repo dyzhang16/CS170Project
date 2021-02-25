@@ -6,42 +6,54 @@ using Yarn.Unity;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public static bool exists;
     //inventory itemList
     public Item[] items;
     //0 = not completed, 1 = completed
     public int flowerPuzzle = 0;
-    //2 = friend is gone
     public int coffeePuzzle = 0;
-    public int officePuzzle = 0;
     public int visitedCoffee = 0;
     public int blender = 0;
+    public int officePuzzle = 0;
+    public int visitedAfterCoffee = 0;
 
     void Awake(){
-        instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        if (!exists){
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+            exists = true;
+        } else {
+            Destroy(this.gameObject);
+        }
     }
 
     void Start(){
         if (items.Length == 0){
-            items = new Item[Inventory.instance.itemList.Length];
+            items = new Item[6];
         }
     }
 
     public void saveItems(){
-        for (int i = 0; i < items.Length; ++i) {
-            items[i] = Inventory.instance.itemList[i];
+        if (Inventory.instance != null){
+            for (int i = 0; i < items.Length; ++i) {
+                items[i] = Inventory.instance.itemList[i];
+            }
         }
     }
 
     public void loadItems(){
-        for (int i = 0; i < items.Length; ++i) {
-            Inventory.instance.AddItem(items[i]);
+        if (Inventory.instance != null){
+            for (int i = 0; i < items.Length; ++i) {
+                Inventory.instance.AddItem(items[i]);
+            }
         }
     }
 
     public void deleteItems(){
-        for (int i = 0; i < items.Length; ++i) {
-            items[i] = null;
+        if (Inventory.instance != null){
+            for (int i = 0; i < items.Length; ++i) {
+                items[i] = null;
+            }
         }
     }
 
@@ -53,10 +65,13 @@ public class GameManager : MonoBehaviour
         } else {
             switch(variables[0]){
                 case "Blender":
-                   blender = int.Parse(variables[1]);
-                     break;
+                    blender = int.Parse(variables[1]);
+                    break;
                 case "visitedCoffee":
                     visitedCoffee = int.Parse(variables[1]);
+                    break;
+                case "visitedAfterCoffee":
+                    visitedAfterCoffee = int.Parse(variables[1]);
                     break;
                 default:
                     break;
