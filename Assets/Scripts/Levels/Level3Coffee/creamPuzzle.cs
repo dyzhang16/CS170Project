@@ -58,7 +58,7 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
             {
                 var boa = droppedItem as Drink;
                 Debug.Log("This is the Drink: " + droppedItem.itemName);
-                if (droppedItem.itemName == "Random")
+                if (droppedItem.itemName == "Random Coffee")
                 {
                     creamAdded = boa.Cream;
                     cupThere = true;
@@ -85,6 +85,8 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
                 Debug.Log("You've added" + creamAdded);
                 Vector3 pos = new Vector3(creamUI.transform.position.x - 125, creamUI.transform.position.y, creamUI.transform.position.z);
                 GameObject creams = Instantiate(cream, pos, creamUI.transform.localRotation, transform);
+                creams.GetComponent<fallingstuff>().timeRemaining = 0.8f;
+                creams.GetComponent<fallingstuff>().timerIsRunning = true;
             }
             else
             {

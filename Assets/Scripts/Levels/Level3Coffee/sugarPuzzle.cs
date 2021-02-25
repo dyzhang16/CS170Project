@@ -58,7 +58,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
             {
                 var boa = droppedItem as Drink;
                 Debug.Log("This is the Drink: " + boa);
-                if (droppedItem.itemName == "Random")
+                if (droppedItem.itemName == "Random Coffee")
                 {
                     sugarAdded = boa.Sugar;
                     cupThere = true;
@@ -85,6 +85,8 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
                 Debug.Log("You've added: " + sugarAdded);
                 Vector3 pos = new Vector3(sugarUI.transform.position.x + 125, sugarUI.transform.position.y, sugarUI.transform.position.z);
                 GameObject sugs = Instantiate(sugar, pos, sugarUI.transform.localRotation, transform);
+                sugs.GetComponent<fallingstuff>().timeRemaining = 1f;
+                sugs.GetComponent<fallingstuff>().timerIsRunning = true;
             }
             else
             {
