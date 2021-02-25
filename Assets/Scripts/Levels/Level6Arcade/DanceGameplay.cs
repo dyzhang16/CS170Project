@@ -200,6 +200,7 @@ public class DanceGameplay : MonoBehaviour
 		round++; // update round number
 		if (round > NUM_ROUNDS)
 		{
+			DisablePlayerControls();
 			return;
 		}
 		else
@@ -380,7 +381,7 @@ public class DanceGameplay : MonoBehaviour
 	/// </summary>
 	public void UpdateRoundCounter()
 	{
-		roundCounter.text = string.Format("{0} / {1}", round, NUM_ROUNDS);
+		roundCounter.text = string.Format("Progress {0}%", Mathf.FloorToInt( (((float)round - 1) / NUM_ROUNDS) * 100) );
 	}
 
 	/// <summary>
