@@ -25,6 +25,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IPointerDownHandler,
         if (Inventory.instance.itemList[originalParent.transform.GetSiblingIndex()] != null && eventData.button == PointerEventData.InputButton.Left)
         {
             GetComponent<CanvasGroup>().alpha = 0.5f;
+            GetComponent<RectTransform>().localScale = new Vector3(9,9,9);
             GetComponent<CanvasGroup>().blocksRaycasts = false;
             //Debug.Log("Dragging");
             transform.position = Input.mousePosition;
@@ -36,6 +37,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IPointerDownHandler,
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             GetComponent<CanvasGroup>().alpha = 1f;
+            GetComponent<RectTransform>().localScale = new Vector3(3, 3, 3);
             transform.SetParent(originalParent);
             transform.localPosition = Vector3.zero;
             GetComponent<CanvasGroup>().blocksRaycasts = true;
