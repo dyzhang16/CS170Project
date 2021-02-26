@@ -15,8 +15,51 @@ Do you want to play the crane game?
 -> Yes
     <<Show CranePuzzlePanel>>
     <<set $playedCrane to true>>
+    [[CraneDirections]]
 -> No
     <<stop>>
+===
+
+title: PromptCrane
+tags:
+---
+<<ChangeSpeaker Player>>
+Do you want to play the crane game?
+-> Yes
+    <<Show CranePuzzlePanel>>
+    <<set $playedCrane to true>>
+    [[CraneDirections]]
+-> No
+    <<stop>>
+===
+
+title: CraneDirections
+tags:
+---
+<<ChangeSpeaker Player>>
+<<if $visitedCraneDirections is null>>
+    Here are the directions...
+
+    "Insert a coin."
+
+    "Use the joystick to your left to move the claw left or right."
+
+    "Press the Drop button to start lowering the claw."
+
+    "If the claw grabs an item, mash the Willpower button for the claw to keep grabbing on!"
+
+    Hmm, the first few instructions made sense, but what's this about a "Willpower" button? I guess I'll find out.
+    <<set $visitedCraneDirections to true>>
+<<else>>
+    <<if $doNotShowCraneDirs is null>>
+        Do you want to read the directions again?
+        -> Yes.
+            <<set $visitedCraneDirections to null>>
+            [[CraneDirections]]
+        -> No.
+            <<set $doNotShowCraneDirs to true>>
+    <<endif>>
+<<endif>>
 ===
 
 title: PromptBasketball
