@@ -8,6 +8,9 @@ public class ShowPuzzle : MonoBehaviour
     public GameObject puzzlePanel;
     public bool DoNotOpenInventory = false;
 
+    [Tooltip("Stop the player's movement when a puzzle is shown")]
+    public bool stopPlayerMovement = false; // used in Update()
+
     [YarnCommand("Show")]
     public void Puzzle()
     {
@@ -45,6 +48,31 @@ public class ShowPuzzle : MonoBehaviour
                 if (playerScript && !playerScript.invActive)
                 {
                     playerScript.activateMenu();
+                }
+            }
+        }
+    }
+
+    // make private reference to the player gameobject for use in Update()
+    private GameObject playerGameObject; // this is set in Awake()
+    void Awake()
+    {
+        playerGameObject = GameObject.Find("Player");
+    }
+    void Update()
+    {
+        // if we want to stop the player movement, check if a puzzle panel is opened...
+        if (stopPlayerMovement &&
+            puzzlePanel.GetComponent<CanvasGroup>() &&
+            puzzlePanel.GetComponent<CanvasGroup>().alpha == 1)
+        {
+            // ...then get a player object and then set AllowMove to false
+            if (stopPlayerMovement && playerGameObject)
+            {
+                Player player = playerGameObject.GetComponent<Player>();
+                if (player && player.allowMovement)
+                {
+                    player.AllowMove(false);
                 }
             }
         }
