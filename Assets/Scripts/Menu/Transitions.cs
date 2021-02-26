@@ -27,6 +27,7 @@ public class Transitions : MonoBehaviour
 
     public void LoadNextScene(string sceneToChange){
         GameManager.instance.saveItems();
+        GameManager.instance.previousScene = SceneManager.GetActiveScene().name;
         StartCoroutine(FadeScene(sceneToChange));
     }
 
@@ -50,6 +51,12 @@ public class Transitions : MonoBehaviour
     void OnTriggerEnter(Collider collider)                          //https://www.youtube.com/watch?v=Bc9lmHjqLZc
     {
         if (collider.gameObject.CompareTag("Player")){
+            Player p = collider.gameObject.GetComponent<Player>();
+            // Debug.Log(p);
+            // p.AllowMove(false);
+            // p.AllowInv(false);
+            // p.stopMove();
+            // p.closeInv();
             LoadNextScene(exitScene);
         }
     }

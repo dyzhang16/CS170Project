@@ -7,8 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public static bool exists;
+
     //inventory itemList
     public Item[] items;
+
+    //previous scene
+    public string previousScene;
+
     //0 = not completed, 1 = completed
     public int flowerPuzzle = 0;
     public int coffeePuzzle = 0;

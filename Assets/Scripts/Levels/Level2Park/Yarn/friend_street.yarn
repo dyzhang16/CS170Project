@@ -1,0 +1,131 @@
+﻿title: friend_meeting
+---
+
+<<if visited("friend_meeting") is false>>
+    <<ChangeSpeaker Player Friend>>
+
+    <<Focus SECOND>>
+    What’s up with you, kid? It’s not Halloween anymore.
+
+    <<Focus FIRST>>
+    Ha, ‘not Halloween’. That’s funny.
+
+    <<Focus SECOND>>
+    This isn’t a joking matter. You could trip. Or get run over. Haven’t your parents ever told you to look both ways when crossing the street?
+
+    <<Focus FIRST>>
+    Wait, are you talking to me?
+
+    <<Focus SECOND>>
+    Who else? You’re the only weirdo walking around outside with a bedsheet on their head.
+
+    <<Focus FIRST>>
+    bEDSheET?!
+
+    <<Focus SECOND>>
+    Isn’t it?
+
+    <<Focus FIRST>>
+    No! I’m a ghost. Which is why you shouldn’t be able to see or talk to me.
+
+    <<Focus SECOND>>
+    Hmph. A ghost. Uh-huh. Try something else next time. Something less hazardous. If someone were holding hot coffee and you ran into them, one or both of you could get scalded.
+
+
+    And your bedsheet would get stained.
+
+    <<Focus FIRST>>
+    That’s true, my bedsheet would get stai- wait, no. I told you, it’s not a bedsheet! I’m a ghost; I would just go through them.
+
+    <<Focus SECOND>>
+    Whatever. Just scram. I haven’t the time for you to mess around. This damn barista is sleeping on their job and I’m already late for work. I really can’t deal with another complication today, kid.
+
+    <<Focus FIRST>>
+    No, wait. But I’ve finally found someone I can talk to!
+
+    <<Focus SECOND>>
+    Hey, I don’t have the time to deal with whatever the heck you’re talking about. Leave me alone.
+
+    <<ChangeSpeaker Player>>
+    ...I need to find a way to get this person to talk to me.
+
+    But they won’t talk to me unless they have their coffee...
+
+    Where am I supposed to get them coffee?
+
+    <<DropReceipt Friend1>>
+
+<<else>>
+
+    <<ChangeSpeaker Friend>>
+
+    I said, leave me alone. Kids these days… where’s my order?
+
+<<endif>>
+
+===
+
+title: friend_after_coffee
+---
+
+<<if visited("friend_after_coffee") is false>>
+    <<ChangeSpeaker Player Friend>>
+
+    <<Focus SECOND>>
+    That hits the spot!
+
+    <<Focus FIRST>>
+    I’m glad. 
+
+    <<Focus SECOND>>
+    How did you even get this? I’m pretty sure there were at least three other people ahead of me in line.
+
+    <<Focus FIRST>>
+    I was telling the truth earlier. I’m a ghost! I went behind the counter and maAAADee it myself- Hey, don’t stick your hand through me! That’s rude!
+
+    <<Focus SECOND>>
+    Huh, so maybe, just maybe, you are a real ghost after all.
+
+    <<Focus FIRST>>
+    That’s what I’ve been trying to tell you. And I just wanted to talk to you. No else can see or hear me, just you.
+
+    <<Focus SECOND>>
+    Oh, god. Maybe I am just seeing things...What was in that coffee?
+
+    <<Focus FIRST>>
+    I’m real, I swear. Please, believe me.
+
+    <<Focus SECOND>>
+    I- You know what, why not? I never believed in ghosts before, but there's no harm in starting now. I’ll talk to myself for a bit, and I’ll even get good coffee out of it.
+
+    <<Focus FIRST>>
+    You think it’s good? Alright! I did it all by myself. The barista was sleeping on the job.
+
+    <<Focus SECOND>>
+    Sleeping on the job during rush hour!? That’s irresponsi-
+
+    <<Focus SECOND>>
+    My job! I’m gonna be late!
+
+    <<Focus FIRST>>
+    Wait, don’t go! There’s still so much I want to talk to you about. You said you’d talk to me.
+
+    <<Focus SECOND>>
+    I don’t have the time right now. I have to get to work. Go haunt someone else!
+
+    <<MoveToOffice Friend1>>
+    <<ChangeVariable GameManager visitedAfterCoffee 1>>
+
+    <<Focus FIRST>>
+    But there’s no one else...
+<<else>>
+
+    <<ChangeSpeaker Friend>>
+
+    TO THE OFFICE INSERT MUSIC HERE
+
+    <<ChangeScene BlackScreen Office>>
+
+<<endif>>
+
+===
