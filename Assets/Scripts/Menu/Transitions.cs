@@ -9,7 +9,9 @@ public class Transitions : MonoBehaviour
 {
 
     public Animator transition;
-    public float transitionSpeed = 0.5f;
+    public float transitionSpeed = 1f;
+
+    public string exitScene;
 
     // public GameObject buttonPanel;
     // public GameObject menuPanel;
@@ -25,6 +27,7 @@ public class Transitions : MonoBehaviour
 
     public void LoadNextScene(string sceneToChange){
         GameManager.instance.saveItems();
+        GameManager.instance.previousScene = SceneManager.GetActiveScene().name;
         StartCoroutine(FadeScene(sceneToChange));
     }
 
@@ -43,5 +46,18 @@ public class Transitions : MonoBehaviour
         yield return new WaitForSeconds(transitionSpeed);
 
         // transition.SetTrigger("");
+    }
+
+    void OnTriggerEnter(Collider collider)                          //https://www.youtube.com/watch?v=Bc9lmHjqLZc
+    {
+        if (collider.gameObject.CompareTag("Player")){
+            Player p = collider.gameObject.GetComponent<Player>();
+            // Debug.Log(p);
+            // p.AllowMove(false);
+            // p.AllowInv(false);
+            // p.stopMove();
+            // p.closeInv();
+            LoadNextScene(exitScene);
+        }
     }
 }

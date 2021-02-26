@@ -9,8 +9,6 @@ public class friend1 : MonoBehaviour
     public GameObject friend;
     public GameObject coffeeStand;
     public GameObject receipt;
-    public GameObject collider;
-    public VariableStorageBehaviour CustomVariableStorage;
 
     public bool isWalking = false;
     public float Speed;
