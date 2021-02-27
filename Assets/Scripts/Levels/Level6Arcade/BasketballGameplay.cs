@@ -22,7 +22,7 @@ public class BasketballGameplay : MonoBehaviour
 	// Fields
 	public int playerScore = 0;
 	public int timer = 0;
-	public int highScore = 15;
+	public int highScore = 30;
 	public readonly int MAX_TIME = 30; // time that is set per game
 
 	// Used for stopping the ThrowScheduler Coroutine
@@ -112,6 +112,9 @@ public class BasketballGameplay : MonoBehaviour
 	/// </summary>
 	public void EndGame()
 	{
+		// Give the player tickets (if score is greater than 0)
+		if (playerScore > 0)
+			GetComponent<ArcadeMachine>().AddTickets(playerScore);
 		// reset variables
 		basketballNet.trackMouse = false;
 		startButton.interactable = true;
@@ -133,11 +136,11 @@ public class BasketballGameplay : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Increases the score by one
+	/// Increases the score by two
 	/// </summary>
 	public void IncrementScore()
 	{
-		playerScore++;
+		playerScore += 2;
 		UpdateScore();
 	}
 

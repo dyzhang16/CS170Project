@@ -342,6 +342,8 @@ GameObject:
   - component: {fileID: 46273290}
   - component: {fileID: 46273291}
   - component: {fileID: 46273292}
+  - component: {fileID: 46273293}
+  - component: {fileID: 46273294}
   m_Layer: 5
   m_Name: CranePuzzlePanel
   m_TagString: Untagged
@@ -467,6 +469,31 @@ MonoBehaviour:
   puzzlePanel: {fileID: 46273286}
   DoNotOpenInventory: 1
   stopPlayerMovement: 1
+--- !u!114 &46273293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46273286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6bf87d9774d90a48af683f1e9ecd8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &46273294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46273286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc38838c52c94a54fb3d9f225df51b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TicketItem: {fileID: 11400000, guid: 0bdd08d3e4175d44dadf40aa3f804288, type: 2}
 --- !u!1 &54726286
 GameObject:
   m_ObjectHideFlags: 0
@@ -7766,6 +7793,8 @@ GameObject:
   - component: {fileID: 946286743}
   - component: {fileID: 946286744}
   - component: {fileID: 946286745}
+  - component: {fileID: 946286746}
+  - component: {fileID: 946286747}
   m_Layer: 5
   m_Name: BasketballPanel
   m_TagString: Untagged
@@ -7859,7 +7888,7 @@ MonoBehaviour:
   highScoreText: {fileID: 0}
   playerScore: 0
   timer: 0
-  highScore: 15
+  highScore: 30
 --- !u!225 &946286744
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7887,6 +7916,31 @@ MonoBehaviour:
   puzzlePanel: {fileID: 946286739}
   DoNotOpenInventory: 1
   stopPlayerMovement: 1
+--- !u!114 &946286746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946286739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6bf87d9774d90a48af683f1e9ecd8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &946286747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946286739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc38838c52c94a54fb3d9f225df51b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TicketItem: {fileID: 11400000, guid: 0bdd08d3e4175d44dadf40aa3f804288, type: 2}
 --- !u!224 &947311911 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7293306742847872400, guid: 4d6c0d0a198aef6458e73288cb651665,
@@ -12692,6 +12746,8 @@ GameObject:
   - component: {fileID: 1544622803}
   - component: {fileID: 1544622804}
   - component: {fileID: 1544622805}
+  - component: {fileID: 1544622806}
+  - component: {fileID: 1544622807}
   m_Layer: 5
   m_Name: DanceGamePuzzlePanel
   m_TagString: Untagged
@@ -12817,6 +12873,31 @@ MonoBehaviour:
   puzzlePanel: {fileID: 1544622799}
   DoNotOpenInventory: 1
   stopPlayerMovement: 1
+--- !u!114 &1544622806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544622799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6bf87d9774d90a48af683f1e9ecd8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1544622807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544622799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc38838c52c94a54fb3d9f225df51b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TicketItem: {fileID: 11400000, guid: 0bdd08d3e4175d44dadf40aa3f804288, type: 2}
 --- !u!1 &1565046119
 GameObject:
   m_ObjectHideFlags: 0
