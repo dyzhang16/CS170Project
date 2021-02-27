@@ -228,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 211362152}
   RemoveButton: {fileID: 6089358}
+  allowPlayerMovement: 0
 --- !u!114 &6089360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,6 +748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 1869227311}
   RemoveButton: {fileID: 129494569}
+  allowPlayerMovement: 0
 --- !u!114 &129494571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,6 +905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 132209485}
   RemoveButton: {fileID: 1734595829}
+  allowPlayerMovement: 0
 --- !u!1 &162147328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 1869227311}
   DoNotOpenInventory: 0
+  stopPlayerMovement: 0
 --- !u!1 &198292346
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,6 +2832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 258097537}
   DoNotOpenInventory: 0
+  stopPlayerMovement: 0
 --- !u!1 &787298345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3259,6 +3264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 211362152}
   DoNotOpenInventory: 0
+  stopPlayerMovement: 0
 --- !u!1 &979082388
 GameObject:
   m_ObjectHideFlags: 0
@@ -3366,6 +3372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 1087914911}
   RemoveButton: {fileID: 979082390}
+  allowPlayerMovement: 0
 --- !u!114 &979082392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3577,7 +3584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c820b201f4f0a44ba9416d314293ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 2be241495c8caee4783ab50464077901, type: 2}
+  item: {fileID: 0}
 --- !u!114 &1087595546 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 720895105224319440, guid: 32ecd2b4f32066d48bd773fa364541a0,
@@ -4235,6 +4242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 258097537}
   RemoveButton: {fileID: 1381875756}
+  allowPlayerMovement: 0
 --- !u!114 &1381875758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4845,6 +4853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 1620194977}
   RemoveButton: {fileID: 1605022137}
+  allowPlayerMovement: 0
 --- !u!114 &1605022139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5511,6 +5520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 132209485}
   RemoveButton: {fileID: 1734595829}
+  allowPlayerMovement: 0
 --- !u!114 &1734595831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6075,6 +6085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 1620194977}
   DoNotOpenInventory: 0
+  stopPlayerMovement: 0
 --- !u!114 &2038101708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6509,6 +6520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 1087914911}
   DoNotOpenInventory: 0
+  stopPlayerMovement: 0
 --- !u!1 &2136782266
 GameObject:
   m_ObjectHideFlags: 0
@@ -6688,11 +6700,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 219682105556337435, guid: b5b5a945a6d37584ebda5e9362efd1e3,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 716b459f15fbc7d4987fd6f9c2a404ed, type: 3}
     - target: {fileID: 219682105556337436, guid: b5b5a945a6d37584ebda5e9362efd1e3,
         type: 3}
       propertyPath: m_Name
