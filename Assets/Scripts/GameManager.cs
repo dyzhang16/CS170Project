@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public int coffeePuzzle = 0;
     public int visitedCoffee = 0;
     public int blender = 0;
+    public int waterAdded = 0;
     public int officePuzzle = 0;
     public int visitedAfterCoffee = 0;
 

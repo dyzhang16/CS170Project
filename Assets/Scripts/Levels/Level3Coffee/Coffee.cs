@@ -6,8 +6,9 @@ using Yarn.Unity;
 public class Coffee : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
-
+    public GameObject CoffeeMachine;
     public GameObject blender;
+    public bool waterAdded;
 
 
     void Awake()
@@ -17,6 +18,10 @@ public class Coffee : MonoBehaviour
             if (GameManager.instance.blender == 1)
             {
                 Destroy(blender);
+            }
+            if (GameManager.instance.waterAdded == 1)
+            {
+                CoffeeMachine.GetComponent<CoffeePuzzle>().waterThere = true;
             }
             if(GameManager.instance.visitedCoffee == 1)
             {

@@ -57,6 +57,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 waterThere = true;
                 Inventory.instance.RemoveItem(droppedItem);
                 Inventory.instance.UpdateSlotUI();
+                GameManager.instance.waterAdded = 1;
                 SoundManagerScript.PlaySound("pour_coffee"); // coffee sound
             }
             else

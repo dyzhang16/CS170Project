@@ -76,7 +76,9 @@ public class CoffeeYarnCommands : MonoBehaviour
     private void CoffeeSleeve(string[] parameters)
     {
         string Object = string.Join(" ", parameters);
+        Debug.Log("The string is " + Object);
         Item item = Inventory.instance.FindItem(Object);
+        Debug.Log("this is " + item);
         var boa = item as Drink;
         (int, int) received = (boa.Cream, boa.Sugar);
         Drink creation = RecipeBook.ContainsKey(received) ? RecipeBook[received] : so;
