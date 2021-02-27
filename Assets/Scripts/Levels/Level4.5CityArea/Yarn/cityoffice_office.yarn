@@ -1,0 +1,32 @@
+﻿title: cityoffice_office
+tags:
+---
+
+<<ChangeSpeaker Player>>
+
+Do you want to go inside the office?
+
+[[Yes|GoIntoOffice]]
+[[No|LeaveOffice]]
+
+===
+
+title:GoIntoOffice
+---
+
+<<ChangeSpeaker Player>>
+
+You enter the office
+
+<<ChangeScene BlackScreen Office>>
+
+===
+
+title: LeaveOffice
+---
+
+<<ChangeSpeaker Player>>
+
+You leave the office
+
+===

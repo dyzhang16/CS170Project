@@ -1,0 +1,32 @@
+﻿title: cityarcade_arcade
+tags:
+---
+
+<<ChangeSpeaker Player>>
+
+Do you want to go inside the arcade?
+
+[[Yes|GoIntoArcade]]
+[[No|LeaveArcade]]
+
+===
+
+title:GoIntoArcade
+---
+
+<<ChangeSpeaker Player>>
+
+You enter the arcade
+
+<<ChangeScene BlackScreen ArcadeScene>>
+
+===
+
+title: LeaveArcade
+---
+
+<<ChangeSpeaker Player>>
+
+You leave the arcade
+
+===

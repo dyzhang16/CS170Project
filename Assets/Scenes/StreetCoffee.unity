@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 99634197}
   - component: {fileID: 99634196}
   m_Layer: 0
-  m_Name: ExitToCityIntro
+  m_Name: ExitToCityArcade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 674768261}
   transitionSpeed: 0.5
-  exitScene: Office
+  exitScene: CityArcade
 --- !u!65 &99634197
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4664,6 +4664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracker: {fileID: 733686128}
   player: {fileID: 2084160837}
+  friend: {fileID: 0}
   coffeeStand: {fileID: 1458944165}
   exitToStreetIntro: {fileID: 729855874}
   exitToCityIntro: {fileID: 99634194}
