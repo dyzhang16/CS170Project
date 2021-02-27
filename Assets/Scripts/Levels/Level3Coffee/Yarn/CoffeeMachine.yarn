@@ -19,9 +19,16 @@ title: MissingSomething
 tags:
 ---
 <<ChangeSpeaker Player>>
-
-	I don’t think I’m supposed to do that yet.
-
+	//placeholder text
+<<if $WaterThere is 0>>
+		I'm missing the water...
+<<elseif $FilterThere is 0>>
+		I'm missing something to hold the beans....
+<<elseif $BeansThere is 0>>
+		I can't make coffee without the beans.
+<<elseif $CupThere is 0>>
+		I guess I'm drinking this coffee.
+<<endif>>
 ===
 
 title: Creamer
