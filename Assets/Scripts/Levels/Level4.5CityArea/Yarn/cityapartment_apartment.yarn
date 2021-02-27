@@ -1,0 +1,32 @@
+﻿title: cityapartment_apartment
+tags:
+---
+
+<<ChangeSpeaker Player>>
+
+Do you want to go inside the apartment?
+
+[[Yes|GoIntoApartment]]
+[[No|LeaveApartment]]
+
+===
+
+title:GoIntoApartment
+---
+
+<<ChangeSpeaker Player>>
+
+You enter the apartment
+
+<<ChangeScene BlackScreen ApartmentScene>>
+
+===
+
+title: LeaveApartment
+---
+
+<<ChangeSpeaker Player>>
+
+You leave the apartment
+
+===
