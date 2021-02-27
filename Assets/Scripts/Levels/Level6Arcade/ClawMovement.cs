@@ -19,8 +19,8 @@ public class ClawMovement : MonoBehaviour
 	// Willpower stuff
 	public Button willpowerButton;
 	public Slider willpowerBar;
-	private float willpowerDecay = 0.0015f; // per frame decay
-	private readonly float willpowerDecayReduction = 0.25f; // reduce the decay by this percentage when willpower check fails
+	private float willpowerDecay = 0.003f; // per frame decay
+	private readonly float willpowerDecayReduction = 0.35f; // reduce the decay by this percentage when willpower check fails
 	private readonly float willpowerIncrease = 0.05f; // when button is clicked
 
 	// speed in which claw moves
@@ -77,7 +77,7 @@ public class ClawMovement : MonoBehaviour
 			return;
 		}
 		CranePrize prize = col.gameObject.GetComponent<CranePrize>();
-		if (prize && !prize.isFalling)
+		if (prize && !prize.isFalling && isDropping)
 		{
 			// Set the currentPrize to be this GameObject
 			GrabPrize(col.gameObject);

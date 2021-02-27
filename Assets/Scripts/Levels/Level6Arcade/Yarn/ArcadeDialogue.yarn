@@ -20,23 +20,11 @@ Do you want to play the crane game?
     <<stop>>
 ===
 
-title: PromptCrane
-tags:
----
-<<ChangeSpeaker Player>>
-Do you want to play the crane game?
--> Yes
-    <<Show CranePuzzlePanel>>
-    <<set $playedCrane to true>>
-    [[CraneDirections]]
--> No
-    <<stop>>
-===
-
 title: CraneDirections
 tags:
 ---
 <<ChangeSpeaker Player>>
+<<BlockMachine CranePuzzlePanel true>>
 <<if $visitedCraneDirections is null>>
     Here are the directions...
 
@@ -60,6 +48,7 @@ tags:
             <<set $doNotShowCraneDirs to true>>
     <<endif>>
 <<endif>>
+<<BlockMachine CranePuzzlePanel false>>
 ===
 
 title: PromptBasketball
@@ -82,10 +71,37 @@ Do you want to play the dancing game?
 -> Yes
     <<Show DanceGamePuzzlePanel>>
     <<set $playedDance to true>>
+    [[DanceDirections]]
 -> No
     <<stop>>
 ===
 
+title: DanceDirections
+tags:
+---
+<<ChangeSpeaker Player>>
+<<BlockMachine DanceGamePuzzlePanel true>>
+<<if $visitedDanceDirections is null>>
+    Here are the directions...
+
+    "Each round, you will see arrows pop up on the left."
+
+    "Press the directional buttons on the right matching what you saw."
+
+    "The game gets progressively more difficult the better you do. Good luck!"
+    <<set $visitedDanceDirections to true>>
+<<else>>
+    <<if $doNotShowDanceDirs is null>>
+        Do you want to read the directions again?
+        -> Yes.
+            <<set $visitedDanceDirections to null>>
+            [[DanceDirections]]
+        -> No.
+            <<set $doNotShowDanceDirs to true>>
+    <<endif>>
+<<endif>>
+<<BlockMachine DanceGamePuzzlePanel false>>
+===
 
 title: ArcadeLeave
 tags:

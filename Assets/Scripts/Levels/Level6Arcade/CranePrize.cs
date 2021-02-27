@@ -17,10 +17,18 @@ public class CranePrize : MonoBehaviour
 		}
 	}
 
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.gameObject.name == "Hole Separator")
+		{
+			isFalling = false;
+		}
+	}
+
 	public IEnumerator FallCoroutine()
 	{
 		isFalling = true;
-		while (transform.localPosition.y > BOTTOM_LIMIT)
+		while (transform.localPosition.y > BOTTOM_LIMIT && isFalling)
 		{
 			Vector3 prizeTransform = transform.localPosition;
 			prizeTransform.y -= 1;
