@@ -6,7 +6,7 @@ using Yarn.Unity;
 
 public class CoffeePuzzle : MonoBehaviour, IDropHandler
 {
-    public GameObject puzzlePanel;
+    public GameObject puzzlePanel, CoffeeCup;
     public DialogueRunner dialogueRunner;
     public VariableStorageBehaviour CustomVariableStorage;
     public GameObject cup, filter, grounds, brewedCoffee;
@@ -35,6 +35,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 Inventory.instance.RemoveItem(droppedItem);
                 Inventory.instance.UpdateSlotUI();
                 CustomVariableStorage.SetValue("$CupThere", 1);
+                CoffeeCup.SetActive(true);
                 SoundManagerScript.PlaySound("place_cup"); // cup sound
             }
             else if (droppedItem.itemName == "Paper Filter" && !filterThere)
@@ -84,7 +85,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
             filter.SetActive(false);
             groundsThere = false;
             grounds.SetActive(false);
-
+            CoffeeCup.SetActive(false);
             brewedCoffee.SetActive(true);
         }
         else 
