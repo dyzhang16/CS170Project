@@ -34,6 +34,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 cup.SetActive(true);
                 Inventory.instance.RemoveItem(droppedItem);
                 Inventory.instance.UpdateSlotUI();
+                CustomVariableStorage.SetValue("$CupThere", 1);
                 SoundManagerScript.PlaySound("place_cup"); // cup sound
             }
             else if (droppedItem.itemName == "Paper Filter" && !filterThere)
@@ -42,6 +43,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 filter.SetActive(true);
                 Inventory.instance.RemoveItem(droppedItem);
                 Inventory.instance.UpdateSlotUI();
+                CustomVariableStorage.SetValue("$FilterThere", 1);
                 SoundManagerScript.PlaySound("place_filter"); // filter sound
             }
             else if (droppedItem.itemName == "Coffee Grounds" && !groundsThere && filterThere)
@@ -50,6 +52,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 grounds.SetActive(true);
                 Inventory.instance.RemoveItem(droppedItem);
                 Inventory.instance.UpdateSlotUI();
+                CustomVariableStorage.SetValue("$BeansThere", 1);
                 SoundManagerScript.PlaySound("place_coffee"); // coffee sound
             }
             else if (droppedItem.itemName == "Blender")
@@ -58,6 +61,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 Inventory.instance.RemoveItem(droppedItem);
                 Inventory.instance.UpdateSlotUI();
                 GameManager.instance.waterAdded = 1;
+                CustomVariableStorage.SetValue("$WaterThere", 1);
                 SoundManagerScript.PlaySound("pour_coffee"); // coffee sound
             }
             else

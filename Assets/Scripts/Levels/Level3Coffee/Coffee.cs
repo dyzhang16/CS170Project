@@ -6,6 +6,7 @@ using Yarn.Unity;
 public class Coffee : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
+    public VariableStorageBehaviour CustomVariableStorage;
     public GameObject CoffeeMachine;
     public GameObject blender;
     public bool waterAdded;
@@ -35,6 +36,10 @@ public class Coffee : MonoBehaviour
         {
             GameManager.instance.loadItems();
             GameManager.instance.deleteItems();
+        }
+        if (GameManager.instance.blender == 1)
+        {
+            CustomVariableStorage.SetValue("$checkpointzz", 1);
         }
     }
 }
