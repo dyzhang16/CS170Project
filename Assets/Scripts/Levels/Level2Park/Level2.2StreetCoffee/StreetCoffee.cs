@@ -24,13 +24,10 @@ public class StreetCoffee : MonoBehaviour
             } else if (GameManager.instance.previousScene == "CityIntro"){
                 player.transform.position = exitToCityIntro.transform.position + new Vector3(-12, 0, 0);
             }
-
             //change dialogue to correspond to certain cues
-            if (GameManager.instance.visitedCoffee == 1){
+            if (GameManager.instance.visitedCoffee == 1)
+            {
                 tracker.NodeComplete("friend_meeting");
-            } else if (GameManager.instance.coffeePuzzle == 1){
-                friend.GetComponent<RunDialogue>().dialogueToRun = "friend_after_coffee";
-                coffeeStand.GetComponent<RunDialogue>().dialogueToRun = "coffee_done";
             }
         }
     }

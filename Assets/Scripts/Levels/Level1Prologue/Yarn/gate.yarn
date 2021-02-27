@@ -26,7 +26,7 @@ tags:
 title: done_gate
 ---
 <<ChangeSpeaker Player>>
-    //kachink noise of lock unlocking sound effect
+    
     <<Sound open_gate>>
     The key fits! I can finally get out of here.
 
@@ -56,10 +56,10 @@ tags:
 <<walkBack Gravekeeper>>
 <<ChangeSpeaker Player>>
 
-    ...//Camera pans back to grave, where the gravekeeper is now standing
+    ...
     //gate door opens
 <<wait 3>>
-<<ChangeSpeaker Gravekeeper>>
+<<ChangeSpeaker None Gravekeeper>>
     
     What on earth?!
 

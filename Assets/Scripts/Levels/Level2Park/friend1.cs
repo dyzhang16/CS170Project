@@ -9,7 +9,7 @@ public class friend1 : MonoBehaviour
     public GameObject friend;
     public GameObject coffeeStand;
     public GameObject receipt;
-
+    public VariableStorageBehaviour CustomVariableStorage;
     public bool isWalking = false;
     public float Speed;
     public GameObject Destination;
@@ -42,5 +42,20 @@ public class friend1 : MonoBehaviour
     public void DropReceipt(){
         receipt.SetActive(true);
         receipt.GetComponent<Animator>().SetTrigger("ReceiptFall");
+    }
+
+    [YarnCommand("CheckDrink")]
+    public void CheckCompletedCoffee()
+    {
+        if (Inventory.instance.FindItemOfTypeDrink())
+        {
+            Debug.Log("Found item");
+            CustomVariableStorage.SetValue("$CompletedDrinkExists", 1);
+        }
+        else
+        {
+            Debug.Log("Didnt find Item");
+            CustomVariableStorage.SetValue("$CompletedDrinkExists", 0);
+        }
     }
 }
