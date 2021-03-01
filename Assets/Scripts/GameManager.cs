@@ -16,12 +16,11 @@ public class GameManager : MonoBehaviour
 
     //0 = not completed, 1 = completed
     public int flowerPuzzle = 0;
-    public int coffeePuzzle = 0;
     public int visitedCoffee = 0;
     public int blender = 0;
     public int waterAdded = 0;
     public int officePuzzle = 0;
-    public int visitedAfterCoffee = 0;
+    
 
     void Awake(){
         if (!exists){
@@ -76,8 +75,8 @@ public class GameManager : MonoBehaviour
                 case "visitedCoffee":
                     visitedCoffee = int.Parse(variables[1]);
                     break;
-                case "visitedAfterCoffee":
-                    visitedAfterCoffee = int.Parse(variables[1]);
+                case "waterAdded":
+                    waterAdded = int.Parse(variables[1]);
                     break;
                 default:
                     break;

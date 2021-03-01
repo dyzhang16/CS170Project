@@ -37,9 +37,5 @@ public class Coffee : MonoBehaviour
             GameManager.instance.loadItems();
             GameManager.instance.deleteItems();
         }
-        if (GameManager.instance.blender == 1)
-        {
-            CustomVariableStorage.SetValue("$checkpointzz", 1);
-        }
     }
 }

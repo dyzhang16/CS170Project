@@ -44,9 +44,10 @@ title: prologue_gravekeeper
 
 <<ChangeSpeaker Player>>
 
-	...Wait a second. But that’s not my name?
+	No, that’s not important right now.
 
-	No, that’s not important right now. I should take a look around for others like me. Maybe they can tell me more about this place.
+	I should take a look around and see if there are others like me around.
+
 ===
 
 title: prologue_doneExplore
@@ -59,7 +60,9 @@ title: prologue_doneExplore
 <<if visited("prologue_doneExplore") is false>>
 <<ChangeSpeaker Player>>
 	
-	It doesn’t look like anyone else was buried here. So...I’m alone in this graveyard with a sad little gravestone that doesn’t even say anything meaningful...
+	It doesn’t look like anyone else was buried here. 
+	
+	So...I’m alone in this graveyard with a sad little gravestone that doesn’t even say anything meaningful...
 
 	I have to get out of here. Surely I’ll be able to find others outside of this cemetery, right?
 

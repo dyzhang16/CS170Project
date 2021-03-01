@@ -1,28 +1,12 @@
 ﻿title: coffeestand
 tags:
 ---
-
-<<if visited("friend_meeting") is true>>
-    <<ChangeSpeaker Player>>
-
-    You enter the coffeestand
-
-    <<ChangeScene BlackScreen CoffeeScene>>
-<<else>>
-
-    <<ChangeSpeaker Player>>
-
-    Its a coffee stand, but where is that weird angry person?
-
-<<endif>>
-
+<<ChangeScene BlackScreen CoffeeScene>>
 ===
 
 title: coffee_done
 ---
-
 <<ChangeSpeaker Player>>
 
-The barista is still sleeping...
-
+	I don't need to go in here.
 ===

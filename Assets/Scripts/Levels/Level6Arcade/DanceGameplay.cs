@@ -40,7 +40,7 @@ public class DanceGameplay : MonoBehaviour
 	public readonly int MAX_LEVEL = 7;
 
 	// Number of rounds to play
-	public readonly int NUM_ROUNDS = 10;
+	public readonly int NUM_ROUNDS = 2;
 	public int round = 0; // increments on GenerateMoves call
 
 	// Fields used in calculating accuracy
@@ -92,6 +92,12 @@ public class DanceGameplay : MonoBehaviour
 	/// </summary>
 	public void EndCurrentGame()
 	{
+		// give the player tickets
+		if (totalMoves > 0)
+		{
+			int ticketCount = Mathf.FloorToInt( (((float)numTotalCorrectMoves) / totalMoves) * 10f);
+			GetComponent<ArcadeMachine>().AddTickets(ticketCount);
+		}
 		// Back end reset
 		DisablePlayerControls();
 		StopAllCoroutines();

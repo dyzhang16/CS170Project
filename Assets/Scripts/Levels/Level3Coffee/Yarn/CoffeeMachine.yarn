@@ -31,15 +31,6 @@ tags:
 <<endif>>
 ===
 
-title: Creamer
-tags:
----
-<<ChangeSpeaker Player>>
-	Do you want to add some creamer to the coffee?
-	[[Add the cream.|AddCream]]
-	[[Leave it alone.|PutitDown]]
-===
-
 title: TakeCoffeeCM
 tags:
 ---
@@ -57,9 +48,14 @@ title: Creamer
 tags:
 ---
 <<ChangeSpeaker Player>>
+<<Check Random Coffee>>
+<<if $DrinkExists is 1>>
 	Do you want to add some creamer to the coffee?
 	[[Add the cream.|AddCream]]
 	[[Leave it alone.|PutitDown]]
+<<else>>
+	You have no drink to add creamer to.
+<<endif>>
 ===
 
 title: AddCream
@@ -72,10 +68,14 @@ title: Sugar
 tags:
 ---
 <<ChangeSpeaker Player>>
+<<Check Random Coffee>>
+<<if $DrinkExists is 1>>
 	Do you want to add some sugar to the coffee?
-	
-	[[Add the sugar.|AddSugar]]
+	[[Add the cream.|AddSugar]]
 	[[Leave it alone.|PutitDown]]
+<<else>>
+	You have no drink to add sugar to.
+<<endif>>
 ===
 
 title: AddSugar
