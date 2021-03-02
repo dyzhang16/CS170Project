@@ -2671,8 +2671,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 21.3, y: 7.55, z: 1}
-  m_Center: {x: 0, y: 3.85, z: 0}
+  m_Size: {x: 31.567049, y: 21.945515, z: 1.4227595}
+  m_Center: {x: -0.049589705, y: 11.047754, z: 0.30960888}
 --- !u!114 &454199820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6693,6 +6693,7 @@ GameObject:
   - component: {fileID: 1154660162}
   - component: {fileID: 1154660164}
   - component: {fileID: 1154660166}
+  - component: {fileID: 1154660163}
   m_Layer: 0
   m_Name: Gravekeeper
   m_TagString: Untagged
@@ -6715,6 +6716,25 @@ Transform:
   m_Father: {fileID: 493771255}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &1154660163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154660161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef986b420694c644a809663c0ca049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 1511438302}
+  player: {fileID: 2875367029536886225}
+  dialogueToRun: Gravekeeper
+  startInstantly: 0
+  NPCName: 
+  NPCInteract: 
+  runDialogue: 0
 --- !u!212 &1154660164
 SpriteRenderer:
   m_ObjectHideFlags: 0
