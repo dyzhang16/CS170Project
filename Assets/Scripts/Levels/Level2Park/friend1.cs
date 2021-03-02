@@ -29,6 +29,8 @@ public class friend1 : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target) < 0.001f){
                 isWalking = false;
+                this.gameObject.SetActive(false);
+                GameManager.instance.visitedAfterCoffee = 1;
             }
         }
     }
@@ -42,6 +44,7 @@ public class friend1 : MonoBehaviour
     public void DropReceipt(){
         receipt.SetActive(true);
         receipt.GetComponent<Animator>().SetTrigger("ReceiptFall");
+        GameManager.instance.firstFriendMeeting = 1;
     }
 
     [YarnCommand("CheckDrink")]

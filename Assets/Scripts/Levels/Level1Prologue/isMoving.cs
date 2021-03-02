@@ -135,6 +135,9 @@ public class isMoving : MonoBehaviour
             yield return new WaitForSeconds(1);
             Destroy(Destination);
             isWalking = true;
+            if (!dia.IsDialogueRunning){
+                p.AllowMove(true);
+            }
         } else if (cycle == 1){
             GetComponent<SpriteRenderer>().flipX = true;
         } else if (cycle == 2){
