@@ -19,7 +19,7 @@ public class CityArcade : MonoBehaviour
             } else if (GameManager.instance.previousScene == "CityOffice"){
                 player.transform.position = exitToCityOffice.transform.position + new Vector3(-10, 0, 0);
             } else if (GameManager.instance.previousScene == "ArcadeScene"){
-                player.transform.position = Arcade.transform.position + new Vector3(0, -10, 0);
+                player.transform.position = Arcade.transform.position + new Vector3(0, 0, -10);
             }
 
 

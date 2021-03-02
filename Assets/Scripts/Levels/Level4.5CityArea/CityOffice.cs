@@ -20,7 +20,7 @@ public class CityOffice : MonoBehaviour
             } else if (GameManager.instance.previousScene == "CityApartment"){
                 player.transform.position = exitToCityApartment.transform.position + new Vector3(-10, 0, 0);
             } else if (GameManager.instance.previousScene == "Office"){
-                player.transform.position = Office.transform.position + new Vector3(0, -10, 0);
+                player.transform.position = Office.transform.position + new Vector3(0, 0, -10);
             }
         }
     }
