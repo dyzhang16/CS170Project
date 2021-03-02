@@ -59,12 +59,16 @@ public class floor : MonoBehaviour//, IDropHandler
         activeObj.transform.Find("collider").gameObject.SetActive(false);
 
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+
+        puzzle.dic[activeObj.name] = false;
     }
 
     public void placeItem(){
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         activeObj.transform.Find("collider").gameObject.SetActive(true);
+
+        puzzle.dic[activeObj.name] = true;
         activeObj = null;
     }
 }
