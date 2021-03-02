@@ -1,6 +1,5 @@
 ﻿title: friend_meeting
 ---
-
 <<if visited("friend_meeting") is false>>
     <<ChangeSpeaker Player Friend>>
 
@@ -81,7 +80,7 @@
 title: friend_after_coffee
 ---
 <<ChangeSpeaker Player Friend>>
-//Giving the drink to Fredric
+//Giving the drink to Fredric the first time
 <<if visited("friend_after_coffee") is false>>
 <<Focus SECOND>>
     
@@ -112,9 +111,18 @@ title: friend_after_coffee
     Coffee? Give it over here.
 
 <<Show Friend1>>
+<<ChangeVariable GameManager gaveDrink 1>>
 <<else>>
-    
-    What now?
+    <<ChangeSpeaker Player Friend>>
+
+<<Focus FIRST>>
+
+    I’ve got it, your coffee!
+
+<<Focus SECOND>>
+
+    Hand it over.
+
     <<Show Friend1>>
 <<endif>>
 ===

@@ -37,7 +37,10 @@ public class StreetCoffee : MonoBehaviour
                     receipt.GetComponent<Animator>().SetTrigger("ReceiptFall");
                 }
             }
-            
+            if (GameManager.instance.gaveDrink == 1)
+            {
+                tracker.NodeComplete("friend_after_coffee");
+            }
             if (GameManager.instance.visitedAfterCoffee == 1){
                 Destroy(friend);
             }

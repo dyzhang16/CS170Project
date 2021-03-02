@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public int firstFriendMeeting = 0;
     //changes when the player picks up the receipt
     public int hasReceipt = 0;
+    //change when the player gives any drink to the player
+    public int gaveDrink = 0;
     //changed when the friend leaves the streetCoffee scene after recieving the correct coffee
     public int visitedAfterCoffee = 0;
 
@@ -68,7 +70,10 @@ public class GameManager : MonoBehaviour
     public void loadItems(){
         if (Inventory.instance != null){
             for (int i = 0; i < items.Length; ++i) {
-                Inventory.instance.AddItem(items[i]);
+                if(items[i] != null) 
+                {
+                    Inventory.instance.AddItem(items[i]);
+                }
             }
         }
     }
@@ -99,6 +104,9 @@ public class GameManager : MonoBehaviour
                     break;
                 case "waterAdded":
                     waterAdded = int.Parse(variables[1]);
+                    break;
+                case "gaveDrink":
+                    gaveDrink = int.Parse(variables[1]);
                     break;
                 default:
                     break;

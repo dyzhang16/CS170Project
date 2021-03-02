@@ -79,7 +79,6 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
             SoundManagerScript.PlaySound("pour_coffee"); 
             
             cupThere = false;
-            waterThere = false;
             cup.SetActive(false);
             filterThere = false;
             filter.SetActive(false);
