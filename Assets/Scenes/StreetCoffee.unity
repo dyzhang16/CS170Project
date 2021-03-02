@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 56725334}
   - component: {fileID: 56725336}
   - component: {fileID: 56725335}
+  - component: {fileID: 56725337}
   m_Layer: 0
   m_Name: thift store
   m_TagString: Untagged
@@ -318,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 56725333}
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
   m_LocalPosition: {x: -35.7, y: -0.41, z: -181.83}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children:
   - {fileID: 1079456665}
   m_Father: {fileID: 947846538}
@@ -379,7 +380,7 @@ SpriteRenderer:
   m_SortingLayerID: -802606611
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f4319c283d4191141a6b75ed239313eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5cd240a27fc678489bd1604559ef491, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -390,6 +391,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &56725337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56725333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef986b420694c644a809663c0ca049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 411530684}
+  player: {fileID: 1314966348}
+  dialogueToRun: ThiftStore
+  startInstantly: 0
+  NPCName: 
+  NPCInteract: 
+  runDialogue: 0
 --- !u!114 &61310355 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 720895105224319440, guid: 32ecd2b4f32066d48bd773fa364541a0,
@@ -2756,6 +2776,7 @@ GameObject:
   - component: {fileID: 825974511}
   - component: {fileID: 825974513}
   - component: {fileID: 825974512}
+  - component: {fileID: 825974514}
   m_Layer: 0
   m_Name: pizza
   m_TagString: Untagged
@@ -2844,6 +2865,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &825974514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825974510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef986b420694c644a809663c0ca049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 411530684}
+  player: {fileID: 1314966348}
+  dialogueToRun: Pizza
+  startInstantly: 0
+  NPCName: 
+  NPCInteract: 
+  runDialogue: 0
 --- !u!1 &863108266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3616,7 +3656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079456664}
   m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
-  m_LocalPosition: {x: 0, y: 0.832, z: 2.186}
+  m_LocalPosition: {x: 0, y: -0.13, z: -9.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 56725334}
@@ -3633,8 +3673,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.098434, y: 14.083626, z: 2.4626448}
-  m_Center: {x: 0.11254692, y: 7.9548154, z: -3.5356152}
+  m_Size: {x: 6.774386, y: 8.780949, z: 2.462645}
+  m_Center: {x: -0.2853015, y: 2.7468235, z: 1.8766853}
 --- !u!1 &1082897388
 GameObject:
   m_ObjectHideFlags: 0
@@ -5340,6 +5380,7 @@ GameObject:
   - component: {fileID: 1365707630}
   - component: {fileID: 1365707632}
   - component: {fileID: 1365707631}
+  - component: {fileID: 1365707633}
   m_Layer: 0
   m_Name: traitor hoes
   m_TagString: Untagged
@@ -5428,6 +5469,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &1365707633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365707629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef986b420694c644a809663c0ca049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 411530684}
+  player: {fileID: 1314966348}
+  dialogueToRun: TraitorHoes
+  startInstantly: 0
+  NPCName: 
+  NPCInteract: 
+  runDialogue: 0
 --- !u!1 &1406151283
 GameObject:
   m_ObjectHideFlags: 0
@@ -5997,7 +6057,7 @@ PrefabInstance:
     - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
       propertyPath: yarnScripts.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
@@ -6086,6 +6146,12 @@ PrefabInstance:
       propertyPath: yarnScripts.Array.data[3]
       value: 
       objectReference: {fileID: 2480198943629176163, guid: b162f3ae9aa580344b4084f74efb937c,
+        type: 3}
+    - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
+        type: 3}
+      propertyPath: yarnScripts.Array.data[4]
+      value: 
+      objectReference: {fileID: 2480198943629176163, guid: eba050d815eba9845804a6343003d59f,
         type: 3}
     - target: {fileID: 720895104907229992, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
@@ -6405,6 +6471,7 @@ GameObject:
   - component: {fileID: 1700892415}
   - component: {fileID: 1700892417}
   - component: {fileID: 1700892416}
+  - component: {fileID: 1700892418}
   m_Layer: 0
   m_Name: movie theater
   m_TagString: Untagged
@@ -6495,6 +6562,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &1700892418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700892414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef986b420694c644a809663c0ca049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 411530684}
+  player: {fileID: 1314966348}
+  dialogueToRun: MovieTheater
+  startInstantly: 0
+  NPCName: 
+  NPCInteract: 
+  runDialogue: 0
 --- !u!1 &1729592406
 GameObject:
   m_ObjectHideFlags: 0
