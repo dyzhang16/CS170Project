@@ -7,14 +7,10 @@ tags:
 <<if IsInventoryFull() is true>>
     [[CannotTake]]
 <<else>>
-    It's a table.
-
-    You now have the table.
+    You are now table
 <<endif>>
 
-<<Add Table>>
-<<HideObject Table>>
-<<pickUpObj Level Table>>
+<<Possess floor Table>>
 
 <<stop>>
 ===
@@ -27,14 +23,10 @@ title: Maze
 <<if IsInventoryFull() is true>>
     [[CannotTake]]
 <<else>>
-    It's a maze.
-
-    You now have the maze.
+    You are now art
 <<endif>>
 
-<<Add Maze>>
-<<HideObject Maze>>
-<<pickUpObj Level Maze>>
+<<Possess floor Maze>>
 
 ===
 

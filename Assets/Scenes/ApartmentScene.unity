@@ -693,7 +693,6 @@ GameObject:
   - component: {fileID: 449367456}
   - component: {fileID: 449367458}
   - component: {fileID: 449367457}
-  - component: {fileID: 449367459}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -801,19 +800,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 1
---- !u!114 &449367459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449367454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c820b201f4f0a44ba9416d314293ea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 899b64ad5fa42f74aaccc95822e19823, type: 2}
 --- !u!1001 &477982392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1262,7 +1248,6 @@ GameObject:
   - component: {fileID: 783579206}
   - component: {fileID: 783579205}
   - component: {fileID: 783579204}
-  - component: {fileID: 783579203}
   m_Layer: 0
   m_Name: Maze
   m_TagString: Untagged
@@ -1285,19 +1270,6 @@ Transform:
   m_Father: {fileID: 794736819}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
---- !u!114 &783579203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783579201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c820b201f4f0a44ba9416d314293ea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 642ce1ef95ff5f74dace2fe13da312e4, type: 2}
 --- !u!114 &783579204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,7 +1416,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841098592}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 64.5}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
@@ -1519,6 +1491,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzle: {fileID: 1145431954}
+  activeObj: {fileID: 0}
+  player: {fileID: 1892950508}
 --- !u!65 &841098596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1575,7 +1549,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1211524950}
   - {fileID: 1228015328}
   m_Father: {fileID: 1145431953}
   m_RootOrder: 1
@@ -1815,6 +1788,7 @@ Transform:
   m_Children:
   - {fileID: 794736819}
   - {fileID: 872193790}
+  - {fileID: 1211524950}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1952,13 +1926,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211524949}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 841098593}
-  m_Father: {fileID: 872193790}
-  m_RootOrder: 0
+  m_Father: {fileID: 1145431953}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1226397041
 GameObject:
@@ -2130,7 +2104,7 @@ Transform:
   m_Children:
   - {fileID: 86716404}
   m_Father: {fileID: 872193790}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!212 &1228015329
 SpriteRenderer:
@@ -2495,6 +2469,12 @@ PrefabInstance:
       objectReference: {fileID: 9858321}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71716d8888efca45a8977e962ddd7f4, type: 3}
+--- !u!1 &1892950508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4082150130277126516, guid: ad9b45256d828ee4982f2e5d85b896c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2038567453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1944504701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2761,7 +2741,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2038567453}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1892950508}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e75347fe1e68d944b0ba62925a9eed7, type: 3}
