@@ -38,12 +38,6 @@ public class StreetCoffee : MonoBehaviour
                 }
             }
             
-            //NEED TO ADD CHECK FOR CORRECT COFFEE HERE
-            // if (){
-            //     friend.GetComponent<RunDialogue>().dialogueToRun = "friend_after_coffee";
-            //     coffeeStand.GetComponent<RunDialogue>().dialogueToRun = "coffee_done";
-            // }
-            
             if (GameManager.instance.visitedAfterCoffee == 1){
                 Destroy(friend);
             }
