@@ -52,6 +52,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         if (droppedItem.itemName == "White Flower")
         {
             flowerASet = true;
+            SoundManagerScript.PlaySound("place_flower"); 
             FlowerA.transform.GetComponent<Image>().sprite = flowerAComplete;
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();
@@ -59,6 +60,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         else if (droppedItem.itemName == "Red Flower")
         {
             flowerBSet = true;
+            SoundManagerScript.PlaySound("place_flower");
             FlowerB.transform.GetComponent<Image>().sprite = flowerBComplete;
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();
@@ -66,6 +68,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         else if (droppedItem.itemName == "Yellow Flower")
         {
             flowerCSet = true;
+            SoundManagerScript.PlaySound("place_flower");
             FlowerC.transform.GetComponent<Image>().sprite = flowerCComplete;
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();
@@ -73,6 +76,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         else if (droppedItem.itemName == "Purple Flower")
         {
             flowerDSet = true;
+            SoundManagerScript.PlaySound("place_flower");
             FlowerD.transform.GetComponent<Image>().sprite = flowerDComplete;
             Inventory.instance.RemoveItem(droppedItem);
             Inventory.instance.UpdateSlotUI();

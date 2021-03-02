@@ -15,6 +15,7 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip placeCoffee;
     public static AudioClip openGate;
     public static AudioClip whistle;
+    public static AudioClip placeFlower;
 
 
     static AudioSource audioSrc;
@@ -34,6 +35,7 @@ public class SoundManagerScript : MonoBehaviour {
         placeCoffee = Resources.Load<AudioClip>("coffee_sound");
         openGate = Resources.Load<AudioClip>("open_gate");
         whistle = Resources.Load<AudioClip>("whistling_1");
+        placeFlower = Resources.Load<AudioClip>("place_flower");
         // click = Resources.Load<AudioClip>("button_click");
 
 
@@ -86,6 +88,9 @@ public class SoundManagerScript : MonoBehaviour {
                 break;
             case "whistle":
                 audioSrc.PlayOneShot(whistle);
+                break;
+            case "place_flower":
+                audioSrc.PlayOneShot(placeFlower);
                 break;
 
 
