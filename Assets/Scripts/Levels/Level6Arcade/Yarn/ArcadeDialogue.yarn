@@ -19,9 +19,27 @@ Do you want to play the crane game?
 -> Yes
     <<Show CranePuzzlePanel>>
     <<set $playedCrane to true>>
-    [[CraneDirections]]
+    [[ShowCraneDirections]]
 -> No
     <<stop>>
+===
+
+title: ShowCraneDirections
+tags:
+---
+<<ChangeSpeaker Player>>
+<<if visited("CraneDirections") is true>>
+    <<if $doNotShowCraneDirs is false>>
+        Do you want to read the directions again?
+        -> Yes.
+            [[CraneDirections]]
+        -> No.
+            <<set $doNotShowCraneDirs to true>>
+            <<ChangeVariable GameManager arcadeNoCraneDirs 1>>
+    <<endif>>
+<<else>>
+    [[CraneDirections]]
+<<endif>>
 ===
 
 title: CraneDirections
@@ -29,29 +47,18 @@ tags:
 ---
 <<ChangeSpeaker Player>>
 <<BlockMachine CranePuzzlePanel true>>
-<<if $visitedCraneDirections is null>>
-    Here are the directions...
+<<ChangeVariable GameManager arcadeFirstCrane 1>>
+Here are the directions...
 
-    "Insert a coin."
+"Insert a coin."
 
-    "Use the joystick to your left to move the claw left or right."
+"Use the joystick to your left to move the claw left or right."
 
-    "Press the Drop button to start lowering the claw."
+"Press the Drop button to start lowering the claw."
 
-    "If the claw grabs an item, mash the Willpower button for the claw to keep grabbing on!"
+"If the claw grabs an item, mash the Willpower button for the claw to keep grabbing on!"
 
-    Hmm, the first few instructions made sense, but what's this about a "Willpower" button? I guess I'll find out.
-    <<set $visitedCraneDirections to true>>
-<<else>>
-    <<if $doNotShowCraneDirs is null>>
-        Do you want to read the directions again?
-        -> Yes.
-            <<set $visitedCraneDirections to null>>
-            [[CraneDirections]]
-        -> No.
-            <<set $doNotShowCraneDirs to true>>
-    <<endif>>
-<<endif>>
+Hmm, the first few instructions made sense, but what's this about a "Willpower" button? I guess I'll find out.
 <<BlockMachine CranePuzzlePanel false>>
 ===
 
@@ -75,9 +82,27 @@ Do you want to play the dancing game?
 -> Yes
     <<Show DanceGamePuzzlePanel>>
     <<set $playedDance to true>>
-    [[DanceDirections]]
+    [[ShowDanceDirections]]
 -> No
     <<stop>>
+===
+
+title: ShowDanceDirections
+tags:
+---
+<<ChangeSpeaker Player>>
+<<if visited("DanceDirections") is true>>
+    <<if $doNotShowDanceDirs is false>>
+        Do you want to read the directions again?
+        -> Yes.
+            [[DanceDirections]]
+        -> No.
+            <<set $doNotShowDanceDirs to true>>
+            <<ChangeVariable GameManager arcadeNoDanceDirs 1>>
+    <<endif>>
+<<else>>
+    [[DanceDirections]]
+<<endif>>
 ===
 
 title: DanceDirections
@@ -85,43 +110,27 @@ tags:
 ---
 <<ChangeSpeaker Player>>
 <<BlockMachine DanceGamePuzzlePanel true>>
-<<if $visitedDanceDirections is null>>
-    Here are the directions...
+<<ChangeVariable GameManager arcadeFirstDance 1>>
+Here are the directions...
 
-    "Each round, you will see arrows pop up on the left."
+"Each round, you will see arrows pop up on the left."
 
-    "Press the directional buttons on the right matching what you saw."
+"Press the directional buttons on the right matching what you saw."
 
-    "The game gets progressively more difficult the better you do. Good luck!"
-    <<set $visitedDanceDirections to true>>
-<<else>>
-    <<if $doNotShowDanceDirs is null>>
-        Do you want to read the directions again?
-        -> Yes.
-            <<set $visitedDanceDirections to null>>
-            [[DanceDirections]]
-        -> No.
-            <<set $doNotShowDanceDirs to true>>
-    <<endif>>
-<<endif>>
+"The game gets progressively more difficult the better you do. Good luck!"
 <<BlockMachine DanceGamePuzzlePanel false>>
 ===
 
 title: ArcadeLeave
 tags:
 ---
-<<if ($playedCrane is true and $playedBasketball is true and $playedDance is true)>>
-    <<ChangeSpeaker Player>>
-    Do you want to go exit?
-    -> Yes.
-        // <<ExitGame>>
-        <<ChangeScene BlackScreen CityArcade>>
-    -> No.
-        <<exit>>
-<<else>>
-    <<ChangeSpeaker Player>>
-    There are still some games I haven't tried yet.
-<<endif>>
+<<ChangeSpeaker Player>>
+Do you want to go exit?
+-> Yes.
+    // <<ExitGame>>
+    <<ChangeScene BlackScreen CityArcade>>
+-> No.
+    <<exit>>
 ===
 
 title: ArcadeUnusable

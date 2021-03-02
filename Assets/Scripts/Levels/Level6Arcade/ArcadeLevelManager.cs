@@ -24,6 +24,14 @@ public class ArcadeLevelManager : MonoBehaviour
                 dialogueRunner.startAutomatically = false;
                 tracker.NodeComplete("ArcadeStart");
             }
+            if (GameManager.instance.arcadeFirstCrane == 1)
+            {
+                tracker.NodeComplete("CraneDirections");
+            }
+            if (GameManager.instance.arcadeFirstDance == 1)
+            {
+                tracker.NodeComplete("DanceDirections");
+            }
         }
     }
 
@@ -31,11 +39,7 @@ public class ArcadeLevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameManager.instance != null)
-        {
-            GameManager.instance.loadItems();
-            GameManager.instance.deleteItems();
-        }
+        StartCoroutine(StartUpdateBetween());
     }
 
     // Hacky fix for ensuring that the start node dialogue is running
@@ -43,5 +47,26 @@ public class ArcadeLevelManager : MonoBehaviour
     {
         yield return null;
         dialogueRunner.StartDialogue(dialogueRunner.startNode);
+    }
+
+    // Hacky fix #2, the in-between between Start and Update
+    //  Call this in Start()
+    IEnumerator StartUpdateBetween()
+    {
+        yield return null;
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.loadItems();
+            GameManager.instance.deleteItems();
+
+            if (GameManager.instance.arcadeNoCraneDirs == 1)
+            {
+                dialogueRunner.variableStorage.SetValue("$doNotShowCraneDirs", true);
+            }
+            if (GameManager.instance.arcadeNoDanceDirs == 1)
+            {
+                dialogueRunner.variableStorage.SetValue("$doNotShowDanceDirs", true);
+            }
+        }
     }
 }

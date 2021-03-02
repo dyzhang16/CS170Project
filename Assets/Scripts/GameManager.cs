@@ -45,7 +45,10 @@ public class GameManager : MonoBehaviour
 
     // Arcade variables
     public int arcadeFirstVisit = 0;
-    
+    public int arcadeFirstCrane = 0;
+    public int arcadeFirstDance = 0;
+    public int arcadeNoCraneDirs = 0;
+    public int arcadeNoDanceDirs = 0;
 
     void Awake(){
         if (!exists){
@@ -92,7 +95,6 @@ public class GameManager : MonoBehaviour
 
     [YarnCommand("ChangeVariable")]
     public void ChangeVariable(string[] variables){
-
         if (variables.Length < 2){
             Debug.Log("No value given");
         } else {
@@ -119,6 +121,16 @@ public class GameManager : MonoBehaviour
                     followFriendinOffice = int.Parse(variables[1]);
                     break;
                 default:
+                    System.Type GMType = typeof(GameManager);
+                    System.Reflection.FieldInfo fieldInfo = GMType.GetField(variables[0]);
+                    if (fieldInfo != null)
+                    {
+                        fieldInfo.SetValue(this, int.Parse(variables[1]));
+                    }
+                    else
+                    {
+                        Debug.LogError(string.Format("Error, could not find variables {0}.", variables[0]));
+                    }
                     break;
             }
         }
