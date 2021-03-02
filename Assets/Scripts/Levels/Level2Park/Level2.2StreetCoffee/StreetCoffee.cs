@@ -9,9 +9,10 @@ public class StreetCoffee : MonoBehaviour
     public GameObject player;
     public GameObject friend;
     public GameObject coffeeStand;
+    public GameObject receipt;
 
     public GameObject exitToStreetIntro;
-    public GameObject exitToCityIntro;
+    public GameObject exitToCityArcade;
 
     void Awake(){
         if (GameManager.instance != null){
@@ -21,13 +22,30 @@ public class StreetCoffee : MonoBehaviour
                 player.transform.position = exitToStreetIntro.transform.position + new Vector3(12, 0, 0);
             } else if (GameManager.instance.previousScene == "CoffeeScene"){
                 player.transform.position = coffeeStand.transform.position + new Vector3(15, 0, -10);
-            } else if (GameManager.instance.previousScene == "CityIntro"){
-                player.transform.position = exitToCityIntro.transform.position + new Vector3(-12, 0, 0);
+            } else if (GameManager.instance.previousScene == "CityArcade"){
+                player.transform.position = exitToCityArcade.transform.position + new Vector3(-12, 0, 0);
             }
             //change dialogue to correspond to certain cues
-            if (GameManager.instance.visitedCoffee == 1)
-            {
+            if (GameManager.instance.firstFriendMeeting == 1){
                 tracker.NodeComplete("friend_meeting");
+
+                //if you have the receipt
+                if (GameManager.instance.hasReceipt == 1){
+                    Destroy(receipt);
+                } else {
+                    receipt.SetActive(true);
+                    receipt.GetComponent<Animator>().SetTrigger("ReceiptFall");
+                }
+            }
+            
+            //NEED TO ADD CHECK FOR CORRECT COFFEE HERE
+            // if (){
+            //     friend.GetComponent<RunDialogue>().dialogueToRun = "friend_after_coffee";
+            //     coffeeStand.GetComponent<RunDialogue>().dialogueToRun = "coffee_done";
+            // }
+            
+            if (GameManager.instance.visitedAfterCoffee == 1){
+                Destroy(friend);
             }
         }
     }

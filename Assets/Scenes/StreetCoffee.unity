@@ -322,7 +322,7 @@ Transform:
   m_Children:
   - {fileID: 1079456665}
   m_Father: {fileID: 947846538}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!54 &56725335
 Rigidbody:
@@ -2432,7 +2432,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 947846538}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &729855876
 MonoBehaviour:
@@ -2855,7 +2855,7 @@ Transform:
   m_Children:
   - {fileID: 402494026}
   m_Father: {fileID: 947846538}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!54 &825974512
 Rigidbody:
@@ -3283,12 +3283,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 729855875}
   - {fileID: 56725334}
   - {fileID: 825974511}
   - {fileID: 1365707630}
   - {fileID: 1700892415}
   - {fileID: 1287881023}
+  - {fileID: 729855875}
   - {fileID: 99634195}
   m_Father: {fileID: 1239743225}
   m_RootOrder: 1
@@ -4864,8 +4864,9 @@ MonoBehaviour:
   player: {fileID: 2084160837}
   friend: {fileID: 1292933716}
   coffeeStand: {fileID: 1458944165}
+  receipt: {fileID: 742017193}
   exitToStreetIntro: {fileID: 729855874}
-  exitToCityIntro: {fileID: 99634194}
+  exitToCityArcade: {fileID: 99634194}
 --- !u!1 &1287881022
 GameObject:
   m_ObjectHideFlags: 0
@@ -4896,7 +4897,7 @@ Transform:
   m_Children:
   - {fileID: 190762211}
   m_Father: {fileID: 947846538}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!212 &1287881024
 SpriteRenderer:
@@ -5446,7 +5447,7 @@ Transform:
   m_Children:
   - {fileID: 1131505089}
   m_Father: {fileID: 947846538}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!54 &1365707631
 Rigidbody:
@@ -6432,7 +6433,7 @@ Transform:
   - {fileID: 1056796595}
   - {fileID: 1807368148}
   m_Father: {fileID: 947846538}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!54 &1700892416
 Rigidbody:
