@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour
     //city area
     public int firstWalkCityArcade = 0;
     public int firstWalkCityOffice = 0;
-
+    //office hub
+    public int followFriendinOffice = 0;
     //office puzzle
     public int officePuzzle = 0;
 
@@ -113,6 +114,9 @@ public class GameManager : MonoBehaviour
                     break;
                 case "arcadeFirstVisit":
                     arcadeFirstVisit = int.Parse(variables[1]);
+                    break;
+                case "followFriendinOffice":
+                    followFriendinOffice = int.Parse(variables[1]);
                     break;
                 default:
                     break;
