@@ -1,10 +1,14 @@
 ﻿title: ArcadeStart
 tags:
 ---
+// WARNING: This will break if DialogueRunner's StartAutomatically field is set
+<<if visited("ArcadeStart") is false>>
 <<ChangeSpeaker Player>>
     So this is the arcade. All the machines here seem to look the same with the same placeholder art...
 
     There were three games I wanted to take a look at while I'm here.
+<<ChangeVariable GameManager arcadeFirstVisit 1>>
+<<endif>>
 ===
 
 title: PromptCrane

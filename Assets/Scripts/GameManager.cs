@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
 
     //office puzzle
     public int officePuzzle = 0;
+
+    // Arcade variables
+    public int arcadeFirstVisit = 0;
     
 
     void Awake(){
@@ -107,6 +110,9 @@ public class GameManager : MonoBehaviour
                     break;
                 case "gaveDrink":
                     gaveDrink = int.Parse(variables[1]);
+                    break;
+                case "arcadeFirstVisit":
+                    arcadeFirstVisit = int.Parse(variables[1]);
                     break;
                 default:
                     break;
