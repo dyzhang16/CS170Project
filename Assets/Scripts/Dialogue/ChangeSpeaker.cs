@@ -96,7 +96,7 @@ public class ChangeSpeaker : MonoBehaviour
     {
         // constants
         Color IN_FOCUS = Color.white;
-        Color NOT_FOCUS = new Color(0.2f, 0.2f, 0.2f, 1);
+        Color NOT_FOCUS = new Color(0.5f, 0.5f, 0.5f, 1);
 
         // check for valid parameter count
         if (parameters.Length == 0)
