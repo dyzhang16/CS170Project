@@ -36,14 +36,9 @@ tags:
 title: TakeCoffeeCM
 tags:
 ---
-<<ChangeSpeaker Player>>
-	
-	You put the coffee into your inventory.
-
 <<AddBrewedCoffee Environment>>
 <<ResetCoffee CoffeeMachine>>
 <<HidePanel CoffeeMachine>>
-<<stop>>
 ===
 
 title: Creamer
@@ -56,7 +51,7 @@ tags:
 	[[Add the cream.|AddCream]]
 	[[Leave it alone.|PutitDown]]
 <<else>>
-	You have no drink to add creamer to.
+	I can add cream once I’ve brewed the coffee.
 <<endif>>
 ===
 
@@ -76,7 +71,7 @@ tags:
 	[[Add the cream.|AddSugar]]
 	[[Leave it alone.|PutitDown]]
 <<else>>
-	You have no drink to add sugar to.
+	I can add sugar once I’ve brewed the coffee.
 <<endif>>
 ===
 
