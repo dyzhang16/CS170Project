@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     public Animator anim;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
         UpdateSlotUI();

@@ -6,7 +6,6 @@ using Yarn.Unity;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public static bool exists;
 
     //inventory itemList
     //updated on Transition's changeScene
@@ -51,18 +50,11 @@ public class GameManager : MonoBehaviour
     public int arcadeNoDanceDirs = 0;
 
     void Awake(){
-        if (!exists){
+        if (instance != null && instance != this){
+            Destroy(this.gameObject);
+        } else {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            exists = true;
-        } else {
-            Destroy(this.gameObject);
-        }
-    }
-
-    void Start(){
-        if (items.Length == 0){
-            items = new Item[6];
         }
     }
 

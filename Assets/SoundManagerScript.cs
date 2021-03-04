@@ -22,7 +22,7 @@ public class SoundManagerScript : MonoBehaviour {
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         pickFlower = Resources.Load<AudioClip>("pickup_flower_2");
         flowerSuccess = Resources.Load<AudioClip>("flower_success");
