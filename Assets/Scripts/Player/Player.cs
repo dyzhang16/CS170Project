@@ -15,11 +15,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public SpriteRenderer render;
 
     public bool paused;
-    public GameObject buttonPanel;
-    public GameObject menuPanel;
     public bool settings;
     public GameObject settingsPanel;
-    public GameObject menuButtonsPanel;
 
     //animator
     //public Animator animator;
@@ -84,7 +81,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         }
 
         if (Input.GetKeyDown(KeyCode.P)){
-            openMenu();
+            openSettings();
         }
     }
 
@@ -109,23 +106,19 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         }
     }
 
-    public void openMenu(){
-        if (paused){
+    public void openSettings(){
+        if (paused)
+        {
             Time.timeScale = 1;
-        } else {
+        }
+        else
+        {
             stopMove();
             Time.timeScale = 0;
         }
-
         allowInv = paused;
         allowMovement = paused;
-        buttonPanel.SetActive(paused);
         paused = !paused;
-        menuPanel.SetActive(paused);
-    }
-
-    public void openSettings(){
-        menuButtonsPanel.SetActive(settings);
         settings = !settings;
         settingsPanel.SetActive(settings);
     }
