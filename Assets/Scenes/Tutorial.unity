@@ -1773,6 +1773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CustomVariableStorage: {fileID: 1856385929}
   puzzlePanel: {fileID: 2088677838}
+  ExitButton: {fileID: 987267458}
   FlowerA: {fileID: 465640671}
   FlowerB: {fileID: 2097695258}
   FlowerC: {fileID: 1045353051}
@@ -5683,8 +5684,8 @@ GameObject:
   - component: {fileID: 987267454}
   - component: {fileID: 987267457}
   - component: {fileID: 987267456}
-  - component: {fileID: 987267455}
   - component: {fileID: 987267458}
+  - component: {fileID: 987267455}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -5720,11 +5721,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 987267453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e05b35d2b721f549b41bacb2b41de54, type: 3}
+  m_Script: {fileID: 11500000, guid: afc7fb414923d4347be38823ca064454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 2088677838}
-  RemoveButton: {fileID: 987267458}
+  RemoveButton: {fileID: 0}
+  puzzleFinished: 0
+  dialogueRunner: {fileID: 1511438302}
+  dialogueToRun: prologue_doneFlowers
   allowPlayerMovement: 0
 --- !u!114 &987267456
 MonoBehaviour:

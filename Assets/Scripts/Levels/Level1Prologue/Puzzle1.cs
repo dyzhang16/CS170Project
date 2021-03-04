@@ -10,6 +10,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
 {
     public VariableStorageBehaviour CustomVariableStorage;
     public GameObject puzzlePanel;
+    public Button ExitButton;
     public GameObject FlowerA, FlowerB, FlowerC, FlowerD;
     public static Puzzle1 instance;
     bool flowerASet, flowerBSet, flowerCSet, flowerDSet = false;
@@ -28,8 +29,8 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
     {
         if (flowerASet == true && flowerBSet == true && flowerCSet == true && flowerDSet == true)
         {
-            //SoundManagerScript.PlaySound("flower_success"); // plays sound tutorial puzzle complete
             CustomVariableStorage.SetValue("$puzzle", 1);
+            ExitButton.GetComponent<HidePuzzleAndDialogue>().puzzleFinished = true;
             bouqet.SetActive(true);
             GameManager.instance.flowerPuzzle = 1;
         }
@@ -83,6 +84,10 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         else
         {
             //Debug.Log("NotCorrectItem");
+        }
+        if (flowerASet == true && flowerBSet == true && flowerCSet == true && flowerDSet == true)
+        {
+            SoundManagerScript.PlaySound("flower_success"); // plays sound tutorial puzzle complete
         }
     }
 }

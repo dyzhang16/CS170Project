@@ -16,6 +16,10 @@ public class YarnInventory : MonoBehaviour
         AddtoInventory // the method to run
         );
         dialogueRunner.AddCommandHandler(
+        "Remove",     // the name of the command
+        RemoveObject // the method to run
+        );
+        dialogueRunner.AddCommandHandler(
         "HideObject",     // the name of the command
         HideObject // the method to run
         );
@@ -44,6 +48,12 @@ public class YarnInventory : MonoBehaviour
         string Object = parameters[0];
         GameObject PotentialObject = GameObject.Find(Object);
         Inventory.instance.AddItem(PotentialObject.GetComponent<ItemAssignment>().item);
+    }
+    private void RemoveObject(string[] parameters)
+    {
+        string Object = parameters[0];
+        Item item = Inventory.instance.FindItem(Object);
+        Inventory.instance.RemoveItem(item);
     }
     private void HideObject(string[] parameters)
     {
