@@ -13,6 +13,9 @@ public class friend1 : MonoBehaviour
     public bool isWalking = false;
     public float Speed;
     public GameObject Destination;
+
+    public BoxCollider collider;
+
     private Vector3 target;
 
     void Awake(){
@@ -38,6 +41,7 @@ public class friend1 : MonoBehaviour
     [YarnCommand("MoveToOffice")]
     public void MoveToOffice(){
         isWalking = true;
+        collider.isTrigger = true;
     }
 
     [YarnCommand("DropReceipt")]
