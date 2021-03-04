@@ -20,30 +20,31 @@ tags:
 title: RecipeBook
 tags:
 ---
-<<ChangeSpeaker Player>>
+<<if visited("RecipeBook") is false>>
+    <<ChangeSpeaker Player>>
 
-	I can learn how to make coffee from this! Let’s see…
+        I can learn how to make coffee from this! Let’s see…
 
-<<ChangeSpeaker Recipe_Book>>
+    <<ChangeSpeaker Recipe_Book>>
 
-	“Grind the coffee beans until it’s the consistency of some nice dirt.”
+        “Grind the coffee beans until it’s the consistency of some nice dirt.”
 
-	“Pour the grounds into the machine. Don’t forget to use a filter!”
+        “Pour the grounds into the machine. Don’t forget to use a filter!”
 
-	“Pour water into the machine and shut the lid tight.”
+        “Pour water into the machine and shut the lid tight.”
 
-	“Place the cup in its designated spot. Click the ‘BREW’ button and wait for the coffee to pour.”
+        “Place the cup in its designated spot. Click the ‘BREW’ button and wait for the coffee to pour.”
 
-	“Once the coffee is brewed, add the correct amount of sugar and cream.”
+        “Once the coffee is brewed, add the correct amount of sugar and cream.”
 
-	“Carefully snap on a lid onto the cup. Provide a cup sleeve no matter if the drink is hot or cold.”
+        “Carefully snap on a lid onto the cup. Provide a cup sleeve no matter if the drink is hot or cold.”
 
-	“Serve your drink and pat yourself on the back!”
+        “Serve your drink and pat yourself on the back!”
 
-<<ChangeSpeaker Player>>
+    <<ChangeSpeaker Player>>
 
-	Yes, I think I can work with this. Oh! There are recipes in here, too!
-
+        Yes, I think I can work with this. Oh! There are recipes in here, too!
+<<endif>>
 <<Show Recipe_Book>>
 ===
 

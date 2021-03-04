@@ -1,9 +1,11 @@
 ﻿title: CoffeeMachine
 tags:
 ---
-<<ChangeSpeaker Player>>						//Changes Image for Speaker character
-	I am your Coffee Machine overlord 9000. 
-<<Show Coffee_Machine>>									
+<<if visited("CoffeeMachine") is false>>
+    <<ChangeSpeaker Player>>						//Changes Image for Speaker character
+        Here's a coffee machine.
+<<endif>>
+<<Show Coffee_Machine>>
 ===
 
 title: WrongStep
