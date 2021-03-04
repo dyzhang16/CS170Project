@@ -28,11 +28,10 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
     {
         if (flowerASet == true && flowerBSet == true && flowerCSet == true && flowerDSet == true)
         {
-            SoundManagerScript.PlaySound("flower_success"); // plays sound tutorial puzzle complete
+            //SoundManagerScript.PlaySound("flower_success"); // plays sound tutorial puzzle complete
             CustomVariableStorage.SetValue("$puzzle", 1);
             bouqet.SetActive(true);
             GameManager.instance.flowerPuzzle = 1;
-            Hide();
         }
     }
 

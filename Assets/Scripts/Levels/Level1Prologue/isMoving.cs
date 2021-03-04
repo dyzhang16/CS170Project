@@ -75,6 +75,7 @@ public class isMoving : MonoBehaviour
     {
         if (isWalking)
         {
+            this.GetComponent<RunDialogue>().enabled = false;
             //distance traveled per frame
             float step = Speed * Time.deltaTime;
 
@@ -127,6 +128,10 @@ public class isMoving : MonoBehaviour
             if (cycle == 0 || cycle == 1){
                 playWhistle();
             }
+        }
+        else
+        {
+            this.GetComponent<RunDialogue>().enabled = true;
         }
     }
 
