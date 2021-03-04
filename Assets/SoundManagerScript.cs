@@ -60,7 +60,7 @@ public class SoundManagerScript : MonoBehaviour {
                 audioSrc.PlayOneShot(flowerSuccess);
                 break;
             case "wall_bump":
-                audioSrc.PlayOneShot(wallBump);
+                audioSrc.PlayOneShot(wallBump, 0.2f);
                 break;
             case "click":
                 audioSrc.PlayOneShot(click);
