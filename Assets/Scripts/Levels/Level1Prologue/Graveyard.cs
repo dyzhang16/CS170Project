@@ -69,6 +69,9 @@ public class Graveyard : MonoBehaviour
                 p.goingToFade = false;
                 p.allowMovement = true;
             }
+
+            GameManager.instance.loadItems();
+            GameManager.instance.deleteItems();
         }
     }
 }
