@@ -6,10 +6,7 @@ public class OpenMenus : MonoBehaviour
 {
     public bool invActive = false;
     public GameObject Tooltip;
-    public GameObject menuButtonsPanel;
     public bool paused;
-    public GameObject buttonPanel;
-    public GameObject menuPanel;
     public GameObject settingsPanel;
     public bool allowInv = true;
 
@@ -24,7 +21,7 @@ public class OpenMenus : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            OpenMenu();
+            openSettings();
         }
     }
 
@@ -44,26 +41,8 @@ public class OpenMenus : MonoBehaviour
         allowInv = allow;
     }
 
-    public void OpenMenu()
-    {
-        if (paused)
-        {
-            Time.timeScale = 1;
-        }
-        else
-        {
-            Time.timeScale = 0;
-        }
-
-        allowInv = paused;
-        buttonPanel.SetActive(paused);
-        paused = !paused;
-        menuPanel.SetActive(paused);
-    }
-
     public void openSettings()
     {
-        menuButtonsPanel.SetActive(settings);
         settings = !settings;
         settingsPanel.SetActive(settings);
     }
