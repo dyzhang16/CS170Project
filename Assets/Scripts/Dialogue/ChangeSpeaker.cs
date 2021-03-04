@@ -34,7 +34,7 @@ public class ChangeSpeaker : MonoBehaviour
 
     private void ChangeImage(string[] parameters)
     {
-        // reset focusPairs
+        // speakerPairs focusPairs
         speakerPairs.Clear();
 
         // Inner function to change the image
@@ -58,20 +58,24 @@ public class ChangeSpeaker : MonoBehaviour
         };
 
         // ChangeImage for first character
-        var firstChar = DoChange(parameters[0], characterImage);
-        // if DoChange returns non-null, add to the speakerPairs
-        if (firstChar != null)
-            speakerPairs.Add(firstChar.Value); // get the value of the nullable type
+        if (parameters[0] == "None") // None != NONE (None means no first character image)
+        {
+            characterImage.gameObject.SetActive(false);
+        }
         else
-            Debug.LogError($"ChangeSpeaker: Could not find character with the name {parameters[0]}!");
+        {
+            characterImage.gameObject.SetActive(true);
+            var firstChar = DoChange(parameters[0], characterImage);
+            // if DoChange returns non-null, add to the speakerPairs
+            if (firstChar != null)
+                speakerPairs.Add(firstChar.Value); // get the value of the nullable type
+            else
+                Debug.LogError($"ChangeSpeaker: Could not find character with the name {parameters[0]}!");
+        }
 
         // ChangeImage for second parameter (if it exists)
         if (parameters.Length >= 2)
         {
-            if (parameters[0] == "None")
-            {
-                characterImage.gameObject.SetActive(false);
-            }
             // Show the second character image if it does exist
             secondCharacterImage.gameObject.SetActive(true);
             // Do the image change
@@ -88,8 +92,15 @@ public class ChangeSpeaker : MonoBehaviour
             secondCharacterImage.gameObject.SetActive(false); // Hide the second character image
         }
 
-        // After everything is done, set focus on first
-        SetFocus(new string[] { "FIRST" });
+        // After everything is done, set focus on first (or second, if first is None)
+        if (characterImage.gameObject.activeInHierarchy)
+        {
+            SetFocus(new string[] { "FIRST" });
+        }
+        else if (secondCharacterImage.gameObject.activeInHierarchy)
+        {
+            SetFocus(new string[] { "SECOND" });
+        }
     }
 
     private void SetFocus(string[] parameters)
