@@ -33,7 +33,6 @@ public class friend1 : MonoBehaviour
             if (Vector3.Distance(transform.position, target) < 0.001f){
                 isWalking = false;
                 this.gameObject.SetActive(false);
-                GameManager.instance.visitedAfterCoffee = 1;
             }
         }
     }
@@ -42,6 +41,7 @@ public class friend1 : MonoBehaviour
     public void MoveToOffice(){
         isWalking = true;
         collider.isTrigger = true;
+        GameManager.instance.visitedAfterCoffee = 1;
     }
 
     [YarnCommand("DropReceipt")]

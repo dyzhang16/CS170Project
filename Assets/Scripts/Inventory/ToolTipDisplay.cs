@@ -36,29 +36,29 @@ public class ToolTipDisplay : MonoBehaviour //https://www.youtube.com/watch?v=pg
         newPos.z = 0f;
         float rightEdgeToScreenEdgeDistance = Screen.width - (newPos.x + popupObject.rect.width * popupCanvas.scaleFactor / 2) - padding;
 
-        if (rightEdgeToScreenEdgeDistance < 0)
-        {
-            newPos.x += rightEdgeToScreenEdgeDistance;
-        }
+        // if (rightEdgeToScreenEdgeDistance < 0)
+        // {
+        //     newPos.x += rightEdgeToScreenEdgeDistance;
+        // }
         float leftEdgeToScreenEdgeDistance = 0 - (newPos.x - popupObject.rect.width * popupCanvas.scaleFactor / 2) - padding;
 
-        if (leftEdgeToScreenEdgeDistance > 0)
-        {
-            newPos.x += leftEdgeToScreenEdgeDistance;
-        }
+        // if (leftEdgeToScreenEdgeDistance > 0)
+        // {
+        //     newPos.x += leftEdgeToScreenEdgeDistance;
+        // }
         float topEdgeToScreenEdgeDistance = Screen.height - (newPos.y + popupObject.rect.height * popupCanvas.scaleFactor) - padding;
 
-        if (topEdgeToScreenEdgeDistance < 0)
-        {
-            newPos.y += topEdgeToScreenEdgeDistance;
-        }
-/*        float bottomEdgeToScreenEdgeDistance = 0 - (newPos.y - popupObject.rect.height * popupCanvas.scaleFactor) - padding;
+        // if (topEdgeToScreenEdgeDistance < 0)
+        // {
+        //     newPos.y += topEdgeToScreenEdgeDistance;
+        // }
+        float bottomEdgeToScreenEdgeDistance = 0 - (newPos.y - popupObject.rect.height * popupCanvas.scaleFactor) - padding;
 
-        if (bottomEdgeToScreenEdgeDistance < 0)
-        {
-            newPos.y += bottomEdgeToScreenEdgeDistance;
-        }
-        popupObject.transform.position = newPos;*/
+        // if (bottomEdgeToScreenEdgeDistance < 0)
+        // {
+        //     newPos.y += bottomEdgeToScreenEdgeDistance;
+        // }
+        popupObject.transform.position = newPos;
     }
     public void DisplayInfo(Item item)
     {

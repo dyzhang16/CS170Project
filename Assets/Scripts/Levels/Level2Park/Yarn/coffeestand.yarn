@@ -1,7 +1,19 @@
 ﻿title: coffeestand
 tags:
 ---
-<<ChangeScene BlackScreen CoffeeScene>>
+
+<<if visited("friend_meeting") is true>>
+
+	<<ChangeScene BlackScreen CoffeeScene>>
+
+<<else>>
+
+	<<ChangeSpeaker Player>>
+
+	<<Focus FIRST>>
+	Hmmmmmmm, I bet their coffee would taste good.
+
+<<endif>>
 ===
 
 title: coffee_done
