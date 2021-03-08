@@ -25,6 +25,7 @@ public class StreetCoffee : MonoBehaviour
             } else if (GameManager.instance.previousScene == "CityArcade"){
                 player.transform.position = exitToCityArcade.transform.position + new Vector3(-12, 0, 0);
             }
+            
             //change dialogue to correspond to certain cues
             if (GameManager.instance.firstFriendMeeting == 1){
                 tracker.NodeComplete("friend_meeting");
@@ -36,12 +37,10 @@ public class StreetCoffee : MonoBehaviour
                     receipt.SetActive(true);
                     receipt.GetComponent<Animator>().SetTrigger("ReceiptFall");
                 }
-            }
-            if (GameManager.instance.gaveDrink == 1)
+            } else if (GameManager.instance.gaveDrink == 1)
             {
                 tracker.NodeComplete("friend_after_coffee");
-            }
-            if (GameManager.instance.visitedAfterCoffee == 1){
+            } else if (GameManager.instance.visitedAfterCoffee == 1){
                 Destroy(friend);
             }
         }

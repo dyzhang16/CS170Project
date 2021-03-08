@@ -17,6 +17,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public bool paused;
     public bool settings;
     public GameObject settingsPanel;
+    //animator for inventory button
+    public Animator inventoryButtonAnimator;
 
     //animator
     //public Animator animator;
@@ -80,7 +82,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.P)){
+        if (Input.GetKeyDown(KeyCode.Escape)){
             openSettings();
         }
     }
@@ -103,6 +105,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         if (allowInv){
             invActive = !invActive;
             Inventory.instance.anim.SetBool("Inventory", invActive);
+            inventoryButtonAnimator.SetBool("InventoryOpen", invActive);
         }
     }
 
@@ -125,7 +128,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     public void activateMenu(){
         invActive = true;
-        Inventory.instance.anim.SetBool("Inventory", invActive);
+        Inventory.instance.anim.SetBool("Inventory", true);
+        inventoryButtonAnimator.SetBool("InventoryOpen", true);
     }
 
     public void AllowMove(bool allow)
@@ -144,6 +148,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public void closeInv(){
         invActive = false;
         Inventory.instance.anim.SetBool("Inventory", false);
+        inventoryButtonAnimator.SetBool("InventoryOpen", false);
     }
 
     public void stopTalkSound()

@@ -6,7 +6,6 @@ using Yarn.Unity;
 public class friend1 : MonoBehaviour
 {
 
-    public GameObject friend;
     public GameObject coffeeStand;
     public GameObject receipt;
     public VariableStorageBehaviour CustomVariableStorage;
@@ -37,13 +36,16 @@ public class friend1 : MonoBehaviour
         }
     }
 
+    //streetCoffee
     [YarnCommand("MoveToOffice")]
     public void MoveToOffice(){
         isWalking = true;
         collider.isTrigger = true;
         GameManager.instance.visitedAfterCoffee = 1;
+        GameManager.instance.firstFriendMeeting = 2;
     }
 
+    //streetCoffee
     [YarnCommand("DropReceipt")]
     public void DropReceipt(){
         receipt.SetActive(true);
@@ -51,6 +53,7 @@ public class friend1 : MonoBehaviour
         GameManager.instance.firstFriendMeeting = 1;
     }
 
+    //streetCoffee
     [YarnCommand("CheckDrink")]
     public void CheckCompletedCoffee()
     {
@@ -64,5 +67,21 @@ public class friend1 : MonoBehaviour
             Debug.Log("Didnt find Item");
             CustomVariableStorage.SetValue("$CompletedDrinkExists", 0);
         }
+    }
+
+    //cityArcade
+    [YarnCommand("MoveToOffice2")]
+    public void MoveToOffice2(){
+        isWalking = true;
+        collider.isTrigger = true;
+        GameManager.instance.firstFriendMeeting = 3;
+    }
+
+    //cityOffice
+    [YarnCommand("MoveToOffice3")]
+    public void MoveToOffice3(){
+        isWalking = true;
+        collider.isTrigger = true;
+        GameManager.instance.firstFriendMeeting = 4;
     }
 }

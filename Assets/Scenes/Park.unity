@@ -2637,6 +2637,11 @@ PrefabInstance:
       propertyPath: allowMovement
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4082150130277126512, guid: ad9b45256d828ee4982f2e5d85b896c6,
+        type: 3}
+      propertyPath: inventoryButtonAnimator
+      value: 
+      objectReference: {fileID: 1050510778}
     - target: {fileID: 4082150130277126515, guid: ad9b45256d828ee4982f2e5d85b896c6,
         type: 3}
       propertyPath: m_SpriteSortPoint
@@ -2875,7 +2880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &547967560
 Transform:
   m_ObjectHideFlags: 0
@@ -5198,6 +5203,12 @@ PrefabInstance:
 --- !u!224 &1050510777 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8547074628116751426, guid: d989a0bbfe3be194a8983826b60ae0af,
+    type: 3}
+  m_PrefabInstance: {fileID: 1050510776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1050510778 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2598194581427733741, guid: d989a0bbfe3be194a8983826b60ae0af,
     type: 3}
   m_PrefabInstance: {fileID: 1050510776}
   m_PrefabAsset: {fileID: 0}

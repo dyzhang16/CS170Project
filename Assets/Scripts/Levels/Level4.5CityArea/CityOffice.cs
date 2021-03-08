@@ -8,19 +8,24 @@ public class CityOffice : MonoBehaviour
 
     public GameObject player;
     public GameObject Office;
+    public GameObject friend;
 
     public GameObject exitToCityArcade;
-    public GameObject exitToCityApartment;
 
     void Awake(){
         if (GameManager.instance != null)
         {
+            //set position of the player based on previousScene
             if (GameManager.instance.previousScene == "CityArcade"){
                 player.transform.position = exitToCityArcade.transform.position + new Vector3(10, 0, 0);
-            } else if (GameManager.instance.previousScene == "CityApartment"){
-                player.transform.position = exitToCityApartment.transform.position + new Vector3(-10, 0, 0);
             } else if (GameManager.instance.previousScene == "Office"){
                 player.transform.position = Office.transform.position + new Vector3(0, 0, -10);
+            }
+
+            //change dialogue
+            if (GameManager.instance.firstFriendMeeting == 3){
+                friend.SetActive(true);
+                friend.GetComponent<RunDialogue>().dialogueToRun = "cityoffice_friend_intro";
             }
         }
     }
