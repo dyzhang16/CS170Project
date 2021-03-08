@@ -402,6 +402,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1334558}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1334560 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2598194581427733741, guid: d989a0bbfe3be194a8983826b60ae0af,
+    type: 3}
+  m_PrefabInstance: {fileID: 1334558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &10181754
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +912,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164440897}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -11.6, y: -3.65, z: -102.1}
+  m_LocalPosition: {x: 0.2, y: -3.65, z: -89.4}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 766883360}
@@ -6720,6 +6726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destination: {fileID: 422748250}
   insideGraveyard: {fileID: 2041875019}
+  flower: {fileID: 993207723}
   gate: {fileID: 454199815}
   outsideGraveyard: {fileID: 831861404}
   gravestone: {fileID: 328686}
@@ -12621,6 +12628,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4082150130277126512, guid: ad9b45256d828ee4982f2e5d85b896c6,
+        type: 3}
+      propertyPath: inventoryButtonAnimator
+      value: 
+      objectReference: {fileID: 1334560}
     - target: {fileID: 4082150130277126516, guid: ad9b45256d828ee4982f2e5d85b896c6,
         type: 3}
       propertyPath: m_Name

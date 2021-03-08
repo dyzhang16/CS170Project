@@ -10,6 +10,7 @@ public class isMoving : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Destination;
     public GameObject insideGraveyard;
+    public GameObject flower;
     public GameObject gate;
     public GameObject outsideGraveyard;
 
@@ -97,11 +98,11 @@ public class isMoving : MonoBehaviour
                     isWalking = false;
                     StartCoroutine(doneWalking());
                 }
-            } else if (cycle == 2){ //key
-                transform.position = Vector3.MoveTowards(transform.position, key.transform.position, step);
+            } else if (cycle == 2){ //flower
+                transform.position = Vector3.MoveTowards(transform.position, flower.transform.position, step);
                 p.AllowMove(false);
 
-                if (Vector3.Distance(transform.position, key.transform.position) < 0.001f)
+                if (Vector3.Distance(transform.position, flower.transform.position) < 0.001f)
                 {
                     isWalking = false;
                     StartCoroutine(doneWalking());
@@ -167,8 +168,16 @@ public class isMoving : MonoBehaviour
 
     [YarnCommand("dropKey")]
     public void dropKey(){
-        key.SetActive(true);
         isWalking = true;
+        StartCoroutine(dropKeyDelay());
+    }
+
+    IEnumerator dropKeyDelay(){
+        yield return new WaitForSeconds(1);
+        key.transform.position = this.gameObject.transform.position;
+        key.SetActive(true);
+        c.Follow = key.transform;
+        yield return new WaitForSeconds(2);
         c.Follow = player.transform;
     }
 }

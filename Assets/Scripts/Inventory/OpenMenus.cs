@@ -10,6 +10,9 @@ public class OpenMenus : MonoBehaviour
     public GameObject settingsPanel;
     public bool allowInv = true;
 
+    //animator for inventory button
+    public Animator inventoryButtonAnimator;
+
     public bool settings;
     public bool moving = false;
     public bool goingToFade;
@@ -34,6 +37,7 @@ public class OpenMenus : MonoBehaviour
             Tooltip.GetComponent<ToolTipDisplay>().HideInfo();
             invActive = !invActive;
             Inventory.instance.anim.SetBool("Inventory", invActive);
+            inventoryButtonAnimator.SetBool("InventoryOpen", invActive);
         }
     }
     public void AllowInv(bool allow)

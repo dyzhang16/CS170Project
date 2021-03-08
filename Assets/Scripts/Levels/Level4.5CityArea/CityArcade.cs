@@ -22,6 +22,8 @@ public class CityArcade : MonoBehaviour
                 player.transform.position = Arcade.transform.position + new Vector3(0, 0, -10);
             }
 
+            //first friend meeting
+            
 
         }
     }

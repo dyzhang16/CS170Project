@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     //street area
     //changed when the friend drops the receipt
+    //1 = dropped receipt
+    //2 = 
     public int firstFriendMeeting = 0;
     //changes when the player picks up the receipt
     public int hasReceipt = 0;
@@ -34,9 +36,6 @@ public class GameManager : MonoBehaviour
     public int blender = 0;
     public int waterAdded = 0;
 
-    //city area
-    public int firstWalkCityArcade = 0;
-    public int firstWalkCityOffice = 0;
     //office hub
     public int followFriendinOffice = 0;
     //office puzzle
