@@ -8,6 +8,7 @@ public class CityArcade : MonoBehaviour
 
     public GameObject player;
     public GameObject Arcade;
+    public GameObject friend;
 
     public GameObject exitToCityOffice;
     public GameObject exitToStreetCoffee;
@@ -23,8 +24,10 @@ public class CityArcade : MonoBehaviour
             }
 
             //first friend meeting
-            
-
+            if (GameManager.instance.firstFriendMeeting == 2){
+                friend.SetActive(true);
+                friend.GetComponent<RunDialogue>().dialogueToRun = "cityarcade_friend_intro";
+            }
         }
     }
 

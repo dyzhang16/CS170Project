@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour
     //street area
     //changed when the friend drops the receipt
     //1 = dropped receipt
-    //2 = 
+    //2 = leaves streetCoffee and goes to office 
+    //3 = after first encounter in cityOffice area
     public int firstFriendMeeting = 0;
     //changes when the player picks up the receipt
     public int hasReceipt = 0;
