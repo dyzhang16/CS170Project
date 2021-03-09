@@ -13,6 +13,8 @@ public class RunDialogue : MonoBehaviour
     public string NPCName = "";
     public string NPCInteract = "";
 
+    
+
     private BoxCollider box;
 
     public bool runDialogue;
@@ -44,7 +46,13 @@ public class RunDialogue : MonoBehaviour
                 }
             }
         }
+
+        
+
+        
     }
+
+    
 
     void OnTriggerStay(Collider collider)                          //https://www.youtube.com/watch?v=Bc9lmHjqLZc
     {
