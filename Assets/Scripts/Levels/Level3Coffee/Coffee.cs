@@ -37,5 +37,9 @@ public class Coffee : MonoBehaviour
             GameManager.instance.loadItems();
             GameManager.instance.deleteItems();
         }
+        if (GameManager.instance.waterAdded == 1)
+        {
+            CustomVariableStorage.SetValue("$WaterThere", 1);
+        }
     }
 }
