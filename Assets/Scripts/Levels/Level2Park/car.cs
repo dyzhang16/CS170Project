@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class car : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class car : MonoBehaviour
     public GameObject DestinationBotRight;
     public GameObject DestinationTopRight;
 
+    public DialogueRunner dia;
+
+    public bool moving;
     public SpriteRenderer render;
 
     public float Speed;
@@ -18,25 +22,33 @@ public class car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 target;
-        if (cycle == 0){
-            target = DestinationTopLeft.transform.position;
-            render.flipX = true;
-        } else if (cycle == 1){
-            target = DestinationBotLeft.transform.position;
-        } else if (cycle == 2){
-            target = DestinationBotRight.transform.position;
-            render.flipX = false;
+        if (dia.IsDialogueRunning){
+            moving = false;
         } else {
-            target = DestinationTopRight.transform.position;
+            moving = true;
         }
 
-        float step = Speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target, step);
+        if (moving){
+            Vector3 target;
+            if (cycle == 0){
+                target = DestinationTopLeft.transform.position;
+                render.flipX = true;
+            } else if (cycle == 1){
+                target = DestinationBotLeft.transform.position;
+            } else if (cycle == 2){
+                target = DestinationBotRight.transform.position;
+                render.flipX = false;
+            } else {
+                target = DestinationTopRight.transform.position;
+            }
 
-        if (Vector3.Distance(transform.position, target) < 0.001f)          //Changes based on Positioning
-        {
-            cycle = (++cycle)%4;
+            float step = Speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target, step);
+
+            if (Vector3.Distance(transform.position, target) < 0.001f)          //Changes based on Positioning
+            {
+                cycle = (++cycle)%4;
+            }
         }
     }
 }

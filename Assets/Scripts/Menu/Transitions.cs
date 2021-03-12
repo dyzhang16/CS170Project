@@ -51,7 +51,7 @@ public class Transitions : MonoBehaviour
     void OnTriggerEnter(Collider collider)                          //https://www.youtube.com/watch?v=Bc9lmHjqLZc
     {
         if (collider.gameObject.CompareTag("Player")){
-            Player p = collider.gameObject.GetComponent<Player>();
+            // Player p = collider.gameObject.GetComponent<Player>();
             // Debug.Log(p);
             // p.AllowMove(false);
             // p.AllowInv(false);
