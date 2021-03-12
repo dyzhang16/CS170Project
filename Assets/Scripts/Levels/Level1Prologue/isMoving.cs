@@ -21,8 +21,8 @@ public class isMoving : MonoBehaviour
 
     public DialogueRunner dia;
 
-    public GameObject cam;
-    CinemachineVirtualCamera c;
+    public CinemachineVirtualCamera gravekeeperCam;
+    public CinemachineVirtualCamera keyCam;
 
     public bool isWalking;
     public bool timeToWalkBack;
@@ -34,7 +34,9 @@ public class isMoving : MonoBehaviour
 
     void Awake(){
         p = player.GetComponent<Player>();
-        c = cam.GetComponent<CinemachineVirtualCamera>();
+
+        gravekeeperCam.enabled = false;
+        keyCam.enabled = false;
     }
 
     [YarnCommand("MoveNPC")]
@@ -163,7 +165,7 @@ public class isMoving : MonoBehaviour
     [YarnCommand("walkBack")]
     public void walkBack(){
         isWalking = true;
-        c.Follow = this.transform;
+        gravekeeperCam.enabled = true;
     }
 
     [YarnCommand("dropKey")]
@@ -176,8 +178,9 @@ public class isMoving : MonoBehaviour
         yield return new WaitForSeconds(1);
         key.transform.position = this.gameObject.transform.position;
         key.SetActive(true);
-        c.Follow = key.transform;
+        gravekeeperCam.enabled = false;
+        keyCam.enabled = true;
         yield return new WaitForSeconds(2);
-        c.Follow = player.transform;
+        keyCam.enabled = false;
     }
 }
