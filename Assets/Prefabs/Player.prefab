@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4082150130277126515}
   - component: {fileID: 3702161518121814006}
   - component: {fileID: 4082150130277126512}
+  - component: {fileID: 704746332697168354}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e79cb96dc9346b24fbe6f2e2d1e00fb0, type: 3}
+  m_Sprite: {fileID: 721585980608134710, guid: b43c7ccf43f63664ba284ab24234aba9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,6 +120,7 @@ MonoBehaviour:
   paused: 0
   settings: 0
   settingsPanel: {fileID: 0}
+  inventoryButtonAnimator: {fileID: 0}
   allowMovement: 1
   playTalkSound: 1
   movement: {x: 0, y: 0, z: 0}
@@ -126,6 +128,25 @@ MonoBehaviour:
   invActive: 0
   moving: 0
   goingToFade: 0
+--- !u!95 &704746332697168354
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082150130277126516}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e700eaff343bb74ab2c6fa53064cc18, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8204138373473869402
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,5 +189,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.2575026, y: 3.8020713, z: 3.831459}
-  m_Center: {x: 0.052143574, y: -1.1203972, z: 1.6021581}
+  m_Size: {x: 3.2575026, y: 7.264646, z: 4.2716904}
+  m_Center: {x: 0.052143574, y: 0.4039331, z: 2.2230256}
