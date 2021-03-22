@@ -204,7 +204,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6089359}
-        m_MethodName: Hide
+        m_MethodName: HidePuzzleCoffee
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -223,12 +223,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6089356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e05b35d2b721f549b41bacb2b41de54, type: 3}
+  m_Script: {fileID: 11500000, guid: 68b2b184ca46b9f458c7d25a27a69862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 211362152}
   RemoveButton: {fileID: 6089358}
-  allowPlayerMovement: 0
+  Drink: {fileID: 198292346}
 --- !u!114 &6089360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3591,7 +3591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c820b201f4f0a44ba9416d314293ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 3dbe2f4affdb04f4d954895a43bfb52d, type: 2}
+  item: {fileID: 11400000, guid: ab5c28e95ea9eec4685282f976b83508, type: 2}
 --- !u!114 &1087595546 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 720895105224319440, guid: 32ecd2b4f32066d48bd773fa364541a0,
@@ -3700,6 +3700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 1087914911}
   CoffeeCup: {fileID: 593732073}
+  cupStack: {fileID: 787298345}
   dialogueRunner: {fileID: 1718823472}
   CustomVariableStorage: {fileID: 1718823471}
   cup: {fileID: 850437287}
@@ -4227,8 +4228,8 @@ GameObject:
   - component: {fileID: 1381875755}
   - component: {fileID: 1381875759}
   - component: {fileID: 1381875758}
-  - component: {fileID: 1381875757}
   - component: {fileID: 1381875756}
+  - component: {fileID: 1381875757}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -4299,7 +4300,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1381875757}
-        m_MethodName: Hide
+        m_MethodName: HidePuzzleCoffee
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4318,12 +4319,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1381875754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e05b35d2b721f549b41bacb2b41de54, type: 3}
+  m_Script: {fileID: 11500000, guid: 68b2b184ca46b9f458c7d25a27a69862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   puzzlePanel: {fileID: 258097537}
   RemoveButton: {fileID: 1381875756}
-  allowPlayerMovement: 0
+  Drink: {fileID: 501733357}
 --- !u!114 &1381875758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4513,6 +4514,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757374656308196594, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757374656308196594, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757374656444585491, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 433.25
       objectReference: {fileID: 0}
     - target: {fileID: 6366903730072417994, guid: a8049e3b227ac00459242d230acb1abe,
         type: 3}
@@ -4984,7 +5000,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4041132059254309556, guid: 32ecd2b4f32066d48bd773fa364541a0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 32ecd2b4f32066d48bd773fa364541a0, type: 3}
 --- !u!1 &1605022135
 GameObject:
@@ -5704,7 +5721,7 @@ PrefabInstance:
     - target: {fileID: 2102111577348916805, guid: d141741f1698c3747bb68dd69c930800,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45.00009
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 2102111577348916805, guid: d141741f1698c3747bb68dd69c930800,
         type: 3}
@@ -6121,7 +6138,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press for Coffee
+  m_Text: BREW
 --- !u!222 &1928866595
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6607,9 +6624,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 1718823472}
   CustomVariableStorage: {fileID: 1718823471}
-  CoffeeMachine: {fileID: 1087914911}
-  blender: {fileID: 979656646}
-  waterAdded: 0
+  nodeVisitedTracker: {fileID: 1687495252}
+  CoffeeMachine: {fileID: 2119695928}
 --- !u!4 &2096799025
 Transform:
   m_ObjectHideFlags: 0
@@ -6622,7 +6638,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2119695928
 GameObject:
@@ -6639,6 +6655,7 @@ GameObject:
   - component: {fileID: 2119695931}
   - component: {fileID: 2119695930}
   - component: {fileID: 2119695935}
+  - component: {fileID: 2119695936}
   m_Layer: 0
   m_Name: Coffee_Machine
   m_TagString: World Item
@@ -6708,7 +6725,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12229526, y: 0.113948345}
+  m_Offset: {x: -0.029928088, y: 0.040394902}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6719,7 +6736,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.3409824, y: 4.354597}
+  m_Size: {x: 3.3339694, y: 3.8642461}
   m_EdgeRadius: 0
 --- !u!114 &2119695933
 MonoBehaviour:
@@ -6801,6 +6818,21 @@ MonoBehaviour:
   puzzlePanel: {fileID: 1087914911}
   DoNotOpenInventory: 0
   stopPlayerMovement: 0
+--- !u!114 &2119695936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119695928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253fefa01c9a5f643abf452ccdbaf027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 1718823472}
+  GameObject: {fileID: 2119695928}
+  diaToRun: CoffeeMachine
 --- !u!1 &2136782266
 GameObject:
   m_ObjectHideFlags: 0
@@ -6884,8 +6916,8 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 1
-  m_MatchWidthOrHeight: 0
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

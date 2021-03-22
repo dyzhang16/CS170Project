@@ -23,28 +23,12 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
         sugarAdded = 0;
         sugarUI.transform.rotation = originalRotation;
         coffeeUI.SetActive(false);
-        // set exitButton to be interactable
-        exitButton.interactable = true;
     }
     public void Awake()
     {
         originalRotation = sugarUI.transform.rotation;
     }
-    public void Start()
-    {
-        // get the exitButton from all of this GameObject's puzzle's children
-        // https://answers.unity.com/questions/594210/get-all-children-gameobjects.html
-        foreach (Transform child in transform)
-        {
-            // if child has the HidePuzzle component (seen in GameObjects for exiting a puzzle)
-            if (child.GetComponent<HidePuzzle>())
-            {
-                // assign the exit button
-                exitButton = child.GetComponent<UnityEngine.UI.Button>();
-                break;
-            }
-        }
-    }
+
     public void OnDrop(PointerEventData eventData)
     {
         droppedItem = Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()];
@@ -65,9 +49,6 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
                     coffeeUI.SetActive(true);
                     Inventory.instance.RemoveItem(droppedItem);
                     Inventory.instance.UpdateSlotUI();
-
-                    // prevent user from selecting the exit button
-                    exitButton.interactable = false;
                 }
             }
         }

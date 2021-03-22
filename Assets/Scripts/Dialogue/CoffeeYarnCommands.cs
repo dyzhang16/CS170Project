@@ -40,6 +40,10 @@ public class CoffeeYarnCommands : MonoBehaviour
         CheckCoffee // the method to run
         );
         dialogueRunner.AddCommandHandler(
+        "CheckCup",     // the name of the command
+        CheckCup // the method to run
+        );
+        dialogueRunner.AddCommandHandler(
         "Sleeve",     // the name of the command
         CoffeeSleeve // the method to run
         );
@@ -72,6 +76,20 @@ public class CoffeeYarnCommands : MonoBehaviour
             CustomVariableStorage.SetValue("$DrinkExists", 0);
         }
         
+    }
+    public void CheckCup(string[] parameters)
+    {
+        string Object = string.Join("", parameters);
+        if (Inventory.instance.CheckItem(Object))
+        {
+            Debug.Log("Found item");
+            CustomVariableStorage.SetValue("$CupExists", 1);
+        }
+        else
+        {
+            Debug.Log("Didn't find Item");
+            CustomVariableStorage.SetValue("$CupExists", 0);
+        }
     }
     private void CoffeeSleeve(string[] parameters)
     {

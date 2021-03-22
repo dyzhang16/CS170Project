@@ -32,10 +32,12 @@ public class GameManager : MonoBehaviour
     public int gaveDrink = 0;
     //changed when the friend leaves the streetCoffee scene after recieving the correct coffee
     public int visitedAfterCoffee = 0;
-
+    //changed when the player first enters the coffee shop, preventing initial dialogue from starting again
     public int visitedCoffee = 0;
-    public int blender = 0;
-    public int waterAdded = 0;
+    //changed when the player has read the recipe book, prevents initial recipe dialogue from starting again
+    public int readRecipeBook = 0;
+    //changed when the player has any items to the CoffeeMachine, triggering dialogue forcing them to restart if they've left the coffee scene
+    public int addedCoffeeMachineItem = 0;
 
     //office hub
     public int followFriendinOffice = 0;
@@ -94,14 +96,11 @@ public class GameManager : MonoBehaviour
                 case "hasReceipt":
                     hasReceipt = int.Parse(variables[1]);
                     break;
-                case "Blender":
-                    blender = int.Parse(variables[1]);
-                    break;
                 case "visitedCoffee":
                     visitedCoffee = int.Parse(variables[1]);
                     break;
-                case "waterAdded":
-                    waterAdded = int.Parse(variables[1]);
+                case "readBook":
+                    readRecipeBook = int.Parse(variables[1]);
                     break;
                 case "gaveDrink":
                     gaveDrink = int.Parse(variables[1]);

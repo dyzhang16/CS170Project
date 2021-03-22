@@ -7,26 +7,21 @@ public class Coffee : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     public VariableStorageBehaviour CustomVariableStorage;
+    public NodeVisitedTracker nodeVisitedTracker;
     public GameObject CoffeeMachine;
-    public GameObject blender;
-    public bool waterAdded;
 
 
     void Awake()
     {
         if (GameManager.instance != null)
         {
-            if (GameManager.instance.blender == 1)
-            {
-                Destroy(blender);
-            }
-            if (GameManager.instance.waterAdded == 1)
-            {
-                CoffeeMachine.GetComponent<CoffeePuzzle>().waterThere = true;
-            }
             if(GameManager.instance.visitedCoffee == 1)
             {
                 dialogueRunner.startAutomatically = false;
+            }
+            if (GameManager.instance.addedCoffeeMachineItem == 1)
+            {
+                CoffeeMachine.GetComponent<RunDialogueMC>().dialogueToRun = "StaleIngredients";
             }
         }
     }
@@ -37,9 +32,9 @@ public class Coffee : MonoBehaviour
             GameManager.instance.loadItems();
             GameManager.instance.deleteItems();
         }
-        if (GameManager.instance.waterAdded == 1)
+        if (GameManager.instance.readRecipeBook == 1)
         {
-            CustomVariableStorage.SetValue("$WaterThere", 1);
+            nodeVisitedTracker.NodeComplete("RecipeBook");
         }
     }
 }

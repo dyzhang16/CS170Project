@@ -6,7 +6,7 @@ using Yarn.Unity;
 
 public class CoffeePuzzle : MonoBehaviour, IDropHandler
 {
-    public GameObject puzzlePanel, CoffeeCup;
+    public GameObject puzzlePanel, CoffeeCup, cupStack;
     public DialogueRunner dialogueRunner;
     public VariableStorageBehaviour CustomVariableStorage;
     public GameObject cup, filter, grounds, brewedCoffee;
@@ -17,10 +17,15 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
 
     public void Reset()
     {
+        waterThere = false;
         cupThere = false;
         filterThere = false;
         groundsThere = false;
         brewedCoffee.SetActive(false);
+        CustomVariableStorage.SetValue("$WaterThere", 0);
+        CustomVariableStorage.SetValue("$FilterThere", 0);
+        CustomVariableStorage.SetValue("$BeansThere", 0);
+        CustomVariableStorage.SetValue("CupThere", 0);
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -30,6 +35,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
         {
             if (droppedItem.itemName == "Cup" && !cupThere)
             {
+                GameManager.instance.addedCoffeeMachineItem = 1;
                 cupThere = true;
                 cup.SetActive(true);
                 Inventory.instance.RemoveItem(droppedItem);
@@ -40,6 +46,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
             }
             else if (droppedItem.itemName == "Paper Filter" && !filterThere)
             {
+                GameManager.instance.addedCoffeeMachineItem = 1;
                 filterThere = true;
                 filter.SetActive(true);
                 Inventory.instance.RemoveItem(droppedItem);
@@ -49,6 +56,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
             }
             else if (droppedItem.itemName == "Coffee Grounds" && !groundsThere && filterThere)
             {
+                GameManager.instance.addedCoffeeMachineItem = 1;
                 groundsThere = true;
                 grounds.SetActive(true);
                 Inventory.instance.RemoveItem(droppedItem);
@@ -56,12 +64,14 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 CustomVariableStorage.SetValue("$BeansThere", 1);
                 SoundManagerScript.PlaySound("place_coffee"); // coffee sound
             }
-            else if (droppedItem.itemName == "Blender")
+            else if (droppedItem.itemName == "Cup o Water")
             {
+                GameManager.instance.addedCoffeeMachineItem = 1;
                 waterThere = true;
                 Inventory.instance.RemoveItem(droppedItem);
+                Item cup = cupStack.GetComponent<ItemAssignment>().item;
+                Inventory.instance.AddItem(cup);
                 Inventory.instance.UpdateSlotUI();
-                GameManager.instance.waterAdded = 1;
                 CustomVariableStorage.SetValue("$WaterThere", 1);
                 SoundManagerScript.PlaySound("pour_coffee"); // coffee sound
             }
@@ -79,12 +89,13 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
             SoundManagerScript.PlaySound("pour_coffee"); 
             
             cupThere = false;
-            cup.SetActive(false);
+            waterThere = false;
             filterThere = false;
-            filter.SetActive(false);
             groundsThere = false;
-            grounds.SetActive(false);
-            CoffeeCup.SetActive(false);
+            cup.SetActive(false);
+            filter.SetActive(false);
+            grounds.SetActive(false); 
+            CoffeeCup.SetActive(false); //CoffeeCup in Gameworld disappears
             brewedCoffee.SetActive(true);
         }
         else 

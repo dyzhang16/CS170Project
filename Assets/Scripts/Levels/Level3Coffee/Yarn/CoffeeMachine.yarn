@@ -23,14 +23,32 @@ tags:
 <<ChangeSpeaker Player>>
 	//placeholder text
 <<if $WaterThere is 0>>
-		I'm missing the water...
+
+	I'm missing the water...
+
 <<elseif $FilterThere is 0>>
-		I'm missing something to hold the beans....
+
+	I'm missing something to hold the beans....
+
 <<elseif $BeansThere is 0>>
-		I can't make coffee without the beans.
+		
+	I can't make coffee without the beans.
+
 <<elseif $CupThere is 0>>
-		I guess I'm drinking this coffee.
+
+	I guess I'm drinking this coffee.
+
 <<endif>>
+===
+
+title: StaleIngredients
+tags:
+---
+<<ChangeSpeaker Player>>
+	//placeholder text
+	It's been too long since I've touched this, the coffee won't be fresh anymore. I need to restart.
+<<Show Coffee_Machine>>
+<<ChangeScript Coffee_Machine>>
 ===
 
 title: TakeCoffeeCM
@@ -68,7 +86,7 @@ tags:
 <<Check Random Coffee>>
 <<if $DrinkExists is 1>>
 	Do you want to add some sugar to the coffee?
-	[[Add the cream.|AddSugar]]
+	[[Add the sugar.|AddSugar]]
 	[[Leave it alone.|PutitDown]]
 <<else>>
 	I can add sugar once I’ve brewed the coffee.
@@ -92,8 +110,6 @@ title: PutitDown
 title: TakeCoffeeCream
 tags:
 ---
-<<ChangeSpeaker Player>>
-	You put the coffee into your inventory.
 <<AddCoffee Completed_Coffee>>
 <<ResetCream AddCream>>
 <<HidePanel AddCream>>
@@ -103,8 +119,6 @@ tags:
 title: TakeCoffeeSugar
 tags:
 ---
-<<ChangeSpeaker Player>>
-	You put the coffee into your inventory.
 <<AddCoffee Completed_Coffee>>
 <<ResetSugar AddSugar>>
 <<HidePanel AddSugar>>
