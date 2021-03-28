@@ -259,7 +259,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &31553235
 GameObject:
@@ -315,6 +315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40464165}
   - component: {fileID: 40464166}
+  - component: {fileID: 40464167}
   m_Layer: 0
   m_Name: thrift store (7)
   m_TagString: Untagged
@@ -386,6 +387,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &40464167
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40464164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.34, y: 4.54, z: 0.2}
+  m_Center: {x: 0, y: 2.27, z: 0}
 --- !u!114 &61310355 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 720895105224319440, guid: 32ecd2b4f32066d48bd773fa364541a0,
@@ -409,6 +423,7 @@ GameObject:
   - component: {fileID: 75505873}
   - component: {fileID: 75505876}
   - component: {fileID: 75505875}
+  - component: {fileID: 75505874}
   m_Layer: 0
   m_Name: movie theater
   m_TagString: Untagged
@@ -430,6 +445,19 @@ Transform:
   m_Father: {fileID: 1024091868}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!65 &75505874
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75505872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.999999, y: 8.999999, z: 0.20000215}
+  m_Center: {x: 0.000002861023, y: 4.500009, z: -0.0000141859055}
 --- !u!54 &75505875
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -550,6 +578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105060295}
   - component: {fileID: 105060296}
+  - component: {fileID: 105060297}
   m_Layer: 0
   m_Name: sidewalk (5)
   m_TagString: Untagged
@@ -621,6 +650,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &105060297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105060294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52551, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0.000019073486, y: 16.200005, z: 0.00003980398}
 --- !u!1 &139800250
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 139800251}
   - component: {fileID: 139800252}
+  - component: {fileID: 139800253}
   m_Layer: 0
   m_Name: fence
   m_TagString: Untagged
@@ -702,6 +745,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &139800253
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139800250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.779999, y: 4.86, z: 0.2}
+  m_Center: {x: -0.00000047683716, y: 2.430023, z: 0}
 --- !u!1 &160646908
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 160646909}
   - component: {fileID: 160646910}
+  - component: {fileID: 160646911}
   m_Layer: 0
   m_Name: thrift store (8)
   m_TagString: Untagged
@@ -783,6 +840,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &160646911
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160646908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.34, y: 4.54, z: 0.20000434}
+  m_Center: {x: 0, y: 2.2700005, z: -0.0000021648407}
 --- !u!1 &241878154
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,6 +863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 241878155}
   - component: {fileID: 241878156}
+  - component: {fileID: 241878157}
   m_Layer: 0
   m_Name: fence
   m_TagString: Untagged
@@ -864,6 +935,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &241878157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241878154}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.779999, y: 4.86, z: 0.2}
+  m_Center: {x: 0, y: 2.4299963, z: 0.000030517578}
 --- !u!1 &291186997
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 318931762}
   - component: {fileID: 318931763}
+  - component: {fileID: 318931764}
   m_Layer: 0
   m_Name: sidewalk (4)
   m_TagString: Untagged
@@ -977,6 +1062,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &318931764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318931761}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52551, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0.000019073486, y: -16.19999, z: 0.000025328249}
 --- !u!114 &411530684 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
@@ -1091,6 +1189,7 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
+  dialogueCursor: {fileID: 1606446912}
   runDialogue: 0
 --- !u!54 &419603293
 Rigidbody:
@@ -1237,6 +1336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 627163543}
   - component: {fileID: 627163542}
+  - component: {fileID: 627163544}
   m_Layer: 0
   m_Name: street (1)
   m_TagString: Untagged
@@ -1308,6 +1408,19 @@ Transform:
   m_Father: {fileID: 1024091868}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &627163544
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627163541}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52552, y: 32.400013, z: 0.20000005}
+  m_Center: {x: 0.0000076293945, y: -16.200022, z: 0.000030207633}
 --- !u!1 &631035336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,7 +1722,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &816748681
 GameObject:
@@ -2168,6 +2281,7 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
+  dialogueCursor: {fileID: 1606446912}
   runDialogue: 0
 --- !u!54 &951475900
 Rigidbody:
@@ -2312,7 +2426,7 @@ Transform:
   - {fileID: 627163543}
   - {fileID: 75505873}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1126024025
 GameObject:
@@ -2523,7 +2637,7 @@ PrefabInstance:
     - target: {fileID: 589655525532243720, guid: 54a1007ac4bb7bf42b2d750654f51876,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 589655525532243720, guid: 54a1007ac4bb7bf42b2d750654f51876,
         type: 3}
@@ -2819,6 +2933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1201546992}
   - component: {fileID: 1201546993}
+  - component: {fileID: 1201546994}
   m_Layer: 0
   m_Name: street
   m_TagString: Untagged
@@ -2890,6 +3005,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &1201546994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201546991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.525505, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0, y: -16.200005, z: 0.00000064372944}
 --- !u!1 &1231573956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,6 +3120,7 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
+  dialogueCursor: {fileID: 1606446912}
   runDialogue: 0
 --- !u!54 &1231573960
 Rigidbody:
@@ -3071,7 +3200,7 @@ Transform:
   - {fileID: 768275156}
   - {fileID: 1689769326}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251959009
 GameObject:
@@ -3171,6 +3300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283699368}
   - component: {fileID: 1283699369}
+  - component: {fileID: 1283699370}
   m_Layer: 0
   m_Name: sidewalk (2)
   m_TagString: Untagged
@@ -3242,6 +3372,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &1283699370
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283699367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52551, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0, y: -16.200005, z: 0}
 --- !u!1 &1287643994
 GameObject:
   m_ObjectHideFlags: 0
@@ -3271,7 +3414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1287643996
 MonoBehaviour:
@@ -3464,6 +3607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1352262576}
   - component: {fileID: 1352262577}
+  - component: {fileID: 1352262578}
   m_Layer: 0
   m_Name: street
   m_TagString: Untagged
@@ -3535,6 +3679,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &1352262578
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352262575}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52551, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0, y: -16.200005, z: 0}
 --- !u!1 &1454291067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3627,6 +3784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1477928046}
   - component: {fileID: 1477928047}
+  - component: {fileID: 1477928048}
   m_Layer: 0
   m_Name: sidewalk (3)
   m_TagString: Untagged
@@ -3698,6 +3856,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &1477928048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477928045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52551, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0, y: 16.200005, z: 0}
 --- !u!1 &1514367759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3810,6 +3981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1563201648}
   - component: {fileID: 1563201649}
+  - component: {fileID: 1563201650}
   m_Layer: 0
   m_Name: sidewalk (2)
   m_TagString: Untagged
@@ -3881,6 +4053,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &1563201650
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563201647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.525505, y: 32.40001, z: 0.20000005}
+  m_Center: {x: -0.0000076293945, y: -16.200005, z: 0.0000005327165}
 --- !u!1001 &1593086322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4024,7 +4209,7 @@ PrefabInstance:
     - target: {fileID: 720895104907229992, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 720895104907229992, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
@@ -4090,6 +4275,81 @@ Transform:
   m_Father: {fileID: 1967932658}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1606446911
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6685467463777736460, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueCursor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685467463777736461, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -302.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685467463777736461, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685467463777736461, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -276.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685467463777736461, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685467463777736461, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685467463777736461, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685467463777736461, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685467463777736461, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685467463777736461, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685467463777736461, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685467463777736461, guid: 77a6917c351383748889dd650def5a97,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77a6917c351383748889dd650def5a97, type: 3}
+--- !u!1 &1606446912 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6685467463777736460, guid: 77a6917c351383748889dd650def5a97,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606446911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1689769325
 GameObject:
   m_ObjectHideFlags: 0
@@ -4100,7 +4360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689769326}
   - component: {fileID: 1689769327}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camera Bounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4258,7 +4518,7 @@ PrefabInstance:
     - target: {fileID: 6386934102897756425, guid: b71716d8888efca45a8977e962ddd7f4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6386934102897756425, guid: b71716d8888efca45a8977e962ddd7f4,
         type: 3}
@@ -4322,6 +4582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1796277240}
   - component: {fileID: 1796277241}
+  - component: {fileID: 1796277242}
   m_Layer: 0
   m_Name: street_road_ped_crossing
   m_TagString: Untagged
@@ -4393,6 +4654,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1796277242
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796277239}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.53526, y: 29.570007, z: 0.20000005}
+  m_Center: {x: 0, y: -14.785004, z: 0}
 --- !u!1 &1818107119
 GameObject:
   m_ObjectHideFlags: 0
@@ -4403,6 +4677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1818107120}
   - component: {fileID: 1818107121}
+  - component: {fileID: 1818107122}
   m_Layer: 0
   m_Name: sidewalk (3)
   m_TagString: Untagged
@@ -4474,6 +4749,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &1818107122
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818107119}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.525505, y: 32.40001, z: 0.20000005}
+  m_Center: {x: -0.0000076293945, y: 16.200005, z: 0.0000007033341}
 --- !u!114 &1822898828 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3378108418281224947, guid: 32ecd2b4f32066d48bd773fa364541a0,
@@ -4520,7 +4808,7 @@ Transform:
   - {fileID: 241878155}
   - {fileID: 160646909}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1834264967
 GameObject:
@@ -4618,7 +4906,7 @@ RectTransform:
   - {fileID: 1315025345}
   - {fileID: 674768260}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

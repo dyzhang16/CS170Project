@@ -13,7 +13,7 @@ public class RunDialogue : MonoBehaviour
     public string NPCName = "";
     public string NPCInteract = "";
 
-    
+    public GameObject dialogueCursor;
 
     private BoxCollider box;
 
@@ -46,9 +46,6 @@ public class RunDialogue : MonoBehaviour
                 }
             }
         }
-
-        
-
         
     }
 
@@ -66,9 +63,24 @@ public class RunDialogue : MonoBehaviour
             if (collider.gameObject.CompareTag("Player") && !runDialogue)
             {
                 runDialogue = true;
+
+                dialogueCursor.SetActive(true);
+
+                dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
+                // dialogueCursor.transform.position = this.transform.position + 
+                // new Vector3(0, this.GetComponent<SpriteRenderer>().bounds.size.y, this.GetComponent<SpriteRenderer>().bounds.size.y);
             }
         }
 
+    }
+
+    //clicking the npc
+    void OnMouseDown()
+    {
+        if (!dialogueRunner.IsDialogueRunning && runDialogue)
+        {
+            dialogueRunner.StartDialogue(dialogueToRun);
+        }
     }
 
     void OnTriggerExit(Collider collider)
@@ -76,10 +88,11 @@ public class RunDialogue : MonoBehaviour
         if (collider.gameObject.CompareTag("Player"))
         {
             runDialogue = false;
+            dialogueCursor.SetActive(false);
         }
     }
 
-    void OnCollisionEnter(Collision collision){
+    void OnCollisionStay(Collision collision){
         if (startInstantly)
         {
             dialogueRunner.StartDialogue(dialogueToRun);
@@ -90,6 +103,12 @@ public class RunDialogue : MonoBehaviour
             if (collision.gameObject.CompareTag("Player") && !runDialogue)
             {
                 runDialogue = true;
+
+                dialogueCursor.SetActive(true);
+
+                dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
+                // dialogueCursor.transform.position = this.transform.position + 
+                // new Vector3(0, this.GetComponent<SpriteRenderer>().bounds.size.y, this.GetComponent<SpriteRenderer>().bounds.size.y);
             } 
         }
     }
@@ -98,6 +117,7 @@ public class RunDialogue : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             runDialogue = false;
+            dialogueCursor.SetActive(false);
         }
     }
 }

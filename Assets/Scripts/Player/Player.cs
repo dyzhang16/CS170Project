@@ -56,6 +56,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                 float h = Input.GetAxis("Horizontal");
                 float v = Input.GetAxis("Vertical");
 
+                //keyboard movement
                 if (h != 0 || v != 0){
                     movement.x = h;
                     movement.z = v;
@@ -69,6 +70,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                     } else {
                         render.flipX = false;
                     }
+                } else if (Input.GetMouseButton(0)){
+                    Mouse();
                 } else {
                     moving = false;
                     movement = new Vector3(0, 0, 0);
@@ -93,11 +96,14 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     void Mouse()
     {
-        Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if(Physics.Raycast(ray, out hit))
+        {
+            rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed/4 * Time.fixedDeltaTime));
 
-        rb.MovePosition(Vector3.MoveTowards(transform.position, targetPosition, 1f));
-
-        moving = true;
+            moving = true;
+        }
     }
 
     public void openInventory()

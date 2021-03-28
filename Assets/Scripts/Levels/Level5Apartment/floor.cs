@@ -60,6 +60,8 @@ public class floor : MonoBehaviour//, IDropHandler
 
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
 
+        activeObj.GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
+
         puzzle.dic[activeObj.name] = false;
     }
 

@@ -32,6 +32,8 @@ public class isMoving : MonoBehaviour
     private int cycle = 0;
     public bool whistle_on = false;
 
+    public Sprite openGate;
+
     void Awake(){
         p = player.GetComponent<Player>();
 
@@ -115,6 +117,8 @@ public class isMoving : MonoBehaviour
                 if (Vector3.Distance(transform.position, gate.transform.position) < 0.001f)
                 {
                     isWalking = false;
+                    //open gate
+                    gate.GetComponent<SpriteRenderer>().sprite = openGate;
                     StartCoroutine(doneWalking());
                 }
             } else if (cycle == 4) {//outside graveyard
