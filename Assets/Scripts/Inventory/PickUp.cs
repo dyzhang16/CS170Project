@@ -18,5 +18,9 @@ public class PickUp : MonoBehaviour
     public void pickUpItem(){
         Inventory.instance.AddItem(item);
         p.activateMenu();
+
+        if (GetComponent<RunDialogue>() != null){
+            GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
+        }
     }
 }
