@@ -18,16 +18,48 @@ tags:
 	
 	Follow me. 
 
-	Dev Notes: Currently the friend will not move, you can continue the puzzle by interacting with the yellow table :D.
-<<ChangeVariable GameManager followFriendinOffice 1>>
-//Move Frederick Code
+<<ChangeVariable GameManager followFriendinOffice 1>> //might not need this and do the check for when you get the documents from coworker desk instead
+<<Move Frederick>>
 ===
+
 title: OfficeFriend
 ---
-<<ChangeSpeaker None Friend>>
+<<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
-	Dev Notes: Currently the friend will not move, you can continue the puzzle by interacting with the yellow table :D.
+
+	Here is my desk.
+
+	Wait, what happened to my documents?
+
+<<Focus FIRST>>
+	
+	...
+<<Focus SECOND>>
+
+	(Narrative lead help me) My co-workers must've taken my documents again since I was late. 
+
+	I can't just go up to them and ask for it back.
+
+	Do you think you can help me grab them?
+
+	The blue desks should be the desks of Elizabeth, Max, and Matthew.
+
+	Try to grab the documents without them noticing. 
+
+<<Focus FIRST>>
+	
+	Alright.
+
 ===
+
+title: BossDoor
+tags:
+---
+<<ChangeSpeaker Player>>
+
+	I don't think I should be going here...
+===
+
 title: OfficeTable
 tags:
 ---

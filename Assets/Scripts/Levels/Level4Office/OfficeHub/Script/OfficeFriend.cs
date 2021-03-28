@@ -5,10 +5,90 @@ using Yarn.Unity;
 
 public class OfficeFriend : MonoBehaviour
 {
-    public GameObject friend;
+    //positions that the NPC will move to;
+    public GameObject Destination1;
+    public GameObject Destination2;
+    public GameObject Destination3;
+
+    [HideInInspector]public bool isWalking = false;
+
+    public float Speed;
+    //changes direction and indicates which movement an npc needs to walk towards
+    private int cycle = 0;
+
     [YarnCommand("Move")]
     public void Move()
     {
-        friend.transform.position = new Vector3(0,0,0);
+        isWalking = true;
+    }
+    void Update()
+    {
+        if (isWalking)
+        {
+            //disable dialogue while NPC is moving
+            this.GetComponent<RunDialogue>().enabled = false;
+            //distance traveled per frame
+            float step = Speed * Time.deltaTime;
+
+            //first destination
+            if (cycle == 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+                transform.position = Vector3.MoveTowards(transform.position, Destination1.transform.position, step);
+
+                if (Vector3.Distance(transform.position, Destination1.transform.position) < 0.001f)
+                {
+                    isWalking = false;
+                    StartCoroutine(changeDirection());
+                }
+            }
+            //second destination
+            else if (cycle == 1)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+                transform.position = Vector3.MoveTowards(transform.position, Destination2.transform.position, step);
+
+                if (Vector3.Distance(transform.position, Destination2.transform.position) < 0.001f)
+                {
+                    isWalking = false;
+                    StartCoroutine(changeDirection());
+                }
+            }
+            //3rd destination
+            else if (cycle == 2)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+                transform.position = Vector3.MoveTowards(transform.position, Destination3.transform.position, step);
+
+                if (Vector3.Distance(transform.position, Destination3.transform.position) < 0.001f)
+                {
+                    isWalking = false;
+                    StartCoroutine(changeDirection());
+                }
+            }            
+        }
+        else
+        {
+            //enable dialogue while NPC is standing
+            this.GetComponent<RunDialogue>().enabled = true;
+        }
+    }
+    IEnumerator changeDirection()
+    {
+        if (cycle == 0)
+        {
+            isWalking = true;
+        }
+        else if (cycle == 1)
+        {
+            isWalking = true;
+        }
+        else if (cycle == 2)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+            yield return new WaitForSeconds(0.5f);
+        }
+        ++cycle;
+        //Debug.Log(cycle);
     }
 }
