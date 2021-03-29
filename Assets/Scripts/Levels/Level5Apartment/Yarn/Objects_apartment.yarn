@@ -2,13 +2,13 @@
 tags:
 ---
 
-<<ChangeSpeaker Player>>
-
-<<if IsInventoryFull() is true>>
-    [[CannotTake]]
-<<else>>
-    You are now table
+<<if visited("Table") is false>>
+    <<ChangeSpeaker None Friend>>
+    I got that table from Nam' in 76'
 <<endif>>
+
+<<ChangeSpeaker Player>>
+You are now table
 
 <<Possess floor Table>>
 
@@ -20,14 +20,34 @@ title: Maze
 
 <<ChangeSpeaker Player>>
 
-<<if IsInventoryFull() is true>>
-    [[CannotTake]]
-<<else>>
-    You are now art
-<<endif>>
+You are now art
 
 <<Possess floor Maze>>
 
+===
+
+title: Bed
+---
+<<ChangeSpeaker Player>>
+You are now bed
+
+<<Possess floor Bed>>
+===
+
+title: Carpet
+---
+<<ChangeSpeaker Player>>
+You are now carpet
+
+<<Possess floor Carpet>>
+===
+
+title: Lantern
+---
+<<ChangeSpeaker Player>>
+You are now green lantern
+
+<<Possess floor Lantern>>
 ===
 
 title: CannotTake

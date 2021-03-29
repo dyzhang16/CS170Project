@@ -15,6 +15,7 @@ public class apartment_puzzle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //transfer array to dictionary
         foreach (GameObject obj in packingList){
             dic.Add(obj.name, false);
         }
