@@ -22,9 +22,7 @@ title: DoneCleaningRoom
 
 I finished cleaning your room!
 
-<<set $apartment_puzzle_finished to 1>>
-
-<<ChangeScene BlackScreen ArcadeScene>>
+<<ChangeScene BlackScreen CityArcade>>
 
 <<stop>>
 ===
@@ -38,36 +36,44 @@ title: apartment_puzzle_start
     [[DoneCleaningRoom]]
 <<endif>>
 
-<<if $apartment_start is 0>>
+<<if $apartment_puzzle is 1>>
 
-    <<ChangeSpeaker Friend>>
-
-    Hey can you help me rearrange my room?
-
-    <<set $apartment_puzzle to 0>>
-    <<set $apartment_start to 1>>
+    [[apartment_puzzle_complete]]
 
 <<else>>
 
-    <<if $apartment_puzzle is 1>>
+    <<ChangeSpeaker None Friend>>
 
-        [[apartment_puzzle_complete]]
+    I guess the room is still a bit messy...
 
-    <<else>>
-
-        I guess the room is still a bit messy...
-
-    <<endif>>
 <<endif>>
 ===
 
 title: start_puzzle
 ---
 
-<<ChangeSpeaker Player>>
+<<ChangeSpeaker Player Friend>>
 
-I'm in Fredrick's apartment now.
+    This is all temp dialogue pls forgive me Kai
 
-Guess I should talk to them.
+    <<Focus SECOND>>
+
+    Heyo so welcome to my humble abode
+
+    It's kinda messy, so I gotta clean up, can you help me?
+
+    <<Focus FIRST>>
+
+    Sure my homie, I gotchu, the brothers stick together!
+
+    <<Focus SECOND>>
+
+    Thanks my fellow non-living homie!
+
+    <<ChangeSpeaker Player>>
+
+    Okay, I guess I should just rearrange the room...
+
+    <<set $apartment_start to 1>>
 
 ===
