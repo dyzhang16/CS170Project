@@ -131,7 +131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 21531014}
   - component: {fileID: 21531016}
-  - component: {fileID: 21531017}
   - component: {fileID: 21531015}
   m_Layer: 0
   m_Name: BasketballNet
@@ -148,8 +147,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21531013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.41, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1469094169}
   m_RootOrder: 0
@@ -163,7 +162,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 21531013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b4345bd22bb764fb6bf1b801c8a045, type: 3}
+  m_Script: {fileID: 11500000, guid: 33ce152e09c87164c8b7d87deab29f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21531016
@@ -216,32 +215,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &21531017
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21531013}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.003501892, y: 2.1898518}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 3, y: 3}
-    newSize: {x: 3, y: 3}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.2719574, y: 0.9002876}
-  m_EdgeRadius: 0
 --- !u!1 &26329742
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +283,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &26329746
 SpriteRenderer:
@@ -684,7 +656,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &54726290
 SpriteRenderer:
@@ -804,7 +775,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &64261409
 SpriteRenderer:
@@ -1074,37 +1044,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96154198}
   m_CullTransparentMesh: 0
---- !u!1 &121735509
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 121735510}
-  m_Layer: 0
-  m_Name: BasketballBounds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &121735510
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121735509}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 767072811}
-  m_Father: {fileID: 1469094169}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &149217026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,7 +1112,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &149217030
 SpriteRenderer:
@@ -1293,7 +1231,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &156060332
 SpriteRenderer:
@@ -2331,7 +2268,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &252715069
 SpriteRenderer:
@@ -2507,7 +2443,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &291797165
 SpriteRenderer:
@@ -2627,7 +2562,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &295178978
 SpriteRenderer:
@@ -2747,7 +2681,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &304299363
 SpriteRenderer:
@@ -3064,7 +2997,7 @@ PrefabInstance:
     - target: {fileID: 8547074628116751426, guid: d989a0bbfe3be194a8983826b60ae0af,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -633
+      value: -743
       objectReference: {fileID: 0}
     - target: {fileID: 8547074628116751426, guid: d989a0bbfe3be194a8983826b60ae0af,
         type: 3}
@@ -3969,7 +3902,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &436762657
 SpriteRenderer:
@@ -4284,7 +4216,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &509300657
 SpriteRenderer:
@@ -4911,7 +4842,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &573812984
 SpriteRenderer:
@@ -5031,7 +4961,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &574814293
 SpriteRenderer:
@@ -5151,7 +5080,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &578019782
 SpriteRenderer:
@@ -5512,7 +5440,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &615536082
 SpriteRenderer:
@@ -5632,7 +5559,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &642501928
 SpriteRenderer:
@@ -5752,7 +5678,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &664087269
 SpriteRenderer:
@@ -6117,7 +6042,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &705385693
 SpriteRenderer:
@@ -6237,7 +6161,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &711364213
 SpriteRenderer:
@@ -6445,7 +6368,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &748118204
 SpriteRenderer:
@@ -6565,7 +6487,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &748138475
 SpriteRenderer:
@@ -6755,63 +6676,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &767072810
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 767072811}
-  - component: {fileID: 767072812}
-  m_Layer: 0
-  m_Name: BasketballBottom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &767072811
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767072810}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.82, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 121735510}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &767072812
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767072810}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0017089844, y: -0.22866154}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 19.22409, y: 0.5426769}
-  m_EdgeRadius: 0
 --- !u!1 &770833863
 GameObject:
   m_ObjectHideFlags: 0
@@ -7159,7 +7023,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &806327157
 SpriteRenderer:
@@ -7871,7 +7734,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &858376058
 SpriteRenderer:
@@ -8260,11 +8122,11 @@ GameObject:
   - component: {fileID: 946286740}
   - component: {fileID: 946286742}
   - component: {fileID: 946286741}
+  - component: {fileID: 946286743}
   - component: {fileID: 946286744}
   - component: {fileID: 946286745}
   - component: {fileID: 946286746}
   - component: {fileID: 946286747}
-  - component: {fileID: 946286743}
   m_Layer: 5
   m_Name: BasketballPanel
   m_TagString: Untagged
@@ -8748,139 +8610,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.4501019, y: 5.996545, z: 5.2618213}
   m_Center: {x: 0.22397137, y: 0.75139844, z: 2.9114559}
---- !u!1 &967614643
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 967614644}
-  - component: {fileID: 967614645}
-  - component: {fileID: 967614648}
-  - component: {fileID: 967614647}
-  - component: {fileID: 967614646}
-  m_Layer: 0
-  m_Name: Basketball
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &967614644
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967614643}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1469094169}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &967614645
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967614643}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.5272966, b: 0, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!50 &967614646
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967614643}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &967614647
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967614643}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0000038146973, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
---- !u!114 &967614648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967614643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33ce152e09c87164c8b7d87deab29f3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &973076989
 GameObject:
   m_ObjectHideFlags: 0
@@ -9200,7 +8929,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &995080306
 SpriteRenderer:
@@ -9959,7 +9687,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1107571514
 SpriteRenderer:
@@ -10079,7 +9806,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1107744239
 SpriteRenderer:
@@ -10199,7 +9925,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1116531855
 SpriteRenderer:
@@ -10319,7 +10044,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1136602504
 SpriteRenderer:
@@ -10971,7 +10695,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1212379011
 SpriteRenderer:
@@ -11410,7 +11133,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1249026630
 SpriteRenderer:
@@ -11746,7 +11468,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1324737407
 SpriteRenderer:
@@ -12045,7 +11766,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 1
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -12377,7 +12098,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!54 &1390351973
 Rigidbody:
@@ -12739,7 +12459,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1469094169}
   - component: {fileID: 1469094170}
-  - component: {fileID: 1469094171}
   m_Layer: 0
   m_Name: _BasketballGame
   m_TagString: Untagged
@@ -12759,8 +12478,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 21531014}
-  - {fileID: 967614644}
-  - {fileID: 121735510}
   m_Father: {fileID: 177127530}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12814,18 +12531,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1469094171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469094168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ee03d5494e5644fa2c3edb50bf1c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1470246897
 GameObject:
   m_ObjectHideFlags: 0
@@ -12894,7 +12599,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1470246901
 SpriteRenderer:
@@ -13100,7 +12804,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1519122312
 SpriteRenderer:
@@ -13417,7 +13120,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1533186559
 SpriteRenderer:
@@ -13825,7 +13527,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1574592841
 SpriteRenderer:
@@ -13945,7 +13646,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1582581364
 SpriteRenderer:
@@ -14143,7 +13843,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1587898375
 SpriteRenderer:
@@ -14358,7 +14057,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!114 &1615976429
 MonoBehaviour:
@@ -14440,7 +14138,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1616218302
 SpriteRenderer:
@@ -14560,7 +14257,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1631202252
 SpriteRenderer:
@@ -15027,7 +14723,7 @@ PrefabInstance:
     - target: {fileID: 3265424261069468135, guid: 37a1eb4b65293904cb3a0baced2aee79,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -516
+      value: -626
       objectReference: {fileID: 0}
     - target: {fileID: 3265424261069468135, guid: 37a1eb4b65293904cb3a0baced2aee79,
         type: 3}
@@ -15208,7 +14904,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1720178856
 SpriteRenderer:
@@ -15504,7 +15199,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1744350203
 SpriteRenderer:
@@ -16115,7 +15809,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1887070939
 SpriteRenderer:
@@ -16378,7 +16071,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1902746194
 SpriteRenderer:
@@ -16750,7 +16442,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1959302651
 SpriteRenderer:
@@ -16948,7 +16639,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1987491418
 SpriteRenderer:
@@ -17112,7 +16802,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &1998648300
 SpriteRenderer:
@@ -17493,7 +17182,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &2053357837
 SpriteRenderer:
@@ -17862,7 +17550,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &2065856985
 SpriteRenderer:
@@ -18198,7 +17885,6 @@ MonoBehaviour:
   startInstantly: 0
   NPCName: 
   NPCInteract: 
-  dialogueCursor: {fileID: 0}
   runDialogue: 0
 --- !u!212 &2098497356
 SpriteRenderer:
@@ -18285,7 +17971,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 320, y: 180}
+  m_SizeDelta: {x: 160, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106634215
 MonoBehaviour:
