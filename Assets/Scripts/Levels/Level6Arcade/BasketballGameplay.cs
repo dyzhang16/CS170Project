@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class BasketballGameplay : MonoBehaviour
 {
+	// Unity Objects
 	Camera basketballCam;
-
 	GameObject basketballCamRenderTexture;
-	GameObject basketballGame;
+	// Basketball-specific Unity Objects
+	BasketballNet basketballNet;
+	BasketballMovement basketball;
 
 	void Start()
 	{
 		basketballCam = GameObject.Find("Basketball Camera").GetComponent<Camera>();
 		basketballCamRenderTexture = GameObject.Find("BasketballCam Render Texture");
-		Debug.LogWarning("TODO: When old basketball is deprecated, rename without the underscore!!!");
-		basketballGame = GameObject.Find("_BasketballGame");
 	}
 }
