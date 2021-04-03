@@ -14903,7 +14903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e05b35d2b721f549b41bacb2b41de54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzlePanel: {fileID: 946286739}
+  puzzlePanel: {fileID: 2106634213}
   RemoveButton: {fileID: 1593360646}
   allowPlayerMovement: 1
 --- !u!114 &1593360648
@@ -19164,8 +19164,10 @@ GameObject:
   - component: {fileID: 2106634214}
   - component: {fileID: 2106634216}
   - component: {fileID: 2106634215}
+  - component: {fileID: 2106634217}
+  - component: {fileID: 2106634218}
   m_Layer: 0
-  m_Name: BasketballCam Render Texture
+  m_Name: BasketballCamRenderTexture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19207,7 +19209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -19227,6 +19229,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106634213}
   m_CullTransparentMesh: 0
+--- !u!225 &2106634217
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106634213}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &2106634218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106634213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55e91cfd72b54446806518b3a3169aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzlePanel: {fileID: 2106634213}
+  DoNotOpenInventory: 1
+  stopPlayerMovement: 1
 --- !u!1 &2126546356
 GameObject:
   m_ObjectHideFlags: 0
