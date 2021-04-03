@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManagerScript : MonoBehaviour { 
     public static AudioClip pickFlower;
@@ -24,6 +25,13 @@ public class SoundManagerScript : MonoBehaviour {
 
 
     // Start is called before the first frame update
+
+    void start()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        Debug.Log(sceneName);
+    }
     void Awake()
     {
         pickFlower = Resources.Load<AudioClip>("pickup_flower_2");
@@ -108,13 +116,17 @@ public class SoundManagerScript : MonoBehaviour {
 
         }
 
-
-       
-
     }
 
     public void diaSoundStart()
     {
         audioSrc.PlayOneShot(dialogueSound, 0.1f);
+       
+    }
+
+    public void MainVolumeControl(float vol)
+    {   // currently not working
+        //Debug.Log("vol is: " + vol);
+        audioSrc.volume = vol+'f';
     }
 }
