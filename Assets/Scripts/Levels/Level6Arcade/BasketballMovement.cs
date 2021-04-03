@@ -10,7 +10,7 @@ public class BasketballMovement : MonoBehaviour
 	// Fields
 	// This is the default position (where the basketball is currently situated)
 	private Vector3 defaultPosition;
-	private Rigidbody2D rb2D; // rigidbody of basketball
+	public Rigidbody2D rb2D { get; private set; } // rigidbody of basketball
 
 	// Boolean to test if the throw loop should be active or not
 	[HideInInspector]

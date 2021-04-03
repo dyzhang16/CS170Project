@@ -6,6 +6,8 @@ public class BasketballNet : MonoBehaviour
 {
 	// Unity Objects
 	public BasketballMovement basketball;
+	private CircleCollider2D leftCollider;
+	private CircleCollider2D rightCollider;
 
 	// Fields
 	private Vector3 defaultPosition;
@@ -14,6 +16,9 @@ public class BasketballNet : MonoBehaviour
 	void Start()
 	{
 		defaultPosition = transform.localPosition;
+
+		leftCollider = transform.Find("NetLeftWall").gameObject.GetComponent<CircleCollider2D>();
+		rightCollider = transform.Find("NetRightWall").gameObject.GetComponent<CircleCollider2D>();
 	}
 
 	void Update()
@@ -35,6 +40,20 @@ public class BasketballNet : MonoBehaviour
 		else if (transform.localPosition != defaultPosition && !basketball.currentlyThrown)
 		{
 			transform.localPosition = Vector3.MoveTowards(transform.localPosition, defaultPosition, moveSpeed);
+		}
+
+		// modify the net's side colliders to be triggers when the ball is rising and colliders when the ball is falling
+		if (basketball.rb2D.velocity.y >= 0)
+		{
+			// set to trigger
+			leftCollider.isTrigger = true;
+			rightCollider.isTrigger = true;
+		}
+		else
+		{
+			// set to collider
+			leftCollider.isTrigger = false;
+			rightCollider.isTrigger = false;
 		}
 	}
 }
