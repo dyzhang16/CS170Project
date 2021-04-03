@@ -73,6 +73,8 @@ public class OfficeFriend : MonoBehaviour
             this.GetComponent<RunDialogue>().enabled = true;
         }
     }
+
+
     IEnumerator changeDirection()
     {
         if (cycle == 0)

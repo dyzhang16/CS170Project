@@ -19,12 +19,20 @@ tags:
 	Follow me. 
 
 <<ChangeVariable GameManager followFriendinOffice 1>> //might not need this and do the check for when you get the documents from coworker desk instead
+<<DisableDialogue DoorApproach>>
 <<Move Frederick>>
 ===
 
 title: OfficeFriend
 ---
 <<ChangeSpeaker Player Friend>>
+<<if $isDocument is 1>>
+
+	Thanks for bringing back these documents. 
+//indicate check for bringing back document
+<<set $isDocument to 0>>
+<<TransformIntoPlayer Matthew's_Desk Document>>
+<<elseif visited("OfficeFriend") is false>>
 <<Focus SECOND>>
 
 	Here is my desk.
@@ -50,6 +58,11 @@ title: OfficeFriend
 	
 	Alright.
 
+<<else>>
+
+	The documents should be on the blue desks.
+
+<<endif>>
 ===
 
 title: BossDoor

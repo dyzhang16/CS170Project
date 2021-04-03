@@ -55,7 +55,7 @@
     <<ChangeSpeaker Player>>
     ...I need to find a way to get this person to talk to me.
 
-    But they won’t talk to me unless they have their coffee…
+    But they won’t talk to me unless they have their <b>coffee</b>…
 
     <<DropReceipt Friend1>>
 
@@ -134,8 +134,6 @@ title: wrong_coffee
 <<Focus SECOND>>
 <<Sound pour_coffee>>
 
-    sshhhllrrrllgrghh *slurping noises*
-
     Urghk, what even is this?
 
 <<Focus FIRST>>
@@ -144,19 +142,15 @@ title: wrong_coffee
 
 <<Focus SECOND>>
 
-    It’s not my coffee. I don’t think I can do anything today without drinking my usual order.
+    It’s not <i>my</i> coffee. I don’t think I can do anything today without drinking my <b>Macho-iatto</b>.
 
 <<Focus FIRST>>
     
-    So if I can get you your usual coffee, you’ll talk to me?
+    So if I can get you your usual order, you’ll talk to me?
 
 <<Focus SECOND>>
 
-    I’d prefer it if you left me alone, actually.
-
-<<ChangeSpeaker Player>>
-
-    I need to give Fredric the correct order.
+    We’ll see once I get my coffee.
 ===
 
 title: correct_coffee
@@ -164,8 +158,6 @@ title: correct_coffee
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
 <<Sound pour_coffee>>
-
-    sshhhllrrrllgrghh *slurping noises*
 
     That hits the spot!
 
