@@ -100,7 +100,7 @@ public class RunDialogue : MonoBehaviour
         }
         else 
         {
-            if (collision.gameObject.CompareTag("Player") && !runDialogue)
+            if (collision.gameObject.tag == "Player" && !runDialogue)
             {
                 runDialogue = true;
 
@@ -114,7 +114,7 @@ public class RunDialogue : MonoBehaviour
     }
 
     void OnCollisionExit(Collision collision){
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
             runDialogue = false;
             dialogueCursor.SetActive(false);

@@ -4,35 +4,43 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
 
-public class TransformToDocument : MonoBehaviour//, IDropHandler
+public class TransformToDocument : MonoBehaviour
 {
-    public Sprite SpriteToChange;
+    public GameObject activeObj;
     public GameObject player;
-
-    void Update()
+    [HideInInspector] public Vector3 lastPosition;
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (activeObj != null)
         {
+            activeObj.transform.position = player.transform.position;
 
-            //placeItem();
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                player.transform.position = lastPosition;
+            }
         }
     }
 
     [YarnCommand("TransformIntoDocument")]
-    public void PossessDocuments()
+    public void PossessDocuments(string[] parameters)
     {
-        player.GetComponent<SpriteRenderer>().sprite = SpriteToChange;
-        //player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-        
-        //player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        string Object = parameters[0];
+        activeObj = GameObject.Find(Object);
+        activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.75f);
+        player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        lastPosition = player.transform.position;
+        player.GetComponentInChildren<BoxCollider>().tag = "Document";
     }
-
-    public void placeItem()
+    [YarnCommand("TransformIntoPlayer")]
+    public void ReleasePossession(string[] parameters)
     {
+        Debug.Log(parameters[0]);
+        string Object = parameters[0];
+        activeObj = GameObject.Find(Object);
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-        //activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-        //activeObj.transform.Find("collider").gameObject.SetActive(true);
-
-        //activeObj = null;
+        activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        player.GetComponentInChildren<BoxCollider>().tag = "Player";
+        activeObj = null;
     }
 }

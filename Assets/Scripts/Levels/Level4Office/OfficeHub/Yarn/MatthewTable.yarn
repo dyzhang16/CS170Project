@@ -1,9 +1,16 @@
 ﻿title: MatthewTable
 tags:
 ---
-	
+<<ChangeSpeaker Player>>
+<<if $isDocument is 1>>
+
+	I should take these documents to Frederic.
+
+<<else>>
+
 	You find the documents and possess them.
 
-<<TransformIntoDocument Matthew's_Desk>>
+<<TransformIntoDocument Matthew's_Desk Document>>
 <<set $isDocument to 1>>
+<<endif>>
 ===
