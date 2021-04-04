@@ -8,6 +8,7 @@ public class destroymusic : MonoBehaviour
      void Awake()
     {
         GameObject A = GameObject.FindGameObjectWithTag("streetmusic");
-        Destroy(A);
+        if (A != null)
+            Destroy(A);
     }
 }
