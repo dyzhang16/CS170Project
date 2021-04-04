@@ -101,8 +101,6 @@ public class RunDialogue : MonoBehaviour
             if (dialogueCursor != null){
                 dialogueCursor.SetActive(false);
             }
-
-            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         }
     }
 
