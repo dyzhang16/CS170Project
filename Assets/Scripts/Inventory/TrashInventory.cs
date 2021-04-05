@@ -63,6 +63,10 @@ public class TrashInventory : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 			// If KeyItem, do not trash. Otherwise, give trash option.
 			dialogueRunner.StartDialogue((itemToTrash is KeyItem)?"CannotTrash":"TrashItem");
 		}
+		else if (dialogueRunner == null)
+		{
+			Debug.LogError("Dialogue Runner is not attached to the trash functionality!");
+		}
 		// Set trash to be closed
 		showOpenTrash = false;
 	}

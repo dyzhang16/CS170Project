@@ -68,7 +68,7 @@ tags:
 <<ChangeSpeaker Player>>
 Do you want to play basketball?
 -> Yes
-    <<Show BasketballPanel>>
+    <<Show BasketballCamRenderTexture>>
     <<set $playedBasketball to true>>
 -> No
     <<stop>>
@@ -145,6 +145,6 @@ title: PrizeBooth
 tags:
 ---
 <<ChangeSpeaker Player>>
-    This is the prize booth. Too bad I don't have any tickets.
+    This is the prize booth. I don't see anything of interest here.
 <<exit>>
 ===

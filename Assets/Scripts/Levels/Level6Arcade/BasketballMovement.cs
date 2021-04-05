@@ -1,81 +1,94 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BasketballMovement : MonoBehaviour
 {
-	// Attached Unity Objects
-	[SerializeField]
-	private BasketballGameplay gameplayComponent;
+	// Unity Objects
+	public BasketballGameplay basketballGameplay;
 
 	// Fields
-	public bool isMoving = false; // Used in ThrowRoutine to detect when it is done being called
-	private bool hasMissed = false; // I should rename this, as this is used when missing and scoring
-	private bool isFalling = false;
+	// This is the default position (where the basketball is currently situated)
+	private Vector3 defaultPosition;
+	public Rigidbody2D rb2D { get; private set; } // rigidbody of basketball
+
+	// Boolean to test if the throw loop should be active or not
+	[HideInInspector]
+	public bool isThrowing = false;
+	public bool currentlyThrown = false; // bool that is modified during the throwing coroutine
 
 	void Start()
 	{
-		if (gameplayComponent == null)
+		// Initialize Fields
+		defaultPosition = gameObject.transform.position;
+		rb2D = gameObject.GetComponent<Rigidbody2D>();
+	}
+
+	void Update()
+	{
+		if (gameObject.transform.position.y < -12)
 		{
-			gameplayComponent = GameObject.Find("BasketballPanel").GetComponent<BasketballGameplay>();
+			ResetPosition();
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D col)
+	// Call the throwing coroutine while setting the isThrowing variable to true
+	public void StartThrowing()
 	{
-		if (col.gameObject.name.Contains("BasketballMissZone"))
+		ResetPosition();
+		isThrowing = true;
+		StartCoroutine(ThrowCR());
+	}
+
+	void OnTriggerEnter2D(Collider2D collider2D)
+	{
+		// reset the position of the basketball if it collided with the basketball bounds
+		if (collider2D.gameObject.name.Contains("BasketballBounds"))
 		{
-			hasMissed = true;
+			ResetPosition();
+			StartCoroutine(ThrowCR());
 		}
-		if (isFalling && col.gameObject.name.Contains("BasketballNet"))
+		// event if the basketball falls onto the net (thus scoring)
+		else if (collider2D.gameObject.name.Contains("BasketballNet") && rb2D.velocity.y <= 0f)
 		{
-			hasMissed = true;
-			gameplayComponent.IncrementScore();
+			basketballGameplay.IncrementScore();
+			ResetPosition();
+			StartCoroutine(ThrowCR());
 		}
 	}
 
-	/// <summary>
-	/// The routine that gets run to simulate throwing.
-	/// </summary>
-	public IEnumerator ThrowRoutine()
+	// Coroutine for Throwing the basketball
+	IEnumerator ThrowCR()
 	{
-		isMoving = true; // THIS MUST BE FIRST
+		// disable simulated movement (temporarily)
+		rb2D.simulated = false;
 
-		// save the original position
-		Vector3 originalPosition = transform.localPosition;
+		// set the velocity to zero
+		rb2D.velocity = new Vector2(0f, 0f);
 
-		// reset the booleans
-		isFalling = false;
-		hasMissed = false;
-
-		// math calculations
-		float rad = 0;
-		float delta = Mathf.Sin(rad) * 300;
-		float maxY = originalPosition.y;
-		float direction = Random.Range(-2.5f, 2.5f);
-		while (!hasMissed)
+		// Stop the CR if no longer throwing
+		if (!isThrowing)
 		{
-			transform.localPosition = new Vector3(
-				transform.localPosition.x + direction,
-				originalPosition.y + (delta),
-				transform.localPosition.z);
-			rad += 0.014f;
-			delta = Mathf.Sin(rad) * 375;
-			if (transform.localPosition.y >= maxY)
-			{
-				maxY = transform.localPosition.y;
-			}
-			else if (!isFalling)
-			{
-				// Debug.Log(prefix + "Falling");
-				isFalling = true;
-			}
-			yield return null;
+			currentlyThrown = false;
+			yield break;
 		}
 
-		transform.localPosition = originalPosition;
+		// have random short delay
+		yield return new WaitForSeconds(Random.Range(0.4f, 0.9f));
 
-		isMoving = false; // THIS MUST BE LAST
+		// reenable simualted movement
+		rb2D.simulated = true;
+
+		// apply a force to the rigidbody of this object
+		rb2D.velocity = new Vector2(Random.Range(-12f, 12f), 24f);
+
+		// Note that the basketball is being currently thrown
+		currentlyThrown = true;
+	}
+
+	// Resets the basketball to the default position
+	private void ResetPosition()
+	{
+		gameObject.transform.position = defaultPosition;
 	}
 }

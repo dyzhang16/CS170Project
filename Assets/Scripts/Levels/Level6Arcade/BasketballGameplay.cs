@@ -5,166 +5,119 @@ using UnityEngine.UI;
 
 public class BasketballGameplay : MonoBehaviour
 {
-	// Attach Unity Objects
-	public BasketballMovement basketball;
-	public BasketballNet basketballNet;
+	// Unity Objects
 	public Button startButton;
-	public Button exitButton;
-	// scoreboard
-	public GameObject scoreboard; // this will contain the timer and score UI elements
-	[HideInInspector]
-	public Text timerText; // taken from scoreboard GameObject
-	[HideInInspector]
-	public Text scoreText; // taken from scoreboard GameObject
-	[HideInInspector]
-	public Text highScoreText; // taken from scoreboard GameObject
+
+	// Basketball-specific Unity Objects
+	public BasketballNet basketballNet;
+	public BasketballMovement basketball;
+	public Text playerScoreText;
+	public Text highScoreText;
+	public Text playerTimeText;
 
 	// Fields
-	public int playerScore = 0;
-	public int timer = 0;
+	private int playerScore;
 	public int highScore = 30;
-	public readonly int MAX_TIME = 30; // time that is set per game
+	private int playerTime = 30;    // player's current time (playerTime <= timeLimit)
+	public int timeLimit = 30;      // max time to reset to
 
-	// Used for stopping the ThrowScheduler Coroutine
-	private Coroutine throwSchedulerRoutine;
-
-	/// <summary>
-	/// Initialize things
-	/// </summary>
 	void Start()
 	{
-		timerText = scoreboard.transform.Find("PlayerTimeText").GetComponent<Text>();
-		scoreText = scoreboard.transform.Find("PlayerScoreText").GetComponent<Text>();
-		highScoreText = scoreboard.transform.Find("HighScoreText").GetComponent<Text>();
-		UpdateTimer();
-		UpdateScore();
-		UpdateHighScore();
-		EndGame();
+		RefreshScoreboard();
 	}
 
-	/// <summary>
-	/// Throwing Basketball loop
-	/// </summary>
-	IEnumerator ThrowScheduler()
+	// Function used for starting the game, called by the start button
+	public void StartGame()
 	{
-		// Throw the ball
-		yield return StartCoroutine(basketball.ThrowRoutine());
-		// Wait a bit (random wait)
-		yield return new WaitForSeconds(Random.Range(0.2f, 1f));
-		// Start another Coroutine instance (let this current coroutine end)
-		throwSchedulerRoutine = StartCoroutine(ThrowScheduler());
+		// Disable the start button
+		startButton.interactable = false;
+
+		// Reset the player's score
+		playerScore = 0;
+		// Reset the timer
+		playerTime = timeLimit;
+
+		// start throwing the basketball
+		basketball.StartThrowing();
+		// start the timer
+		StartCoroutine(CountdownTimerCR());
+
+		// Refresh the scoreboard
+		RefreshScoreboard();
 	}
 
-	/// <summary>
-	/// Used to count down the timer and update the scoreboard,
-	/// and ends the game after the timer is up.
-	/// </summary>
-	IEnumerator ScoreboardTimer()
+	// Callback function for when the game ends
+	private void EndGameCallback()
 	{
-		while (timer > 0)
+		// Update the high score
+		if (highScore < playerScore)
 		{
-			UpdateTimer();
-			timer--;
-			yield return new WaitForSecondsRealtime(1f);
+			highScore = playerScore;
+			RefreshHighScore();
 		}
-		UpdateTimer();
 
-		// end the game after timer is up and the ball stopped moving
-		while (basketball.isMoving)
+		// Reenable the start button
+		startButton.interactable = true;
+	}
+
+	// Coroutine for counting down a timer
+	IEnumerator CountdownTimerCR()
+	{
+		while (basketball.isThrowing && playerTime > 0)
+		{
+			yield return new WaitForSeconds(1);
+			playerTime--;
+			RefreshTime();
+		}
+		RefreshTime();
+		// When timer runs out, stop throwing the basketball
+		basketball.isThrowing = false;
+		// Do the Game End callback (once the basketball is no longer being thrown)
+		while (basketball.currentlyThrown)
 		{
 			yield return null;
 		}
-		EndGame();
+		EndGameCallback();
 	}
 
-	/// <summary>
-	/// Routine used for anything that requires a delayed start
-	/// </summary>
-	IEnumerator DelayedStartRoutine()
-	{
-		yield return new WaitForSeconds(1f); // Delay
-		StartCoroutine(ScoreboardTimer());
-		throwSchedulerRoutine = StartCoroutine(ThrowScheduler());
-	}
-
-	/// <summary>
-	/// Starts the game (basketball will begin launching)
-	/// </summary>
-	public void StartGame()
-	{
-		Debug.Log("Basketball Gameplay Started");
-		// initialize some fields
-		timer = MAX_TIME;
-		UpdateTimer();
-		playerScore = 0;
-		UpdateScore();
-		basketballNet.trackMouse = true;
-		startButton.interactable = false;
-		exitButton.interactable = false;
-
-		// Start Coroutines
-		StartCoroutine(DelayedStartRoutine());
-	}
-
-	/// <summary>
-	/// Ends the game, resetting some things to default.
-	/// This is used in ScoreboardTimer()
-	/// </summary>
-	public void EndGame()
-	{
-		// Give the player tickets (if score is greater than 0)
-		if (playerScore > 0)
-			GetComponent<ArcadeMachine>().AddTickets(playerScore);
-		// reset variables
-		basketballNet.trackMouse = false;
-		startButton.interactable = true;
-		exitButton.interactable = true;
-
-		// update highscore if needed
-		if (playerScore > highScore)
-		{
-			highScore = playerScore;
-			UpdateHighScore();
-		}
-
-		// stop the throwing loop
-		if (throwSchedulerRoutine != null)
-		{
-			StopCoroutine(throwSchedulerRoutine);
-			throwSchedulerRoutine = null;
-		}
-	}
-
-	/// <summary>
-	/// Increases the score by two
-	/// </summary>
+	// Increment the score (by 2)
 	public void IncrementScore()
 	{
 		playerScore += 2;
-		UpdateScore();
+		RefreshPlayerScore();
 	}
 
-	/// <summary>
-	/// Updates the timer text UI element
-	/// </summary>
-	public void UpdateTimer()
+	// Called when a value is changed in the inspector, not for actual use
+	void OnValidate()
 	{
-		timerText.text = string.Format(":{0}{1}", (timer <= 9)?"0":"", timer.ToString());
+		// Update the highscore text (since it seems to be the only editable one)
+		RefreshHighScore();
 	}
 
-	/// <summary>
-	/// Updates the score text UI element
-	/// </summary>
-	public void UpdateScore()
+	// Refreshes the scoreboard elements
+	void RefreshScoreboard()
 	{
-		scoreText.text = playerScore.ToString();
+		RefreshPlayerScore();
+		RefreshHighScore();
+		RefreshTime();
 	}
 
-	/// <summary>
-	/// Updates the highscore text UI element
-	/// </summary>
-	public void UpdateHighScore()
+	// Refresh the player score text element
+	void RefreshPlayerScore()
 	{
-		highScoreText.text = string.Format("Highscore: {0}", highScore);
+		playerScoreText.text = playerScore.ToString();
+	}
+
+	// Refresh the high score text element
+	void RefreshHighScore()
+	{
+		highScoreText.text = highScore.ToString();
+	}
+
+	// Refresh the time text element
+	void RefreshTime()
+	{
+		playerTimeText.text = playerTime.ToString();
 	}
 }
+
