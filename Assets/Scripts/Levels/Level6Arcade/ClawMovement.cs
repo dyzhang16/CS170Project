@@ -139,12 +139,13 @@ public class ClawMovement : MonoBehaviour
 	/// </summary>
 	IEnumerator RiseCoroutine()
 	{
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 		// rising
 		while (claw.transform.localPosition.y < TOP_LIMIT)
 		{
 			Vector3 clawTransform = claw.transform.localPosition;
-			clawTransform.y += riseSpeed * (isWillpowering ? willpowerBar.value : 1);
+			// riseSpeed is 10% until no longer willpowering
+			clawTransform.y += riseSpeed * (isWillpowering ? 0.5f : 1);
 			clawTransform.y = Mathf.Clamp(clawTransform.y, BOTTOM_LIMIT, TOP_LIMIT);
 			claw.transform.localPosition = clawTransform;
 			// reduce willpower
@@ -168,13 +169,13 @@ public class ClawMovement : MonoBehaviour
 		while (claw.transform.localPosition.x < RIGHT_LIMIT)
 		{
 			Vector3 clawTransform = claw.transform.localPosition;
-			clawTransform.x += clawSpeed * (isWillpowering ? willpowerBar.value : 1);
+			clawTransform.x += clawSpeed;
 			clawTransform.y = Mathf.Clamp(clawTransform.y, LEFT_LIMIT, RIGHT_LIMIT);
 			claw.transform.localPosition = clawTransform;
 			// reduce willpower
 			if (isWillpowering)
 			{
-				DecayWillpower();
+				DisableWillpower();
 			}
 			yield return null;
 		}
@@ -267,6 +268,12 @@ public class ClawMovement : MonoBehaviour
 	public void BoostWillpower()
 	{
 		willpowerBar.value += willpowerIncrease;
+
+		// Willpower check
+		if (willpowerBar.value > 0.95f)
+		{
+			DisableWillpower();
+		}
 	}
 
 	/// <summary>

@@ -24,6 +24,7 @@ public class DanceGameplay : MonoBehaviour
 	public Text roundCounter;
 	public GameObject resultsPanel; // to show at end of game (shows results)
 	public Button exitButton;
+	public Image controlsIndicator; // to show what button was clicked
 
 	// bool for checking if the moves are ready to show
 	private bool readyToShow = false;
@@ -40,7 +41,7 @@ public class DanceGameplay : MonoBehaviour
 	public readonly int MAX_LEVEL = 7;
 
 	// Number of rounds to play
-	public readonly int NUM_ROUNDS = 2;
+	public readonly int NUM_ROUNDS = 10;
 	public int round = 0; // increments on GenerateMoves call
 
 	// Fields used in calculating accuracy
@@ -54,6 +55,30 @@ public class DanceGameplay : MonoBehaviour
 	{
 		// At start, treat it as if the game ended
 		EndCurrentGame();
+	}
+
+	void Update()
+	{
+		// Accept key inputs for gameplay (only if the game is active and the player is allowed to make a move)
+		if (GetComponent<CanvasGroup>().alpha == 1 && startGameButton.interactable && playerControls[0].interactable)
+		{
+			if (Input.GetKeyDown("down") || Input.GetKeyDown("s"))
+			{
+				PlayerMove("down");
+			}
+			else if (Input.GetKeyDown("left") || Input.GetKeyDown("a"))
+			{
+				PlayerMove("left");
+			}
+			else if (Input.GetKeyDown("up") || Input.GetKeyDown("w"))
+			{
+				PlayerMove("up");
+			}
+			else if (Input.GetKeyDown("right") || Input.GetKeyDown("d"))
+			{
+				PlayerMove("right");
+			}
+		}
 	}
 
 	/// <summary>
@@ -110,6 +135,7 @@ public class DanceGameplay : MonoBehaviour
 		roundCounter.enabled = false;
 		endGameButton.gameObject.SetActive(false);
 		exitButton.interactable = true;
+		controlsIndicator.sprite = null;
 	}
 
 	/// <summary>
@@ -144,6 +170,9 @@ public class DanceGameplay : MonoBehaviour
 
 			// Add the move to the playerMoves list
 			playerMoves.Add((Move)move);
+			// show the player what move was made
+			StopCoroutine("ShowClickedCoroutine");
+			StartCoroutine("ShowClickedCoroutine", (Move)move);
 
 			// If the # of player moves == # of moves in that round, calculate
 			//	the current accuracy and decide how to generate the next round
@@ -314,6 +343,35 @@ public class DanceGameplay : MonoBehaviour
 		else
 		{
 			yield return StartCoroutine(ShowMovesRoutine());
+		}
+	}
+
+	/// <summary>
+	/// Shows the currently clicked move for a unit of time.
+	/// </summary>
+	IEnumerator ShowClickedCoroutine(Move move)
+	{
+		Sprite selected = null;
+		switch (move)
+		{
+			case Move.DOWN:
+				selected = opponent.down;
+				break;
+			case Move.LEFT:
+				selected = opponent.left;
+				break;
+			case Move.RIGHT:
+				selected = opponent.right;
+				break;
+			case Move.UP:
+				selected = opponent.up;
+				break;
+		}
+		if (selected != null)
+		{
+			controlsIndicator.sprite = selected;
+			yield return new WaitForSeconds(0.2f);
+			controlsIndicator.sprite = null;
 		}
 	}
 
