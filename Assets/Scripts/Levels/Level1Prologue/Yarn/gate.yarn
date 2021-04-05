@@ -19,6 +19,10 @@ tags:
 <<ChangeSpeaker Player>>
    
    I shouldn’t leave yet. I should familiarize myself with my new home.
+
+   Maybe I should check my gravestone again.
+
+   <<set $checkpoint_2 to 1>>
     
 <<endif>>
 ===
@@ -106,5 +110,7 @@ title: Gravekeeper
     ...
 
     I guess not.
+
+    <<set $checkpoint_1 to 1>>
 
 ===

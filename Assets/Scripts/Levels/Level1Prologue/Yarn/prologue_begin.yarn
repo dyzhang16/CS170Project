@@ -1,6 +1,6 @@
 ﻿title: prologue_begin
 ---
-<<if $checkpoint_1 is 1>>
+<<if $checkpoint_1 is 1 and $checkpoint_2 is 1>>
 	
 	[[prologue_doneExplore]]
 
@@ -74,8 +74,11 @@ title: prologue_doneExplore
 
 	Yes. If I can find some <b>flowers</b> to decorate with, my grave will look a lot more lively.
 
+	<<Show Grave>>
+
 <<else>>
 <<Show Grave>>
+<<Drag Grave>>
 <<endif>>
 ===
 title: prologue_doneFlowers
@@ -85,4 +88,15 @@ title: prologue_doneFlowers
 	Aaaand, there! Looking better already. Now I can go out and find other ghosts.
 
 <<stop>>
+===
+
+title: dragTutorial
+---
+
+<<ChangeSpeaker None>>
+
+A voice begins to fill your head
+
+Drag the flowers from your inventory to the bouquet.
+
 ===

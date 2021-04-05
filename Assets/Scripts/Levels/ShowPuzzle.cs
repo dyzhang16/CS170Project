@@ -44,7 +44,9 @@ public class ShowPuzzle : MonoBehaviour
             // Show inventory using existing Player GameObject
             else if (player)
             {
+                stopPlayerMovement = true;
                 Player playerScript = player.GetComponent<Player>();
+                playerScript.stopMove();
                 if (playerScript && !playerScript.invActive)
                 {
                     playerScript.activateMenu();
@@ -73,6 +75,7 @@ public class ShowPuzzle : MonoBehaviour
                 if (player && player.allowMovement)
                 {
                     player.AllowMove(false);
+                    player.stopMove();
                 }
             }
         }
