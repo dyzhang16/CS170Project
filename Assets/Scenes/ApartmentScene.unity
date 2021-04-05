@@ -819,6 +819,7 @@ GameObject:
   - component: {fileID: 449367456}
   - component: {fileID: 449367458}
   - component: {fileID: 449367457}
+  - component: {fileID: 449367459}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -927,6 +928,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 1
+--- !u!114 &449367459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449367454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08189b52c7ae1447984fc0f2800739e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doTransparency: 1
 --- !u!1001 &477982392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1300,6 +1314,7 @@ GameObject:
   - component: {fileID: 783579206}
   - component: {fileID: 783579205}
   - component: {fileID: 783579204}
+  - component: {fileID: 783579203}
   m_Layer: 0
   m_Name: Maze
   m_TagString: Untagged
@@ -1322,6 +1337,19 @@ Transform:
   m_Father: {fileID: 794736819}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &783579203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783579201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08189b52c7ae1447984fc0f2800739e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doTransparency: 1
 --- !u!114 &783579204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1912,7 +1940,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119045834}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.8380547, y: 3.6592145, z: 2.1789854}
@@ -1982,6 +2010,7 @@ GameObject:
   - component: {fileID: 1180144388}
   - component: {fileID: 1180144387}
   - component: {fileID: 1180144386}
+  - component: {fileID: 1180144389}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
@@ -2090,6 +2119,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &1180144389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180144384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08189b52c7ae1447984fc0f2800739e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doTransparency: 1
 --- !u!1001 &1187225532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2515,7 +2557,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372975282}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 4.0484996, y: 3.6592145, z: 1.5604023}
@@ -2800,7 +2842,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915527629}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.9737072, y: 2.5582483, z: 2.4957824}
@@ -3021,6 +3063,7 @@ GameObject:
   - component: {fileID: 1978189323}
   - component: {fileID: 1978189325}
   - component: {fileID: 1978189326}
+  - component: {fileID: 1978189327}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -3129,6 +3172,19 @@ MonoBehaviour:
   NPCInteract: 
   dialogueCursor: {fileID: 2010205466}
   runDialogue: 0
+--- !u!114 &1978189327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978189322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08189b52c7ae1447984fc0f2800739e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doTransparency: 1
 --- !u!1 &1992657900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,7 +3224,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992657900}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.1672932, y: 2.5277402, z: 2.2514124}
