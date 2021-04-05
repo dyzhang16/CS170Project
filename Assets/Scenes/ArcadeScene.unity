@@ -11791,12 +11791,12 @@ PrefabInstance:
     - target: {fileID: 589655526476837006, guid: 54a1007ac4bb7bf42b2d750654f51876,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.028593
+      value: -25.77251
       objectReference: {fileID: 0}
     - target: {fileID: 589655526476837006, guid: 54a1007ac4bb7bf42b2d750654f51876,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -28.516428
+      value: -25.772512
       objectReference: {fileID: 0}
     - target: {fileID: 589655526476837007, guid: 54a1007ac4bb7bf42b2d750654f51876,
         type: 3}
@@ -14269,9 +14269,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opponent: {fileID: 351975797}
   playerControls:
-  - {fileID: 96154200}
   - {fileID: 1103127506}
   - {fileID: 979098376}
+  - {fileID: 96154200}
   - {fileID: 1820599120}
   startGameButton: {fileID: 1445730956}
   endGameButton: {fileID: 1663201960}
@@ -14280,6 +14280,7 @@ MonoBehaviour:
   roundCounter: {fileID: 1137186918}
   resultsPanel: {fileID: 2023542187}
   exitButton: {fileID: 799109178}
+  controlsIndicator: {fileID: 2139136763}
   movesToDo: 
   playerMoves: 
   level: 3
@@ -16021,6 +16022,11 @@ PrefabInstance:
       propertyPath: tooltip
       value: 
       objectReference: {fileID: 947311912}
+    - target: {fileID: 3265424262089280334, guid: 37a1eb4b65293904cb3a0baced2aee79,
+        type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 610132696}
     - target: {fileID: 3265424262572569110, guid: 37a1eb4b65293904cb3a0baced2aee79,
         type: 3}
       propertyPath: tooltip
@@ -19483,7 +19489,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139136761}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
