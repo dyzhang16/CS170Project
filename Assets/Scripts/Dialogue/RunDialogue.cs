@@ -53,7 +53,7 @@ public class RunDialogue : MonoBehaviour
 
     void OnTriggerStay(Collider collider)                          //https://www.youtube.com/watch?v=Bc9lmHjqLZc
     {
-        if (startInstantly)
+        if (startInstantly && collider.gameObject.CompareTag("Player"))
         {
             dialogueRunner.StartDialogue(dialogueToRun);
             startInstantly = false;
@@ -105,7 +105,7 @@ public class RunDialogue : MonoBehaviour
     }
 
     void OnCollisionStay(Collision collision){
-        if (startInstantly)
+        if (startInstantly && GetComponent<Collider>().gameObject.CompareTag("Player"))
         {
             dialogueRunner.StartDialogue(dialogueToRun);
             startInstantly = false;

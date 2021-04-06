@@ -26,14 +26,13 @@ public class SoundManagerScript : MonoBehaviour {
 
     // Start is called before the first frame update
 
-    void start()
+    void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         Debug.Log(sceneName);
-    }
-    void Awake()
-    {
+
+        //moved to start in an attempt to fix webgl bugs
         pickFlower = Resources.Load<AudioClip>("pickup_flower_2");
         flowerSuccess = Resources.Load<AudioClip>("flower_success");
         wallBump = Resources.Load<AudioClip>("wallbump_1");
@@ -51,6 +50,9 @@ public class SoundManagerScript : MonoBehaviour {
 
 
         audioSrc = GetComponent<AudioSource>();
+    }
+    void Awake()
+    {
 
     }
 

@@ -48,6 +48,9 @@ public class YarnInventory : MonoBehaviour
         string Object = parameters[0];
         GameObject PotentialObject = GameObject.Find(Object);
         Inventory.instance.AddItem(PotentialObject.GetComponent<ItemAssignment>().item);
+        if (PotentialObject.GetComponent<RunDialogue>() != null){
+            PotentialObject.GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
+        }
     }
     private void RemoveObject(string[] parameters)
     {
