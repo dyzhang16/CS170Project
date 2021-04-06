@@ -100,7 +100,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out hit))
         {
-            rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed/5 * Time.fixedDeltaTime));
+            rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed/2 * Time.fixedDeltaTime));
 
             moving = true;
         }
