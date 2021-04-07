@@ -44,4 +44,13 @@ public class apartment_puzzle : MonoBehaviour
     public void AddPuzzle(string obj){
         dic[obj] = false;
     }
+
+    [YarnCommand("finishedLevel")]
+    public void finishedLevel(){
+        //change all dialogue to runs of objs
+
+        //change dialogeu to run of friend
+
+        //remove all placeheres
+    }
 }

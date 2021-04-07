@@ -41,11 +41,16 @@ public class Transitions : MonoBehaviour
     }
 
     IEnumerator FadeArea(){
-        // transition.SetTrigger("");
+        transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionSpeed);
 
-        // transition.SetTrigger("");
+        transition.SetTrigger("End");
+    }
+
+    [YarnCommand("Fade")]
+    public void Fade(){
+        StartCoroutine(FadeArea());
     }
 
     void OnTriggerEnter(Collider collider)                          //https://www.youtube.com/watch?v=Bc9lmHjqLZc

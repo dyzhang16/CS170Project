@@ -15,14 +15,14 @@ You are now table
 <<stop>>
 ===
 
-title: Maze
+title: Bookshelf
 ---
 
 <<ChangeSpeaker Player>>
 
-You are now art
+You are now Bookshelf
 
-<<Possess floor Maze>>
+<<Possess floor Bookshelf>>
 
 ===
 
@@ -50,9 +50,33 @@ You are now green lantern
 <<Possess floor Lantern>>
 ===
 
+title: Nightstand
+---
+<<ChangeSpeaker Player>>
+You are now Nightstand
+
+<<Possess floor Nightstand>>
+===
+
+title: Chair
+---
+<<ChangeSpeaker Player>>
+You are now Chair
+
+<<Possess floor Chair>>
+===
+
 title: CannotTake
 ---
 <<ChangeSpeaker Player>>
   You have too much stuff in your inventory!
 <<stop>>
+===
+
+title: ObjectFinished
+---
+
+<<ChangeSpeaker Player>>
+I don't need to move this anymore
+
 ===
