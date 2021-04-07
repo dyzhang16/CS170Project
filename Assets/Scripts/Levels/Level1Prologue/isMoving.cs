@@ -33,12 +33,15 @@ public class isMoving : MonoBehaviour
     public bool whistle_on = false;
 
     public Sprite openGate;
+    private Sprite closedGate;
 
     void Awake(){
         p = player.GetComponent<Player>();
 
         gravekeeperCam.enabled = false;
         keyCam.enabled = false;
+
+        closedGate = gate.GetComponent<SpriteRenderer>().sprite;
     }
 
     [YarnCommand("MoveNPC")]
@@ -147,18 +150,22 @@ public class isMoving : MonoBehaviour
             yield return new WaitForSeconds(1);
             Destroy(Destination);
             isWalking = true;
+            this.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = true;
             if (!dia.IsDialogueRunning){
                 p.AllowMove(true);
             }
         } else if (cycle == 1){
             GetComponent<SpriteRenderer>().flipX = true;
+            this.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = false;
         } else if (cycle == 2){
             if (!dia.IsDialogueRunning){
                 p.AllowMove(true);
                 isWalking = true;
             }
+            this.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = true;
         } else if (cycle == 3){
             yield return new WaitForSeconds(0.5f);
+            gate.GetComponent<SpriteRenderer>().sprite = closedGate;
             isWalking = true;
         }
 

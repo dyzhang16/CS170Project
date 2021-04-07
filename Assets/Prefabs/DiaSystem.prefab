@@ -154,7 +154,6 @@ GameObject:
   - component: {fileID: 720895104263553551}
   - component: {fileID: 720895104263553537}
   - component: {fileID: 720895104263553536}
-  - component: {fileID: 4041132059254309556}
   m_Layer: 0
   m_Name: DialogueRunner
   m_TagString: Untagged
@@ -395,7 +394,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4041132059254309556}
+      - m_Target: {fileID: 0}
         m_MethodName: diaSoundStart
         m_Mode: 1
         m_Arguments:
@@ -431,7 +430,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4041132059254309556}
+      - m_Target: {fileID: 0}
         m_MethodName: lineStop
         m_Mode: 1
         m_Arguments:
@@ -498,18 +497,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultVariables: []
   debugTextView: {fileID: 0}
---- !u!114 &4041132059254309556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 720895104263553538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f60d13a9252c793478747b67284726a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &720895104442778780
 GameObject:
   m_ObjectHideFlags: 0

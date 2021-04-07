@@ -43,6 +43,7 @@ public class floor : MonoBehaviour//, IDropHandler
             activeObj.transform.position = player.transform.position;
 
             if (Input.GetKeyDown(KeyCode.Space)){
+                
                 placeItem();
             }
         }
