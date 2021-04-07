@@ -24,6 +24,7 @@ public class HidePuzzleTakeCoffee : MonoBehaviour
         if (Drink.activeSelf)
         {
             Item boa = Drink.GetComponent<CoffeeAssignment>().droppedCoffee as Drink;
+            boa.itemDescription = "A cup of freshly brewed coffee, void of any additives. The perfect blank canvas for a barista!";
             Inventory.instance.AddItem(boa);
             Drink.SetActive(false);
         }

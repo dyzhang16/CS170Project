@@ -64,7 +64,7 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
                 CustomVariableStorage.SetValue("$BeansThere", 1);
                 SoundManagerScript.PlaySound("place_coffee"); // coffee sound
             }
-            else if (droppedItem.itemName == "Cup o Water")
+            else if (droppedItem.itemName == "Water Pitcher" && !waterThere)
             {
                 GameManager.instance.addedCoffeeMachineItem = 1;
                 waterThere = true;
