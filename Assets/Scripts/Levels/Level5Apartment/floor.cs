@@ -10,7 +10,10 @@ public class floor : MonoBehaviour//, IDropHandler
     public apartment_puzzle puzzle;
 
     public GameObject activeObj;
+    public GameObject activeObjPlaceHere;
     public GameObject player;
+
+    public GameObject[] placeHereList = new GameObject[0];
 
     // IN ORDER FOR THIS TO WORK YOU MUST
     // https://answers.unity.com/questions/1161275/can-i-make-a-non-ui-gameobject-draggable-by-implem.html 
@@ -43,7 +46,6 @@ public class floor : MonoBehaviour//, IDropHandler
             activeObj.transform.position = player.transform.position;
 
             if (Input.GetKeyDown(KeyCode.Space)){
-                
                 placeItem();
             }
         }
@@ -52,26 +54,44 @@ public class floor : MonoBehaviour//, IDropHandler
     [YarnCommand("Possess")]
     public void Possess(string[] parameters){
 
-        string Object = parameters[0];
-        activeObj = GameObject.Find(Object);
+        if (activeObj == null){
+            string Object = parameters[0];
+            activeObj = GameObject.Find(Object);
 
-        activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
-        activeObj.GetComponent<RunDialogue>().runDialogue = false;
-        activeObj.transform.Find("collider").gameObject.SetActive(false);
+            string temp = Object + "PlaceHere";
+            Debug.Log(temp);
 
-        player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+            activeObjPlaceHere = GameObject.Find(Object + "PlaceHere"); 
 
-        activeObj.GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
+            activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+            activeObj.GetComponent<RunDialogue>().runDialogue = false;
+            activeObj.transform.Find("collider").gameObject.SetActive(false);
 
-        puzzle.dic[activeObj.name] = false;
+            player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+
+            activeObj.GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
+
+            puzzle.dic[activeObj.name] = false;
+
+            activeObjPlaceHere.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.2f);
+        }
+            
     }
 
     public void placeItem(){
+
+        if(puzzle.dic[activeObj.name] == true){
+            activeObj.GetComponent<SpriteRenderer>().color = new Color(0.25f, 1f, 0.5f, 1f);
+        } else {
+            activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        }
+
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-        activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         activeObj.transform.Find("collider").gameObject.SetActive(true);
 
-        puzzle.dic[activeObj.name] = true;
+        activeObjPlaceHere.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+
         activeObj = null;
+        activeObjPlaceHere = null;
     }
 }

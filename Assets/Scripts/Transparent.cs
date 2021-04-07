@@ -15,13 +15,13 @@ public class Transparent : MonoBehaviour
 
                     // Debug.Log(dist);
 
-                    GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, dist);
+                    GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, dist);
                 } else if (transform.parent.GetComponent<SpriteRenderer>() != null){
                     float dist = Vector3.Distance(this.transform.parent.position, collider.gameObject.transform.position)/ (transform.parent.GetComponent<SpriteRenderer>().bounds.size.x);
 
                     // Debug.Log(dist);
 
-                    transform.parent.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, dist);
+                    transform.parent.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, dist);
                 }
                 
             }
@@ -33,9 +33,9 @@ public class Transparent : MonoBehaviour
         if (collider.gameObject.tag == "Player") {
              if (doTransparency) {
                 if (GetComponent<SpriteRenderer>() != null) {
-                    GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+                    GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 1f);
                 } else if (transform.parent.GetComponent<SpriteRenderer>() != null) {
-                    transform.parent.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+                    transform.parent.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 1f);
                 }
             }
         }
