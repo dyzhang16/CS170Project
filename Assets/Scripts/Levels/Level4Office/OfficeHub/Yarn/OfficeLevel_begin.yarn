@@ -18,7 +18,7 @@ tags:
 	
 	Follow me. 
 
-<<ChangeVariable GameManager followFriendinOffice 1>> //might not need this and do the check for when you get the documents from coworker desk instead
+<<ChangeVariable GameManager followFriendinOffice 1>> 
 <<DisableDialogue DoorApproach>>
 <<Move Frederick>>
 ===
@@ -26,13 +26,26 @@ tags:
 title: OfficeFriend
 ---
 <<ChangeSpeaker Player Friend>>
+<<if $TookMDocument is 1 and $TookEDocument is 1 and $TookMaxDocument is 1>>
+	[[OfficeFriendPuzzleSolved]]
+<<endif>>
 <<if $isDocument is 1>>
 
 	Thanks for bringing back these documents. 
-//indicate check for bringing back document
+
 <<set $isDocument to 0>>
 <<TransformIntoPlayer Matthew's_Desk Document>>
-<<elseif visited("OfficeFriend") is false>>
+	<<if $MatthewDocument is 1>>
+		<<set $TookMDocument to 1>>
+		<<set $MatthewDocument to 0>>
+	<<elseif $ElizabethDocument is 1>>
+		<<set $TookEDocument to 1>>
+		<<set $ElizabethDocument to 0>>
+	<<elseif $MaxDocument is 1>>
+		<<set $TookMaxDocument to 1>>
+		<<set $MaxDocument to 0>>
+	<<endif>>
+<<elseif visited("OfficeFriend") is false>> //Visiting Friend first time
 <<Focus SECOND>>
 
 	Here is my desk.
@@ -42,6 +55,7 @@ title: OfficeFriend
 <<Focus FIRST>>
 	
 	...
+
 <<Focus SECOND>>
 
 	(Narrative lead help me) My co-workers must've taken my documents again since I was late. 
@@ -58,11 +72,26 @@ title: OfficeFriend
 	
 	Alright.
 
-<<else>>
+<<else>> //Visiting Friend as Ghost after already talking to him
 
 	The documents should be on the blue desks.
 
 <<endif>>
+===
+
+title: OfficeFriendPuzzleSolved
+tags:
+---
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+
+	Thanks, you brought back all the documents.
+
+	You can interact with my table to begin signing the documents.
+
+	Don't forget to grab the pen and stamp!
+<<ChangeVariable GameManager officePuzzle 1>>
+<<set $OfficePuzzle to 1>>
 ===
 
 title: BossDoor
@@ -76,5 +105,18 @@ tags:
 title: OfficeTable
 tags:
 ---
-<<ChangeScene BlackScreen OfficeScene>>
+<<ChangeSpeaker Player>>
+<<if $OfficePuzzle is 1>>
+	
+	<<ChangeScene BlackScreen OfficeScene>>
+
+<<elseif visited("OfficeFriend") is true>>
+	
+	I need to find Frederic's documents.
+
+<<else>>
+	
+	I should talk to Frederic first.
+
+<<endif>>
 ===
