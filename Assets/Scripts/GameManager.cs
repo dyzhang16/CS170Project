@@ -111,6 +111,9 @@ public class GameManager : MonoBehaviour
                 case "followFriendinOffice":
                     followFriendinOffice = int.Parse(variables[1]);
                     break;
+                case "officePuzzle":
+                    officePuzzle = int.Parse(variables[1]);
+                    break;
                 default:
                     System.Type GMType = typeof(GameManager);
                     System.Reflection.FieldInfo fieldInfo = GMType.GetField(variables[0]);

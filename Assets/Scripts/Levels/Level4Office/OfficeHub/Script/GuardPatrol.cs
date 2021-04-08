@@ -5,18 +5,15 @@ using Yarn.Unity;
 
 public class GuardPatrol : MonoBehaviour
 {
-    public GameObject Guard;
-    public GameObject player;
-    public GameObject resetPlayer;
+    public DialogueRunner dialogueRunner;
+    public string dialogueToRun;
+
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.CompareTag("Document"))
+        if (col.gameObject.CompareTag("Document") && !dialogueRunner.IsDialogueRunning)
         {
-            player.transform.position = resetPlayer.GetComponent<TransformToDocument>().lastPosition;
-        }
-        if (col.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Found Player");
+            GetComponentInParent<OfficeGuard>().isWalking = false;
+            dialogueRunner.StartDialogue(dialogueToRun);
         }
     }
 
