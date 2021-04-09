@@ -44,6 +44,16 @@ public class GameManager : MonoBehaviour
     //office puzzle
     public int officePuzzle = 0;
 
+    //apartment variables
+    //first time at the apartment = go to stairs
+    public int firstApartment = 0;
+    //cleaning room puzzle
+    public int cleanedRoom = 0;
+    //finished escape room
+    public int timeCapsule = 0;
+    //transition dialogue
+    public int firstDateDia = 0;
+
     // Arcade variables
     public int arcadeFirstVisit = 0;
     public int arcadeFirstCrane = 0;
