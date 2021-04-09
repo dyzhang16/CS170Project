@@ -8,17 +8,18 @@ public class TransformToDocument : MonoBehaviour
 {
     public GameObject activeObj;
     public GameObject player;
-    [HideInInspector] public Vector3 lastPosition;
+    public GameObject guard;
+    //[HideInInspector] public Vector3 lastPosition;
     private void Update()
     {
         if (activeObj != null)
         {
             activeObj.transform.position = player.transform.position;
 
-            if (Input.GetKeyDown(KeyCode.R))
+            /*if (Input.GetKeyDown(KeyCode.R))
             {
                 player.transform.position = lastPosition;
-            }
+            }*/
         }
     }
 
@@ -29,7 +30,7 @@ public class TransformToDocument : MonoBehaviour
         activeObj = GameObject.Find(Object);
         activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.75f);
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-        lastPosition = player.transform.position;
+        guard.GetComponent<OfficeGuard>().resetPlayerPosition = player.transform.position;
         player.GetComponentInChildren<BoxCollider>().tag = "Document";
     }
     [YarnCommand("TransformIntoPlayer")]
