@@ -1612,6 +1612,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 674768259}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &674768262 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8220257972628452543, guid: aaf043c15791b664fac358de6b5254f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 674768259}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2a432226deafd48a2aa20eede576b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &733686128 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6386934102897756430, guid: b71716d8888efca45a8977e962ddd7f4,
@@ -5542,6 +5554,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SettingsPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595464253224484972, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 674768262}
+    - target: {fileID: 6595464253224484972, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595464253224484972, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595464253224484972, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 7818012980715718755, guid: a8049e3b227ac00459242d230acb1abe,
         type: 3}

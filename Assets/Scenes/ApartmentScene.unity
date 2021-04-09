@@ -670,6 +670,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 229286504}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &229286506 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8220257972628452543, guid: aaf043c15791b664fac358de6b5254f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 229286504}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2a432226deafd48a2aa20eede576b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &261468254
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +915,7 @@ PrefabInstance:
     - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
       propertyPath: yarnScripts.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
@@ -997,6 +1009,12 @@ PrefabInstance:
       propertyPath: startAutomatically
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
+        type: 3}
+      propertyPath: yarnScripts.Array.data[3]
+      value: 
+      objectReference: {fileID: 2480198943629176163, guid: 2977b59ebd211e24abbb9c0c5e70f3af,
+        type: 3}
     - target: {fileID: 720895104907229992, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1449,6 +1467,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SettingsPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595464253224484972, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 229286506}
+    - target: {fileID: 6595464253224484972, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595464253224484972, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595464253224484972, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 7818012980715718755, guid: a8049e3b227ac00459242d230acb1abe,
         type: 3}
@@ -2660,8 +2698,19 @@ MonoBehaviour:
   - {fileID: 304115094}
   - {fileID: 1077064788}
   - {fileID: 1180144384}
+  placeHeres:
+  - {fileID: 103543257}
+  - {fileID: 1983713146}
+  - {fileID: 883712382}
+  - {fileID: 1072566142}
+  - {fileID: 1640890160}
+  - {fileID: 1811098731}
+  escapeRoomItems: []
   puzzleComplete: 0
   CustomVariableStorage: {fileID: 9858320}
+  dia: {fileID: 9858321}
+  friend: {fileID: 153722508}
+  bed: {fileID: 0}
 --- !u!1 &1180144384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3540,8 +3589,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.0484996, y: 3.6592145, z: 1.5604023}
-  m_Center: {x: -0.04290886, y: 2.05705, z: -1.0911661}
+  m_Size: {x: 4.0484996, y: 3.6592145, z: 3.106345}
+  m_Center: {x: -0.04290886, y: 2.9846158, z: -2.4825146}
 --- !u!1 &1640890160
 GameObject:
   m_ObjectHideFlags: 0
