@@ -6,6 +6,7 @@ using Yarn.Unity;
 public class OfficeHub : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
+    public VariableStorageBehaviour CustomVariableStorage;
     public GameObject player;
     public GameObject exitToCityOffice;
 
@@ -20,11 +21,20 @@ public class OfficeHub : MonoBehaviour
             if (GameManager.instance.followFriendinOffice == 1)
             {
                 dialogueRunner.startAutomatically = false;
+                //code to move the friend to the right area
             }
         }
     }
     void Start()
     {
-
+        if (GameManager.instance != null)
+        {
+            if (GameManager.instance.officePuzzle == 1)
+            {
+                CustomVariableStorage.SetValue("$TookMDocument", 1);
+                CustomVariableStorage.SetValue("$TookEDocument", 1);
+                CustomVariableStorage.SetValue("$TookMaxDocument", 1);
+            }
+        }
     }
 }
