@@ -10,12 +10,50 @@ public class SceneSkip : MonoBehaviour
         manager.previousScene = "Tutorial";
 
         manager.flowerPuzzle = 1;
+
+        manager.firstFriendMeeting = 0;
+        manager.hasReceipt = 0;
+        manager.gaveDrink = 0;
+        manager.visitedAfterCoffee = 0;
+        manager.visitedCoffee = 0;
+        manager.readRecipeBook = 0;
+        manager.addedCoffeeMachineItem = 0;
+        manager.followFriendinOffice = 0;
+        manager.officePuzzle = 0;
+        manager.firstApartment = 0;
+        manager.cleanedRoom = 0;
+        manager.timeCapsule = 0;
+        manager.firstDateDia = 0;
+        manager.arcadeFirstVisit = 0;
+        manager.arcadeFirstCrane = 0;
+        manager.arcadeFirstDance = 0;
+        manager.arcadeNoCraneDirs = 0;
+        manager.arcadeNoDanceDirs = 0;
     }
 
     public void skipCoffee(){
         manager.previousScene = "StreetIntro";
 
         manager.flowerPuzzle = 1;
+        
+        manager.firstFriendMeeting = 0;
+        manager.hasReceipt = 0;
+        manager.gaveDrink = 0;
+        manager.visitedAfterCoffee = 0;
+        manager.visitedCoffee = 0;
+        manager.readRecipeBook = 0;
+        manager.addedCoffeeMachineItem = 0;
+        manager.followFriendinOffice = 0;
+        manager.officePuzzle = 0;
+        manager.firstApartment = 0;
+        manager.cleanedRoom = 0;
+        manager.timeCapsule = 0;
+        manager.firstDateDia = 0;
+        manager.arcadeFirstVisit = 0;
+        manager.arcadeFirstCrane = 0;
+        manager.arcadeFirstDance = 0;
+        manager.arcadeNoCraneDirs = 0;
+        manager.arcadeNoDanceDirs = 0;
     }
 
     public void skipOffice(){
@@ -29,6 +67,18 @@ public class SceneSkip : MonoBehaviour
         manager.visitedCoffee = 1;
         manager.readRecipeBook = 1;
         manager.addedCoffeeMachineItem = 1;
+       
+        manager.followFriendinOffice = 0;
+        manager.officePuzzle = 0;
+        manager.firstApartment = 0;
+        manager.cleanedRoom = 0;
+        manager.timeCapsule = 0;
+        manager.firstDateDia = 0;
+        manager.arcadeFirstVisit = 0;
+        manager.arcadeFirstCrane = 0;
+        manager.arcadeFirstDance = 0;
+        manager.arcadeNoCraneDirs = 0;
+        manager.arcadeNoDanceDirs = 0;
     }
 
     public void skipApartment(){
@@ -44,6 +94,16 @@ public class SceneSkip : MonoBehaviour
         manager.addedCoffeeMachineItem = 1;
         manager.followFriendinOffice = 1;
         manager.officePuzzle = 1;
+        manager.firstApartment = 1;
+
+        manager.cleanedRoom = 0;
+        manager.timeCapsule = 0;
+        manager.firstDateDia = 0;
+        manager.arcadeFirstVisit = 0;
+        manager.arcadeFirstCrane = 0;
+        manager.arcadeFirstDance = 0;
+        manager.arcadeNoCraneDirs = 0;
+        manager.arcadeNoDanceDirs = 0;
     }
 
     public void skipArcade(){
@@ -63,5 +123,11 @@ public class SceneSkip : MonoBehaviour
         manager.cleanedRoom = 1;
         manager.timeCapsule = 1;
         manager.firstDateDia = 1;
+
+        manager.arcadeFirstVisit = 0;
+        manager.arcadeFirstCrane = 0;
+        manager.arcadeFirstDance = 0;
+        manager.arcadeNoCraneDirs = 0;
+        manager.arcadeNoDanceDirs = 0;
     }
 }

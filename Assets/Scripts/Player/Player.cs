@@ -96,14 +96,17 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     void Mouse()
     {
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit))
-        {
-            rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed/2 * Time.fixedDeltaTime));
+        if (!invActive) {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray, out hit))
+            {
+                rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed/2 * Time.fixedDeltaTime));
 
-            moving = true;
+                moving = true;
+            }
         }
+        
     }
 
     public void openInventory()

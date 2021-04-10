@@ -29,21 +29,54 @@ fine fine go for it
 
 ===
 
-title: time_capsule
+title: Bed
 ---
 
-<<ChangeSpeaker Player Friend>>
+<<if visited("Bed") is false>>
+    <<ChangeSpeaker Player Friend>>
 
-<<Focus FIRST>>
+    <<Focus FIRST>>
+    Okay time to move the bed
 
-Penis
+    Wait what is this?
 
+    <<revealTimeCapsule Level>>
+
+    <<Focus SECOND>>
+    What'd you find?
+
+    <<Focus FIRST>>
+    Something I have no idea what it is.
+
+    <<Focus SECOND>>
+    Oh that's my time capsule, I locked a ton of cool memories in there.
+
+    Althought now I've forgotten the code to unlock it.
+
+    <<Focus FIRST>>
+    How are you ever gonna get it open then?
+
+    <<Focus SECOND>>
+    Well I always leave clues behind, they must be scattered around the room now.
+
+    <<Focus FIRST>>
+    Sounds exciting, lets try and find out the code!
+
+<<else>>
+
+    <<Show TimeCapsule>>
+
+<<endif>>
 
 ===
 
 title: friend_after_cleaning
 ---
 
+<<ChangeSpeaker Player Friend>>
 
+<<Focus SECOND>>
+
+Hmmm I know that you can find all the clues to the time capsule in my room...
 
 ===
