@@ -1,0 +1,60 @@
+﻿title: Flower1
+---
+<<ChangeSpeaker Player>>
+<<if visited("prologue_doneExplore") is true>>
+        
+        Oh! That's pretty!
+        
+<<Destroy FlowerFieldA>>
+<<pickUpItem FlowerFieldA>>
+<<else>>
+        
+        It's a flower.
+
+<<endif>>
+===
+title: Flower2
+---
+<<ChangeSpeaker Player>>
+<<if visited("prologue_doneExplore") is true>>
+       
+       This one will look nice on the grave.
+
+<<Destroy FlowerFieldB>>
+<<pickUpItem FlowerFieldB>>
+<<else>>
+        
+         I bet this flower would smell nice if I could smell.
+
+<<endif>>
+===
+title: Flower3
+---
+<<ChangeSpeaker Player>>
+<<if visited("prologue_doneExplore") is true>>
+        
+        How about this flower?
+
+<<Destroy FlowerFieldC>>
+<<pickUpItem FlowerFieldC>>
+<<else>>
+        
+        You’ll be replaced with a grave, one day.
+
+<<endif>>
+===
+title: Flower4
+---
+<<ChangeSpeaker Player>>
+<<if visited("prologue_doneExplore") is true>>
+       
+       I like this one!
+
+<<Destroy FlowerFieldD>>
+<<pickUpItem FlowerFieldD>>
+<<else>>
+        
+        Prettier than a weed.
+    
+<<endif>>
+===

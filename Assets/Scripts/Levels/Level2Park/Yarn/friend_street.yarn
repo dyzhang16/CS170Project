@@ -126,7 +126,30 @@ title: friend_after_coffee
     <<Show Friend1>>
 <<endif>>
 ===
+title: wrong_item
+---
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
 
+    This isn't even a <b>drink</b>, let alone coffee. 
+
+    Why are you trolling me?(Narrative Help?)
+
+<<Focus FIRST>>
+
+    I need to get him his <b>coffee</b>.
+===
+title: no_safety
+---
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+
+    There's no safety accessories on this coffee, I'm not taking that while there are spill risks attached to it.
+
+<<Focus FIRST>>
+    
+    I need to make sure I put on a <b>sleeve</b> and <b>lid</b> before giving the coffee to Frederic.
+===
 title: wrong_coffee
 ---
 
@@ -215,7 +238,7 @@ title: correct_coffee
 
     I don’t have the time right now. I have to get to work. Go haunt someone else!
 
-<<MoveToOffice Friend1>>
+<<MoveToOffice Fr[iend1>>
 
 <<ChangeSpeaker Player>>
 

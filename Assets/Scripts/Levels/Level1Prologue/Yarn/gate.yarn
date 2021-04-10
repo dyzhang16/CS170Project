@@ -18,7 +18,7 @@ tags:
 <<else>>
 <<ChangeSpeaker Player>>
    
-   I shouldn’t leave yet. I should familiarize myself with my new home.
+   The gate is locked. I’ll worry about how I’ll get out later. I still need to familiarize myself with my new gravestone.
 
    Maybe I should check my gravestone again.
 
@@ -30,14 +30,18 @@ tags:
 title: done_gate
 ---
 <<ChangeSpeaker Player>>
-    
-    <<Sound open_gate>>
+<<Sound open_gate>>
+
+    Alright, it’s open!
+
     The key fits! I can finally get out of here.
+    
     <<Remove Key>>
+    
     //animation of ghost doing like a celebratory loop de loop, but they phase through the gate during it accidentally, shows ghost can go through stuff
 
     <<wait 3>>
-   ...Oh. I suppose that works, too.
+    ...Oh. I suppose that works, too. That’s nice to know.
 
 <<ChangeScene BlackScreen Park>>
 ===
@@ -110,6 +114,10 @@ title: Gravekeeper
     ...
 
     I guess not.
+
+    Not only am I unseen, but also unheard. Is there no one I can talk to at all?
+
+    If I’m the only one buried here, and I can’t communicate with the living, maybe there will be other ghosts I can spend time with outside!
 
     <<set $checkpoint_1 to 1>>
 

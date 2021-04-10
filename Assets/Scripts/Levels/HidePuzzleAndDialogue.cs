@@ -7,7 +7,6 @@ using Yarn.Unity;
 public class HidePuzzleAndDialogue : MonoBehaviour
 {
     public GameObject puzzlePanel;
-    public Button RemoveButton;
     public bool puzzleFinished = false;
     public DialogueRunner dialogueRunner;
     public string dialogueToRun;

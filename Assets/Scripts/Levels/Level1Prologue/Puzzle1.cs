@@ -9,32 +9,26 @@ using UnityEngine.UI;
 public class Puzzle1 : MonoBehaviour, IDropHandler
 {
     public VariableStorageBehaviour CustomVariableStorage;
+    public DialogueRunner dia;
     public GameObject puzzlePanel;
-    public Button ExitButton;
+    public Button exitButton;
     public GameObject FlowerA, FlowerB, FlowerC, FlowerD;
-    public static Puzzle1 instance;
     bool flowerASet, flowerBSet, flowerCSet, flowerDSet = false;
 
     public GameObject bouqet;
 
     public Sprite flowerAComplete, flowerBComplete, flowerCComplete, flowerDComplete;
     
-    public Item key;
-
-    private void Start()
-    {
-        instance = this;
-    }
-    private void Update()
+/*    private void Update()
     {
         if (flowerASet == true && flowerBSet == true && flowerCSet == true && flowerDSet == true)
         {
-            CustomVariableStorage.SetValue("$puzzle", 1);
-            ExitButton.GetComponent<HidePuzzleAndDialogue>().puzzleFinished = true;
+            
+            
             bouqet.SetActive(true);
             GameManager.instance.flowerPuzzle = 1;
         }
-    }
+    }*/
 
     public void Hide()
     {
@@ -55,7 +49,6 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
             SoundManagerScript.PlaySound("place_flower"); 
             FlowerA.transform.GetComponent<Image>().sprite = flowerAComplete;
             Inventory.instance.RemoveItem(droppedItem);
-            Inventory.instance.UpdateSlotUI();
         }
         else if (droppedItem.itemName == "Red Flower")
         {
@@ -63,7 +56,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
             SoundManagerScript.PlaySound("place_flower");
             FlowerB.transform.GetComponent<Image>().sprite = flowerBComplete;
             Inventory.instance.RemoveItem(droppedItem);
-            Inventory.instance.UpdateSlotUI();
+
         }
         else if (droppedItem.itemName == "Yellow Flower")
         {
@@ -71,7 +64,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
             SoundManagerScript.PlaySound("place_flower");
             FlowerC.transform.GetComponent<Image>().sprite = flowerCComplete;
             Inventory.instance.RemoveItem(droppedItem);
-            Inventory.instance.UpdateSlotUI();
+
         }
         else if (droppedItem.itemName == "Purple Flower")
         {
@@ -79,7 +72,6 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
             SoundManagerScript.PlaySound("place_flower");
             FlowerD.transform.GetComponent<Image>().sprite = flowerDComplete;
             Inventory.instance.RemoveItem(droppedItem);
-            Inventory.instance.UpdateSlotUI();
         }
         else
         {
@@ -88,6 +80,19 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
         if (flowerASet == true && flowerBSet == true && flowerCSet == true && flowerDSet == true)
         {
             SoundManagerScript.PlaySound("flower_success"); // plays sound tutorial puzzle complete
+            CustomVariableStorage.SetValue("$puzzle", 1);
+            //exitButton.GetComponent<HidePuzzleAndDialogue>().puzzleFinished = true;
+            bouqet.SetActive(true);
+            GameManager.instance.flowerPuzzle = 1;
+            exitButton.GetComponent<Button>().interactable = false;
+            StartCoroutine(WaitCoroutine(4));
         }
+    }
+    IEnumerator WaitCoroutine(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        puzzlePanel.GetComponent<CanvasGroup>().alpha = 0;
+        puzzlePanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        dia.StartDialogue("prologue_doneExplore");
     }
 }
