@@ -31,6 +31,7 @@ public class ShowPuzzle : MonoBehaviour
             // show inventory (only if InventoryController or Player exists)
             GameObject inventoryController = GameObject.Find("InventoryController");
             GameObject player = GameObject.Find("Player");
+            stopPlayerMovement = true;
             // Show inventory using an existing InventoryController GameObject (first-person)
             if (inventoryController)
             {

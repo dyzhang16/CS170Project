@@ -9,9 +9,12 @@ public class apartment_puzzle : MonoBehaviour
     public GameObject[] packingList = new GameObject[0];
     public Dictionary<string, bool> dic = new Dictionary<string, bool>();
 
-    public GameObject[] placeHeres = new GameObject[0];
-    
-    public GameObject[] escapeRoomItems = new GameObject[0];
+    public GameObject placeHeres;
+    public GameObject puzzleItems;
+    public GameObject otherItems;
+    public GameObject timeCapsule;
+
+    public GameObject laptop;
 
     public bool puzzleComplete;
     public VariableStorageBehaviour CustomVariableStorage;
@@ -59,19 +62,10 @@ public class apartment_puzzle : MonoBehaviour
         //add delay to make the transition better
         StartCoroutine(finishedCleaning());
 
-        //add all new items to scene
-        
-
         //change dialogeu to run of friend
         friend.GetComponent<RunDialogue>().dialogueToRun = "";
 
-        //change dialogue of bed
-        bed.AddComponent<RunDialogue>();
-
-        //remove all placeheres
-        foreach (GameObject obj in placeHeres) {
-            Destroy(obj);
-        }
+        Destroy(placeHeres);
     }
 
     IEnumerator finishedCleaning(){
@@ -80,15 +74,32 @@ public class apartment_puzzle : MonoBehaviour
         //change color back
         foreach (GameObject obj in packingList) {
             obj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-            if (obj.name != "Bookshelf") {
-                Destroy(obj.GetComponent<RunDialogue>());
-            } else {
+            if (obj.name == "Bookshelf") {
                 obj.GetComponent<RunDialogue>().dialogueToRun = "BookshelfEscape";
+            } else if (obj.name == "Table"){
+                obj.GetComponent<RunDialogue>().dialogueToRun = "Laptop";
+            } else {
+                Destroy(obj.GetComponent<RunDialogue>());
             }
         }
+
+        //add all new items to scene
+        //puzzle elements
+        puzzleItems.SetActive(true);
+        //other items
+        otherItems.SetActive(true);
+        //set laptop position
+        laptop.transform.position = packingList[0].transform.position + new Vector3(0, 6, 8);
+        //destroy bed
+        Destroy(bed);
 
         yield return new WaitForSeconds(1f);
         //start first friend dialogue
         dia.StartDialogue("first_friend_after_cleaning");
+    }
+
+    [YarnCommand("revealTimeCapsule")]
+    public void revealTimeCapsule(){
+        timeCapsule.SetActive(true);
     }
 }
