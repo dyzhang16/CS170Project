@@ -12,13 +12,26 @@ public class friend1 : MonoBehaviour
     public bool isWalking = false;
     public float Speed;
     public GameObject Destination;
+    public GameObject DestinationAfterApartment;
+    public GameObject DestinationAfterOffice1;
+    public GameObject DestinationAfterOffice2;
 
     public BoxCollider collider;
 
     private Vector3 target;
 
-    void Awake(){
-        target = Destination.transform.position;
+    void Start(){
+        if (GameManager.instance.officePuzzle == 1){
+            if (GameManager.instance.walkedToApartment == 0){
+                target = DestinationAfterOffice1.transform.position;
+            } else if (GameManager.instance.walkedToApartment == 1){
+                target = DestinationAfterOffice2.transform.position;
+            }
+        } else if (GameManager.instance.firstDateDia == 1){
+            target = DestinationAfterApartment.transform.position;
+        } else {
+            target = Destination.transform.position;
+        }
     }
 
     // Update is called once per frame
@@ -31,7 +44,11 @@ public class friend1 : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target) < 0.001f){
                 isWalking = false;
-                this.gameObject.SetActive(false);
+                if (GameManager.instance.walkedToApartment == 2){
+                    this.GetComponent<RunDialogue>().dialogueToRun = "friendGoingToApartment";
+                } else if (GameManager.instance.walkToArcade == 1){
+                    this.GetComponent<RunDialogue>().dialogueToRun = "friendGoingToArcade";
+                }
             }
         }
     }
@@ -83,5 +100,31 @@ public class friend1 : MonoBehaviour
         isWalking = true;
         collider.isTrigger = true;
         GameManager.instance.firstFriendMeeting = 4;
+    }
+
+    [YarnCommand("MoveToApartment1")]
+    public void moveToApartment1(){
+        isWalking = true;
+        collider.isTrigger = true;
+        GameManager.instance.walkedToApartment = 1;
+    }
+
+    [YarnCommand("MoveToApartment2")]
+    public void moveToApartment2(){
+        isWalking = true;
+        collider.isTrigger = true;
+        GameManager.instance.walkedToApartment = 2;
+    }
+
+    [YarnCommand("moveToArcade")]
+    public void moveToArcade(){
+        isWalking = true;
+        collider.isTrigger = true;
+        GameManager.instance.walkToArcade = 1;
+    }
+
+    [YarnCommand("Enter")]
+    public void Enter(){
+        this.gameObject.SetActive(false);
     }
 }

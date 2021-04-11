@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
     public int followFriendinOffice = 0;
     //office puzzle
     public int officePuzzle = 0;
+    //walked to apartment
+    //1 = moved from cityoffice to city arcade
+    //2 = moved from cityarcade exit to apartment
+    public int walkedToApartment = 0;
 
     //apartment variables
     //first time at the apartment = go to stairs
@@ -53,6 +57,8 @@ public class GameManager : MonoBehaviour
     public int timeCapsule = 0;
     //transition dialogue
     public int firstDateDia = 0;
+    //walk to arcade
+    public int walkToArcade = 0;
 
     // Arcade variables
     public int arcadeFirstVisit = 0;
@@ -123,6 +129,9 @@ public class GameManager : MonoBehaviour
                     break;
                 case "officePuzzle":
                     officePuzzle = int.Parse(variables[1]);
+                    break;
+                case "firstDateDia":
+                    firstDateDia = int.Parse(variables[1]);
                     break;
                 default:
                     System.Type GMType = typeof(GameManager);
