@@ -105,8 +105,9 @@ public class TimeCapsulePuzzle : MonoBehaviour
 
     public void checkTimeCapsule(){
         if (num1 == num1Solved && num2 == num2Solved && num3 == num3Solved && num4 == num4Solved){
-            // dia.StartDialogue("");
             exit.Hide();
+            dia.StartDialogue("done_with_puzzle");
+            GameManager.instance.timeCapsule = 1;
         }
     }
 }
