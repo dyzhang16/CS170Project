@@ -29,7 +29,7 @@ public class CoffeeYarnCommands : MonoBehaviour
         RecipeBook.Add((10, 10), Coffee5);
         so = Instantiate(BizarreCoffee);
         so.itemName = "Bizarre Coffee";
-        so.itemDescription = "There is a varying amounts of sugar and cream in this coffee.";
+        so.itemDescription = "A suspicious cup of coffee… Did something go wrong? This isn’t on the menu!";
 
         dialogueRunner.AddCommandHandler(
         "AddCoffee",     // the name of the command
@@ -59,7 +59,7 @@ public class CoffeeYarnCommands : MonoBehaviour
         Debug.Log("Adding Drink!");
         var so = Instantiate(cloneItem);
         so.itemName = "Random Coffee";
-        so.itemDescription = "You can add sugar and cream to this coffee!";
+        so.itemDescription = "One could possibly put cream and sugar in this…";
         Inventory.instance.AddItem(so);
     }
     public void CheckCoffee(string[] parameters)
@@ -110,6 +110,7 @@ public class CoffeeYarnCommands : MonoBehaviour
         {
             boa.icon = boa.sleeveOnIcon;
             boa.sleeveOn = true;
+            boa.itemDescription = "A dressed up cup of coffee! It’s still susceptible to spills, though. Hmn...";
             Inventory.instance.AddItem(boa);
         }
         Inventory.instance.RemoveItem(item);
@@ -132,6 +133,7 @@ public class CoffeeYarnCommands : MonoBehaviour
         {
             boa.icon = boa.lidOnIcon;
             boa.lidOn = true;
+            boa.itemDescription = "Can’t spill it now! Holding it is still a test of endurance, though. Hmn…";
             Inventory.instance.AddItem(boa);
         }
         Inventory.instance.RemoveItem(item);
