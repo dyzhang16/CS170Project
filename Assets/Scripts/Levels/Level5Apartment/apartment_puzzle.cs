@@ -63,7 +63,9 @@ public class apartment_puzzle : MonoBehaviour
         StartCoroutine(finishedCleaning());
 
         //change dialogeu to run of friend
-        friend.GetComponent<RunDialogue>().dialogueToRun = "";
+        friend.GetComponent<RunDialogue>().dialogueToRun = "friend_after_cleaning";
+
+        GameManager.instance.cleanedRoom = 1;
 
         Destroy(placeHeres);
     }

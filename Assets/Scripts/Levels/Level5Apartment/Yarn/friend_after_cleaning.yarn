@@ -80,3 +80,26 @@ title: friend_after_cleaning
 Hmmm I know that you can find all the clues to the time capsule in my room...
 
 ===
+
+title: done_with_puzzle
+---
+
+<<ChangeSpeaker Player Friend>>
+<<Focus FIRST>>
+I think I unlocked it!
+
+<<Focus SECOND>>
+No way, what's inside
+
+<<Focus FIRST>>
+Okay I give up writing temp dialogue basically the it's some memories of the friend with another friend
+
+And they miss them so they want to go hang out with them so the ghost convinces them to go on a platonic date
+
+The friend then dresses up and then they go on their date
+
+<<ChangeVariable GameManager firstDateDia 1>>
+
+<<ChangeScene BlackScene CityArcade>>
+
+===

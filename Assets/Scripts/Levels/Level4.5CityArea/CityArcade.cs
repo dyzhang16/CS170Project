@@ -9,6 +9,7 @@ public class CityArcade : MonoBehaviour
     public GameObject player;
     public GameObject Arcade;
     public GameObject friend;
+    public GameObject apartment;
 
     public GameObject exitToCityOffice;
     public GameObject exitToStreetCoffee;
@@ -21,12 +22,25 @@ public class CityArcade : MonoBehaviour
                 player.transform.position = exitToCityOffice.transform.position + new Vector3(-10, 0, 0);
             } else if (GameManager.instance.previousScene == "ArcadeScene"){
                 player.transform.position = Arcade.transform.position + new Vector3(0, 0, -10);
+            } else if (GameManager.instance.previousScene == "ApartmentScene") {
+                player.transform.position = apartment.transform.position + new Vector3(0, 0, -10);
             }
 
             //first friend meeting
             if (GameManager.instance.firstFriendMeeting == 2){
                 friend.SetActive(true);
                 friend.GetComponent<RunDialogue>().dialogueToRun = "cityarcade_friend_intro";
+            } else if (GameManager.instance.firstDateDia == 1){
+                friend.SetActive(true);
+                Arcade.GetComponent<RunDialogue>().dialogueToRun = "cityarcade_arcade";
+                apartment.GetComponent<RunDialogue>().dialogueToRun = "alreadyApartment";
+                friend.GetComponent<RunDialogue>().dialogueToRun = "friendWalkToArcade";
+                friend.transform.position = apartment.transform.position + new Vector3(0, 0, -20);
+            } else if (GameManager.instance.walkedToApartment == 1) {
+                friend.SetActive(true);
+                apartment.GetComponent<RunDialogue>().dialogueToRun = "cityapartment_apartment";
+                friend.GetComponent<RunDialogue>().dialogueToRun = "goingToApartment2";
+                friend.transform.position = exitToCityOffice.transform.position + new Vector3(-20, 0, 0);
             }
         }
     }

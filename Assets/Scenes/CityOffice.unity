@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 20868995}
   - component: {fileID: 20868996}
+  - component: {fileID: 20868997}
   m_Layer: 0
   m_Name: street_road_ped_crossing
   m_TagString: Untagged
@@ -202,6 +203,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &20868997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20868994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.53526, y: 29.570007, z: 0.20000005}
+  m_Center: {x: 0, y: -14.785004, z: 0}
 --- !u!1 &31553235
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +335,73 @@ Transform:
   - {fileID: 602430166}
   m_Father: {fileID: 1440939696}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &272064896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272064898}
+  - component: {fileID: 272064897}
+  m_Layer: 0
+  m_Name: BuildingCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &272064897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272064896}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: 10
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
+  m_Lens:
+    FieldOfView: 60
+    OrthographicSize: 10
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
+    Dutch: 0
+    LensShift: {x: 0, y: 0}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+  m_LegacyBlendHint: 0
+  m_ComponentOwner: {fileID: 927926369}
+--- !u!4 &272064898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272064896}
+  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: -264.09998, y: 51.82846, z: -344.13303}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 927926369}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277883546
 GameObject:
@@ -501,6 +582,7 @@ GameObject:
   - component: {fileID: 419603291}
   - component: {fileID: 419603292}
   - component: {fileID: 419603293}
+  - component: {fileID: 419603294}
   m_Layer: 0
   m_Name: office
   m_TagString: Untagged
@@ -610,6 +692,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 1
+--- !u!114 &419603294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419603289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ddb8ddb8710c3459f369aa5105f34f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCam: {fileID: 272064897}
+  mainCam: {fileID: 1260292336}
 --- !u!1 &461060720
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 461291436}
   - component: {fileID: 461291437}
+  - component: {fileID: 461291438}
   m_Layer: 0
   m_Name: sidewalk (2)
   m_TagString: Untagged
@@ -724,6 +821,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &461291438
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461291435}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52551, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0, y: -16.200005, z: 0}
 --- !u!1 &548999957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +2093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 904576886}
   - component: {fileID: 904576887}
+  - component: {fileID: 904576888}
   m_Layer: 0
   m_Name: sidewalk (4)
   m_TagString: Untagged
@@ -2054,6 +2165,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &904576888
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904576885}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52551, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0, y: -16.200005, z: 0}
 --- !u!1001 &914424191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2173,6 +2297,91 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d6c0d0a198aef6458e73288cb651665, type: 3}
+--- !u!1 &927926368
+GameObject:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927926369}
+  - component: {fileID: 927926371}
+  - component: {fileID: 927926370}
+  m_Layer: 0
+  m_Name: cm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &927926369
+Transform:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927926368}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 59.00975, y: -27.180777, z: -69.922386}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 272064898}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &927926370
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927926368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 3
+  m_LookaheadIgnoreY: 0
+  m_XDamping: 1
+  m_YDamping: 1
+  m_ZDamping: 1
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_CameraDistance: 75
+  m_DeadZoneWidth: 0.1
+  m_DeadZoneHeight: 0.1
+  m_DeadZoneDepth: 0
+  m_UnlimitedSoftZone: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
+  m_GroupFramingMode: 2
+  m_AdjustmentMode: 2
+  m_GroupFramingSize: 0.8
+  m_MaxDollyIn: 5000
+  m_MaxDollyOut: 5000
+  m_MinimumDistance: 1
+  m_MaximumDistance: 5000
+  m_MinimumFOV: 3
+  m_MaximumFOV: 60
+  m_MinimumOrthoSize: 1
+  m_MaximumOrthoSize: 5000
+--- !u!114 &927926371
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927926368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &947846537
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,6 +2472,9 @@ MonoBehaviour:
   isWalking: 0
   Speed: 25
   Destination: {fileID: 1715590469}
+  DestinationAfterApartment: {fileID: 0}
+  DestinationAfterOffice1: {fileID: 1142812706}
+  DestinationAfterOffice2: {fileID: 0}
   collider: {fileID: 2052721607}
 --- !u!114 &1052054045
 MonoBehaviour:
@@ -2786,6 +2998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1174890577}
   - component: {fileID: 1174890578}
+  - component: {fileID: 1174890579}
   m_Layer: 0
   m_Name: street
   m_TagString: Untagged
@@ -2857,6 +3070,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &1174890579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174890576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52552, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0, y: -16.200005, z: 0}
 --- !u!1 &1193915548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3022,6 +3248,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1260292336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 589655526476837007, guid: 54a1007ac4bb7bf42b2d750654f51876,
+    type: 3}
+  m_PrefabInstance: {fileID: 1144637059}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1267361460
 GameObject:
   m_ObjectHideFlags: 0
@@ -3605,6 +3843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1495709223}
   - component: {fileID: 1495709224}
+  - component: {fileID: 1495709225}
   m_Layer: 0
   m_Name: street_road_ped_crossing (1)
   m_TagString: Untagged
@@ -3676,6 +3915,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1495709225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495709222}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.53526, y: 29.570007, z: 0.20000005}
+  m_Center: {x: 0, y: -14.785004, z: 0}
 --- !u!1 &1586128846 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8547074628116751437, guid: d989a0bbfe3be194a8983826b60ae0af,
@@ -4430,6 +4682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945283412}
   - component: {fileID: 1945283413}
+  - component: {fileID: 1945283414}
   m_Layer: 0
   m_Name: sidewalk (3)
   m_TagString: Untagged
@@ -4501,6 +4754,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &1945283414
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945283411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52551, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0, y: 16.200005, z: 0}
 --- !u!1 &1980741575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,6 +4849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2005032560}
   - component: {fileID: 2005032561}
+  - component: {fileID: 2005032562}
   m_Layer: 0
   m_Name: street (1)
   m_TagString: Untagged
@@ -4654,6 +4921,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &2005032562
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005032559}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52552, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0, y: -16.200005, z: 0}
 --- !u!1 &2052224000
 GameObject:
   m_ObjectHideFlags: 0
@@ -4664,6 +4944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2052224001}
   - component: {fileID: 2052224002}
+  - component: {fileID: 2052224003}
   m_Layer: 0
   m_Name: sidewalk (5)
   m_TagString: Untagged
@@ -4735,6 +5016,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &2052224003
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052224000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90.52551, y: 32.40001, z: 0.20000005}
+  m_Center: {x: 0, y: 16.200005, z: 0}
 --- !u!1 &2052721605
 GameObject:
   m_ObjectHideFlags: 0
