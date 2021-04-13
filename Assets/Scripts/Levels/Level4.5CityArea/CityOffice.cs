@@ -26,7 +26,7 @@ public class CityOffice : MonoBehaviour
             if (GameManager.instance.firstFriendMeeting == 3){
                 friend.SetActive(true);
                 friend.GetComponent<RunDialogue>().dialogueToRun = "cityoffice_friend_intro";
-            } else if (GameManager.instance.officePuzzle == 1){
+            } else if (GameManager.instance.officeDeskPuzzle == 1){
                 friend.SetActive(true);
                 friend.GetComponent<RunDialogue>().dialogueToRun = "goingToApartment1";
                 friend.transform.position = Office.transform.position + new Vector3(0, 0, -20);

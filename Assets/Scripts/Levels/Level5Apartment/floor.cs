@@ -57,23 +57,30 @@ public class floor : MonoBehaviour//, IDropHandler
         if (activeObj == null){
             string Object = parameters[0];
             activeObj = GameObject.Find(Object);
+            Debug.Log(activeObj);
 
             string temp = Object + "PlaceHere";
-            Debug.Log(temp);
 
             activeObjPlaceHere = GameObject.Find(Object + "PlaceHere"); 
+            Debug.Log(activeObjPlaceHere);
 
             activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+            Debug.Log("color done");
             activeObj.GetComponent<RunDialogue>().runDialogue = false;
-            activeObj.transform.Find("collider").gameObject.SetActive(false);
+            Debug.Log("run dialo false");
+            activeObj.transform.GetChild(0).gameObject.SetActive(false);
+            Debug.Log("collider disabled");
 
             player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+            Debug.Log("player disabled");
 
             activeObj.GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
+            Debug.Log("dia cursor disabled");
 
             puzzle.dic[activeObj.name] = false;
 
             activeObjPlaceHere.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.2f);
+            Debug.Log("sihlouttee working");
         }
             
     }

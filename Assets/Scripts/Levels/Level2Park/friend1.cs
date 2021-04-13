@@ -21,7 +21,7 @@ public class friend1 : MonoBehaviour
     private Vector3 target;
 
     void Start(){
-        if (GameManager.instance.officePuzzle == 1){
+        if (GameManager.instance.officeDeskPuzzle == 1){
             if (GameManager.instance.walkedToApartment == 0){
                 target = DestinationAfterOffice1.transform.position;
             } else if (GameManager.instance.walkedToApartment == 1){

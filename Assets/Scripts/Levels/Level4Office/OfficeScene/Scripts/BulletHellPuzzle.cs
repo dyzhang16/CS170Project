@@ -30,7 +30,7 @@ public class BulletHellPuzzle : MonoBehaviour
         }
         if (destroyed == 5)
         {
-            GameManager.instance.officePuzzle = 1;
+            GameManager.instance.officeDeskPuzzle = 1;
             Debug.Log("Destroyed 5 Viruses");
             DialogueRunner.StartDialogue(dialogueToRun);
         }
