@@ -9,14 +9,15 @@ public class OfficeHub : MonoBehaviour
     public VariableStorageBehaviour CustomVariableStorage;
     public GameObject player;
     public GameObject exitToCityOffice;
+    public GameObject desk;
 
     void Awake()
     {
         if (GameManager.instance != null)
         {
-            if (GameManager.instance.previousScene == "StreetIntro")
+            if (GameManager.instance.previousScene == "OfficeScene")
             {
-                player.transform.position = exitToCityOffice.transform.position + new Vector3(12, 0, 0);
+                player.transform.position = desk.transform.position + new Vector3(0, 0, -10);
             }
             if (GameManager.instance.followFriendinOffice == 1)
             {
@@ -34,6 +35,8 @@ public class OfficeHub : MonoBehaviour
                 CustomVariableStorage.SetValue("$TookMDocument", 1);
                 CustomVariableStorage.SetValue("$TookEDocument", 1);
                 CustomVariableStorage.SetValue("$TookMaxDocument", 1);
+            } else if (GameManager.instance.officeDeskPuzzle == 1){
+                exitToCityOffice.GetComponent<RunDialogue>().dialogueToRun = "LeavingOfficeHub";
             }
         }
     }

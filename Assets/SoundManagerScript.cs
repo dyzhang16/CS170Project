@@ -32,7 +32,12 @@ public class SoundManagerScript : MonoBehaviour {
         string sceneName = currentScene.name;
         Debug.Log(sceneName);
 
-        //moved to start in an attempt to fix webgl bugs
+
+        audioSrc = GetComponent<AudioSource>();
+    }
+    void Awake()
+    {
+        //moved to awake in an attempt to fix webgl bugs
         pickFlower = Resources.Load<AudioClip>("pickup_flower_2");
         flowerSuccess = Resources.Load<AudioClip>("flower_success");
         wallBump = Resources.Load<AudioClip>("wallbump_1");
@@ -47,13 +52,6 @@ public class SoundManagerScript : MonoBehaviour {
         placeFlower = Resources.Load<AudioClip>("place_flower");
         dialogueSound = Resources.Load<AudioClip>("dialogue_sound");
         // click = Resources.Load<AudioClip>("button_click");
-
-
-        audioSrc = GetComponent<AudioSource>();
-    }
-    void Awake()
-    {
-
     }
 
     // Update is called once per frame

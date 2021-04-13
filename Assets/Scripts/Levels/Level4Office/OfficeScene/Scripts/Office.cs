@@ -17,7 +17,7 @@ public class Office : MonoBehaviour
     {
         if (GameManager.instance != null)
         {
-            if (GameManager.instance.officePuzzle == 1)
+            if (GameManager.instance.officeDeskPuzzle == 1)
             {
                 //completed gravestone dialogue and completed puzzle
                 //Debug.Log(CustomVariableStorage.GetValue("$checkpoint_1"));

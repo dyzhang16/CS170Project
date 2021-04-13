@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
     public int followFriendinOffice = 0;
     //office puzzle
     public int officePuzzle = 0;
+    //office desk puzzle
+    public int officeDeskPuzzle = 0;
     //walked to apartment
     //1 = moved from cityoffice to city arcade
     //2 = moved from cityarcade exit to apartment

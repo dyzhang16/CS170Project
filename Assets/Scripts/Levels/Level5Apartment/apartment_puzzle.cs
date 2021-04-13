@@ -13,6 +13,7 @@ public class apartment_puzzle : MonoBehaviour
     public GameObject puzzleItems;
     public GameObject otherItems;
     public GameObject timeCapsule;
+    public GameObject Bookshelf;
 
     public GameObject laptop;
 
