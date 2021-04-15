@@ -9,6 +9,8 @@ public class DragTutorial : MonoBehaviour
     public DialogueRunner dialogueRunner;
     public bool visit = false;
 
+    public GameObject wrap;
+
     //this is for the tutorial dialogue to teach the player how to drag flowers onto the inventory
     [YarnCommand("Drag")]
     public void DragDialogue(){
@@ -19,5 +21,10 @@ public class DragTutorial : MonoBehaviour
                 visit = true;
             }
         }
+    }
+
+    [YarnCommand("Activate")]
+    public void Activate(){
+        wrap.SetActive(true);
     }
 }
