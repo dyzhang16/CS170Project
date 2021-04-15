@@ -9,6 +9,8 @@ public class CranePrize : MonoBehaviour
 
 	public bool isFalling = false;
 
+	private float fallSpeed = 250f; // used for falling + rotation
+
 	void Awake()
 	{
 		if (prizeItem)
@@ -31,10 +33,10 @@ public class CranePrize : MonoBehaviour
 		while (transform.localPosition.y > BOTTOM_LIMIT && isFalling)
 		{
 			Vector3 prizeTransform = transform.localPosition;
-			prizeTransform.y -= 1;
+			prizeTransform.y -= fallSpeed * Time.deltaTime;
 			prizeTransform.y = Mathf.Clamp(prizeTransform.y, BOTTOM_LIMIT, ClawMovement.TOP_LIMIT);
 			transform.localPosition = prizeTransform;
-			transform.Rotate(0, 0, -1);
+			transform.Rotate(0, 0, -1 * fallSpeed * Time.deltaTime);
 			yield return null;
 		}
 		isFalling = false;

@@ -19,14 +19,14 @@ public class ClawMovement : MonoBehaviour
 	// Willpower stuff
 	public Button willpowerButton;
 	public Slider willpowerBar;
-	private float willpowerDecay = 0.003f; // per frame decay
-	private readonly float willpowerDecayReduction = 0.35f; // reduce the decay by this percentage when willpower check fails
+	private float willpowerDecay = 0.6f; // rate of decay
+	private readonly float willpowerDecayReduction = 0.2f; // reduce the decay by this percentage when willpower check fails
 	private readonly float willpowerIncrease = 0.05f; // when button is clicked
 
 	// speed in which claw moves
-	public readonly float clawSpeed = 1;
-	public readonly float dropSpeed = 1;
-	public readonly float riseSpeed = 0.6f;
+	public readonly float clawSpeed = 300f;
+	public readonly float dropSpeed = 300f;
+	public readonly float riseSpeed = 150f;
 
 	// positional limits (local position) of claw machine
 	public static readonly float RIGHT_LIMIT = 420;
@@ -124,7 +124,7 @@ public class ClawMovement : MonoBehaviour
 		while (claw.transform.localPosition.y > BOTTOM_LIMIT)
 		{
 			Vector3 clawTransform = claw.transform.localPosition;
-			clawTransform.y -= dropSpeed;
+			clawTransform.y -= dropSpeed * Time.deltaTime;
 			clawTransform.y = Mathf.Clamp(clawTransform.y, BOTTOM_LIMIT, TOP_LIMIT);
 			claw.transform.localPosition = clawTransform;
 			yield return null;
@@ -144,8 +144,8 @@ public class ClawMovement : MonoBehaviour
 		while (claw.transform.localPosition.y < TOP_LIMIT)
 		{
 			Vector3 clawTransform = claw.transform.localPosition;
-			// riseSpeed is 10% until no longer willpowering
-			clawTransform.y += riseSpeed * (isWillpowering ? 0.5f : 1);
+			// riseSpeed is reduced until no longer willpowering
+			clawTransform.y += riseSpeed * (isWillpowering ? 0.5f : 1) * Time.deltaTime;
 			clawTransform.y = Mathf.Clamp(clawTransform.y, BOTTOM_LIMIT, TOP_LIMIT);
 			claw.transform.localPosition = clawTransform;
 			// reduce willpower
@@ -169,7 +169,7 @@ public class ClawMovement : MonoBehaviour
 		while (claw.transform.localPosition.x < RIGHT_LIMIT)
 		{
 			Vector3 clawTransform = claw.transform.localPosition;
-			clawTransform.x += clawSpeed;
+			clawTransform.x += clawSpeed * Time.deltaTime;
 			clawTransform.y = Mathf.Clamp(clawTransform.y, LEFT_LIMIT, RIGHT_LIMIT);
 			claw.transform.localPosition = clawTransform;
 			// reduce willpower
@@ -197,7 +197,7 @@ public class ClawMovement : MonoBehaviour
 			// copy the transform of the claw
 			Vector3 clawPos = claw.transform.localPosition;
 			// change the copied transform's x value (clamped to a specific limit)
-			clawPos.x += clawSpeed * joystickSlider.value;
+			clawPos.x += clawSpeed * joystickSlider.value * Time.deltaTime;
 			clawPos.x = Mathf.Clamp(clawPos.x, LEFT_LIMIT, RIGHT_LIMIT);
 			// update the transform of the claw using the modified copy
 			claw.transform.localPosition = clawPos;
@@ -284,7 +284,7 @@ public class ClawMovement : MonoBehaviour
 	{
 		if (isWillpowering && willpowerBar.value > willpowerBar.minValue)
 		{
-			willpowerBar.value -= willpowerDecay;
+			willpowerBar.value -= willpowerDecay * Time.deltaTime;
 		}
 		// Willpower failed!
 		if (willpowerBar.value == 0)
