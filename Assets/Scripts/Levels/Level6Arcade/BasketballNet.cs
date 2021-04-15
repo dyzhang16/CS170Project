@@ -11,7 +11,7 @@ public class BasketballNet : MonoBehaviour
 
 	// Fields
 	private Vector3 defaultPosition;
-	private float moveSpeed = 0.065f;
+	private float moveSpeed = 12f;
 
 	void Start()
 	{
@@ -35,7 +35,7 @@ public class BasketballNet : MonoBehaviour
 			// transform.localPosition = new Vector3(xPos, transform.localPosition.y, transform.localPosition.z);
 			
 			// Move localPosition using MoveTowards (so there is a max speed it will move)
-			transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(xPos, transform.localPosition.y, transform.localPosition.z), moveSpeed);
+			transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(xPos, transform.localPosition.y, transform.localPosition.z), moveSpeed * Time.deltaTime);
 		}
 		else if (transform.localPosition != defaultPosition && !basketball.currentlyThrown)
 		{
