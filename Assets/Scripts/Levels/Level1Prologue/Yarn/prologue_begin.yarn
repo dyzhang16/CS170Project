@@ -17,13 +17,13 @@
 <<else>>
 
 	//if the Player examines the Tombstone at this time-
-<<ChangeSpeaker Grave>>
-	
-	(In the top left corner, click the GEAR to open the menu. Click the GHOST or use TAB to open your inventory.)
-
 <<ChangeSpeaker Player>>
 
 	I swear it said something different before. And this isn’t my name either!
+
+<<ChangeSpeaker Grave>>
+	
+	(In the top left corner, click the GEAR to open the menu. Click the GHOST or use TAB to open your inventory.)
 
 <<endif>>
 ===
@@ -74,7 +74,7 @@ title: prologue_doneExplore
 
 	Yes. If I can find some <b>flowers</b> to decorate with, my grave will look a lot more lively.
 
-	<<Show Grave>>
+<<Activate Grave>>
 
 <<else>>
 <<Show Grave>>

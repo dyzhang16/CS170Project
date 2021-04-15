@@ -16,6 +16,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
     bool flowerASet, flowerBSet, flowerCSet, flowerDSet = false;
 
     public GameObject bouqet;
+    public GameObject wrap;
 
     public Sprite flowerAComplete, flowerBComplete, flowerCComplete, flowerDComplete;
     
@@ -83,6 +84,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
             CustomVariableStorage.SetValue("$puzzle", 1);
             //exitButton.GetComponent<HidePuzzleAndDialogue>().puzzleFinished = true;
             bouqet.SetActive(true);
+            wrap.SetActive(false);
             GameManager.instance.flowerPuzzle = 1;
             exitButton.GetComponent<Button>().interactable = false;
             StartCoroutine(WaitCoroutine(4));
