@@ -20,6 +20,7 @@ public class SceneSkip : MonoBehaviour
         manager.addedCoffeeMachineItem = 0;
         manager.followFriendinOffice = 0;
         manager.officePuzzle = 0;
+        manager.officeDeskPuzzle = 0;
         manager.firstApartment = 0;
         manager.cleanedRoom = 0;
         manager.timeCapsule = 0;
@@ -35,8 +36,8 @@ public class SceneSkip : MonoBehaviour
         manager.previousScene = "StreetIntro";
 
         manager.flowerPuzzle = 1;
+        manager.firstFriendMeeting = 1;
         
-        manager.firstFriendMeeting = 0;
         manager.hasReceipt = 0;
         manager.gaveDrink = 0;
         manager.visitedAfterCoffee = 0;
@@ -45,6 +46,7 @@ public class SceneSkip : MonoBehaviour
         manager.addedCoffeeMachineItem = 0;
         manager.followFriendinOffice = 0;
         manager.officePuzzle = 0;
+        manager.officeDeskPuzzle = 0;
         manager.firstApartment = 0;
         manager.cleanedRoom = 0;
         manager.timeCapsule = 0;
@@ -70,6 +72,7 @@ public class SceneSkip : MonoBehaviour
        
         manager.followFriendinOffice = 0;
         manager.officePuzzle = 0;
+        manager.officeDeskPuzzle = 0;
         manager.firstApartment = 0;
         manager.cleanedRoom = 0;
         manager.timeCapsule = 0;
@@ -94,6 +97,7 @@ public class SceneSkip : MonoBehaviour
         manager.addedCoffeeMachineItem = 1;
         manager.followFriendinOffice = 1;
         manager.officePuzzle = 1;
+        manager.officeDeskPuzzle = 1;
         manager.firstApartment = 1;
 
         manager.cleanedRoom = 0;
@@ -119,6 +123,7 @@ public class SceneSkip : MonoBehaviour
         manager.addedCoffeeMachineItem = 1;
         manager.followFriendinOffice = 1;
         manager.officePuzzle = 1;
+        manager.officeDeskPuzzle = 1;
         manager.firstApartment = 1;
         manager.cleanedRoom = 1;
         manager.timeCapsule = 1;

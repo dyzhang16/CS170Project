@@ -17,4 +17,13 @@ public class RunDialogueMC : MonoBehaviour
             Debug.Log("running" + dialogueToRun);
         }
     }
+
+    //hover
+    void OnMouseEnter(){
+        Cursor.SetCursor(GameManager.instance.cursorHoverTexture, Vector2.zero, CursorMode.Auto);
+    }
+
+    void OnMouseExit(){
+        Cursor.SetCursor(GameManager.instance.cursorTexture, Vector2.zero, CursorMode.Auto);
+    }
 }
