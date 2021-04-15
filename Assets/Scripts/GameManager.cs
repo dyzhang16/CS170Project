@@ -69,12 +69,18 @@ public class GameManager : MonoBehaviour
     public int arcadeNoCraneDirs = 0;
     public int arcadeNoDanceDirs = 0;
 
+    //cursor texture
+    public Texture2D cursorTexture;
+    public Texture2D cursorHoverTexture;
+
     void Awake(){
         if (instance != null && instance != this){
             Destroy(this.gameObject);
         } else {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+            //set the cursor
+            Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
         }
     }
 
