@@ -32,7 +32,7 @@ public class SoundManagerScript : MonoBehaviour {
         string sceneName = currentScene.name;
         Debug.Log(sceneName);
 
-
+        
         audioSrc = GetComponent<AudioSource>();
     }
     void Awake()

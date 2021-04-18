@@ -16,7 +16,7 @@ public class friend1 : MonoBehaviour
     public GameObject DestinationAfterOffice1;
     public GameObject DestinationAfterOffice2;
 
-    public BoxCollider collider;
+    public BoxCollider col;
 
     private Vector3 target;
 
@@ -57,7 +57,7 @@ public class friend1 : MonoBehaviour
     [YarnCommand("MoveToOffice")]
     public void MoveToOffice(){
         isWalking = true;
-        collider.isTrigger = true;
+        col.isTrigger = true;
         GameManager.instance.visitedAfterCoffee = 1;
         GameManager.instance.firstFriendMeeting = 2;
     }
@@ -90,7 +90,7 @@ public class friend1 : MonoBehaviour
     [YarnCommand("MoveToOffice2")]
     public void MoveToOffice2(){
         isWalking = true;
-        collider.isTrigger = true;
+        col.isTrigger = true;
         GameManager.instance.firstFriendMeeting = 3;
     }
 
@@ -98,28 +98,28 @@ public class friend1 : MonoBehaviour
     [YarnCommand("MoveToOffice3")]
     public void MoveToOffice3(){
         isWalking = true;
-        collider.isTrigger = true;
+        col.isTrigger = true;
         GameManager.instance.firstFriendMeeting = 4;
     }
 
     [YarnCommand("MoveToApartment1")]
     public void moveToApartment1(){
         isWalking = true;
-        collider.isTrigger = true;
+        col.isTrigger = true;
         GameManager.instance.walkedToApartment = 1;
     }
 
     [YarnCommand("MoveToApartment2")]
     public void moveToApartment2(){
         isWalking = true;
-        collider.isTrigger = true;
+        col.isTrigger = true;
         GameManager.instance.walkedToApartment = 2;
     }
 
     [YarnCommand("moveToArcade")]
     public void moveToArcade(){
         isWalking = true;
-        collider.isTrigger = true;
+        col.isTrigger = true;
         GameManager.instance.walkToArcade = 1;
     }
 

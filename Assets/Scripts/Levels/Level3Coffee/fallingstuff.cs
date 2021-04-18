@@ -18,29 +18,22 @@ public class fallingstuff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0,0,-80*Time.deltaTime);
+        //transform.Rotate(0, 0, -80 * Time.deltaTime);
 
         Vector3 id = transform.position;
-        id.y -=1;
+        id.y -= 3;
         transform.position = id;
-
-        RectTransform c = coffeeCup.transform as RectTransform;
-
-        if (timerIsRunning)             //will execute function once
+    }
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        //Check for a match with the specified name on any GameObject that collides with your GameObject
+        if (collider.gameObject.tag == "Coffee")
         {
-            if (timeRemaining > 0)      //while running
-            {
-                Debug.Log("Time Remaining: " + timeRemaining);
-                timeRemaining -= Time.deltaTime;    //gets time in seconds
-            }
-            else
-            {
-                Debug.Log("Time has run out!");
-                timeRemaining = 0;                  //reset variables to prevent function from executing repeatedly
-                timerIsRunning = false;
-                Destroy(gameObject);
-                SoundManagerScript.PlaySound("plop");
-            }
+            //If the GameObject's name matches the one you suggest, output this message in the console
+            gameObject.SetActive(false);
+            Debug.Log("Hit Lid of Coffee");
+            SoundManagerScript.PlaySound("plop");
         }
     }
 }
+

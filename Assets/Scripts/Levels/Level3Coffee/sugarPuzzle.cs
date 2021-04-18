@@ -1,52 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
 
 public class sugarPuzzle : MonoBehaviour, IDropHandler
 {
-    public GameObject sugarPuzzlePanel, coffeeUI, sugarUI, sugar;
-    public VariableStorageBehaviour CustomVariableStorage;
-    public int sugarAdded = 0;
-    public bool sweetShaking , cupThere;
-    public Item droppedItem;
+    public GameObject sugarPuzzlePanel, coffeeShadow, coffee, sugarUI , sugar;
+    public Button sugarButton;
+    private int sugarAdded;
+    public bool sugarShaking , cupThere;
+    [HideInInspector]public Item droppedItem;
 
-    private UnityEngine.UI.Button exitButton;
-    private Quaternion originalRotation;
     [YarnCommand("ResetSugar")]
-
     public void Reset()
     {
         cupThere = false;
-        sweetShaking = false;
-        sugarAdded = 0;
-        sugarUI.transform.rotation = originalRotation;
-        coffeeUI.SetActive(false);
+        sugarShaking = false;
+        coffeeShadow.SetActive(true);
+        coffee.SetActive(false);
+        cupThere = false;
+        droppedItem = null;
     }
-    public void Awake()
-    {
-        originalRotation = sugarUI.transform.rotation;
-    }
-
     public void OnDrop(PointerEventData eventData)
     {
         droppedItem = Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()];
         if (droppedItem)
         {
-            coffeeUI.GetComponent<CoffeeAssignment>().droppedCoffee = droppedItem;
+            coffee.GetComponent<CoffeeAssignment>().droppedCoffee = droppedItem;
         }
+
         if (sugarPuzzlePanel.GetComponent<CanvasGroup>().alpha == 1)
         {
             if (droppedItem is Drink)
             {
                 var boa = droppedItem as Drink;
-                Debug.Log("This is the Drink: " + boa);
                 if (droppedItem.itemName == "Random Coffee")
                 {
                     sugarAdded = boa.Sugar;
                     cupThere = true;
-                    coffeeUI.SetActive(true);
+                    coffeeShadow.SetActive(false);
+                    coffee.SetActive(true);
                     Inventory.instance.RemoveItem(droppedItem);
                     Inventory.instance.UpdateSlotUI();
                 }
@@ -57,27 +52,10 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
     {
         if (cupThere)
         {
-            if (!sweetShaking)
+            if (!sugarShaking)
             {
-                sweetShaking = !sweetShaking;
-                sugarUI.transform.Rotate(0, 0, -35);
-                ++sugarAdded;
-                setSugar();
-                Debug.Log("You've added: " + sugarAdded);
-                Vector3 pos = new Vector3(sugarUI.transform.position.x + 125, sugarUI.transform.position.y, sugarUI.transform.position.z);
-                GameObject sugs = Instantiate(sugar, pos, sugarUI.transform.localRotation, transform);
-                sugs.GetComponent<fallingstuff>().timeRemaining = 1f;
-                sugs.GetComponent<fallingstuff>().timerIsRunning = true;
+                StartCoroutine(ShakingSugar(2));
             }
-            else
-            {
-                sugarUI.transform.Rotate(0, 0, 35);
-                sweetShaking = !sweetShaking;
-            }
-        }
-        else 
-        {
-            Debug.Log("Can't Drop Sugar");
         }
     }
     public void setSugar()
@@ -89,5 +67,20 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
             Debug.Log("This coffee contains: " + boa.Sugar + " amount of sugar.");
             Debug.Log("This coffee contains: " + boa.Cream + " amount of cream.");
         }
+    }
+    IEnumerator ShakingSugar(float waitTime)
+    {
+        sugarShaking = !sugarShaking;
+        sugarButton.enabled = false;
+        ++sugarAdded;
+        setSugar();
+        Debug.Log("You've added " + sugarAdded);
+        Vector3 pos = new Vector3(coffee.transform.position.x, coffee.transform.position.y + 500, coffee.transform.position.z);
+        GameObject sugars = Instantiate(sugar, pos, coffee.transform.localRotation, transform);
+        sugars.transform.SetAsFirstSibling();
+        yield return new WaitForSeconds(waitTime);
+        sugarShaking = !sugarShaking;
+        sugarButton.enabled = true;
+        Debug.Log("Finished Couroutine");
     }
 }
