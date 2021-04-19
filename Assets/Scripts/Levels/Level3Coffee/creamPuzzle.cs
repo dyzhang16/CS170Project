@@ -54,7 +54,7 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         {
             if (!creamShaking)
             {
-                StartCoroutine(ShakingCream(2));
+                StartCoroutine(ShakingCream(1.5f));
             }
         }
     }
@@ -84,6 +84,5 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         creamUI.transform.Rotate(0, 0, -35);
         creamButton.enabled = true;
         Debug.Log("Finished Couroutine"); 
-
     }
 }

@@ -8,14 +8,21 @@ using Yarn.Unity;
 public class sugarPuzzle : MonoBehaviour, IDropHandler
 {
     public GameObject sugarPuzzlePanel, coffeeShadow, coffee, sugarUI , sugar;
+    public Sprite pushedSugar;
     public Button sugarButton;
     private int sugarAdded;
     public bool sugarShaking , cupThere;
     [HideInInspector]public Item droppedItem;
+    private Sprite tempSprite;
+    void Start()
+    {
+        tempSprite = sugarUI.GetComponent<Image>().sprite;
+    }
 
     [YarnCommand("ResetSugar")]
     public void Reset()
     {
+        sugarUI.GetComponent<Image>().sprite = tempSprite;
         cupThere = false;
         sugarShaking = false;
         coffeeShadow.SetActive(true);
@@ -54,7 +61,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
         {
             if (!sugarShaking)
             {
-                StartCoroutine(ShakingSugar(2));
+                StartCoroutine(ShakingSugar(1.5f));
             }
         }
     }
@@ -72,6 +79,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
     {
         sugarShaking = !sugarShaking;
         sugarButton.enabled = false;
+        sugarUI.GetComponent<Image>().sprite = pushedSugar;
         ++sugarAdded;
         setSugar();
         Debug.Log("You've added " + sugarAdded);
@@ -80,6 +88,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
         sugars.transform.SetAsFirstSibling();
         yield return new WaitForSeconds(waitTime);
         sugarShaking = !sugarShaking;
+        sugarUI.GetComponent<Image>().sprite = tempSprite;
         sugarButton.enabled = true;
         Debug.Log("Finished Couroutine");
     }
