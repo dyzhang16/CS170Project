@@ -6,9 +6,11 @@ tags:
 <<Focus FIRST>>
 	Wow that was much more exciting!
 <<Focus SECOND>>
-	Let's work on the repairing the computer after. 
+	Let's go back to my apartment. 
 <<set $DocumentsFinished to 1>>
-<<stop>>
+<<Focus FIRST>>
+	Alright.
+<<ChangeScene BlackScreen ApartmentScene>>
 ===
 title: BoringDocuments
 tags:
@@ -23,21 +25,4 @@ tags:
 <<Show Documents>>
 <<ShowTimer Documents>>
 <<stop>>
-===
-title: CleanedVirus
-tags:
----
-<<ChangeScene BlackScreen OfficeScene>>
-===
-title: GoHome
-tags:
----
-<<ChangeSpeaker Player Friend>>
-<<Focus FIRST>>
-	Hooray we killed off the viruses!
-<<Focus SECOND>>
-	Time for Netflix and chill at my place!
-<<Focus FIRST>>
-	Alright.
-<<ChangeScene BlackScreen ApartmentScene>>
 ===
