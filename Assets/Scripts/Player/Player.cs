@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour               //https://stackoverflow.com/questions/46760846/how-to-move-2d-object-with-wasd-in-unity
 {
@@ -96,15 +97,20 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     void Mouse()
     {
-        if (!invActive) {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if(Physics.Raycast(ray, out hit))
-            {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if(Physics.Raycast(ray, out hit))
+        {
+            if (!EventSystem.current.IsPointerOverGameObject()){
                 rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed/2 * Time.fixedDeltaTime));
 
                 moving = true;
+
+                if (invActive){
+                    openInventory();
+                }
             }
+            
         }
         
     }
