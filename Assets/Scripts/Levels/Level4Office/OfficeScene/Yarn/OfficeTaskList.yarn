@@ -47,3 +47,13 @@ tags:
 <<Destroy Pen>>
 <<stop>>
 ===
+title: TrashCan
+tags:
+---
+<<ChangeSpeaker Player>>
+    You want to play some office basketball?
+    -> Yes.
+        <<Show BasketballCamRenderTexture>>
+    -> No.
+    <<stop>>
+===

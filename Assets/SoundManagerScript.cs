@@ -120,7 +120,14 @@ public class SoundManagerScript : MonoBehaviour {
 
     public void diaSoundStart()
     {
-        audioSrc.PlayOneShot(dialogueSound, 0.1f);
+        try
+        {
+            audioSrc.PlayOneShot(dialogueSound, 0.1f);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
        
     }
 

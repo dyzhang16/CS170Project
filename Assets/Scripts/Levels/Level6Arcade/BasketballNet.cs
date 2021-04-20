@@ -39,7 +39,7 @@ public class BasketballNet : MonoBehaviour
 		}
 		else if (transform.localPosition != defaultPosition && !basketball.currentlyThrown)
 		{
-			transform.localPosition = Vector3.MoveTowards(transform.localPosition, defaultPosition, moveSpeed);
+			transform.localPosition = Vector3.MoveTowards(transform.localPosition, defaultPosition, moveSpeed * Time.deltaTime);
 		}
 
 		// modify the net's side colliders to be triggers when the ball is rising and colliders when the ball is falling
