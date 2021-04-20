@@ -17,12 +17,12 @@ public class RunDialogueUI : MonoBehaviour , IPointerDownHandler
         }
     }
 
-    //hover
-    void OnPointerEnter(){
-        Cursor.SetCursor(GameManager.instance.cursorHoverTexture, Vector2.zero, CursorMode.Auto);
-    }
+    // //hover
+    // void OnPointerEnter(){
+    //     Cursor.SetCursor(GameManager.instance.cursorHoverTexture, Vector2.zero, CursorMode.Auto);
+    // }
 
-    void OnPointerExit(){
-        Cursor.SetCursor(GameManager.instance.cursorTexture, Vector2.zero, CursorMode.Auto);
-    }
+    // void OnPointerExit(){
+    //     Cursor.SetCursor(GameManager.instance.cursorTexture, Vector2.zero, CursorMode.Auto);
+    // }
 }
