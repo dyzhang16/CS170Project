@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Yarn.Unity;
 
 public class Player : MonoBehaviour               //https://stackoverflow.com/questions/46760846/how-to-move-2d-object-with-wasd-in-unity
 {
@@ -82,6 +83,17 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             if (allowInv){
                 if (Input.GetKeyDown(KeyCode.Tab)) {
                     openInventory();
+                }
+            }
+
+            //select the continue button upon pressing space
+            if(Input.GetKeyDown(KeyCode.Space)){
+                if (GameObject.Find("DiaSystem Prefab 1/DialogueRunner") != null){
+                    GameObject dia = GameObject.Find("DiaSystem Prefab 1/DialogueRunner");
+                    DialogueRunner diaRunner = dia.GetComponent<DialogueRunner>();
+                    if (diaRunner.IsDialogueRunning){
+                        GameObject.Find("DiaSystem Prefab 1/EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("DiaSystem Prefab 1/DialogueCanvas/DialogueContainer/ContinueButton"));
+                    }
                 }
             }
         }
