@@ -51,7 +51,7 @@ public class DanceGameplay : MonoBehaviour
 	public int totalMoves = 0; // incremented during move list generation
 
 	// initialization
-	void Awake()
+	void Start()
 	{
 		// At start, treat it as if the game ended
 		EndCurrentGame();
@@ -121,7 +121,7 @@ public class DanceGameplay : MonoBehaviour
 		if (totalMoves > 0)
 		{
 			int ticketCount = Mathf.FloorToInt( (((float)numTotalCorrectMoves) / totalMoves) * 10f);
-			GetComponent<ArcadeMachine>().AddTickets(ticketCount);
+			// GetComponent<ArcadeMachine>().AddTickets(ticketCount); // deprecated
 		}
 		// Back end reset
 		DisablePlayerControls();
