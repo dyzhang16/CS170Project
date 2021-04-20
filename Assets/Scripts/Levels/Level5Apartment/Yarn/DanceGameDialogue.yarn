@@ -1,0 +1,44 @@
+﻿title: PromptDance
+tags:
+---
+<<ChangeSpeaker Player>>
+Do you want to play the dancing game?
+-> Yes
+    <<Show DanceGamePuzzlePanel>>
+    <<set $playedDance to true>>
+    [[ShowDanceDirections]]
+-> No
+    <<stop>>
+===
+title: ShowDanceDirections
+tags:
+---
+<<ChangeSpeaker Player>>
+<<if visited("DanceDirections") is true>>
+    <<if $doNotShowDanceDirs is false>>
+        Do you want to read the directions again?
+        -> Yes.
+            [[DanceDirections]]
+        -> No.
+            <<set $doNotShowDanceDirs to true>>
+            <<ChangeVariable GameManager arcadeNoDanceDirs 1>>
+    <<endif>>
+<<else>>
+    [[DanceDirections]]
+<<endif>>
+===
+title: DanceDirections
+tags:
+---
+<<ChangeSpeaker Player>>
+<<BlockMachine DanceGamePuzzlePanel true>>
+<<ChangeVariable GameManager arcadeFirstDance 1>>
+Here are the directions...
+
+"Each round, you will see arrows pop up on the left."
+
+"Press the directional buttons on the right matching what you saw."
+
+"The game gets progressively more difficult the better you do. Good luck!"
+<<BlockMachine DanceGamePuzzlePanel false>>
+===
