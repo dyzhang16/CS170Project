@@ -61,7 +61,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
         {
             if (!sugarShaking)
             {
-                StartCoroutine(ShakingSugar(1.5f));
+                StartCoroutine(ShakingSugar(0.75f));
             }
         }
     }
@@ -83,7 +83,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
         ++sugarAdded;
         setSugar();
         Debug.Log("You've added " + sugarAdded);
-        Vector3 pos = new Vector3(coffee.transform.position.x, coffee.transform.position.y + 500, coffee.transform.position.z);
+        Vector3 pos = new Vector3(coffee.transform.position.x, coffee.transform.position.y + 400, coffee.transform.position.z);
         GameObject sugars = Instantiate(sugar, pos, coffee.transform.localRotation, transform);
         sugars.transform.SetAsFirstSibling();
         yield return new WaitForSeconds(waitTime);

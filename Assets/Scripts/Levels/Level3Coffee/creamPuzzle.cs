@@ -54,7 +54,7 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         {
             if (!creamShaking)
             {
-                StartCoroutine(ShakingCream(1.5f));
+                StartCoroutine(ShakingCream(0.75f));
             }
         }
     }
@@ -76,8 +76,8 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         ++creamAdded;
         setCream();
         Debug.Log("You've added " + creamAdded);
-        Vector3 pos = new Vector3(creamUI.transform.position.x - 250, creamUI.transform.position.y, creamUI.transform.position.z);
-        GameObject creams = Instantiate(cream, pos, creamUI.transform.localRotation, transform);
+        Vector3 pos = new Vector3(coffee.transform.position.x, coffee.transform.position.y + 400, coffee.transform.position.z);
+        GameObject creams = Instantiate(cream, pos, coffee.transform.localRotation, transform);
         creams.transform.SetAsFirstSibling();
         yield return new WaitForSeconds(waitTime);
         creamShaking = !creamShaking;
