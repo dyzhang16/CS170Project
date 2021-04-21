@@ -87,7 +87,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
             wrap.SetActive(false);
             GameManager.instance.flowerPuzzle = 1;
             exitButton.GetComponent<Button>().interactable = false;
-            StartCoroutine(WaitCoroutine(4));
+            StartCoroutine(WaitCoroutine(1f));
         }
     }
     IEnumerator WaitCoroutine(float waitTime)
