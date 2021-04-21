@@ -7,6 +7,12 @@ public class GateApproach : MonoBehaviour
 {
 	public DialogueRunner dialogueRunner;
 	public VariableStorageBehaviour customVariableStorage;
+
+	public GameObject Gate;
+	public GameObject Player;
+	public GameObject Destination;
+
+	private bool playerMoving = false;
 	
 	private void OnTriggerEnter(Collider other)
 	{
@@ -33,4 +39,24 @@ public class GateApproach : MonoBehaviour
 			}
 		}
 	}
+
+	void Update(){
+		if (playerMoving){
+			Player.transform.position = Vector3.MoveTowards(Player.transform.position, Destination.transform.position, 15*Time.deltaTime);
+
+			if (Vector3.Distance(Player.transform.position, Destination.transform.position) < 0.001f)
+			{
+				playerMoving = false;
+				Gate.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+			}
+		}
+	}
+
+	[YarnCommand("MovePlayer")]
+    public void MovePlayer(){
+		Gate.GetComponent<BoxCollider>().isTrigger = true;
+		Gate.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.25f);
+        playerMoving = true;
+		//play sound wooshing
+    }
 }
