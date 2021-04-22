@@ -63,21 +63,22 @@ public class RunDialogue : MonoBehaviour
             if (collider.gameObject.CompareTag("Player") && !runDialogue)
             {
                 runDialogue = true;
-                if (dialogueCursor != null){
-                    //set the dialogue cursor active and position
-                    dialogueCursor.SetActive(true);
+            }
 
-                    dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
-                    // dialogueCursor.transform.position = this.transform.position + 
-                    // new Vector3(0, this.GetComponent<SpriteRenderer>().bounds.size.y, this.GetComponent<SpriteRenderer>().bounds.size.y);
+            if (dialogueCursor != null && collider.gameObject.tag == "Player"){
+                //set the dialogue cursor active and position
+                dialogueCursor.SetActive(true);
 
-                    //set the scale of the dialogueCursor so that it doesn't cover the obj
-                    float size = this.GetComponent<SpriteRenderer>().bounds.size.x * this.GetComponent<SpriteRenderer>().bounds.size.z;
-                    if (size < 150){
-                        dialogueCursor.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
-                    } else {
-                        dialogueCursor.transform.localScale = new Vector3(1f, 1f, 1f);
-                    }
+                dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
+                // dialogueCursor.transform.position = this.transform.position + 
+                // new Vector3(0, this.GetComponent<SpriteRenderer>().bounds.size.y, this.GetComponent<SpriteRenderer>().bounds.size.y);
+
+                //set the scale of the dialogueCursor so that it doesn't cover the obj
+                float size = this.GetComponent<SpriteRenderer>().bounds.size.x * this.GetComponent<SpriteRenderer>().bounds.size.z;
+                if (size < 150){
+                    dialogueCursor.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+                } else {
+                    dialogueCursor.transform.localScale = new Vector3(1f, 1f, 1f);
                 }
             }
         }
@@ -124,24 +125,24 @@ public class RunDialogue : MonoBehaviour
             if (collision.gameObject.tag == "Player" && !runDialogue)
             {
                 runDialogue = true;
-
-                if (dialogueCursor != null){
-                    //set the dialogue cursor active and position
-                    dialogueCursor.SetActive(true);
-
-                    dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
-                    // dialogueCursor.transform.position = this.transform.position + 
-                    // new Vector3(0, this.GetComponent<SpriteRenderer>().bounds.size.y, this.GetComponent<SpriteRenderer>().bounds.size.y);
-
-                    //set the scale of the dialogueCursor so that it doesn't cover the obj
-                    float size = this.GetComponent<SpriteRenderer>().bounds.size.x * this.GetComponent<SpriteRenderer>().bounds.size.z;
-                    if (size < 150){
-                        dialogueCursor.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
-                    } else {
-                        dialogueCursor.transform.localScale = new Vector3(1f, 1f, 1f);
-                    }
-                }
             } 
+
+            if (dialogueCursor != null && collision.gameObject.tag == "Player"){
+                //set the dialogue cursor active and position
+                dialogueCursor.SetActive(true);
+
+                dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
+                // dialogueCursor.transform.position = this.transform.position + 
+                // new Vector3(0, this.GetComponent<SpriteRenderer>().bounds.size.y, this.GetComponent<SpriteRenderer>().bounds.size.y);
+
+                //set the scale of the dialogueCursor so that it doesn't cover the obj
+                float size = this.GetComponent<SpriteRenderer>().bounds.size.x * this.GetComponent<SpriteRenderer>().bounds.size.z;
+                if (size < 150){
+                    dialogueCursor.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+                } else {
+                    dialogueCursor.transform.localScale = new Vector3(1f, 1f, 1f);
+                }
+            }
         }
     }
 

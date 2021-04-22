@@ -32,9 +32,6 @@ public class CityArcade : MonoBehaviour
                 friend.GetComponent<RunDialogue>().dialogueToRun = "cityarcade_friend_intro";
             } else if (GameManager.instance.firstDateDia == 1){
                 friend.SetActive(true);
-                Arcade.GetComponent<RunDialogue>().dialogueToRun = "cityarcade_arcade";
-                apartment.GetComponent<RunDialogue>().dialogueToRun = "alreadyApartment";
-                friend.GetComponent<RunDialogue>().dialogueToRun = "friendWalkToArcade";
                 friend.transform.position = apartment.transform.position + new Vector3(0, 0, -20);
             } else if (GameManager.instance.walkedToApartment == 1) {
                 friend.SetActive(true);
