@@ -21,16 +21,18 @@ public class friend1 : MonoBehaviour
     private Vector3 target;
 
     void Start(){
-        if (GameManager.instance.officeDeskPuzzle == 1){
-            if (GameManager.instance.walkedToApartment == 0){
-                target = DestinationAfterOffice1.transform.position;
-            } else if (GameManager.instance.walkedToApartment == 1){
-                target = DestinationAfterOffice2.transform.position;
+        if (GameManager.instance != null){
+            if (GameManager.instance.officeDeskPuzzle == 1){
+                if (GameManager.instance.walkedToApartment == 0){
+                    target = DestinationAfterOffice1.transform.position;
+                } else if (GameManager.instance.walkedToApartment == 1){
+                    target = DestinationAfterOffice2.transform.position;
+                }
+            } else if (GameManager.instance.firstDateDia == 1){
+                target = DestinationAfterApartment.transform.position;
+            } else {
+                target = Destination.transform.position;
             }
-        } else if (GameManager.instance.firstDateDia == 1){
-            target = DestinationAfterApartment.transform.position;
-        } else {
-            target = Destination.transform.position;
         }
     }
 
