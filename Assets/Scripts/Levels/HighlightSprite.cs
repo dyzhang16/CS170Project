@@ -10,17 +10,29 @@ public class HighlightSprite : MonoBehaviour
     public Sprite Sprite2;
 
     private DialogueRunner diaRun = null;
+    private Vector3 defaultValue;
 
     // Start is called before the first frame update
     void Start()
     {
         diaRun = GameObject.Find("DiaSystem/DialogueRunner").GetComponent<DialogueRunner>();
+        defaultValue = interact.transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        // Do a little animation when an object is being highlighted, otherwise it will remain its original size
+        if (interact.GetComponent<SpriteRenderer>().color != Color.white)
+        {
+            interact.transform.localScale = Vector3.MoveTowards(interact.transform.localScale, defaultValue * 1.3f,
+                20f * Time.deltaTime);
+        }
+        else
+        {
+            interact.transform.localScale = Vector3.MoveTowards(interact.transform.localScale, defaultValue,
+                20f * Time.deltaTime);
+        }
     }
     public void OnMouseOver()
     {
