@@ -61,7 +61,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
         {
             if (!sugarShaking)
             {
-                StartCoroutine(ShakingSugar(0.75f));
+                StartCoroutine(ShakingSugar(0.5f));
             }
         }
     }

@@ -7,22 +7,20 @@ public class fallingstuff : MonoBehaviour
     public GameObject coffeeCup;
     public bool timerIsRunning = false;
     public float timeRemaining;
-    
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log(transform);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.Rotate(0, 0, -80 * Time.deltaTime);
-
-        Vector3 id = transform.position;
-        id.y -= 3;
-        transform.position = id;
+        float pos = transform.position.y;
+        pos -= speed * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, pos, transform.position.z);
     }
     void OnTriggerEnter2D(Collider2D collider)
     {

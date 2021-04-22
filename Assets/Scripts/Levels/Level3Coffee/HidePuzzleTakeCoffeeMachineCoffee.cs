@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
 
-public class HidePuzzleTakeCoffee : MonoBehaviour
+public class HidePuzzleTakeCoffeeMachineCoffee : MonoBehaviour
 {
+    // Start is called before the first frame update
     public GameObject puzzlePanel;
     public Button RemoveButton;
     public GameObject Drink;
+    public DialogueRunner dialogueRunner;
 
     public void HidePuzzleCoffee()
     {
@@ -22,12 +25,10 @@ public class HidePuzzleTakeCoffee : MonoBehaviour
         }
         if (Drink.activeSelf)
         {
-            Item boa = Drink.GetComponent<CoffeeAssignment>().droppedCoffee as Drink;
-            boa.itemDescription = "A cup of freshly brewed coffee, void of any additives. The perfect blank canvas for a barista!";
-            Inventory.instance.AddItem(boa);
+            dialogueRunner.StartDialogue("TakeCoffeeCM");
             Drink.SetActive(false);
         }
-        else 
+        else
         {
             Debug.Log("No Coffee Dropped");
         }

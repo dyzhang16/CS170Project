@@ -3,18 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "new Finished Drink", menuName = "Items/Drink/FinishedDrink")]
-public class FinishedDrink : Item
+[CreateAssetMenu(fileName = "new Finished Drink", menuName = "Items/FinishedDrink")]
+public class FinishedDrink : Drink
 {
-    public Sprite sleeveAndLidIcon;
-
-    public int Sugar { get { return s_Added; } set { s_Added = value; } }
-    [SerializeField]
-    private int s_Added = 0;
-    public int Cream { get { return c_Added; } set { c_Added = value; } }
-    [SerializeField]
-    private int c_Added = 0;
-
     public override void Use()
     {
 
