@@ -6,7 +6,7 @@ using Yarn.Unity;
 
 public class FinishedDocument : MonoBehaviour, IDropHandler
 {
-    public GameObject DocumentUI, DocumentT1, DocumentT2, DocumentT3;
+    public GameObject DocumentUI, DocumentT1, DocumentT2, DocumentT3, Arrow;
     public DialogueRunner DialogueRunner;
     public string dialogueToRun;
     [HideInInspector] public int documentFinished = 0;
@@ -45,6 +45,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 Debug.Log("Incorrect Document");
             }
             Destroy(eventData.pointerDrag.transform.gameObject);
+            Arrow.GetComponent<CanvasGroup>().alpha = 0;
             SpawnDocument();
            
             if (documentFinished == 5)

@@ -9,7 +9,7 @@ public class DisableCollider : MonoBehaviour
         if (col.gameObject.CompareTag("Document"))
         {
             //turns off Trigger if object cannot pass through solid objects
-            GetComponent<BoxCollider>().isTrigger = false;
+           GetComponentInChildren<BoxCollider>().isTrigger = false;
         }
     }
     private void OnCollisionEnter(Collision col)
@@ -17,7 +17,7 @@ public class DisableCollider : MonoBehaviour
         if (col.gameObject.GetComponentInChildren<BoxCollider>().tag == "Player")
         {
             //turns on trigger if object can pass through solid object
-            GetComponent<BoxCollider>().isTrigger = true;
+            GetComponentInChildren<BoxCollider>().isTrigger = true;
         }
     }
 }

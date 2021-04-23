@@ -9,7 +9,7 @@ using Yarn.Unity;
 public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
 
-    public GameObject Stamps, Signature, SignArea, StampArea;
+    public GameObject Stamps, Signature, SignArea, StampArea; 
     public bool isDragging = false;
     [HideInInspector] public bool stampedSpace, signedSpace = false;
     private Transform originalParent;
@@ -23,6 +23,15 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
     {
         if (!isDragging)
         {
+            GameObject Arrow = GameObject.Find("Arrow");
+            if (Arrow)
+            {
+                Arrow.GetComponent<CanvasGroup>().alpha = 1;
+            }
+            else 
+            {
+                Debug.LogError("Could not find");
+            }
             if (eventData.button == PointerEventData.InputButton.Left)
             {
                 Sign();
