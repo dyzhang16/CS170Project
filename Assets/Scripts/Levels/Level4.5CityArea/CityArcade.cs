@@ -10,6 +10,7 @@ public class CityArcade : MonoBehaviour
     public GameObject Arcade;
     public GameObject friend;
     public GameObject apartment;
+    public GameObject car;
 
     public GameObject exitToCityOffice;
     public GameObject exitToStreetCoffee;
