@@ -58,7 +58,7 @@ public class BasketballMovement : MonoBehaviour
 	}
 
 	// Coroutine for Throwing the basketball
-	IEnumerator ThrowCR()
+	public IEnumerator ThrowCR()
 	{
 		// disable simulated movement (temporarily)
 		rb2D.simulated = false;
@@ -76,7 +76,7 @@ public class BasketballMovement : MonoBehaviour
 		// have random short delay
 		yield return new WaitForSeconds(Random.Range(0.4f, 0.9f));
 
-		// reenable simualted movement
+		// reenable simulated movement
 		rb2D.simulated = true;
 
 		// apply a force to the rigidbody of this object
@@ -84,6 +84,18 @@ public class BasketballMovement : MonoBehaviour
 
 		// Note that the basketball is being currently thrown
 		currentlyThrown = true;
+
+		// BasketballGameplay: handling limited # of throws
+		//	Why here instead of in BasketballGameplay?
+		//	Honestly, I have no way to track the instant in which a basketball is thrown, so this
+		//	is a little hacky but it will work.
+		if (basketballGameplay.currentMode == BasketballGameplay.BasketballMode.LimitedThrows)
+		{
+			// decrement # of throws
+			basketballGameplay.playerCounter--;
+			// update visuals
+			basketballGameplay.RefreshCounter();
+		}
 	}
 
 	// Resets the basketball to the default position

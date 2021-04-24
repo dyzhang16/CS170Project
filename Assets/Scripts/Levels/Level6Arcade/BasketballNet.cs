@@ -34,6 +34,15 @@ public class BasketballNet : MonoBehaviour
 			// Move localPosition based on actual mouse x position
 			// transform.localPosition = new Vector3(xPos, transform.localPosition.y, transform.localPosition.z);
 			
+			if (xPos > transform.localPosition.x && GetComponent<SpriteRenderer>().flipX)
+			{
+				GetComponent<SpriteRenderer>().flipX = false;
+			}
+			else if (xPos < transform.localPosition.x)
+			{
+				GetComponent<SpriteRenderer>().flipX = true;
+			}
+
 			// Move localPosition using MoveTowards (so there is a max speed it will move)
 			transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(xPos, transform.localPosition.y, transform.localPosition.z), moveSpeed * Time.deltaTime);
 		}
