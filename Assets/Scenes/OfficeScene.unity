@@ -459,7 +459,7 @@ PrefabInstance:
     - target: {fileID: 2102111577348916805, guid: d141741f1698c3747bb68dd69c930800,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45.00009
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 2102111577348916805, guid: d141741f1698c3747bb68dd69c930800,
         type: 3}
@@ -1691,8 +1691,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642336396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -190.1, y: -8.9, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: -196.3, y: -8.9, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 1302873319}
   m_RootOrder: 4
@@ -1760,18 +1760,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008247077, y: -0.024738252}
+  m_Offset: {x: 0.3916011, y: -0.23472685}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 1.85, y: 2.18}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4572617, y: 1.5068008}
+  m_Size: {x: 2.9078274, y: 3.2395625}
   m_EdgeRadius: 0
 --- !u!212 &642336403
 SpriteRenderer:
@@ -1812,7 +1812,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e98dc40e3aad8654daf76a170202c577, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14bcb47975b4a7b45b981574f077be22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1835,7 +1835,7 @@ GameObject:
   - component: {fileID: 645074098}
   - component: {fileID: 645074097}
   m_Layer: 5
-  m_Name: PlayerTimeText
+  m_Name: PlayerCounterText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2238,6 +2238,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757374656308196594, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757374656308196594, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757374656444585491, guid: a8049e3b227ac00459242d230acb1abe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 433.25
       objectReference: {fileID: 0}
     - target: {fileID: 6366903730072417994, guid: a8049e3b227ac00459242d230acb1abe,
         type: 3}
@@ -2695,9 +2710,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 0.29935348}
+  m_Offset: {x: -0.7741399, y: 0.78013754}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.4
 --- !u!114 &904850901 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3378108418281224947, guid: 32ecd2b4f32066d48bd773fa364541a0,
@@ -2824,18 +2839,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0011291504, y: 0.42448187}
+  m_Offset: {x: 0.4274292, y: 0.8854523}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 3, y: 3}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7331238, y: 0.24068165}
+  m_Size: {x: 2.2601318, y: 0.18191528}
   m_EdgeRadius: 0
 --- !u!212 &1002617543
 SpriteRenderer:
@@ -2876,12 +2891,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: e98dc40e3aad8654daf76a170202c577, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78a4f09bd84473e4b9d42a513050338f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2896,7 +2911,7 @@ Transform:
   m_GameObject: {fileID: 1002617540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 869413432}
   - {fileID: 1839278677}
@@ -3176,7 +3191,7 @@ GameObject:
   - component: {fileID: 1190705528}
   m_Layer: 0
   m_Name: Pen
-  m_TagString: Untagged
+  m_TagString: Inventory Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3538,9 +3553,11 @@ MonoBehaviour:
   basketball: {fileID: 626265051}
   playerScoreText: {fileID: 1883523057}
   highScoreText: {fileID: 1753148857}
-  playerTimeText: {fileID: 645074097}
-  highScore: 30
-  timeLimit: 30
+  playerCounterText: {fileID: 645074097}
+  highScore: 20
+  playerCounter: 30
+  counterLimit: 15
+  currentMode: 1
 --- !u!212 &1258725749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4514,7 +4531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30
+  m_Text: 20
 --- !u!222 &1753148858
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4720,9 +4737,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0.29935348}
+  m_Offset: {x: 1.5893126, y: 0.8607025}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.4
 --- !u!1 &1883523055
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,13 +13,22 @@ public class BasketballGameplay : MonoBehaviour
 	public BasketballMovement basketball;
 	public Text playerScoreText;
 	public Text highScoreText;
-	public Text playerTimeText;
+	public Text playerCounterText;
 
 	// Fields
 	private int playerScore;
 	public int highScore = 30;
-	private int playerTime = 30;    // player's current time (playerTime <= timeLimit)
-	public int timeLimit = 30;      // max time to reset to
+	[HideInInspector]
+	public int playerCounter = 30;     // player's current counter (either time or # of throws) (playerCounter <= counterLimit)
+	public int counterLimit = 30;      // max counter to reset to when game is done
+	public BasketballMode currentMode = BasketballMode.LimitedThrows; // play mode
+
+	// Extra Stuff
+	public enum BasketballMode
+	{
+		Timed, // player has to make as many baskets within a given time limit
+		LimitedThrows // player has a limited number of throws
+	};
 
 	void Start()
 	{
@@ -34,13 +43,24 @@ public class BasketballGameplay : MonoBehaviour
 
 		// Reset the player's score
 		playerScore = 0;
-		// Reset the timer
-		playerTime = timeLimit;
+		// Reset the counter
+		playerCounter = counterLimit;
 
-		// start throwing the basketball
+		// start the throwing the basketball
 		basketball.StartThrowing();
-		// start the timer
-		StartCoroutine(CountdownTimerCR());
+
+		// check the current mode to change how the internal counter works
+		switch (currentMode)
+		{
+			case BasketballMode.Timed:
+				// start the timer
+				StartCoroutine(CountdownTimerCR());
+				break;
+			case BasketballMode.LimitedThrows:
+				// start the limited throws coroutine
+				StartCoroutine(CountdownThrowsCR());
+				break;
+		}
 
 		// Refresh the scoreboard
 		RefreshScoreboard();
@@ -63,13 +83,14 @@ public class BasketballGameplay : MonoBehaviour
 	// Coroutine for counting down a timer
 	IEnumerator CountdownTimerCR()
 	{
-		while (basketball.isThrowing && playerTime > 0)
+		// loop condition: keep looping until the timer has expired
+		while (basketball.isThrowing && playerCounter > 0)
 		{
 			yield return new WaitForSeconds(1);
-			playerTime--;
-			RefreshTime();
+			playerCounter--;
+			RefreshCounter();
 		}
-		RefreshTime();
+		RefreshCounter();
 		// When timer runs out, stop throwing the basketball
 		basketball.isThrowing = false;
 		// Do the Game End callback (once the basketball is no longer being thrown)
@@ -77,6 +98,21 @@ public class BasketballGameplay : MonoBehaviour
 		{
 			yield return null;
 		}
+		EndGameCallback();
+	}
+
+	// Coroutine for counting down the number of throws
+	IEnumerator CountdownThrowsCR()
+	{
+		// Wait until the playerCounter number is 0 or less
+		//	NOTE: playerCounter in this mode is updated in BasketballMovement.ThrowCR() if the currentMode is LimitedThrows
+		yield return new WaitUntil(() => playerCounter <= 0);
+		// update visuals
+		RefreshCounter();
+		// stop throwing the basketball
+		basketball.isThrowing = false;
+		// Do the Game End callback (once the basketball is no longer being thrown)
+		yield return new WaitUntil(() => !basketball.currentlyThrown);
 		EndGameCallback();
 	}
 
@@ -99,7 +135,7 @@ public class BasketballGameplay : MonoBehaviour
 	{
 		RefreshPlayerScore();
 		RefreshHighScore();
-		RefreshTime();
+		RefreshCounter();
 	}
 
 	// Refresh the player score text element
@@ -114,10 +150,10 @@ public class BasketballGameplay : MonoBehaviour
 		highScoreText.text = highScore.ToString();
 	}
 
-	// Refresh the time text element
-	void RefreshTime()
+	// Refresh the time (i.e. counter) text element
+	public void RefreshCounter()
 	{
-		playerTimeText.text = playerTime.ToString();
+		playerCounterText.text = playerCounter.ToString();
 	}
 }
 
