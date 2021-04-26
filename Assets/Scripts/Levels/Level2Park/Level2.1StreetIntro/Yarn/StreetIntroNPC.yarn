@@ -1,11 +1,12 @@
 ﻿title: SoupNPC
 tags:
 ---
-<<ChangeSpeaker Boy Woman>>
-<<Focus SECOND>>
+<<ChangeSpeaker Woman>>
+<<Focus FIRST>>
 
 	So, what do you think? Does the purple or orange look better?
 
+<<ChangeSpeaker Boy>>
 <<Focus FIRST>>
 	I dunno, mom. I don’t really care, just choose one.
 
@@ -14,8 +15,8 @@ tags:
 
 	Definitely the purple. Orange doesn’t go with anything.
 
-<<ChangeSpeaker Boy Woman>>
-<<Focus SECOND>>
+<<ChangeSpeaker Woman>>
+<<Focus FIRST>>
 
 	This is why I don’t take you anywhere. I guess I’ll go with the orange.
 
@@ -28,7 +29,8 @@ tags:
 title: ColdMan
 tags:
 ---
-<<ChangeSpeaker None Man>>
+<<ChangeSpeaker Man>>
+<<Focus FIRST>>
 
 	Eeuughh. Why’d it get cold all of a sudden?
 
@@ -37,31 +39,36 @@ tags:
 
 	Oops. Was that my fault?
 
-<<ChangeSpeaker None Man>>
-	
+<<ChangeSpeaker Man>>
+<<Focus FIRST>>
+
 	Good thing I brought my jacket with me.
 
 ===
 title: Teenagers
 tags: 
 ---
-<<ChangeSpeaker Teenager OtherTeen>>
+<<ChangeSpeaker Teenager>>
 <<Focus FIRST>>
 	
 	Milk and bread. Bread and milk. Anything else?
 
-<<Focus SECOND>>
+<<ChangeSpeaker OtherTeen>>
+<<Focus FIRST>>
 	
 	Uh, I forgot to bring the list.
 
+<<ChangeSpeaker Teenager>>
 <<Focus FIRST>>
 
 	Dang it, Tom! You had one job. I stuck it on the fridge and everything!
 
-<<Focus SECOND>>
+<<ChangeSpeaker OtherTeen>>
+<<Focus FIRST>>
 
 	I never went to the fridge today! Look, I think we were low on eggs, too.
 
+<<ChangeSpeaker Teenager>>
 <<Focus FIRST>>
 
 	Fine. Eggs, milk, and...I forget.
@@ -71,18 +78,19 @@ tags:
 	
 	Bread. You were repeating it over and over!
 
-<<ChangeSpeaker Teenager OtherTeen>>
-<<Focus SECOND>>
-
-	Teenager 2: Crap…
-
+<<ChangeSpeaker OtherTeen>>
 <<Focus FIRST>>
 
-	Teenager 1: Crap…
+	Crap…
+
+<<ChangeSpeaker Teenager>>
+<<Focus FIRST>>
+
+	Crap…
 
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
 	
-	Ghost: Oh no…
+	Oh no…
 
 ===
