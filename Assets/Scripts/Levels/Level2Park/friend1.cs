@@ -15,10 +15,15 @@ public class friend1 : MonoBehaviour
     public GameObject DestinationAfterApartment;
     public GameObject DestinationAfterOffice1;
     public GameObject DestinationAfterOffice2;
+    
+    public GameObject car;
+    public GameObject Dialoguerunner;
+    public GameObject player;
 
     public BoxCollider col;
 
     private Vector3 target;
+    private bool playerMove;
 
     void Start(){
         if (GameManager.instance != null){
@@ -48,10 +53,14 @@ public class friend1 : MonoBehaviour
                 isWalking = false;
                 if (GameManager.instance.walkedToApartment == 2){
                     this.GetComponent<RunDialogue>().dialogueToRun = "friendGoingToApartment";
-                } else if (GameManager.instance.walkToArcade == 1){
-                    this.GetComponent<RunDialogue>().dialogueToRun = "friendGoingToArcade";
+                } else if (GameManager.instance.firstDateDia == 1){
+                    this.GetComponent<RunDialogue>().dialogueToRun = "friendHitByCar";
                 }
             }
+        }
+
+        if (playerMove){
+            player.GetComponent<Player>().allowMovement = false;
         }
     }
 
@@ -118,15 +127,31 @@ public class friend1 : MonoBehaviour
         GameManager.instance.walkedToApartment = 2;
     }
 
-    [YarnCommand("moveToArcade")]
-    public void moveToArcade(){
+    [YarnCommand("moveToStreet")]
+    public void moveToStreet(){
         isWalking = true;
         col.isTrigger = true;
-        GameManager.instance.walkToArcade = 1;
+        GameManager.instance.walkToStreet = 1;
     }
 
     [YarnCommand("Enter")]
     public void Enter(){
         this.gameObject.SetActive(false);
+    }
+
+    [YarnCommand("hitByCar")]
+    public void hitByCar(){
+        car.transform.position = this.transform.position + new Vector3(-100, 0, 0);
+        car.GetComponent<car>().cycle = 2;
+        playerMove = true;
+
+        StartCoroutine(stopCar());
+    }
+
+    IEnumerator stopCar(){
+        yield return new WaitForSeconds(4);
+        car.SetActive(false);
+
+        Dialoguerunner.GetComponent<DialogueRunner>().StartDialogue("endingCutscene");
     }
 }

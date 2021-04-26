@@ -17,7 +17,7 @@ public class car : MonoBehaviour
 
     public float Speed;
 
-    private int cycle = 0;
+    public int cycle = 0;
 
     // Update is called once per frame
     void Update()

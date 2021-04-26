@@ -61,25 +61,49 @@ I'll cya inside
 
 ===
 
-title: friendWalkToArcade
+title: friendWalkToStreet
 ---
 
-<<ChangeSpeaker Friend>>
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+I'm gonna walk into the middle of the street
 
-We gotta run to the arcade we're gonna be late!
+<<Focus FIRST>>
+Why would you do that
 
-<<moveToArcade Friend1>>
+<<Focus SECOND>>
+YOLO
+
+<<moveToStreet Friend1>>
 
 ===
 
-title: friendGoingToArcade
+title: friendHitByCar
 ---
 
-<<ChangeSpeaker Friend>>
-I'm so nervous for my date
+<<ChangeSpeaker Player Friend>>
 
-WISH ME LUCK
+<<Focus FIRST>>
+Hey watch out its dangerous
 
-<<Enter Friend1>>
+<<Focus SECOND>>
+SHEEEEEEEEEEEEEEEEEEEEEEEEESH
+
+<<hitByCar Friend1>>
+
+===
+
+title: endingCutscene
+---
+
+<<ChangeSpeaker Player>>
+
+oh noes my friend has been hit by a car
+
+*insert some animation about them becoming a ghost*
+
+*insert more dialogue here about how they can still be friends cuz now both of them are a ghost*
+
+*ending cutscene*
 
 ===
