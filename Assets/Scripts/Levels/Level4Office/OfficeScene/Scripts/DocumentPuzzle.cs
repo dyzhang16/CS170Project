@@ -38,6 +38,7 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
                 if (SignArea.GetComponent<mouseOver>().isMouseOver && !sign)
                 {
                     signedSpace = true;
+                    SoundManagerScript.PlaySound("sign_sound");
                 }
                 else
                 {
@@ -51,6 +52,7 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
                 if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamp)
                 {
                     stampedSpace = true;
+                    SoundManagerScript.PlaySound("stamp_sound");
                 }
                 else
                 {

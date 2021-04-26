@@ -18,6 +18,9 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip whistle;
     public static AudioClip placeFlower;
     public static AudioClip dialogueSound;
+    public static AudioClip stamp;
+    public static AudioClip sign;
+    public static AudioClip drawer;
 
 
 
@@ -51,6 +54,9 @@ public class SoundManagerScript : MonoBehaviour {
         whistle = Resources.Load<AudioClip>("whistling_1");
         placeFlower = Resources.Load<AudioClip>("place_flower");
         dialogueSound = Resources.Load<AudioClip>("dialogue_sound");
+        stamp = Resources.Load<AudioClip>("stamp");
+        sign = Resources.Load<AudioClip>("sign");
+        drawer = Resources.Load<AudioClip>("drawer");
         // click = Resources.Load<AudioClip>("button_click");
     }
 
@@ -110,6 +116,15 @@ public class SoundManagerScript : MonoBehaviour {
                 break;
             case "dialogue_sound":
                 audioSrc.PlayOneShot(dialogueSound);
+                break;
+            case "sign_sound":
+                audioSrc.PlayOneShot(sign);
+                break;
+            case "stamp_sound":
+                audioSrc.PlayOneShot(stamp);
+                break;
+            case "drawer_sound":
+                audioSrc.PlayOneShot(drawer);
                 break;
 
 
