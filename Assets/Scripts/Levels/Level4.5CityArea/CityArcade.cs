@@ -10,7 +10,6 @@ public class CityArcade : MonoBehaviour
     public GameObject Arcade;
     public GameObject friend;
     public GameObject apartment;
-    public GameObject car;
 
     public GameObject exitToCityOffice;
     public GameObject exitToStreetCoffee;
@@ -33,6 +32,7 @@ public class CityArcade : MonoBehaviour
                 friend.GetComponent<RunDialogue>().dialogueToRun = "cityarcade_friend_intro";
             } else if (GameManager.instance.firstDateDia == 1){
                 friend.SetActive(true);
+                friend.GetComponent<RunDialogue>().dialogueToRun = "friendWalkToStreet";
                 friend.transform.position = apartment.transform.position + new Vector3(0, 0, -20);
             } else if (GameManager.instance.walkedToApartment == 1) {
                 friend.SetActive(true);

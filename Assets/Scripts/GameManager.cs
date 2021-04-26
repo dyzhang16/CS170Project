@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     //transition dialogue
     public int firstDateDia = 0;
     //walk to arcade
-    public int walkToArcade = 0;
+    public int walkToStreet = 0;
 
     // Arcade variables
     public int arcadeFirstVisit = 0;
