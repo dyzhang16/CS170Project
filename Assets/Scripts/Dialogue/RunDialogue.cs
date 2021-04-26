@@ -105,13 +105,14 @@ public class RunDialogue : MonoBehaviour
 
     void OnTriggerExit(Collider collider)
     {
-        if (collider.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Document"))
         {
             runDialogue = false;
             if (dialogueCursor != null){
                 dialogueCursor.SetActive(false);
             }
         }
+
     }
 
     void OnCollisionStay(Collision collision){
@@ -147,7 +148,7 @@ public class RunDialogue : MonoBehaviour
     }
 
     void OnCollisionExit(Collision collision){
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Document")
         {
             runDialogue = false;
             if (dialogueCursor != null){

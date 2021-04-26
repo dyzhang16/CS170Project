@@ -6,20 +6,19 @@ using Yarn.Unity;
 
 public class TransformToDocument : MonoBehaviour
 {
-    public GameObject activeObj;
+    [HideInInspector]public GameObject activeObj;
     public GameObject player;
     public GameObject guard;
     //[HideInInspector] public Vector3 lastPosition;
+    private void Awake()
+    {
+        
+    }
     private void Update()
     {
         if (activeObj != null)
         {
-            activeObj.transform.position = player.transform.position;
-
-            /*if (Input.GetKeyDown(KeyCode.R))
-            {
-                player.transform.position = lastPosition;
-            }*/
+            activeObj.transform.position = player.transform.position + new Vector3(0, 3.4f, 6);   
         }
     }
 
@@ -42,6 +41,7 @@ public class TransformToDocument : MonoBehaviour
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
         player.GetComponentInChildren<BoxCollider>().tag = "Player";
+        GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0f, 1f);
         activeObj = null;
     }
 }

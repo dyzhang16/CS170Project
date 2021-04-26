@@ -53,8 +53,21 @@ public class ChangeSpeaker : MonoBehaviour
             Debug.Log($"{talkingCharacter}: is talking.");
             // set sprite using talkingCharacter's default sprite
             characterImage.sprite = talkingCharacter.defaultSprite;
-            // return the tuple containing the CharacterObj and the Image corresponding to it
-            return (talkingCharacter, characterImage);
+            if (talkingCharacter.defaultSprite == null)
+            {
+                //Warning for non-intended characters with no character image
+                Debug.LogWarning("Not sure if this was intended, But there is no image for given character");
+                //Hides Character Image in case character does not have dialogue sprite
+                characterImage.gameObject.SetActive(false);
+                return (talkingCharacter, characterImage);
+            }
+            else
+            {
+                //setsActive just in case if character images set inactive due to previous if statement
+                characterImage.gameObject.SetActive(true);
+                // return the tuple containing the CharacterObj and the Image corresponding to it
+                return (talkingCharacter, characterImage);
+            }
         };
 
         // ChangeImage for first character

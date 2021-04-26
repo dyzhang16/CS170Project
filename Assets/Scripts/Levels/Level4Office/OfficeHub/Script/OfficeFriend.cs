@@ -27,7 +27,6 @@ public class OfficeFriend : MonoBehaviour
         {
             //disable dialogue while NPC is moving
             this.GetComponent<RunDialogue>().enabled = false;
-            this.GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
             //distance traveled per frame
             float step = Speed * Time.deltaTime;
 
@@ -72,7 +71,7 @@ public class OfficeFriend : MonoBehaviour
         {
             //enable dialogue while NPC is standing
             this.GetComponent<RunDialogue>().enabled = true;
-            //this.GetComponent<RunDialogue>().dialogueCursor.SetActive(true);
+            
         }
     }
 

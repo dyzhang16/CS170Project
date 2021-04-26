@@ -2,21 +2,45 @@
 tags:
 ---
 <<ChangeSpeaker Player Friend>>
-<<Focus FIRST>>
-
-	Wow, what a big office!
-
 <<Focus SECOND>>
 
-	Not really. I only have a small cubicle in the corner. 
+	Hurry up and keep quiet, my desk is this way.
 
 <<Focus FIRST>>
-	
-	Oh....
+
+	I already told you, you’re the only one that can hear me. 
 
 <<Focus SECOND>>
 	
-	Follow me. 
+	You don’t know that for sure. Don’t talk to me where others can hear me talking back. They’ll all think I’m crazy.
+
+<<Focus FIRST>>
+
+	No one’s making you respond -
+
+<<ChangeSpeaker Employee>>
+<<Focus FIRST>>
+
+	We already think you’re crazy, Fredric.
+
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+	
+	Stop eavesdropping!
+
+<<ChangeSpeaker Employee>>
+<<Focus FIRST>>
+
+	The boss is gonna have your head if you spend any longer standing around talking to yourself.
+
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+
+	I’m going, I’m going!
+
+<<Focus FIRST>>
+
+	Your boss won’t actually harm you, will they?
 
 <<ChangeVariable GameManager followFriendinOffice 1>> 
 <<DisableDialogue DoorApproach>>
@@ -34,14 +58,16 @@ title: OfficeFriend
 	Thanks for bringing back these documents. 
 
 <<set $isDocument to 0>>
-<<TransformIntoPlayer Matthew's_Desk Document>>
 	<<if $MatthewDocument is 1>>
+		<<TransformIntoPlayer Matthew's_Desk Document>>
 		<<set $TookMDocument to 1>>
 		<<set $MatthewDocument to 0>>
 	<<elseif $ElizabethDocument is 1>>
+		<<TransformIntoPlayer Elizabeth's_Desk Document>>
 		<<set $TookEDocument to 1>>
 		<<set $ElizabethDocument to 0>>
 	<<elseif $MaxDocument is 1>>
+		<<TransformIntoPlayer Max's_Desk Document>>
 		<<set $TookMaxDocument to 1>>
 		<<set $MaxDocument to 0>>
 	<<endif>>
