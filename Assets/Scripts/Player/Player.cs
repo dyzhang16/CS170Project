@@ -121,6 +121,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                 if (invActive){
                     openInventory();
                 }
+            } else {
+                Debug.Log(EventSystem.current.currentSelectedGameObject);
             }
             
         }
@@ -132,7 +134,17 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         if (allowInv){
             invActive = !invActive;
             Inventory.instance.anim.SetBool("Inventory", invActive);
-            inventoryButtonAnimator.SetBool("InventoryOpen", invActive);
+            inventoryButtonAnimator.SetTrigger("Highlighted");
+            StartCoroutine(openInvAnim());
+        }
+    }
+
+    IEnumerator openInvAnim(){
+        yield return new WaitForSeconds(0.5f);
+        inventoryButtonAnimator.SetBool("InventoryOpen", invActive);
+
+        if (!invActive){
+            inventoryButtonAnimator.SetTrigger("Normal");
         }
     }
 
