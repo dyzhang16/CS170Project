@@ -6,6 +6,29 @@ public class SceneSkip : MonoBehaviour
 {
     public GameManager manager;
 
+    public void playNormal(){
+        manager.flowerPuzzle = 0;
+        manager.firstFriendMeeting = 0;
+        manager.hasReceipt = 0;
+        manager.gaveDrink = 0;
+        manager.visitedAfterCoffee = 0;
+        manager.visitedCoffee = 0;
+        manager.readRecipeBook = 0;
+        manager.addedCoffeeMachineItem = 0;
+        manager.followFriendinOffice = 0;
+        manager.officePuzzle = 0;
+        manager.officeDeskPuzzle = 0;
+        manager.firstApartment = 0;
+        manager.cleanedRoom = 0;
+        manager.timeCapsule = 0;
+        manager.firstDateDia = 0;
+        manager.arcadeFirstVisit = 0;
+        manager.arcadeFirstCrane = 0;
+        manager.arcadeFirstDance = 0;
+        manager.arcadeNoCraneDirs = 0;
+        manager.arcadeNoDanceDirs = 0;
+    }
+
     public void skipStreet(){
         manager.previousScene = "Tutorial";
 
