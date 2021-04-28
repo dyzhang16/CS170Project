@@ -186,7 +186,7 @@ public class isMoving : MonoBehaviour
     }
 
     IEnumerator dropKeyDelay(){
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2f);
         key.transform.position = this.gameObject.transform.position;
         key.SetActive(true);
         gravekeeperCam.enabled = false;

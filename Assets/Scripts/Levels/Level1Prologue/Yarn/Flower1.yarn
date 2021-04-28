@@ -4,9 +4,9 @@
 <<if visited("prologue_doneExplore") is true>>
         
         Oh! That's pretty!
-        
-<<Destroy FlowerFieldA>>
+
 <<pickUpItem FlowerFieldA>>
+<<Destroy FlowerFieldA>>
 <<else>>
         
         It's a flower.
@@ -20,8 +20,8 @@ title: Flower2
        
        This one will look nice on the grave.
 
-<<Destroy FlowerFieldB>>
 <<pickUpItem FlowerFieldB>>
+<<Destroy FlowerFieldB>>
 <<else>>
         
          I bet this flower would smell nice if I could smell.
@@ -35,8 +35,8 @@ title: Flower3
         
         How about this flower?
 
-<<Destroy FlowerFieldC>>
 <<pickUpItem FlowerFieldC>>
+<<Destroy FlowerFieldC>>
 <<else>>
         
         You’ll be replaced with a grave, one day.
@@ -50,8 +50,8 @@ title: Flower4
        
        I like this one!
 
-<<Destroy FlowerFieldD>>
 <<pickUpItem FlowerFieldD>>
+<<Destroy FlowerFieldD>>
 <<else>>
         
         Prettier than a weed.

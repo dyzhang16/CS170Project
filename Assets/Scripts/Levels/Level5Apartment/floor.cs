@@ -62,25 +62,25 @@ public class floor : MonoBehaviour//, IDropHandler
             string temp = Object + "PlaceHere";
 
             activeObjPlaceHere = GameObject.Find(Object + "PlaceHere"); 
-            Debug.Log(activeObjPlaceHere);
+            // Debug.Log(activeObjPlaceHere);
 
             activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
-            Debug.Log("color done");
+            // Debug.Log("color done");
             activeObj.GetComponent<RunDialogue>().runDialogue = false;
-            Debug.Log("run dialo false");
+            // Debug.Log("run dialo false");
             activeObj.transform.GetChild(0).gameObject.SetActive(false);
-            Debug.Log("collider disabled");
+            // Debug.Log("collider disabled");
 
             player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-            Debug.Log("player disabled");
+            // Debug.Log("player disabled");
 
             activeObj.GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
-            Debug.Log("dia cursor disabled");
+            // Debug.Log("dia cursor disabled");
 
             puzzle.dic[activeObj.name] = false;
 
             activeObjPlaceHere.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.2f);
-            Debug.Log("sihlouttee working");
+            // Debug.Log("sihlouttee working");
         }
             
     }
@@ -100,5 +100,16 @@ public class floor : MonoBehaviour//, IDropHandler
 
         activeObj = null;
         activeObjPlaceHere = null;
+    }
+
+    IEnumerator PossesItem(){
+        for (float f = 1f; f >= 0f; f -= 0.1f) {
+            player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, f);
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    IEnumerator UnPossesItem(){
+        yield return new WaitForSeconds(0.1f);
     }
 }
