@@ -54,7 +54,7 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         {
             if (!creamShaking)
             {
-                StartCoroutine(ShakingCream(0.5f));
+                StartCoroutine(ShakingCream(0.1f));
             }
         }
     }
