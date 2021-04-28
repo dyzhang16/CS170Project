@@ -71,6 +71,7 @@ public class friend1 : MonoBehaviour
         col.isTrigger = true;
         GameManager.instance.visitedAfterCoffee = 1;
         GameManager.instance.firstFriendMeeting = 2;
+        this.GetComponent<SpriteRenderer>().flipX = true;
     }
 
     //streetCoffee
