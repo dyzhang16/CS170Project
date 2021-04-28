@@ -20,6 +20,7 @@ public class PickUp : MonoBehaviour
         p.activateMenu();
 
         if (GetComponent<RunDialogue>() != null){
+            Debug.Log("removing dialogue box");
             GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
         }
     }
