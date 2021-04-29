@@ -63,31 +63,33 @@ I'll cya inside
 
 title: friendWalkToStreet
 ---
-
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
-I'm gonna walk into the middle of the street
+Huh, I think there's something on the ground there. I'm gonna see what it is.
 
 <<Focus FIRST>>
-Why would you do that
-
-<<Focus SECOND>>
-YOLO
+Oh, sure.
 
 <<moveToStreet Friend1>>
+
+<<wait 3>>
+
+[[friendHitByCar]]
 
 ===
 
 title: friendHitByCar
 ---
-
 <<ChangeSpeaker Player Friend>>
 
+<<Focus SECOND>>
+I could've sworn I saw something shining here. Where could it be?
+
 <<Focus FIRST>>
-Hey watch out its dangerous
+I don't think it's safe for you to be standing there!
 
 <<Focus SECOND>>
-SHEEEEEEEEEEEEEEEEEEEEEEEEESH
+What?
 
 <<hitByCar Friend1>>
 
@@ -98,12 +100,66 @@ title: endingCutscene
 
 <<ChangeSpeaker Player>>
 
-oh noes my friend has been hit by a car
+<<MovePlayer Player Friend1 0 0 -15>>
 
-*insert some animation about them becoming a ghost*
+Fredric no!
 
-*insert more dialogue here about how they can still be friends cuz now both of them are a ghost*
+...
 
-*ending cutscene*
+I lost the only friend who was able to speak to me...
+
+// Insert animation of friend becoming a ghost
+<<GhostifyFriend Friend1>>
+
+<<ChangeSpeaker Player FriendEnd>>
+
+<<Focus SECOND>>
+AAAAAAAAAAAAAAAAAAAAAAAAAAH!
+
+Huh?
+
+What's going on? What's happened to me?
+
+<<Focus FIRST>>
+... Fredric?
+
+<<Focus SECOND>>
+Oh it's you. What just-
+
+<<wait 1>>
+
+... where are my hands?
+
+Where is my body?
+
+<<Focus FIRST>>
+Well... I guess you are a ghost now.
+
+<<Focus SECOND>>
+I'm dead?
+
+<<Focus FIRST>>
+Yeah.
+
+<<wait 1>>
+
+<<Focus SECOND>>
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH!
+
+<<Focus FIRST>>
+Calm down Fredric. It's not too bad.
+
+At least we got each other!
+
+<<Focus SECOND>>
+That is true.
+
+I guess I just have to get used to it.
+
+// *ending cutscene*
+
+<<Focus NONE>>
+The End.
+
 
 ===
