@@ -25,6 +25,11 @@ public class friend1 : MonoBehaviour
     private Vector3 target;
     private bool playerMove;
 
+    // Fields (when player gets hit)
+    private bool isFriendHit = false;
+    private readonly float deadRotation = 90f;
+    private readonly float flattenFactor = 2f;
+
     void Start(){
         if (GameManager.instance != null){
             if (GameManager.instance.officeDeskPuzzle == 1){
@@ -154,5 +159,42 @@ public class friend1 : MonoBehaviour
         car.SetActive(false);
 
         Dialoguerunner.GetComponent<DialogueRunner>().StartDialogue("endingCutscene");
+    }
+
+    // Detect collision between friend1 and car
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isFriendHit)
+        {
+            car car = other.GetComponentInParent<car>();
+            if (car != null)
+            {
+                // rotate the friend to be fallen over
+                transform.Rotate(new Vector3(0, 0, -deadRotation));
+
+                // flatten friend too just for fun
+                transform.localScale = new Vector3(transform.localScale.x / flattenFactor, transform.localScale.y, transform.localScale.z);
+
+                // prevent additional transform modifications (related to the car, at least)
+                isFriendHit = true;
+            }
+        }
+    }
+
+    // Turn the friend into a ghost
+    [YarnCommand("GhostifyFriend")]
+    public void GhostifyFriend()
+    {
+        // First, return fredric's original rotation and scale
+        transform.Rotate(new Vector3(0, 0, deadRotation)); // reverse the rotation
+        // update the scale to be back to what it was before
+        transform.localScale = new Vector3(transform.localScale.x * flattenFactor, transform.localScale.y, transform.localScale.z);
+
+        // PUT THE GHOSTIFY-ING STUFF HERE
+
+        // Temporary: just make him transparent
+        Color friendColor = GetComponent<SpriteRenderer>().color;
+        friendColor = new Color(friendColor.r, friendColor.g, friendColor.b, friendColor.a * 0.5f);
+        GetComponent<SpriteRenderer>().color = friendColor;
     }
 }
