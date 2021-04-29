@@ -21,6 +21,11 @@ public class TimeCapsulePuzzle : MonoBehaviour
     public DialogueRunner dia;
     public HidePuzzle exit;
 
+    public Animator num1Animator;
+    public Animator num2Animator;
+    public Animator num3Animator;
+    public Animator num4Animator;
+
     public void AddNum(string numText){
         switch(numText){
             case "num1":
@@ -108,6 +113,40 @@ public class TimeCapsulePuzzle : MonoBehaviour
             exit.Hide();
             dia.StartDialogue("done_with_puzzle");
             GameManager.instance.timeCapsule = 1;
+        }
+    }
+
+    public void animateNum(int num){
+        switch(num){
+            case 1:
+                num1Animator.SetTrigger("ChangeNum");
+                break;
+            case 2:
+                num2Animator.SetTrigger("ChangeNum");
+                break;
+            case 3:
+                num3Animator.SetTrigger("ChangeNum");
+                break;
+            case 4:
+                num4Animator.SetTrigger("ChangeNum");
+                break;
+        }
+    }
+
+    public void animateReverseNum(int num){
+        switch(num){
+            case 1:
+                num1Animator.SetTrigger("ChangeNumReverse");
+                break;
+            case 2:
+                num2Animator.SetTrigger("ChangeNumReverse");
+                break;
+            case 3:
+                num3Animator.SetTrigger("ChangeNumReverse");
+                break;
+            case 4:
+                num4Animator.SetTrigger("ChangeNumReverse");
+                break;
         }
     }
 }

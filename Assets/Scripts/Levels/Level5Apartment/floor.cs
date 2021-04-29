@@ -64,14 +64,13 @@ public class floor : MonoBehaviour//, IDropHandler
             activeObjPlaceHere = GameObject.Find(Object + "PlaceHere"); 
             // Debug.Log(activeObjPlaceHere);
 
-            activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
             // Debug.Log("color done");
             activeObj.GetComponent<RunDialogue>().runDialogue = false;
             // Debug.Log("run dialo false");
             activeObj.transform.GetChild(0).gameObject.SetActive(false);
             // Debug.Log("collider disabled");
 
-            player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+            StartCoroutine(PossesItem());
             // Debug.Log("player disabled");
 
             activeObj.GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
@@ -87,29 +86,51 @@ public class floor : MonoBehaviour//, IDropHandler
 
     public void placeItem(){
 
-        if(puzzle.dic[activeObj.name] == true){
-            activeObj.GetComponent<SpriteRenderer>().color = new Color(0.25f, 1f, 0.5f, 1f);
-        } else {
-            activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-        }
-
-        player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-        activeObj.transform.Find("collider").gameObject.SetActive(true);
+        StartCoroutine(UnPossesItem());
 
         activeObjPlaceHere.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-
-        activeObj = null;
-        activeObjPlaceHere = null;
     }
 
     IEnumerator PossesItem(){
-        for (float f = 1f; f >= 0f; f -= 0.1f) {
+        for (float f = 1f; f >= 0f; f -= 0.2f) {
+            player.GetComponent<Player>().allowMovement = false;
+            player.GetComponent<Player>().stopMove();
+
             player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, f);
+
+            if (f > 0.5f){
+                activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, f);
+            }
+
             yield return new WaitForSeconds(0.1f);
         }
+
+        player.GetComponent<Player>().allowMovement = true;
     }
 
     IEnumerator UnPossesItem(){
-        yield return new WaitForSeconds(0.1f);
+        for (float f = 0f; f <= 1f; f += 0.2f) {
+            player.GetComponent<Player>().allowMovement = false;
+            player.GetComponent<Player>().stopMove();
+            
+            player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, f);
+
+            if (f > 0.5f && puzzle.dic[activeObj.name] == false){
+                //regular color
+                activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, f);
+            } else if (f > 0.5f && puzzle.dic[activeObj.name] == true){
+                //green color
+                activeObj.GetComponent<SpriteRenderer>().color = new Color(0.25f, 1f, 0.5f, f);
+            }
+
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        player.GetComponent<Player>().allowMovement = true;
+
+        activeObj.transform.Find("collider").gameObject.SetActive(true);
+
+        activeObj = null;
+        activeObjPlaceHere = null;
     }
 }
