@@ -6,8 +6,8 @@ public class BasketballNet : MonoBehaviour
 {
 	// Unity Objects
 	public BasketballMovement basketball;
-	private CircleCollider2D leftCollider;
-	private CircleCollider2D rightCollider;
+	private Collider2D leftCollider;
+	private Collider2D rightCollider;
 
 	// Fields
 	private Vector3 defaultPosition;
@@ -17,8 +17,8 @@ public class BasketballNet : MonoBehaviour
 	{
 		defaultPosition = transform.localPosition;
 
-		leftCollider = transform.Find("NetLeftWall").gameObject.GetComponent<CircleCollider2D>();
-		rightCollider = transform.Find("NetRightWall").gameObject.GetComponent<CircleCollider2D>();
+		leftCollider = transform.Find("NetLeftWall").gameObject.GetComponent<Collider2D>();
+		rightCollider = transform.Find("NetRightWall").gameObject.GetComponent<Collider2D>();
 	}
 
 	void Update()

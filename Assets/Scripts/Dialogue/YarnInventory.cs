@@ -41,6 +41,18 @@ public class YarnInventory : MonoBehaviour
                 return Inventory.instance.IsFull();
             }
         );
+
+        // function for checking if player has item in Inventory
+        //  Usage in Yarn: HasItem("<name of item>")
+        //  Returns a boolean
+        dialogueRunner.AddFunction(
+            "HasItem",
+            1,
+            (Yarn.Value[] parameters) =>
+            {
+                return HasItem(parameters[0].AsString);
+            }
+        );
     }
 
     private void AddtoInventory(string[] parameters)
@@ -69,5 +81,12 @@ public class YarnInventory : MonoBehaviour
     {
         string Object = parameters[0];
         Destroy(GameObject.Find(Object));
+    }
+
+    // checks if an item exists in inventory
+    private bool HasItem(string query)
+    {
+        Item foundItem = Inventory.instance.FindItem(query);
+        return foundItem != null;
     }
 }

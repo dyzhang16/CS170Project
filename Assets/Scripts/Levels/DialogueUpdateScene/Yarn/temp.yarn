@@ -121,3 +121,28 @@ Now I have set the focus to BOTH.
 
 This is the end of the test.
 ===
+
+title: test_hasitem
+tags:
+---
+<<ChangeSpeaker Player>>
+Let's look at my inventory...
+
+<<if HasItem("ADSADSAFWFA")>>
+    I have a ADSADSAFWFA.
+<<else>>
+    I don't have a ADSADSAFWFA.
+<<endif>>
+
+<<if HasItem("Doggy plush")>>
+    I have a Doggy plush.
+<<else>>
+    I don't have a Doggy plush.
+<<endif>>
+
+<<if HasItem("Doggy")>>
+    I have a Doggy.
+<<else>>
+    I don't have a Doggy.
+<<endif>>
+===
