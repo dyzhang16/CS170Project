@@ -94,49 +94,93 @@ public class CoffeeYarnCommands : MonoBehaviour
     private void CoffeeSleeve(string[] parameters)
     {
         string Object = string.Join(" ", parameters);
-        Item item = Inventory.instance.FindItem(Object);
-        var boa = item as Drink;
-        (int, int) received = (boa.Cream, boa.Sugar);
-        Drink creation = RecipeBook.ContainsKey(received) ? RecipeBook[received] : so;
-        if (boa.lidOn)
+        // look through all of the Random Coffee items in Inventory
+        Item[] items = Inventory.instance.FindAllItemsWithName(Object);
+        foreach (Item item in items)
         {
-            boa.icon = boa.sleeveAndLidIcon;
-            boa.sleeveOn = true;
-            Inventory.instance.AddItem(creation);
-            dialogueRunner.StartDialogue(creation.name);
+            // boa = the Drink Item
+            var boa = item as Drink;
 
+            // try to find the drink that contains the right Cream and Sugar
+            (int, int) received = (boa.Cream, boa.Sugar);
+            Drink creation = RecipeBook.ContainsKey(received) ? RecipeBook[received] : so;
+
+            // if the sleeve has already been put on, then go to the next item
+            if (boa.sleeveOn)
+            {
+                continue;
+            }
+
+            // if not, first remove the item
+            Inventory.instance.RemoveItem(item);
+
+            // then if the lid is on, then the drink is now complete after sleeving it
+            if (boa.lidOn)
+            {
+                boa.icon = boa.sleeveAndLidIcon;
+                boa.sleeveOn = true; // sleeve the drink
+                Inventory.instance.AddItem(creation);
+                dialogueRunner.StartDialogue(creation.name); // start the dialogue related to the creation
+
+            }
+            // otherwise if the lid is not on, then it needs a lid since it only has been sleeved
+            else
+            {
+                boa.icon = boa.sleeveOnIcon;
+                boa.sleeveOn = true; // sleeve the drink
+                boa.itemDescription = "A dressed up cup of coffee! It’s still susceptible to spills, though. Hmn...";
+                Inventory.instance.AddItem(boa);
+            }
+
+            // if this point was reached, this means that a drink has been sleeved at least once
+            //  so break out of the loop to prevent sleeving more cups
+            break;
         }
-        else
-        {
-            boa.icon = boa.sleeveOnIcon;
-            boa.sleeveOn = true;
-            boa.itemDescription = "A dressed up cup of coffee! It’s still susceptible to spills, though. Hmn...";
-            Inventory.instance.AddItem(boa);
-        }
-        Inventory.instance.RemoveItem(item);
     }
     private void CoffeeLid(string[] parameters)
     {
         string Object = string.Join(" ", parameters);
-        Item item = Inventory.instance.FindItem(Object);
-        var boa = item as Drink;
-        (int, int) received = (boa.Cream, boa.Sugar);
-        Drink creation = RecipeBook.ContainsKey(received) ? RecipeBook[received] : so;
-        if (boa.sleeveOn)
+        // look through all of the Random Coffee items in Inventory
+        Item[] items = Inventory.instance.FindAllItemsWithName(Object);
+        foreach (Item item in items)
         {
-            boa.icon = boa.sleeveAndLidIcon;
-            boa.lidOn = true;
-            Inventory.instance.AddItem(creation);
-            dialogueRunner.StartDialogue(creation.name);
+            // boa = the Drink Item
+            var boa = item as Drink;
+
+            // try to find the drink that contains the right Cream and Sugar
+            (int, int) received = (boa.Cream, boa.Sugar);
+            Drink creation = RecipeBook.ContainsKey(received) ? RecipeBook[received] : so;
+
+            // if the lid has already been put on, then go to the next item
+            if (boa.lidOn)
+            {
+                continue;
+            }
+
+            // if not, first remove the item
+            Inventory.instance.RemoveItem(item);
+
+            // then if the sleeve is on, then the drink is now complete after lidding it
+            if (boa.sleeveOn)
+            {
+                boa.icon = boa.sleeveAndLidIcon;
+                boa.lidOn = true; // lid the drink
+                Inventory.instance.AddItem(creation);
+                dialogueRunner.StartDialogue(creation.name); // start the dialogue related to the creation
+            }
+            // otherwise if the sleeve is not on, then it needs a sleeve since it only has been lidded
+            else
+            {
+                boa.icon = boa.lidOnIcon;
+                boa.lidOn = true; // lid the drink
+                boa.itemDescription = "Can’t spill it now! Holding it is still a test of endurance, though. Hmn…";
+                Inventory.instance.AddItem(boa); 
+            }
+
+            // if this point was reached, this means that a drink has been lidded at least once
+            //  so break out of the loop to prevent lidding more cups
+            break;
         }
-        else
-        {
-            boa.icon = boa.lidOnIcon;
-            boa.lidOn = true;
-            boa.itemDescription = "Can’t spill it now! Holding it is still a test of endurance, though. Hmn…";
-            Inventory.instance.AddItem(boa);
-        }
-        Inventory.instance.RemoveItem(item);
     }
 
     private void AddCoffeetoInventory(string[] parameters)
