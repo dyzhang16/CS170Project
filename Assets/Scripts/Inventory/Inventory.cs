@@ -115,6 +115,14 @@ public class Inventory : MonoBehaviour
         Item item = Array.Find(itemList, itemList => itemList != null && itemList.itemName == Name);  //https://stackoverflow.com/questions/41348249/null-exception-with-array-findindex-searching-in-a-string-array-in-c-sharp
         return item;
     }
+
+    // new function for finding all items with provided name
+    public Item[] FindAllItemsWithName(string name)
+    {
+        // same implementation as FindItem but uses FindAll
+        Item[] items = Array.FindAll<Item>(itemList, itemList => itemList != null && itemList.itemName == name);
+        return items;
+    }
     public bool FindItemOfTypeDrink()
     {
         return Array.Exists(itemList, element => element as Drink);
