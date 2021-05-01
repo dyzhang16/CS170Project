@@ -74,6 +74,7 @@ public class ChangeSpeaker : MonoBehaviour
         if (parameters[0] == "None") // None != NONE (None means no first character image)
         {
             characterImage.gameObject.SetActive(false);
+            speakerNameText.text = " ";
         }
         else
         {

@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
-using Yarn;
-using Yarn.Unity;
+
 
 public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
 
-    public GameObject Stamps, Signature, SignArea, StampArea; 
+    public GameObject Stamps, Signature, SignArea, StampArea, StampAreaTwo; 
     public bool isDragging = false;
-    [HideInInspector] public bool stampedSpace, signedSpace = false;
+    [HideInInspector] public bool stampedSpace, stampedSpaceTwo, signedSpace = false;
     private Transform originalParent;
-    private bool stamp, sign = false;
+    private bool stamp, sign, stampTwo , halfStamp= false;
 
     public void Start()
     {
@@ -35,29 +33,68 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
             if (eventData.button == PointerEventData.InputButton.Left)
             {
                 Sign();
-                if (SignArea.GetComponent<mouseOver>().isMouseOver && !sign)
+                if (SignArea)
                 {
-                    signedSpace = true;
-                    SoundManagerScript.PlaySound("sign_sound");
+                    if (SignArea.GetComponent<mouseOver>().isMouseOver && !sign)
+                    {
+                        signedSpace = true;
+                        sign = true;
+                    }
+                    else
+                    {
+                        signedSpace = false;
+                        sign = true;
+                    }
                 }
                 else
                 {
-                    signedSpace = false;
-                    sign = true;
+                    Debug.LogWarning("No SignArea on ths Document");
                 }
+
             }
             if (eventData.button == PointerEventData.InputButton.Right)
             {
                 Stamp();
-                if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamp)
+                if (StampArea && StampAreaTwo)
                 {
-                    stampedSpace = true;
-                    SoundManagerScript.PlaySound("stamp_sound");
+                    if ((StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver) && halfStamp)
+                    {
+                        stampedSpace = true;
+                    }
+                    else if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamp)
+                    {
+                        halfStamp = true;
+                        stamp = true;
+                    }
+                    else if (StampAreaTwo.GetComponent<mouseOver>().isMouseOver && !stampTwo)
+                    {
+                        halfStamp = true;
+                        stampTwo = true;
+                    }
+                    else
+                    {
+                        stampedSpace = false;
+                        stamp = true;
+                        stampTwo = true;
+                    }
+
                 }
-                else
+                else if (StampArea)
                 {
-                    stampedSpace = false;
-                    stamp = true;
+                    if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamp)
+                    {
+                        stampedSpace = true;
+                        stamp = true;
+                    }
+                    else
+                    {
+                        stampedSpace = false;
+                        stamp = true;
+                    }
+                }
+                else 
+                {
+                    Debug.LogWarning("No StampArea on ths Document");
                 }
             }
         }
@@ -66,11 +103,13 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
     {
         var mousePos = Input.mousePosition;
         Instantiate(Stamps, mousePos, transform.localRotation, transform);
+        SoundManagerScript.PlaySound("stamp_sound");
     }
     private void Sign()
     {
         var mousePos = Input.mousePosition;
         Instantiate(Signature, mousePos, transform.localRotation, transform);
+        SoundManagerScript.PlaySound("sign_sound");
     }
     public void OnPointerDown(PointerEventData eventData)
     {

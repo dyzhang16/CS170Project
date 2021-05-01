@@ -69,5 +69,9 @@ tags:
 title: LeaveCoffee
 tags:
 ---
-<<ChangeScene BlackScreen StreetCoffee>>
+<<ChangeSpeaker None>>
+	Do you want to leave the coffee stand?
+	-> Leave the Coffee Stand.
+		<<ChangeScene BlackScreen StreetCoffee>>
+	-> Stay.
 ===

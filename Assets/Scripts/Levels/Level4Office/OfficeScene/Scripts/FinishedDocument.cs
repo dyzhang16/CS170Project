@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class FinishedDocument : MonoBehaviour, IDropHandler
@@ -10,6 +11,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
     public DialogueRunner DialogueRunner;
     public string dialogueToRun;
     [HideInInspector] public int documentFinished = 0;
+    public Text text;
     private GameObject choice;
     private bool Boring = true;
     public void OnDrop(PointerEventData eventData)
@@ -46,6 +48,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
             }
             Destroy(eventData.pointerDrag.transform.gameObject);
             Arrow.GetComponent<CanvasGroup>().alpha = 0;
+            DisplayFinishedDocuments();
             SpawnDocument();
            
             if (documentFinished == 5)
@@ -58,6 +61,10 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 }
             }
         }
+    }
+    public void DisplayFinishedDocuments()
+    {
+        text.text = "Number of Documents Finished:" + documentFinished;
     }
     public void SpawnDocument()
     {

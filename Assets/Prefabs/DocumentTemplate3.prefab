@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7057877202660995501}
   - component: {fileID: 3345638090798443676}
   m_Layer: 5
-  m_Name: StampArea
+  m_Name: StampAreaOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,12 +31,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8711563121829960288}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.94, y: -33.28}
-  m_SizeDelta: {x: 369.40833, y: 78.01593}
+  m_AnchoredPosition: {x: 168.7, y: 67.8}
+  m_SizeDelta: {x: 173.99591, y: 77.56549}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8582733986238002866
 CanvasRenderer:
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.63616323, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6986861036934337640}
   - component: {fileID: 121054863998046124}
   m_Layer: 5
-  m_Name: SignArea
+  m_Name: StampAreaTwo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,12 +119,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8711563121829960288}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.200058, y: -266.0001}
-  m_SizeDelta: {x: 403.31866, y: 78.01593}
+  m_AnchoredPosition: {x: 168.69994, y: -297.9}
+  m_SizeDelta: {x: 173.99573, y: 78.72388}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7153935960351728501
 MonoBehaviour:
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.36693034, g: 0.9433962, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -207,8 +207,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8222908920820655700}
   - {fileID: 3893798961691933224}
+  - {fileID: 8222908920820655700}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 81a10bf1203132744bdb013f41402ac9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a877ee36aaffb4e4e916b3cae4affd0d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -269,10 +269,12 @@ MonoBehaviour:
   Stamps: {fileID: 871206980718776, guid: c5d309383400bc344a354cd4ba070672, type: 3}
   Signature: {fileID: 6440845081922978512, guid: 6ba92552ef29ae142a75b7faad6ab2c8,
     type: 3}
-  SignArea: {fileID: 5548644866752640736}
+  SignArea: {fileID: 0}
   StampArea: {fileID: 5159646958974168482}
+  StampAreaTwo: {fileID: 5548644866752640736}
   isDragging: 0
   stampedSpace: 0
+  stampedSpaceTwo: 0
   signedSpace: 0
 --- !u!225 &8536151105736309841
 CanvasGroup:
