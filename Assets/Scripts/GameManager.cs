@@ -71,6 +71,10 @@ public class GameManager : MonoBehaviour
     public int arcadeNoCraneDirs = 0;
     public int arcadeNoDanceDirs = 0;
 
+    // Office ID-related variables
+    public int idPickedUp = 0; // 1 = player picked up the ID, 0 otherwise
+    public int idNeeded = 0; // 2 = fredric used ID to get into office, 1 = player wants to give fredric ID, 0 otherwise
+
     //cursor texture
     public Texture2D cursorTexture;
     public Texture2D cursorHoverTexture;
@@ -159,6 +163,29 @@ public class GameManager : MonoBehaviour
                     }
                     break;
             }
+        }
+    }
+
+    // Checks a variable
+    //  WARNING: In order to use this function, it must be added to the DialogueRunner
+    //      via the script that a level is dependent on (e.g. CityOffice.cs, CityArcade.cs, etc)
+    public Yarn.Value GetVariable(string query)
+    {
+        // get the System.Type from GameManager
+        System.Type GMType = typeof(GameManager);
+        // get the field from the GameManager
+        System.Reflection.FieldInfo fieldInfo = GMType.GetField(query);
+        // verify if a variable was found
+        if (fieldInfo != null)
+        {
+            // return it the value of the variable
+            return new Yarn.Value(fieldInfo.GetValue(this));
+        }
+        // if not found, log the error
+        else
+        {
+            Debug.LogError(string.Format("Error, could not find variables {0}.", query[0]));
+            return null;
         }
     }
 }
