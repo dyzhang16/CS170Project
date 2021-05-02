@@ -55,6 +55,10 @@ public class SceneSkip : MonoBehaviour
         manager.arcadeFirstDance = 0;
         manager.arcadeNoCraneDirs = 0;
         manager.arcadeNoDanceDirs = 0;
+        
+        // id-related vars default
+        manager.idPickedUp = 0;
+        manager.idNeeded = 0;
     }
 
     public void skipCoffee(){
@@ -82,6 +86,10 @@ public class SceneSkip : MonoBehaviour
         manager.arcadeFirstDance = 0;
         manager.arcadeNoCraneDirs = 0;
         manager.arcadeNoDanceDirs = 0;
+
+        // id-related vars default
+        manager.idPickedUp = 0;
+        manager.idNeeded = 0;
     }
 
     public void skipOffice(){
@@ -109,6 +117,10 @@ public class SceneSkip : MonoBehaviour
         manager.arcadeFirstDance = 0;
         manager.arcadeNoCraneDirs = 0;
         manager.arcadeNoDanceDirs = 0;
+
+        // the ID would have been already retrieved if the player is at the office
+        manager.idPickedUp = 1;
+        manager.idNeeded = 2;
     }
 
     public void skipApartment(){
@@ -136,6 +148,10 @@ public class SceneSkip : MonoBehaviour
         manager.arcadeFirstDance = 0;
         manager.arcadeNoCraneDirs = 0;
         manager.arcadeNoDanceDirs = 0;
+
+        // the ID would have been already retrieved at this stage
+        manager.idPickedUp = 1;
+        manager.idNeeded = 2;
     }
 
     public void skipArcade(){
@@ -163,5 +179,9 @@ public class SceneSkip : MonoBehaviour
         manager.arcadeFirstDance = 0;
         manager.arcadeNoCraneDirs = 0;
         manager.arcadeNoDanceDirs = 0;
+
+        // the ID would have been already retrieved at this stage
+        manager.idPickedUp = 1;
+        manager.idNeeded = 2;
     }
 }

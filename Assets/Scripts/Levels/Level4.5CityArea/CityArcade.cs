@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class CityArcade : MonoBehaviour
 {
@@ -47,6 +48,10 @@ public class CityArcade : MonoBehaviour
     {
         if (GameManager.instance != null)
         {
+            // Add the GetVariable function to check things
+            DialogueRunner dialogueRunner = GameObject.Find("DialogueRunner").GetComponent<DialogueRunner>();
+            dialogueRunner.AddFunction("GetVariable", 1, (Yarn.Value[] query) => GameManager.instance.GetVariable(query[0].AsString));
+
             GameManager.instance.loadItems();
             GameManager.instance.deleteItems();
         }

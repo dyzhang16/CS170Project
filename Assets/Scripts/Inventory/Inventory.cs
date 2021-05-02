@@ -40,7 +40,14 @@ public class Inventory : MonoBehaviour
             {
                 
                 itemList[i] = item;
-                SoundManagerScript.PlaySound("pickup_flower_2"); // plays sound when item added to inventory
+                try
+                {
+                    SoundManagerScript.PlaySound("pickup_flower_2"); // plays sound when item added to inventory
+                }
+                catch (System.ArgumentNullException exc)
+                {
+                    Debug.LogError(exc.Message);
+                }
                 return true;
             }
         }
