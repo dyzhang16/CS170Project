@@ -27,42 +27,73 @@ It's a trumpet case
 title: CardboardBox
 ---
 
-<<ChangeSpeaker Player>>
-It's a cardboard box
+<<if visited("Bed") is true>>
+    <<ChangeSpeaker Player>>
+    It's a cardboard box
 
-Wait there's something in here
+    Wait there's something in here
 
-<<Show CardboardBox>>
+    <<Show CardboardBox>>
+
+<<else>>
+
+    <<ChangeSpeaker Player>>
+    I should move the bed first
+
+<<endif>>
 
 ===
 
 title: BookshelfEscape
 ---
 
-<<ChangeSpeaker Player>>
-It's a bookshelf
+<<if visited("Bed") is true>>
+    <<ChangeSpeaker Player>>
+    It's a bookshelf
 
-<<Show Bookshelf>>
+    <<Show Bookshelf>>
+<<else>>
+
+    <<ChangeSpeaker Player>>
+
+    I should move the bed first
+
+<<endif>>
 
 ===
 
 title: PictureFrame
 ---
 
-<<ChangeSpeaker Player>>
-It's a picture frame
+<<if visited("Bed") is true>>
+    <<ChangeSpeaker Player>>
+    It's a picture frame
 
-<<Show PictureFrame>>
+    <<Show PictureFrame>>
+<<else>>
+
+    <<ChangeSpeaker Player>>
+
+    I should move the bed first
+
+<<endif>>
 
 ===
 
 title: Laptop
 ---
 
-<<ChangeSpeaker Player>>
-It's a laptop
+<<if visited("Bed") is true>>
+    <<ChangeSpeaker Player>>
+    It's a laptop
 
-<<Show Laptop>>
+    <<Show Laptop>>
+<<else>>
+
+    <<ChangeSpeaker Player>>
+    I should move the bed first
+
+<<endif>>
 
 ===
 

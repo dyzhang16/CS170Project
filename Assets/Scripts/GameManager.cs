@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
     public int firstApartment = 0;
     //cleaning room puzzle
     public int cleanedRoom = 0;
+    //visited bed first
+    public int visitedBed = 0;
     //finished escape room
     public int timeCapsule = 0;
     //transition dialogue
@@ -137,6 +139,9 @@ public class GameManager : MonoBehaviour
                     break;
                 case "officePuzzle":
                     officePuzzle = int.Parse(variables[1]);
+                    break;
+                case "visitedBed":
+                    visitedBed = int.Parse(variables[1]);
                     break;
                 case "firstDateDia":
                     firstDateDia = int.Parse(variables[1]);

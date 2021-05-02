@@ -62,6 +62,8 @@ title: Bed
     <<Focus FIRST>>
     Sounds exciting, lets try and find out the code!
 
+    <<ChangeVariable GameManager visitedBed 1>>
+
 <<else>>
 
     <<Show TimeCapsule>>
@@ -73,11 +75,20 @@ title: Bed
 title: friend_after_cleaning
 ---
 
-<<ChangeSpeaker Player Friend>>
+<<if visited("Bed") is true>>
+    <<ChangeSpeaker Player Friend>>
 
-<<Focus SECOND>>
+    <<Focus SECOND>>
 
-Hmmm I know that you can find all the clues to the time capsule in my room...
+    Hmmm I know that you can find all the clues to the time capsule in my room...
+<<else>>
+
+    <<ChangeSpeaker Friend>>
+    <<Focus SECOND>>
+
+    Maybe moving the bed is a good idea
+
+<<endif>>
 
 ===
 

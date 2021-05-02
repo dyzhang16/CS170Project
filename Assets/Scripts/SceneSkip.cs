@@ -19,6 +19,7 @@ public class SceneSkip : MonoBehaviour
         manager.officePuzzle = 0;
         manager.officeDeskPuzzle = 0;
         manager.firstApartment = 0;
+        manager.walkedToApartment = 0;
         manager.cleanedRoom = 0;
         manager.timeCapsule = 0;
         manager.firstDateDia = 0;
@@ -45,6 +46,7 @@ public class SceneSkip : MonoBehaviour
         manager.officePuzzle = 0;
         manager.officeDeskPuzzle = 0;
         manager.firstApartment = 0;
+        manager.walkedToApartment = 0;
         manager.cleanedRoom = 0;
         manager.timeCapsule = 0;
         manager.firstDateDia = 0;
@@ -71,6 +73,7 @@ public class SceneSkip : MonoBehaviour
         manager.officePuzzle = 0;
         manager.officeDeskPuzzle = 0;
         manager.firstApartment = 0;
+        manager.walkedToApartment = 0;
         manager.cleanedRoom = 0;
         manager.timeCapsule = 0;
         manager.firstDateDia = 0;
@@ -97,6 +100,7 @@ public class SceneSkip : MonoBehaviour
         manager.officePuzzle = 0;
         manager.officeDeskPuzzle = 0;
         manager.firstApartment = 0;
+        manager.walkedToApartment = 0;
         manager.cleanedRoom = 0;
         manager.timeCapsule = 0;
         manager.firstDateDia = 0;
@@ -122,6 +126,7 @@ public class SceneSkip : MonoBehaviour
         manager.officePuzzle = 1;
         manager.officeDeskPuzzle = 1;
         manager.firstApartment = 1;
+        manager.walkedToApartment = 2;
 
         manager.cleanedRoom = 0;
         manager.timeCapsule = 0;
@@ -148,6 +153,7 @@ public class SceneSkip : MonoBehaviour
         manager.officePuzzle = 1;
         manager.officeDeskPuzzle = 1;
         manager.firstApartment = 1;
+        manager.walkedToApartment = 2;
         manager.cleanedRoom = 1;
         manager.timeCapsule = 1;
         manager.firstDateDia = 1;
