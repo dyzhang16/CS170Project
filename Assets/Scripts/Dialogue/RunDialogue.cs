@@ -77,8 +77,10 @@ public class RunDialogue : MonoBehaviour
                 float size = this.GetComponent<SpriteRenderer>().bounds.size.x * this.GetComponent<SpriteRenderer>().bounds.size.z;
                 if (size < 150){
                     dialogueCursor.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
-                } else {
+                } else if (size < 500){
                     dialogueCursor.transform.localScale = new Vector3(1f, 1f, 1f);
+                } else {
+                    dialogueCursor.transform.localScale = new Vector3(2f, 2f, 1f);
                 }
             }
         }
@@ -140,8 +142,10 @@ public class RunDialogue : MonoBehaviour
                 float size = this.GetComponent<SpriteRenderer>().bounds.size.x * this.GetComponent<SpriteRenderer>().bounds.size.z;
                 if (size < 150){
                     dialogueCursor.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
-                } else {
+                } else if (size < 500){
                     dialogueCursor.transform.localScale = new Vector3(1f, 1f, 1f);
+                } else {
+                    dialogueCursor.transform.localScale = new Vector3(2f, 2f, 1f);
                 }
             }
         }

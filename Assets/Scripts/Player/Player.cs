@@ -90,10 +90,21 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             //select the continue button upon pressing space
             if(Input.GetKeyDown(KeyCode.Space)){
                 if (GameObject.Find("DiaSystem Prefab 1/DialogueRunner") != null){
+                    Debug.Log("found dialogue runner");
                     GameObject dia = GameObject.Find("DiaSystem Prefab 1/DialogueRunner");
                     DialogueRunner diaRunner = dia.GetComponent<DialogueRunner>();
                     if (diaRunner.IsDialogueRunning){
-                        GameObject.Find("DiaSystem Prefab 1/EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("DiaSystem Prefab 1/DialogueCanvas/DialogueContainer/ContinueButton"));
+                        //finding continue button
+                        GameObject contButton = GameObject.Find("DiaSystem Prefab 1/DialogueCanvas/DialogueContainer/ContinueButton");
+
+                        //if external event system
+                        GameObject eveSys = GameObject.Find("EventSystem");
+                        if (eveSys != null){
+                            eveSys.GetComponent<EventSystem>().SetSelectedGameObject(contButton);
+                        }
+
+                        //dialogue runnner event system
+                        GameObject.Find("DiaSystem Prefab 1/EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(contButton);
                     }
                 }
             }

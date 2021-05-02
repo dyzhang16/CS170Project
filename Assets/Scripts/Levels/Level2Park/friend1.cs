@@ -38,7 +38,9 @@ public class friend1 : MonoBehaviour
                 } else if (GameManager.instance.walkedToApartment == 1){
                     target = DestinationAfterOffice2.transform.position;
                 }
-            } else if (GameManager.instance.firstDateDia == 1){
+            }
+            
+            if (GameManager.instance.firstDateDia == 1){
                 target = DestinationAfterApartment.transform.position;
             } else {
                 target = Destination.transform.position;
@@ -109,6 +111,7 @@ public class friend1 : MonoBehaviour
         isWalking = true;
         col.isTrigger = true;
         GameManager.instance.firstFriendMeeting = 3;
+        this.GetComponent<SpriteRenderer>().flipX = true;
     }
 
     //cityOffice
@@ -117,6 +120,7 @@ public class friend1 : MonoBehaviour
         isWalking = true;
         col.isTrigger = true;
         GameManager.instance.firstFriendMeeting = 4;
+        this.GetComponent<SpriteRenderer>().flipX = true;
     }
 
     [YarnCommand("MoveToApartment1")]
@@ -138,6 +142,7 @@ public class friend1 : MonoBehaviour
         isWalking = true;
         col.isTrigger = true;
         GameManager.instance.walkToStreet = 1;
+        this.GetComponent<SpriteRenderer>().flipX = true;
     }
 
     [YarnCommand("Enter")]
