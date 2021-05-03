@@ -32,17 +32,11 @@ public class TimeCapsulePuzzle : MonoBehaviour
                 num1++;
                 num1 = num1%10;
 
-                if (num1 == 0)
-                    num1++;
-
                 num1Text.text = "" + num1;
                 break;
             case "num2":
                 num2++;
                 num2 = num2%10;
-
-                if (num2 == 0)
-                    num2++;
 
                 num2Text.text = "" + num2;
                 break;
@@ -50,18 +44,12 @@ public class TimeCapsulePuzzle : MonoBehaviour
                 num3++;
                 num3 = num3%10;
 
-                if (num3 == 0)
-                    num3++;
-
                 num3Text.text = "" + num3;
                 break;
             case "num4":
                 num4++;
                 num4 = num4%10;
-
-                if (num4 == 0)
-                    num4++;
-
+                
                 num4Text.text = "" + num4;
                 break;
         }
@@ -73,7 +61,7 @@ public class TimeCapsulePuzzle : MonoBehaviour
                 num1--;
                 num1 = num1%10;
 
-                if (num1 == 0)
+                if (num1 == -1)
                     num1 = 9;
 
                 num1Text.text = "" + num1;
@@ -82,7 +70,7 @@ public class TimeCapsulePuzzle : MonoBehaviour
                 num2--;
                 num2 = num2%10;
 
-                if (num2 == 0)
+                if (num2 == -1)
                     num2 = 9;
 
                 num2Text.text = "" + num2;
@@ -91,7 +79,7 @@ public class TimeCapsulePuzzle : MonoBehaviour
                 num3--;
                 num3 = num3%10;
 
-                if (num3 == 0)
+                if (num3 == -1)
                     num3 = 9;
 
                 num3Text.text = "" + num3;
@@ -100,7 +88,7 @@ public class TimeCapsulePuzzle : MonoBehaviour
                 num4--;
                 num4 = num4%10;
 
-                if (num4 == 0)
+                if (num4 == -1)
                     num4 = 9;
 
                 num4Text.text = "" + num4;
