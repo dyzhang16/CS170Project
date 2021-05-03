@@ -39,7 +39,7 @@ public class CheckCoffee : MonoBehaviour , IDropHandler
                     GameManager.instance.gaveDrink = 1;
                     StartCoroutine(WaitCoroutine(3, 1));
                 }
-                else if (droppedItem.itemName == "Random Drink")
+                else if (droppedItem.itemName == "Random Coffee")
                 {
                     Inventory.instance.RemoveItem(droppedItem);
                     GetComponent<Image>().sprite = droppedItem.icon;
@@ -59,7 +59,7 @@ public class CheckCoffee : MonoBehaviour , IDropHandler
                 Inventory.instance.RemoveItem(droppedItem);
                 GetComponent<Image>().sprite = droppedItem.icon;
                 exitButton.GetComponent<Button>().interactable = false;
-                StartCoroutine(WaitCoroutine(2, 3));
+                StartCoroutine(WaitCoroutine(1, 3));
             }
         }
     }

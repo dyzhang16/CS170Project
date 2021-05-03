@@ -2,7 +2,7 @@
 tags:
 ---
 <<ChangeSpeaker Player>>
-	//Ghost: 
+
 	No wonder the line is held up. The barista is sleeping on the job! 
 	
 	At least, I hope they’re just sleeping…
@@ -13,10 +13,9 @@ tags:
 	
 	But I don’t actually know how to make coffee…
 	
-	Is there an employee <b>instruction manual</b> anywhere?
+	Is there an employee instruction manual anywhere?
 <<ChangeVariable GameManager visitedCoffee 1>>
 ===
-
 title: RecipeBook
 tags:
 ---
@@ -27,15 +26,15 @@ tags:
 
     <<ChangeSpeaker Recipe_Book>>
 
-         “Pour the coffee grounds into the machine. Don’t forget to place the coffee <b>filter</b> first!”
+         “Pour the coffee grounds into the machine. Don’t forget to place the coffee filter first!”
 
-        “Pour <b>water</b> into the machine and shut the lid tight.”
+        “Pour water into the machine and shut the lid tight.”
 
-        “Place the <b>cup</b> in its designated spot. Click the ‘BREW’ button on the coffee machine.”
+        “Place the cup in its designated spot. Click the ‘BREW’ button on the coffee machine.”
 
-        “Once the coffee is brewed, add the correct amount of <b>sugar</b> and <b>cream</b>.”
+        “Once the coffee is brewed, add the correct amount of sugar and cream.”
 
-        “Carefully snap on a <b>lid</b> onto the cup. Don’t forget to provide a cup <b>sleeve</b>.”
+        “Carefully snap on a lid onto the cup. Don’t forget to provide a cup sleeve.”
 
         “Serve your drink and pat yourself on the back!”
 
@@ -43,11 +42,17 @@ tags:
 
         Yes, I think I can work with this. Oh! There are recipes in here, too!
 
-<<endif>>
 <<Show Recipe_Book>>
+<<else>>
+[[ShowRecipeBook]]
+<<endif>>
 <<ChangeVariable GameManager readBook 1>>
 ===
-
+title: ShowRecipeBook
+tags:
+---
+	<<Show Recipe_Book>>
+===
 title: Note
 tags:
 ---
