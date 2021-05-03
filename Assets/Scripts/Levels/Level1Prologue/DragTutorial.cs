@@ -52,7 +52,7 @@ public class DragTutorial : MonoBehaviour
     void Update(){
         if (playingTutorial && continueCycle){
 
-            float step = 100 * Time.deltaTime;
+            float step = 300 * Time.deltaTime;
 
             switch(cycle){
                 //move to flower
@@ -82,7 +82,7 @@ public class DragTutorial : MonoBehaviour
 
         cycle = cycle%2;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.75f);
 
         if (cycle == 0){
             flower.transform.localScale = new Vector3(2, 2, 2);

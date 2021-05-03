@@ -81,4 +81,36 @@ public class DialogueCameraFocus : MonoBehaviour
         //main cam
         mainCam.enabled = true;
     }
+
+    [YarnCommand("FollowObj")]
+    public void FollowObj(string[] parameters){
+
+        // use better variable names for the parameters
+        string locationName = parameters[0];
+
+        // get the GameObject that the location is referring to
+        GameObject location = GameObject.Find(locationName);
+
+        // if the location is null (i.e. the GameObject was not found), log a warning and do no movement
+        if (location == null)
+        {
+            Debug.LogWarningFormat("MovePlayer: Could not find GameObject {0}. Player movement was not done.", locationName);
+        }
+
+        dialogueCam.Follow = location.transform;
+
+        dialogueCam.enabled = true; 
+
+        mainCam.enabled = false;
+    }
+
+    [YarnCommand("UnFollowObj")]
+    public void UnFollowObj(){
+
+        dialogueCam.Follow = null;
+
+        dialogueCam.enabled = false; 
+
+        mainCam.enabled = true;
+    }
 }
