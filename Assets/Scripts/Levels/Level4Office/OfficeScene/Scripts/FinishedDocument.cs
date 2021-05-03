@@ -18,10 +18,12 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag.transform.tag == "Document")
         {
+            
             if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().SignArea && eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampArea)
             {
                 if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedSpace && eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpace)
                 {
+                    SoundManagerScript.PlaySound("sliding_document");
                     ++documentFinished;
                     Debug.Log("Correct Document Finished: " + documentFinished);
                 }
@@ -30,6 +32,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
             {
                 if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedSpace)
                 {
+                    SoundManagerScript.PlaySound("sliding_document");
                     ++documentFinished;
                     Debug.Log("Correct Document Finished: " + documentFinished);
                 }
@@ -38,6 +41,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
             {
                 if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpace)
                 {
+                    SoundManagerScript.PlaySound("sliding_document");
                     ++documentFinished;
                     Debug.Log("Correct Document Finished: " + documentFinished);
                 }
@@ -70,6 +74,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
     {
         Vector3 pos = new Vector3(DocumentUI.transform.position.x, DocumentUI.transform.position.y, DocumentUI.transform.position.z);
         int x = Random.Range(1, 4);
+        
         switch (x)
         {
             case 1:
