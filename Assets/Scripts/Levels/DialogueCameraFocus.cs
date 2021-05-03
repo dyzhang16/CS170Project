@@ -82,7 +82,7 @@ public class DialogueCameraFocus : MonoBehaviour
         mainCam.enabled = true;
     }
 
-    [YarnCommand("FollowObj")]
+    [YarnCommand("FollowObject")]
     public void FollowObj(string[] parameters){
 
         // use better variable names for the parameters
@@ -102,9 +102,11 @@ public class DialogueCameraFocus : MonoBehaviour
         dialogueCam.enabled = true; 
 
         mainCam.enabled = false;
+
+        // Debug.Log("penis");
     }
 
-    [YarnCommand("UnFollowObj")]
+    [YarnCommand("UnFollowObject")]
     public void UnFollowObj(){
 
         dialogueCam.Follow = null;

@@ -55,7 +55,11 @@
     <<ChangeSpeaker Player>>
     ...I need to find a way to get this person to talk to me.
 
+    <<Pan CoffeeStand>>
+
     But they won’t talk to me unless they have their coffee…
+
+    <<UnPan CoffeeStand>>
 
     <<DropReceipt Friend1>>
 
@@ -234,6 +238,8 @@ title: correct_coffee
 
     Wait, don’t go! There’s still so much I want to talk to you about. You said you’d talk to me.
 
+<<FollowObject DialogueCam Friend1>>
+
 <<Focus SECOND>>
 
     I don’t have the time right now. I have to get to work. Go haunt someone else!
@@ -243,5 +249,7 @@ title: correct_coffee
 <<ChangeSpeaker Player>>
 
     But there’s no one else...
+
+<<UnFollowObject DialogueCam>>
 
 ===
