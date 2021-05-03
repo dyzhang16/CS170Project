@@ -50,12 +50,29 @@ tags:
 title: OfficeFriend
 ---
 <<ChangeSpeaker Player Friend>>
+
 <<if $TookMDocument is 1 and $TookEDocument is 1 and $TookMaxDocument is 1>>
+
+	
 	[[OfficeFriendPuzzleSolved]]
+	
 <<endif>>
+
 <<if $isDocument is 1>>
 
+
 	Thanks for bringing back these documents. 
+
+	
+	<<if $count is 0>>
+		<<set $count to 1>>
+		<<giveDoc SoundManager>>
+	<<elseif $count is 1>>
+		<<set $count to 2>>
+		<<giveDoc SoundManager>>
+	<<elseif $count is 2>>
+		<<playSuccess SoundManager>>
+	<<endif>>
 
 <<set $isDocument to 0>>
 	<<if $MatthewDocument is 1>>
@@ -73,6 +90,8 @@ title: OfficeFriend
 	<<endif>>
 <<elseif visited("OfficeFriend") is false>> //Visiting Friend first time
 <<Focus SECOND>>
+	
+	<<set $count to 0>>
 
 	Here is my desk.
 
@@ -110,6 +129,7 @@ tags:
 ---
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
+
 
 	Thanks, you brought back all the documents.
 

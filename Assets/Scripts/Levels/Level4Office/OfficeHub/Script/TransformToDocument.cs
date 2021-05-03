@@ -25,6 +25,7 @@ public class TransformToDocument : MonoBehaviour
     [YarnCommand("TransformIntoDocument")]
     public void PossessDocuments(string[] parameters)
     {
+        SoundManagerScript.PlaySound("document_transform");
         string Object = parameters[0];
         activeObj = GameObject.Find(Object);
         activeObj.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.75f);
@@ -35,6 +36,7 @@ public class TransformToDocument : MonoBehaviour
     [YarnCommand("TransformIntoPlayer")]
     public void ReleasePossession(string[] parameters)
     {
+        SoundManagerScript.PlaySound("document_transform");
         Debug.Log(parameters[0]);
         string Object = parameters[0];
         activeObj = GameObject.Find(Object);

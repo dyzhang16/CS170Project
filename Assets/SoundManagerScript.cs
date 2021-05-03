@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 using UnityEngine.SceneManagement;
 
 public class SoundManagerScript : MonoBehaviour { 
@@ -21,6 +22,9 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip stamp;
     public static AudioClip sign;
     public static AudioClip drawer;
+    public static AudioClip slidingDocument;
+    public static AudioClip officeAlert;
+    public static AudioClip documentTransform;  
 
 
 
@@ -57,6 +61,9 @@ public class SoundManagerScript : MonoBehaviour {
         stamp = Resources.Load<AudioClip>("stamp");
         sign = Resources.Load<AudioClip>("sign");
         drawer = Resources.Load<AudioClip>("drawer");
+        slidingDocument = Resources.Load<AudioClip>("sliding_document");
+        officeAlert = Resources.Load<AudioClip>("office_alert");
+        documentTransform = Resources.Load<AudioClip>("document_transform");
         // click = Resources.Load<AudioClip>("button_click");
     }
 
@@ -126,11 +133,28 @@ public class SoundManagerScript : MonoBehaviour {
             case "drawer_sound":
                 audioSrc.PlayOneShot(drawer);
                 break;
-
-
-
+            case "sliding_document":
+                audioSrc.PlayOneShot(slidingDocument);
+                break;
+            case "office_alert":
+                audioSrc.PlayOneShot(officeAlert);
+                break;
+            case "document_transform":
+                audioSrc.PlayOneShot(documentTransform);
+                break;
         }
 
+    }
+    [YarnCommand("playSuccess")]
+    public void playSuccess()
+    {
+        audioSrc.PlayOneShot(flowerSuccess);
+    }
+
+    [YarnCommand("giveDoc")]
+    public void giveDoc()
+    {
+        audioSrc.PlayOneShot(pickFlower);
     }
 
     public void diaSoundStart()

@@ -13,6 +13,7 @@ public class GuardPatrol : MonoBehaviour
         if (col.gameObject.CompareTag("Document") && !dialogueRunner.IsDialogueRunning)
         {
             GetComponentInParent<OfficeGuard>().isWalking = false;
+            SoundManagerScript.PlaySound("office_alert");
             dialogueRunner.StartDialogue(dialogueToRun);
         }
     }
