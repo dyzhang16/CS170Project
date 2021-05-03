@@ -18,7 +18,7 @@ public class CityArcade : MonoBehaviour
     void Awake(){
         if (GameManager.instance != null){
             if (GameManager.instance.previousScene == "StreetCoffee"){
-                player.transform.position = exitToStreetCoffee.transform.position + new Vector3(10, 0, 0);
+                player.transform.position = exitToStreetCoffee.transform.position + new Vector3(20, 0, 0);
             } else if (GameManager.instance.previousScene == "CityOffice"){
                 player.transform.position = exitToCityOffice.transform.position + new Vector3(-10, 0, 0);
             } else if (GameManager.instance.previousScene == "ArcadeScene"){

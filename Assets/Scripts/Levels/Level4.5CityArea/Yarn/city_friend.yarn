@@ -70,6 +70,8 @@ Huh, I think there's something on the ground there. I'm gonna see what it is.
 <<Focus FIRST>>
 Oh, sure.
 
+<<FollowObject DialogueCam Friend1>>
+
 <<moveToStreet Friend1>>
 
 <<wait 3>>
@@ -97,6 +99,8 @@ What?
 
 title: endingCutscene
 ---
+
+<<UnFollowObject DialogueCam>>
 
 <<ChangeSpeaker Player>>
 
