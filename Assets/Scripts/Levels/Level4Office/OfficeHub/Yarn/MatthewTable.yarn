@@ -13,7 +13,7 @@ tags:
 <<elseif visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Matthew's Table First time
 
 	You find the documents and possess them.
-<<Fade BlackScreen>>
+
 <<TransformIntoDocument Matthew's_Desk Document>>		//Transform into Documents
 <<set $isDocument to 1>>								//Changes to Document to Detect for Guard
 <<set $MatthewDocument to 1>>							//Specifically Matthew's Table
@@ -40,7 +40,6 @@ tags:
 
 	You find the documents and possess them.
 
-<<Fade BlackScreen>>
 <<TransformIntoDocument Elizabeth's_Desk Document>>		//Transform into Documents
 <<set $isDocument to 1>>								//Changes to Document to Detect for Guard
 <<set $ElizabethDocument to 1>>							//Specifically Elizabeth's Table
@@ -67,7 +66,6 @@ tags:
 
 	You find the documents and possess them.
 
-<<Fade BlackScreen>>
 <<TransformIntoDocument Max's_Desk Document>>			//Transform into Documents
 <<set $isDocument to 1>>								//Changes to Document to Detect for Guard
 <<set $MaxDocument to 1>>								//Specifically Max's Table
