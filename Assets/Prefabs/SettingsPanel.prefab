@@ -112,7 +112,7 @@ Canvas:
   m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -1968987137
   m_SortingOrder: 2
   m_TargetDisplay: 0
@@ -317,7 +317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: -80}
+  m_AnchoredPosition: {x: -3, y: -280}
   m_SizeDelta: {x: 263.6625, y: 75.9416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7818012979105551523
@@ -459,7 +459,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7818012979105551524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &7818012979105551521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,7 +723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.9999657, y: -280}
+  m_AnchoredPosition: {x: -2.9999657, y: -80}
   m_SizeDelta: {x: 263.6625, y: 75.9416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7818012980929045791

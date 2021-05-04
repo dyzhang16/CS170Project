@@ -58,6 +58,7 @@ public class friend1 : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target) < 0.001f){
                 isWalking = false;
+                col.isTrigger = false;
                 if (GameManager.instance.walkedToApartment == 2){
                     this.GetComponent<RunDialogue>().dialogueToRun = "friendGoingToApartment";
                 } else if (GameManager.instance.firstDateDia == 1){

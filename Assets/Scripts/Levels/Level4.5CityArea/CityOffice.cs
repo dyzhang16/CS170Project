@@ -7,7 +7,7 @@ public class CityOffice : MonoBehaviour
 {
     public NodeVisitedTracker tracker;
 
-    public GameObject player;
+    public GameObject player , introduction, officedoor;
     public GameObject Office;
     public GameObject friend;
 
@@ -26,7 +26,7 @@ public class CityOffice : MonoBehaviour
             //change dialogue
             if (GameManager.instance.firstFriendMeeting == 3){
                 friend.SetActive(true);
-                friend.GetComponent<RunDialogue>().dialogueToRun = "cityoffice_friend_intro";
+                
             } else if (GameManager.instance.officeDeskPuzzle == 1){
                 friend.SetActive(true);
                 friend.GetComponent<RunDialogue>().dialogueToRun = "goingToApartment1";
@@ -37,7 +37,7 @@ public class CityOffice : MonoBehaviour
             if (GameManager.instance.idNeeded == 1) // player needs to give Fredric the ID but hasn't yet
             {
                 friend.SetActive(true);
-                friend.transform.position = new Vector3(162.95f, 0f, -213.1492f);
+                friend.transform.position = officedoor.transform.position;
                 // strange bug but set the friend's collider to be a trigger
                 friend.GetComponentInChildren<Collider>().isTrigger = true;
             }
@@ -54,6 +54,11 @@ public class CityOffice : MonoBehaviour
 
             GameManager.instance.loadItems();
             GameManager.instance.deleteItems();
+        }
+        if (GameManager.instance.firstFriendMeeting != 3)
+        {
+            introduction.GetComponent<RunDialogue>().enabled = false;
+            introduction.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }

@@ -189,6 +189,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yarnScripts:
   - {fileID: 2480198943629176163, guid: 4190cc03f81b55b438f24739cb205d17, type: 3}
+  - {fileID: 2480198943629176163, guid: 7c7e90cb19aabfe46950b92817acf428, type: 3}
+  - {fileID: 2480198943629176163, guid: 2453d3bfb07726d4683b4530c1530361, type: 3}
+  - {fileID: 2480198943629176163, guid: c14b2668c37f51b488e2ba45ef755970, type: 3}
+  - {fileID: 2480198943629176163, guid: f50d47fda9f648f4aac05614fb76da20, type: 3}
   textLanguage: 
   variableStorage: {fileID: 720895104263553536}
   dialogueUI: {fileID: 720895104263553537}
@@ -197,8 +201,7 @@ MonoBehaviour:
   onNodeStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4082150130277126512, guid: ad9b45256d828ee4982f2e5d85b896c6,
-          type: 3}
+      - m_Target: {fileID: 0}
         m_MethodName: stopMove
         m_Mode: 1
         m_Arguments:
@@ -209,8 +212,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4082150130277126512, guid: ad9b45256d828ee4982f2e5d85b896c6,
-          type: 3}
+      - m_Target: {fileID: 0}
         m_MethodName: AllowInv
         m_Mode: 6
         m_Arguments:
@@ -221,8 +223,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4082150130277126512, guid: ad9b45256d828ee4982f2e5d85b896c6,
-          type: 3}
+      - m_Target: {fileID: 0}
         m_MethodName: AllowMove
         m_Mode: 6
         m_Arguments:
@@ -247,8 +248,7 @@ MonoBehaviour:
   onNodeComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4082150130277126512, guid: ad9b45256d828ee4982f2e5d85b896c6,
-          type: 3}
+      - m_Target: {fileID: 0}
         m_MethodName: AllowInv
         m_Mode: 6
         m_Arguments:
@@ -259,8 +259,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 4082150130277126512, guid: ad9b45256d828ee4982f2e5d85b896c6,
-          type: 3}
+      - m_Target: {fileID: 0}
         m_MethodName: AllowMove
         m_Mode: 6
         m_Arguments:
@@ -1383,8 +1382,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 664, y: 112.72}
-  m_SizeDelta: {x: 550, y: 550}
+  m_AnchoredPosition: {x: 632, y: 151.7}
+  m_SizeDelta: {x: 550, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3378108418281224946
 CanvasRenderer:

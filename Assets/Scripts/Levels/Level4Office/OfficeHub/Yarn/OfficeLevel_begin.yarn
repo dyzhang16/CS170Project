@@ -16,31 +16,35 @@ tags:
 
 <<Focus FIRST>>
 
-	No one’s making you respond -
+	You don’t need my help to make you look crazy. GOOD MORNING, EVERYONE!
 
-<<ChangeSpeaker Matthew>>
+<<Focus SECOND>>
+
+	 Huh, you’re right. No one heard that.
+
+<<ChangeSpeaker OfficeWorker>>
 <<Focus FIRST>>
 
-	We already think you’re crazy, Fredric.
+	I heard that.
 
-<<ChangeSpeaker Player Friend>>
-<<Focus SECOND>>
+<<ChangeSpeaker Player>>
+<<Focus FIRST>>
 	
-	Stop eavesdropping!
+	Wait, what? You can hear me, too?
 
-<<ChangeSpeaker Matthew>>
+<<ChangeSpeaker OfficeWorker>>
 <<Focus FIRST>>
 
-	The boss is gonna have your head if you spend any longer standing around talking to yourself.
+	Stop talking to yourself and get to work. If you waste any more time standing around, then I’ll really think you’re crazy. It’s not like you to be late, Fredric.
 
 <<ChangeSpeaker Player Friend>>
-<<Focus SECOND>>
-
-	I’m going, I’m going!
-
 <<Focus FIRST>>
 
-	Your boss won’t actually harm you, will they?
+	 Oh...
+
+<<Focus SECOND>>
+
+	I’m going, I’m going. My desk is this way.
 
 <<ChangeVariable GameManager followFriendinOffice 1>> 
 <<DisableDialogue DoorApproach>>
@@ -93,33 +97,107 @@ title: OfficeFriend
 	
 	<<set $count to 0>>
 
-	Here is my desk.
-
-	Wait, what happened to my documents?
+	Here it is, my desk.
 
 <<Focus FIRST>>
 	
-	...
+	What kind of work do you do here?
 
 <<Focus SECOND>>
 
-	(Narrative lead help me) My co-workers must've taken my documents again since I was late. 
-
-	I can't just go up to them and ask for it back.
-
-	Do you think you can help me grab them?
-
-	The blue desks should be the desks of Ellie, Max, and Matthew.
-
-	Try to grab the documents without them noticing. 
+	Here at Marson Monuments Co., we make custom statues out of marble for clients. I say ‘we’, but in this building, we just do the bureaucracy.
 
 <<Focus FIRST>>
+
+	And you just sign papers all day?
+
+<<Focus SECOND>>
+
+	That’s right. 9 to 5 everyday. I’ve never been late before today.
+
+<<Focus FIRST>>
+
+	Oh no. You’re not going to be in trouble with your boss, are you?
+
+<<Focus SECOND>>
+
+	Nah, I was cutting it close, but I clocked in just on time. By the way, I don’t think I ever thanked you for the coffee.
+
+<<Focus FIRST>>
+
+	It was the only way I could get you to talk to me.
+
+<<Focus SECOND>>
+
+	Hmm, sorry. I get like that sometimes.
+
+	I’ve been told I’m very work-oriented. I don’t like being late.
+
+<<Focus FIRST>>
+
+	For someone work-oriented, you don’t seem to be doing much work right now.
+
+<<Focus SECOND>>
 	
-	Alright.
+	Crap, you’re right. The papers I have to sign are riiiight he- Wait, where are they?!
+
+	I swear I collected the documents from my co-workers last night. I’m sure I did.
+
+<<Focus FIRST>>
+
+	Perhaps you can ask them if they’ve seen the papers around?
+
+<<Focus SECOND>>
+
+	If the papers aren’t here, then they must still be on my co-workers’ desks.
+
+<<Focus FIRST>>
+
+	That’s great. You know exactly where they are. Just go get them.
+
+<<Focus SECOND>>
+
+	You don’t understand. I can’t just do that.
+
+	They can’t find out I messed up. It’ll be the talk of the water cooler for weeks!
+
+<<Focus FIRST>>
+
+	Surely, they won’t talk behind your back. They’re your friends, aren’t they?
+
+<<Focus SECOND>>
+
+	They’re just the people I work with. I don’t have time for friends.
+
+<<Focus FIRST>>
+
+	You sound lonelier than I do, and I’m a ghost.
+
+<<Focus SECOND>>
+
+	Hey, this is a serious situation here. It’s important that I retrieve those papers without anyone knowing.
+
+<<Focus FIRST>>
+
+	Tell you what: if you feel so strongly about this, I’ll help you out.
+
+<<Focus SECOND>>
+
+	...You can’t be seen. And you’ve proven helpful before...Alright, then.
+
+	You’ll be able to find the papers on the blue desks.
+
+<<Focus FIRST>>
+
+	Just leave it to me! I’ll get you those papers.
+
+<<Focus SECOND>>
+
+	Once you have them, bring them to my desk.
 
 <<else>> //Visiting Friend as Ghost after already talking to him
 
-	The documents should be on the blue desks.
+	The papers should be on the blue desks. Just bring them back here to my desk. And don’t get caught!
 
 <<endif>>
 ===

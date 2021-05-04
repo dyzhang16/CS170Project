@@ -9,7 +9,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
 {
     public GameObject sugarPuzzlePanel, coffeeShadow, coffee, sugarUI , sugar;
     public Sprite pushedSugar;
-    public Button sugarButton;
+    public Button sugarButton, exitButton;
     private int sugarAdded;
     public bool sugarShaking , cupThere;
     [HideInInspector]public Item droppedItem;
@@ -52,6 +52,10 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
                     Inventory.instance.RemoveItem(droppedItem);
                     Inventory.instance.UpdateSlotUI();
                 }
+                else
+                { 
+                
+                }
             }
         }
     }
@@ -63,6 +67,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
             {
                 StartCoroutine(ShakingSugar(0.1f));
             }
+
         }
     }
     public void setSugar()

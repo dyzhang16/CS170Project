@@ -43,17 +43,11 @@ It's an arcade.
 
 title: Lanyard
 ---
-<<if GetVariable("idNeeded") == 0>>
-    <<ChangeSpeaker Player>>
+<<ChangeSpeaker Player>>
 
-    It's a lanyard. Don't know what this is doing here...
-<<else>>
-    <<ChangeSpeaker Player>>
     This must be Fredric's ID!
 
-    <<Add OfficeWorkID>>
-    <<Destroy OfficeWorkID>>
-    <<ChangeVariable GameManager idPickedUp 1>>
-<<endif>>
-
+<<Add OfficeWorkID>>
+<<Destroy OfficeWorkID>>
+<<ChangeVariable GameManager idPickedUp 1>>
 ===
