@@ -12,6 +12,7 @@ public class floor : MonoBehaviour//, IDropHandler
     public GameObject activeObj;
     public GameObject activeObjPlaceHere;
     public GameObject player;
+    private bool transition;
 
     public GameObject[] placeHereList = new GameObject[0];
 
@@ -45,7 +46,7 @@ public class floor : MonoBehaviour//, IDropHandler
         if (activeObj != null){
             activeObj.transform.position = player.transform.position;
 
-            if (Input.GetKeyDown(KeyCode.Space)){
+            if (Input.GetKeyDown(KeyCode.Space) && !transition){
                 placeItem();
             }
         }
@@ -55,6 +56,7 @@ public class floor : MonoBehaviour//, IDropHandler
     public void Possess(string[] parameters){
 
         if (activeObj == null){
+            transition = true;
             string Object = parameters[0];
             activeObj = GameObject.Find(Object);
             Debug.Log(activeObj);
@@ -85,6 +87,7 @@ public class floor : MonoBehaviour//, IDropHandler
     }
 
     public void placeItem(){
+        transition = true;
 
         StartCoroutine(UnPossesItem());
 
@@ -106,6 +109,7 @@ public class floor : MonoBehaviour//, IDropHandler
         }
 
         player.GetComponent<Player>().allowMovement = true;
+        transition = false;
     }
 
     IEnumerator UnPossesItem(){
@@ -132,5 +136,6 @@ public class floor : MonoBehaviour//, IDropHandler
 
         activeObj = null;
         activeObjPlaceHere = null;
+        transition = false;
     }
 }

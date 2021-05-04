@@ -12,6 +12,7 @@ public class RunDialogue : MonoBehaviour
     public bool startInstantly;
 
     public GameObject dialogueCursor;
+    public bool showDialogueCursor = true;
 
     private BoxCollider box;
 
@@ -61,11 +62,15 @@ public class RunDialogue : MonoBehaviour
             if (collider.gameObject.CompareTag("Player") && !runDialogue)
             {
                 runDialogue = true;
+                showDialogueCursor = true;
             }
 
             if (dialogueCursor != null && collider.gameObject.tag == "Player"){
                 //set the dialogue cursor active and position
-                dialogueCursor.SetActive(true);
+                if (showDialogueCursor)
+                    dialogueCursor.SetActive(true);
+                else
+                    dialogueCursor.SetActive(false);
 
                 dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
                 // dialogueCursor.transform.position = this.transform.position + 
@@ -108,6 +113,7 @@ public class RunDialogue : MonoBehaviour
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Document"))
         {
             runDialogue = false;
+            showDialogueCursor = false;
             if (dialogueCursor != null){
                 dialogueCursor.SetActive(false);
             }
@@ -126,11 +132,15 @@ public class RunDialogue : MonoBehaviour
             if (collision.gameObject.tag == "Player" && !runDialogue)
             {
                 runDialogue = true;
+                showDialogueCursor = true;
             } 
 
             if (dialogueCursor != null && collision.gameObject.tag == "Player"){
                 //set the dialogue cursor active and position
-                dialogueCursor.SetActive(true);
+                if (showDialogueCursor)
+                    dialogueCursor.SetActive(true);
+                else
+                    dialogueCursor.SetActive(false);
 
                 dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
                 // dialogueCursor.transform.position = this.transform.position + 
@@ -153,6 +163,7 @@ public class RunDialogue : MonoBehaviour
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Document")
         {
             runDialogue = false;
+            showDialogueCursor = false;
             if (dialogueCursor != null){
                 dialogueCursor.SetActive(false);
             }
