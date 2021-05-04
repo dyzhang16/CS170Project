@@ -36,7 +36,7 @@ public class TransformToDocument : MonoBehaviour
     [YarnCommand("TransformIntoPlayer")]
     public void ReleasePossession(string[] parameters)
     {
-        SoundManagerScript.PlaySound("document_transform");
+       // SoundManagerScript.PlaySound("document_transform");
         Debug.Log(parameters[0]);
         string Object = parameters[0];
         activeObj = GameObject.Find(Object);

@@ -9,7 +9,7 @@ public class TransitionToCity : Transitions
     public DialogueRunner dia;
 
     public void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.CompareTag("Player") && GameManager.instance.firstFriendMeeting == 2){
+        if (collision.gameObject.CompareTag("Player") && GameManager.instance.firstFriendMeeting >= 2){
             LoadNextScene(exitScene);
         } else {
             dia.StartDialogue("coffeeNotGivenYet");

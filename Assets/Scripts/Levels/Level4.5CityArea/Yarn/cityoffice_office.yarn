@@ -1,57 +1,14 @@
 ﻿title: cityoffice_office
 tags:
 ---
-<<if GetVariable("firstFriendMeeting") != 4>>
-    <<SuperPan office>>
-    <<ChangeSpeaker Player>>
+<<SuperPan office>>
+<<ChangeSpeaker Player>>
 
     This is a pretty big building.
 
-    <<UnPan office>>
-    <<stop>>
-<<endif>>
-<<if GetVariable("idNeeded") == 2>>
-    <<SuperPan office>>
-    <<ChangeSpeaker Player>>
+<<UnPan office>>
+<<stop>>
 
-    Do you want to go inside the office?
-
-    [[Yes|GoIntoOffice]]
-    [[No|LeaveOffice]]
-
-<<elseif GetVariable("idNeeded") == 1>>
-    <<if HasItem("Office Work ID") is true>>
-        <<ChangeSpeaker Player Friend>>
-        I have your ID.
-
-        <<Focus SECOND>>
-        Thanks! Let's go inside.
-
-        <<ChangeVariable GameManager idNeeded 2>>
-
-        [[GoIntoOffice]]
-    <<else>>
-        <<ChangeSpeaker Player Friend>>
-        You have any clue on where it is?
-
-        <<Focus SECOND>>
-        No, not really...
-
-        <<stop>>
-    <<endif>>
-<<else>>
-    <<ChangeSpeaker Player Friend>>
-    <<Focus SECOND>>
-    Shoot! I don't have my ID!
-
-    Can you help me find it? I might have dropped it somewhere.
-
-    <<Focus FIRST>>
-    Sure.
-
-    <<ChangeVariable GameManager idNeeded 1>>
-    <<stop>>
-<<endif>>
 ===
 
 title:GoIntoOffice

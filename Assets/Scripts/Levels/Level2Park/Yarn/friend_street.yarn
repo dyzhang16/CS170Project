@@ -108,7 +108,7 @@ title: friend_after_coffee
 
 <<Focus FIRST>>
     
-    I took a peek at your receipt. Look! I have coffee for you.
+    I took a peek at your receipt. Look! I have something for you.
 
 <<Focus SECOND>>
     
@@ -135,24 +135,46 @@ title: wrong_item
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
 
-    This isn't even a drink, let alone coffee. 
-
-    Why are you trolling me?(Narrative Help?)
+    What...is this? This isn’t coffee.
 
 <<Focus FIRST>>
 
-    I need to get him his coffee.
+    It’s a, um...a gift!
+
+<<Focus SECOND>>
+
+    ...Look, it’s too early for whatever game you’re playing. I’ll be more awake once I have my coffee.
 ===
 title: no_safety
 ---
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
 
-    There's no safety accessories on this coffee, I'm not taking that while there are spill risks attached to it.
+    Hey, be careful with how you’re holding that-
 
 <<Focus FIRST>>
+
+    Ah!
+
+<<Focus SECOND>>
+
+    You’ve spilled some perfectly good coffee.
+
+<<Focus FIRST>>
+
+    Me? It was you who practically threw the cup in the air.
+
+<<Focus SECOND>>
+
+    Next time, don’t forget to put both a lid and a sleeve onto the cup.
+
+<<Focus FIRST>>
+
+    Are you ignoring me? Hey!
+
+<<Focus SECOND>>
     
-    I need to make sure I put on a sleeve and lid before giving the coffee to Frederic.
+    ...
 ===
 title: wrong_coffee
 ---

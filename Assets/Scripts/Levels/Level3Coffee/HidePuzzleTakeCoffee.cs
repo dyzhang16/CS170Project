@@ -8,6 +8,7 @@ public class HidePuzzleTakeCoffee : MonoBehaviour
     public GameObject puzzlePanel;
     public Button RemoveButton;
     public GameObject Drink;
+    public GameObject CoffeeShadow;
 
     public void HidePuzzleCoffee()
     {
@@ -24,6 +25,7 @@ public class HidePuzzleTakeCoffee : MonoBehaviour
         {
             Item boa = Drink.GetComponent<CoffeeAssignment>().droppedCoffee as Drink;
             boa.itemDescription = "A cup of freshly brewed coffee, void of any additives. The perfect blank canvas for a barista!";
+            CoffeeShadow.SetActive(true);
             Inventory.instance.AddItem(boa);
             Drink.SetActive(false);
         }

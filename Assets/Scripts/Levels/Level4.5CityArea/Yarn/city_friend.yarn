@@ -1,36 +1,162 @@
-﻿
-title: cityarcade_friend_intro
+﻿title: cityarcade_friend_intro
 tags:
 ---
-
-<<ChangeSpeaker Friend>>
-
-Gotta run to work!!!
-
 <<ChangeSpeaker Player>>
-
-I guess I should follow them...
-
+<<Focus FIRST>>
 <<MoveToOffice2 Friend1>>
 
+	Hey wait up!
+
+<<DisableDialogue levelApproach>>
 ===
 
 
 title: cityoffice_friend_intro
 ---
-
-<<ChangeSpeaker Friend>>
-
-IM GONNA BE LATEEEEEEEEEEEEEEEEEEEEEEEEEE
-
 <<MoveToOffice3 Friend1>>
+<<ChangeSpeaker Player>>
+<<Focus FIRST>>
+
+	It looks like that big building is their work?
+
+<<DisableDialogue levelApproach>>
+===
+title: officeEntry
+---
+<<if GetVariable("idNeeded") == 2>>
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+
+	Placeholder Text Guard
+
+<<elseif GetVariable("idNeeded") == 1>>
+	
+	[[CheckID]]
+
+<<else>>
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+
+	C’mon, can’t you just let me in this one time?
+
+<<ChangeSpeaker Player Guard>>
+<<Focus SECOND>>
+
+	Sorry. I can’t let you in without an ID. Security reasons and all that jazz, y’know? Identity theft is a serious issue.
+
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+
+	I come into this office six days a week. You know exactly who I am, Bedford!
+
+<<ChangeSpeaker Player Guard>>
+<<Focus SECOND>>
+	
+	I’m afraid I don’t know what you’re talking about, Fredric. I don’t recognise you at all.
+
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+
+	You just said my name!
+
+<<ChangeSpeaker Player Guard>>
+<<Focus SECOND>>
+
+	Did I? I don’t know what you’re talking about.
+
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+
+	I’m already late for work. Let me in. Please?
+
+<<ChangeSpeaker Player Guard>>
+<<Focus SECOND>>
+
+	Rules are rules.  No ID, no entry.
 
 <<ChangeSpeaker Player>>
+<<Focus FIRST>>
+	
+	...
 
-It looks like that big building is their work?
+	If Fredric isn’t worrying about getting to work on time, he’ll finally talk to me.
 
+	I need to get Fredric his ID Card.
+
+<<ChangeVariable GameManager idNeeded 1>>
+<<endif>>
 ===
 
+title: CheckID
+---
+<<if HasItem("Office Work ID") is true>>
+	<<ChangeSpeaker Player Friend>>
+	<<Focus FIRST>>
+
+		Fredric, hi!
+
+	<<Focus SECOND>>
+
+		Oh, it’s you again. Look, I really need to find my ID so I can get into my work building. So if- If you can help me find it…
+
+	<<Focus FIRST>>
+
+		You’ll talk to me?
+
+	<<Focus SECOND>>
+
+		You don’t have to say it like that. That’s just sad. But yeah, I’ll talk to yo-
+
+	<<Focus FIRST>>
+
+		Oh, what’s this? An ID card that I found on the ground earlier belonging to one Mister Fredric-
+
+	<<Focus SECOND>>
+	
+		Hey, give it here!
+
+	<<Focus FIRST>>
+
+		And you’ll find time to slow down and talk to me?
+
+	<<Focus SECOND>>
+
+		Yeah. Now, let’s go, let’s go!
+
+		Hey, Bedford, I’ve got it! Let me in!
+
+	<<ChangeSpeaker Player Guard>>
+
+		...You sure? You just stood over there and talked to yourself for a moment.	
+
+	<<ChangeSpeaker Player Friend>>
+	
+		Is that what it looked like? I had my ID all along, just…misplaced it. Anyway, see you later.
+
+		C’mon, kid!
+
+	<<Focus FIRST>>
+
+		I’m right behind you.
+
+	//Fred and Ghost enter office building, so they’re technically gone at this point
+	<<ChangeSpeaker Guard>>
+
+		Did he just call me ‘kid’? Maybe Fredric needs a day off.
+
+	<<ChangeVariable GameManager idNeeded 2>>
+	<<ChangeScene BlackScreen Office>>
+<<else>>
+	<<ChangeSpeaker Player Guard>>
+	<<Focus SECOND>>
+
+		Sorry, Fredric. No ID, no entry.
+	
+	<<ChangeSpeaker Player Friend>>
+
+		Dang it. Did I drop it while running?
+<<endif>>
+===
 title: goingToApartment1
 ---
 

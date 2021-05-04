@@ -36,6 +36,5 @@ public class Coffee : MonoBehaviour
             GameManager.instance.loadItems();
             GameManager.instance.deleteItems();
         }
-        
     }
 }

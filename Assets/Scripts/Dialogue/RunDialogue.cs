@@ -10,8 +10,6 @@ public class RunDialogue : MonoBehaviour
     public Player player;
     public string dialogueToRun;
     public bool startInstantly;
-    public string NPCName = "";
-    public string NPCInteract = "";
 
     public GameObject dialogueCursor;
 

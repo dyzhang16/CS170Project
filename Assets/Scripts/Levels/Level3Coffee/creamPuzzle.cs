@@ -9,7 +9,7 @@ using Yarn.Unity;
 public class creamPuzzle : MonoBehaviour, IDropHandler
 {
     public GameObject creamPuzzlePanel, coffeeShadow, coffee, creamUI, cream;
-    public Button creamButton;
+    public Button creamButton, exitButton;
     public bool creamShaking, cupThere;
     [HideInInspector]public Item droppedItem;
     private int creamAdded;
@@ -56,6 +56,7 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
             {
                 StartCoroutine(ShakingCream(0.1f));
             }
+            
         }
     }
     public void setCream()
