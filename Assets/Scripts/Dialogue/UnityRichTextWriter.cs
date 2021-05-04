@@ -35,6 +35,12 @@ public class UnityRichTextWriter : MonoBehaviour
 	// displays the next character
 	public void ShowNextCharacter(string request)
 	{
+		// if the writer has no text, do default behavior
+		if (writer.parsedString.Count <= 0)
+		{
+			dialogueText.text = request;
+		}
+		// if Text is broken, don't run the function
 		if (dialogueText == null) return;
 		// if index is less than parsedString, then use the parsedString for the dialogue text
 		if (index < writer.parsedString.Count)
