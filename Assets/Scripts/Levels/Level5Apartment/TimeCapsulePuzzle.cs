@@ -101,6 +101,32 @@ public class TimeCapsulePuzzle : MonoBehaviour
             exit.Hide();
             dia.StartDialogue("done_with_puzzle");
             GameManager.instance.timeCapsule = 1;
+        } else {
+            dia.StartDialogue("wrongCode");
+
+            if (num1 != num1Solved){
+                num1Animator.SetTrigger("ChangeNum");
+                num1 = 0;
+                num1Text.text = "" + num1;
+            }
+
+            if (num2 != num2Solved){
+                num2Animator.SetTrigger("ChangeNum");
+                num2 = 0;
+                num2Text.text = "" + num2;
+            }
+
+            if (num3 != num3Solved){
+                num3Animator.SetTrigger("ChangeNum");
+                num3 = 0;
+                num3Text.text = "" + num3;
+            }
+
+            if (num4 != num4Solved){
+                num4Animator.SetTrigger("ChangeNum");
+                num4 = 0;
+                num4Text.text = "" + num4;
+            }
         }
     }
 

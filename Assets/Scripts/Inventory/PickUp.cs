@@ -21,6 +21,7 @@ public class PickUp : MonoBehaviour
 
         if (GetComponent<RunDialogue>() != null){
             Debug.Log("removing dialogue box");
+            GetComponent<RunDialogue>().showDialogueCursor = false;
             GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
         }
     }

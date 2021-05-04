@@ -279,6 +279,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             }
         }
 
+        moving = true;
+
         // Move the player to the target location (with the offset)
         StartCoroutine(MovePlayerCR(targetPosition));
     }
@@ -294,6 +296,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
             yield return null;
         }
+
+        moving = false;
     }
 }
 
