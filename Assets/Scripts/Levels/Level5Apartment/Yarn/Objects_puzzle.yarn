@@ -27,72 +27,105 @@ It's a trumpet case
 title: CardboardBox
 ---
 
-<<if visited("Bed") is true>>
-    <<ChangeSpeaker Player>>
-    It's a cardboard box
+<<if visited("first_friend_after_cleaning") is true>>
+    <<if visited("Bed") is true>>
 
-    Wait there's something in here
+        <<ChangeSpeaker Player>>
+        It's a cardboard box
 
-    <<Show CardboardBox>>
+        Wait there's something in here
 
+        <<Show CardboardBox>>
+
+    <<else>>
+
+        <<ChangeSpeaker Player>>
+        I should move the bed first
+
+    <<endif>>
 <<else>>
-
     <<ChangeSpeaker Player>>
-    I should move the bed first
 
+    I should go talk to Fred before I touch anything
+
+    <<stop>>
 <<endif>>
 
 ===
 
 title: BookshelfEscape
 ---
+<<if visited("first_friend_after_cleaning") is true>>
+    <<if visited("Bed") is true>>
+        <<ChangeSpeaker Player>>
+        It's a bookshelf
 
-<<if visited("Bed") is true>>
-    <<ChangeSpeaker Player>>
-    It's a bookshelf
+        <<Show Bookshelf>>
+    <<else>>
 
-    <<Show Bookshelf>>
+        <<ChangeSpeaker Player>>
+
+        I should move the bed first
+
+    <<endif>>
 <<else>>
-
     <<ChangeSpeaker Player>>
 
-    I should move the bed first
+    I should go talk to Fred before I touch anything
 
+    <<stop>>
 <<endif>>
+
 
 ===
 
 title: PictureFrame
 ---
+<<if visited("first_friend_after_cleaning") is true>>
+    <<if visited("Bed") is true>>
+        <<ChangeSpeaker Player>>
+        It's a picture frame
 
-<<if visited("Bed") is true>>
-    <<ChangeSpeaker Player>>
-    It's a picture frame
+        <<Show PictureFrame>>
+    <<else>>
 
-    <<Show PictureFrame>>
+        <<ChangeSpeaker Player>>
+
+        I should move the bed first
+
+    <<endif>>
 <<else>>
-
     <<ChangeSpeaker Player>>
 
-    I should move the bed first
+    I should go talk to Fred before I touch anything
 
+    <<stop>>
 <<endif>>
+
 
 ===
 
 title: Laptop
 ---
+<<if visited("first_friend_after_cleaning") is true>>
+    <<if visited("Bed") is true>>
+        <<ChangeSpeaker Player>>
+        It's a laptop
 
-<<if visited("Bed") is true>>
-    <<ChangeSpeaker Player>>
-    It's a laptop
+        <<Show Laptop>>
+    <<else>>
 
-    <<Show Laptop>>
+        <<ChangeSpeaker Player>>
+        I should move the bed first
+
+    <<endif>>
+
 <<else>>
-
     <<ChangeSpeaker Player>>
-    I should move the bed first
 
+    I should go talk to Fred before I touch anything
+
+    <<stop>>
 <<endif>>
 
 ===
