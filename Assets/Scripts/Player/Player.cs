@@ -35,6 +35,10 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public bool invActive = false;
     public bool moving = false;
     public bool goingToFade;
+    
+    //camera shake effect on drift
+    public bool drifting = false;
+    public Vector3 beginDriftPos;
 
     void Start()
     {
@@ -49,6 +53,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             render.material.color = c;
             StartCoroutine(FadeIn());
         }
+
+        beginDriftPos = this.transform.position;
     }
 
     public void Update()
@@ -65,6 +71,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                     movement.z = v;
 
                     moving = true;
+                    drifting = false;
 
                     //animantor.SetFloat("Speed", Mathf.Abs(v) + Mathf.Abs(h));
 
@@ -78,6 +85,19 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                 } else {
                     moving = false;
                     movement = new Vector3(0, 0, 0);
+                    if (!drifting){
+                        beginDriftPos = this.transform.position;
+                        Debug.Log("drifting at: " + beginDriftPos);
+                        drifting = true;
+                    }
+                }
+
+                if (!moving){
+                    if (Vector3.Distance(this.transform.position, beginDriftPos) > 10f){
+                        float dist = Vector3.Distance(this.transform.position, beginDriftPos)/50f;
+
+                        Debug.Log("drift distance long");
+                    }
                 }
             }
 
@@ -129,6 +149,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                 rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed/2 * Time.fixedDeltaTime));
 
                 moving = true;
+                drifting = false;
 
                 if (invActive){
                     openInventory();

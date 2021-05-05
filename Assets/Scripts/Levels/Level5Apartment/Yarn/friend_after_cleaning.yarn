@@ -1,31 +1,55 @@
 ﻿title: first_friend_after_cleaning
 tags:
 ---
-<<ChangeSpeaker Player Friend>>
-This is all temp dialogue pls forgive
+<<if visited("first_friend_after_cleaning") is false>>
+    <<ChangeSpeaker Player Friend>>
+    This is all temp dialogue pls forgive
 
-<<Focus SECOND>>
-Thanks for helping me clean the room.
+    <<Focus SECOND>>
+    Thanks for helping me clean the room.
 
-<<Focus FIRST>>
-No problem friend, anything for a bro.
+    <<Focus FIRST>>
+    No problem friend, anything for a bro.
 
-Are you sure you don't want me to move the bed?
+    Are you sure you don't want me to move the bed?
 
-<<Focus SECOND>>
-Nah its all good, I can move it later
+    <<Focus SECOND>>
+    Nah its all good, I can move it later
 
-<<Focus FIRST>>
-NO LET ME DO IT I WANNA HELP
+    <<Focus FIRST>>
+    NO LET ME DO IT I WANNA HELP
 
-<<Focus SECOND>>
-oh shieeeeeeeeeeeeeeeeeeet
+    <<Focus SECOND>>
+    oh shieeeeeeeeeeeeeeeeeeet
 
-<<Focus FIRST>>
-I insist.
+    <<Focus FIRST>>
+    I insist.
 
-<<Focus SECOND>>
-fine fine go for it
+    <<Focus SECOND>>
+    fine fine go for it
+<<else>>
+
+    [[friend_after_cleaning]]
+
+<<endif>>
+
+===
+
+title: BedBeforeFriend
+---
+
+<<if visited("first_friend_after_cleaning") is true>>
+    [[Bed]]
+
+<<else>>
+
+    <<ChangeSpeaker Player>>
+
+    I should go talk to Fred before I touch anything
+
+    <<stop>>
+
+<<endif>>
 
 ===
 
