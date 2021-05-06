@@ -1,5 +1,6 @@
 ﻿title: cityarcade_friend_intro
-tags:
+tags: 
+position: -43,-69
 ---
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
@@ -12,6 +13,8 @@ tags:
 
 
 title: cityoffice_friend_intro
+tags: 
+position: -387,-211
 ---
 <<MoveToOffice3 Friend1>>
 <<ChangeSpeaker Player>>
@@ -22,6 +25,8 @@ title: cityoffice_friend_intro
 <<DisableDialogue levelApproach>>
 ===
 title: officeEntry
+tags: 
+position: -235,238
 ---
 <<if GetVariable("idNeeded") == 2>>
 <<ChangeSpeaker Player Friend>>
@@ -88,6 +93,8 @@ title: officeEntry
 ===
 
 title: CheckID
+tags: 
+position: -483,89
 ---
 <<if HasItem("Office Work ID") is true>>
 	<<ChangeSpeaker Player Friend>>
@@ -126,10 +133,12 @@ title: CheckID
 		Hey, Bedford, I’ve got it! Let me in!
 
 	<<ChangeSpeaker Player Guard>>
+	<<Focus SECOND>>
 
 		...You sure? You just stood over there and talked to yourself for a moment.	
 
 	<<ChangeSpeaker Player Friend>>
+	<<Focus SECOND>>
 	
 		Is that what it looked like? I had my ID all along, just…misplaced it. Anyway, see you later.
 
@@ -158,36 +167,38 @@ title: CheckID
 <<endif>>
 ===
 title: goingToApartment1
+tags: 
+position: 270,256
 ---
-
 <<ChangeSpeaker Friend>>
 Follow me to my apartment
 
 <<MoveToApartment1 Friend1>>
-
 ===
 
 title: goingToApartment2
+tags: 
+position: 260,-381
 ---
-
 <<ChangeSpeaker Friend>>
 Follow me to my apartment again!
 
 <<MoveToApartment2 Friend1>>
-
 ===
 
 title: friendGoingToApartment
+tags: 
+position: -94,-320
 ---
-
 <<ChangeSpeaker Friend>>
 I'll cya inside
 
 <<Enter Friend1>>
-
 ===
 
 title: friendWalkToStreet
+tags: 
+position: 613,-249
 ---
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
@@ -203,10 +214,11 @@ Oh, sure.
 <<wait 3>>
 
 [[friendHitByCar]]
-
 ===
 
 title: friendHitByCar
+tags: 
+position: 231,-190
 ---
 <<ChangeSpeaker Player Friend>>
 
@@ -220,12 +232,12 @@ I don't think it's safe for you to be standing there!
 What?
 
 <<hitByCar Friend1>>
-
 ===
 
 title: endingCutscene
+tags: 
+position: 573,63
 ---
-
 <<UnFollowObject DialogueCam>>
 
 <<ChangeSpeaker Player>>
@@ -290,6 +302,4 @@ I guess I just have to get used to it.
 
 <<Focus NONE>>
 The End.
-
-
 ===
