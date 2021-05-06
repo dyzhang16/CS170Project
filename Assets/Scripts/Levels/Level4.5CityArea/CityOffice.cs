@@ -28,9 +28,8 @@ public class CityOffice : MonoBehaviour
                 friend.SetActive(true);
                 
             } else if (GameManager.instance.officeDeskPuzzle == 1){
-                friend.SetActive(true);
-                friend.GetComponent<RunDialogue>().dialogueToRun = "goingToApartment1";
-                friend.transform.position = Office.transform.position + new Vector3(0, 0, -20);
+                //change to ending cutscene here
+                //@ emmanuel
             }
 
             // if friend is stuck outside of the office, put his position outside of the office

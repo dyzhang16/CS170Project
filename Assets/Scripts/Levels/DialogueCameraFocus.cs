@@ -68,10 +68,38 @@ public class DialogueCameraFocus : MonoBehaviour
     [YarnCommand("ChangeRotation")]
     public void ChangeRotation(string[] parameters){
 
-        // string[] offset = new string[parameters.Length];
-        // Array.Copy(parameters, 0, offset, 0, offset.Length);
+        string[] offset = new string[parameters.Length];
+        Array.Copy(parameters, 0, offset, 0, offset.Length);
 
-        // Vector3 targetRotation = dialogueCam.transform;
+        Vector3 targetRotation = dialogueCam.transform.rotation.eulerAngles;
+
+        if (offset.Length > 3)
+        {
+            Debug.LogWarning("MovePlayer: Too many arguments, only considering the x, y, z arguments");
+        }
+
+        // for-loop up to three offset arguments
+        for (int i = 0; i < Mathf.Min(offset.Length, 3); i++)
+        {
+            try
+            {
+                // convert string to float and apply offset
+                targetRotation[i] += float.Parse(offset[i]);
+            }
+            catch (System.FormatException exc)
+            {
+                // array for debug logging purposes
+                char[] offsetChar = new char[] { 'x', 'y', 'z' };
+                Debug.LogWarningFormat("MovePlayer: Failed to apply offset \"{0}\" for {1} position.", offset[i], offsetChar[i]);
+            }
+        }
+
+        dialogueCam.transform.rotation = Quaternion.Euler(targetRotation);
+    }
+
+    [YarnCommand("UnRotate")]
+    public void UnRotate(){
+        dialogueCam.transform.rotation = Quaternion.Euler(new Vector3(45, 0, 0));
     }
 
     [YarnCommand("UnPanObj")]

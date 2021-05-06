@@ -124,20 +124,6 @@ public class friend1 : MonoBehaviour
         this.GetComponent<SpriteRenderer>().flipX = true;
     }
 
-    [YarnCommand("MoveToApartment1")]
-    public void moveToApartment1(){
-        isWalking = true;
-        col.isTrigger = true;
-        GameManager.instance.walkedToApartment = 1;
-    }
-
-    [YarnCommand("MoveToApartment2")]
-    public void moveToApartment2(){
-        isWalking = true;
-        col.isTrigger = true;
-        GameManager.instance.walkedToApartment = 2;
-    }
-
     [YarnCommand("moveToStreet")]
     public void moveToStreet(){
         isWalking = true;
