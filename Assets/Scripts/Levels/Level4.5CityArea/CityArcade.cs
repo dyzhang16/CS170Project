@@ -31,29 +31,12 @@ public class CityArcade : MonoBehaviour
             {
                 player.transform.position = Arcade.transform.position + new Vector3(0, 0, -10);
             }
-            else if (GameManager.instance.previousScene == "ApartmentScene")
-            {
-                player.transform.position = apartment.transform.position + new Vector3(0, 0, -10);
-            }
 
             //first friend meeting
             if (GameManager.instance.firstFriendMeeting == 2)
             {
                 friend.SetActive(true);
 
-            }
-            else if (GameManager.instance.firstDateDia == 1)
-            {
-                friend.SetActive(true);
-                friend.GetComponent<RunDialogue>().dialogueToRun = "friendWalkToStreet";
-                friend.transform.position = apartment.transform.position + new Vector3(0, 0, -20);
-            }
-            else if (GameManager.instance.walkedToApartment == 1)
-            {
-                friend.SetActive(true);
-                apartment.GetComponent<RunDialogue>().dialogueToRun = "cityapartment_apartment";
-                friend.GetComponent<RunDialogue>().dialogueToRun = "goingToApartment2";
-                friend.transform.position = exitToCityOffice.transform.position + new Vector3(-20, 0, 0);
             }
         }
     }
