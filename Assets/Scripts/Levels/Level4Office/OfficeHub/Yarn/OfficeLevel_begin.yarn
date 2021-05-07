@@ -54,48 +54,26 @@ tags:
 title: OfficeFriend
 ---
 <<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
 
-<<if $TookMDocument is 1 and $TookEDocument is 1 and $TookMaxDocument is 1>>
+<<if $TookMDocument is 1 and $TookEDocument is 1 and $TookADocument is 1>>
+<<RemoveDocuments Environment>>
+<<giveDoc SoundManager>>
 
-	
 	[[OfficeFriendPuzzleSolved]]
 	
 <<endif>>
-
-<<if $isDocument is 1>>
-
+<<if $grabbedDocument is 1>>
+<<Focus SECOND>>
 
 	Thanks for bringing back these documents. 
 
-	
-	<<if $count is 0>>
-		<<set $count to 1>>
-		<<giveDoc SoundManager>>
-	<<elseif $count is 1>>
-		<<set $count to 2>>
-		<<giveDoc SoundManager>>
-	<<elseif $count is 2>>
-		<<playSuccess SoundManager>>
-	<<endif>>
+<<RemoveDocuments Environment>>    
+<<set $grabbedDocument to 0>>
+<<giveDoc SoundManager>>
 
-<<set $isDocument to 0>>
-	<<if $MatthewDocument is 1>>
-		<<TransformIntoPlayer Matthew's_Desk Document>>
-		<<set $TookMDocument to 1>>
-		<<set $MatthewDocument to 0>>
-	<<elseif $ElizabethDocument is 1>>
-		<<TransformIntoPlayer Elizabeth's_Desk Document>>
-		<<set $TookEDocument to 1>>
-		<<set $ElizabethDocument to 0>>
-	<<elseif $MaxDocument is 1>>
-		<<TransformIntoPlayer Max's_Desk Document>>
-		<<set $TookMaxDocument to 1>>
-		<<set $MaxDocument to 0>>
-	<<endif>>
 <<elseif visited("OfficeFriend") is false>> //Visiting Friend first time
 <<Focus SECOND>>
-	
-	<<set $count to 0>>
 
 	Here it is, my desk.
 
@@ -194,7 +172,7 @@ title: OfficeFriend
 <<Focus SECOND>>
 
 	Once you have them, bring them to my desk.
-
+<<ChangeVariable GameManager documentNeeded 1>>
 <<else>> //Visiting Friend as Ghost after already talking to him
 
 	The papers should be on the blue desks. Just bring them back here to my desk. And don’t get caught!
@@ -207,7 +185,6 @@ tags:
 ---
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
-
 
 	Thanks, you brought back all the documents.
 

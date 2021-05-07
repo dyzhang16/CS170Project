@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     //office hub
     public int followFriendinOffice = 0;
+    public int documentNeeded = 0;
     //office puzzle
     public int officePuzzle = 0;
     //office desk puzzle
@@ -140,6 +141,9 @@ public class GameManager : MonoBehaviour
                     break;
                 case "followFriendinOffice":
                     followFriendinOffice = int.Parse(variables[1]);
+                    break;
+                case "documentNeeded":
+                    documentNeeded = int.Parse(variables[1]);
                     break;
                 case "officePuzzle":
                     officePuzzle = int.Parse(variables[1]);

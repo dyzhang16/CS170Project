@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class OfficeDocument : MonoBehaviour
 {
-    private void Awake()
+    public void Start()
     {
-        
-        //this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-        
-        GetComponentInChildren<BoxCollider>().enabled = false;
+        if(GameManager.instance.documentNeeded == 0)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+            GetComponentInChildren<BoxCollider>().enabled = false;
+        }
     }
-    public void setVisible()
+    public void Update() 
     {
-        //this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        if (GameManager.instance.documentNeeded == 1)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            GetComponentInChildren<BoxCollider>().enabled = true;
+        }
     }
 }

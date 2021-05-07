@@ -1,6 +1,5 @@
 ﻿title: cityarcade_friend_intro
 tags: 
-position: -43,-69
 ---
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
@@ -14,7 +13,6 @@ position: -43,-69
 
 title: cityoffice_friend_intro
 tags: 
-position: -387,-211
 ---
 <<MoveToOffice3 Friend1>>
 <<ChangeSpeaker Player>>
@@ -26,7 +24,6 @@ position: -387,-211
 ===
 title: officeEntry
 tags: 
-position: -235,238
 ---
 <<if GetVariable("idNeeded") == 2>>
 <<ChangeSpeaker Player Friend>>

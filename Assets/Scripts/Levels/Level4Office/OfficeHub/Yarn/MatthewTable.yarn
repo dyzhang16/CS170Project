@@ -1,78 +1,48 @@
-﻿title: MatthewDesk
+﻿title: AlphonseDocument
 tags:
 ---
 <<ChangeSpeaker Player>>
-<<if $TookMDocument is 1>>
-	
-	There are no more documents on this table; I should look elsewhere. 
+<<Focus FIRST>>
+<<if visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Matthew's Table First time
 
-<<elseif $isDocument is 1>>
+	You find some documents and add them to your inventory.
 
-	I should take these documents to Frederic.
-
-<<elseif visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Matthew's Table First time
-
-	You find the documents and possess them.
-
-<<TransformIntoDocument Matthew's_Desk Document>>		//Transform into Documents
-<<set $isDocument to 1>>								//Changes to Document to Detect for Guard
-<<set $MatthewDocument to 1>>							//Specifically Matthew's Table
-<<else>>    //As ghost did not talk with friend
-
-	You find nothing of importance.
-
+<<Add ADocument>>
+<<Destroy ADocument>>
+<<set $grabbedDocument to 1>>	
+<<set $TookADocument to 1>>
 <<endif>>
 ===
 
-title: ElizabethDesk
+title: ElizabethDocument
 tags:
 ---
 <<ChangeSpeaker Player>>
-<<if $TookEDocument is 1>>
-	
-	There are no more documents on this table; I should look elsewhere. 
+<<Focus FIRST>>
+<<if visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Elizabeth's Table First time
 
-<<elseif $isDocument is 1>>
+	You find some documents and add them to your inventory.
 
-	I should take these documents to Frederic.
-
-<<elseif visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Elizabeth's Table First time
-
-	You find the documents and possess them.
-
-<<TransformIntoDocument Elizabeth's_Desk Document>>		//Transform into Documents
-<<set $isDocument to 1>>								//Changes to Document to Detect for Guard
-<<set $ElizabethDocument to 1>>							//Specifically Elizabeth's Table
-<<else>>    //As ghost did not talk with friend
-
-	You find nothing of importance.
-
+<<Add EDocument>>
+<<Destroy EDocument>>
+<<set $grabbedDocument to 1>>
+<<set $TookEDocument to 1>> 
 <<endif>>
 ===
 
-title: MaxDesk
+title: MaxDocument
 tags:
 ---
 <<ChangeSpeaker Player>>
-<<if $TookMaxDocument is 1>>
-	
-	There are no more documents on this table; I should look elsewhere. 
+<<Focus FIRST>>
+<<if visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Max's Table First time
 
-<<elseif $isDocument is 1>>
+	You find some documents and add them to your inventory.
 
-	I should take these documents to Frederic.
-
-<<elseif visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Max's Table First time
-
-	You find the documents and possess them.
-
-<<TransformIntoDocument Max's_Desk Document>>			//Transform into Documents
-<<set $isDocument to 1>>								//Changes to Document to Detect for Guard
-<<set $MaxDocument to 1>>								//Specifically Max's Table
-<<else>>    //As ghost did not talk with friend
-
-	You find nothing of importance.
-
+<<Add MDocument>>
+<<Destroy MDocument>>
+<<set $grabbedDocument to 1>>
+<<set $TookMDocument to 1>> 
 <<endif>>
 ===
 title: EllieCBeth

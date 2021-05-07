@@ -7,7 +7,7 @@ public class OfficeHub : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     public VariableStorageBehaviour CustomVariableStorage;
-    public GameObject player;
+    public GameObject player, Documents;
     public GameObject exitToCityOffice;
     public GameObject desk;
 

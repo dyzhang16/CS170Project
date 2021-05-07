@@ -130,6 +130,11 @@ public class Inventory : MonoBehaviour
         Item[] items = Array.FindAll<Item>(itemList, itemList => itemList != null && itemList.itemName == name);
         return items;
     }
+    public void RemoveItemsOfTypeDocument()
+    {
+        Item[] items = Array.FindAll<Item>(itemList, element => element as Document);
+        Array.ForEach<Item>(items, RemoveItem);
+    }
     public bool FindItemOfTypeDrink()
     {
         return Array.Exists(itemList, element => element as Drink);

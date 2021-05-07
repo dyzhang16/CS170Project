@@ -62,7 +62,15 @@ public class YarnInventory : MonoBehaviour
         Inventory.instance.AddItem(PotentialObject.GetComponent<ItemAssignment>().item);
         if (PotentialObject.GetComponent<RunDialogue>() != null){
             PotentialObject.GetComponent<RunDialogue>().showDialogueCursor = false;
-            PotentialObject.GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
+            if (PotentialObject.GetComponent<RunDialogue>().dialogueCursor)
+            {
+                PotentialObject.GetComponent<RunDialogue>().dialogueCursor.SetActive(false);
+            }
+            else 
+            {
+                Debug.LogWarning("There is no dialogueCursor on this object.");
+            }
+            
         }
     }
     private void RemoveObject(string[] parameters)
@@ -71,6 +79,13 @@ public class YarnInventory : MonoBehaviour
         Item item = Inventory.instance.FindItem(Object);
         Inventory.instance.RemoveItem(item);
     }
+    [YarnCommand("RemoveDocuments")]
+    public void RemoveObjectofType()
+    {
+        Debug.LogWarning("Hit Here");
+        Inventory.instance.RemoveItemsOfTypeDocument();
+    }
+
     private void HideObject(string[] parameters)
     {
         string Object = parameters[0];
