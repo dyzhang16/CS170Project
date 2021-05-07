@@ -19,17 +19,21 @@ public class CityOffice : MonoBehaviour
             //set position of the player based on previousScene
             if (GameManager.instance.previousScene == "CityArcade"){
                 player.transform.position = exitToCityArcade.transform.position + new Vector3(10, 0, 0);
-            } else if (GameManager.instance.previousScene == "Office"){
+            } else if (GameManager.instance.previousScene == "Office" || GameManager.instance.previousScene == "OfficeScene"){
                 player.transform.position = Office.transform.position + new Vector3(0, 0, -10);
             }
 
             //change dialogue
             if (GameManager.instance.firstFriendMeeting == 3){
                 friend.SetActive(true);
-                
-            } else if (GameManager.instance.officeDeskPuzzle == 1){
+            }
+            
+            if (GameManager.instance.officeDeskPuzzle == 1){
                 //change to ending cutscene here
                 //@ emmanuel
+                friend.GetComponent<RunDialogue>().dialogueToRun = "friendWalkToStreet";
+                friend.SetActive(true);
+                friend.transform.position = Office.transform.position + new Vector3(-10, 0, -15);
             }
 
             // if friend is stuck outside of the office, put his position outside of the office

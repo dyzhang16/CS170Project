@@ -23,7 +23,7 @@ public class RunDialogue : MonoBehaviour
         runDialogue = false;
         box = GetComponent<BoxCollider>();
         if (box == null){
-            box = transform.Find("collider").GetComponent<BoxCollider>();
+            box = this.transform.Find("collider").GetComponent<BoxCollider>();
         }
     }
 
