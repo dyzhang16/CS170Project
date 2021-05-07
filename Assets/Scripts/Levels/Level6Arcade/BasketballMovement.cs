@@ -6,6 +6,7 @@ public class BasketballMovement : MonoBehaviour
 {
 	// Unity Objects
 	public BasketballGameplay basketballGameplay;
+	public Sprite[] ballVariations;
 
 	// Fields
 	// This is the default position (where the basketball is currently situated)
@@ -98,9 +99,17 @@ public class BasketballMovement : MonoBehaviour
 		}
 	}
 
-	// Resets the basketball to the default position
+	// Resets the basketball to the default position & randomize the next sprite to use
 	private void ResetPosition()
 	{
+		// reset position
 		gameObject.transform.position = defaultPosition;
+
+		// randomly choose what the ball will look like
+		if (ballVariations.Length > 0)
+		{
+			Sprite chosenSprite = ballVariations[Random.Range(0, ballVariations.Length)];
+			GetComponent<SpriteRenderer>().sprite = chosenSprite;
+		}
 	}
 }

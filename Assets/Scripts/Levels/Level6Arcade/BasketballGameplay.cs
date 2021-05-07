@@ -7,6 +7,7 @@ public class BasketballGameplay : MonoBehaviour
 {
 	// Unity Objects
 	public Button startButton;
+	public Button exitButton;
 
 	// Basketball-specific Unity Objects
 	public BasketballNet basketballNet;
@@ -16,11 +17,11 @@ public class BasketballGameplay : MonoBehaviour
 	public Text playerCounterText;
 
 	// Fields
+	private const int pointValue = 1; // how much each basket is worth
 	private int playerScore;
-	public int highScore = 30;
-	[HideInInspector]
-	public int playerCounter = 30;     // player's current counter (either time or # of throws) (playerCounter <= counterLimit)
-	public int counterLimit = 30;      // max counter to reset to when game is done
+	public int highScore = 10 * pointValue; // player's high score scaled by pointValue
+	public int playerCounter = 15;     // player's current counter (either time or # of throws) (playerCounter <= counterLimit)
+	public int counterLimit = 15;      // max counter to reset to when game is done
 	public BasketballMode currentMode = BasketballMode.LimitedThrows; // play mode
 
 	// Extra Stuff
@@ -36,10 +37,24 @@ public class BasketballGameplay : MonoBehaviour
 	}
 
 	// Function used for starting the game, called by the start button
+	//		Also handles if the same button is pressed to prematurely end the game
 	public void StartGame()
 	{
-		// Disable the start button
-		startButton.interactable = false;
+		// First check if the "start" button was pressed again to stop the game early
+		//	by checking if the exit button is not interactable
+		bool endGameEarly = exitButton.interactable == false;
+		if (endGameEarly)
+		{
+			// call the function to end the game
+			EndGameImmediate();
+			// do not run the rest of the start function
+			return;
+		}
+
+		// Disable the exit button
+		exitButton.interactable = false;
+		// Change the start button to be a quit button
+		startButton.GetComponentInChildren<Text>().text = "Quit";
 
 		// Reset the player's score
 		playerScore = 0;
@@ -66,6 +81,13 @@ public class BasketballGameplay : MonoBehaviour
 		RefreshScoreboard();
 	}
 
+	// This function is called if the player wants to end the game prematurely
+	public void EndGameImmediate()
+	{
+		// Set the playerCounter to 0 to stop any running coroutine
+		playerCounter = 0;
+	}
+
 	// Callback function for when the game ends
 	private void EndGameCallback()
 	{
@@ -76,8 +98,10 @@ public class BasketballGameplay : MonoBehaviour
 			RefreshHighScore();
 		}
 
-		// Reenable the start button
-		startButton.interactable = true;
+		// Change the "quit" button to be a start button
+		startButton.GetComponentInChildren<Text>().text = "Start";
+		// Reenable the exit button
+		exitButton.interactable = true;
 	}
 
 	// Coroutine for counting down a timer
@@ -116,10 +140,10 @@ public class BasketballGameplay : MonoBehaviour
 		EndGameCallback();
 	}
 
-	// Increment the score (by 2)
+	// Increment the score
 	public void IncrementScore()
 	{
-		playerScore += 2;
+		playerScore += pointValue;
 		RefreshPlayerScore();
 	}
 
@@ -147,12 +171,22 @@ public class BasketballGameplay : MonoBehaviour
 	// Refresh the high score text element
 	void RefreshHighScore()
 	{
-		highScoreText.text = highScore.ToString();
+		// format the high score
+		string highScoreString = string.Format("High Score: {0}", highScore);
+		// update the UI element
+		highScoreText.text = highScoreString;
 	}
 
 	// Refresh the time (i.e. counter) text element
 	public void RefreshCounter()
 	{
+		// if the playerCounter is negative, set it to 0 before updating the UI element
+		if (playerCounter < 0)
+		{
+			playerCounter = 0;
+		}
+
+		// update the UI element
 		playerCounterText.text = playerCounter.ToString();
 	}
 }
