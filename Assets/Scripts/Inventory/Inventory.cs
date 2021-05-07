@@ -46,7 +46,7 @@ public class Inventory : MonoBehaviour
                 }
                 catch (System.ArgumentNullException exc)
                 {
-                    Debug.LogError(exc.Message);
+                    Debug.Log(exc.Message);
                 }
                 return true;
             }

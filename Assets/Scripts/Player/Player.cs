@@ -87,7 +87,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                     movement = new Vector3(0, 0, 0);
                     if (!drifting){
                         beginDriftPos = this.transform.position;
-                        Debug.Log("drifting at: " + beginDriftPos);
+                        // Debug.Log("drifting at: " + beginDriftPos);
                         drifting = true;
                     }
                 }
@@ -155,7 +155,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                     openInventory();
                 }
             } else {
-                Debug.Log(EventSystem.current.currentSelectedGameObject);
+                // Debug.Log(EventSystem.current.currentSelectedGameObject);
             }
             
         }

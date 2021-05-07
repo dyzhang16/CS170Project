@@ -33,14 +33,6 @@ public class friend1 : MonoBehaviour
     void Start(){
         if (GameManager.instance != null){
             if (GameManager.instance.officeDeskPuzzle == 1){
-                if (GameManager.instance.walkedToApartment == 0){
-                    target = DestinationAfterOffice1.transform.position;
-                } else if (GameManager.instance.walkedToApartment == 1){
-                    target = DestinationAfterOffice2.transform.position;
-                }
-            }
-            
-            if (GameManager.instance.firstDateDia == 1){
                 target = DestinationAfterApartment.transform.position;
             } else {
                 target = Destination.transform.position;
