@@ -15,7 +15,7 @@ public class StreetIntro : MonoBehaviour
 
             //change player position based on the previous level
             if (GameManager.instance.previousScene == "Park"){
-                player.transform.position = exitToPark.transform.position + new Vector3(12, 0, 0);
+                player.transform.position = exitToPark.transform.position + new Vector3(15, 0, 0);
             } else if (GameManager.instance.previousScene == "StreetCoffee"){
                 player.transform.position = exitToStreetCoffee.transform.position + new Vector3(-12, 0, 0);
             }

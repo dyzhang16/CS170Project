@@ -257,22 +257,22 @@ title: correct_coffee
 
     My job! I’m gonna be late!
 
+<<FollowObject DialogueCam Friend1>>
+
 <<Focus FIRST>>
 
     Wait, don’t go! There’s still so much I want to talk to you about. You said you’d talk to me.
 
-<<FollowObject DialogueCam Friend1>>
+<<MoveToOffice Friend1>>
 
 <<Focus SECOND>>
 
     I don’t have the time right now. I have to get to work. Go haunt someone else!
 
-<<MoveToOffice Friend1>>
+<<UnFollowObject DialogueCam>>
 
 <<ChangeSpeaker Player>>
 
     But there’s no one else...
-
-<<UnFollowObject DialogueCam>>
 
 ===
