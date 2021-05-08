@@ -15,7 +15,7 @@ public class Park : MonoBehaviour
         if (GameManager.instance != null){
             //changes player position based on previous level
             if (GameManager.instance.previousScene == "StreetIntro"){
-                player.transform.position = exitToStreetIntro.transform.position + new Vector3(0, 0, 20);
+                player.transform.position = exitToStreetIntro.transform.position + new Vector3(-10, 0, 0);
             }
         }
     }
