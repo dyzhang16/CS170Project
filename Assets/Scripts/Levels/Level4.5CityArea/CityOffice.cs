@@ -62,6 +62,7 @@ public class CityOffice : MonoBehaviour
         {
             introduction.GetComponent<RunDialogue>().enabled = false;
             introduction.GetComponent<BoxCollider>().enabled = false;
+            friend.transform.position = officedoor.transform.position;
         }
     }
 }

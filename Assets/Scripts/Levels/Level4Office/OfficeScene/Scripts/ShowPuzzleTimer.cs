@@ -11,5 +11,6 @@ public class ShowPuzzleTimer : MonoBehaviour
         Timer Timer = Canvas.FindObjectOfType<Timer>();
         Debug.Log(Timer);
         Timer.timerIsRunning = true;
+
     }
 }

@@ -1467,6 +1467,7 @@ MonoBehaviour:
   dialogueToRun: cannotGoIntoArcade
   startInstantly: 0
   dialogueCursor: {fileID: 1606446912}
+  showDialogueCursor: 1
   runDialogue: 0
 --- !u!54 &419603293
 Rigidbody:
@@ -2555,6 +2556,7 @@ MonoBehaviour:
   dialogueToRun: cityarcade_friend_intro
   startInstantly: 0
   dialogueCursor: {fileID: 1606446912}
+  showDialogueCursor: 1
   runDialogue: 0
 --- !u!54 &951475900
 Rigidbody:
@@ -2796,6 +2798,7 @@ MonoBehaviour:
   dialogueToRun: Glasses
   startInstantly: 0
   dialogueCursor: {fileID: 1606446912}
+  showDialogueCursor: 1
   runDialogue: 0
 --- !u!54 &1086845298
 Rigidbody:
@@ -3686,6 +3689,7 @@ MonoBehaviour:
   dialogueToRun: cannotApartment
   startInstantly: 0
   dialogueCursor: {fileID: 1606446912}
+  showDialogueCursor: 1
   runDialogue: 0
 --- !u!54 &1231573960
 Rigidbody:
@@ -5858,6 +5862,7 @@ MonoBehaviour:
   dialogueToRun: cityarcade_friend_intro
   startInstantly: 1
   dialogueCursor: {fileID: 0}
+  showDialogueCursor: 1
   runDialogue: 0
 --- !u!54 &1818179562
 Rigidbody:
@@ -6362,6 +6367,7 @@ MonoBehaviour:
   dialogueToRun: Anniversary
   startInstantly: 0
   dialogueCursor: {fileID: 1606446912}
+  showDialogueCursor: 1
   runDialogue: 0
 --- !u!1 &1980741575
 GameObject:
@@ -6624,6 +6630,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!1001 &2023837704
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 274285405142103908, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103909, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: firstFriendMeeting
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103910, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 44.094707
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103910, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 71.691696
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103910, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -159.26686
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103910, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103910, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103910, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103910, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103910, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103910, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103910, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 274285405142103910, guid: b84cfe31f93b8f54d94a25943d9670c3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b84cfe31f93b8f54d94a25943d9670c3, type: 3}
 --- !u!1 &2046525865
 GameObject:
   m_ObjectHideFlags: 0
@@ -6771,6 +6851,7 @@ MonoBehaviour:
   dialogueToRun: Lanyard
   startInstantly: 0
   dialogueCursor: {fileID: 1606446912}
+  showDialogueCursor: 1
   runDialogue: 0
 --- !u!54 &2085469032
 Rigidbody:
