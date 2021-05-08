@@ -22,6 +22,10 @@ public class Park : MonoBehaviour
 
     void Start(){
         if (GameManager.instance != null){
+            // Add the GetVariable function to check things
+            DialogueRunner dialogueRunner = GameObject.Find("DialogueRunner").GetComponent<DialogueRunner>();
+            dialogueRunner.AddFunction("GetVariable", 1, (Yarn.Value[] query) => GameManager.instance.GetVariable(query[0].AsString));
+
             //load inventory stuff
             GameManager.instance.loadItems();
             GameManager.instance.deleteItems();
