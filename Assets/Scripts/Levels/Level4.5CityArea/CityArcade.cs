@@ -9,7 +9,7 @@ public class CityArcade : MonoBehaviour
 
     public GameObject player;
     public GameObject Arcade;
-    public GameObject friend, introduction, lanyard;
+    public GameObject friend, introduction;
     public GameObject apartment;
 
     public GameObject exitToCityOffice;
@@ -55,10 +55,6 @@ public class CityArcade : MonoBehaviour
         {
             introduction.GetComponent<RunDialogue>().enabled = false;
             introduction.GetComponent<BoxCollider>().enabled = false;
-        }
-        if (GameManager.instance.idNeeded == 0)
-        {
-            lanyard.SetActive(false);
         }
     }
 }
