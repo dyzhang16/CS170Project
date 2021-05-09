@@ -39,7 +39,7 @@ public class DontDestroy : MonoBehaviour
 
     bool streetChecker(string name)// for street music that plays across multiple scenes
     {
-        if (name == "Park" || name == "StreetIntro" || name == "StreetCoffee" || name == "CityOffice" || name == "CityArcade") return true;
+        if (name == "Park" || name == "StreetIntro" || name == "StreetCoffee" || name == "CityOffice" || name == "CityArcade" ||  name == "CoffeeScene") return true;
         else return false;
     }
 
