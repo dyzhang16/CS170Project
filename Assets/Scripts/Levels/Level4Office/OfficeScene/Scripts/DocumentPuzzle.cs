@@ -21,80 +21,96 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
     {
         if (!isDragging)
         {
-            GameObject Arrow = GameObject.Find("Arrow");
-            if (Arrow)
-            {
-                Arrow.GetComponent<CanvasGroup>().alpha = 1;
-            }
-            else 
-            {
-                Debug.LogError("Could not find");
-            }
+            GameObject PenObject = GameObject.Find("Pen");   
             if (eventData.button == PointerEventData.InputButton.Left)
             {
-                Sign();
-                if (SignArea)
+                if (PenObject)
                 {
-                    if (SignArea.GetComponent<mouseOver>().isMouseOver && !sign)
+                    Sign();
+                    GameObject Arrow = GameObject.Find("Arrow");
+                    if (Arrow)
                     {
-                        signedSpace = true;
-                        sign = true;
+                        Arrow.GetComponent<CanvasGroup>().alpha = 1;
                     }
                     else
                     {
-                        signedSpace = false;
-                        sign = true;
+                        Debug.LogError("Could not find");
+                    }
+                    if (SignArea)
+                    {
+                        if (SignArea.GetComponent<mouseOver>().isMouseOver && !sign)
+                        {
+                            signedSpace = true;
+                            sign = true;
+                        }
+                        else
+                        {
+                            signedSpace = false;
+                            sign = true;
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("No SignArea on ths Document");
                     }
                 }
-                else
-                {
-                    Debug.LogWarning("No SignArea on ths Document");
-                }
-
             }
+            GameObject StampObject = GameObject.Find("Stamp");
             if (eventData.button == PointerEventData.InputButton.Right)
             {
-                Stamp();
-                if (StampArea && StampAreaTwo)
+                if (StampObject)
                 {
-                    if ((StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver) && halfStamp)
+                    Stamp();
+                    GameObject Arrow = GameObject.Find("Arrow");
+                    if (Arrow)
                     {
-                        stampedSpace = true;
-                    }
-                    else if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamp)
-                    {
-                        halfStamp = true;
-                        stamp = true;
-                    }
-                    else if (StampAreaTwo.GetComponent<mouseOver>().isMouseOver && !stampTwo)
-                    {
-                        halfStamp = true;
-                        stampTwo = true;
+                        Arrow.GetComponent<CanvasGroup>().alpha = 1;
                     }
                     else
                     {
-                        stampedSpace = false;
-                        stamp = true;
-                        stampTwo = true;
+                        Debug.LogError("Could not find");
+                    }
+                    if (StampArea && StampAreaTwo)
+                    {
+                        if ((StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver) && halfStamp)
+                        {
+                            stampedSpace = true;
+                        }
+                        else if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamp)
+                        {
+                            halfStamp = true;
+                            stamp = true;
+                        }
+                        else if (StampAreaTwo.GetComponent<mouseOver>().isMouseOver && !stampTwo)
+                        {
+                            halfStamp = true;
+                            stampTwo = true;
+                        }
+                        else
+                        {
+                            stampedSpace = false;
+                            stamp = true;
+                            stampTwo = true;
+                        }
+                    }
+                    else if (StampArea)
+                    {
+                        if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamp)
+                        {
+                            stampedSpace = true;
+                            stamp = true;
+                        }
+                        else
+                        {
+                            stampedSpace = false;
+                            stamp = true;
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("No StampArea on ths Document");
                     }
 
-                }
-                else if (StampArea)
-                {
-                    if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamp)
-                    {
-                        stampedSpace = true;
-                        stamp = true;
-                    }
-                    else
-                    {
-                        stampedSpace = false;
-                        stamp = true;
-                    }
-                }
-                else 
-                {
-                    Debug.LogWarning("No StampArea on ths Document");
                 }
             }
         }

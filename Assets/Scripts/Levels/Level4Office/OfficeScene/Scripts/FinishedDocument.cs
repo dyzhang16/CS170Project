@@ -68,7 +68,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
     }
     public void DisplayFinishedDocuments()
     {
-        text.text = "Number of Documents Finished:" + documentFinished;
+        text.text = "Number of Documents Finished: " + documentFinished;
     }
     public void SpawnDocument()
     {
