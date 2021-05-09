@@ -1,17 +1,45 @@
-﻿title: TimeUp
+﻿title: PlayerWin
 tags:
 ---
 <<HidePanel Document>>
 <<ChangeSpeaker Player Friend>>
 <<Focus FIRST>>
-	Wow that was much more exciting!
+
+	I guess I was slightly faster.
+
 <<Focus SECOND>>
-	Let's go back to my apartment. 
+
+	 Let's go back to my apartment.
+
 <<set $DocumentsFinished to 1>>
 <<Focus FIRST>>
+
 	Alright.
+
 <<ChangeScene BlackScreen CityOffice>>
 ===
+
+title: FredricWin
+tags:
+---
+<<HidePanel Document>>
+<<ChangeSpeaker Player Friend>>
+<<Focus FIRST>>
+
+	Damn only a little more...
+
+<<Focus SECOND>>
+
+	Let's go back to my apartment. 
+
+<<set $DocumentsFinished to 1>>
+<<Focus FIRST>>
+
+	Alright.
+
+<<ChangeScene BlackScreen CityOffice>>
+===
+
 title: BoringDocuments
 tags:
 ---

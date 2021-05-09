@@ -27,28 +27,36 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                     ++documentFinished;
                     Debug.Log("Correct Document Finished: " + documentFinished);
                 }
+                else
+                {
+                    Debug.LogWarning("INCORRECT DOCUMENT Y R U SO BAD");
+                }
+            }
+            else if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampArea && eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampAreaTwo)
+            {
+                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpace && eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpaceTwo)
+                {
+                    SoundManagerScript.PlaySound("sliding_document");
+                    ++documentFinished;
+                    Debug.Log("Correct Document Finished: " + documentFinished);
+                }
+                else
+                {
+                    Debug.LogWarning("INCORRECT DOCUMENT Y R U SO BAD");
+                }
             }
             else if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().SignArea)
             {
-                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedSpace)
+                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedSpace && !eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpace)
                 {
                     SoundManagerScript.PlaySound("sliding_document");
                     ++documentFinished;
                     Debug.Log("Correct Document Finished: " + documentFinished);
                 }
-            }
-            else if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampArea)
-            {
-                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpace)
+                else
                 {
-                    SoundManagerScript.PlaySound("sliding_document");
-                    ++documentFinished;
-                    Debug.Log("Correct Document Finished: " + documentFinished);
+                    Debug.LogWarning("INCORRECT DOCUMENT Y R U SO BAD");
                 }
-            }
-            else 
-            {
-                Debug.Log("Incorrect Document");
             }
             Destroy(eventData.pointerDrag.transform.gameObject);
             Arrow.GetComponent<CanvasGroup>().alpha = 0;
@@ -61,6 +69,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 {
                     Boring = false;
                     documentFinished = 0;
+                    DisplayFinishedDocuments();
                     DialogueRunner.StartDialogue(dialogueToRun);
                 }
             }
@@ -68,7 +77,8 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
     }
     public void DisplayFinishedDocuments()
     {
-        text.text = "Number of Documents Finished: " + documentFinished;
+        string s = documentFinished.ToString();
+        text.text = s;
     }
     public void SpawnDocument()
     {
@@ -88,6 +98,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 break;
         }
         GameObject SpawnedDocument = Instantiate(choice, pos, DocumentUI.transform.localRotation, DocumentUI.transform);
+        SpawnedDocument.transform.SetAsFirstSibling();
         Debug.Log("Spawning: " + choice);
     }
 }

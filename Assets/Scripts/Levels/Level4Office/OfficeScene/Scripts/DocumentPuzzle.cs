@@ -51,6 +51,7 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
                     }
                     else
                     {
+                        sign = true;
                         Debug.LogWarning("No SignArea on ths Document");
                     }
                 }
@@ -72,7 +73,7 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
                     }
                     if (StampArea && StampAreaTwo)
                     {
-                        if ((StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver) && halfStamp)
+                        if ((StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver) && halfStamp /*&& !stamp && !stampTwo*/)
                         {
                             stampedSpace = true;
                         }
@@ -108,7 +109,8 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
                     }
                     else
                     {
-                        Debug.LogWarning("No StampArea on ths Document");
+                        stampedSpace = true;
+                        Debug.LogWarning("No Stamp Area on this Document");
                     }
 
                 }

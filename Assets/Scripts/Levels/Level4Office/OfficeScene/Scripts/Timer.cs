@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour //https://gamedevbeginner.com/how-to-make-cou
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
     public DialogueRunner DialogueRunner;
-    public string dialogueToRun;
+    public GameObject Document, FriendDocument;
 
     void Update()
     {
@@ -27,7 +27,14 @@ public class Timer : MonoBehaviour //https://gamedevbeginner.com/how-to-make-cou
                 timeRemaining = 0;                  //reset variables to prevent function from executing repeatedly
                 timerIsRunning = false;
                 GameManager.instance.officeDeskPuzzle = 1;
-                DialogueRunner.StartDialogue(dialogueToRun);
+                if (Document.GetComponent<FinishedDocument>().documentFinished > FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished)
+                {
+                    DialogueRunner.StartDialogue("PlayerWin");
+                }
+                else
+                {
+                    DialogueRunner.StartDialogue("FredricWin");
+                }
             }
         DisplayTime(timeRemaining);
         }
