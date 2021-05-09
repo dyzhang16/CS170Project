@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour //https://gamedevbeginner.com/how-to-make-cou
                 timeRemaining = 0;                  //reset variables to prevent function from executing repeatedly
                 timerIsRunning = false;
                 GameManager.instance.officeDeskPuzzle = 1;
-                if (Document.GetComponent<FinishedDocument>().documentFinished > FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished)
+                if (Document.GetComponent<FinishedDocument>().documentFinished >= FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished)
                 {
                     DialogueRunner.StartDialogue("PlayerWin");
                 }
