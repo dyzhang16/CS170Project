@@ -51,10 +51,10 @@ public class friend1 : MonoBehaviour
             if (Vector3.Distance(transform.position, target) < 0.001f){
                 isWalking = false;
                 col.isTrigger = false;
-                if (GameManager.instance.walkedToApartment == 2){
-                    this.GetComponent<RunDialogue>().dialogueToRun = "friendGoingToApartment";
-                } else if (GameManager.instance.firstDateDia == 1){
+                if (GameManager.instance.firstDateDia == 1){
                     this.GetComponent<RunDialogue>().dialogueToRun = "friendHitByCar";
+                } else if (GameManager.instance.firstFriendMeeting == 5){
+                    this.GetComponent<SpriteRenderer>().flipX = true;
                 }
             }
         }
@@ -71,7 +71,7 @@ public class friend1 : MonoBehaviour
         col.isTrigger = true;
         GameManager.instance.visitedAfterCoffee = 1;
         GameManager.instance.firstFriendMeeting = 2;
-        this.GetComponent<SpriteRenderer>().flipX = true;
+        // this.GetComponent<SpriteRenderer>().flipX = true;
     }
 
     //streetCoffee
@@ -104,7 +104,7 @@ public class friend1 : MonoBehaviour
         isWalking = true;
         col.isTrigger = true;
         GameManager.instance.firstFriendMeeting = 3;
-        this.GetComponent<SpriteRenderer>().flipX = true;
+        // this.GetComponent<SpriteRenderer>().flipX = true;
     }
 
     //cityOffice
@@ -113,7 +113,14 @@ public class friend1 : MonoBehaviour
         isWalking = true;
         col.isTrigger = true;
         GameManager.instance.firstFriendMeeting = 4;
-        this.GetComponent<SpriteRenderer>().flipX = true;
+        // this.GetComponent<SpriteRenderer>().flipX = true;
+    }
+
+    [YarnCommand("MoveToOffice4")]
+    public void MoveToOffice4(){
+        isWalking = true;
+        col.isTrigger = true;
+        GameManager.instance.firstFriendMeeting = 5;
     }
 
     [YarnCommand("moveToStreet")]

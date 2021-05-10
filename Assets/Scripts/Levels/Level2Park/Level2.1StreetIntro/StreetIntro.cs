@@ -10,6 +10,8 @@ public class StreetIntro : MonoBehaviour
     public GameObject exitToPark;
     public GameObject exitToStreetCoffee;
 
+    public GameObject friend;
+
     void Awake(){
         if (GameManager.instance != null){
 
@@ -18,6 +20,10 @@ public class StreetIntro : MonoBehaviour
                 player.transform.position = exitToPark.transform.position + new Vector3(15, 0, 0);
             } else if (GameManager.instance.previousScene == "StreetCoffee"){
                 player.transform.position = exitToStreetCoffee.transform.position + new Vector3(-12, 0, 0);
+            }
+
+            if (GameManager.instance.firstFriendMeeting == 2){
+                friend.SetActive(true);
             }
         }
     }

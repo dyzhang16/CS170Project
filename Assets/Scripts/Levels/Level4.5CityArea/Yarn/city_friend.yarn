@@ -10,11 +10,24 @@ tags:
 <<DisableDialogue levelApproach>>
 ===
 
+title: park_friend_intro
+---
+
+<<ChangeSpeaker Player>>
+<<Focus FIRST>>
+
+<<MoveToOffice3 Friend1>>
+
+	Hey, I still want to talk to you!
+
+<<DisableDialogue levelApproach>>
+
+===
 
 title: cityoffice_friend_intro
 tags: 
 ---
-<<MoveToOffice3 Friend1>>
+<<MoveToOffice4 Friend1>>
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
 
@@ -35,57 +48,64 @@ tags:
 	
 	[[CheckID]]
 
+<<elseif GetVariable("visitedAfterCoffee") == 1>>
+	<<ChangeSpeaker Player Friend>>
+	<<Focus SECOND>>
+
+		C’mon, can’t you just let me in this one time?
+
+	<<ChangeSpeaker Player Guard>>
+	<<Focus SECOND>>
+
+		Sorry. I can’t let you in without an ID. Security reasons and all that jazz, y’know? Identity theft is a serious issue.
+
+	<<ChangeSpeaker Player Friend>>
+	<<Focus SECOND>>
+
+		I come into this office six days a week. You know exactly who I am, Bedford!
+
+	<<ChangeSpeaker Player Guard>>
+	<<Focus SECOND>>
+		
+		I’m afraid I don’t know what you’re talking about, Fredric. I don’t recognise you at all.
+
+	<<ChangeSpeaker Player Friend>>
+	<<Focus SECOND>>
+
+		You just said my name!
+
+	<<ChangeSpeaker Player Guard>>
+	<<Focus SECOND>>
+
+		Did I? I don’t know what you’re talking about.
+
+	<<ChangeSpeaker Player Friend>>
+	<<Focus SECOND>>
+
+		I’m already late for work. Let me in. Please?
+
+	<<ChangeSpeaker Player Guard>>
+	<<Focus SECOND>>
+
+		Rules are rules.  No ID, no entry.
+
+	<<ChangeSpeaker Player>>
+	<<Focus FIRST>>
+		
+		...
+
+		If Fredric isn’t worrying about getting to work on time, he’ll finally talk to me.
+
+		I need to get Fredric his ID Card.
+
+	<<ChangeVariable GameManager idNeeded 1>>
+	
 <<else>>
-<<ChangeSpeaker Player Friend>>
-<<Focus SECOND>>
 
-	C’mon, can’t you just let me in this one time?
+	<<ChangeSpeaker Player>>
 
-<<ChangeSpeaker Player Guard>>
-<<Focus SECOND>>
+	That looks like a security guard for that big office.
 
-	Sorry. I can’t let you in without an ID. Security reasons and all that jazz, y’know? Identity theft is a serious issue.
-
-<<ChangeSpeaker Player Friend>>
-<<Focus SECOND>>
-
-	I come into this office six days a week. You know exactly who I am, Bedford!
-
-<<ChangeSpeaker Player Guard>>
-<<Focus SECOND>>
-	
-	I’m afraid I don’t know what you’re talking about, Fredric. I don’t recognise you at all.
-
-<<ChangeSpeaker Player Friend>>
-<<Focus SECOND>>
-
-	You just said my name!
-
-<<ChangeSpeaker Player Guard>>
-<<Focus SECOND>>
-
-	Did I? I don’t know what you’re talking about.
-
-<<ChangeSpeaker Player Friend>>
-<<Focus SECOND>>
-
-	I’m already late for work. Let me in. Please?
-
-<<ChangeSpeaker Player Guard>>
-<<Focus SECOND>>
-
-	Rules are rules.  No ID, no entry.
-
-<<ChangeSpeaker Player>>
-<<Focus FIRST>>
-	
-	...
-
-	If Fredric isn’t worrying about getting to work on time, he’ll finally talk to me.
-
-	I need to get Fredric his ID Card.
-
-<<ChangeVariable GameManager idNeeded 1>>
 <<endif>>
 ===
 

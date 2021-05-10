@@ -96,7 +96,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                     if (Vector3.Distance(this.transform.position, beginDriftPos) > 10f){
                         float dist = Vector3.Distance(this.transform.position, beginDriftPos)/50f;
 
-                        Debug.Log("drift distance long");
+                        // Debug.Log("drift distance long");
+                        this.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
                     }
                 }
             }
@@ -110,7 +111,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             //select the continue button upon pressing space
             if(Input.GetKeyDown(KeyCode.Space)){
                 if (GameObject.Find("DiaSystem Prefab 1/DialogueRunner") != null){
-                    Debug.Log("found dialogue runner");
+                    // Debug.Log("found dialogue runner");
                     GameObject dia = GameObject.Find("DiaSystem Prefab 1/DialogueRunner");
                     DialogueRunner diaRunner = dia.GetComponent<DialogueRunner>();
                     if (diaRunner.IsDialogueRunning){
