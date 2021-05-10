@@ -10,12 +10,21 @@ public class Park : MonoBehaviour
 
     public GameObject player;
     public GameObject exitToStreetIntro; 
+    public GameObject exitToCityOffice;
+
+    public GameObject friend;
 
     void Awake(){
         if (GameManager.instance != null){
             //changes player position based on previous level
             if (GameManager.instance.previousScene == "StreetIntro"){
                 player.transform.position = exitToStreetIntro.transform.position + new Vector3(-10, 0, 0);
+            } else if (GameManager.instance.previousScene == "CityOffice"){
+                player.transform.position = exitToCityOffice.transform.position + new Vector3(10, 0, 0);
+            }
+
+            if (GameManager.instance.firstFriendMeeting == 3){
+                friend.SetActive(true);
             }
         }
     }

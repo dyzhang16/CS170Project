@@ -12,7 +12,6 @@ public class StreetCoffee : MonoBehaviour
     public GameObject receipt;
 
     public GameObject exitToStreetIntro;
-    public GameObject exitToCityArcade;
 
     void Awake(){
         if (GameManager.instance != null){
@@ -22,8 +21,6 @@ public class StreetCoffee : MonoBehaviour
                 player.transform.position = exitToStreetIntro.transform.position + new Vector3(12, 0, 0);
             } else if (GameManager.instance.previousScene == "CoffeeScene"){
                 player.transform.position = coffeeStand.transform.position + new Vector3(15, 0, -10);
-            } else if (GameManager.instance.previousScene == "CityArcade"){
-                player.transform.position = exitToCityArcade.transform.position + new Vector3(-12, 0, 0);
             }
             
             //change dialogue to correspond to certain cues
