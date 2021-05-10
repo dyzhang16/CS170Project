@@ -43,27 +43,6 @@ title: TakePaperFilter
 <<Add Paper_Filter>>
 ===
 
-title: Blender
----
-<<ChangeSpeaker Player>>
-<<CheckCup Cup>>
-<<if IsInventoryFull() is true>>
-
-  [[CannotTake]]
-
-<<elseif $CupExists is 0>>
-
-	I need something to hold the water...
-
-<<else>>
-
-	You add the water to your inventory.
-
-<<Remove Cup>>
-<<Add Blender>> //Water in the Blender
-<<endif>>
-===
-
 title: CannotTake
 ---
 <<ChangeSpeaker Player>>

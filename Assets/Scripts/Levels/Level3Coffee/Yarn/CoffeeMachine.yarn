@@ -22,11 +22,7 @@ tags:
 ---
 <<ChangeSpeaker Player>>
 	//placeholder text
-<<if $WaterThere is 0>>
-
-	I'm missing the water...
-
-<<elseif $FilterThere is 0>>
+<<if $FilterThere is 0>>
 
 	I'm missing something to hold the beans....
 
@@ -64,18 +60,14 @@ tags:
 <<ChangeSpeaker Player>>
 <<Check Random Coffee>>
 <<if $DrinkExists is 1>>
-	Do you want to add some creamer to the coffee?
-	[[Add the cream.|AddCream]]
-	[[Leave it alone.|PutitDown]]
-<<else>>
-	I can add cream once I’ve brewed the coffee.
-<<endif>>
-===
 
-title: AddCream
----
-<<Show Creamer>>
-<<stop>>
+	<<Show Creamer>>
+
+<<else>>
+
+	I can add cream once I’ve brewed the coffee.
+
+<<endif>>
 ===
 
 title: Sugar
@@ -84,20 +76,16 @@ tags:
 <<ChangeSpeaker Player>>
 <<Check Random Coffee>>
 <<if $DrinkExists is 1>>
-	Do you want to add some sugar to the coffee?
-	[[Add the sugar.|AddSugar]]
-	[[Leave it alone.|PutitDown]]
+	
+	<<Show Sugar>>
+
 <<else>>
+
 	I can add sugar once I’ve brewed the coffee.
+
 <<endif>>
 ===
 
-title: AddSugar
-tags:
----
-<<Show Sugar>>
-<<stop>>
-===
 
 title: PutitDown
 ---
