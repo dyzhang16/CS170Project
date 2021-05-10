@@ -9,8 +9,8 @@ public class OfficeWorkID : MonoBehaviour
 {
 	void Start()
 	{
-		// If the GameManager requires that this object has been picked up, then destroy it
-		if (GameManager.instance.idPickedUp == 1)
+		// If the GameManager notes that this object has been picked up OR if it is not needed, then destroy it
+		if (GameManager.instance.idPickedUp == 1 || GameManager.instance.idNeeded == 0)
 		{
 			Destroy(gameObject);
 		}
