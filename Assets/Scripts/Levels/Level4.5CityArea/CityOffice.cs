@@ -27,6 +27,14 @@ public class CityOffice : MonoBehaviour
             if (GameManager.instance.firstFriendMeeting == 4){
                 friend.SetActive(true);
                 introduction.SetActive(true);
+            } else if (GameManager.instance.firstFriendMeeting == 5){
+                introduction.GetComponent<RunDialogue>().enabled = false;
+                introduction.GetComponent<BoxCollider>().enabled = false;
+                friend.transform.position = officedoor.transform.position;
+                friend.GetComponent<SpriteRenderer>().flipX = true;
+            } else {
+                introduction.GetComponent<RunDialogue>().enabled = false;
+                introduction.GetComponent<BoxCollider>().enabled = false;
             }
             
             if (GameManager.instance.officeDeskPuzzle == 1){
@@ -58,14 +66,6 @@ public class CityOffice : MonoBehaviour
 
             GameManager.instance.loadItems();
             GameManager.instance.deleteItems();
-        }
-
-        if (GameManager.instance.firstFriendMeeting != 4)
-        {
-            introduction.GetComponent<RunDialogue>().enabled = false;
-            introduction.GetComponent<BoxCollider>().enabled = false;
-            friend.transform.position = officedoor.transform.position;
-            friend.GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 }
