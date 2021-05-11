@@ -7,13 +7,12 @@ using UnityEngine.UI;
 
 public class friendFinishedDocuments : MonoBehaviour
 {
-
     public Text text;
     [HideInInspector] public int documentFinished = 0;
     private float period = 0.0f;
     void Update()
     {
-        float time = Random.Range(2, 9);
+        float time = Random.Range(3, 10);
         if (period > time)
         {
             documentFinished += 1;

@@ -15,6 +15,7 @@ public class addPen : MonoBehaviour, IDropHandler
         {
             if (droppedItem.itemName == "Pen")
             {
+                Debug.LogWarning("Dropping Pen");
                 this.gameObject.SetActive(false);
                 pen.SetActive(true);
                 Inventory.instance.RemoveItem(droppedItem);

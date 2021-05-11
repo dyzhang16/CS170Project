@@ -7,11 +7,11 @@ using UnityEngine.EventSystems;
 public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
 
-    public GameObject Stamps, Signature, SignArea, StampArea, StampAreaTwo; 
+    public GameObject Stamps, Signature, SignArea, StampArea, StampAreaTwo;
     public bool isDragging = false;
-    [HideInInspector] public bool stampedSpace, stampedSpaceTwo, signedSpace = false;
+    [HideInInspector] public bool signedDocument, stampedDocument, signed, stamped, halfStamped = false; 
     private Transform originalParent;
-    private bool stamp, sign, stampTwo , halfStamp= false;
+
 
     public void Start()
     {
@@ -21,16 +21,16 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
     {
         if (!isDragging)
         {
-            GameObject PenObject = GameObject.Find("Pen");   
-            if (eventData.button == PointerEventData.InputButton.Left)
+            GameObject PenObject = GameObject.Find("Pen");
+            if (PenObject)
             {
-                if (PenObject)
+                if (eventData.button == PointerEventData.InputButton.Left)
                 {
                     Sign();
-                    GameObject Arrow = GameObject.Find("Arrow");
-                    if (Arrow)
+                    GameObject Note = GameObject.Find("StickyNote");
+                    if (Note)
                     {
-                        Arrow.GetComponent<CanvasGroup>().alpha = 1;
+                        Note.GetComponent<CanvasGroup>().alpha = 1;
                     }
                     else
                     {
@@ -38,34 +38,38 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
                     }
                     if (SignArea)
                     {
-                        if (SignArea.GetComponent<mouseOver>().isMouseOver && !sign)
+                        if (SignArea.GetComponent<mouseOver>().isMouseOver && !signed)
                         {
-                            signedSpace = true;
-                            sign = true;
+                            signed = true;
+                            signedDocument = true;
+
                         }
                         else
                         {
-                            signedSpace = false;
-                            sign = true;
+                            signed = true;
+                            signedDocument = false;
+
                         }
                     }
                     else
                     {
-                        sign = true;
-                        Debug.LogWarning("No SignArea on ths Document");
+                        signedDocument = true;
+                        Debug.LogWarning("No Sign Area");
                     }
+                    Debug.Log("Signing This document made it: " + signedDocument);
                 }
             }
+            
             GameObject StampObject = GameObject.Find("Stamp");
-            if (eventData.button == PointerEventData.InputButton.Right)
+            if (StampObject)
             {
-                if (StampObject)
+                if (eventData.button == PointerEventData.InputButton.Right)
                 {
                     Stamp();
-                    GameObject Arrow = GameObject.Find("Arrow");
-                    if (Arrow)
+                    GameObject Note = GameObject.Find("StickyNote");
+                    if (Note)
                     {
-                        Arrow.GetComponent<CanvasGroup>().alpha = 1;
+                        Note.GetComponent<CanvasGroup>().alpha = 1;
                     }
                     else
                     {
@@ -73,50 +77,61 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
                     }
                     if (StampArea && StampAreaTwo)
                     {
-                        if ((StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver) && halfStamp /*&& !stamp && !stampTwo*/)
+                        if (StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver && halfStamped)
                         {
-                            stampedSpace = true;
+                            stampedDocument = true;
                         }
-                        else if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamp)
+                        else if (StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver && !stamped)
                         {
-                            halfStamp = true;
-                            stamp = true;
-                        }
-                        else if (StampAreaTwo.GetComponent<mouseOver>().isMouseOver && !stampTwo)
-                        {
-                            halfStamp = true;
-                            stampTwo = true;
+                            stamped = true;
+                            halfStamped = true;
                         }
                         else
                         {
-                            stampedSpace = false;
-                            stamp = true;
-                            stampTwo = true;
+                            stamped = true;
+                            stampedDocument = false;
                         }
                     }
                     else if (StampArea)
                     {
-                        if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamp)
+                        if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamped)
                         {
-                            stampedSpace = true;
-                            stamp = true;
+                            stamped = true;
+                            stampedDocument = true;
                         }
                         else
                         {
-                            stampedSpace = false;
-                            stamp = true;
+                            stamped = true;
+                            stampedDocument = false;
                         }
                     }
                     else
                     {
-                        stampedSpace = true;
-                        Debug.LogWarning("No Stamp Area on this Document");
+                        Debug.LogWarning("No Stamp Area");
+                        stampedDocument = true;
                     }
+                    Debug.Log("Stamping This document made it:" + stampedDocument);
+                    /*                    if (StampAreaTwo)
+                                        {
+                                            if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamped)
+                                            {
+                                                stamped = true;
+                                                stampedDocument = true;
+                                                Debug.LogWarning("This document is :" + stampedDocument);
+                                            }
+                                            else
+                                            {
+                                                signed = true;
+                                                signedDocument = false;
+                                                Debug.LogWarning("This document is :" + signedDocument);
+                                            }
 
+                                        }*/
                 }
             }
         }
     }
+    
     private void Stamp()
     {
         var mousePos = Input.mousePosition;

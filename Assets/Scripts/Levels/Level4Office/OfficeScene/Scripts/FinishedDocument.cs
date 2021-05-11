@@ -18,10 +18,9 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag.transform.tag == "Document")
         {
-            
             if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().SignArea && eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampArea)
             {
-                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedSpace && eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpace)
+                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedDocument && eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedDocument)
                 {
                     SoundManagerScript.PlaySound("sliding_document");
                     ++documentFinished;
@@ -34,7 +33,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
             }
             else if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampArea && eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampAreaTwo)
             {
-                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpace && eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpaceTwo)
+                if (!eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedDocument && eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedDocument)
                 {
                     SoundManagerScript.PlaySound("sliding_document");
                     ++documentFinished;
@@ -47,7 +46,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
             }
             else if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().SignArea)
             {
-                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedSpace && !eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedSpace)
+                if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedDocument && !eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedDocument)
                 {
                     SoundManagerScript.PlaySound("sliding_document");
                     ++documentFinished;

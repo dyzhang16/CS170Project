@@ -161,9 +161,9 @@ title: OfficeFriend
 
 <<Focus SECOND>>
 
-	...You can’t be seen. And you’ve proven helpful before...Alright, then.
+	...You’re invisible. And you’ve proven helpful before...Alright, then.
 
-	You’ll be able to find the papers on the blue desks.
+	You’ll be able to find the papers when you go through the desks.
 
 <<Focus FIRST>>
 
@@ -171,11 +171,12 @@ title: OfficeFriend
 
 <<Focus SECOND>>
 
-	Once you have them, bring them to my desk.
+	Once you have them, bring them to me.
+
 <<ChangeVariable GameManager documentNeeded 1>>
 <<else>> //Visiting Friend as Ghost after already talking to him
 
-	The papers should be on the blue desks. Just bring them back here to my desk. And don’t get caught!
+	The papers should be in my coworkers' desk.  Just bring them back here to me.
 
 <<endif>>
 ===
