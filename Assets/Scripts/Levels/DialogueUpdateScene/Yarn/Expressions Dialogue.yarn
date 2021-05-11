@@ -1,0 +1,130 @@
+﻿title: Expressions_Dialogue
+tags:
+---
+<<ChangeSpeaker Friend Gravekeeper>>
+<<Focus NONE>>
+    Now beginning the expressions test.
+
+[[SingleParam]]
+===
+
+title: SingleParam
+tags:
+---
+<<ChangeSpeaker Friend Gravekeeper>>
+<<Focus NONE>>
+    This test involves changing the expression with SetExpression using a single parameter. This means that it will change the expression of the person in focus.
+
+<<Focus FIRST>>
+    Woah. You know what?
+
+<<Focus SECOND>>
+    What?
+
+<<Focus FIRST>>
+<<SetExpression angry>>
+    I'm feeling <color=red>angry</color>!
+
+<<Focus SECOND>>
+<<SetExpression shocked>>
+    Woah, Fredric, you alright? Your outburst scared me.
+
+<<Focus FIRST>>
+    I'm just feeling really angry! In fact, I'm feeling many emotions.
+<<SetExpression hmm>>
+    Let's see what kind of emotions...
+<<SetExpression happy>>
+    I can feel happy.
+<<SetExpression shocked>>
+    Or be scared like you were earlier.
+<<SetExpression neutral>>
+    Or not feel anything at all.
+
+<<Focus SECOND>>
+<<SetExpression happy>>
+    Well if you're happy, then I'm fine with that. So just stick to being happy.
+
+[[DoubleParam]]
+===
+
+title: DoubleParam
+tags:
+---
+<<ChangeSpeaker Gravekeeper Friend>>
+<<Focus NONE>>
+    This test will now use two parameters when changing expression. The first parameter is the character's name/FIRST/SECOND, and the second is the expression.
+
+<<Focus FIRST>>
+<<SetExpression Gravekeeper happy>>
+    Hey Fredric. Glad to see that you're okay.
+<<SetExpression Gravekeeper neutral>>
+<<SetExpression Fredric angry>>
+    ... Or are you?
+<<SetExpression Fredric hmm>>
+    Geez, you're making lots of weird faces.
+
+<<Focus SECOND>>
+<<SetExpression Fredric shocked>>
+    AAH! Oh, sorry, what were you saying?
+
+<<Focus FIRST>>
+<<SetExpression Gravekeeper neutral>>
+    Oh, nothing. Keep doing what you were doing...
+
+[[StressTest]]
+===
+
+title: StressTest
+tags:
+---
+<<ChangeSpeaker Friend Gravekeeper>>
+<<Focus NONE>>
+    This is a stress test, designed to ensure that any possible issues are properly tested. The dialogue will no longer be actual dialogue, but will reference what is being tested.
+
+<<Focus BOTH>>
+<<SetExpression neutral>>
+    Both neutral (should do nothing)
+<<SetExpression shocked>>
+    Both shocked
+
+<<Focus Gravekeeper>>
+<<SetExpression Gravekeeper angry>>
+    Double param angry (should have gravekeeper be neutral still, and have fredric not changing their expression)
+<<SetExpression neutral>>
+    Single param angry (should have gravekeeper be neutral still, and have fredric not changing their expression)
+
+<<Focus FIRST>>
+<<SetExpression neutral>>
+    Friend should have neutral expression
+
+<<SetExpression asdfghjkl>>
+    Changing expression to asdfghjkl (i.e., should remain neutral)
+
+<<SetExpression neutral>>
+    Changing expression back to neutral.
+
+<<SetExpression angry>>
+    Changing expression to angry.
+
+<<SetExpression zxcvbnm>>
+    Changing expression to zxcvbnm (i.e., should become neutral from angry)
+
+<<Focus NONE>>
+    Now no one will be in focus.
+<<SetExpression shocked>>
+    Setting expression to shocked should not set anyone to be shocked
+<<SetExpression Gravekeeper shocked>>
+    Gravekeeper set to shocked
+<<SetExpression Fredric happy>>
+    Fredric set to happy
+<<SetExpression asdfghjkl>>
+    Setting general (single-param) expression to asdfghjkl (should do nothing).
+
+[[ExpressionTestConclusion]]
+===
+
+title: ExpressionTestConclusion
+---
+<<ChangeSpeaker Player>>
+    This concludes the expressions test.
+===
