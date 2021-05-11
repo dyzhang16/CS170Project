@@ -137,7 +137,7 @@ title: OfficeFriend
 
 	You don’t understand. I can’t just do that.
 
-	They can’t find out I messed up. It’ll be the talk of the water cooler for weeks!
+	They can’t find out I messed up. It’ll be the talk of the water cooler for <i>weeks</i>!
 
 <<Focus FIRST>>
 
@@ -161,9 +161,9 @@ title: OfficeFriend
 
 <<Focus SECOND>>
 
-	...You’re invisible. And you’ve proven helpful before...Alright, then.
+	You <i>have</i> proven helpful before. And if you’re truly a ghost....Hmm, yeah. Yeah! Alright, then.
 
-	You’ll be able to find the papers when you go through the desks.
+	Can you help me find the papers in my co-workers’ desks? I’m not sure which ones, though. You’ll have to figure it out yourself.
 
 <<Focus FIRST>>
 
@@ -171,12 +171,12 @@ title: OfficeFriend
 
 <<Focus SECOND>>
 
-	Once you have them, bring them to me.
+	There should be 3 stacks. Once you have them, bring them to me.
 
 <<ChangeVariable GameManager documentNeeded 1>>
 <<else>> //Visiting Friend as Ghost after already talking to him
 
-	The papers should be in my coworkers' desk.  Just bring them back here to me.
+	There should be 3 stacks of papers. Just bring them back here to me.
 
 <<endif>>
 ===
@@ -187,11 +187,9 @@ tags:
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
 
-	Thanks, you brought back all the documents.
+	You’re back! I’m losing my mind doing nothing over here.
 
-	You can interact with my table to begin signing the documents.
-
-	Don't forget to grab the pen and stamp!
+	Looks like everything is here. It’s time I get to work.
 <<ChangeVariable GameManager officePuzzle 1>>
 <<set $OfficePuzzle to 1>>
 ===
@@ -214,11 +212,11 @@ tags:
 
 <<elseif visited("OfficeFriend") is true>>
 	
-	I need to find Frederic's documents.
+	I think Fred wanted me to hand the papers over to him.
 
 <<else>>
 	
-	I should talk to Frederic first.
+	This must be Fredric’s desk. It’s neater than I expected.
 
 <<endif>>
 ===
