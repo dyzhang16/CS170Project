@@ -15,9 +15,13 @@ public class ChangeSpeaker : MonoBehaviour
     // Dictionary for keeping track of character names (for focus)
     private List<(CharacterObj, Image)> speakerPairs;
 
+    // constants
+    static readonly Color IN_FOCUS = Color.white;
+    static readonly Color NOT_FOCUS = new Color(0.5f, 0.5f, 0.5f, 1);
+
     public void Awake()
     {
-        // Create a new command called 'camera_look', which looks at a target.
+        // Create a new command called 'ChangeSpeaker', which defines the speakers of dialogue.
         dialogueRunner.AddCommandHandler(
             "ChangeSpeaker",     // the name of the command
             ChangeImage // the method to run
@@ -27,11 +31,15 @@ public class ChangeSpeaker : MonoBehaviour
             "Focus",
             SetFocus
         );
+        // YarnCommand for setting expression of speakers
+        dialogueRunner.AddCommandHandler(
+            "SetExpression",
+            SetExpression
+        );
 
         // initialize speakerPairs
         speakerPairs = new List<(CharacterObj, Image)>();
     }
-
     private void ChangeImage(string[] parameters)
     {
         // speakerPairs focusPairs
@@ -119,9 +127,6 @@ public class ChangeSpeaker : MonoBehaviour
 
     private void SetFocus(string[] parameters)
     {
-        // constants
-        Color IN_FOCUS = Color.white;
-        Color NOT_FOCUS = new Color(0.5f, 0.5f, 0.5f, 1);
 
         // check for valid parameter count
         if (parameters.Length == 0)
@@ -240,5 +245,119 @@ public class ChangeSpeaker : MonoBehaviour
             }
         }
         return null;
+    }
+
+    /// <summary>
+    /// Sets the expression of the current focused speaker, or a specified speaker. This can take either
+    /// one or two parameters.
+    /// </summary>
+    /// <param name="parameters">The expression, or FIRST/SECOND/character_name and the expression.</param>
+    public void SetExpression(string[] parameters)
+    {
+        // validate parameters to be greater than 0
+        if (parameters.Length == 0)
+        {
+            Debug.LogError("ChangeSpeaker.SetExpression: " +
+                "Invalid number of parameters");
+        }
+        else if (parameters.Length > 2)
+        {
+            Debug.LogWarning("ChangeSpeaker.SetExpression: " +
+                "Too many parameters were expected. The last few parameters will be ignored.");
+        }
+
+        // case 1: change the expression of the speaker in focus
+        bool changeFocusedSpeakerExpression = parameters.Length == 1;
+        if (changeFocusedSpeakerExpression)
+        {
+            // define some strings from parameters
+            string expression = parameters[0];
+
+            // update the first image's sprite and save its result
+            bool firstCharacterImageChanged = UpdateImageSpriteExpression(characterImage, expression, true);
+
+            // update the second image's sprite, but also log a warning if the expression was updated for both characters
+            if (UpdateImageSpriteExpression(secondCharacterImage, expression, true) && firstCharacterImageChanged)
+            {
+                Debug.LogWarning("ChangeSpeaker.SetExpression: " +
+                    "Both characters had their expressions updated. If this was not expected, this YarnCommand should " +
+                    "be called with the character specified.");
+            }
+        }
+        // case 2: change the expression of the specified speaker (does not have to be in focus)
+        else
+        {
+            // define some strings from parameters
+            string name = parameters[0];
+            string expression = parameters[1];
+
+            switch (name)
+            {
+                case "FIRST":
+                    UpdateImageSpriteExpression(characterImage, expression);
+                    break;
+
+                case "SECOND":
+                    UpdateImageSpriteExpression(secondCharacterImage, expression);
+                    break;
+
+                // this is if a name is specified
+                default:
+                    // get both the Image and CharacterObj from the specified name
+                    var targetCharacterImagePair = GetCharacterImagePairFromName(name).Value;
+
+                    // extract the image from the pair
+                    Image targetImage = targetCharacterImagePair.Item2;
+
+                    // update that image
+                    UpdateImageSpriteExpression(targetImage, expression);
+
+                    break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Updates the specified Image to show a specified Sprite. There is a flag that can
+    /// be used to indicate whether to only do an update if the sprite is in focus or not.
+    /// <br></br>
+    /// <br></br>
+    /// It returns true if successfully changed.
+    /// </summary>
+    /// <param name="imageToUpdate">The Image object to update</param>
+    /// <param name="expressionToChangeTo">The target expression to update to</param>
+    /// <param name="inFocusOnly">Whether to only do this if the sprite is in focus</param>
+    /// <returns>boolean indicating success</returns>
+    private bool UpdateImageSpriteExpression(Image imageToUpdate, string expressionToChangeTo, bool inFocusOnly = false)
+    {
+        // failure condition: if the image itself is null, or not active and enabled
+        if (imageToUpdate == null || !imageToUpdate.isActiveAndEnabled)
+        {
+            return false;
+        }
+
+        // failure condition: if we are trying to update an image that is only in focus, and the image is not in focus
+        if (inFocusOnly && imageToUpdate.color == NOT_FOCUS)
+        {
+            return false;
+        }
+
+        // get the image's related CharacterObj
+        CharacterObj character = GetCharacterFromImage(imageToUpdate);
+
+        // failure condition: character is null
+        if (character == null)
+        {
+            return false;
+        }
+
+        // get the sprite of the requested expression
+        Sprite expressionSprite = character.GetExpression(expressionToChangeTo);
+
+        // update the image
+        imageToUpdate.sprite = expressionSprite;
+
+        // return true for success
+        return true;
     }
 }
