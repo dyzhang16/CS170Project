@@ -5,6 +5,10 @@
 
     It's a lanyard. Don't know what this is doing here...
 <<else>>
+    <<if IsInventoryFull() is true>>
+        [[CannotTakeItemInventoryFull]]
+        <<exit>>
+    <<endif>>
     <<ChangeSpeaker Player>>
     This must be Fredric's ID!
 
