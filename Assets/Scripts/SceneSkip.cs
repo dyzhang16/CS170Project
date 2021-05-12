@@ -13,7 +13,9 @@ public class SceneSkip : MonoBehaviour
         manager.gaveDrink = 0;
         manager.visitedAfterCoffee = 0;
         manager.visitedCoffee = 0;
-        manager.readRecipeBook = 0;
+        manager.openLeftDoor = 0;
+        manager.openMidDoor = 0;
+        manager.openRightDoor = 0;
         manager.addedCoffeeMachineItem = 0;
         manager.followFriendinOffice = 0;
         manager.documentNeeded = 0;
@@ -39,7 +41,9 @@ public class SceneSkip : MonoBehaviour
         manager.gaveDrink = 0;
         manager.visitedAfterCoffee = 0;
         manager.visitedCoffee = 0;
-        manager.readRecipeBook = 0;
+        manager.openLeftDoor = 0;
+        manager.openMidDoor = 0;
+        manager.openRightDoor = 0;
         manager.addedCoffeeMachineItem = 0;
         manager.followFriendinOffice = 0;
         manager.officePuzzle = 0;
@@ -66,7 +70,9 @@ public class SceneSkip : MonoBehaviour
         manager.gaveDrink = 0;
         manager.visitedAfterCoffee = 0;
         manager.visitedCoffee = 0;
-        manager.readRecipeBook = 0;
+        manager.openLeftDoor = 0;
+        manager.openMidDoor = 0;
+        manager.openRightDoor = 0;
         manager.addedCoffeeMachineItem = 0;
         manager.followFriendinOffice = 0;
         manager.officePuzzle = 0;
@@ -97,7 +103,9 @@ public class SceneSkip : MonoBehaviour
         manager.gaveDrink = 0;
         manager.visitedAfterCoffee = 0;
         manager.visitedCoffee = 0;
-        manager.readRecipeBook = 0;
+        manager.openLeftDoor = 0;
+        manager.openMidDoor = 0;
+        manager.openRightDoor = 0;
         manager.addedCoffeeMachineItem = 0;
         manager.followFriendinOffice = 0;
         manager.officePuzzle = 0;
@@ -127,7 +135,9 @@ public class SceneSkip : MonoBehaviour
         manager.gaveDrink = 1;
         manager.visitedAfterCoffee = 1;
         manager.visitedCoffee = 1;
-        manager.readRecipeBook = 1;
+        manager.openLeftDoor = 1;
+        manager.openMidDoor = 1;
+        manager.openRightDoor = 1;
         manager.addedCoffeeMachineItem = 1;
        
         manager.followFriendinOffice = 0;
@@ -158,7 +168,9 @@ public class SceneSkip : MonoBehaviour
         manager.gaveDrink = 1;
         manager.visitedAfterCoffee = 1;
         manager.visitedCoffee = 1;
-        manager.readRecipeBook = 1;
+        manager.openLeftDoor = 1;
+        manager.openMidDoor = 1;
+        manager.openRightDoor = 1;
         manager.addedCoffeeMachineItem = 1;
         manager.followFriendinOffice = 1;
         manager.officePuzzle = 1;
@@ -189,7 +201,9 @@ public class SceneSkip : MonoBehaviour
         manager.gaveDrink = 1;
         manager.visitedAfterCoffee = 1;
         manager.visitedCoffee = 1;
-        manager.readRecipeBook = 1;
+        manager.openLeftDoor = 1;
+        manager.openMidDoor = 1;
+        manager.openRightDoor = 1;
         manager.addedCoffeeMachineItem = 1;
         manager.followFriendinOffice = 1;
         manager.officePuzzle = 1;
