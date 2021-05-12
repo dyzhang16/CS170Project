@@ -8,7 +8,7 @@ public class Coffee : MonoBehaviour
     public DialogueRunner dialogueRunner;
     public VariableStorageBehaviour CustomVariableStorage;
     public NodeVisitedTracker nodeVisitedTracker;
-    public GameObject CoffeeMachine, RecipeBook;
+    public GameObject CoffeeMachine, lDoor, mDoor, rDoor;
 
 
     void Awake()
@@ -23,10 +23,20 @@ public class Coffee : MonoBehaviour
             {
                 CoffeeMachine.GetComponent<RunDialogueMC>().dialogueToRun = "StaleIngredients";
             }
-            // if (GameManager.instance.readRecipeBook == 1)
-            // {
-            //     RecipeBook.GetComponent<RunDialogueMC>().dialogueToRun = "ShowRecipeBook";
-            // }
+
+            if (GameManager.instance.openLeftDoor == 1)
+            {
+                lDoor.SetActive(false);
+            }
+            if (GameManager.instance.openMidDoor == 1)
+            {
+                mDoor.SetActive(false);
+            }
+            if (GameManager.instance.openRightDoor == 1)
+            {
+                rDoor.SetActive(false); ;
+            }
+
         }
     }
     void Start()
