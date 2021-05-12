@@ -31,6 +31,7 @@ public class CityOffice : MonoBehaviour
                 friend.SetActive(true);
                 introduction.SetActive(true);
             } else if (GameManager.instance.firstFriendMeeting == 5){
+                friend.SetActive(true);
                 introduction.GetComponent<RunDialogue>().enabled = false;
                 introduction.GetComponent<BoxCollider>().enabled = false;
                 friend.transform.position = officedoor.transform.position;

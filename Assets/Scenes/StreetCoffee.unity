@@ -5488,6 +5488,78 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 899842129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424262201387865, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424261162904799, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424261192459878, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424261619623679, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424261532902830, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424263105455772, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424262572569119, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424262669053232, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424261120769850, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424261504630784, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424261845635851, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899842142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265424261164433253, guid: 37a1eb4b65293904cb3a0baced2aee79,
+    type: 3}
+  m_PrefabInstance: {fileID: 899842129}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &915697011
 GameObject:
   m_ObjectHideFlags: 0
@@ -7475,6 +7547,20 @@ MonoBehaviour:
   puzzlePanel: {fileID: 402837107}
   DoNotOpenInventory: 0
   stopPlayerMovement: 0
+  slots:
+  - {fileID: 899842136}
+  - {fileID: 899842135}
+  - {fileID: 899842134}
+  - {fileID: 899842133}
+  - {fileID: 899842132}
+  - {fileID: 899842131}
+  images:
+  - {fileID: 899842142}
+  - {fileID: 899842141}
+  - {fileID: 899842140}
+  - {fileID: 899842139}
+  - {fileID: 899842138}
+  - {fileID: 899842137}
 --- !u!1 &1294689382
 GameObject:
   m_ObjectHideFlags: 0
@@ -9177,6 +9263,20 @@ MonoBehaviour:
   puzzlePanel: {fileID: 402837107}
   RemoveButton: {fileID: 1622560568}
   allowPlayerMovement: 1
+  slots:
+  - {fileID: 899842136}
+  - {fileID: 899842135}
+  - {fileID: 899842134}
+  - {fileID: 899842133}
+  - {fileID: 899842132}
+  - {fileID: 899842131}
+  images:
+  - {fileID: 899842142}
+  - {fileID: 899842141}
+  - {fileID: 899842140}
+  - {fileID: 899842139}
+  - {fileID: 899842138}
+  - {fileID: 899842137}
 --- !u!114 &1622560570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10398,8 +10498,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 287.63818, y: 49.128937, z: 29.128876}
-  m_Center: {x: -7.552063, y: 24.064468, z: 12.229324}
+  m_Size: {x: 432.0049, y: 49.128937, z: 29.128876}
+  m_Center: {x: -79.73543, y: 24.064468, z: 12.229324}
 --- !u!1 &1908472275
 GameObject:
   m_ObjectHideFlags: 0

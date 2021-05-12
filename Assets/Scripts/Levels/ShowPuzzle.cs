@@ -11,6 +11,9 @@ public class ShowPuzzle : MonoBehaviour
     [Tooltip("Stop the player's movement when a puzzle is shown")]
     public bool stopPlayerMovement = false; // used in Update()
 
+    public GameObject[] slots;
+    public GameObject[] images;
+
     [YarnCommand("Show")]
     public void Puzzle()
     {
@@ -53,6 +56,15 @@ public class ShowPuzzle : MonoBehaviour
                     playerScript.activateMenu();
                 }
             }
+        }
+
+        //allow the inventory to drag
+        foreach(GameObject obj in slots){
+            obj.GetComponent<InventorySlot>().allowDrag = true;
+        }
+
+        foreach(GameObject obj in images){
+            obj.GetComponent<ItemDragHandler>().allowDrag = true;
         }
     }
 
