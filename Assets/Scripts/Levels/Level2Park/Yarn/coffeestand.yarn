@@ -4,6 +4,11 @@ tags:
 
 <<if visited("friend_meeting") is true>>
 
+	<<ChangeSpeaker Player>>
+	<<Focus FIRST>>
+
+	This must be where that guy ordered his coffee. Let's take a peek inside.
+
 	<<ChangeScene BlackScreen CoffeeScene>>
 
 <<else>>

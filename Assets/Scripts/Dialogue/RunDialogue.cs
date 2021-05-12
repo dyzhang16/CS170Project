@@ -25,6 +25,11 @@ public class RunDialogue : MonoBehaviour
         if (box == null){
             box = this.transform.Find("collider").GetComponent<BoxCollider>();
         }
+
+        // //change dialoguecursor to interact if item
+        // if (this.GetComponent<ItemAssignment>() != null){
+        //     dialogueCursor = GameObject.Find("InteractCursor");
+        // }
     }
 
     // Update is called once per frame
@@ -79,11 +84,11 @@ public class RunDialogue : MonoBehaviour
                 //set the scale of the dialogueCursor so that it doesn't cover the obj
                 float size = this.GetComponent<SpriteRenderer>().bounds.size.x * this.GetComponent<SpriteRenderer>().bounds.size.z;
                 if (size < 150){
-                    dialogueCursor.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
-                } else if (size < 500){
                     dialogueCursor.transform.localScale = new Vector3(1f, 1f, 1f);
-                } else {
+                } else if (size < 500){
                     dialogueCursor.transform.localScale = new Vector3(2f, 2f, 1f);
+                } else {
+                    dialogueCursor.transform.localScale = new Vector3(4f, 4f, 1f);
                 }
             }
         }
@@ -149,11 +154,11 @@ public class RunDialogue : MonoBehaviour
                 //set the scale of the dialogueCursor so that it doesn't cover the obj
                 float size = this.GetComponent<SpriteRenderer>().bounds.size.x * this.GetComponent<SpriteRenderer>().bounds.size.z;
                 if (size < 150){
-                    dialogueCursor.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
-                } else if (size < 500){
                     dialogueCursor.transform.localScale = new Vector3(1f, 1f, 1f);
-                } else {
+                } else if (size < 500){
                     dialogueCursor.transform.localScale = new Vector3(2f, 2f, 1f);
+                } else {
+                    dialogueCursor.transform.localScale = new Vector3(4f, 4f, 1f);
                 }
             }
         }
