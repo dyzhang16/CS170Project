@@ -2,18 +2,21 @@
 tags:
 ---
 <<ChangeSpeaker Player>>
-	Would you like to throw this away?
+	Should I get rid of this?
 	[[Throw it away.|TrashIt]]
-	[[Leave it alone.|PutitDown]]
+	[[Leave it alone.|DoNotTrashIt]]
 ===
 
 title: TrashIt
 tags:
 ---
-<<ChangeSpeaker Player>>
-	You threw it away.
-
 <<Trash Confirm>>
+<<stop>>
+===
+
+title: DoNotTrashIt
+tags:
+---
 <<stop>>
 ===
 
@@ -21,7 +24,7 @@ title: CannotTrash
 tags:
 ---
 <<ChangeSpeaker Player>>
-  You can't throw this away.
+    This seems important. I'm not going to throw it away
 <<stop>>
 ===
 
@@ -29,5 +32,5 @@ title: CannotTakeItemInventoryFull
 tags:
 ---
 <<ChangeSpeaker Player>>
-    You have too much stuff in your inventory!
+    I don't have any room to pick this up.
 ===
