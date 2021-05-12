@@ -58,6 +58,8 @@ public class SceneSkip : MonoBehaviour
         manager.arcadeFirstDance = 0;
         manager.arcadeNoCraneDirs = 0;
         manager.arcadeNoDanceDirs = 0;
+
+        GameManager.instance.deleteItems();
     }
 
     public void skipStreet(){

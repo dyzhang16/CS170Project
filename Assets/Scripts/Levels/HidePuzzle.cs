@@ -12,6 +12,9 @@ public class HidePuzzle : MonoBehaviour
     [Tooltip("Restart's the player's movement when a puzzle is hidden")]
     public bool allowPlayerMovement = false; // boolean to see if Hide() allows player movement
 
+    public GameObject[] slots;
+    public GameObject[] images;
+
     public void Hide()
     {
         puzzlePanel.GetComponent<CanvasGroup>().alpha = 0;
@@ -44,6 +47,15 @@ public class HidePuzzle : MonoBehaviour
                     "'Allow Player Movement' was set to false for this puzzle panel. If this was not " +
                     "intended, then make sure to check this in the inspector."));
             }
+        }
+
+        //disable inventory drag
+        foreach(GameObject obj in slots){
+            obj.GetComponent<InventorySlot>().allowDrag = false;
+        }
+
+        foreach(GameObject obj in images){
+            obj.GetComponent<ItemDragHandler>().allowDrag = false;
         }
     }
 }

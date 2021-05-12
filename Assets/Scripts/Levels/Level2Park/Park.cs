@@ -23,7 +23,7 @@ public class Park : MonoBehaviour
 
                 player.transform.position = exitToStreetIntro.transform.position + new Vector3(-10, 0, newPos);
             } else if (GameManager.instance.previousScene == "CityOffice"){
-                float perc = (-223 - GameManager.instance.playerPosition.z)/ 110;
+                float perc = (-223 - GameManager.instance.playerPosition.z)/ 100;
                 float newPos = -(perc * 100);
 
                 player.transform.position = exitToCityOffice.transform.position + new Vector3(10, 0, newPos);

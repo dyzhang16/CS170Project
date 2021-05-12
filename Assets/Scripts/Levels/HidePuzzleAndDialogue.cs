@@ -14,6 +14,9 @@ public class HidePuzzleAndDialogue : MonoBehaviour
     [Tooltip("Restart's the player's movement when a puzzle is hidden")]
     public bool allowPlayerMovement = false; // boolean to see if Hide() allows player movement
 
+    public GameObject[] slots;
+    public GameObject[] images;
+
     public void Hide()
     {
         puzzlePanel.GetComponent<CanvasGroup>().alpha = 0;
@@ -50,6 +53,15 @@ public class HidePuzzleAndDialogue : MonoBehaviour
         if (puzzleFinished)
         {
             dialogueRunner.StartDialogue(dialogueToRun);
+        }
+
+        //disable inventory drag
+        foreach(GameObject obj in slots){
+            obj.GetComponent<InventorySlot>().allowDrag = false;
+        }
+
+        foreach(GameObject obj in images){
+            obj.GetComponent<ItemDragHandler>().allowDrag = false;
         }
     }
 }
