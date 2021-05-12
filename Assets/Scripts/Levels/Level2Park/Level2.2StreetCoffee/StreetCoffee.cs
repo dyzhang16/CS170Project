@@ -18,7 +18,10 @@ public class StreetCoffee : MonoBehaviour
 
             //change player position based on the previous level
             if (GameManager.instance.previousScene == "StreetIntro"){
-                player.transform.position = exitToStreetIntro.transform.position + new Vector3(12, 0, 0);
+                float perc = (-221 - GameManager.instance.playerPosition.z)/ 115;
+                float newPos = -(perc * 140);
+
+                player.transform.position = exitToStreetIntro.transform.position + new Vector3(12, 0, newPos);
             } else if (GameManager.instance.previousScene == "CoffeeScene"){
                 player.transform.position = coffeeStand.transform.position + new Vector3(15, 0, -10);
             }

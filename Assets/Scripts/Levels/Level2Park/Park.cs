@@ -18,9 +18,15 @@ public class Park : MonoBehaviour
         if (GameManager.instance != null){
             //changes player position based on previous level
             if (GameManager.instance.previousScene == "StreetIntro"){
-                player.transform.position = exitToStreetIntro.transform.position + new Vector3(-10, 0, 0);
+                float perc = (-221 - GameManager.instance.playerPosition.z)/ 115;
+                float newPos = -(perc * 100);
+
+                player.transform.position = exitToStreetIntro.transform.position + new Vector3(-10, 0, newPos);
             } else if (GameManager.instance.previousScene == "CityOffice"){
-                player.transform.position = exitToCityOffice.transform.position + new Vector3(10, 0, 0);
+                float perc = (-223 - GameManager.instance.playerPosition.z)/ 110;
+                float newPos = -(perc * 100);
+
+                player.transform.position = exitToCityOffice.transform.position + new Vector3(10, 0, newPos);
             }
 
             if (GameManager.instance.firstFriendMeeting == 3){

@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     //previous scene
     public string previousScene;
 
+    //previous scene player position
+    public Vector3 playerPosition;
+
     //0 = not completed, 1 = completed
     //tutorial
     //changed when the flower puzzle is completed

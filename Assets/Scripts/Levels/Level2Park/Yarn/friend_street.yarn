@@ -62,7 +62,16 @@
 
     <<UnPan CoffeeStand>>
 
+    <<FollowObject DialogueCam Receipt>>
+
     <<DropReceipt Friend1>>
+
+    <<ChangeSpeaker Player>>
+    <<Focus FIRST>>
+
+    Hmm... what is that?
+
+    <<UnFollowObject DialogueCam>>
 
 <<else>>
 <<CheckDrink Friend1>>

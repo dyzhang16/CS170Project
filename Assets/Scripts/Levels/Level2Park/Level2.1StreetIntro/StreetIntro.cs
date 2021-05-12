@@ -17,9 +17,17 @@ public class StreetIntro : MonoBehaviour
 
             //change player position based on the previous level
             if (GameManager.instance.previousScene == "Park"){
-                player.transform.position = exitToPark.transform.position + new Vector3(15, 0, 0);
+                //park calculation to deteremine new player position
+                float perc = (-310 - GameManager.instance.playerPosition.z)/ 100;
+                float newPos = -(perc * 115);
+
+                player.transform.position = exitToPark.transform.position + new Vector3(15, 0, newPos);
             } else if (GameManager.instance.previousScene == "StreetCoffee"){
-                player.transform.position = exitToStreetCoffee.transform.position + new Vector3(-12, 0, 0);
+
+                float perc = (-190 - GameManager.instance.playerPosition.z)/ 140;
+                float newPos = -(perc * 115);
+
+                player.transform.position = exitToStreetCoffee.transform.position + new Vector3(-12, 0, newPos);
             }
 
             if (GameManager.instance.firstFriendMeeting == 2){

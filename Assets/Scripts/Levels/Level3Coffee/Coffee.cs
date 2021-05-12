@@ -23,10 +23,10 @@ public class Coffee : MonoBehaviour
             {
                 CoffeeMachine.GetComponent<RunDialogueMC>().dialogueToRun = "StaleIngredients";
             }
-            if (GameManager.instance.readRecipeBook == 1)
-            {
-                RecipeBook.GetComponent<RunDialogueMC>().dialogueToRun = "ShowRecipeBook";
-            }
+            // if (GameManager.instance.readRecipeBook == 1)
+            // {
+            //     RecipeBook.GetComponent<RunDialogueMC>().dialogueToRun = "ShowRecipeBook";
+            // }
         }
     }
     void Start()
