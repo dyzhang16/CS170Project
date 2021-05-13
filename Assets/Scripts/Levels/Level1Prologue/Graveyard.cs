@@ -21,6 +21,9 @@ public class Graveyard : MonoBehaviour
     public GameObject gateApproach;
     public GameObject gate;
 
+    public GameObject fred;
+    public GameObject fredGrave;
+
     void Start(){
         if (GameManager.instance != null){
             if (GameManager.instance.flowerPuzzle == 1){
@@ -70,8 +73,21 @@ public class Graveyard : MonoBehaviour
                 p.allowMovement = true;
             }
 
+            if (GameManager.instance.ending == 1){
+                StartCoroutine(objActive());
+                fredGrave.SetActive(true);
+                //change gate dialogue
+                gate.GetComponent<RunDialogue>().dialogueToRun = "NoGate";
+                gravestone.GetComponent<RunDialogue>().dialogueToRun = "DoneGame";
+            }
+
             GameManager.instance.loadItems();
             GameManager.instance.deleteItems();
         }
+    }
+
+    IEnumerator objActive(){
+        yield return new WaitForSeconds(0.5f);
+        fred.SetActive(true);
     }
 }
