@@ -29,9 +29,9 @@ public class CursorHover : MonoBehaviour
             if (showCursor){
                 Cursor.SetActive(true);
                 if (changePos){
-                    Cursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center + changeVector;
+                    Cursor.transform.position = this.transform.position + changeVector;
                 } else {
-                    Cursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
+                    Cursor.transform.position = this.transform.position;
                 }
             } else {
                 Cursor.SetActive(false);
