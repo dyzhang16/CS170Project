@@ -33,13 +33,27 @@ public class OpenMenus : MonoBehaviour
     {
         if (allowInv) 
         {
-            GameObject ip = Inventory.instance.inventoryPanel;
+            // GameObject ip = Inventory.instance.inventoryPanel;
             Tooltip.GetComponent<ToolTipDisplay>().HideInfo();
             invActive = !invActive;
             Inventory.instance.anim.SetBool("Inventory", invActive);
             inventoryButtonAnimator.SetBool("InventoryOpen", invActive);
         }
     }
+
+    public void forceOpenInv(){
+        Tooltip.GetComponent<ToolTipDisplay>().HideInfo();
+        invActive = true;
+        Inventory.instance.anim.SetBool("Inventory", invActive);
+        inventoryButtonAnimator.SetBool("InventoryOpen", invActive);
+    }
+
+    public void closeInv(){
+        invActive = false;
+        Inventory.instance.anim.SetBool("Inventory", false);
+        inventoryButtonAnimator.SetBool("InventoryOpen", false);
+    }
+
     public void AllowInv(bool allow)
     {
         allowInv = allow;

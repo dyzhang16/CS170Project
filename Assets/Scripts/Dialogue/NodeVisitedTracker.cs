@@ -34,7 +34,7 @@ public class NodeVisitedTracker : MonoBehaviour
     {
         // Log that the node has been run.
         _visitedNodes.Add(nodeName);
-        Debug.Log("These exist is visitedNodes: " + _visitedNodes);
+        // Debug.Log("These exist is visitedNodes: " + _visitedNodes);
     }
 
 

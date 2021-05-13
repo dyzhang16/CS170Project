@@ -17,7 +17,7 @@ public class RunDialogueMC : MonoBehaviour
             if (dialogueToRun == "Cabinet") SoundManagerScript.PlaySound("drawer_sound");
 
             dialogueRunner.StartDialogue(dialogueToRun);
-            Debug.Log("running" + dialogueToRun);
+            // Debug.Log("running" + dialogueToRun);
         }
     }
 

@@ -15,10 +15,10 @@ public class DraggingForDummies : MonoBehaviour
     public void OnDrop(PointerEventData eventData)
     {
         Item droppedItem = Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()];
-        Debug.Log(droppedItem);
+        // Debug.Log(droppedItem);
         RaycastHit hit;
         Ray ray = eventData.pressEventCamera.ScreenPointToRay(eventData.position);
-        Debug.Log(ray);
+        // Debug.Log(ray);
         if (Physics.Raycast(ray, out hit))
         {
             

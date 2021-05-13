@@ -42,7 +42,7 @@ public class ShowPuzzle : MonoBehaviour
                 if (openInventory && !openInventory.invActive)
                 {
                     // open the inventory if the InventoryController has OpenInventory
-                    inventoryController.GetComponent<OpenMenus>().OpenInventory();
+                    openInventory.forceOpenInv();
                 }
             }
             // Show inventory using existing Player GameObject
