@@ -8,6 +8,9 @@ using Yarn.Unity;
 public class YarnInventory : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
+    private GameObject player;
+    private Player p;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -53,6 +56,11 @@ public class YarnInventory : MonoBehaviour
                 return HasItem(parameters[0].AsString);
             }
         );
+
+        player = GameObject.Find("Player");
+        if (player != null){
+            p = player.GetComponent<Player>();
+        }
     }
 
     private void AddtoInventory(string[] parameters)
@@ -71,6 +79,10 @@ public class YarnInventory : MonoBehaviour
                 Debug.LogWarning("There is no dialogueCursor on this object.");
             }
             
+        }
+
+        if (p != null){
+            p.activateMenu();
         }
     }
     private void RemoveObject(string[] parameters)

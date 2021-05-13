@@ -65,8 +65,8 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         {
             var boa = droppedItem as Drink;
             boa.Cream = creamAdded;
-            Debug.Log("This coffee contains: " + boa.Sugar + " amount of sugar.");
-            Debug.Log("This coffee contains: " + boa.Cream + " amount of cream.");
+            // Debug.Log("This coffee contains: " + boa.Sugar + " amount of sugar.");
+            // Debug.Log("This coffee contains: " + boa.Cream + " amount of cream.");
         }
     }
     IEnumerator ShakingCream(float waitTime)
@@ -76,7 +76,7 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         creamUI.transform.Rotate(0, 0, 35);
         ++creamAdded;
         setCream();
-        Debug.Log("You've added " + creamAdded);
+        // Debug.Log("You've added " + creamAdded);
         Vector3 pos = new Vector3(coffee.transform.position.x, coffee.transform.position.y + 400, coffee.transform.position.z);
         GameObject creams = Instantiate(cream, pos, coffee.transform.localRotation, transform);
         creams.transform.SetAsFirstSibling();
@@ -84,6 +84,6 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         creamShaking = !creamShaking;
         creamUI.transform.Rotate(0, 0, -35);
         creamButton.enabled = true;
-        Debug.Log("Finished Couroutine");
+        // Debug.Log("Finished Couroutine");
     }
 }

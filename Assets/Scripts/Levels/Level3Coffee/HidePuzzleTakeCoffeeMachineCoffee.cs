@@ -12,6 +12,9 @@ public class HidePuzzleTakeCoffeeMachineCoffee : MonoBehaviour
     public GameObject Drink;
     public DialogueRunner dialogueRunner;
 
+    public GameObject[] slots;
+    public GameObject[] images;
+
     public void HidePuzzleCoffee()
     {
         puzzlePanel.GetComponent<CanvasGroup>().alpha = 0;
@@ -30,7 +33,16 @@ public class HidePuzzleTakeCoffeeMachineCoffee : MonoBehaviour
         }
         else
         {
-            Debug.Log("No Coffee Dropped");
+            // Debug.Log("No Coffee Dropped");
+        }
+
+        //disable drag
+        foreach(GameObject obj in slots){
+            obj.GetComponent<InventorySlot>().allowDrag = false;
+        }
+
+        foreach(GameObject obj in images){
+            obj.GetComponent<ItemDragHandler>().allowDrag = false;
         }
     }
 }
