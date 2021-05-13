@@ -10,6 +10,7 @@ public class StreetCoffee : MonoBehaviour
     public GameObject friend;
     public GameObject coffeeStand;
     public GameObject receipt;
+    public GameObject CoffeeStandArrow;
 
     public GameObject exitToStreetIntro;
 
@@ -29,6 +30,7 @@ public class StreetCoffee : MonoBehaviour
             //change dialogue to correspond to certain cues
             if (GameManager.instance.firstFriendMeeting == 1){
                 tracker.NodeComplete("friend_meeting");
+                CoffeeStandArrow.GetComponent<BoxCollider>().enabled = true;
 
                 //if you have the receipt
                 if (GameManager.instance.hasReceipt == 1){

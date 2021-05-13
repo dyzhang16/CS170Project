@@ -11,6 +11,8 @@ public class CityOffice : MonoBehaviour
     public GameObject Office;
     public GameObject friend;
 
+    public GameObject officeDoorArrow;
+
     public GameObject exitToPark;
 
     void Awake(){
@@ -56,6 +58,8 @@ public class CityOffice : MonoBehaviour
                 friend.transform.position = officedoor.transform.position;
                 // strange bug but set the friend's collider to be a trigger
                 friend.GetComponentInChildren<Collider>().isTrigger = true;
+            } else if (GameManager.instance.idNeeded == 2){
+                officeDoorArrow.GetComponent<BoxCollider>().enabled = true;
             }
         }
     }
