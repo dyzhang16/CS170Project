@@ -83,7 +83,7 @@ public class RunDialogue : MonoBehaviour
 
                 //set the scale of the dialogueCursor so that it doesn't cover the obj
                 float size = this.GetComponent<SpriteRenderer>().bounds.size.x * this.GetComponent<SpriteRenderer>().bounds.size.z;
-                if (size < 150){
+                if (size < 100){
                     dialogueCursor.transform.localScale = new Vector3(1f, 1f, 1f);
                 } else if (size < 500){
                     dialogueCursor.transform.localScale = new Vector3(2f, 2f, 1f);
@@ -153,7 +153,7 @@ public class RunDialogue : MonoBehaviour
 
                 //set the scale of the dialogueCursor so that it doesn't cover the obj
                 float size = this.GetComponent<SpriteRenderer>().bounds.size.x * this.GetComponent<SpriteRenderer>().bounds.size.z;
-                if (size < 150){
+                if (size < 100){
                     dialogueCursor.transform.localScale = new Vector3(1f, 1f, 1f);
                 } else if (size < 500){
                     dialogueCursor.transform.localScale = new Vector3(2f, 2f, 1f);
