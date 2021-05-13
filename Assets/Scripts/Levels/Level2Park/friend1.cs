@@ -128,7 +128,7 @@ public class friend1 : MonoBehaviour
         isWalking = true;
         col.isTrigger = true;
         GameManager.instance.walkToStreet = 1;
-        this.GetComponent<SpriteRenderer>().flipX = true;
+        this.GetComponent<SpriteRenderer>().flipX = false;
     }
 
     [YarnCommand("Enter")]
@@ -141,6 +141,7 @@ public class friend1 : MonoBehaviour
         car.transform.position = this.transform.position + new Vector3(-100, 0, 0);
         car.GetComponent<car>().cycle = 2;
         playerMove = true;
+        // this.GetComponent<SpriteRenderer>().flipX = false;
 
         StartCoroutine(stopCar());
     }

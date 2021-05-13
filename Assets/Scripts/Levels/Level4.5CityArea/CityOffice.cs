@@ -48,7 +48,7 @@ public class CityOffice : MonoBehaviour
                 //@ emmanuel
                 friend.GetComponent<RunDialogue>().dialogueToRun = "friendWalkToStreet";
                 friend.SetActive(true);
-                friend.transform.position = Office.transform.position + new Vector3(-10, 0, -15);
+                friend.transform.position = officedoor.transform.position;
             }
 
             // if friend is stuck outside of the office, put his position outside of the office

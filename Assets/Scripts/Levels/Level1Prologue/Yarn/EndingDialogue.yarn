@@ -1,0 +1,85 @@
+﻿title: EndingDialogue
+tags:
+---
+
+===
+
+title: FredGrave
+---
+<<ChangeSpeaker Player>>
+I guess this is Fred's new home.
+
+I'm glad it's right next to mine.
+
+===
+
+title: Fred
+---
+<<if visited("Fred") is false>>
+    <<ChangeSpeaker Player FriendEnd>>
+
+    <<Focus SECOND>>
+    I can't believe I'm a ghost now. Are there any crazy things I can do like phase through walls?
+
+    <<Focus FIRST>>
+    Honestly it's not as cool as you think when you can't feel, taste or smell anything.
+
+    <<Focus SECOND>>
+    Awwww that means I can't eat anymore pizza
+<<else>>
+    [[Fred2]]
+<<endif>>
+
+===
+
+title: Fred2
+---
+
+<<if visited("Fred2") is false>>
+    <<ChangeSpeaker Player FriendEnd>>
+
+    <<Focus SECOND>>
+    Wait, if you can phase through walls, why do you use doors?
+
+    <<Focus FIRST>>
+    When you were alive you used doors, I just wanted to be your friend so I copied you.
+
+    <<Focus SECOND>>
+    Great, that's what I thought. Now that we are both dead, let's use walls now!
+
+<<else>>
+    [[Fred3]]
+<<endif>>
+
+===
+
+title: Fred3
+---
+
+<<ChangeSpeaker Player FriendEnd>>
+<<Focus SECOND>>
+Honestly the afterlife is pretty peaceful. I guess it would be lonely without you here.
+
+<<Focus FIRST>>
+How do you think I felt before I met you.
+
+<<Focus SECOND>>
+Sorry for keeping you waiting.
+
+===
+
+title: NoGate
+---
+
+<<ChangeSpeaker Player>>
+I don't need to go out now that I have a friend!
+
+===
+
+title: DoneGame
+---
+
+<<ChangeSpeaker Player>>
+This is where it all began. The flowers are looking great!
+
+===

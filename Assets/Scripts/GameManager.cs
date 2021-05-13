@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour
     public int idPickedUp = 0; // 1 = player picked up the ID, 0 otherwise
     public int idNeeded = 0; // 2 = fredric used ID to get into office, 1 = player wants to give fredric ID, 0 otherwise
 
+    public int ending = 0;
+
     //cursor texture
     public Texture2D cursorTexture;
     public Texture2D cursorHoverTexture;
