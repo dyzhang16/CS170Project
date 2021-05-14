@@ -19,7 +19,7 @@ tags:
 	You don’t need my help to make you look crazy. GOOD MORNING, EVERYONE!
 
 <<Focus SECOND>>
-
+    <<SetExpression shocked>>
 	 Huh, you’re right. No one heard that.
 
 <<ChangeSpeaker OfficeWorker>>
@@ -39,7 +39,7 @@ tags:
 
 <<ChangeSpeaker Player Friend>>
 <<Focus FIRST>>
-
+    <<SetExpression SECOND neutral>>
 	 Oh...
 
 <<Focus SECOND>>
@@ -65,7 +65,7 @@ title: OfficeFriend
 <<endif>>
 <<if $grabbedDocument is 1>>
 <<Focus SECOND>>
-
+    <<SetExpression happy>>
 	Thanks for bringing back these documents. 
 
 <<RemoveDocuments Environment>>    
@@ -90,7 +90,7 @@ title: OfficeFriend
 	And you just sign papers all day?
 
 <<Focus SECOND>>
-
+    <<SetExpression hmm>>
 	That’s right. 9 to 5 everyday. I’ve never been late before today.
 
 <<Focus FIRST>>
@@ -98,7 +98,7 @@ title: OfficeFriend
 	Oh no. You’re not going to be in trouble with your boss, are you?
 
 <<Focus SECOND>>
-
+    <<SetExpression neutral>>
 	Nah, I was cutting it close, but I clocked in just on time. By the way, I don’t think I ever thanked you for the coffee.
 
 <<Focus FIRST>>
@@ -106,9 +106,9 @@ title: OfficeFriend
 	It was the only way I could get you to talk to me.
 
 <<Focus SECOND>>
-
+    <<SetExpression hmm>>
 	Hmm, sorry. I get like that sometimes.
-
+    <<SetExpression neutral>>
 	I’ve been told I’m very work-oriented. I don’t like being late.
 
 <<Focus FIRST>>
@@ -134,7 +134,7 @@ title: OfficeFriend
 	That’s great. You know exactly where they are. Just go get them.
 
 <<Focus SECOND>>
-
+    <<SetExpression angry>>
 	You don’t understand. I can’t just do that.
 
 	They can’t find out I messed up. It’ll be the talk of the water cooler for <i>weeks</i>!
@@ -144,7 +144,7 @@ title: OfficeFriend
 	Surely, they won’t talk behind your back. They’re your friends, aren’t they?
 
 <<Focus SECOND>>
-
+    <<SetExpression neutral>>
 	They’re just the people I work with. I don’t have time for friends.
 
 <<Focus FIRST>>
@@ -152,7 +152,7 @@ title: OfficeFriend
 	You sound lonelier than I do, and I’m a ghost.
 
 <<Focus SECOND>>
-
+    <<SetExpression angry>>
 	Hey, this is a serious situation here. It’s important that I retrieve those papers without anyone knowing.
 
 <<Focus FIRST>>
@@ -160,9 +160,9 @@ title: OfficeFriend
 	Tell you what: if you feel so strongly about this, I’ll help you out.
 
 <<Focus SECOND>>
-
+    <<SetExpression hmm>>
 	You <i>have</i> proven helpful before. And if you’re truly a ghost....Hmm, yeah. Yeah! Alright, then.
-
+    <<SetExpression neutral>>
 	Can you help me find the papers in my co-workers’ desks? I’m not sure which ones, though. You’ll have to figure it out yourself.
 
 <<Focus FIRST>>
@@ -188,7 +188,7 @@ tags:
 <<Focus SECOND>>
 
 	You’re back! I’m losing my mind doing nothing over here.
-
+    <<SetExpression happy>>
 	Looks like everything is here. It’s time I get to work.
 <<ChangeVariable GameManager officePuzzle 1>>
 <<set $OfficePuzzle to 1>>

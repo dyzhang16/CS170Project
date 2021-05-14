@@ -74,13 +74,13 @@ tags:
 <<wait 1>>
 <<ChangeSpeaker None Gravekeeper>>
 <<Focus SECOND>>
-    
+    <<SetExpression shocked>>
     What on earth?!
 
     Last I looked, there were no flowers here.
 
     No one’s been in or out of this place. I’m the only one with the key.
-
+    <<SetExpression neutral>>
     Can it be?
 
     No.
@@ -88,7 +88,7 @@ tags:
     No, there’s no such thing.
 
     ...
-    
+    <<SetExpression shocked>>
     ...Is there?
 
     I’m not sticking around to find out. I’m out.
