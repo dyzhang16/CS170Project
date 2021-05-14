@@ -61,7 +61,7 @@ tags:
 
 	<<ChangeSpeaker Player Friend>>
 	<<Focus SECOND>>
-
+        <<SetExpression angry>>
 		I come into this office six days a week. You know exactly who I am, Bedford!
 
 	<<ChangeSpeaker Player Guard>>
@@ -71,7 +71,7 @@ tags:
 
 	<<ChangeSpeaker Player Friend>>
 	<<Focus SECOND>>
-
+        <<SetExpression angry>>
 		You just said my name!
 
 	<<ChangeSpeaker Player Guard>>
@@ -81,7 +81,7 @@ tags:
 
 	<<ChangeSpeaker Player Friend>>
 	<<Focus SECOND>>
-
+        <<SetExpression angry>>
 		I’m already late for work. Let me in. Please?
 
 	<<ChangeSpeaker Player Guard>>
@@ -128,7 +128,7 @@ position: -483,89
 		You’ll talk to me?
 
 	<<Focus SECOND>>
-
+        <<SetExpression neutral>>
 		You don’t have to say it like that. That’s just sad. But yeah, I’ll talk to yo-
 
 	<<Focus FIRST>>
@@ -146,7 +146,7 @@ position: -483,89
 	<<Focus SECOND>>
         <<SetExpression happy>>
 		Yeah. Now, let’s go, let’s go!
-        <<SetExpression neutral>>
+
 		Hey, Bedford, I’ve got it! Let me in!
 
 	<<ChangeSpeaker Player Guard>>
@@ -156,7 +156,7 @@ position: -483,89
 
 	<<ChangeSpeaker Player Friend>>
 	<<Focus SECOND>>
-        <<SetExpression shocked>>
+        <<SetExpression hmm>>
 		Is that what it looked like? I had my ID all along, just...misplaced it. Anyway, see you later.
         <<SetExpression neutral>>
 		C’mon, kid!
@@ -180,6 +180,7 @@ position: -483,89
 		Sorry, Fredric. No ID, no entry.
 	
 	<<ChangeSpeaker Player Friend>>
+        <<Focus SECOND>>
         <<SetExpression hmm>>
 		Dang it. Did I drop it while running?
 <<endif>>
