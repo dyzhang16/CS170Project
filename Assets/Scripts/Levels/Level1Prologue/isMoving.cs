@@ -150,19 +150,19 @@ public class isMoving : MonoBehaviour
             yield return new WaitForSeconds(1);
             Destroy(Destination);
             isWalking = true;
-            this.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = true;
+            // this.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = true;
             if (!dia.IsDialogueRunning){
                 p.AllowMove(true);
             }
         } else if (cycle == 1){
             GetComponent<SpriteRenderer>().flipX = true;
-            this.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = false;
+            // this.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = false;
         } else if (cycle == 2){
             if (!dia.IsDialogueRunning){
                 p.AllowMove(true);
                 isWalking = true;
             }
-            this.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = true;
+            // this.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = true;
         } else if (cycle == 3){
             yield return new WaitForSeconds(0.5f);
             gate.GetComponent<SpriteRenderer>().sprite = closedGate;

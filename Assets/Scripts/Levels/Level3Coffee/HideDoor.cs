@@ -5,6 +5,7 @@ using Yarn.Unity;
 public class HideDoor : MonoBehaviour
 {
     private DialogueRunner diaRun = null;
+    public GameObject itemsUnder;
     
     private void Start()
     {
@@ -14,8 +15,9 @@ public class HideDoor : MonoBehaviour
     {
         if (diaRun != null && !diaRun.IsDialogueRunning && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
-            gameObject.SetActive(false);
-
+            this.GetComponent<Animator>().SetTrigger("OpenDoor");
+            StartCoroutine(DestroyDoor());
+            itemsUnder.SetActive(true);
         }
         if (gameObject.name == "LeftDoor")
         {
@@ -29,6 +31,11 @@ public class HideDoor : MonoBehaviour
         {
             GameManager.instance.openRightDoor = 1;
         }
+    }
+
+    IEnumerator DestroyDoor(){
+        yield return new WaitForSeconds(0.5f);
+        gameObject.SetActive(false);
     }
     private void OnMouseOver()
     {
