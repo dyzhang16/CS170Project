@@ -21,113 +21,88 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
     {
         if (!isDragging)
         {
-            GameObject PenObject = GameObject.Find("Pen");
-            if (PenObject)
+            if (eventData.button == PointerEventData.InputButton.Left)
             {
-                if (eventData.button == PointerEventData.InputButton.Left)
+                Sign();
+                GameObject Note = GameObject.Find("StickyNote");
+                if (Note)
                 {
-                    Sign();
-                    GameObject Note = GameObject.Find("StickyNote");
-                    if (Note)
-                    {
-                        Note.GetComponent<CanvasGroup>().alpha = 1;
-                    }
-                    else
-                    {
-                        Debug.LogError("Could not find");
-                    }
-                    if (SignArea)
-                    {
-                        if (SignArea.GetComponent<mouseOver>().isMouseOver && !signed)
-                        {
-                            signed = true;
-                            signedDocument = true;
-
-                        }
-                        else
-                        {
-                            signed = true;
-                            signedDocument = false;
-
-                        }
-                    }
-                    else
-                    {
-                        signedDocument = true;
-                        Debug.LogWarning("No Sign Area");
-                    }
-                    Debug.Log("Signing This document made it: " + signedDocument);
+                    Note.GetComponent<CanvasGroup>().alpha = 1;
                 }
-            }
-            
-            GameObject StampObject = GameObject.Find("Stamp");
-            if (StampObject)
-            {
-                if (eventData.button == PointerEventData.InputButton.Right)
+                else
                 {
-                    Stamp();
-                    GameObject Note = GameObject.Find("StickyNote");
-                    if (Note)
+                    Debug.LogError("Could not find");
+                }
+                if (SignArea)
+                {
+                    if (SignArea.GetComponent<mouseOver>().isMouseOver && !signed)
                     {
-                        Note.GetComponent<CanvasGroup>().alpha = 1;
+                        signed = true;
+                        signedDocument = true;
+
                     }
                     else
                     {
-                        Debug.LogError("Could not find");
+                        signed = true;
+                        signedDocument = false;
+
                     }
-                    if (StampArea && StampAreaTwo)
+                }
+                else
+                {
+                    signedDocument = true;
+                    Debug.LogWarning("No Sign Area");
+                }
+                Debug.Log("Signing This document made it: " + signedDocument);
+            }
+            if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                Stamp();
+                GameObject Note = GameObject.Find("StickyNote");
+                if (Note)
+                {
+                    Note.GetComponent<CanvasGroup>().alpha = 1;
+                }
+                else
+                {
+                    Debug.LogError("Could not find");
+                }
+                if (StampArea && StampAreaTwo)
+                {
+                    if (StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver && halfStamped)
                     {
-                        if (StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver && halfStamped)
-                        {
-                            stampedDocument = true;
-                        }
-                        else if (StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver && !stamped)
-                        {
-                            stamped = true;
-                            halfStamped = true;
-                        }
-                        else
-                        {
-                            stamped = true;
-                            stampedDocument = false;
-                        }
-                    }
-                    else if (StampArea)
-                    {
-                        if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamped)
-                        {
-                            stamped = true;
-                            stampedDocument = true;
-                        }
-                        else
-                        {
-                            stamped = true;
-                            stampedDocument = false;
-                        }
-                    }
-                    else
-                    {
-                        Debug.LogWarning("No Stamp Area");
                         stampedDocument = true;
                     }
-                    Debug.Log("Stamping This document made it:" + stampedDocument);
-                    /*                    if (StampAreaTwo)
-                                        {
-                                            if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamped)
-                                            {
-                                                stamped = true;
-                                                stampedDocument = true;
-                                                Debug.LogWarning("This document is :" + stampedDocument);
-                                            }
-                                            else
-                                            {
-                                                signed = true;
-                                                signedDocument = false;
-                                                Debug.LogWarning("This document is :" + signedDocument);
-                                            }
-
-                                        }*/
+                    else if (StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver && !stamped)
+                    {
+                        stamped = true;
+                        halfStamped = true;
+                    }
+                    else
+                    {
+                        stamped = true;
+                        stampedDocument = false;
+                    }
                 }
+                else if (StampArea)
+                {
+                    if (StampArea.GetComponent<mouseOver>().isMouseOver && !stamped)
+                    {
+                        stamped = true;
+                        stampedDocument = true;
+                    }
+                    else
+                    {
+                        stamped = true;
+                        stampedDocument = false;
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("No Stamp Area");
+                    stampedDocument = true;
+                }
+                Debug.Log("Stamping This document made it:" + stampedDocument);
             }
         }
     }
