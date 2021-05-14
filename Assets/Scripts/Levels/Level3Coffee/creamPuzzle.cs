@@ -13,6 +13,12 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
     public bool creamShaking, cupThere;
     [HideInInspector]public Item droppedItem;
     private int creamAdded;
+
+    public Text creamText;
+
+    public GameObject[] slots;
+    public GameObject[] images;
+
     [YarnCommand("ResetCream")]
     public void Reset()
     {
@@ -21,6 +27,35 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         cupThere = false;
         creamShaking = false;
         droppedItem = null;
+
+        creamText.text = "Cream Added: 0";
+
+        //destroy falling cream
+        StartCoroutine(DestroyCream());
+
+        //disable inventory drag
+        foreach(GameObject obj in slots){
+            obj.GetComponent<InventorySlot>().allowDrag = false;
+        }
+
+        foreach(GameObject obj in images){
+            obj.GetComponent<ItemDragHandler>().allowDrag = false;
+        }
+
+        //close inv
+        GameObject.Find("InventoryController").GetComponent<OpenMenus>().closeInv();
+    }
+
+    IEnumerator DestroyCream(){
+        GameObject creams = GameObject.Find("cream(Clone)");
+
+        while (creams != null){
+            Destroy(creams);
+
+            yield return new WaitForSeconds(0.05f);
+
+            creams = GameObject.Find("cream(Clone)");
+        }
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -44,6 +79,9 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
                     coffee.SetActive(true);
                     Inventory.instance.RemoveItem(droppedItem);
                     Inventory.instance.UpdateSlotUI();
+
+                    //set cream added variable
+                    creamText.text = "Cream Added: " + creamAdded;
                 }
             }
         }
@@ -65,6 +103,7 @@ public class creamPuzzle : MonoBehaviour, IDropHandler
         {
             var boa = droppedItem as Drink;
             boa.Cream = creamAdded;
+            creamText.text = "Cream Added: " + creamAdded;
             // Debug.Log("This coffee contains: " + boa.Sugar + " amount of sugar.");
             // Debug.Log("This coffee contains: " + boa.Cream + " amount of cream.");
         }

@@ -14,6 +14,12 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
     public bool sugarShaking , cupThere;
     [HideInInspector]public Item droppedItem;
     private Sprite tempSprite;
+
+    public Text sugarText;
+
+    public GameObject[] slots;
+    public GameObject[] images;
+
     void Start()
     {
         tempSprite = sugarUI.GetComponent<Image>().sprite;
@@ -29,7 +35,38 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
         coffee.SetActive(false);
         cupThere = false;
         droppedItem = null;
+
+        //disable inventory drag
+        foreach(GameObject obj in slots){
+            obj.GetComponent<InventorySlot>().allowDrag = false;
+        }
+
+        foreach(GameObject obj in images){
+            obj.GetComponent<ItemDragHandler>().allowDrag = false;
+        }
+
+        //reset text
+        sugarText.text = "Sugar Added: 0";
+
+        //destroy falling cream
+        StartCoroutine(DestroySugar());
+
+        //close inv
+        GameObject.Find("InventoryController").GetComponent<OpenMenus>().closeInv();
     }
+
+    IEnumerator DestroySugar(){
+        GameObject sugars = GameObject.Find("sugarCube(Clone)");
+
+        while (sugars != null){
+            Destroy(sugars);
+
+            yield return new WaitForSeconds(0.05f);
+
+            sugars = GameObject.Find("sugarCube(Clone)");
+        }
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
         droppedItem = Inventory.instance.itemList[eventData.pointerDrag.GetComponent<ItemDragHandler>().transform.parent.GetSiblingIndex()];
@@ -51,6 +88,8 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
                     coffee.SetActive(true);
                     Inventory.instance.RemoveItem(droppedItem);
                     Inventory.instance.UpdateSlotUI();
+
+                    sugarText.text = "Sugar Added: " + sugarAdded;
                 }
                 else
                 { 
@@ -76,8 +115,10 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
         {
             var boa = droppedItem as Drink;
             boa.Sugar = sugarAdded;
-            Debug.Log("This coffee contains: " + boa.Sugar + " amount of sugar.");
-            Debug.Log("This coffee contains: " + boa.Cream + " amount of cream.");
+
+            sugarText.text = "Sugar Added: " + sugarAdded;
+            // Debug.Log("This coffee contains: " + boa.Sugar + " amount of sugar.");
+            // Debug.Log("This coffee contains: " + boa.Cream + " amount of cream.");
         }
     }
     IEnumerator ShakingSugar(float waitTime)

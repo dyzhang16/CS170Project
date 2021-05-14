@@ -20,8 +20,15 @@ public class CityOffice : MonoBehaviour
         {
             //set position of the player based on previousScene
             if (GameManager.instance.previousScene == "Park"){
-                float perc = (-313 - GameManager.instance.playerPosition.z)/ 100;
-                float newPos = -(perc * 110);
+                float perc = (-300 - GameManager.instance.playerPosition.z)/ 110;
+
+                float newPos = -(perc * 115);
+
+                if (newPos >= 0){
+                    newPos = -5;
+                } else if (newPos <= -115){
+                    newPos = -110;
+                }
 
                 player.transform.position = exitToPark.transform.position + new Vector3(-10, 0, newPos);
             } else if (GameManager.instance.previousScene == "Office" || GameManager.instance.previousScene == "OfficeScene"){

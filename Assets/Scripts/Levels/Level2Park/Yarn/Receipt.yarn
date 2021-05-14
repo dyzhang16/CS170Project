@@ -1,6 +1,11 @@
 ﻿title: Receipt
 tags:
 ---
+
+<<if IsInventoryFull() is true>>
+	[[CannotTakeItemInventoryFull]]
+<<else>>
+
 <<ChangeSpeaker Player>>
 	What’s this? It’s that rude person’s receipt. Hmmm, I wonder what kind of coffee they like.
 
@@ -11,4 +16,6 @@ tags:
 <<ChangeVariable GameManager hasReceipt 1>>
 <<Add Receipt>>
 <<Destroy Receipt>>
+
+<<endif>>
 ===

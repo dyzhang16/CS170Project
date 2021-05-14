@@ -28,9 +28,9 @@ public class fallingstuff : MonoBehaviour
         if (collider.gameObject.tag == "Coffee")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
-            gameObject.SetActive(false);
             Debug.Log("Hit Lid of Coffee");
             SoundManagerScript.PlaySound("plop");
+            Destroy(this.gameObject);
         }
     }
 }
