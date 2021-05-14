@@ -27,14 +27,17 @@ public class Coffee : MonoBehaviour
             if (GameManager.instance.openLeftDoor == 1)
             {
                 lDoor.SetActive(false);
+                lDoor.GetComponent<HideDoor>().itemsUnder.SetActive(true);
             }
             if (GameManager.instance.openMidDoor == 1)
             {
                 mDoor.SetActive(false);
+                mDoor.GetComponent<HideDoor>().itemsUnder.SetActive(true);
             }
             if (GameManager.instance.openRightDoor == 1)
             {
-                rDoor.SetActive(false); ;
+                rDoor.SetActive(false);
+                rDoor.GetComponent<HideDoor>().itemsUnder.SetActive(true);
             }
 
         }

@@ -16,6 +16,9 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
     public VariableStorageBehaviour CustomVariableStorage;
     //List of Booleans for Logic
     [HideInInspector] public bool cupThere, filterThere, groundsThere;
+
+    public GameObject[] slots;
+    public GameObject[] images;
     
     //Called when finishing brewing a cup of coffee or leaving scene
     [YarnCommand("ResetCoffee")]
@@ -30,7 +33,20 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
         CustomVariableStorage.SetValue("$FilterThere", 0);
         CustomVariableStorage.SetValue("$BeansThere", 0);
         CustomVariableStorage.SetValue("$CupThere", 0);
+
+        //disable inventory drag
+        foreach(GameObject obj in slots){
+            obj.GetComponent<InventorySlot>().allowDrag = false;
+        }
+
+        foreach(GameObject obj in images){
+            obj.GetComponent<ItemDragHandler>().allowDrag = false;
+        }
+
+        //close inv 
+        GameObject.Find("InventoryController").GetComponent<OpenMenus>().closeInv();
     }
+
     //Called when dropping an item from inventory to puzzlePanel
     public void OnDrop(PointerEventData eventData)
     {
