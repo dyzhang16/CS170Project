@@ -10,6 +10,7 @@
     Ha, ‘not Halloween’. That’s funny.
 
     <<Focus SECOND>>
+    <<SetExpression angry>>
     This isn’t a joking matter. You could trip. Or get run over. 
     
     I bet you can’t see a thing. Haven’t your parents ever told you to look both ways when crossing the street?
@@ -18,6 +19,7 @@
     Wait, are you talking to me?
 
     <<Focus SECOND>>
+    <<SetExpression neutral>>
     Who else? You’re the only weirdo walking around outside with a bedsheet on their head.
 
     <<Focus FIRST>>
@@ -30,6 +32,7 @@
     No! I’m a ghost. Which is why you shouldn’t be able to see or talk to me.
 
     <<Focus SECOND>>
+    <<SetExpression angry>>
     Hmph. A ghost. Uh-huh. Try something else next time. Something less hazardous. 
     
     You could run into someone and spill their coffee. You’d get burned.
@@ -82,7 +85,7 @@
 <<else>>
     <<ChangeSpeaker None Friend>>
     <<Focus SECOND>>
-
+    <<SetExpression angry>>
     I said, leave me alone. Kids these days… 
 
     Hrng, where’s my order?
@@ -99,7 +102,7 @@ title: friend_after_coffee
 //Giving the drink to Fredric the first time
 <<if visited("friend_after_coffee") is false>>
 <<Focus SECOND>>
-    
+    <<SetExpression angry>>
     Didn’t I tell you to leave me alone?
 
 <<Focus FIRST>>
@@ -123,7 +126,7 @@ title: friend_after_coffee
     I took a peek at your receipt. Look! I have something for you.
 
 <<Focus SECOND>>
-    
+    <<SetExpression neutral>>
     Coffee? Give it over here.
 
 <<Show Friend1>>
@@ -146,7 +149,7 @@ title: wrong_item
 ---
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
-
+    <<SetExpression neutral>>
     What...is this? This isn’t coffee.
 
 <<Focus FIRST>>
@@ -154,7 +157,7 @@ title: wrong_item
     It’s a, um...a gift!
 
 <<Focus SECOND>>
-
+    <<SetExpression angry>>
     ...Look, it’s too early for whatever game you’re playing. I’ll be more awake once I have my coffee.
 ===
 title: no_safety
@@ -169,7 +172,7 @@ title: no_safety
     Ah!
 
 <<Focus SECOND>>
-
+    <<SetExpression angry>>
     You’ve spilled some perfectly good coffee.
 
 <<Focus FIRST>>
@@ -194,7 +197,7 @@ title: wrong_coffee
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
 <<Sound pour_coffee>>
-
+    <<SetExpression angry>>
     Urghk, what even is this?
 
 <<Focus FIRST>>
@@ -210,7 +213,7 @@ title: wrong_coffee
     So if I can get you your usual order, you’ll talk to me?
 
 <<Focus SECOND>>
-
+    <<SetExpression hmm>>
     We’ll see once I get my coffee.
 ===
 
@@ -219,7 +222,7 @@ title: correct_coffee
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
 <<Sound pour_coffee>>
-
+    <<SetExpression happy>>
     That hits the spot!
 
 <<Focus FIRST>>
@@ -227,7 +230,7 @@ title: correct_coffee
     I’m glad. 
 
 <<Focus SECOND>>
-    
+    <<SetExpression neutral>>
     How did you even get this? I’m pretty sure there were at least three other people ahead of me in line.
 
 <<Focus FIRST>>
@@ -245,7 +248,7 @@ title: correct_coffee
     That’s what I’ve been trying to tell you. And I just wanted to talk to you. No one else can see or hear me, just you.
 
 <<Focus SECOND>>
-
+    <<SetExpression hmm>>
     Oh, god. Maybe I am just seeing things...What was in that coffee?
 
 <<Focus FIRST>>
@@ -263,9 +266,9 @@ title: correct_coffee
     You think it’s good? Alright! I did it all by myself. The barista was sleeping on the job.
 
 <<Focus SECOND>>
-
+    <<SetExpression angry>>
     Sleeping on the job during rush hour!? That’s irresponsi-
-
+    <<SetExpression shocked>>
     My job! I’m gonna be late!
 
 <<FollowObject DialogueCam Friend1>>
@@ -277,7 +280,7 @@ title: correct_coffee
 <<MoveToOffice Friend1>>
 
 <<Focus SECOND>>
-
+    <<SetExpression angry>>
     I don’t have the time right now. I have to get to work. Go haunt someone else!
 
 <<UnFollowObject DialogueCam>>

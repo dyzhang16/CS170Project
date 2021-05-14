@@ -51,7 +51,7 @@ tags:
 <<elseif GetVariable("visitedAfterCoffee") == 1>>
 	<<ChangeSpeaker Player Friend>>
 	<<Focus SECOND>>
-
+        <<SetExpression angry>>
 		C’mon, can’t you just let me in this one time?
 
 	<<ChangeSpeaker Player Guard>>
@@ -61,7 +61,7 @@ tags:
 
 	<<ChangeSpeaker Player Friend>>
 	<<Focus SECOND>>
-
+        <<SetExpression angry>>
 		I come into this office six days a week. You know exactly who I am, Bedford!
 
 	<<ChangeSpeaker Player Guard>>
@@ -71,7 +71,7 @@ tags:
 
 	<<ChangeSpeaker Player Friend>>
 	<<Focus SECOND>>
-
+        <<SetExpression angry>>
 		You just said my name!
 
 	<<ChangeSpeaker Player Guard>>
@@ -81,7 +81,7 @@ tags:
 
 	<<ChangeSpeaker Player Friend>>
 	<<Focus SECOND>>
-
+        <<SetExpression angry>>
 		I’m already late for work. Let me in. Please?
 
 	<<ChangeSpeaker Player Guard>>
@@ -120,7 +120,7 @@ position: -483,89
 		Fredric, hi!
 
 	<<Focus SECOND>>
-
+        <<SetExpression hmm>>
 		Oh, it’s you again. Look, I really need to find my ID so I can get into my work building. So if- If you can help me find it…
 
 	<<Focus FIRST>>
@@ -128,7 +128,7 @@ position: -483,89
 		You’ll talk to me?
 
 	<<Focus SECOND>>
-
+        <<SetExpression neutral>>
 		You don’t have to say it like that. That’s just sad. But yeah, I’ll talk to yo-
 
 	<<Focus FIRST>>
@@ -136,7 +136,7 @@ position: -483,89
 		Oh, what’s this? An ID card that I found on the ground by the park belonging to one Mister Fredric-
 
 	<<Focus SECOND>>
-	
+        <<SetExpression shocked>>
 		Hey, give it here!
 
 	<<Focus FIRST>>
@@ -144,7 +144,7 @@ position: -483,89
 		And you’ll find time to slow down and talk to me?
 
 	<<Focus SECOND>>
-
+        <<SetExpression happy>>
 		Yeah. Now, let’s go, let’s go!
 
 		Hey, Bedford, I’ve got it! Let me in!
@@ -156,9 +156,9 @@ position: -483,89
 
 	<<ChangeSpeaker Player Friend>>
 	<<Focus SECOND>>
-	
+        <<SetExpression hmm>>
 		Is that what it looked like? I had my ID all along, just...misplaced it. Anyway, see you later.
-
+        <<SetExpression neutral>>
 		C’mon, kid!
 
 	<<Focus FIRST>>
@@ -180,7 +180,8 @@ position: -483,89
 		Sorry, Fredric. No ID, no entry.
 	
 	<<ChangeSpeaker Player Friend>>
-
+        <<Focus SECOND>>
+        <<SetExpression hmm>>
 		Dang it. Did I drop it while running?
 <<endif>>
 ===
@@ -241,12 +242,14 @@ position: 231,-190
 <<ChangeSpeaker Player Friend>>
 
 <<Focus SECOND>>
+<<SetExpression hmm>>
 I could've sworn I saw something shining here. Where could it be?
 
 <<Focus FIRST>>
 I don't think it's safe for you to be standing there!
 
 <<Focus SECOND>>
+<<SetExpression shocked>>
 What?
 
 <<hitByCar Friend1>>
