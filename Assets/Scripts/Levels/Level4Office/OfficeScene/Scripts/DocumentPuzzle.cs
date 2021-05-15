@@ -110,13 +110,15 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
     private void Stamp()
     {
         var mousePos = Input.mousePosition;
-        Instantiate(Stamps, mousePos, transform.localRotation, transform);
+        GameObject obj = Instantiate(Stamps, mousePos, transform.localRotation, transform);
+        obj.layer = 2;
         SoundManagerScript.PlaySound("stamp_sound");
     }
     private void Sign()
     {
         var mousePos = Input.mousePosition;
-        Instantiate(Signature, mousePos, transform.localRotation, transform);
+        GameObject obj = Instantiate(Signature, mousePos, transform.localRotation, transform);
+        obj.layer = 2;
         SoundManagerScript.PlaySound("sign_sound");
     }
     public void OnPointerDown(PointerEventData eventData)

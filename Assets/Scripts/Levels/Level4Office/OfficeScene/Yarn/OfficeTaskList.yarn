@@ -1,50 +1,125 @@
 ﻿title: OfficeTaskList
 tags:
 ---
-<<ChangeSpeaker Player>>
-	Here's a list of the tasks Frederick has to do... Let's see!
+<<ChangeSpeaker Player Friend>>
+<<Focus FIRST>>
+
+	Fredric, you promised you’d talk.
+
+<<Focus SECOND>>
+
+	I can do that while signing papers. What did you have to say to me?
+
+<<Focus FIRST>>
+
+	Finally! How come you can see me? Hear me? No one else seems to be able to.
+
+<<Focus SECOND>>
+	
+	How should I know? I’m just a normal guy with a normal life.
+
+<<Focus FIRST>>
+
+	But there must be something.
+
+<<Focus SECOND>>
+
+	You’ve seen exactly how uneventful my life is. You could search for someone more interesting who can also see you.
+
+<<Focus FIRST>>
+
+	How do I know I’ll be able to find someone else? If I leave you, I’ll just end up where I started with no one by my side.
+
+	And since you have no other friends, you’ll also have no one if I leave.
+
+<<Focus SECOND>>
+
+	Since when did we become friends?
+
+<<Focus FIRST>>
+
+	Since you stopped telling me to go away. Keep up, Fredric.
+
+	You’re allowed to say you enjoy my company. I won’t tell anyone.
+
+<<Focus SECOND>>
+	
+	Whether or not I think of you as a friend, I still have work to finish up.
+
+	Say, the time will pass by quicker if you help me out. When we finish, we can...hang out...like friends do.
+	
+	If you can find an extra <b>pen</b> and <b>stamp</b> around here, just pick up a document to get started.
 ===
 title: Documents
 tags:
 ---
-<<if $DocumentsFinished is 1>>
-<<ChangeSpeaker Player>>
-	I should fix the computer.
-<<else>>
-<<ChangeSpeaker Player>>
+<<ChangeSpeaker Player Friend>>
 <<if $StampAdded and $PenAdded is 1>>
-	Time to get to work!
-	You can left click to sign a document in the green area, or use right click to stamp a document in the purple area.
-	Once you finish a document you can drag it to the blue area. 
 <<Show Documents>>
+<<Focus SECOND>>
+
+	Place the pen and stamp down in your workspace and get comfortable.
+
+<<Focus FIRST>>
+
+	How do I do this?
+
+<<Focus SECOND>>
+
+	It’s not hard. Just sign my name in the <b>blue</b> area by left clicking. Use the stamp in the <b>red</b> area with the right click.
+
+<<Focus FIRST>>
+
+	The what click?
+
+<<Focus SECOND>>
+
+	I said what I said. When you’re done with a document, just drop it into the document tray.
+
+	Why don’t you give it a try?
+
 <<else>> 
+<<Focus FIRST>>
+
 	I am missing some tools....
+
 <<endif>>
-<<endif>>
-<<stop>>
 ===
 title: Cabinet
 tags:
 ---
-<<ChangeSpeaker Player>>
+<<ChangeSpeaker Player Friend>>
+<<Focus FIRST>>
 <<if $StampAdded is 1>>
+
 	You find nothing of importance in the cabinet.
 <<else>>
-	You find a stamp in the cabinet.
+	
+	Is it just this one ‘DENIED’ stamp?
+
+<<Focus SECOND>>
+
+	In this office, we don’t approve of things.
+
 <<Add Cabinet>>
 <<set $StampAdded to 1>>
 <<endif>>
-<<stop>>
 ===
 title: Pen
 tags:
 ---
-<<ChangeSpeaker Player>>
-	You find a pen on the table.
+<<ChangeSpeaker Player Friend>>
+<<Focus FIRST>>
+
+	Every single one of these pens is the same.
+
+<<Focus SECOND>>
+
+	They order the corporate gifts in bulk. We’ll never run out.
+
 <<set $PenAdded to 1>>
 <<Add Pen>>
 <<Destroy Pen>>
-<<stop>>
 ===
 title: TrashCan
 tags:
@@ -54,5 +129,4 @@ tags:
     -> Yes.
         <<Show BasketballCamRenderTexture>>
     -> No.
-    <<stop>>
 ===

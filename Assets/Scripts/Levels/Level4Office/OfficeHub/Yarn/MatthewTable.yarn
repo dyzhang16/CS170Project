@@ -4,13 +4,31 @@ tags:
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
 <<if visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Matthew's Table First time
+	<<if $TookDocument is 0>>
 
-	You find some documents and add them to your inventory.
+		That’s 1 of 3 stacks.
 
-<<Add ADocument>>
-<<Destroy ADocument>>
-<<set $grabbedDocument to 1>>	
-<<set $TookADocument to 1>>
+	<<Add ADocument>>
+	<<Destroy ADocument>>
+	<<set $grabbedDocument to 1>>	
+	<<set $TookDocument to 1>>
+	<<elseif $TookDocument is 1>>
+
+		That’s 2 of 3 stacks.
+
+	<<Add ADocument>>
+	<<Destroy ADocument>>
+	<<set $grabbedDocument to 1>>	
+	<<set $TookDocument to 2>>
+	<<elseif $TookDocument is 2>>
+
+		That’s all of them! I’ll bring them back to Fredric.
+	
+	<<Add ADocument>>
+	<<Destroy ADocument>>
+	<<set $grabbedDocument to 1>>	
+	<<set $TookDocument to 3>>
+	<<endif>>
 <<endif>>
 ===
 
@@ -20,13 +38,31 @@ tags:
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
 <<if visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Elizabeth's Table First time
+	<<if $TookDocument is 0>>
 
-	You find some documents and add them to your inventory.
+		That’s 1 of 3 stacks.
 
-<<Add EDocument>>
-<<Destroy EDocument>>
-<<set $grabbedDocument to 1>>
-<<set $TookEDocument to 1>> 
+	<<Add EDocument>>
+	<<Destroy EDocument>>
+	<<set $grabbedDocument to 1>>	
+	<<set $TookDocument to 1>>
+	<<elseif $TookDocument is 1>>
+
+		That’s 2 of 3 stacks.
+
+	<<Add EDocument>>
+	<<Destroy EDocument>>
+	<<set $grabbedDocument to 1>>	
+	<<set $TookDocument to 2>>
+	<<elseif $TookDocument is 2>>
+
+		That’s all of them! I’ll bring them back to Fredric.
+	
+	<<Add EDocument>>
+	<<Destroy EDocument>>
+	<<set $grabbedDocument to 1>>	
+	<<set $TookDocument to 3>>
+	<<endif>>
 <<endif>>
 ===
 
@@ -36,13 +72,31 @@ tags:
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
 <<if visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Max's Table First time
+	<<if $TookDocument is 0>>
 
-	You find some documents and add them to your inventory.
+		That’s 1 of 3 stacks.
 
-<<Add MDocument>>
-<<Destroy MDocument>>
-<<set $grabbedDocument to 1>>
-<<set $TookMDocument to 1>> 
+	<<Add MDocument>>
+	<<Destroy MDocument>>
+	<<set $grabbedDocument to 1>>	
+	<<set $TookDocument to 1>>
+	<<elseif $TookDocument is 1>>
+
+		That’s 2 of 3 stacks.
+
+	<<Add MDocument>>
+	<<Destroy MDocument>>
+	<<set $grabbedDocument to 1>>	
+	<<set $TookDocument to 2>>
+	<<elseif $TookDocument is 2>>
+
+		That’s all of them! I’ll bring them back to Fredric.
+	
+	<<Add MDocument>>
+	<<Destroy MDocument>>
+	<<set $grabbedDocument to 1>>	
+	<<set $TookDocument to 3>>
+	<<endif>>
 <<endif>>
 ===
 title: EllieCBeth
