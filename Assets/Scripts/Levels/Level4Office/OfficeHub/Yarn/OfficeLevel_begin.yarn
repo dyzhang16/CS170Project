@@ -56,7 +56,7 @@ title: OfficeFriend
 <<ChangeSpeaker Player Friend>>
 <<Focus SECOND>>
 
-<<if $TookMDocument is 1 and $TookEDocument is 1 and $TookADocument is 1>>
+<<if $TookDocument is 3>>
 <<RemoveDocuments Environment>>
 <<giveDoc SoundManager>>
 
@@ -188,8 +188,11 @@ tags:
 <<Focus SECOND>>
 
 	You’re back! I’m losing my mind doing nothing over here.
+
     <<SetExpression happy>>
 	Looks like everything is here. It’s time I get to work.
+
+	I’ll be at my desk.
 <<ChangeVariable GameManager officePuzzle 1>>
 <<set $OfficePuzzle to 1>>
 ===
