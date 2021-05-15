@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2971,7 +2971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573497460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.8, y: -5.8, z: 6.2}
+  m_LocalPosition: {x: 76.8, y: -3.26, z: 6.2}
   m_LocalScale: {x: 1.0665573, y: 1.1008918, z: 0.26}
   m_Children: []
   m_Father: {fileID: 1310173487}
@@ -3025,11 +3025,11 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.25614882, y: 0.21795452}
+  m_Offset: {x: -0.25614882, y: -2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 15.06, y: 7.11}
+    oldSize: {x: 15.06, y: 15.06}
     newSize: {x: 15.06, y: 7.11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3092,7 +3092,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 167dc95cac7bd9f4593e69310459eb62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5726d851c3a34db49a421ba3a5d93da0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5875,7 +5875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241148652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.083, y: 4.33, z: -28.2}
+  m_LocalPosition: {x: -0.083, y: 5, z: -28.2}
   m_LocalScale: {x: 0.29361728, y: 0.29361728, z: 0.29361728}
   m_Children: []
   m_Father: {fileID: 2119695929}
@@ -5920,7 +5920,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 167dc95cac7bd9f4593e69310459eb62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5726d851c3a34db49a421ba3a5d93da0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8569,7 +8569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 167dc95cac7bd9f4593e69310459eb62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5726d851c3a34db49a421ba3a5d93da0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8603,8 +8603,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00002861, y: 216}
-  m_SizeDelta: {x: 243.22064, y: 95.10112}
+  m_AnchoredPosition: {x: 0.00002861, y: 270}
+  m_SizeDelta: {x: 243.22064, y: 243.2206}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1718823471 stripped
 MonoBehaviour:
