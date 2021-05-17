@@ -190,6 +190,8 @@ title: no_safety
 <<Focus SECOND>>
     
     ...
+
+    <<ChangeVariable GameManager wrongCoffee 2>>    
 ===
 title: wrong_coffee
 ---
@@ -215,6 +217,8 @@ title: wrong_coffee
 <<Focus SECOND>>
     <<SetExpression hmm>>
     We’ll see once I get my coffee.
+
+<<ChangeVariable GameManager wrongCoffee 1>>
 ===
 
 title: correct_coffee

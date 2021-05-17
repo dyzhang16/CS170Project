@@ -8,6 +8,9 @@ public class OpenMenus : MonoBehaviour
     public GameObject Tooltip;
     public bool paused;
     public GameObject settingsPanel;
+    public GameObject optionsPanel;
+    public GameObject controlsPanel;
+
     public bool allowInv = true;
 
     //animator for inventory button
@@ -63,5 +66,10 @@ public class OpenMenus : MonoBehaviour
     {
         settings = !settings;
         settingsPanel.SetActive(settings);
+
+        if (!settings){
+            controlsPanel.SetActive(false);
+            optionsPanel.SetActive(false);
+        }
     }
 }
