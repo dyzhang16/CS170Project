@@ -19,19 +19,19 @@ public class ArcadeLevelManager : MonoBehaviour
         if (GameManager.instance != null)
         {
             // if we already visited the arcade, do not start the node automatically
-            // if (GameManager.instance.arcadeFirstVisit == 1)
-            // {
-            //     dialogueRunner.startAutomatically = false;
-            //     tracker.NodeComplete("ArcadeStart");
-            // }
-            // if (GameManager.instance.arcadeFirstCrane == 1)
-            // {
-            //     tracker.NodeComplete("CraneDirections");
-            // }
-            // if (GameManager.instance.arcadeFirstDance == 1)
-            // {
-            //     tracker.NodeComplete("DanceDirections");
-            // }
+            if (GameManager.instance.arcadeFirstVisit == 1)
+            {
+                dialogueRunner.startAutomatically = false;
+                tracker.NodeComplete("ArcadeStart");
+            }
+            if (GameManager.instance.arcadeFirstCrane == 1)
+            {
+                tracker.NodeComplete("CraneDirections");
+            }
+            if (GameManager.instance.arcadeFirstDance == 1)
+            {
+                tracker.NodeComplete("DanceDirections");
+            }
         }
     }
 

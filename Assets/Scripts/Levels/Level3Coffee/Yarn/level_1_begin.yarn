@@ -17,32 +17,6 @@ tags:
 	Is there an employee <b>instruction manual</b> anywhere?
 <<ChangeVariable GameManager visitedCoffee 1>>
 ===
-
-title: wrong_coffee_with_receipt
----
-
-<<ChangeSpeaker Player>>
-	Hmmm I guess I made the wrong coffee
-
-	Maybe I should check Frederic's receipt and the coffee recipe book again.
-===
-
-title: wrong_coffee_without_receipt
----
-
-<<ChangeSpeaker Player>>
-	Hmmm I don't know what coffee Frederic wants. Maybe I can go outside and find out what coffee they like?
-
-===
-
-title: no_lid_or_sleeve
----
-
-<<ChangeSpeaker Player>>
-	This time I won't forget the lid and the sleeve!
-
-===
-
 title: RecipeBook
 tags:
 ---
@@ -55,6 +29,7 @@ tags:
 <<else>>
 [[ShowRecipeBook]]
 <<endif>>
+<<ChangeVariable GameManager readBook 1>>
 ===
 title: ShowRecipeBook
 tags:

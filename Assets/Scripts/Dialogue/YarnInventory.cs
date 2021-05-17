@@ -81,14 +81,8 @@ public class YarnInventory : MonoBehaviour
             
         }
 
-        if (parameters.Length == 2){
-            if (parameters[1] != "False"){
-                StartCoroutine(closeInventory());
-            }
-        } else {
-            if (p != null){
-                p.activateMenu();
-            }
+        if (p != null){
+            p.activateMenu();
         }
     }
     private void RemoveObject(string[] parameters)
@@ -122,13 +116,5 @@ public class YarnInventory : MonoBehaviour
     {
         Item foundItem = Inventory.instance.FindItem(query);
         return foundItem != null;
-    }
-
-    IEnumerator closeInventory(){
-        if (p != null){
-            p.activateMenu();
-        }
-
-        yield return new WaitForSeconds(0.75f);
     }
 }

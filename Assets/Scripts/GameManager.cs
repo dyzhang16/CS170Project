@@ -35,9 +35,6 @@ public class GameManager : MonoBehaviour
     public int gaveDrink = 0;
     //changed when the friend leaves the streetCoffee scene after recieving the correct coffee
     public int visitedAfterCoffee = 0;
-    //wrong coffee 1 = wrong coffee given
-    //coffee = 2, no cup or sleeve given
-    public int wrongCoffee = 0;
     //changed when the player first enters the coffee shop, preventing initial dialogue from starting again
     public int visitedCoffee = 0;
     //changed when the player has opened the each specific cabinet door, prevents from seeing the doors closed when returning to scene
@@ -73,7 +70,7 @@ public class GameManager : MonoBehaviour
     //walk to arcade
     public int walkToStreet = 0;
 
-    // // Arcade variables
+    // Arcade variables
     public int arcadeFirstVisit = 0;
     public int arcadeFirstCrane = 0;
     public int arcadeFirstDance = 0;
@@ -85,11 +82,6 @@ public class GameManager : MonoBehaviour
     public int idNeeded = 0; // 2 = fredric used ID to get into office, 1 = player wants to give fredric ID, 0 otherwise
 
     public int ending = 0;
-
-    //controls
-    public KeyCode INTERACT_KEY = KeyCode.Space;
-    public KeyCode INVENTORY_KEY = KeyCode.Tab;
-    public KeyCode DIALOGUE_KEY = KeyCode.Space;
 
     //cursor texture
     public Texture2D cursorTexture;
@@ -148,6 +140,9 @@ public class GameManager : MonoBehaviour
                 case "gaveDrink":
                     gaveDrink = int.Parse(variables[1]);
                     break;
+                case "arcadeFirstVisit":
+                    arcadeFirstVisit = int.Parse(variables[1]);
+                    break;
                 case "followFriendinOffice":
                     followFriendinOffice = int.Parse(variables[1]);
                     break;
@@ -156,6 +151,9 @@ public class GameManager : MonoBehaviour
                     break;
                 case "officePuzzle":
                     officePuzzle = int.Parse(variables[1]);
+                    break;
+                case "visitedBed":
+                    visitedBed = int.Parse(variables[1]);
                     break;
                 case "firstDateDia":
                     firstDateDia = int.Parse(variables[1]);

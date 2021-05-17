@@ -18,20 +18,7 @@ public class Coffee : MonoBehaviour
             if(GameManager.instance.visitedCoffee == 1)
             {
                 dialogueRunner.startAutomatically = false;
-            } else if (GameManager.instance.wrongCoffee == 1){
-
-                if (GameManager.instance.hasReceipt == 0){
-                    dialogueRunner.startNode = "wrong_coffee_without_receipt";
-                } else {
-                    dialogueRunner.startNode = "wrong_coffee_with_receipt";
-                }
-
-                dialogueRunner.startAutomatically = true;
-            } else if (GameManager.instance.wrongCoffee == 2){
-                dialogueRunner.startNode = "no_lid_or_sleeve";
-                dialogueRunner.startAutomatically = true;
             }
-
             if (GameManager.instance.addedCoffeeMachineItem == 1)
             {
                 CoffeeMachine.GetComponent<RunDialogueMC>().dialogueToRun = "StaleIngredients";

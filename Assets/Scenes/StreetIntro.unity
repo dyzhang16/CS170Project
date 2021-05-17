@@ -1070,8 +1070,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 29.612165, y: 18.992674, z: 14.791142}
-  m_Center: {x: 0.14309594, y: 9.8652115, z: -2.7114518}
+  m_Size: {x: 29.612165, y: 18.992674, z: 8.545031}
+  m_Center: {x: 0.14309594, y: 9.36601, z: 0.5059636}
 --- !u!1 &324358613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +1129,7 @@ Transform:
   m_GameObject: {fileID: 374207162}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.9469986, y: -0.5656768, z: -0.5656768}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 1.079361, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1564569058}
   m_RootOrder: 1
@@ -1173,7 +1173,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 17a6f5d1da4b7a143ae8a3d3e509bbd3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e619a740eee1da4f95ba7b5c419f8cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1814,11 +1814,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef986b420694c644a809663c0ca049d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueRunner: {fileID: 411530684}
-  player: {fileID: 1314966348}
+  dialogueRunner: {fileID: 0}
+  player: {fileID: 0}
   dialogueToRun: TraitorHoes
   startInstantly: 0
-  dialogueCursor: {fileID: 178676247}
+  dialogueCursor: {fileID: 0}
   showDialogueCursor: 1
   runDialogue: 0
 --- !u!54 &513558043
@@ -2611,8 +2611,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 27.221365, y: 11.161458, z: 10.5598135}
-  m_Center: {x: 0.22509003, y: 8.889696, z: -10.484035}
+  m_Size: {x: 27.221365, y: 11.161458, z: 7.4169807}
+  m_Center: {x: 0.22509003, y: 8.209252, z: -8.519763}
 --- !u!1 &666154066
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,8 +3132,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.888533, y: 6.6905003, z: 8.254984}
-  m_Center: {x: -0.01702277, y: 5.3964734, z: -5.709434}
+  m_Size: {x: 8.888533, y: 6.6905003, z: 4.952969}
+  m_Center: {x: -0.01702277, y: 4.056019, z: -2.7685728}
 --- !u!114 &733686128 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6386934102897756430, guid: b71716d8888efca45a8977e962ddd7f4,
@@ -5520,16 +5520,6 @@ PrefabInstance:
       propertyPath: inventoryButtonAnimator
       value: 
       objectReference: {fileID: 1315025346}
-    - target: {fileID: 4082150130277126512, guid: ad9b45256d828ee4982f2e5d85b896c6,
-        type: 3}
-      propertyPath: optionsPanel
-      value: 
-      objectReference: {fileID: 1100176919}
-    - target: {fileID: 4082150130277126512, guid: ad9b45256d828ee4982f2e5d85b896c6,
-        type: 3}
-      propertyPath: controlsPanel
-      value: 
-      objectReference: {fileID: 2004794333}
     - target: {fileID: 4082150130277126516, guid: ad9b45256d828ee4982f2e5d85b896c6,
         type: 3}
       propertyPath: m_Name
@@ -5800,8 +5790,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30.00932, y: 21.771015, z: 13.299901}
-  m_Center: {x: 0.49578857, y: 12.180232, z: -5.7918086}
+  m_Size: {x: 30.00932, y: 21.771015, z: 5.960652}
+  m_Center: {x: 0.49578857, y: 11.584359, z: -2.0075097}
 --- !u!1 &1287643994
 GameObject:
   m_ObjectHideFlags: 0
@@ -6315,8 +6305,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500091010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.369995, y: -1.49, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: 3.369995, y: 0.228703, z: 0.0036401004}
+  m_LocalScale: {x: 0.90000004, y: 0.90000015, z: 1}
   m_Children: []
   m_Father: {fileID: 627320376}
   m_RootOrder: 0
@@ -6376,7 +6366,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 411f1016cced433479d0d249f4eb7ba8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e619a740eee1da4f95ba7b5c419f8cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6887,7 +6877,7 @@ PrefabInstance:
     - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
       propertyPath: yarnScripts.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
@@ -6982,12 +6972,6 @@ PrefabInstance:
       propertyPath: yarnScripts.Array.data[4]
       value: 
       objectReference: {fileID: 2480198943629176163, guid: 775349903c260094b8e9a618f5f7ab53,
-        type: 3}
-    - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
-        type: 3}
-      propertyPath: yarnScripts.Array.data[5]
-      value: 
-      objectReference: {fileID: 2480198943629176163, guid: eba050d815eba9845804a6343003d59f,
         type: 3}
     - target: {fileID: 720895104442778777, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
@@ -7951,8 +7935,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 28.09358, y: 14.853033, z: 13.448826}
-  m_Center: {x: -0.08537917, y: 10.013249, z: -7.744206}
+  m_Size: {x: 28.09358, y: 14.853033, z: 7.3152375}
+  m_Center: {x: -0.08537917, y: 9.183276, z: -4.389899}
 --- !u!1 &1834264967
 GameObject:
   m_ObjectHideFlags: 0

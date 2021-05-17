@@ -28,8 +28,6 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 }
                 else
                 {
-                    StartCoroutine(WrongDocumentNote());
-                    WrongDocument.GetComponent<CanvasGroup>().alpha = 1;
                     Debug.LogWarning("INCORRECT DOCUMENT Y R U SO BAD");
                 }
             }
@@ -43,8 +41,6 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 }
                 else
                 {
-                    StartCoroutine(WrongDocumentNote());
-                    WrongDocument.GetComponent<CanvasGroup>().alpha = 1;
                     Debug.LogWarning("INCORRECT DOCUMENT Y R U SO BAD");
                 }
             }
