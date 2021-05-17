@@ -173,6 +173,6 @@ public class SoundManagerScript : MonoBehaviour {
     public void MainVolumeControl(float vol)
     {   // currently not working
         //Debug.Log("vol is: " + vol);
-        audioSrc.volume = vol+'f';
+        //audioSrc.volume = vol+'f';
     }
 }
