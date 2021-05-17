@@ -25,6 +25,10 @@ public class OfficeHub : MonoBehaviour
                 //code to move the friend to the right area
             }
         }
+
+        if (MusicManagerScript.instance != null){
+            MusicManagerScript.instance.sceneChecker();
+        }
     }
     void Start()
     {

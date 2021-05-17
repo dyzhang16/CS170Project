@@ -41,5 +41,9 @@ public class Office : MonoBehaviour
 
             }
         }
+
+        if (MusicManagerScript.instance != null){
+            MusicManagerScript.instance.sceneChecker();
+        }
     }
 }

@@ -8,7 +8,9 @@ using UnityEngine.UI;
 
 public class MusicManagerScript : MonoBehaviour
 {
-    //public static MusicManagerScript instance;
+    public static MusicManagerScript instance;
+
+    public float musicVolume = 0.25f;
 
     public Slider musicSlider;
 
@@ -27,6 +29,8 @@ public class MusicManagerScript : MonoBehaviour
         
         DontDestroyOnLoad(this.gameObject);
 
+        instance = this;
+
 
         
         tutorial_music = musicSource[0];
@@ -40,26 +44,27 @@ public class MusicManagerScript : MonoBehaviour
         sceneName = currentScene.name;
 
         
-        
+        // sceneChecker();
         
     }
 
-    void Start()
-    {
-        musicSlider.value = 0.25f; // default music volume
+    void Start(){
+        // Scene currentScene = SceneManager.GetActiveScene();
+        // sceneName = currentScene.name;
 
-        
-      
-        sceneChecker(sceneName);
-        Debug.Log("start");
-
+        sceneChecker();
     }
 
-    void sceneChecker(string name)
+    public void sceneChecker()
     {
         Debug.Log("tis running fine");
 
-        switch (name)
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
+
+        Debug.Log(sceneName);
+
+        switch (sceneName)
 
 
         { 
@@ -71,7 +76,9 @@ public class MusicManagerScript : MonoBehaviour
                 break;
             case "Park":
                 tutorial_music.Stop(); // stop tutorial music
-                street_music.Play(); // start street music
+                if (!street_music.isPlaying){
+                    street_music.Play(); // start street music
+                }
                 Debug.Log("playing street music");
                 break;
             case "StreetCoffee":
@@ -85,7 +92,18 @@ public class MusicManagerScript : MonoBehaviour
                 street_music.Stop();
                 coffee_music.Play();
                 break;
+            case "CityOffice":
+                if (!street_music.isPlaying){
+                    street_music.Play();
+                }
+                office_music.Stop();
             case "OfficeScene":
+                street_music.Stop(); // stops street music
+                if (!office_music.isPlaying){
+                    office_music.Play();
+                }
+                break;
+            case "Office":
                 street_music.Stop(); // stops street music
                 office_music.Play();
                 break;
@@ -103,5 +121,7 @@ public class MusicManagerScript : MonoBehaviour
 
     }
 
-
+    public void updateVolume(){
+        
+    }
 }

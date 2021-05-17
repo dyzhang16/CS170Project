@@ -46,6 +46,10 @@ public class StreetIntro : MonoBehaviour
                 friend.SetActive(true);
             }
         }
+
+        if (MusicManagerScript.instance != null){
+            MusicManagerScript.instance.sceneChecker();
+        }
     }
 
     void Start(){

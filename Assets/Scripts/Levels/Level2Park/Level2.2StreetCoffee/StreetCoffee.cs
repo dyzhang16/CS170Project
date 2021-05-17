@@ -55,6 +55,10 @@ public class StreetCoffee : MonoBehaviour
                 Destroy(friend);
             }
         }
+
+        if (MusicManagerScript.instance != null){
+            MusicManagerScript.instance.sceneChecker();
+        }
     }
 
     void Start()

@@ -84,6 +84,10 @@ public class Graveyard : MonoBehaviour
             GameManager.instance.loadItems();
             GameManager.instance.deleteItems();
         }
+
+        if (MusicManagerScript.instance != null){
+            MusicManagerScript.instance.sceneChecker();
+        }
     }
 
     IEnumerator objActive(){
