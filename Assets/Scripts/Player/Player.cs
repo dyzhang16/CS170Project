@@ -20,6 +20,9 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public bool paused;
     public bool settings;
     public GameObject settingsPanel;
+    public GameObject optionsPanel;
+    public GameObject controlsPanel;
+
     //animator for inventory button
     public Animator inventoryButtonAnimator;
 
@@ -94,7 +97,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
                 if (!moving){
                     if (Vector3.Distance(this.transform.position, beginDriftPos) > 10f){
-                        float dist = Vector3.Distance(this.transform.position, beginDriftPos)/50f;
+                        // float dist = Vector3.Distance(this.transform.position, beginDriftPos)/50f;
 
                         // Debug.Log("drift distance long");
                         this.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
@@ -103,13 +106,13 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             }
 
             if (allowInv){
-                if (Input.GetKeyDown(KeyCode.Tab)) {
+                if (Input.GetKeyDown(GameManager.instance.INVENTORY_KEY)) {
                     openInventory();
                 }
             }
 
             //select the continue button upon pressing space
-            if(Input.GetKeyDown(KeyCode.Space)){
+            if(Input.GetKeyDown(GameManager.instance.DIALOGUE_KEY)){
                 if (GameObject.Find("DiaSystem Prefab 1/DialogueRunner") != null){
                     // Debug.Log("found dialogue runner");
                     GameObject dia = GameObject.Find("DiaSystem Prefab 1/DialogueRunner");
@@ -186,12 +189,16 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         if (paused)
         {
             Time.timeScale = 1;
+
+            controlsPanel.SetActive(false);
+            optionsPanel.SetActive(false);
         }
         else
         {
             stopMove();
             Time.timeScale = 0;
         }
+
         allowInv = paused;
         allowMovement = paused;
         paused = !paused;
