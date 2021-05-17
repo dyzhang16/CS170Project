@@ -97,6 +97,7 @@ public class MusicManagerScript : MonoBehaviour
                     street_music.Play();
                 }
                 office_music.Stop();
+                break;
             case "OfficeScene":
                 street_music.Stop(); // stops street music
                 if (!office_music.isPlaying){
