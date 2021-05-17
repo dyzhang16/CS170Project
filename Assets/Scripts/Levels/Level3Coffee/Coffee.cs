@@ -54,6 +54,10 @@ public class Coffee : MonoBehaviour
             }
 
         }
+
+        if (MusicManagerScript.instance != null){
+            MusicManagerScript.instance.sceneChecker();
+        }
     }
     void Start()
     {

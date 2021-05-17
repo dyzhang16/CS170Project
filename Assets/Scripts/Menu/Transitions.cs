@@ -28,6 +28,7 @@ public class Transitions : MonoBehaviour
     public void LoadNextScene(string sceneToChange){
         GameManager.instance.saveItems();
         GameManager.instance.previousScene = SceneManager.GetActiveScene().name;
+
         GameObject temp = GameObject.Find("Player");
         if (temp != null){
             GameManager.instance.playerPosition = temp.transform.position;

@@ -69,6 +69,10 @@ public class CityOffice : MonoBehaviour
                 officeDoorArrow.GetComponent<BoxCollider>().enabled = true;
             }
         }
+
+        if (MusicManagerScript.instance != null){
+            MusicManagerScript.instance.sceneChecker();
+        }
     }
 
     void Start()
