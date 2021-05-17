@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
+using UnityEngine.UI;
 
 public class CoffeePuzzle : MonoBehaviour, IDropHandler
 {
@@ -19,6 +20,8 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
 
     public GameObject[] slots;
     public GameObject[] images;
+
+    public Button brewButton;
     
     //Called when finishing brewing a cup of coffee or leaving scene
     [YarnCommand("ResetCoffee")]
@@ -90,6 +93,10 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
             {
                 dialogueRunner.StartDialogue("WrongStep");
             }
+
+            if (cupThere && filterThere && groundsThere){
+                brewButton.image.color = new Color(0f, 255f, 0f, 1f);
+            }
         }
     }
 
@@ -112,6 +119,8 @@ public class CoffeePuzzle : MonoBehaviour, IDropHandler
             gameWorldFilter.SetActive(false);
             //BrewedCoffee to Active
             puzzleCompletedCup.SetActive(true);
+
+            brewButton.image.color = new Color(255f, 255f, 255f, 1f);
         }
         else 
         {
