@@ -37,7 +37,7 @@ public class RunDialogue : MonoBehaviour
     {
         if (runDialogue)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(GameManager.instance.INTERACT_KEY))
             {
                 if (!dialogueRunner.IsDialogueRunning && player.allowMovement)
                 {
