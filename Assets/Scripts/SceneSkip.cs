@@ -34,6 +34,7 @@ public class SceneSkip : MonoBehaviour
         // manager.arcadeNoDanceDirs = 0;
 
         GameManager.instance.deleteItems();
+        GameManager.loadItems();
     }
     
     public void playNormal(){
@@ -62,6 +63,7 @@ public class SceneSkip : MonoBehaviour
         // manager.arcadeNoDanceDirs = 0;
 
         GameManager.instance.deleteItems();
+        GameManager.loadItems();
     }
 
     public void skipStreet(){
