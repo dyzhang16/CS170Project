@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 /// <summary>
 /// This is a class that is primarily meant for rendering Rich Text in dialogue-rich games.
@@ -60,7 +61,7 @@ public class RichTextWriter
 		// then start parsing
 
 		// first do a split on all tags
-		List<(string, string)> unprocessedSplit = SplitStringByTags(fullText, "b", "i", "color=red");
+		List<(string, string)> unprocessedSplit = SplitStringByTags(fullText, "b", "i", "color");
 
 		// then iterate through the strings in the unprocessedSplit and process them
 		StringBuilder fullStringBuilder = new StringBuilder();
@@ -122,7 +123,7 @@ public class RichTextWriter
 				}
 
 				// then at the end, we append to the full string builder what is currently in taggedContent
-				//	we should be the full content wrapped in open and closing tags
+				//	which should be the full content wrapped in open and closing tags
 				fullStringBuilder.Append(openTag + taggedContent.ToString() + closeTag);
 			}
 		}
@@ -142,8 +143,13 @@ public class RichTextWriter
 		// tagless output
 		List<string> taglessOutput = new List<string>();
 
-		// openTagSeparator takes the tag and wraps it in angle brackets
-		string openTagSeparator = string.Format("<{0}>", requestedTag);
+		// make regex to find the requested tag which may contain a value (i.e., <color=red>)
+		string openTagRegex = $"<{requestedTag}=*#?\\w*>";
+		// use the regex to find the open tag which may contain the value (store into a Match)
+		Match openTagMatch = Regex.Match(content, openTagRegex);
+		// use the match to find the open tag separator (which is used to split the strings)
+		string openTagSeparator = openTagMatch.Value;
+
 		// closeTagSeparators have two separators:
 		//	one that takes the entire requested tag and wraps it in angle brackets and a slash
 		//	and another that does the same wrapping as above, but the requested tag is up until
@@ -153,20 +159,24 @@ public class RichTextWriter
 				string.Format("</{0}>", requestedTag.Split('=')[0].Trim())
 			};
 
-		// first split the string by the open tags
-		string[] openTagSplitArray = content.Split(new string[] { openTagSeparator }, StringSplitOptions.None);
+		// first split the string by the open tags only if the openTagMatch was successful
+		string[] openTagSplitArray = (openTagMatch.Success) ?
+			Regex.Split(content, openTagSeparator) : // split on tag (if successful)
+			new string[] { content }; // just make a string array of one item containing the content
+
+		// loop through this split string (split by open tags)
 		foreach (string firstStrSplit in openTagSplitArray)
 		{
-			// then split the string by the close tags
+			// then split each string by the close tags
 			string[] closeTagSplitArray = firstStrSplit.Split(closeTagSeparators, StringSplitOptions.None);
 			foreach (string secondStrSplit in closeTagSplitArray)
 			{
-				// add it to parsedString
+				// add it to the list of strings that do not save tags
 				taglessOutput.Add(secondStrSplit);
 			}
 		}
 
-		// in theory, every other index (odd indices) in the parsedString will be something that was enclosed in tags
+		// in theory, every other index (odd indices) in taglessOutput will be something that was enclosed in tags
 		//	so store the full output as a pair of strings (tag, content)
 		List<(string, string)> result = new List<(string, string)>();
 		for (int i = 0; i < taglessOutput.Count; i++)
@@ -177,7 +187,11 @@ public class RichTextWriter
 			// on odd indices, the tag is applied
 			if (i % 2 == 1)
 			{
-				tag = requestedTag;
+				// value of the Match is the entire tag (e.g., <color=red>
+				tag = openTagMatch.Value;
+
+				// trim the angle brackets off
+				tag = tag.Trim('<', '>');
 			}
 
 			// add it to the result list
@@ -270,12 +284,11 @@ public class RichTextWriter
 		//	where tag = "color=red"
 		string closeTagString = tag.Split('=')[0].Trim();
 
-		// construct opening and closing tags
-		string openTag = string.Format("<{0}>", tag);
+		// construct closing tags
 		string closeTag = string.Format("</{0}>", closeTagString);
 
-		// check the content for existence of these tags
-		if (content.Contains(openTag) && content.Contains(closeTag))
+		// check the content for existence of these tags (open tag is found & checked by regex)
+		if (Regex.Match(content, $"<{tag}=*#?\\w*>").Success && content.Contains(closeTag))
 		{
 			return true;
 		}
@@ -288,7 +301,7 @@ public class RichTextWriter
 	public static void Main(string[] args)
 	{
 		RichTextWriter richTextWriter = new RichTextWriter();
-		string inputString = "<b>I</b> need to find <b>coffee beans</b> and <i>I guess</i> a <b>filter</b> and then <color=red>use</color> them in a <i>coffee machine</i>, right?";
+		string inputString = "<b>I</b> need to find <b>coffee beans</b> and <i>I guess</i> a <b>filter</b> and then <color=red>use</color> them in a <i>coffee machine</i>, right? Do I need <color=blue>water</color>?";
 		Console.WriteLine(inputString);
 		richTextWriter.ReceiveText(inputString);
 		richTextWriter.ParseText();
