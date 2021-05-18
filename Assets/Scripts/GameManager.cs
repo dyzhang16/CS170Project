@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     //items loaded and then cleared on each scene's Start()
     public Item[] items;
 
+    public bool clearInventory = false;
+
     //previous scene
     public string previousScene;
 
@@ -124,6 +126,14 @@ public class GameManager : MonoBehaviour
                 {
                     Inventory.instance.AddItem(items[i]);
                 }
+            }
+        }
+    }
+
+    public void clearItems(){
+        if (Inventory.instance != null){
+            for (int i = 0; i < items.Length; ++i){
+                Inventory.instance.RemoveItem(i);
             }
         }
     }

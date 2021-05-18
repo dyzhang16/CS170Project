@@ -40,6 +40,15 @@ public class Office : MonoBehaviour
 
 
             }
+
+            if (GameManager.instance.clearInventory){
+                GameManager.instance.deleteItems();
+                GameManager.instance.clearItems();
+                GameManager.instance.clearInventory = false;
+            } else {
+                GameManager.instance.loadItems();
+                GameManager.instance.deleteItems();
+            }
         }
 
         if (MusicManagerScript.instance != null){

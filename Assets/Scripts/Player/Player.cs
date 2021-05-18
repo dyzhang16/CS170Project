@@ -150,7 +150,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         if(Physics.Raycast(ray, out hit))
         {
             if (!EventSystem.current.IsPointerOverGameObject()){
-                rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed/2 * Time.fixedDeltaTime));
+                rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed * Time.fixedDeltaTime));
 
                 moving = true;
                 drifting = false;

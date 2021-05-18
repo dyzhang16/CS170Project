@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using UnityEngine.UI;
 
 public class DragTutorial : MonoBehaviour
 {
@@ -9,7 +10,14 @@ public class DragTutorial : MonoBehaviour
     public bool playingTutorial;
     private bool continueCycle;
     public GameObject cursor;
+
+    public GameObject whiteFlower;
+    public GameObject redFlower;
+    public GameObject yellowFlower;
+    public GameObject purpleFlower;
+
     public GameObject flower;
+
     public GameObject bouqetUI;
     private int cycle;
     private Vector3 originalPos;
@@ -20,7 +28,11 @@ public class DragTutorial : MonoBehaviour
     public GameObject wrap;
     
     void Start(){
-        originalPos = flower.transform.position;
+        originalPos = Inventory.instance.inventorySlots[0].gameObject.transform.position + new Vector3(-13, 0, 0);
+        whiteFlower.transform.position = Inventory.instance.inventorySlots[0].gameObject.transform.position + new Vector3(-13, 0, 0);
+        redFlower.transform.position = Inventory.instance.inventorySlots[0].gameObject.transform.position + new Vector3(-13, 0, 0);
+        yellowFlower.transform.position = Inventory.instance.inventorySlots[0].gameObject.transform.position + new Vector3(-13, 0, 0);
+        purpleFlower.transform.position = Inventory.instance.inventorySlots[0].gameObject.transform.position + new Vector3(-13, 0, 0);
     }
 
     //this is for the tutorial dialogue to teach the player how to drag flowers onto the inventory
@@ -33,6 +45,22 @@ public class DragTutorial : MonoBehaviour
                 playingTutorial = true;
                 continueCycle = true;
                 TutorialPanel.SetActive(true);
+
+                //determine which flower is in the first slot and then use that flower
+                if (Inventory.instance.itemList[0].itemName == "White Flower"){
+                    whiteFlower.SetActive(true);
+                    flower = whiteFlower;
+                } else if (Inventory.instance.itemList[0].itemName == "Red Flower"){
+                    redFlower.SetActive(true);
+                    flower = redFlower;
+                } else if (Inventory.instance.itemList[0].itemName == "Yellow Flower"){
+                    yellowFlower.SetActive(true);
+                    flower = yellowFlower;
+                } else if (Inventory.instance.itemList[0].itemName == "Purple Flower"){
+                    purpleFlower.SetActive(true);
+                    flower = purpleFlower;
+                }
+
                 visit = true;
             }
         }
@@ -85,14 +113,14 @@ public class DragTutorial : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
 
         if (cycle == 0){
-            flower.transform.localScale = new Vector3(2, 2, 2);
+            flower.transform.localScale = new Vector3(1, 1, 1);
             flower.GetComponent<CanvasGroup>().alpha = 1f;
 
             flower.transform.position = originalPos;
 
         } else if (cycle == 1){
 
-            flower.transform.localScale = new Vector3(6, 6, 6);
+            flower.transform.localScale = new Vector3(5, 5, 5);
             flower.GetComponent<CanvasGroup>().alpha = 0.5f;
         }
 

@@ -57,9 +57,14 @@ public class Park : MonoBehaviour
             DialogueRunner dialogueRunner = GameObject.Find("DialogueRunner").GetComponent<DialogueRunner>();
             dialogueRunner.AddFunction("GetVariable", 1, (Yarn.Value[] query) => GameManager.instance.GetVariable(query[0].AsString));
 
-            //load inventory stuff
-            GameManager.instance.loadItems();
-            GameManager.instance.deleteItems();
+            if (GameManager.instance.clearInventory){
+                GameManager.instance.deleteItems();
+                GameManager.instance.clearItems();
+                GameManager.instance.clearInventory = false;
+            } else {
+                GameManager.instance.loadItems();
+                GameManager.instance.deleteItems();
+            }
         }
     }
 }
