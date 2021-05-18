@@ -27,7 +27,7 @@ public class VolumeSlider : MonoBehaviour
         if (GameManager.instance != null){
             textSpeedSlider.value = GameManager.instance.textSpeed;
 
-            textSpeedText.text = "" + Mathf.Round((0.06f - GameManager.instance.textSpeed) * 4000f) / 100f;
+            textSpeedText.text = "" + Mathf.Round((0.06f - GameManager.instance.textSpeed) * 2000f) / 100f;
 
             GameObject dia = GameObject.Find("DialogueRunner");
             if (dia != null){

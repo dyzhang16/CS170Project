@@ -42,6 +42,15 @@ public class OfficeHub : MonoBehaviour
             } else if (GameManager.instance.officeDeskPuzzle == 1){
                 exitToCityOffice.GetComponent<RunDialogue>().dialogueToRun = "LeavingOfficeHub";
             }
+
+            if (GameManager.instance.clearInventory){
+                GameManager.instance.deleteItems();
+                GameManager.instance.clearItems();
+                GameManager.instance.clearInventory = false;
+            } else {
+                GameManager.instance.loadItems();
+                GameManager.instance.deleteItems();
+            }
         }
     }
 }

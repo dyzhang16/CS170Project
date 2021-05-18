@@ -65,8 +65,14 @@ public class StreetCoffee : MonoBehaviour
     {
         if (GameManager.instance != null)
         {
-            GameManager.instance.loadItems();
-            GameManager.instance.deleteItems();
+            if (GameManager.instance.clearInventory){
+                GameManager.instance.deleteItems();
+                GameManager.instance.clearItems();
+                GameManager.instance.clearInventory = false;
+            } else {
+                GameManager.instance.loadItems();
+                GameManager.instance.deleteItems();
+            }
         }
     }
 }

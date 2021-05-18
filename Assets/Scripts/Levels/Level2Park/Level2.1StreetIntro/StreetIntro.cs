@@ -55,9 +55,14 @@ public class StreetIntro : MonoBehaviour
     void Start(){
         //save inventory
          if (GameManager.instance != null){
-            //load inventory stuff
-            GameManager.instance.loadItems();
-            GameManager.instance.deleteItems();
+            if (GameManager.instance.clearInventory){
+                GameManager.instance.deleteItems();
+                GameManager.instance.clearItems();
+                GameManager.instance.clearInventory = false;
+            } else {
+                GameManager.instance.loadItems();
+                GameManager.instance.deleteItems();
+            }
         }
     }
 }
