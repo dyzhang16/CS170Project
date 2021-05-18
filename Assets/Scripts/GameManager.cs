@@ -86,6 +86,9 @@ public class GameManager : MonoBehaviour
 
     public int ending = 0;
 
+    //text speed
+    public float textSpeed = 0.025f;
+
     //controls
     public KeyCode INTERACT_KEY = KeyCode.Space;
     public KeyCode INVENTORY_KEY = KeyCode.Tab;

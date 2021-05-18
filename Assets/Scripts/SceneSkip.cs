@@ -6,6 +6,12 @@ public class SceneSkip : MonoBehaviour
 {
     public GameManager manager;
 
+    void Start(){
+        if (MusicManagerScript.instance != null){
+            MusicManagerScript.instance.sceneChecker();
+        }
+    }
+
     public void resetVariables(){
         manager.flowerPuzzle = 0;
         manager.firstFriendMeeting = 0;
