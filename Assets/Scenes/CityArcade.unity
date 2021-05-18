@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2872,6 +2872,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1834264971}
     m_Modifications:
+    - target: {fileID: 721141268847778170, guid: 240804f1caec9a743baf480d5e95832a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502824083982689332, guid: 240804f1caec9a743baf480d5e95832a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2111449878751127616, guid: 240804f1caec9a743baf480d5e95832a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2982,17 +2992,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptionsPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 2111449879271208750, guid: 240804f1caec9a743baf480d5e95832a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 240804f1caec9a743baf480d5e95832a, type: 3}
 --- !u!224 &1094691368 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2111449878751127616, guid: 240804f1caec9a743baf480d5e95832a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1094691367}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1094691369 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2111449878751127623, guid: 240804f1caec9a743baf480d5e95832a,
+  m_CorrespondingSourceObject: {fileID: 2111449879271208750, guid: 240804f1caec9a743baf480d5e95832a,
     type: 3}
   m_PrefabInstance: {fileID: 1094691367}
   m_PrefabAsset: {fileID: 0}
@@ -6975,7 +6984,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1094691369}
+      objectReference: {fileID: 0}
     - target: {fileID: 7818012979105551522, guid: a8049e3b227ac00459242d230acb1abe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

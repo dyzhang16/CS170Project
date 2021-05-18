@@ -12,8 +12,6 @@ public class MusicManagerScript : MonoBehaviour
 
     public float musicVolume = 0.25f;
 
-    public Slider musicSlider;
-
     string sceneName;
     public AudioSource[] musicSource;
 
@@ -26,10 +24,12 @@ public class MusicManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
-        DontDestroyOnLoad(this.gameObject);
-
-        instance = this;
+        if (instance != null && instance != this){
+            Destroy(this.gameObject);
+        } else {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
 
 
         
@@ -68,6 +68,14 @@ public class MusicManagerScript : MonoBehaviour
 
 
         { 
+            case "MainMenu":
+                tutorial_music.Stop();
+                street_music.Stop();
+                office_music.Stop();
+                coffee_music.Stop();
+        
+                break;
+            
             case "Tutorial":
                 tutorial_music.Play();// start tut music
                 street_music.Stop();
@@ -113,16 +121,12 @@ public class MusicManagerScript : MonoBehaviour
         }
     }
 
-    public void updateSound()// updates all tracks to current volume
-    {
-        tutorial_music.volume = musicSlider.value; 
-        street_music.volume = musicSlider.value;
-        coffee_music.volume = musicSlider.value;
-        office_music.volume = musicSlider.value;
+    public void updateVolume(float val){
+        musicVolume = val;
 
-    }
-
-    public void updateVolume(){
-        
+        tutorial_music.volume = musicVolume; 
+        street_music.volume = musicVolume;
+        coffee_music.volume = musicVolume;
+        office_music.volume = musicVolume;
     }
 }
