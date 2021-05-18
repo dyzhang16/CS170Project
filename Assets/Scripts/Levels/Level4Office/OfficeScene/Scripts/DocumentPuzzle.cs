@@ -6,12 +6,10 @@ using UnityEngine.EventSystems;
 
 public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
-
-    public GameObject Stamps, Signature, SignArea, StampArea, StampAreaTwo;
+    public GameObject Stamps, Signature, SignArea, StampArea, StampAreaTwo, SignDocument;
+    [HideInInspector] public bool signedDocument, stampedDocument, signed, stamped, halfStamped = false;
     public bool isDragging = false;
-    [HideInInspector] public bool signedDocument, stampedDocument, signed, stamped, halfStamped = false; 
-    private Transform originalParent;
-
+    private Transform originalParent, SignParent;
 
     public void Start()
     {
@@ -39,13 +37,11 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
                     {
                         signed = true;
                         signedDocument = true;
-
                     }
                     else
                     {
                         signed = true;
                         signedDocument = false;
-
                     }
                 }
                 else
@@ -110,15 +106,15 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
     private void Stamp()
     {
         var mousePos = Input.mousePosition;
-        GameObject obj = Instantiate(Stamps, mousePos, transform.localRotation, transform);
-        obj.layer = 2;
+        GameObject obj = Instantiate(Stamps, mousePos, SignDocument.transform.localRotation, SignDocument.transform);
+        SignDocument.transform.SetAsLastSibling();
         SoundManagerScript.PlaySound("stamp_sound");
     }
     private void Sign()
     {
         var mousePos = Input.mousePosition;
-        GameObject obj = Instantiate(Signature, mousePos, transform.localRotation, transform);
-        obj.layer = 2;
+        GameObject obj = Instantiate(Signature, mousePos, SignDocument.transform.localRotation, SignDocument.transform);
+        SignDocument.transform.SetAsLastSibling();
         SoundManagerScript.PlaySound("sign_sound");
     }
     public void OnPointerDown(PointerEventData eventData)
@@ -128,6 +124,8 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
         {
             originalParent = transform.parent;
             transform.SetParent(transform.parent.parent);
+            SignParent = SignDocument.transform.parent;
+            SignDocument.transform.parent.SetParent(SignDocument.transform.parent.parent);
         }
     }
 
@@ -136,6 +134,9 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
         isDragging = true;
         if (eventData.button == PointerEventData.InputButton.Left)
         {
+            SignDocument.GetComponent<CanvasGroup>().alpha = 0.5f;
+            
+            SignDocument.transform.position = Input.mousePosition;
             GetComponent<CanvasGroup>().alpha = 0.5f;
             GetComponent<CanvasGroup>().blocksRaycasts = false;
             transform.position = Input.mousePosition;
@@ -146,10 +147,14 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
+            SignDocument.GetComponent<CanvasGroup>().alpha = 1f;
+            SignDocument.transform.SetParent(SignParent);
+            SignDocument.transform.localPosition = Vector3.zero;
             GetComponent<CanvasGroup>().alpha = 1f;
             transform.SetParent(originalParent);
             transform.localPosition = Vector3.zero;
             GetComponent<CanvasGroup>().blocksRaycasts = true;
+            SignDocument.transform.SetAsLastSibling();
         }
     }
 }

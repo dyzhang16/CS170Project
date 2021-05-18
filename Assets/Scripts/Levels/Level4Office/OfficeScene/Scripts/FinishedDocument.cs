@@ -63,7 +63,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                     Debug.LogWarning("INCORRECT DOCUMENT Y R U SO BAD");
                 }
             }
-            Destroy(eventData.pointerDrag.transform.gameObject);
+            Destroy(eventData.pointerDrag.transform.parent.gameObject);
             Arrow.GetComponent<CanvasGroup>().alpha = 0;
             DisplayFinishedDocuments();
             SpawnDocument();
