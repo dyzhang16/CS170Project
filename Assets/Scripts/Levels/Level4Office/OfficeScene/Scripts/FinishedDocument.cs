@@ -8,7 +8,7 @@ using Yarn.Unity;
 public class FinishedDocument : MonoBehaviour, IDropHandler
 {
     public GameObject DocumentUI, DocumentT1, DocumentT2, DocumentT3, Arrow, WrongDocument;
-    public DialogueRunner DialogueRunner;
+    public DialogueRunner dia;
     public string dialogueToRun;
     [HideInInspector] public int documentFinished = 0;
     public Text text;
@@ -75,20 +75,16 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                     Boring = false;
                     documentFinished = 0;
                     DisplayFinishedDocuments();
-                    DialogueRunner.StartDialogue(dialogueToRun);
+                    dia.StartDialogue(dialogueToRun);
                 }
             }
         }
     }
 
-    private void StartCoroutine(System.Func<float, IEnumerator> wrongDocument, int v)
-    {
-        throw new System.NotImplementedException();
-    }
-
     IEnumerator WrongDocumentNote()
     {
         WrongDocument.GetComponent<CanvasGroup>().alpha = 1;
+        dia.StartDialogue("WrongDocument");
         yield return new WaitForSeconds(1f);
         WrongDocument.GetComponent<CanvasGroup>().alpha = 0;
     }

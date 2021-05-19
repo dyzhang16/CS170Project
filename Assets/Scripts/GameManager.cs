@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
     public int wrongCoffee = 0;
     //changed when the player first enters the coffee shop, preventing initial dialogue from starting again
     public int visitedCoffee = 0;
+    //change when the player has read the book, preventing the dialogue and opens the book straight away
+    public int readBook = 0;
     //changed when the player has opened the each specific cabinet door, prevents from seeing the doors closed when returning to scene
     public int openLeftDoor = 0;
     public int openMidDoor = 0;
@@ -157,6 +159,9 @@ public class GameManager : MonoBehaviour
                     break;
                 case "visitedCoffee":
                     visitedCoffee = int.Parse(variables[1]);
+                    break;
+                case "readBook":
+                    readBook = int.Parse(variables[1]);
                     break;
                 case "gaveDrink":
                     gaveDrink = int.Parse(variables[1]);

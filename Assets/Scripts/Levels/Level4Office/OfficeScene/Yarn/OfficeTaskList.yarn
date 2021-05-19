@@ -130,3 +130,56 @@ tags:
         <<Show BasketballCamRenderTexture>>
     -> No.
 ===
+title: WrongDocument
+tags:
+---
+<<ChangeSpeaker Player Friend>>
+<<if $wrongTurnIn is 3>>
+<<Focus SECOND>>
+	<<SetExpression angry>>
+
+	Hey make sure you're not making mistakes on those documents!
+<<Focus FIRST>>
+
+	Oops, I'll be careful next time. 
+<<set $wrongTurnIn to 4>>
+<<elseif $wrongTurnIn is 2>>
+<<Focus SECOND>>
+	<<SetExpression angry>>
+
+	Hey make sure you're not making mistakes on those documents!
+<<Focus FIRST>>
+
+	Oops, I'll be careful next time. 
+<<set $wrongTurnIn to 3>>
+<<elseif $wrongTurnIn is 2>>
+<<Focus SECOND>>
+	<<SetExpression angry>>
+
+	Hey make sure you're not making mistakes on those documents!
+<<Focus FIRST>>
+
+	Oops, I'll be careful next time. 
+<<set $wrongTurnIn to 1>>
+<<elseif $wrongTurnIn is 1>>
+<<Focus SECOND>>
+	<<SetExpression angry>>
+
+	Hey make sure you're not making mistakes on those documents!
+<<Focus FIRST>>
+
+	Oops, I'll be careful next time. 
+<<set $wrongTurnIn to 2>>
+<<elseif $wrongTurnIn is 0>>
+<<Focus SECOND>>
+	<<SetExpression angry>>
+
+	Hey make sure you're not making mistakes on those documents!
+<<Focus FIRST>>
+
+	Oops, I'll be careful next time. 
+<<set $wrongTurnIn to 1>>
+<<else>>
+<<stop>>
+<<endif>>
+===

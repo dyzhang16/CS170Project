@@ -50,7 +50,7 @@ tags:
     <<ChangeSpeaker Player>>
 
         I can learn how to make coffee from this! Let’s see…
-
+<<ChangeVariable GameManager readBook 1>>
 <<Show Recipe_Book>>
 <<else>>
 [[ShowRecipeBook]]
@@ -70,15 +70,7 @@ tags:
 
 <<Show Note>>
 ===
-title: DraggingForDummies
-tags:
----
-<<ChangeSpeaker Player>>
-	
-	I should open the coffee machine and put my ingredients in there.
 
-<<Show Coffee_Machine>>
-===
 title: LeaveCoffee
 tags:
 ---

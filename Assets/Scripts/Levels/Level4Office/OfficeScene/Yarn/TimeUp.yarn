@@ -5,18 +5,30 @@ tags:
 <<ChangeSpeaker Player Friend>>
 <<Focus FIRST>>
 
-	I guess I was slightly faster.
+	Look, I signed more than you!
 
 <<Focus SECOND>>
-    <<SetExpression hmm>>
-	 Let's go back to my apartment.
+    <<SetExpression shocked>>
+	 No way. I can’t believe you’re better at doing my job than I am.
 
 <<set $DocumentsFinished to 1>>
 <<Focus FIRST>>
 
-	Alright.
+	Well, I didn’t really read any of the papers.
 
-<<ChangeScene BlackScreen CityOffice>>
+<<Focus SECOND>>
+	<<SetExpression hmmm>>
+	Oh. Well...Neither did I.
+	
+    That was fun. Do you want to do it again? 
+    -> Hell Yea!.
+		<<ResetTimer Timer>>
+		<<Show Documents>>
+		<<set $wrongTurnIn to 4>>
+		<<ShowTimer Documents>>
+    -> No.
+		<<set $DocumentsFinished to 1>>
+		<<ChangeScene BlackScreen CityOffice>>
 ===
 
 title: FredricWin
@@ -24,20 +36,63 @@ tags:
 ---
 <<HidePanel Document>>
 <<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+	<<SetExpression happy>>
+	
+	Yeah! Eat it!
+
 <<Focus FIRST>>
 
-	Damn only a little more...
+	I guess I’m not cut out for this.
 
 <<Focus SECOND>>
-    <<SetExpression happy>>
-	Let's go back to my apartment. 
+	<<SetExpression neutral>>
+	It’s alright. The work you’ve done still helps.
+    
+	That was fun. Do you want to do it again? 
+    -> Hell Yea!.
+		<<ResetTimer Timer>>
+		<<Show Documents>>
+		<<set $wrongTurnIn to 4>>
+		<<ShowTimer Documents>>
+    -> No.
+		<<set $DocumentsFinished to 1>>
+		<<ChangeScene BlackScreen CityOffice>>
+===
 
-<<set $DocumentsFinished to 1>>
+title: Tie
+tags:
+---
+<<HidePanel Document>>
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+	<<SetExpression neutral>>
+	Not bad at all. If I were in charge here, I’d consider hiring you.
+
 <<Focus FIRST>>
 
-	Alright.
+	Just consider?
 
-<<ChangeScene BlackScreen CityOffice>>
+<<Focus SECOND>>
+	<<SetExpression hmm>>
+	Well, do you want to sign papers all day?
+
+<<Focus FIRST>>
+
+	I see your point.
+
+<<Focus SECOND>>
+	<<SetExpression neutral>>
+	    
+	That was fun. Do you want to do it again? 
+    -> Hell Yea!.
+		<<ResetTimer Timer>>
+		<<Show Documents>>
+		<<set $wrongTurnIn to 4>>
+		<<ShowTimer Documents>>
+    -> No.
+		<<set $DocumentsFinished to 1>>
+		<<ChangeScene BlackScreen CityOffice>>
 ===
 
 title: BoringDocuments
@@ -58,6 +113,7 @@ tags:
 	Ok, you're on!
 
 <<Show Documents>>
+<<set $wrongTurnIn to 4>>
 <<ShowTimer Documents>>
 <<stop>>
 ===

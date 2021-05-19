@@ -7,7 +7,7 @@ using Yarn.Unity;
 
 public class Timer : MonoBehaviour //https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
 {
-    public float timeRemaining;
+    private float timeRemaining = 30;
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
     public DialogueRunner DialogueRunner;
@@ -27,17 +27,30 @@ public class Timer : MonoBehaviour //https://gamedevbeginner.com/how-to-make-cou
                 timeRemaining = 0;                  //reset variables to prevent function from executing repeatedly
                 timerIsRunning = false;
                 GameManager.instance.officeDeskPuzzle = 1;
-                if (Document.GetComponent<FinishedDocument>().documentFinished >= FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished)
+                if (Document.GetComponent<FinishedDocument>().documentFinished > FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished)
                 {
                     DialogueRunner.StartDialogue("PlayerWin");
                 }
-                else
+                else if (Document.GetComponent<FinishedDocument>().documentFinished < FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished)
                 {
                     DialogueRunner.StartDialogue("FredricWin");
+                }
+                else
+                {
+                    DialogueRunner.StartDialogue("Tie");
                 }
             }
         DisplayTime(timeRemaining);
         }
+    }
+    [YarnCommand("ResetTimer")]
+    public void ResetTime()
+    {
+        Document.GetComponent<FinishedDocument>().documentFinished = 0;
+        Document.GetComponent<FinishedDocument>().DisplayFinishedDocuments();
+        FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished = 0;
+        timeRemaining = 30;
+        timerIsRunning = false;
     }
     void DisplayTime(float timeToDisplay)
     {
@@ -47,4 +60,5 @@ public class Timer : MonoBehaviour //https://gamedevbeginner.com/how-to-make-cou
 
         timeText.text = string.Format("Time Remaining: {0:00}:{1:00}", minutes, seconds);
     }
+    
 }
