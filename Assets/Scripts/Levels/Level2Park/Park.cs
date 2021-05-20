@@ -14,6 +14,8 @@ public class Park : MonoBehaviour
 
     public GameObject friend;
 
+    public ApproachDialogue runIntoFriendCutscene; // can be destroyed in Start()
+
     void Awake(){
         if (GameManager.instance != null){
             //changes player position based on previous level
@@ -44,6 +46,23 @@ public class Park : MonoBehaviour
             if (GameManager.instance.firstFriendMeeting == 3){
                 friend.SetActive(true);
             }
+            // activate friend for park mini-cutscene
+            if (GameManager.instance.friendRanIntoPlayerCutscene == 0)
+			{
+                // this activates the "friend stuff" game object
+                friend.SetActive(true);
+
+                // relocate the friend to be very far to the left. this doesn't matter but they'll be repositioned
+                //  when running the cutscene in friend1.cs
+                friend.transform.position = new Vector3(friend.transform.position.x - 800, friend.transform.position.y, friend.transform.position.z);
+
+                // Also, try to find the levelApproach and disable that to make sure that extra dialogue doesn't run
+                GameObject levelApproach = GameObject.Find("levelApproach");
+                if (levelApproach != null)
+				{
+                    levelApproach.SetActive(false);
+				}
+            }
         }
 
         if (MusicManagerScript.instance != null){
@@ -65,6 +84,12 @@ public class Park : MonoBehaviour
                 GameManager.instance.loadItems();
                 GameManager.instance.deleteItems();
             }
+
+            // if the friend-running-into-player cutscene has been played before, destroy the approach object so it isn't played again
+            if (GameManager.instance.friendRanIntoPlayerCutscene == 1)
+			{
+                Destroy(runIntoFriendCutscene.gameObject);
+			}
         }
     }
 }

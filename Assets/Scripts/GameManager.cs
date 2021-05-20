@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
     public int flowerPuzzle = 0;
 
     //street area
+    // changes when the cutscene (where the friend runs into the player) runs, and checked in Park.cs
+    // 0 = cutscene has not yet run
+    // 1 = cutscene has played
+    public int friendRanIntoPlayerCutscene = 0;
     //changed when the friend drops the receipt
     //1 = dropped receipt
     //2 = leaves streetCoffee and goes to office 
@@ -195,7 +199,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Checks a variable
-    //  WARNING: In order to use this function, it must be added to the DialogueRunner
+    //  WARNING: In order to use this as a Yarn function, it must be added to the DialogueRunner
     //      via the script that a level is dependent on (e.g. CityOffice.cs, CityArcade.cs, etc)
     public Yarn.Value GetVariable(string query)
     {

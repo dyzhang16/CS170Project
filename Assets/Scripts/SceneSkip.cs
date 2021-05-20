@@ -14,6 +14,7 @@ public class SceneSkip : MonoBehaviour
 
     public void resetVariables(){
         manager.flowerPuzzle = 0;
+        manager.friendRanIntoPlayerCutscene = 0;
         manager.firstFriendMeeting = 0;
         manager.hasReceipt = 0;
         manager.gaveDrink = 0;
@@ -44,6 +45,7 @@ public class SceneSkip : MonoBehaviour
     
     public void playNormal(){
         manager.flowerPuzzle = 0;
+        manager.friendRanIntoPlayerCutscene = 0;
         manager.firstFriendMeeting = 0;
         manager.hasReceipt = 0;
         manager.gaveDrink = 0;
@@ -74,6 +76,7 @@ public class SceneSkip : MonoBehaviour
         manager.previousScene = "Tutorial";
 
         manager.flowerPuzzle = 1;
+        manager.friendRanIntoPlayerCutscene = 0;
 
         manager.firstFriendMeeting = 0;
         manager.hasReceipt = 0;
@@ -110,6 +113,7 @@ public class SceneSkip : MonoBehaviour
         manager.previousScene = "StreetIntro";
 
         manager.flowerPuzzle = 1;
+        manager.friendRanIntoPlayerCutscene = 1;
         manager.firstFriendMeeting = 1;
         
         manager.hasReceipt = 0;
@@ -146,6 +150,7 @@ public class SceneSkip : MonoBehaviour
         manager.previousScene = "CityOffice";
 
         manager.flowerPuzzle = 1;
+        manager.friendRanIntoPlayerCutscene = 1;
         manager.firstFriendMeeting = 3;
         manager.hasReceipt = 1;
         manager.gaveDrink = 1;

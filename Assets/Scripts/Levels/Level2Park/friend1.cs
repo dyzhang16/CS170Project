@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using UnityEngine.SceneManagement; // for getting the current scene
 
 public class friend1 : MonoBehaviour
 {
@@ -188,5 +189,44 @@ public class friend1 : MonoBehaviour
         Color friendColor = GetComponent<SpriteRenderer>().color;
         friendColor = new Color(friendColor.r, friendColor.g, friendColor.b, friendColor.a * 0.5f);
         GetComponent<SpriteRenderer>().color = friendColor;
+    }
+
+    // Run the run-into-friend cutscene that is seen in the Park scene
+    [YarnCommand("DoRunIntoFriendCutscene")]
+    public void RunIntoFriendCutscene()
+    {
+        // Make sure that the current scene is the Park scene before doing anything
+        if (SceneManager.GetActiveScene().name == "Park")
+        {
+            // then, disable the friend's boxcollider component, which will be reenabled in RunToPosition
+            GetComponentInChildren<BoxCollider>().enabled = false;
+
+            // Then relocate the friend to be to the left of the player
+            transform.position = new Vector3(player.transform.position.x - 100, player.transform.position.y, player.transform.position.z);
+
+            // flip the sprite to make it face the right
+            GetComponent<SpriteRenderer>().flipX = true;
+
+            // then start a coroutine that makes friend keep running to the right for a long distance
+            Vector3 destination = new Vector3(transform.position.x + 600, transform.position.y, transform.position.z);
+            StartCoroutine(RunToPosition(destination, "RunIntoFriendCutscene"));
+		}
+	}
+
+    // helper function that makes friend run to a specified Vector3 destination
+    private IEnumerator RunToPosition(Vector3 destination, string caller = "")
+	{
+        while (transform.position != destination)
+		{
+            transform.position = Vector3.MoveTowards(transform.position, destination, 50 * Time.deltaTime);
+
+            yield return null;
+		}
+
+        // this is specific to the RunIntoFriendCutscene. the friend will disable itself here
+        if (caller == "RunIntoFriendCutscene")
+		{
+            gameObject.SetActive(false);
+        }
     }
 }

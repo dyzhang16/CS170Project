@@ -1,0 +1,32 @@
+﻿title: Park_RunIntoFriendCutscene
+tags:
+---
+<<ChangeSpeaker Player>>
+    // this looks weird, but we're basically letting the player move forward from its current position
+    <<MovePlayer Player Player 0 0 -20>>
+    <<wait 1>>
+    <<DoRunIntoFriendCutscene Friend1>>
+
+<<ChangeSpeaker Player Friend>>
+
+    <<Focus SECOND>>
+    <<SetExpression angry>>
+        Get out the way, kid! I'm late for work but I still need my coffee!!
+
+    <<Focus FIRST>>
+        Woah!
+
+    <<ChangeSpeaker Player>>
+    <<wait 2>>
+        ...
+
+        What a rude person.
+
+        ...
+
+        Wait...
+
+        Did they actually just notice me?
+
+<<ChangeVariable GameManager friendRanIntoPlayerCutscene 1>>
+===
