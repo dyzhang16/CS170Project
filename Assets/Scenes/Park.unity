@@ -2380,7 +2380,7 @@ PrefabInstance:
     - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
       propertyPath: yarnScripts.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
@@ -2480,6 +2480,12 @@ PrefabInstance:
       propertyPath: yarnScripts.Array.data[4]
       value: 
       objectReference: {fileID: 2480198943629176163, guid: 98889091fbdd51e45871c6777ce0bb0b,
+        type: 3}
+    - target: {fileID: 720895104263553551, guid: 32ecd2b4f32066d48bd773fa364541a0,
+        type: 3}
+      propertyPath: yarnScripts.Array.data[5]
+      value: 
+      objectReference: {fileID: 2480198943629176163, guid: d53995851e5af4b4ba765a18459d4336,
         type: 3}
     - target: {fileID: 720895104907229992, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
@@ -9075,7 +9081,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140730285}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -120.3, y: -31.510002, z: 15.4}
+  m_LocalPosition: {x: 22.1, y: -31.510002, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1911993252}
@@ -9740,6 +9746,7 @@ Transform:
   - {fileID: 837388983}
   - {fileID: 1140730289}
   - {fileID: 1386652626}
+  - {fileID: 1632213583}
   m_Father: {fileID: 274541019}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12300,6 +12307,68 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.1553478, y: 2.6693113, z: 16.3581}
   m_Center: {x: 0.12770145, y: 0.34268484, z: 4.261311}
+--- !u!1 &1632213582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1632213583}
+  - component: {fileID: 1632213585}
+  - component: {fileID: 1632213584}
+  m_Layer: 0
+  m_Name: Approach_FredricRunCutscene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1632213583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632213582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -33.9, y: -23.97, z: 10.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1287786229}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1632213584
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632213582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 149.6911, y: 11.877953, z: 10.350922}
+  m_Center: {x: -3.295929, y: -0.7260628, z: 17.176285}
+--- !u!114 &1632213585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632213582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553866c4d02f8684a9e5990aebb93b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  approachee: {fileID: 0}
+  triggerOnPlayerTag: 1
+  dialogueToRun: Park_RunIntoFriendCutscene
+  approachOnce: 1
+  destroySelfOnApproach: 1
 --- !u!1 &1632466497
 GameObject:
   m_ObjectHideFlags: 0
@@ -13707,6 +13776,7 @@ MonoBehaviour:
   exitToStreetIntro: {fileID: 2044756325}
   exitToCityOffice: {fileID: 190147571}
   friend: {fileID: 1441603886}
+  runIntoFriendCutscene: {fileID: 1632213585}
 --- !u!4 &1829278346
 Transform:
   m_ObjectHideFlags: 0
