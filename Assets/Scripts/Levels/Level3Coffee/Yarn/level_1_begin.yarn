@@ -77,28 +77,10 @@ tags:
 
 <<if HasItem("Bizarre Coffee") is true>>
 	<<ChangeSpeaker Player>>
-		Did I make the right cup of coffee?
-<<elseif HasItem("Black Death") is true>>
-	<<ChangeSpeaker Player>>
-		I hope this drink is edible.
-<<elseif HasItem("Cold-Booo") is true>>
-	<<ChangeSpeaker Player>>
-		This drink is gonna make them freeze.
-<<elseif HasItem("Macho-iatto") is true>>
-	<<ChangeSpeaker Player>>
-		Now I just have to deliver the drink to them.
-<<elseif HasItem("Milk™") is true>>
-	<<ChangeSpeaker Player>>
-		This drink is pure white... just like me!
-<<elseif HasItem("Moo-cha") is true>>
-	<<ChangeSpeaker Player>>
-		This drink says mooooooo.
+		Is this drink even on the menu?
 <<elseif HasItem("Random Coffee") is true>>
 	<<ChangeSpeaker Player>>
 		I think I need to add a sleeve and lid to my drink before I leave.
-<<else>>
-	<<ChangeSpeaker Player>>
-		Maybe I should make the coffee first before I leave.
 <<endif>>
 
 <<ChangeSpeaker None>>
