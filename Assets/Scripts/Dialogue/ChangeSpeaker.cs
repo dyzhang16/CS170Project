@@ -88,6 +88,7 @@ public class ChangeSpeaker : MonoBehaviour
         {
             characterImage.gameObject.SetActive(true);
             var firstChar = DoChange(parameters[0], characterImage);
+            speakerNameText.text = firstChar.Value.Item1.characterName;
             // if DoChange returns non-null, add to the speakerPairs
             if (firstChar != null)
                 speakerPairs.Add(firstChar.Value); // get the value of the nullable type
