@@ -100,17 +100,31 @@ tags:
 ---
 <<ChangeSpeaker Player Friend>>
 <<HidePanel Document>>
+<<Focus SECOND>>
+	<<SetExpression neutral>>
+	
+	Hey, not bad. Even I can barely tell that’s not my signature.
+
 <<Focus FIRST>>
 
-	Man this is so boring....
+	Thanks! But you’re sure it’s alright for me to forge your signature…?
 
 <<Focus SECOND>>
-    <<SetExpression happy>>
-	How about this, I'll race you to see who can finish first in 30 seconds!
+
+	Yeah, yes. Don’t worry about it. It’s perfectly fine.
+
+	As long as it looks like it’s done right, whatever happens with these documents are no longer my responsibility.
 
 <<Focus FIRST>>
 
-	Ok, you're on!
+	If you’re sure…
+
+<<Focus SECOND>>
+<<SetExpression happy>>
+
+	I am. Hey, we’ve still got a lot of papers to get through.
+
+	Let’s race and see who can sign the most papers! It’ll make the tie pass by faster.
 
 <<Show Documents>>
 <<set $wrongTurnIn to 4>>

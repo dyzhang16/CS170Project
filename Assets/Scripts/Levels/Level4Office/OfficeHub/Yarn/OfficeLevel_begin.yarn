@@ -58,7 +58,6 @@ title: OfficeFriend
 
 <<if $TookDocument is 3>>
 <<RemoveDocuments Environment>>
-<<giveDoc SoundManager>>
 
 	[[OfficeFriendPuzzleSolved]]
 	
@@ -185,7 +184,14 @@ title: OfficeFriendPuzzleSolved
 tags:
 ---
 <<ChangeSpeaker Player Friend>>
+<<if $OfficePuzzle is 1>> 
 <<Focus SECOND>>
+
+	It’s time to work. I’ll be at my desk.
+
+<<else>>
+<<Focus SECOND>>
+<<giveDoc SoundManager>>
 
 	You’re back! I’m losing my mind doing nothing over here.
 
@@ -195,6 +201,7 @@ tags:
 	I’ll be at my desk.
 <<ChangeVariable GameManager officePuzzle 1>>
 <<set $OfficePuzzle to 1>>
+<<endif>>
 ===
 
 title: BossDoor

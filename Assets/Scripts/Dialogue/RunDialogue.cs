@@ -77,7 +77,14 @@ public class RunDialogue : MonoBehaviour
                 else
                     dialogueCursor.SetActive(false);
 
-                dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
+                if (gameObject.tag == "People")
+                {
+                    dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.max;
+                }
+                else
+                {
+                    dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
+                }
                 // dialogueCursor.transform.position = this.transform.position + 
                 // new Vector3(0, this.GetComponent<SpriteRenderer>().bounds.size.y, this.GetComponent<SpriteRenderer>().bounds.size.y);
 
@@ -115,7 +122,7 @@ public class RunDialogue : MonoBehaviour
 
     void OnTriggerExit(Collider collider)
     {
-        if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Document"))
+        if (collider.gameObject.CompareTag("Player"))
         {
             runDialogue = false;
             showDialogueCursor = false;
@@ -147,7 +154,14 @@ public class RunDialogue : MonoBehaviour
                 else
                     dialogueCursor.SetActive(false);
 
-                dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
+                if (gameObject.tag == "People")
+                {
+                    dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.max;
+                }
+                else
+                {
+                    dialogueCursor.transform.position = this.GetComponent<SpriteRenderer>().bounds.center;
+                }
                 // dialogueCursor.transform.position = this.transform.position + 
                 // new Vector3(0, this.GetComponent<SpriteRenderer>().bounds.size.y, this.GetComponent<SpriteRenderer>().bounds.size.y);
 
@@ -165,7 +179,7 @@ public class RunDialogue : MonoBehaviour
     }
 
     void OnCollisionExit(Collision collision){
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Document")
+        if (collision.gameObject.tag == "Player")
         {
             runDialogue = false;
             showDialogueCursor = false;
