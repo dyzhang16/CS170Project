@@ -6,9 +6,7 @@ using Yarn.Unity;
 public class OfficeFriend : MonoBehaviour
 {
     //positions that the NPC will move to;
-    public GameObject Destination1;
-    public GameObject Destination2;
-    public GameObject Destination3;
+    public GameObject Destination1, Destination2, Destination3, Door;
 
     [HideInInspector]public bool isWalking = false;
 
@@ -19,6 +17,12 @@ public class OfficeFriend : MonoBehaviour
     [YarnCommand("Move")]
     public void Move()
     {
+        isWalking = true;
+    }
+    [YarnCommand("Leave")]
+    public void Leave()
+    {
+        cycle = 4;
         isWalking = true;
     }
     void Update()
@@ -65,7 +69,35 @@ public class OfficeFriend : MonoBehaviour
                     isWalking = false;
                     StartCoroutine(changeDirection());
                 }
-            }            
+            }
+            //Moving Fredric to the door after exiting desk
+            else if (cycle == 4)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, Destination2.transform.position, step);
+                if (Vector3.Distance(transform.position, Destination2.transform.position) < 0.001f)
+                {
+                    isWalking = false;
+                    StartCoroutine(changeDirection());
+                }
+            }
+            else if (cycle == 5)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, Destination1.transform.position, step);
+                if (Vector3.Distance(transform.position, Destination1.transform.position) < 0.001f)
+                {
+                    isWalking = false;
+                    StartCoroutine(changeDirection());
+                }
+            }
+            else if (cycle == 6)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, Door.transform.position, step);
+                if (Vector3.Distance(transform.position, Door.transform.position) < 0.001f)
+                {
+                    isWalking = false;
+                    StartCoroutine(changeDirection());
+                }
+            }
         }
         else
         {
@@ -89,6 +121,19 @@ public class OfficeFriend : MonoBehaviour
         else if (cycle == 2)
         {
             GetComponent<SpriteRenderer>().flipX = false;
+            yield return new WaitForSeconds(0.5f);
+        }
+        else if (cycle == 4)
+        {
+            isWalking = true;
+        }
+        else if (cycle == 5)
+        {
+            isWalking = true;
+        }
+        else if (cycle == 6)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
             yield return new WaitForSeconds(0.5f);
         }
         ++cycle;

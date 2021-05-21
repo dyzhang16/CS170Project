@@ -7,22 +7,19 @@ public class OfficeHub : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     public VariableStorageBehaviour CustomVariableStorage;
-    public GameObject player, Documents;
-    public GameObject exitToCityOffice;
-    public GameObject desk;
+    public GameObject player, friend;
+    public GameObject playerPosition, friendPosition;
+    public GameObject documentA, documentB, documentC;
 
     void Awake()
     {
         if (GameManager.instance != null)
         {
-            if (GameManager.instance.previousScene == "OfficeScene")
+            if (GameManager.instance.previousScene == "OfficeScene" && GameManager.instance.officeDeskPuzzle == 1)
             {
-                player.transform.position = desk.transform.position + new Vector3(0, 0, -10);
-            }
-            if (GameManager.instance.followFriendinOffice == 1)
-            {
-                dialogueRunner.startAutomatically = false;
-                //code to move the friend to the right area
+                player.transform.position = playerPosition.transform.position;
+                friend.transform.position = friendPosition.transform.position;
+                friend.GetComponent<RunDialogue>().dialogueToRun = ("doneWithWork");
             }
         }
 
@@ -34,13 +31,15 @@ public class OfficeHub : MonoBehaviour
     {
         if (GameManager.instance != null)
         {
-            if (GameManager.instance.officePuzzle == 1)
+            if (GameManager.instance.previousScene == "OfficeScene" && GameManager.instance.officeDeskPuzzle == 1)
             {
-                CustomVariableStorage.SetValue("$TookMDocument", 1);
-                CustomVariableStorage.SetValue("$TookEDocument", 1);
-                CustomVariableStorage.SetValue("$TookMaxDocument", 1);
-            } else if (GameManager.instance.officeDeskPuzzle == 1){
-                exitToCityOffice.GetComponent<RunDialogue>().dialogueToRun = "LeavingOfficeHub";
+                GameObject obj = GameObject.Find("DoorApproach");
+                Destroy(obj);
+                dialogueRunner.startNode = "doneWithWork";
+                dialogueRunner.startAutomatically = true;
+                Destroy(documentA);
+                Destroy(documentB);
+                Destroy(documentC);
             }
 
             if (GameManager.instance.clearInventory){

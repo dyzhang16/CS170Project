@@ -23,6 +23,7 @@ public class CharacterObj : ScriptableObject
 		switch (expression.ToLower())
 		{
 			case "angry":
+			case "mad":
 				return VerifySprite(angrySprite);
 
 			case "happy":

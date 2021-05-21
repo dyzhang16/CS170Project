@@ -1,15 +1,76 @@
 ﻿title: LeavingOfficeHub
 tags:
 ---
-<<ChangeSpeaker None>>
-<<if visited("OfficeLevel_begin") is true>>
+<<ChangeSpeaker Player>>
+<<Focus FIRST>>
+<<if visited("doneWithWork") is false>>
 
-	I need to help Frederic.
+	Why would I leave? Fredric’s still here.
 
 <<else>>
-
-	Leaving Office Hub.
-
 <<ChangeScene BlackScreen CityOffice>>
 <<endif>>
+===
+
+title: doneWithWork
+tags:
+---
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+<<SetExpression happy>>
+
+	Then that’s all the work I have to do today.
+
+<<Focus FIRST>>
+
+	What do you usually do for fun with your friends? Wait, that’s right, you never had any friends.
+
+<<Focus SECOND>>
+<<SetExpression angry>>
+	
+	Hey!
+
+<<Focus FIRST>>
+
+	That’s alright. You have me, now!
+
+<<Focus SECOND>>
+<<SetExpression hmm>>
+
+	Not like I had a choice. You’re the one who wouldn’t go away.
+
+<<Focus FIRST>>
+
+	And I won’t go away. Don’t worry, Fred. You don’t need to be alone anymore. I’ll be here for you.
+
+	That is...unless you don’t want me around?
+
+<<Focus SECOND>>
+<<SetExpression neutral>>
+
+	No, you’re alright. You’re someone I wouldn’t mind having you around for a long time.
+
+<<Focus FIRST>>
+
+	Whew. I was worried for a moment.
+
+	Anyway, what can we do together?
+
+<<Focus SECOND>>
+<<SetExpression neutral>>
+
+	I can show you around my apartment. We can spend some more time talking, if you’d like.
+
+	I might have some board games lying around, too. No ouija board, though.
+
+<<Focus FIRST>>
+
+	OoOOoh. Maybe one day I can show you where I live, too.
+
+<<Focus SECOND>>
+<<SetExpression hmm>>
+	
+	Let’s make that a big maybe. Anyway, c’mon. Stick close.
+
+<<Leave Fredric>>
 ===
