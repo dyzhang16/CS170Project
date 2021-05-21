@@ -17,16 +17,35 @@ public class CoffeeYarnCommands : MonoBehaviour
     public Drink Coffee5;
     public Drink BizarreCoffee;
     private Drink so;
+    // (Cream, Sugar)
     Dictionary<(int, int), Drink> RecipeBook = new Dictionary<(int, int), Drink>();
     
 
     private void Awake()
     {
-        RecipeBook.Add((0, 0), Coffee1);
-        RecipeBook.Add((1, 2), Coffee2);
-        RecipeBook.Add((3, 4), Coffee3);
-        RecipeBook.Add((7, 6), Coffee4);
-        RecipeBook.Add((10, 10), Coffee5);
+        // Add recipes
+        RecipeBook.Add((0, 0), Coffee1);    // Black Death
+        RecipeBook.Add((1, 2), Coffee2);    // Moocha
+
+        // temporary boolean to use the old recipe until the new recipe book is added
+        const bool USE_OLD_RECIPE = true;
+#pragma warning disable CS0162
+        if (USE_OLD_RECIPE)
+        {
+            RecipeBook.Add((3, 4), Coffee3);    // Cold Boooo OLD RECIPE
+            RecipeBook.Add((7, 6), Coffee4);    // Macho-iatto OLD RECIPE
+        }
+        else
+        {
+            RecipeBook.Add((2, 4), Coffee3);    // Cold Boooo NEW RECIPE
+            RecipeBook.Add((7, 5), Coffee4);    // Macho-iatto NEW RECIPE
+        }
+#pragma warning restore CS0162
+
+
+
+        RecipeBook.Add((10, 10), Coffee5);  // MilkTM
+
         so = Instantiate(BizarreCoffee);
         so.itemName = "Bizarre Coffee";
         so.itemDescription = "A suspicious cup of coffee… Did something go wrong? This isn’t on the menu!";
