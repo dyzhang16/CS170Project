@@ -24,7 +24,8 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip drawer;
     public static AudioClip slidingDocument;
     public static AudioClip officeAlert;
-    public static AudioClip documentTransform;  
+    public static AudioClip documentTransform;
+    public static AudioClip slurp;
 
 
 
@@ -64,6 +65,7 @@ public class SoundManagerScript : MonoBehaviour {
         slidingDocument = Resources.Load<AudioClip>("sliding_document");
         officeAlert = Resources.Load<AudioClip>("office_alert");
         documentTransform = Resources.Load<AudioClip>("document_transform");
+        slurp = Resources.Load<AudioClip>("slurp");
         // click = Resources.Load<AudioClip>("button_click");
     }
 
@@ -141,6 +143,9 @@ public class SoundManagerScript : MonoBehaviour {
                 break;
             case "document_transform":
                 audioSrc.PlayOneShot(documentTransform);
+                break;
+            case "slurp":
+                audioSrc.PlayOneShot(slurp);
                 break;
         }
 
