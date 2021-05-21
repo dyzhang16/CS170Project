@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour //https://gamedevbeginner.com/how-to-make-cou
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
     public DialogueRunner DialogueRunner;
-    public GameObject Document, FriendDocument;
+    public GameObject FinishedDocument, FriendDocument, Document;
 
     void Update()
     {
@@ -27,11 +27,11 @@ public class Timer : MonoBehaviour //https://gamedevbeginner.com/how-to-make-cou
                 timeRemaining = 0;                  //reset variables to prevent function from executing repeatedly
                 timerIsRunning = false;
                 GameManager.instance.officeDeskPuzzle = 1;
-                if (Document.GetComponent<FinishedDocument>().documentFinished > FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished)
+                if (FinishedDocument.GetComponent<FinishedDocument>().documentFinished > FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished)
                 {
                     DialogueRunner.StartDialogue("PlayerWin");
                 }
-                else if (Document.GetComponent<FinishedDocument>().documentFinished < FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished)
+                else if (FinishedDocument.GetComponent<FinishedDocument>().documentFinished < FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished)
                 {
                     DialogueRunner.StartDialogue("FredricWin");
                 }
@@ -46,9 +46,13 @@ public class Timer : MonoBehaviour //https://gamedevbeginner.com/how-to-make-cou
     [YarnCommand("ResetTimer")]
     public void ResetTime()
     {
-        Document.GetComponent<FinishedDocument>().documentFinished = 0;
-        Document.GetComponent<FinishedDocument>().DisplayFinishedDocuments();
+        FinishedDocument.GetComponent<FinishedDocument>().documentFinished = 0;
+        FinishedDocument.GetComponent<FinishedDocument>().DisplayFinishedDocuments();
+        GameObject c = Document.transform.GetChild(0).gameObject;
+        Destroy(c);
+        FinishedDocument.GetComponent<FinishedDocument>().SpawnDocument();
         FriendDocument.GetComponent<friendFinishedDocuments>().documentFinished = 0;
+        
         timeRemaining = 30;
         timerIsRunning = false;
     }

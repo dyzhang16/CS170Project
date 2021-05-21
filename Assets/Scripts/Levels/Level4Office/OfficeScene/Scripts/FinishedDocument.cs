@@ -30,7 +30,6 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 {
                     StartCoroutine(WrongDocumentNote());
                     WrongDocument.GetComponent<CanvasGroup>().alpha = 1;
-                    Debug.LogWarning("INCORRECT DOCUMENT Y R U SO BAD");
                 }
             }
             else if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampArea && eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampAreaTwo)
@@ -45,7 +44,6 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 {
                     StartCoroutine(WrongDocumentNote());
                     WrongDocument.GetComponent<CanvasGroup>().alpha = 1;
-                    Debug.LogWarning("INCORRECT DOCUMENT Y R U SO BAD");
                 }
             }
             else if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().SignArea)
@@ -60,7 +58,6 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 {
                     StartCoroutine(WrongDocumentNote());
                     WrongDocument.GetComponent<CanvasGroup>().alpha = 1;
-                    Debug.LogWarning("INCORRECT DOCUMENT Y R U SO BAD");
                 }
             }
             Destroy(eventData.pointerDrag.transform.parent.gameObject);
@@ -85,7 +82,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
     {
         WrongDocument.GetComponent<CanvasGroup>().alpha = 1;
         dia.StartDialogue("WrongDocument");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         WrongDocument.GetComponent<CanvasGroup>().alpha = 0;
     }
 

@@ -30,24 +30,3 @@ title: coffee_done
 
 	I don't need to go in here.
 ===
-title: Receipt
-tags:
----
-
-<<if IsInventoryFull() is true>>
-	[[CannotTakeItemInventoryFull]]
-<<else>>
-
-<<ChangeSpeaker Player>>
-	What’s this? It’s that rude person’s receipt. Hmmm, I wonder what kind of coffee they like.
-
-	Looks like their name is...<b>Fred</b>. 
-
-	And they ordered a <b>Macho-iatto</b>, huh? I wonder if it makes you stronger when you drink it.
-
-<<ChangeVariable GameManager hasReceipt 1>>
-<<Add Receipt>>
-<<Destroy Receipt>>
-
-<<endif>>
-===
