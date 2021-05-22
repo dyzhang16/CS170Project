@@ -129,7 +129,7 @@ public class friend1 : MonoBehaviour
         isWalking = true;
         col.isTrigger = true;
         GameManager.instance.walkToStreet = 1;
-        this.GetComponent<SpriteRenderer>().flipX = false;
+        this.GetComponent<SpriteRenderer>().flipX = true;
     }
 
     [YarnCommand("Enter")]
