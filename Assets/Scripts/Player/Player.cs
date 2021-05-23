@@ -38,7 +38,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     public bool invActive = false;
     public bool moving = false;
     public bool goingToFade;
-    
+
     //camera shake effect on drift
     public bool drifting = false;
     public Vector3 beginDriftPos;
@@ -48,7 +48,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         playerTalk = Resources.Load<AudioClip>("player_talk");// loads talk sound
         audioSrc = GetComponent<AudioSource>();
 
-        if (goingToFade){
+        if (goingToFade)
+        {
             transform.Find("collider").gameObject.SetActive(false);
             allowMovement = false;
             Color c = render.material.color;
@@ -62,14 +63,16 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     public void Update()
     {
-        if(!paused){
+        if (!paused)
+        {
             if (allowMovement)
             {
                 float h = Input.GetAxis("Horizontal");
                 float v = Input.GetAxis("Vertical");
 
                 //keyboard movement
-                if (h != 0 || v != 0){
+                if (h != 0 || v != 0)
+                {
                     movement.x = h;
                     movement.z = v;
 
@@ -78,25 +81,35 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
                     //animantor.SetFloat("Speed", Mathf.Abs(v) + Mathf.Abs(h));
 
-                    if (h > 0){
+                    if (h > 0)
+                    {
                         render.flipX = true;
-                    } else {
+                    }
+                    else
+                    {
                         render.flipX = false;
                     }
-                } else if (Input.GetMouseButton(0)){
+                }
+                else if (Input.GetMouseButton(0))
+                {
                     Mouse();
-                } else {
+                }
+                else
+                {
                     moving = false;
                     movement = new Vector3(0, 0, 0);
-                    if (!drifting){
+                    if (!drifting)
+                    {
                         beginDriftPos = this.transform.position;
                         // Debug.Log("drifting at: " + beginDriftPos);
                         drifting = true;
                     }
                 }
 
-                if (!moving){
-                    if (Vector3.Distance(this.transform.position, beginDriftPos) > 10f){
+                if (!moving)
+                {
+                    if (Vector3.Distance(this.transform.position, beginDriftPos) > 10f)
+                    {
                         // float dist = Vector3.Distance(this.transform.position, beginDriftPos)/50f;
 
                         // Debug.Log("drift distance long");
@@ -105,25 +118,31 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                 }
             }
 
-            if (allowInv){
-                if (Input.GetKeyDown(GameManager.instance.INVENTORY_KEY)) {
+            if (allowInv)
+            {
+                if (Input.GetKeyDown(GameManager.instance.INVENTORY_KEY))
+                {
                     openInventory();
                 }
             }
 
             //select the continue button upon pressing space
-            if(Input.GetKeyDown(GameManager.instance.DIALOGUE_KEY)){
-                if (GameObject.Find("DiaSystem Prefab 1/DialogueRunner") != null){
+            if (Input.GetKeyDown(GameManager.instance.DIALOGUE_KEY))
+            {
+                if (GameObject.Find("DiaSystem Prefab 1/DialogueRunner") != null)
+                {
                     // Debug.Log("found dialogue runner");
                     GameObject dia = GameObject.Find("DiaSystem Prefab 1/DialogueRunner");
                     DialogueRunner diaRunner = dia.GetComponent<DialogueRunner>();
-                    if (diaRunner.IsDialogueRunning){
+                    if (diaRunner.IsDialogueRunning)
+                    {
                         //finding continue button
                         GameObject contButton = GameObject.Find("DiaSystem Prefab 1/DialogueCanvas/DialogueContainer/ContinueButton");
 
                         //if external event system
                         GameObject eveSys = GameObject.Find("EventSystem");
-                        if (eveSys != null){
+                        if (eveSys != null)
+                        {
                             eveSys.GetComponent<EventSystem>().SetSelectedGameObject(contButton);
                         }
 
@@ -134,12 +153,14 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape)){
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             openSettings();
         }
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
 
@@ -147,28 +168,33 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit))
         {
-            if (!EventSystem.current.IsPointerOverGameObject()){
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
                 rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed * Time.fixedDeltaTime));
 
                 moving = true;
                 drifting = false;
 
-                if (invActive){
+                if (invActive)
+                {
                     openInventory();
                 }
-            } else {
+            }
+            else
+            {
                 // Debug.Log(EventSystem.current.currentSelectedGameObject);
             }
-            
+
         }
-        
+
     }
 
     public void openInventory()
     {
-        if (allowInv){
+        if (allowInv)
+        {
             invActive = !invActive;
             Inventory.instance.anim.SetBool("Inventory", invActive);
             inventoryButtonAnimator.SetTrigger("Highlighted");
@@ -176,16 +202,19 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         }
     }
 
-    IEnumerator openInvAnim(){
+    IEnumerator openInvAnim()
+    {
         yield return new WaitForSeconds(0.5f);
         inventoryButtonAnimator.SetBool("InventoryOpen", invActive);
 
-        if (!invActive){
+        if (!invActive)
+        {
             inventoryButtonAnimator.SetTrigger("Normal");
         }
     }
 
-    public void openSettings(){
+    public void openSettings()
+    {
         if (paused)
         {
             Time.timeScale = 1;
@@ -206,7 +235,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         settingsPanel.SetActive(settings);
     }
 
-    public void activateMenu(){
+    public void activateMenu()
+    {
         invActive = true;
         Inventory.instance.anim.SetBool("Inventory", true);
         inventoryButtonAnimator.SetBool("InventoryOpen", true);
@@ -217,15 +247,18 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         allowMovement = allow;
     }
 
-    public void AllowInv(bool allow){
+    public void AllowInv(bool allow)
+    {
         allowInv = allow;
     }
 
-    public void stopMove(){
+    public void stopMove()
+    {
         movement = new Vector3(0, 0, 0);
     }
 
-    public void closeInv(){
+    public void closeInv()
+    {
         invActive = false;
         Inventory.instance.anim.SetBool("Inventory", false);
         inventoryButtonAnimator.SetBool("InventoryOpen", false);
@@ -238,14 +271,16 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
 
     public void startTalkSound()
     {
-  
+
         audioSrc.Play();
         audioSrc.loop = true;
 
     }
 
-    private IEnumerator FadeIn(){
-        for (float f = 0.05f; f <= 1f; f += 0.05f){
+    private IEnumerator FadeIn()
+    {
+        for (float f = 0.05f; f <= 1f; f += 0.05f)
+        {
             Color c = render.material.color;
             c.a = f;
             render.material.color = c;
@@ -286,7 +321,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         Vector3 targetPosition = location.transform.position;
 
         // turn the offset (string array) into floats
-        
+
         if (offset.Length > 3)
         {
             Debug.LogWarning("MovePlayer: Too many arguments, only considering the x, y, z arguments");
@@ -327,6 +362,20 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         }
 
         moving = false;
+    }
+    //Set of YarnCommands to Moveplayer left or right depending on barrier
+    //Used to Prevent Automatic dialogue from infinitely repeating
+    [YarnCommand("MoveRight")]
+    public void MovePlayerRight()
+    {
+        Vector3 targetPosition = new Vector3(transform.position.x + 20, transform.position.y, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+    }
+    [YarnCommand("MoveLeft")]
+    public void MovePlayerLeft()
+    {
+        Vector3 targetPosition = new Vector3(transform.position.x - 20, transform.position.y, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
     }
 }
 

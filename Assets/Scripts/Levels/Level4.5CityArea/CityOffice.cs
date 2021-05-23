@@ -32,7 +32,7 @@ public class CityOffice : MonoBehaviour
 
                 player.transform.position = exitToPark.transform.position + new Vector3(-10, 0, newPos);
             } else if (GameManager.instance.previousScene == "Office" || GameManager.instance.previousScene == "OfficeScene"){
-                player.transform.position = Office.transform.position + new Vector3(0, 0, -10);
+                player.transform.position = officedoor.transform.position + new Vector3(-7, 0, 0);
             }
 
             //change dialogue
@@ -56,6 +56,7 @@ public class CityOffice : MonoBehaviour
                 friend.GetComponent<RunDialogue>().dialogueToRun = "friendWalkToStreet";
                 friend.SetActive(true);
                 friend.transform.position = officedoor.transform.position;
+                friend.GetComponent<RunDialogue>().startInstantly = true;
             }
 
             // if friend is stuck outside of the office, put his position outside of the office

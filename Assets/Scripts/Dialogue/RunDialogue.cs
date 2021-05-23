@@ -134,10 +134,9 @@ public class RunDialogue : MonoBehaviour
     }
 
     void OnCollisionStay(Collision collision){
-        if (startInstantly && GetComponent<Collider>().gameObject.CompareTag("Player"))
+        if (startInstantly && collision.gameObject.tag == "Player" && !dialogueRunner.IsDialogueRunning)
         {
             dialogueRunner.StartDialogue(dialogueToRun);
-            startInstantly = false;
         }
         else 
         {
@@ -188,4 +187,5 @@ public class RunDialogue : MonoBehaviour
             }
         }
     }
+
 }

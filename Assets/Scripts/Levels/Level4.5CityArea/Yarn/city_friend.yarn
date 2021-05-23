@@ -39,8 +39,8 @@ title: officeEntry
 tags: 
 ---
 <<if GetVariable("idNeeded") == 2>>
-<<ChangeSpeaker Player Friend>>
-<<Focus SECOND>>
+<<ChangeSpeaker Guard>>
+<<Focus FIRST>>
 
 	Kid... Maybe Fredric needs a day off.
 
@@ -54,8 +54,8 @@ tags:
         <<SetExpression angry>>
 		C’mon, can’t you just let me in this one time?
 
-	<<ChangeSpeaker Player Guard>>
-	<<Focus SECOND>>
+	<<ChangeSpeaker Guard>>
+	<<Focus FIRST>>
 
 		Sorry. I can’t let you in without an ID. Security reasons and all that jazz, y’know? Identity theft is a serious issue.
 
@@ -64,8 +64,8 @@ tags:
         <<SetExpression angry>>
 		I come into this office six days a week. You know exactly who I am, Bedford!
 
-	<<ChangeSpeaker Player Guard>>
-	<<Focus SECOND>>
+	<<ChangeSpeaker Guard>>
+	<<Focus FIRST>>
 		
 		I’m afraid I don’t know what you’re talking about, Fredric. I don’t recognise you at all.
 
@@ -74,8 +74,8 @@ tags:
         <<SetExpression angry>>
 		You just said my name!
 
-	<<ChangeSpeaker Player Guard>>
-	<<Focus SECOND>>
+	<<ChangeSpeaker Guard>>
+	<<Focus FIRST>>
 
 		Did I? I don’t know what you’re talking about.
 
@@ -84,10 +84,10 @@ tags:
         <<SetExpression angry>>
 		I’m already late for work. Let me in. Please?
 
-	<<ChangeSpeaker Player Guard>>
-	<<Focus SECOND>>
+	<<ChangeSpeaker Guard>>
+	<<Focus FIRST>>
 
-		Rules are rules.  No ID, no entry.
+		Rules are rules. No ID, no entry.
 
 	<<ChangeSpeaker Player>>
 	<<Focus FIRST>>
@@ -102,9 +102,16 @@ tags:
 	
 <<else>>
 
-	<<ChangeSpeaker Player>>
+<<ChangeSpeaker Player>>
+<<Focus FIRST>>
 
-	That looks like a security guard for that big office.
+	Are you working hard? What are you guarding?
+
+<<ChangeSpeaker Guard>>
+<<Focus FIRST>>
+ 
+	Hmm, it’s not like him to be late…
+
 
 <<endif>>
 ===
@@ -149,8 +156,8 @@ position: -483,89
 
 		Hey, Bedford, I’ve got it! Let me in!
 
-	<<ChangeSpeaker Player Guard>>
-	<<Focus SECOND>>
+	<<ChangeSpeaker Guard>>
+	<<Focus FIRST>>
 
 		...You sure? You just stood over there and talked to yourself for a moment.	
 
@@ -167,6 +174,7 @@ position: -483,89
 
 	//Fred and Ghost enter office building, so they’re technically gone at this point
 	<<ChangeSpeaker Guard>>
+	<<Focus FIRST>>
 
 		Did he just call me ‘kid’? Maybe Fredric needs a day off.
 
@@ -174,8 +182,8 @@ position: -483,89
 	<<ChangeVariable GameManager idNeeded 2>>
 	<<ChangeScene BlackScreen Office>>
 <<else>>
-	<<ChangeSpeaker Player Guard>>
-	<<Focus SECOND>>
+	<<ChangeSpeaker Guard>>
+	<<Focus FIRST>>
 
 		Sorry, Fredric. No ID, no entry.
 	
