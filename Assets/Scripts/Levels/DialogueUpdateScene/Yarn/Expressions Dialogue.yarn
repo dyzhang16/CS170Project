@@ -3,7 +3,11 @@ tags:
 ---
 <<ChangeSpeaker Friend Gravekeeper>>
 <<Focus NONE>>
-    Now beginning the expressions test.
+Would you like to run the full expressions test, or the ghost expressions test?
+-> Full Expressions Test
+    [[SingleParam]]
+-> Ghost Expressions Test
+    [[GhostExpressionsTest]]
 
 [[SingleParam]]
 ===
@@ -119,6 +123,38 @@ tags:
     Fredric set to happy
 <<SetExpression asdfghjkl>>
     Setting general (single-param) expression to asdfghjkl (should do nothing).
+
+[[ExpressionTestConclusion]]
+===
+
+title: GhostExpressionsTest
+---
+<<ChangeSpeaker Player>>
+Neutral default expression.
+
+<<SetExpression default>>
+Default, should be at default expression.
+
+<<SetExpression angry>>
+Attempted Angry, should be default (unless asset has been added).
+
+<<SetExpression happy>>
+Happy, ghost should be happy.
+
+<<SetExpression hmm>>
+Attempted Hmm, should be default.
+
+<<SetExpression shocked>>
+Attempted Shocked, should be default.
+
+<<SetExpression disappointed>>
+Disappointed, ghost should be disappointed.
+
+<<SetExpression sad>>
+Sad, ghost should be sad.
+
+<<SetExpression shrug>>
+Shrug, ghost should be shrugging.
 
 [[ExpressionTestConclusion]]
 ===

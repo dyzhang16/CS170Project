@@ -15,6 +15,10 @@ public class CharacterObj : ScriptableObject
 	public Sprite happySprite;
 	public Sprite hmmSprite;
 	public Sprite shockedSprite;
+	// more expressions 2.0
+	public Sprite disappointedSprite;
+	public Sprite sadSprite;
+	public Sprite shrugSprite;
 
 	// Retrieves the requested expression (or the default sprite, if not set)
 	public Sprite GetExpression(string expression)
@@ -35,6 +39,15 @@ public class CharacterObj : ScriptableObject
 			case "shock":
 			case "shocked":
 				return VerifySprite(shockedSprite);
+
+			case "disappointed":
+				return VerifySprite(disappointedSprite);
+
+			case "sad":
+				return VerifySprite(sadSprite);
+
+			case "shrug":
+				return VerifySprite(shrugSprite);
 
 			// defaultSprite will be used if these keywords are specified, or if the requested expression is unavailable
 			case "default":
