@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -474,6 +474,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2109566043627677380, guid: 240804f1caec9a743baf480d5e95832a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 2111449877687788409, guid: 240804f1caec9a743baf480d5e95832a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -618,16 +623,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: volumeSliderUpdate
-      objectReference: {fileID: 0}
-    - target: {fileID: 5861349387426666011, guid: 240804f1caec9a743baf480d5e95832a,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 25800155}
-    - target: {fileID: 5861349387426666011, guid: 240804f1caec9a743baf480d5e95832a,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: textSpeedSliderUpdate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 240804f1caec9a743baf480d5e95832a, type: 3}
@@ -1461,8 +1456,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165415334}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 80.10301, y: -31.219994, z: -3.2000122}
-  m_LocalScale: {x: 1, y: 1.6464702, z: 1}
+  m_LocalPosition: {x: 78.7, y: -31.2, z: -7.29}
+  m_LocalScale: {x: 1.3288201, y: 1.406695, z: 1}
   m_Children: []
   m_Father: {fileID: 329047643}
   m_RootOrder: 5
@@ -3300,6 +3295,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 329692121}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &329692124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8220257972628452543, guid: aaf043c15791b664fac358de6b5254f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 329692121}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2a432226deafd48a2aa20eede576b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &338953156
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,8 +5136,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676418342}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -415.797, y: -31.2, z: -3.2}
-  m_LocalScale: {x: 1, y: 1.6464702, z: 1}
+  m_LocalPosition: {x: -408.8, y: -31.2, z: -7.7}
+  m_LocalScale: {x: 1.4537283, y: 1.4072545, z: 1}
   m_Children: []
   m_Father: {fileID: 329047643}
   m_RootOrder: 13
@@ -6365,8 +6372,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868499437}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -168.2, y: -31.2, z: -3.2}
-  m_LocalScale: {x: 1, y: 1.6464702, z: 1}
+  m_LocalPosition: {x: -168, y: -31.2, z: -7.5}
+  m_LocalScale: {x: 1.36169, y: 1.4078509, z: 1}
   m_Children: []
   m_Father: {fileID: 329047643}
   m_RootOrder: 9
@@ -13951,7 +13958,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 329692124}
     - target: {fileID: 6595464253224484972, guid: a8049e3b227ac00459242d230acb1abe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
