@@ -58,4 +58,15 @@ public class HidePuzzle : MonoBehaviour
             obj.GetComponent<ItemDragHandler>().allowDrag = false;
         }
     }
+
+    public void disableDrag(){
+        //disable inventory drag
+        foreach(GameObject obj in slots){
+            obj.GetComponent<InventorySlot>().allowDrag = false;
+        }
+
+        foreach(GameObject obj in images){
+            obj.GetComponent<ItemDragHandler>().allowDrag = false;
+        }
+    }
 }

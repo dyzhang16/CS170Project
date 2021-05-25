@@ -87,6 +87,7 @@ public class Puzzle1 : MonoBehaviour, IDropHandler
             wrap.SetActive(false);
             GameManager.instance.flowerPuzzle = 1;
             exitButton.GetComponent<Button>().interactable = false;
+            exitButton.gameObject.GetComponent<HidePuzzleAndDialogue>().disableDrag();
             StartCoroutine(WaitCoroutine(1f));
         }
     }
