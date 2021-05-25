@@ -89,6 +89,11 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                     {
                         render.flipX = false;
                     }
+
+                    if (invActive)
+                    {
+                        openInventory();
+                    }
                 }
                 else if (Input.GetMouseButton(0))
                 {
