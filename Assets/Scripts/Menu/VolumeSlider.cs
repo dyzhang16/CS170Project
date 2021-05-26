@@ -19,9 +19,9 @@ public class VolumeSlider : MonoBehaviour
     void Start()
     {
         if (MusicManagerScript.instance != null){
-            this.GetComponent<Slider>().value = MusicManagerScript.instance.musicVolume;
-
-            volumeText.text = "" + Mathf.Round(MusicManagerScript.instance.musicVolume);
+            this.GetComponent<Slider>().value = MusicManagerScript.instance.musicVolume*10;
+            
+            volumeText.text = "" + MusicManagerScript.instance.musicVolume*10;
         }
 
         if (GameManager.instance != null){

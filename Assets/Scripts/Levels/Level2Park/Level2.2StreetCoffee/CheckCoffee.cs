@@ -57,10 +57,7 @@ public class CheckCoffee : MonoBehaviour , IDropHandler
             }
             else
             {
-                // Inventory.instance.RemoveItem(droppedItem);
-                // GetComponent<Image>().sprite = droppedItem.icon;
-                // exitButton.GetComponent<Button>().interactable = false;
-                // StartCoroutine(WaitCoroutine(1, 3));
+                //Don't allow not drinkable items to be dropped
             }
         }
     }

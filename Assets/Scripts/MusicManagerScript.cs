@@ -10,7 +10,7 @@ public class MusicManagerScript : MonoBehaviour
 {
     public static MusicManagerScript instance;
 
-    public float musicVolume = 0.25f;
+    public float musicVolume;
     
     string sceneName;
     public AudioSource[] musicSource;
@@ -73,7 +73,7 @@ public class MusicManagerScript : MonoBehaviour
                 break;
             
             case "Tutorial":
-                tutorial_music.volume = musicVolume/10f;
+                tutorial_music.volume = musicVolume;
                 tutorial_music.Play();// start tut music
                 street_music.Stop();
 
@@ -82,7 +82,7 @@ public class MusicManagerScript : MonoBehaviour
             case "Park":
                 tutorial_music.Stop(); // stop tutorial music
                 if (!street_music.isPlaying){
-                    street_music.volume = musicVolume/10f;
+                    street_music.volume = musicVolume;
                     street_music.Play(); // start street music
                 }
                 Debug.Log("playing street music");
@@ -91,18 +91,18 @@ public class MusicManagerScript : MonoBehaviour
                 coffee_music.Stop(); // stop coffee music after exiting 
                 if (!street_music.isPlaying)
                 {
-                    street_music.volume = musicVolume/10f;
+                    street_music.volume = musicVolume;
                     street_music.Play(); //if street music is not playing then play (after exiting coffee)
                 }
                 break;
             case "CoffeeScene":
                 street_music.Stop();
-                coffee_music.volume = musicVolume/10f;
+                coffee_music.volume = musicVolume;
                 coffee_music.Play();
                 break;
             case "CityOffice":
                 if (!street_music.isPlaying){
-                    street_music.volume = musicVolume/10f;
+                    street_music.volume = musicVolume;
                     street_music.Play();
                 }
                 office_music.Stop();
@@ -110,13 +110,13 @@ public class MusicManagerScript : MonoBehaviour
             case "OfficeScene":
                 street_music.Stop(); // stops street music
                 if (!office_music.isPlaying){
-                    office_music.volume = musicVolume/10f;
+                    office_music.volume = musicVolume;
                     office_music.Play();
                 }
                 break;
             case "Office":
                 street_music.Stop(); // stops street music
-                office_music.volume = musicVolume/10f;
+                office_music.volume = musicVolume;
                 office_music.Play();
                 break;
         }
