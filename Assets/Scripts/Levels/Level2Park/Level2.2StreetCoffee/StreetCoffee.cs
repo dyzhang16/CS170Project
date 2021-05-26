@@ -50,7 +50,12 @@ public class StreetCoffee : MonoBehaviour
             if (GameManager.instance.gaveDrink == 1) {
                 tracker.NodeComplete("friend_after_coffee");
             }
-            
+
+            if (GameManager.instance.visitedCoffee == 1)
+            {
+                coffeeStand.GetComponent<RunDialogue>().dialogueToRun = "visitedCoffee";
+            }
+
             if (GameManager.instance.visitedAfterCoffee == 1){
                 Destroy(friend);
             }

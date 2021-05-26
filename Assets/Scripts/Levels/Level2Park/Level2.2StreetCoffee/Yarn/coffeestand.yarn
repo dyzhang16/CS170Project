@@ -1,27 +1,43 @@
 ﻿title: coffeestand
 tags:
 ---
-
 <<if visited("friend_meeting") is true>>
 
-	<<ChangeSpeaker Player>>
-	<<Focus FIRST>>
-
-	This must be where that guy ordered his coffee. Let's take a peek inside.
-
-	<<ChangeScene BlackScreen CoffeeScene>>
+	[[hasReceipt]]
 
 <<else>>
-
-	<<Pan CoffeeStand>>
 	<<ChangeSpeaker Player>>
-
 	<<Focus FIRST>>
+
 	Hmmmmmmm, I bet their coffee would taste good.
 
 	<<UnPan CoffeeStand>>
 
 <<endif>>
+===
+title: hasReceipt
+tags:
+---
+<<if HasItem("Receipt") is true>>
+<<ChangeSpeaker Player>>
+<<Focus FIRST>>
+
+	This must be where that guy ordered his coffee. Let's take a peek inside.
+	<<ChangeScene BlackScreen CoffeeScene>>
+
+<<else>>
+<<ChangeSpeaker Player>>
+<<Focus FIRST>>
+
+	I don't know what coffee Fredric wants....
+	
+	<<PanReceipt CoffeeStand>>
+<<endif>>
+===
+
+title: visitedCoffee
+---
+	<<ChangeScene BlackScreen CoffeeScene>>
 ===
 
 title: coffee_done
@@ -52,4 +68,12 @@ tags:
 <<Destroy Receipt>>
 
 <<endif>>
+===
+title: EndOfRightWorld
+---
+<<ChangeSpeaker Player>>
+
+    It only gets quieter the further I go in this direction. I won’t find anyone this way.
+
+<<MoveLeft Player>>
 ===

@@ -37,6 +37,7 @@ public class CheckCoffee : MonoBehaviour , IDropHandler
                     GetComponent<Image>().sprite = droppedItem.icon;
                     exitButton.GetComponent<Button>().interactable = false;
                     GameManager.instance.gaveDrink = 1;
+                    exitButton.gameObject.GetComponent<HidePuzzle>().disableDrag();
                     StartCoroutine(WaitCoroutine(3, 1));
                 }
                 else if (droppedItem.itemName == "Random Coffee")
@@ -56,10 +57,7 @@ public class CheckCoffee : MonoBehaviour , IDropHandler
             }
             else
             {
-                Inventory.instance.RemoveItem(droppedItem);
-                GetComponent<Image>().sprite = droppedItem.icon;
-                exitButton.GetComponent<Button>().interactable = false;
-                StartCoroutine(WaitCoroutine(1, 3));
+                //Don't allow not drinkable items to be dropped
             }
         }
     }

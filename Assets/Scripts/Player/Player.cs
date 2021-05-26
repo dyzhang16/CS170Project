@@ -89,6 +89,11 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                     {
                         render.flipX = false;
                     }
+
+                    if (invActive)
+                    {
+                        openInventory();
+                    }
                 }
                 else if (Input.GetMouseButton(0))
                 {
@@ -377,7 +382,13 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         Vector3 targetPosition = new Vector3(transform.position.x - 20, transform.position.y, transform.position.z);
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
     }
+    [YarnCommand("LookLeftAndRight")]
+    public void LookLeftAndRight()
+    {
+        Vector3 targetPosition = new Vector3(transform.position.x - 80, transform.position.y, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        targetPosition = new Vector3(transform.position.x + 160, transform.position.y, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+    }
 }
-
-
 

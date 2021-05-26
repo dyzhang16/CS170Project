@@ -134,6 +134,8 @@ public class OfficeFriend : MonoBehaviour
         else if (cycle == 6)
         {
             GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<RunDialogue>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
             yield return new WaitForSeconds(0.5f);
         }
         ++cycle;

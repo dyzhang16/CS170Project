@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SceneSkip : MonoBehaviour
 {
-    public GameManager manager;
-
     void Start(){
         if (MusicManagerScript.instance != null){
             MusicManagerScript.instance.sceneChecker();
@@ -13,244 +11,244 @@ public class SceneSkip : MonoBehaviour
     }
 
     public void resetVariables(){
-        manager.flowerPuzzle = 0;
-        manager.friendRanIntoPlayerCutscene = 0;
-        manager.firstFriendMeeting = 0;
-        manager.hasReceipt = 0;
-        manager.gaveDrink = 0;
-        manager.visitedAfterCoffee = 0;
-        manager.visitedCoffee = 0;
-        manager.openLeftDoor = 0;
-        manager.openMidDoor = 0;
-        manager.openRightDoor = 0;
-        manager.addedCoffeeMachineItem = 0;
-        manager.followFriendinOffice = 0;
-        manager.documentNeeded = 0;
-        manager.officePuzzle = 0;
-        manager.officeDeskPuzzle = 0;
+        GameManager.instance.flowerPuzzle = 0;
+        GameManager.instance.friendRanIntoPlayerCutscene = 0;
+        GameManager.instance.firstFriendMeeting = 0;
+        GameManager.instance.hasReceipt = 0;
+        GameManager.instance.gaveDrink = 0;
+        GameManager.instance.visitedAfterCoffee = 0;
+        GameManager.instance.visitedCoffee = 0;
+        GameManager.instance.openLeftDoor = 0;
+        GameManager.instance.openMidDoor = 0;
+        GameManager.instance.openRightDoor = 0;
+        GameManager.instance.addedCoffeeMachineItem = 0;
+        GameManager.instance.followFriendinOffice = 0;
+        GameManager.instance.documentNeeded = 0;
+        GameManager.instance.officePuzzle = 0;
+        GameManager.instance.officeDeskPuzzle = 0;
         
-        // manager.firstApartment = 0;
-        // manager.walkedToApartment = 0;
-        // manager.cleanedRoom = 0;
-        // manager.timeCapsule = 0;
-        manager.firstDateDia = 0;
-        // manager.arcadeFirstVisit = 0;
-        // manager.arcadeFirstCrane = 0;
-        // manager.arcadeFirstDance = 0;
-        // manager.arcadeNoCraneDirs = 0;
-        // manager.arcadeNoDanceDirs = 0;
+        // GameManager.instance.firstApartment = 0;
+        // GameManager.instance.walkedToApartment = 0;
+        // GameManager.instance.cleanedRoom = 0;
+        // GameManager.instance.timeCapsule = 0;
+        GameManager.instance.firstDateDia = 0;
+        // GameManager.instance.arcadeFirstVisit = 0;
+        // GameManager.instance.arcadeFirstCrane = 0;
+        // GameManager.instance.arcadeFirstDance = 0;
+        // GameManager.instance.arcadeNoCraneDirs = 0;
+        // GameManager.instance.arcadeNoDanceDirs = 0;
 
         GameManager.instance.clearInventory = true;
     }
     
     public void playNormal(){
-        manager.flowerPuzzle = 0;
-        manager.friendRanIntoPlayerCutscene = 0;
-        manager.firstFriendMeeting = 0;
-        manager.hasReceipt = 0;
-        manager.gaveDrink = 0;
-        manager.visitedAfterCoffee = 0;
-        manager.visitedCoffee = 0;
-        manager.openLeftDoor = 0;
-        manager.openMidDoor = 0;
-        manager.openRightDoor = 0;
-        manager.addedCoffeeMachineItem = 0;
-        manager.followFriendinOffice = 0;
-        manager.officePuzzle = 0;
-        manager.officeDeskPuzzle = 0;
-        // manager.firstApartment = 0;
-        // manager.walkedToApartment = 0;
-        // manager.cleanedRoom = 0;
-        // manager.timeCapsule = 0;
-        manager.firstDateDia = 0;
-        // manager.arcadeFirstVisit = 0;
-        // manager.arcadeFirstCrane = 0;
-        // manager.arcadeFirstDance = 0;
-        // manager.arcadeNoCraneDirs = 0;
-        // manager.arcadeNoDanceDirs = 0;
+        GameManager.instance.flowerPuzzle = 0;
+        GameManager.instance.friendRanIntoPlayerCutscene = 0;
+        GameManager.instance.firstFriendMeeting = 0;
+        GameManager.instance.hasReceipt = 0;
+        GameManager.instance.gaveDrink = 0;
+        GameManager.instance.visitedAfterCoffee = 0;
+        GameManager.instance.visitedCoffee = 0;
+        GameManager.instance.openLeftDoor = 0;
+        GameManager.instance.openMidDoor = 0;
+        GameManager.instance.openRightDoor = 0;
+        GameManager.instance.addedCoffeeMachineItem = 0;
+        GameManager.instance.followFriendinOffice = 0;
+        GameManager.instance.officePuzzle = 0;
+        GameManager.instance.officeDeskPuzzle = 0;
+        // GameManager.instance.firstApartment = 0;
+        // GameManager.instance.walkedToApartment = 0;
+        // GameManager.instance.cleanedRoom = 0;
+        // GameManager.instance.timeCapsule = 0;
+        GameManager.instance.firstDateDia = 0;
+        // GameManager.instance.arcadeFirstVisit = 0;
+        // GameManager.instance.arcadeFirstCrane = 0;
+        // GameManager.instance.arcadeFirstDance = 0;
+        // GameManager.instance.arcadeNoCraneDirs = 0;
+        // GameManager.instance.arcadeNoDanceDirs = 0;
 
         GameManager.instance.clearInventory = true;
     }
 
     public void skipStreet(){
-        manager.previousScene = "Tutorial";
+        GameManager.instance.previousScene = "Tutorial";
 
-        manager.flowerPuzzle = 1;
-        manager.friendRanIntoPlayerCutscene = 0;
+        GameManager.instance.flowerPuzzle = 1;
+        GameManager.instance.friendRanIntoPlayerCutscene = 0;
 
-        manager.firstFriendMeeting = 0;
-        manager.hasReceipt = 0;
-        manager.gaveDrink = 0;
-        manager.visitedAfterCoffee = 0;
-        manager.wrongCoffee = 0;
-        manager.visitedCoffee = 0;
-        manager.openLeftDoor = 0;
-        manager.openMidDoor = 0;
-        manager.openRightDoor = 0;
-        manager.addedCoffeeMachineItem = 0;
-        manager.followFriendinOffice = 0;
-        manager.officePuzzle = 0;
-        manager.officeDeskPuzzle = 0;
-        // manager.firstApartment = 0;
-        // manager.walkedToApartment = 0;
-        // manager.cleanedRoom = 0;
-        // manager.timeCapsule = 0;
-        manager.firstDateDia = 0;
-        // manager.arcadeFirstVisit = 0;
-        // manager.arcadeFirstCrane = 0;
-        // manager.arcadeFirstDance = 0;
-        // manager.arcadeNoCraneDirs = 0;
-        // manager.arcadeNoDanceDirs = 0;
+        GameManager.instance.firstFriendMeeting = 0;
+        GameManager.instance.hasReceipt = 0;
+        GameManager.instance.gaveDrink = 0;
+        GameManager.instance.visitedAfterCoffee = 0;
+        GameManager.instance.wrongCoffee = 0;
+        GameManager.instance.visitedCoffee = 0;
+        GameManager.instance.openLeftDoor = 0;
+        GameManager.instance.openMidDoor = 0;
+        GameManager.instance.openRightDoor = 0;
+        GameManager.instance.addedCoffeeMachineItem = 0;
+        GameManager.instance.followFriendinOffice = 0;
+        GameManager.instance.officePuzzle = 0;
+        GameManager.instance.officeDeskPuzzle = 0;
+        // GameManager.instance.firstApartment = 0;
+        // GameManager.instance.walkedToApartment = 0;
+        // GameManager.instance.cleanedRoom = 0;
+        // GameManager.instance.timeCapsule = 0;
+        GameManager.instance.firstDateDia = 0;
+        // GameManager.instance.arcadeFirstVisit = 0;
+        // GameManager.instance.arcadeFirstCrane = 0;
+        // GameManager.instance.arcadeFirstDance = 0;
+        // GameManager.instance.arcadeNoCraneDirs = 0;
+        // GameManager.instance.arcadeNoDanceDirs = 0;
         
         // id-related vars default
-        manager.idPickedUp = 0;
-        manager.idNeeded = 0;
+        GameManager.instance.idPickedUp = 0;
+        GameManager.instance.idNeeded = 0;
 
         GameManager.instance.clearInventory = true;
     }
 
     public void skipCoffee(){
-        manager.previousScene = "StreetIntro";
+        GameManager.instance.previousScene = "StreetIntro";
 
-        manager.flowerPuzzle = 1;
-        manager.friendRanIntoPlayerCutscene = 1;
-        manager.firstFriendMeeting = 1;
+        GameManager.instance.flowerPuzzle = 1;
+        GameManager.instance.friendRanIntoPlayerCutscene = 1;
+        GameManager.instance.firstFriendMeeting = 1;
         
-        manager.hasReceipt = 0;
-        manager.gaveDrink = 0;
-        manager.visitedAfterCoffee = 0;
-        manager.wrongCoffee = 0;
-        manager.visitedCoffee = 0;
-        manager.openLeftDoor = 0;
-        manager.openMidDoor = 0;
-        manager.openRightDoor = 0;
-        manager.addedCoffeeMachineItem = 0;
-        manager.followFriendinOffice = 0;
-        manager.officePuzzle = 0;
-        manager.officeDeskPuzzle = 0;
-        // manager.firstApartment = 0;
-        // manager.walkedToApartment = 0;
-        // manager.cleanedRoom = 0;
-        // manager.timeCapsule = 0;
-        manager.firstDateDia = 0;
-        // manager.arcadeFirstVisit = 0;
-        // manager.arcadeFirstCrane = 0;
-        // manager.arcadeFirstDance = 0;
-        // manager.arcadeNoCraneDirs = 0;
-        // manager.arcadeNoDanceDirs = 0;
+        GameManager.instance.hasReceipt = 0;
+        GameManager.instance.gaveDrink = 0;
+        GameManager.instance.visitedAfterCoffee = 0;
+        GameManager.instance.wrongCoffee = 0;
+        GameManager.instance.visitedCoffee = 0;
+        GameManager.instance.openLeftDoor = 0;
+        GameManager.instance.openMidDoor = 0;
+        GameManager.instance.openRightDoor = 0;
+        GameManager.instance.addedCoffeeMachineItem = 0;
+        GameManager.instance.followFriendinOffice = 0;
+        GameManager.instance.officePuzzle = 0;
+        GameManager.instance.officeDeskPuzzle = 0;
+        // GameManager.instance.firstApartment = 0;
+        // GameManager.instance.walkedToApartment = 0;
+        // GameManager.instance.cleanedRoom = 0;
+        // GameManager.instance.timeCapsule = 0;
+        GameManager.instance.firstDateDia = 0;
+        // GameManager.instance.arcadeFirstVisit = 0;
+        // GameManager.instance.arcadeFirstCrane = 0;
+        // GameManager.instance.arcadeFirstDance = 0;
+        // GameManager.instance.arcadeNoCraneDirs = 0;
+        // GameManager.instance.arcadeNoDanceDirs = 0;
 
         // id-related vars default
-        manager.idPickedUp = 0;
-        manager.idNeeded = 0;
+        GameManager.instance.idPickedUp = 0;
+        GameManager.instance.idNeeded = 0;
 
         GameManager.instance.clearInventory = true;
     }
 
     public void skipOffice(){
-        manager.previousScene = "CityOffice";
+        GameManager.instance.previousScene = "CityOffice";
 
-        manager.flowerPuzzle = 1;
-        manager.friendRanIntoPlayerCutscene = 1;
-        manager.firstFriendMeeting = 3;
-        manager.hasReceipt = 1;
-        manager.gaveDrink = 1;
-        manager.visitedAfterCoffee = 1;
-        manager.wrongCoffee = 0;
-        manager.visitedCoffee = 1;
-        manager.openLeftDoor = 1;
-        manager.openMidDoor = 1;
-        manager.openRightDoor = 1;
-        manager.addedCoffeeMachineItem = 1;
+        GameManager.instance.flowerPuzzle = 1;
+        GameManager.instance.friendRanIntoPlayerCutscene = 1;
+        GameManager.instance.firstFriendMeeting = 3;
+        GameManager.instance.hasReceipt = 1;
+        GameManager.instance.gaveDrink = 1;
+        GameManager.instance.visitedAfterCoffee = 1;
+        GameManager.instance.wrongCoffee = 0;
+        GameManager.instance.visitedCoffee = 1;
+        GameManager.instance.openLeftDoor = 1;
+        GameManager.instance.openMidDoor = 1;
+        GameManager.instance.openRightDoor = 1;
+        GameManager.instance.addedCoffeeMachineItem = 1;
        
-        manager.followFriendinOffice = 0;
-        manager.officePuzzle = 0;
-        manager.officeDeskPuzzle = 0;
-        // manager.firstApartment = 0;
-        // manager.walkedToApartment = 0;
-        // manager.cleanedRoom = 0;
-        // manager.timeCapsule = 0;
-        manager.firstDateDia = 0;
-        // manager.arcadeFirstVisit = 0;
-        // manager.arcadeFirstCrane = 0;
-        // manager.arcadeFirstDance = 0;
-        // manager.arcadeNoCraneDirs = 0;
-        // manager.arcadeNoDanceDirs = 0;
+        GameManager.instance.followFriendinOffice = 0;
+        GameManager.instance.officePuzzle = 0;
+        GameManager.instance.officeDeskPuzzle = 0;
+        // GameManager.instance.firstApartment = 0;
+        // GameManager.instance.walkedToApartment = 0;
+        // GameManager.instance.cleanedRoom = 0;
+        // GameManager.instance.timeCapsule = 0;
+        GameManager.instance.firstDateDia = 0;
+        // GameManager.instance.arcadeFirstVisit = 0;
+        // GameManager.instance.arcadeFirstCrane = 0;
+        // GameManager.instance.arcadeFirstDance = 0;
+        // GameManager.instance.arcadeNoCraneDirs = 0;
+        // GameManager.instance.arcadeNoDanceDirs = 0;
 
         // the ID would have been already retrieved if the player is at the office
-        manager.idPickedUp = 1;
-        manager.idNeeded = 2;
+        GameManager.instance.idPickedUp = 1;
+        GameManager.instance.idNeeded = 2;
 
         GameManager.instance.clearInventory = true;
     }
 
     public void skipApartment(){
-        manager.previousScene = "CityArcade";
+        GameManager.instance.previousScene = "CityArcade";
 
-        manager.flowerPuzzle = 1;
-        manager.firstFriendMeeting = 3;
-        manager.hasReceipt = 1;
-        manager.gaveDrink = 1;
-        manager.visitedAfterCoffee = 1;
-        manager.wrongCoffee = 0;
-        manager.visitedCoffee = 1;
-        manager.openLeftDoor = 1;
-        manager.openMidDoor = 1;
-        manager.openRightDoor = 1;
-        manager.addedCoffeeMachineItem = 1;
-        manager.followFriendinOffice = 1;
-        manager.officePuzzle = 1;
-        manager.officeDeskPuzzle = 1;
-        // manager.firstApartment = 1;
-        // manager.walkedToApartment = 2;
+        GameManager.instance.flowerPuzzle = 1;
+        GameManager.instance.firstFriendMeeting = 3;
+        GameManager.instance.hasReceipt = 1;
+        GameManager.instance.gaveDrink = 1;
+        GameManager.instance.visitedAfterCoffee = 1;
+        GameManager.instance.wrongCoffee = 0;
+        GameManager.instance.visitedCoffee = 1;
+        GameManager.instance.openLeftDoor = 1;
+        GameManager.instance.openMidDoor = 1;
+        GameManager.instance.openRightDoor = 1;
+        GameManager.instance.addedCoffeeMachineItem = 1;
+        GameManager.instance.followFriendinOffice = 1;
+        GameManager.instance.officePuzzle = 1;
+        GameManager.instance.officeDeskPuzzle = 1;
+        // GameManager.instance.firstApartment = 1;
+        // GameManager.instance.walkedToApartment = 2;
 
-        // manager.cleanedRoom = 0;
-        // manager.timeCapsule = 0;
-        manager.firstDateDia = 0;
-        // manager.arcadeFirstVisit = 0;
-        // manager.arcadeFirstCrane = 0;
-        // manager.arcadeFirstDance = 0;
-        // manager.arcadeNoCraneDirs = 0;
-        // manager.arcadeNoDanceDirs = 0;
+        // GameManager.instance.cleanedRoom = 0;
+        // GameManager.instance.timeCapsule = 0;
+        GameManager.instance.firstDateDia = 0;
+        // GameManager.instance.arcadeFirstVisit = 0;
+        // GameManager.instance.arcadeFirstCrane = 0;
+        // GameManager.instance.arcadeFirstDance = 0;
+        // GameManager.instance.arcadeNoCraneDirs = 0;
+        // GameManager.instance.arcadeNoDanceDirs = 0;
 
         // the ID would have been already retrieved at this stage
-        manager.idPickedUp = 1;
-        manager.idNeeded = 2;
+        GameManager.instance.idPickedUp = 1;
+        GameManager.instance.idNeeded = 2;
 
         GameManager.instance.clearInventory = true;
     }
 
     public void skipArcade(){
-        manager.previousScene = "CityArcade";
+        GameManager.instance.previousScene = "CityArcade";
 
-        manager.flowerPuzzle = 1;
-        manager.firstFriendMeeting = 3;
-        manager.hasReceipt = 1;
-        manager.gaveDrink = 1;
-        manager.visitedAfterCoffee = 1;
-        manager.wrongCoffee = 0;
-        manager.visitedCoffee = 1;
-        manager.openLeftDoor = 1;
-        manager.openMidDoor = 1;
-        manager.openRightDoor = 1;
-        manager.addedCoffeeMachineItem = 1;
-        manager.followFriendinOffice = 1;
-        manager.officePuzzle = 1;
-        manager.officeDeskPuzzle = 1;
-        // manager.firstApartment = 1;
-        // manager.walkedToApartment = 2;
-        // manager.cleanedRoom = 1;
-        // manager.timeCapsule = 1;
-        manager.firstDateDia = 1;
+        GameManager.instance.flowerPuzzle = 1;
+        GameManager.instance.firstFriendMeeting = 3;
+        GameManager.instance.hasReceipt = 1;
+        GameManager.instance.gaveDrink = 1;
+        GameManager.instance.visitedAfterCoffee = 1;
+        GameManager.instance.wrongCoffee = 0;
+        GameManager.instance.visitedCoffee = 1;
+        GameManager.instance.openLeftDoor = 1;
+        GameManager.instance.openMidDoor = 1;
+        GameManager.instance.openRightDoor = 1;
+        GameManager.instance.addedCoffeeMachineItem = 1;
+        GameManager.instance.followFriendinOffice = 1;
+        GameManager.instance.officePuzzle = 1;
+        GameManager.instance.officeDeskPuzzle = 1;
+        // GameManager.instance.firstApartment = 1;
+        // GameManager.instance.walkedToApartment = 2;
+        // GameManager.instance.cleanedRoom = 1;
+        // GameManager.instance.timeCapsule = 1;
+        GameManager.instance.firstDateDia = 1;
 
-        // manager.arcadeFirstVisit = 0;
-        // manager.arcadeFirstCrane = 0;
-        // manager.arcadeFirstDance = 0;
-        // manager.arcadeNoCraneDirs = 0;
-        // manager.arcadeNoDanceDirs = 0;
+        // GameManager.instance.arcadeFirstVisit = 0;
+        // GameManager.instance.arcadeFirstCrane = 0;
+        // GameManager.instance.arcadeFirstDance = 0;
+        // GameManager.instance.arcadeNoCraneDirs = 0;
+        // GameManager.instance.arcadeNoDanceDirs = 0;
 
         // the ID would have been already retrieved at this stage
-        manager.idPickedUp = 1;
-        manager.idNeeded = 2;
+        GameManager.instance.idPickedUp = 1;
+        GameManager.instance.idNeeded = 2;
 
         GameManager.instance.clearInventory = true;
     }

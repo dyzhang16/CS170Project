@@ -19,19 +19,19 @@ public class VolumeSlider : MonoBehaviour
     void Start()
     {
         if (MusicManagerScript.instance != null){
-            this.GetComponent<Slider>().value = MusicManagerScript.instance.musicVolume;
-
-            volumeText.text = "" + Mathf.Round(MusicManagerScript.instance.musicVolume * 100f) / 100f;
+            this.GetComponent<Slider>().value = MusicManagerScript.instance.musicVolume*10;
+            
+            volumeText.text = "" + MusicManagerScript.instance.musicVolume*10;
         }
 
         if (GameManager.instance != null){
             textSpeedSlider.value = GameManager.instance.textSpeed;
 
-            textSpeedText.text = "" + Mathf.Round((0.06f - GameManager.instance.textSpeed) * 2000f) / 100f;
+            textSpeedText.text = "" + GameManager.instance.textSpeed;
 
             GameObject dia = GameObject.Find("DialogueRunner");
             if (dia != null){
-                dia.GetComponent<DialogueUI>().textSpeed = GameManager.instance.textSpeed;
+                dia.GetComponent<DialogueUI>().textSpeed = ((0.05f - 0.01f) * ((10f - GameManager.instance.textSpeed) / 10f)) + 0.01f;
             }
         }
     }
@@ -50,12 +50,12 @@ public class VolumeSlider : MonoBehaviour
             volumeImage.SetActive(true);
             muteImage.SetActive(false);
         }
-
+        float f = value/ 10f;
         if (MusicManagerScript.instance != null){
-            MusicManagerScript.instance.updateVolume(value);
+            MusicManagerScript.instance.updateVolume(f);
         }
 
-        volumeText.text = "" + Mathf.Round(value * 100f) / 100f;
+        volumeText.text = "" + value;
 
         // Debug.Log(value);
     }
@@ -65,11 +65,11 @@ public class VolumeSlider : MonoBehaviour
             GameManager.instance.textSpeed = value;
         }
 
-        textSpeedText.text = "" + Mathf.Round((0.06f - value) * 2000f) / 100f;
+        textSpeedText.text = "" + value;
 
         GameObject dia = GameObject.Find("DialogueRunner");
         if (dia != null){
-            dia.GetComponent<DialogueUI>().textSpeed = value;
+            dia.GetComponent<DialogueUI>().textSpeed = ((0.05f - 0.01f) * ((10f - value) / 10f)) + 0.01f;
         }
     }
 }
