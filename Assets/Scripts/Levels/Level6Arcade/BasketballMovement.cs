@@ -39,6 +39,7 @@ public class BasketballMovement : MonoBehaviour
 		ResetPosition();
 		isThrowing = true;
 		StartCoroutine(ThrowCR());
+		
 	}
 
 	void OnTriggerEnter2D(Collider2D collider2D)
@@ -46,21 +47,37 @@ public class BasketballMovement : MonoBehaviour
 		// reset the position of the basketball if it collided with the basketball bounds
 		if (collider2D.gameObject.name.Contains("BasketballBounds"))
 		{
+			SoundManagerScript.PlaySound("office_alert");
 			ResetPosition();
 			StartCoroutine(ThrowCR());
+			
 		}
 		// event if the basketball falls onto the net (thus scoring)
 		else if (collider2D.gameObject.name.Contains("BasketballNet") && rb2D.velocity.y <= 0f)
 		{
+			SoundManagerScript.PlaySound("score");
 			basketballGameplay.IncrementScore();
 			ResetPosition();
 			StartCoroutine(ThrowCR());
+			
+		}
+		
+	}
+
+	void OnCollisionEnter2D(Collision2D collider2D) // not working
+	{
+		if (collider2D.gameObject.name.Contains("TrashCan"))
+		{
+			SoundManagerScript.PlaySound("bounce");
 		}
 	}
 
+
 	// Coroutine for Throwing the basketball
 	public IEnumerator ThrowCR()
+
 	{
+		
 		// disable simulated movement (temporarily)
 		rb2D.simulated = false;
 
@@ -85,6 +102,7 @@ public class BasketballMovement : MonoBehaviour
 
 		// Note that the basketball is being currently thrown
 		currentlyThrown = true;
+		SoundManagerScript.PlaySound("paperThrow");
 
 		// BasketballGameplay: handling limited # of throws
 		//	Why here instead of in BasketballGameplay?

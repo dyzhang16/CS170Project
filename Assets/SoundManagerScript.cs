@@ -26,6 +26,10 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip officeAlert;
     public static AudioClip documentTransform;
     public static AudioClip slurp;
+    public static AudioClip bounce;
+    public static AudioClip score;
+    public static AudioClip paperThrow;
+    public static AudioClip crumple;
 
 
 
@@ -66,6 +70,11 @@ public class SoundManagerScript : MonoBehaviour {
         officeAlert = Resources.Load<AudioClip>("office_alert");
         documentTransform = Resources.Load<AudioClip>("document_transform");
         slurp = Resources.Load<AudioClip>("slurp");
+
+        bounce = Resources.Load<AudioClip>("bounce_ball");
+        score = Resources.Load<AudioClip>("ball_land");
+        paperThrow = Resources.Load<AudioClip>("paper_toss");
+        crumple = Resources.Load<AudioClip>("crumple");
         // click = Resources.Load<AudioClip>("button_click");
     }
 
@@ -115,7 +124,7 @@ public class SoundManagerScript : MonoBehaviour {
                 audioSrc.PlayOneShot(placeCoffee);
                 break;
             case "open_gate":
-                audioSrc.PlayOneShot(openGate);
+                audioSrc.PlayOneShot(openGate, 0.2f); // lower gate volume
                 break;
             case "whistle":
                 audioSrc.PlayOneShot(whistle);
@@ -146,6 +155,18 @@ public class SoundManagerScript : MonoBehaviour {
                 break;
             case "slurp":
                 audioSrc.PlayOneShot(slurp);
+                break;
+            case "score":
+                audioSrc.PlayOneShot(score);
+                break;
+            case "bounce":
+                audioSrc.PlayOneShot(bounce);
+                break;
+            case "paperThrow":
+                audioSrc.PlayOneShot(paperThrow);
+                break;
+            case "crumple":
+                audioSrc.PlayOneShot(crumple);
                 break;
         }
 

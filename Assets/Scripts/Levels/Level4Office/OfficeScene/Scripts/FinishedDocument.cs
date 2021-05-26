@@ -22,14 +22,16 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
             {
                 if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().signedDocument && eventData.pointerDrag.GetComponent<DocumentPuzzle>().stampedDocument)
                 {
-                    SoundManagerScript.PlaySound("sliding_document");
+                    SoundManagerScript.PlaySound("sliding_document");// sound for right doc
                     ++documentFinished;
                     Debug.Log("Correct Document Finished: " + documentFinished);
                 }
                 else
                 {
+                    SoundManagerScript.PlaySound("crumple"); // sound for wrong doc
                     StartCoroutine(WrongDocumentNote());
                     WrongDocument.GetComponent<CanvasGroup>().alpha = 1;
+                    
                 }
             }
             else if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampArea && eventData.pointerDrag.GetComponent<DocumentPuzzle>().StampAreaTwo)
@@ -42,8 +44,10 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 }
                 else
                 {
+                    SoundManagerScript.PlaySound("crumple"); // sound for wrong doc
                     StartCoroutine(WrongDocumentNote());
                     WrongDocument.GetComponent<CanvasGroup>().alpha = 1;
+                    
                 }
             }
             else if (eventData.pointerDrag.GetComponent<DocumentPuzzle>().SignArea)
@@ -56,8 +60,10 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 }
                 else
                 {
+                    SoundManagerScript.PlaySound("crumple"); // sound for wrong doc
                     StartCoroutine(WrongDocumentNote());
                     WrongDocument.GetComponent<CanvasGroup>().alpha = 1;
+                    
                 }
             }
             Destroy(eventData.pointerDrag.transform.parent.gameObject);
