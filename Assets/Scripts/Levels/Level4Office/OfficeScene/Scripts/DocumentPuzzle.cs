@@ -65,23 +65,20 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
                 }
                 if (StampArea && StampAreaTwo)
                 {
-                    Debug.LogWarning("First Check Before Logic The Variables stamped is : " + stamped + "\n" + "and halfStamped: " + halfStamped + "\n" + "and stampedDocument: " + stampedDocument);
                     if ((StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver) && halfStamped)
                     {
                         stampedDocument = true;
-                        Debug.LogWarning("Checking when both are stamped The Variables stamped is : " + stamped + "\n" + "and halfStamped: " + halfStamped + "\n" + "and stampedDocument: " + stampedDocument);
+                        halfStamped = false;
                     }
                     else if ((StampArea.GetComponent<mouseOver>().isMouseOver || StampAreaTwo.GetComponent<mouseOver>().isMouseOver) && !stamped)
                     {
                         stamped = true;
                         halfStamped = true;
-                        Debug.LogWarning("Checking when one is stamped The Variables stamped is : " + stamped + "\n" + "and halfStamped: " + halfStamped + "\n" + "and stampedDocument: " + stampedDocument);
                     }
                     else
                     {
                         stamped = true;
                         stampedDocument = false;
-                        Debug.LogWarning("checking when stamped wrong The Variables stamped is : " + stamped + "\n" + "and halfStamped: " + halfStamped + "\n" + "and stampedDocument: " + stampedDocument);
                     }
                 }
                 else if (StampArea)

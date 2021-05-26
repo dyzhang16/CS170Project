@@ -12,8 +12,8 @@ public class CityOffice : MonoBehaviour
     public GameObject friend;
 
     public GameObject officeDoorArrow;
-
     public GameObject exitToPark;
+    public DialogueRunner dia;
 
     void Awake(){
         if (GameManager.instance != null)
@@ -32,7 +32,7 @@ public class CityOffice : MonoBehaviour
 
                 player.transform.position = exitToPark.transform.position + new Vector3(-10, 0, newPos);
             } else if (GameManager.instance.previousScene == "Office" || GameManager.instance.previousScene == "OfficeScene"){
-                player.transform.position = officedoor.transform.position + new Vector3(-7, 0, 0);
+                player.transform.position = officedoor.transform.position + new Vector3(-20, 0, 0);
             }
 
             //change dialogue
@@ -51,12 +51,8 @@ public class CityOffice : MonoBehaviour
             }
             
             if (GameManager.instance.officeDeskPuzzle == 1){
-                //change to ending cutscene here
-                //@ emmanuel
-                friend.GetComponent<RunDialogue>().dialogueToRun = "friendWalkToStreet";
                 friend.SetActive(true);
                 friend.transform.position = officedoor.transform.position;
-                friend.GetComponent<RunDialogue>().startInstantly = true;
             }
 
             // if friend is stuck outside of the office, put his position outside of the office
@@ -93,5 +89,7 @@ public class CityOffice : MonoBehaviour
                 GameManager.instance.deleteItems();
             }
         }
+        friend.GetComponent<RunDialogue>().dialogueToRun = "friendWalkToStreet";
+        friend.GetComponent<RunDialogue>().startInstantly = true;
     }
 }

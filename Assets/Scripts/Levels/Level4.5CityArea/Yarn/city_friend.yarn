@@ -49,7 +49,7 @@ tags:
 	[[CheckID]]
 
 <<elseif GetVariable("visitedAfterCoffee") == 1>>
-	<<ChangeSpeaker Player Friend>>
+	<<ChangeSpeaker None Friend>>
 	<<Focus SECOND>>
         <<SetExpression angry>>
 		C’mon, can’t you just let me in this one time?
@@ -59,7 +59,7 @@ tags:
 
 		Sorry. I can’t let you in without an ID. Security reasons and all that jazz, y’know? Identity theft is a serious issue.
 
-	<<ChangeSpeaker Player Friend>>
+	<<ChangeSpeaker None Friend>>
 	<<Focus SECOND>>
         <<SetExpression angry>>
 		I come into this office six days a week. You know exactly who I am, Bedford!
@@ -69,7 +69,7 @@ tags:
 		
 		I’m afraid I don’t know what you’re talking about, Fredric. I don’t recognise you at all.
 
-	<<ChangeSpeaker Player Friend>>
+	<<ChangeSpeaker None Friend>>
 	<<Focus SECOND>>
         <<SetExpression angry>>
 		You just said my name!
@@ -79,7 +79,7 @@ tags:
 
 		Did I? I don’t know what you’re talking about.
 
-	<<ChangeSpeaker Player Friend>>
+	<<ChangeSpeaker None Friend>>
 	<<Focus SECOND>>
         <<SetExpression angry>>
 		I’m already late for work. Let me in. Please?
@@ -187,7 +187,7 @@ position: -483,89
 
 		Sorry, Fredric. No ID, no entry.
 	
-	<<ChangeSpeaker Player Friend>>
+	<<ChangeSpeaker None Friend>>
         <<Focus SECOND>>
         <<SetExpression hmm>>
 		Dang it. Did I drop it? I must’ve lost it on the way here.
@@ -228,11 +228,30 @@ tags:
 position: 613,-249
 ---
 <<ChangeSpeaker Player Friend>>
+<<Focus FIRST>>
+	
+	Wait, so your house was which way again?
+
+<<LookLeftAndRight Player>>
 <<Focus SECOND>>
-Huh, I think there's something on the ground there. I'm gonna see what it is.
+
+	You can’t ask which way it is “again” when I never told you in the first place.
 
 <<Focus FIRST>>
-Oh, sure.
+
+	Whatever, Freddy!!
+
+	... Ya know, for a smartass, I saw a few of those documents you signed and they were pretty messy…
+
+<<Focus SECOND>>
+
+	So we’re not gonna talk about how fast you learned to forge my signature? Alright then.
+
+	In any case, I’m planning on quitting this job soon anyway. I have an interview lined up after work-
+
+	Wait. After work…?
+
+	CRAP, I NEED TO GET GOING-
 
 <<FollowObject DialogueCam Friend1>>
 
@@ -244,14 +263,21 @@ Oh, sure.
 ===
 
 title: friendHitByCar
-tags: 
-position: 231,-190
+tags:
 ---
 <<ChangeSpeaker Player Friend>>
 
 <<Focus SECOND>>
 <<SetExpression hmm>>
-I could've sworn I saw something shining here. Where could it be?
+
+Security Guard: Holy shi-
+
+NPC 1: The driver’s just gonna drive off like that!?
+
+NPC 2: Someone call the ambulance!!
+
+NPC 3: OH MY GOD SOMEONE JUST DIED IN FRONT ME.
+
 
 <<Focus FIRST>>
 I don't think it's safe for you to be standing there!
