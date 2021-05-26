@@ -63,9 +63,9 @@ title: prologue_doneExplore
 <<ChangeSpeaker Player>>
 	
 	It doesn’t look like anyone else was buried here. 
-	
+	<<SetExpression sad>>
 	So...I’m alone in this graveyard with a sad little gravestone that doesn’t even say anything meaningful...
-
+    <<SetExpression neutral>>
 	I have to get out of here. Surely I’ll be able to find others outside of this cemetery, right?
 
 	But before I leave, I think I’ll brighten up my grave first.
@@ -84,7 +84,7 @@ title: prologue_doneExplore
 title: prologue_doneFlowers
 ---
 <<ChangeSpeaker Player>>
-
+    <<SetExpression happy>>
 	Aaaand, there! Looking better already. Now I can go out and find other ghosts.
 
 ===
