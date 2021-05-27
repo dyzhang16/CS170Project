@@ -7,6 +7,7 @@
     What’s up with you, kid? It’s not Halloween anymore.
 
     <<Focus FIRST>>
+    <<SetExpression disappointed>>
     Ha, ‘not Halloween’. That’s funny.
 
     <<Focus SECOND>>
@@ -16,6 +17,7 @@
     I bet you can’t see a thing. Haven’t your parents ever told you to look both ways when crossing the street?
 
     <<Focus FIRST>>
+    <<SetExpression neutral>>
     Wait, are you talking to me?
 
     <<Focus SECOND>>
@@ -23,6 +25,7 @@
     Who else? You’re the only weirdo walking around outside with a bedsheet on their head.
 
     <<Focus FIRST>>
+    <<SetExpression disappointed>>
     bEDSheET?!
 
     <<Focus SECOND>>
@@ -40,6 +43,7 @@
     And your bedsheet would get stained.
 
     <<Focus FIRST>>
+    <<SetExpression neutral>>
     That’s true, my bedsheet would get stai- wait, no. 
     
     I told you, it’s not a bedsheet! I’m a ghost; I would just go through them.
@@ -50,13 +54,14 @@
     This damn barista is taking forever and I’m already late for work. I really can’t deal with another complication today, kid.
 
     <<Focus FIRST>>
+    <<SetExpression sad>>
     No, wait. But I’ve finally found someone I can talk to!
 
     <<Focus SECOND>>
     Hey, I don’t have the time to deal with whatever the heck you’re talking about. Leave me alone.
 
     <<ChangeSpeaker Player>>
-
+    <<SetExpression neutral>>
     ...I need to find a way to get this person to talk to me.
 
     <<Pan CoffeeStand>>
@@ -106,7 +111,7 @@ title: friend_after_coffee
     Didn’t I tell you to leave me alone?
 
 <<Focus FIRST>>
-    
+    <<SetExpression sad>>
     But Fred! I come bearing offerings this time.
 
 <<Focus SECOND>>
@@ -114,7 +119,7 @@ title: friend_after_coffee
     Did you just call me Fred?
 
 <<Focus FIRST>>
-    
+    <<SetExpression neutral>>
     Uh, is that no good? Freddie, then?
 
 <<Focus SECOND>>
@@ -135,7 +140,7 @@ title: friend_after_coffee
     <<ChangeSpeaker Player Friend>>
 
 <<Focus FIRST>>
-
+    <<SetExpression happy>>
     I’ve got it, your coffee!
 
 <<Focus SECOND>>
@@ -153,7 +158,7 @@ title: wrong_item
     What...is this? This isn’t coffee.
 
 <<Focus FIRST>>
-
+    <<SetExpression shrug>>
     It’s a, um...a gift!
 
 <<Focus SECOND>>
@@ -176,7 +181,7 @@ title: no_safety
     You’ve spilled some perfectly good coffee.
 
 <<Focus FIRST>>
-
+    <<SetExpression disappointed>>
     Me? It was you who practically threw the cup in the air.
 
 <<Focus SECOND>>
@@ -230,7 +235,7 @@ title: correct_coffee
     That hits the spot!
 
 <<Focus FIRST>>
-    
+    <<SetExpression happy>>
     I’m glad. 
 
 <<Focus SECOND>>
@@ -238,9 +243,9 @@ title: correct_coffee
     How did you even get this? I’m pretty sure there were at least three other people ahead of me in line.
 
 <<Focus FIRST>>
-
+    <<SetExpression neutral>>
     I was telling the truth earlier. I’m a ghost! 
-    
+    <<SetExpression shrug>>
     I went behind the counter and maAAADee it myself- Hey, don’t stick your hand through me! That’s rude!
 
 <<Focus SECOND>>
@@ -248,7 +253,7 @@ title: correct_coffee
     Huh, so maybe, just maybe, you are a real ghost after all.
 
 <<Focus FIRST>>
-
+    <<SetExpression disappointed>>
     That’s what I’ve been trying to tell you. And I just wanted to talk to you. No one else can see or hear me, just you.
 
 <<Focus SECOND>>
@@ -256,7 +261,7 @@ title: correct_coffee
     Oh, god. Maybe I am just seeing things...What was in that coffee?
 
 <<Focus FIRST>>
-
+    <<SetExpression sad>>
     I’m real, I swear. Please, believe me.
 
 <<Focus SECOND>>
@@ -266,7 +271,7 @@ title: correct_coffee
     I’ll talk to myself for a bit, and I’ll even get good coffee out of it.
 
 <<Focus FIRST>>
-
+    <<SetExpression happy>>
     You think it’s good? Alright! I did it all by myself. The barista was sleeping on the job.
 
 <<Focus SECOND>>
@@ -278,7 +283,7 @@ title: correct_coffee
 <<FollowObject DialogueCam Friend1>>
 
 <<Focus FIRST>>
-
+    <<SetExpression sad>>
     Wait, don’t go! There’s still so much I want to talk to you about. You said you’d talk to me.
 
 <<MoveToOffice Friend1>>
@@ -290,7 +295,7 @@ title: correct_coffee
 <<UnFollowObject DialogueCam>>
 
 <<ChangeSpeaker Player>>
-
+    <<SetExpression sad>>
     But there’s no one else...
 
 ===
