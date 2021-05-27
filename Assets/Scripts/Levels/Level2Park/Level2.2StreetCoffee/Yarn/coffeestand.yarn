@@ -8,7 +8,7 @@ tags:
 <<else>>
 	<<ChangeSpeaker Player>>
 	<<Focus FIRST>>
-
+    <<SetExpression happy>>
 	Hmmmmmmm, I bet their coffee would taste good.
 
 	<<UnPan CoffeeStand>>
@@ -28,7 +28,7 @@ tags:
 <<else>>
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
-
+    <<SetExpression shrug>>
 	I don't know what coffee Fredric wants....
 	
 	<<PanReceipt CoffeeStand>>

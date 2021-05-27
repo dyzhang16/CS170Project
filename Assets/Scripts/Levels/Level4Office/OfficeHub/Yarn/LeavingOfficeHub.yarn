@@ -4,7 +4,7 @@ tags:
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
 <<if visited("doneWithWork") is false>>
-
+    <<SetExpression shrug>>
 	Why would I leave? Fredric’s still here.
 
 <<else>>
@@ -22,7 +22,7 @@ tags:
 	Then that’s all the work I have to do today.
 
 <<Focus FIRST>>
-
+    <<SetExpression shrug>>
 	What do you usually do for fun with your friends? Wait, that’s right, you never had any friends.
 
 <<Focus SECOND>>
@@ -31,7 +31,7 @@ tags:
 	Hey!
 
 <<Focus FIRST>>
-
+    <<SetExpression happy>>
 	That’s alright. You have me, now!
 
 <<Focus SECOND>>
@@ -42,7 +42,7 @@ tags:
 <<Focus FIRST>>
 
 	And I won’t go away. Don’t worry, Fred. You don’t need to be alone anymore. I’ll be here for you.
-
+    <<SetExpression sad>>
 	That is...unless you don’t want me around?
 
 <<Focus SECOND>>
@@ -51,9 +51,9 @@ tags:
 	No, you’re alright. You’re someone I wouldn’t mind having you around for a long time.
 
 <<Focus FIRST>>
-
+    <<SetExpression happy>>
 	Whew. I was worried for a moment.
-
+    <<SetExpression neutral>>
 	Anyway, what can we do together?
 
 <<Focus SECOND>>
@@ -64,7 +64,7 @@ tags:
 	I might have some board games lying around, too. No ouija board, though.
 
 <<Focus FIRST>>
-
+    <<SetExpression happy>>
 	OoOOoh. Maybe one day I can show you where I live, too.
 
 <<Focus SECOND>>

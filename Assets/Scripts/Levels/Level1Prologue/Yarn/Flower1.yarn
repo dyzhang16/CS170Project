@@ -2,7 +2,7 @@
 ---
 <<ChangeSpeaker Player>>
 <<if visited("prologue_doneExplore") is true>>
-        
+        <<SetExpression happy>>
         Oh! That's pretty!
 
 <<pickUpItem FlowerFieldA>>
@@ -17,14 +17,14 @@ title: Flower2
 ---
 <<ChangeSpeaker Player>>
 <<if visited("prologue_doneExplore") is true>>
-       
+       <<SetExpression happy>>
        This one will look nice on the grave.
 
 <<pickUpItem FlowerFieldB>>
 <<Destroy FlowerFieldB>>
 <<else>>
-        
-         I bet this flower would smell nice if I could smell.
+        <<SetExpression shrug>>
+        I bet this flower would smell nice if I could smell.
 
 <<endif>>
 ===
@@ -47,7 +47,7 @@ title: Flower4
 ---
 <<ChangeSpeaker Player>>
 <<if visited("prologue_doneExplore") is true>>
-       
+       <<SetExpression happy>>
        I like this one!
 
 <<pickUpItem FlowerFieldD>>

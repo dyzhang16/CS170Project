@@ -4,7 +4,7 @@ tags:
 <<HidePanel Document>>
 <<ChangeSpeaker Player Friend>>
 <<Focus FIRST>>
-
+    <<SetExpression happy>>
 	Look, I signed more than you!
 
 <<Focus SECOND>>
@@ -13,7 +13,7 @@ tags:
 
 <<set $DocumentsFinished to 1>>
 <<Focus FIRST>>
-
+    <<SetExpression neutral>>
 	Well, I didn’t really read any of the papers.
 
 <<Focus SECOND>>
@@ -42,7 +42,7 @@ tags:
 	Yeah! Eat it!
 
 <<Focus FIRST>>
-
+    <<SetExpression shrug>>
 	I guess I’m not cut out for this.
 
 <<Focus SECOND>>
@@ -70,7 +70,7 @@ tags:
 	Not bad at all. If I were in charge here, I’d consider hiring you.
 
 <<Focus FIRST>>
-
+    <<SetExpression disappointed>>
 	Just consider?
 
 <<Focus SECOND>>
@@ -78,7 +78,7 @@ tags:
 	Well, do you want to sign papers all day?
 
 <<Focus FIRST>>
-
+    <<SetExpression neutral>>
 	I see your point.
 
 <<Focus SECOND>>
@@ -106,7 +106,7 @@ tags:
 	Hey, not bad. Even I can barely tell that’s not my signature.
 
 <<Focus FIRST>>
-
+    <<SetExpression disappointed>>
 	Thanks! But you’re sure it’s alright for me to forge your signature…?
 
 <<Focus SECOND>>
@@ -116,7 +116,7 @@ tags:
 	As long as it looks like it’s done right, whatever happens with these documents are no longer my responsibility.
 
 <<Focus FIRST>>
-
+    <<SetExpression shrug>>
 	If you’re sure…
 
 <<Focus SECOND>>
