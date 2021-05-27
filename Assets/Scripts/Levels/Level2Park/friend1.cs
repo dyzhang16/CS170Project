@@ -12,10 +12,7 @@ public class friend1 : MonoBehaviour
     public VariableStorageBehaviour CustomVariableStorage;
     public bool isWalking = false;
     public float Speed;
-    public GameObject Destination;
-    public GameObject DestinationAfterApartment;
-    public GameObject DestinationAfterOffice1;
-    public GameObject DestinationAfterOffice2;
+    public GameObject Destination, DestinationAfterOffice;
     
     public GameObject car;
     public GameObject Dialoguerunner;
@@ -33,31 +30,31 @@ public class friend1 : MonoBehaviour
 
     void Start(){
         if (GameManager.instance != null){
-            if (GameManager.instance.officeDeskPuzzle == 1){
-                target = DestinationAfterApartment.transform.position;
-            } else {
-                target = Destination.transform.position;
-            }
+            target = Destination.transform.position;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (isWalking){
             float step = Speed * Time.deltaTime;
 
             transform.position = Vector3.MoveTowards(transform.position, target, step);
-
+            
             if (Vector3.Distance(transform.position, target) < 0.001f){
                 isWalking = false;
-                //col.isTrigger = false;
-                if (GameManager.instance.firstDateDia == 1){
-                    this.GetComponent<RunDialogue>().dialogueToRun = "friendHitByCar";
-                } else if (GameManager.instance.firstFriendMeeting == 5){
-                    this.GetComponent<SpriteRenderer>().flipX = true;
+                if (GameManager.instance != null)
+                {
+                    if (GameManager.instance.firstFriendMeeting == 5) 
+                    {
+                        this.GetComponent<SpriteRenderer>().flipX = false;
+                        GameManager.instance.firstFriendMeeting = 6;
+                    }
                 }
             }
+            
         }
 
         if (playerMove){
@@ -103,7 +100,6 @@ public class friend1 : MonoBehaviour
     [YarnCommand("MoveToOffice2")]
     public void MoveToOffice2(){
         isWalking = true;
-        col.isTrigger = true;
         GameManager.instance.firstFriendMeeting = 3;
         // this.GetComponent<SpriteRenderer>().flipX = true;
     }
@@ -112,7 +108,6 @@ public class friend1 : MonoBehaviour
     [YarnCommand("MoveToOffice3")]
     public void MoveToOffice3(){
         isWalking = true;
-        col.isTrigger = true;
         GameManager.instance.firstFriendMeeting = 4;
         // this.GetComponent<SpriteRenderer>().flipX = true;
     }
@@ -120,14 +115,21 @@ public class friend1 : MonoBehaviour
     [YarnCommand("MoveToOffice4")]
     public void MoveToOffice4(){
         isWalking = true;
-        col.isTrigger = true;
         GameManager.instance.firstFriendMeeting = 5;
+    }
+    [YarnCommand("MoveToCrosswalk")]
+    public void MoveToCrosswalk()
+    {
+        target = DestinationAfterOffice.transform.position + new Vector3(23, 0, 0);
+        Debug.LogWarning("Transforming Target position");
+        isWalking = true;
+        this.GetComponent<SpriteRenderer>().flipX = true;
     }
 
     [YarnCommand("moveToStreet")]
     public void moveToStreet(){
+        target = DestinationAfterOffice.transform.position + new Vector3(23, 0, -28);
         isWalking = true;
-        col.isTrigger = true;
         GameManager.instance.walkToStreet = 1;
         this.GetComponent<SpriteRenderer>().flipX = true;
     }
@@ -143,15 +145,6 @@ public class friend1 : MonoBehaviour
         car.GetComponent<car>().cycle = 2;
         playerMove = true;
         // this.GetComponent<SpriteRenderer>().flipX = false;
-
-        StartCoroutine(stopCar());
-    }
-
-    IEnumerator stopCar(){
-        yield return new WaitForSeconds(4);
-        car.SetActive(false);
-
-        Dialoguerunner.GetComponent<DialogueRunner>().StartDialogue("endingCutscene");
     }
 
     // Detect collision between friend1 and car
@@ -170,8 +163,26 @@ public class friend1 : MonoBehaviour
 
                 // prevent additional transform modifications (related to the car, at least)
                 isFriendHit = true;
+                GameObject obj = GameObject.Find("BlackScreen");
+                if (obj)
+                {
+                    Debug.LogWarning(" find screen");
+                    obj.GetComponent<Animator>().SetTrigger("StartInstantly");
+                }
+                else
+                {
+                    Debug.LogWarning("Dind't find screen");
+                }
+                StartCoroutine(ScaredNPCDialogue());
+                
             }
         }
+    }
+    IEnumerator ScaredNPCDialogue()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Dialoguerunner.GetComponent<DialogueRunner>().StartDialogue("ScaredNPCs");
+        car.SetActive(false);
     }
 
     // Turn the friend into a ghost
@@ -189,6 +200,7 @@ public class friend1 : MonoBehaviour
         Color friendColor = GetComponent<SpriteRenderer>().color;
         friendColor = new Color(friendColor.r, friendColor.g, friendColor.b, friendColor.a * 0.5f);
         GetComponent<SpriteRenderer>().color = friendColor;
+        GetComponent<SpriteRenderer>().flipX = false;
     }
 
     // Run the run-into-friend cutscene that is seen in the Park scene

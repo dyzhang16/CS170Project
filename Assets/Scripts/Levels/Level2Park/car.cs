@@ -22,12 +22,13 @@ public class car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dia.IsDialogueRunning){
-            moving = false;
-        } else {
-            moving = true;
-        }
+        /*        if (dia.IsDialogueRunning){
+                    moving = false;
+                } else {
+                    moving = true;
+                }*/
 
+        moving = true;
         if (moving){
             Vector3 target;
             if (cycle == 0){

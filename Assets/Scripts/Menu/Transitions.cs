@@ -45,7 +45,7 @@ public class Transitions : MonoBehaviour
         SceneManager.LoadScene(sceneToChange);
     }
 
-    IEnumerator FadeArea(){
+    IEnumerator FadeArea(float transitionSpeed){
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionSpeed);
@@ -54,8 +54,18 @@ public class Transitions : MonoBehaviour
     }
 
     [YarnCommand("Fade")]
-    public void Fade(){
-        StartCoroutine(FadeArea());
+    public void Fade(string[] parameters){
+        float f = float.Parse(parameters[0]);
+        StartCoroutine(FadeArea(f));
+    }
+    public void Fade(float f)
+    {
+        StartCoroutine(FadeArea(f));
+    }
+    [YarnCommand("EndFade")]
+    public void EndFade()
+    {
+        transition.SetTrigger("End");
     }
 
     void OnTriggerEnter(Collider collider)                          //https://www.youtube.com/watch?v=Bc9lmHjqLZc

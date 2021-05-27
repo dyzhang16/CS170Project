@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5523,8 +5523,7 @@ PrefabInstance:
         type: 3}
       propertyPath: itemList.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: ab7ed3444e0d9dd4eb690d832b048e1e,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3265424261069468134, guid: 37a1eb4b65293904cb3a0baced2aee79,
         type: 3}
       propertyPath: itemList.Array.data[1]
@@ -7752,9 +7751,7 @@ MonoBehaviour:
   isWalking: 0
   Speed: 35
   Destination: {fileID: 604340653}
-  DestinationAfterApartment: {fileID: 0}
-  DestinationAfterOffice1: {fileID: 0}
-  DestinationAfterOffice2: {fileID: 0}
+  DestinationAfterOffice: {fileID: 0}
   car: {fileID: 0}
   Dialoguerunner: {fileID: 0}
   player: {fileID: 0}

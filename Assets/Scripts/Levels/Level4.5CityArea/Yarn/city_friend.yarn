@@ -205,7 +205,6 @@ Follow me to my apartment
 
 title: goingToApartment2
 tags: 
-position: 260,-381
 ---
 <<ChangeSpeaker Friend>>
 Follow me to my apartment again!
@@ -215,7 +214,6 @@ Follow me to my apartment again!
 
 title: friendGoingToApartment
 tags: 
-position: -94,-320
 ---
 <<ChangeSpeaker Friend>>
 I'll cya inside
@@ -229,129 +227,137 @@ position: 613,-249
 ---
 <<ChangeSpeaker Player Friend>>
 <<Focus FIRST>>
-	
-	Wait, so your house was which way again?
+	<<MoveToCrosswalk Friend1>>    <<MovePlayer Player TrafficLight 10 0 0>>
+<<wait 2>>
+<<SetExpression neutral>>
 
-<<LookLeftAndRight Player>>
+    Wait, so your house was which way again?
+
+<<MovePlayer Player Friend1 -25 0 0>>
+<<wait 1>>
+<<MovePlayer Player Friend1 -15 0 0>>
+<<wait 1>>
 <<Focus SECOND>>
 
-	You can’t ask which way it is “again” when I never told you in the first place.
+    I never told you which way it was. We cross the street here.
 
 <<Focus FIRST>>
-    <<SetExpression shrug>>
-	Whatever, Freddy!!
 
-	... Ya know, for a smartass, I saw a few of those documents you signed and they were pretty messy…
+    Wait, you can’t cross yet. The light’s red!
 
 <<Focus SECOND>>
+<<SetExpression hmm>>
+    Oh. But anyway, what exactly did you want to do? If you’ve got nothing lined up, I could use your help with this job application-
 
-	So we’re not gonna talk about how fast you learned to forge my signature? Alright then.
+<<SetExpression shock>>
+    THE APPLICATION DEADLINE! IT’S DUE TODAY!
 
-	In any case, I’m planning on quitting this job soon anyway. I have an interview lined up after work-
+<<Focus FIRST>>
+<<SetExpression sad>>
+    The stoplight, Fredric. The light!
 
-	Wait. After work…?
-
-	CRAP, I NEED TO GET GOING-
+<<Focus SECOND>>
+<<SetExpression mad>>
+    The road’s empty. It’s fine!
 
 <<FollowObject DialogueCam Friend1>>
-
 <<moveToStreet Friend1>>
-
 <<wait 3>>
 
-[[friendHitByCar]]
+	[[friendHitByCar]]
 ===
 
 title: friendHitByCar
 tags:
 ---
-<<ChangeSpeaker Player Friend>>
-
-<<Focus SECOND>>
-<<SetExpression hmm>>
-
-Security Guard: Holy shi-
-
-NPC 1: The driver’s just gonna drive off like that!?
-
-NPC 2: Someone call the ambulance!!
-
-NPC 3: OH MY GOD SOMEONE JUST DIED IN FRONT ME.
-
-
+<<ChangeSpeaker Player>>
 <<Focus FIRST>>
-I don't think it's safe for you to be standing there!
+<<SetExpression sad>>
 
-<<Focus SECOND>>
-<<SetExpression shocked>>
-What?
+	Wait, there’s a CAR!
+	//camera pan to incoming car
+	FREDRIC, NO-!
 
 <<hitByCar Friend1>>
 ===
 
+title: ScaredNPCs
+---
+<<ChangeSpeaker Guard>>
+<<Focus FIRST>>
+
+	Fredric? Holy shi-
+
+<<ChangeSpeaker Woman>>
+<<Focus FIRST>>
+
+	The driver’s just gonna drive off like that!? A real hit and run!
+
+<<ChangeSpeaker Man>>
+<<Focus FIRST>>
+	
+	Someone call the ambulance!!
+
+<<ChangeSpeaker Teenager>>
+<<Focus FIRST>>
+
+	<b>OH MY GOD SOMEONE JUST DIED IN FRONT ME.</b> 
+	<<EndFade BlackScreen>>
+	
+	[[endingCutscene]]
+===
+
 title: endingCutscene
 tags: 
-position: 573,63
 ---
-<<UnFollowObject DialogueCam>>
 
-<<ChangeSpeaker Player>>
+<<MovePlayer Player Friend1 -15 0 0>> <<UnFollowObject DialogueCam>> 
+<<wait 1>>
+<<ChangeSpeaker Player Friend>>
+<<Focus FIRST>>
+<<SetExpression sad>>
 
-<<MovePlayer Player Friend1 0 0 -15>>
+	Fredric! Are you… alright?
 
-Fredric no!
+<<Focus SECOND>>
 
-...
+	H-hey, I’m not... not dead... y-yet... krgh-!! <i>Cough cough</i>
 
-I lost the only friend who was able to speak to me...
+<<Focus FIRST>>
+<<SetExpression disappointed>>
 
-// Insert animation of friend becoming a ghost
-<<GhostifyFriend Friend1>>
+	But...you’re going to be. I’m no medical professional, but I think the whole coughing-out-blood thing seals the deal?
 
+<<Focus SECOND>>
+<<SetExpression mad>>
+
+	<i>Cough-</i>  Dammit… I never... got to... resign...
+<<Fade BlackScreen 2>>
+<<GhostifyFriend Friend1>> <<wait 2>>
 <<ChangeSpeaker Player FriendEnd>>
+<<Focus FIRST>>
+<<SetExpression neutral>>	
+	Welcome to ghost-life.
 
 <<Focus SECOND>>
-AAAAAAAAAAAAAAAAAAAAAAAAAAH!
+<<SetExpression mad>>
+	Ghost-life? You mean death. 
 
-Huh?
-
-What's going on? What's happened to me?
+<<SetExpression shock>>	
+	I’m dead. I’m <i>dead.</i>
 
 <<Focus FIRST>>
-... Fredric?
+	... So, seeing as it’s likely going to be your new place of residence...do you want to come over to my place instead?
 
 <<Focus SECOND>>
-Oh it's you. What just-
-
-<<wait 1>>
-
-... where are my hands?
-
-Where is my body?
+	
+	I’m <i>dead.</i>
 
 <<Focus FIRST>>
-Well... I guess you are a ghost now.
+<<SetExpression shrug>>
+	
+	It’ll sink in eventually…
 
-<<Focus SECOND>>
-I'm dead?
-
-<<Focus FIRST>>
-Yeah.
-
-<<wait 1>>
-
-<<Focus SECOND>>
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH!
-
-<<Focus FIRST>>
-Calm down Fredric. It's not too bad.
-
-At least we got each other!
-
-<<Focus SECOND>>
-That is true.
-
-I guess I just have to get used to it.
 
 <<ChangeVariable GameManager ending 1>>
 

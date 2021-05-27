@@ -7,13 +7,13 @@ public class CityOffice : MonoBehaviour
 {
     public NodeVisitedTracker tracker;
 
-    public GameObject player , introduction, officedoor;
+    public GameObject player , introduction, officedoor, officeintroduction;
     public GameObject Office;
     public GameObject friend;
 
     public GameObject officeDoorArrow;
     public GameObject exitToPark;
-    public DialogueRunner dia;
+
 
     void Awake(){
         if (GameManager.instance != null)
@@ -53,6 +53,7 @@ public class CityOffice : MonoBehaviour
             if (GameManager.instance.officeDeskPuzzle == 1){
                 friend.SetActive(true);
                 friend.transform.position = officedoor.transform.position;
+                officeintroduction.SetActive(true);
             }
 
             // if friend is stuck outside of the office, put his position outside of the office
@@ -89,7 +90,6 @@ public class CityOffice : MonoBehaviour
                 GameManager.instance.deleteItems();
             }
         }
-        friend.GetComponent<RunDialogue>().dialogueToRun = "friendWalkToStreet";
-        friend.GetComponent<RunDialogue>().startInstantly = true;
+
     }
 }
