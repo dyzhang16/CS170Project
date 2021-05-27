@@ -3,7 +3,7 @@ tags:
 ---
 <<ChangeSpeaker Player Friend>>
 <<Focus FIRST>>
-
+    <<SetExpression disappointed>>
 	Fredric, you promised you’d talk.
 
 <<Focus SECOND>>
@@ -11,7 +11,7 @@ tags:
 	I can do that while signing papers. What did you have to say to me?
 
 <<Focus FIRST>>
-
+    <<SetExpression happy>>
 	Finally! How come you can see me? Hear me? No one else seems to be able to.
 
 <<Focus SECOND>>
@@ -19,7 +19,7 @@ tags:
 	How should I know? I’m just a normal guy with a normal life.
 
 <<Focus FIRST>>
-
+    <<SetExpression neutral>>
 	But there must be something.
 
 <<Focus SECOND>>
@@ -27,9 +27,9 @@ tags:
 	You’ve seen exactly how uneventful my life is. You could search for someone more interesting who can also see you.
 
 <<Focus FIRST>>
-
+    <<SetExpression sad>>
 	How do I know I’ll be able to find someone else? If I leave you, I’ll just end up where I started with no one by my side.
-
+    <<SetExpression disappointed>>
 	And since you have no other friends, you’ll also have no one if I leave.
 
 <<Focus SECOND>>
@@ -37,7 +37,7 @@ tags:
 	Since when did we become friends?
 
 <<Focus FIRST>>
-
+    <<SetExpression happy>>
 	Since you stopped telling me to go away. Keep up, Fredric.
 
 	You’re allowed to say you enjoy my company. I won’t tell anyone.
@@ -90,7 +90,7 @@ tags:
 
 	You find nothing of importance in the cabinet.
 <<else>>
-	
+	<<SetExpression disappointed>>
 	Is it just this one ‘DENIED’ stamp?
 
 <<Focus SECOND>>

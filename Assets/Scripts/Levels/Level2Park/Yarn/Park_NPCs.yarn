@@ -8,18 +8,21 @@ What are you doing alone-
 OW! Crap, I think I sprained my ankle.
 
 <<ChangeSpeaker Player>>
+<<SetExpression sad>>
 Oh no. Help! If anyone else is out there, please, this person needs help!
 
 <<ChangeSpeaker Teenager>>
 Owww- wait. I feel fine now. It doesn’t hurt anymore.
 
 <<ChangeSpeaker Player>>
+<<SetExpression neutral>>
 Oh, whew. That’s a relief.
 
 <<ChangeSpeaker Teenager>>
 Now, to try climbing over the fence again!
 
 <<ChangeSpeaker Player>>
+<<SetExpression disappointed>>
 Huh?!
 ===
 
@@ -62,6 +65,7 @@ Hi, there. The person working in the cemetery couldn’t see me, but...
 Sorry, I can’t- <i>kshck</i> -ear you, I think- <i>sshrchks</i> -you’re breaki- <i>krsh</i> -up.
 
 <<ChangeSpeaker Player>>
+<<SetExpression sad>>
 They’re just talking on the phone...
 ===
 title: Glasses
@@ -74,7 +78,7 @@ tags:
 
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
-
+    <<SetExpression disappointed>>
     But they’re right there, on your head.…
 
 <<ChangeSpeaker Girl>>
@@ -84,7 +88,7 @@ tags:
 
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
-
+    <<SetExpression disappointed>>
     Hello?? You’re wearing them! On! Your! Head! ...If only they could hear me…
 
 <<ChangeSpeaker Girl>>
