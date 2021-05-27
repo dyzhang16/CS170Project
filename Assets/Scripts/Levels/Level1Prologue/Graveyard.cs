@@ -21,8 +21,10 @@ public class Graveyard : MonoBehaviour
     public GameObject gateApproach;
     public GameObject gate;
 
+    public DialogueRunner dialogueRunner;
     public GameObject fred;
     public GameObject fredGrave;
+    public GameObject outside;
 
     void Start(){
         if (GameManager.instance != null){
@@ -42,7 +44,7 @@ public class Graveyard : MonoBehaviour
                 // CustomVariableStorage.SetValue("$key", 1);
 
                 //destroy gravekeeper
-                Destroy(gravekeeper);
+                gravekeeper.SetActive(false);
 
                 //destroy flowers
                 Destroy(flowerA);
@@ -75,10 +77,24 @@ public class Graveyard : MonoBehaviour
 
             if (GameManager.instance.ending == 1){
                 StartCoroutine(objActive());
+                //add friend's grave
                 fredGrave.SetActive(true);
                 //change gate dialogue
                 gate.GetComponent<RunDialogue>().dialogueToRun = "NoGate";
+                //change gravestone dialogue
                 gravestone.GetComponent<RunDialogue>().dialogueToRun = "DoneGame";
+
+                //change player positions
+                player.transform.position = player.transform.position + new Vector3(-40, 0, 0);
+                fred.transform.position = player.transform.position + new Vector3(10, 0, 0);
+
+                //start dialogue immediately
+                dialogueRunner.startAutomatically = true;
+                dialogueRunner.startNode = "EndingDialogue";
+
+                //change gravekeeper stuff
+                gravekeeper.transform.position = outside.transform.position;
+                gravekeeper.SetActive(true);
             }
 
             if (GameManager.instance.clearInventory){
@@ -97,7 +113,7 @@ public class Graveyard : MonoBehaviour
     }
 
     IEnumerator objActive(){
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         fred.SetActive(true);
     }
 }

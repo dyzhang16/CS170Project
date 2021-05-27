@@ -2,14 +2,97 @@
 tags:
 ---
 
+<<ChangeSpeaker Player FriendEnd>>
+<<Focus FIRST>>
+Here it is, the cemetery where I was laid to rest.
+
+And, look! They put you right next to me. Hm, they took care of your body awfully fast.
+
+<<Focus SECOND>>
+This is actually a pretty nice place. I thought it’d be more...grown over.
+
+<<Focus FIRST>>
+It’s new. I’m its first resident! Now, there’s a second.
+
+<<Focus SECOND>>
+Me. But I think you’re way too happy about this. I’m dead.
+
+<<Focus FIRST>>
+We were going to spend time together anyway. Look at it this way: we have an eternity to do so now.
+
+<<Focus SECOND>>
+Why don’t you take a slice of that eternity and show me around?
+
 ===
 
 title: FredGrave
 ---
-<<ChangeSpeaker Player>>
-I guess this is Fred's new home.
 
-I'm glad it's right next to mine.
+<<if visited("FredGrave") is true>>
+
+    <<if visited("DoneGame") is true>>
+
+        <<ChangeSpeaker Player FriendEnd>>
+        <<Focus SECOND>>
+        Huh, is that all?
+
+        <<Focus FIRST>>
+        Yes, there isn’t much. It’s why I was really happy to find you!
+
+        <<Focus SECOND>>
+        You’re lucky you grew on me, or I’d be the one going off to find someone new to hang off of.
+
+        <<FollowObject DialogueCam Gravekeeper>>
+        <<EndingCutscene Gravekeeper>>
+
+    <<else>>
+
+        <<ChangeSpeaker Player FriendEnd>>
+        <<Focus SECOND>>
+        So this is my grave...
+
+        <<ChangeSpeaker Grave>>
+        Stranger to Many, Friend to None
+
+        <<ChangeSpeaker Player FriendEnd>>
+        <<Focus FIRST>>
+        It’s just backwards! An honest mistake, probably.
+
+        <<Focus SECOND>>
+        Marson Monuments is the one that makes our headstones, you know? Maybe we should file a complaint.
+
+        <<Focus FIRST>>
+        Our complaint will only get denied.
+
+        <<Focus SECOND>>
+        Hm.
+
+    <<endif>>
+
+<<else>>
+
+    <<ChangeSpeaker Player FriendEnd>>
+    <<Focus SECOND>>
+    So this is my grave...
+
+    <<ChangeSpeaker Grave>>
+    Stranger to Many, Friend to None
+
+    <<ChangeSpeaker Player FriendEnd>>
+    <<Focus FIRST>>
+    It’s just backwards! An honest mistake, probably.
+
+    <<Focus SECOND>>
+    Marson Monuments is the one that makes our headstones, you know? Maybe we should file a complaint.
+
+    <<Focus FIRST>>
+    Our complaint will only get denied.
+
+    <<Focus SECOND>>
+    Hm.
+
+<<endif>>
+
 
 ===
 
@@ -71,15 +154,116 @@ Sorry for keeping you waiting.
 title: NoGate
 ---
 
-<<ChangeSpeaker Player>>
-I don't need to go out now that I have a friend!
+<<ChangeSpeaker Player FriendEnd>>
+<<Focus SECOND>>
+Hey, I want to check out the gravestones before we go anywhere.
 
 ===
 
 title: DoneGame
 ---
 
-<<ChangeSpeaker Player>>
-This is where it all began. The flowers are looking great!
+<<if visited("FredGrave") is true>>
+
+    <<if visited("DoneGame") is true>>
+
+        <<ChangeSpeaker Player FriendEnd>>
+        <<Focus SECOND>>
+        Huh, is that all?
+
+        <<Focus FIRST>>
+        Yes, there isn’t much. It’s why I was really happy to find you!
+
+        <<Focus SECOND>>
+        You’re lucky you grew on me, or I’d be the one going off to find someone new to hang off of.
+
+        <<FollowObject DialogueCam Gravekeeper>>
+        <<EndingCutscene Gravekeeper>>
+
+    <<else>>
+
+        <<ChangeSpeaker Player FriendEnd>>
+        <<Focus SECOND>>
+        Nice bouquet. The flowers look nice.
+
+        <<Focus FIRST>>
+        Thank you!
+
+        <<ChangeSpeaker Grave>>
+        Rest in Peace
+
+        <<ChangeSpeaker Player FriendEnd>>
+        <<Focus FIRST>>
+        That is so not what it said last time.
+
+        <<Focus SECOND>>
+        What did it say?
+
+        <<Focus FIRST>>
+        ...Many things. I wouldn’t know how to start explaining it to you.
+
+    <<endif>>
+
+<<else>>
+
+    <<ChangeSpeaker Player FriendEnd>>
+    <<Focus SECOND>>
+    Nice bouquet. The flowers look nice.
+
+    <<Focus FIRST>>
+    Thank you!
+
+    <<ChangeSpeaker Grave>>
+    Rest in Peace
+
+    <<ChangeSpeaker Player FriendEnd>>
+    <<Focus FIRST>>
+    That is so not what it said last time.
+
+    <<Focus SECOND>>
+    What did it say?
+
+    <<Focus FIRST>>
+    ...Many things. I wouldn’t know how to start explaining it to you.
+
+<<endif>>
+
+
+===
+
+title: endingScene
+---
+
+<<ChangeSpeaker Player FriendEnd>>
+<<Focus SECOND>>
+Hey, what’s going on?
+
+<<UnFollowObject DialogueCam>>
+
+<<Focus FIRST>>
+That’s the gravekeeper. It looks like we’re getting a new roommate.
+
+<<Focus SECOND>>
+Already? I only just died.
+
+<<Focus FIRST>>
+Like you, I doubt they had a choice in that matter.
+
+<<Focus SECOND>>
+But unlike me, they didn’t have a ghost by their side when they died. Shouldn’t we search for them?
+
+<<Focus FIRST>>
+You’re right! It’s up to us to find them and keep them company.
+
+<<Focus SECOND>>
+But what if we never find them?
+
+<<Focus FIRST>>
+We will. We have an eternity, remember?
+
+But until then, we’ll still be together in spirit.
+
+<<Fade BlackScreen>>
+<<PanelOpen EndingPanel>>
 
 ===

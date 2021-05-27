@@ -11,6 +11,9 @@ public class YarnInventory : MonoBehaviour
     private GameObject player;
     private Player p;
 
+    private GameObject inventoryctrl;
+    private OpenMenus inv;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -61,6 +64,11 @@ public class YarnInventory : MonoBehaviour
         if (player != null){
             p = player.GetComponent<Player>();
         }
+
+        inventoryctrl = GameObject.Find("InventoryController");
+        if (inventoryctrl != null){
+            inv = inventoryctrl.GetComponent<OpenMenus>();
+        }
     }
 
     private void AddtoInventory(string[] parameters)
@@ -88,6 +96,10 @@ public class YarnInventory : MonoBehaviour
         } else {
             if (p != null){
                 p.activateMenu();
+            }
+
+            if (inv != null){
+                inv.forceOpenInv();
             }
         }
     }

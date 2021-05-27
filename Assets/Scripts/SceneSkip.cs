@@ -38,6 +38,8 @@ public class SceneSkip : MonoBehaviour
         // GameManager.instance.arcadeNoCraneDirs = 0;
         // GameManager.instance.arcadeNoDanceDirs = 0;
 
+        GameManager.instance.ending = 0;
+
         GameManager.instance.clearInventory = true;
     }
     
@@ -66,6 +68,8 @@ public class SceneSkip : MonoBehaviour
         // GameManager.instance.arcadeFirstDance = 0;
         // GameManager.instance.arcadeNoCraneDirs = 0;
         // GameManager.instance.arcadeNoDanceDirs = 0;
+
+        GameManager.instance.ending = 0;
 
         GameManager.instance.clearInventory = true;
     }
@@ -104,6 +108,8 @@ public class SceneSkip : MonoBehaviour
         GameManager.instance.idPickedUp = 0;
         GameManager.instance.idNeeded = 0;
 
+        GameManager.instance.ending = 0;
+
         GameManager.instance.clearInventory = true;
     }
 
@@ -140,6 +146,8 @@ public class SceneSkip : MonoBehaviour
         // id-related vars default
         GameManager.instance.idPickedUp = 0;
         GameManager.instance.idNeeded = 0;
+
+        GameManager.instance.ending = 0;
 
         GameManager.instance.clearInventory = true;
     }
@@ -178,6 +186,8 @@ public class SceneSkip : MonoBehaviour
         GameManager.instance.idPickedUp = 1;
         GameManager.instance.idNeeded = 2;
 
+        GameManager.instance.ending = 0;
+
         GameManager.instance.clearInventory = true;
     }
 
@@ -214,6 +224,8 @@ public class SceneSkip : MonoBehaviour
         GameManager.instance.idPickedUp = 1;
         GameManager.instance.idNeeded = 2;
 
+        GameManager.instance.ending = 0;
+
         GameManager.instance.clearInventory = true;
     }
 
@@ -249,6 +261,8 @@ public class SceneSkip : MonoBehaviour
         // the ID would have been already retrieved at this stage
         GameManager.instance.idPickedUp = 1;
         GameManager.instance.idNeeded = 2;
+
+        GameManager.instance.ending = 0;
 
         GameManager.instance.clearInventory = true;
     }

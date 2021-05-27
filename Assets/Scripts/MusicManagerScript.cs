@@ -130,4 +130,11 @@ public class MusicManagerScript : MonoBehaviour
         coffee_music.volume = musicVolume;
         office_music.volume = musicVolume;
     }
+
+    public void stopMusic(){
+        tutorial_music.Stop();
+        street_music.Stop();
+        coffee_music.Stop();
+        office_music.Stop();
+    }
 }
