@@ -7,7 +7,7 @@ tags:
 	Hurry up and keep quiet, my desk is this way.
 
 <<Focus FIRST>>
-
+    <<SetExpression disappointed>>
 	I already told you, you’re the only one that can hear me. 
 
 <<Focus SECOND>>
@@ -15,7 +15,7 @@ tags:
 	You don’t know that for sure. Don’t talk to me where others can hear me talking back. They’ll all think I’m crazy.
 
 <<Focus FIRST>>
-
+    <<SetExpression happy>>
 	You don’t need my help to make you look crazy. GOOD MORNING, EVERYONE!
 
 <<Focus SECOND>>
@@ -29,7 +29,7 @@ tags:
 
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
-	
+	<<SetExpression happy>>
 	Wait, what? You can hear me, too?
 
 <<ChangeSpeaker OfficeWorker>>
@@ -40,6 +40,7 @@ tags:
 <<ChangeSpeaker Player Friend>>
 <<Focus FIRST>>
     <<SetExpression SECOND neutral>>
+    <<SetExpression sad>>
 	 Oh...
 
 <<Focus SECOND>>
@@ -93,7 +94,7 @@ title: OfficeFriend
 	That’s right. 9 to 5 everyday. I’ve never been late before today.
 
 <<Focus FIRST>>
-
+    <<SetExpression sad>>
 	Oh no. You’re not going to be in trouble with your boss, are you?
 
 <<Focus SECOND>>
@@ -111,7 +112,7 @@ title: OfficeFriend
 	I’ve been told I’m very work-oriented. I don’t like being late.
 
 <<Focus FIRST>>
-
+    <<SetExpression shrug>>
 	For someone work-oriented, you don’t seem to be doing much work right now.
 
 <<Focus SECOND>>
@@ -121,7 +122,7 @@ title: OfficeFriend
 	I swear I collected the documents from my co-workers last night. I’m sure I did.
 
 <<Focus FIRST>>
-
+    <<SetExpression neutral>>
 	Perhaps you can ask them if they’ve seen the papers around?
 
 <<Focus SECOND>>
@@ -147,7 +148,7 @@ title: OfficeFriend
 	They’re just the people I work with. I don’t have time for friends.
 
 <<Focus FIRST>>
-
+    <<SetExpression disappointed>>
 	You sound lonelier than I do, and I’m a ghost.
 
 <<Focus SECOND>>
@@ -155,7 +156,7 @@ title: OfficeFriend
 	Hey, this is a serious situation here. It’s important that I retrieve those papers without anyone knowing.
 
 <<Focus FIRST>>
-
+    <<SetExpression shrug>>
 	Tell you what: if you feel so strongly about this, I’ll help you out.
 
 <<Focus SECOND>>
@@ -165,7 +166,7 @@ title: OfficeFriend
 	Can you help me find the papers in my co-workers’ desks? I’m not sure which ones, though. You’ll have to figure it out yourself.
 
 <<Focus FIRST>>
-
+    <<SetExpression happy>>
 	Just leave it to me! I’ll get you those papers.
 
 <<Focus SECOND>>
