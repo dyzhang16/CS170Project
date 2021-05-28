@@ -49,7 +49,7 @@ public class friend1 : MonoBehaviour
                 {
                     if (GameManager.instance.firstFriendMeeting == 5) 
                     {
-                        this.GetComponent<SpriteRenderer>().flipX = false;
+                        this.GetComponent<SpriteRenderer>().flipX = true;
                         GameManager.instance.firstFriendMeeting = 6;
                     }
                 }
@@ -116,6 +116,7 @@ public class friend1 : MonoBehaviour
     public void MoveToOffice4(){
         isWalking = true;
         GameManager.instance.firstFriendMeeting = 5;
+        
     }
     [YarnCommand("MoveToCrosswalk")]
     public void MoveToCrosswalk()
