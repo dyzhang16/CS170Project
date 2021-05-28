@@ -28,7 +28,7 @@ public class CoffeeYarnCommands : MonoBehaviour
         RecipeBook.Add((1, 2), Coffee2);    // Moocha
 
         // temporary boolean to use the old recipe until the new recipe book is added
-        const bool USE_OLD_RECIPE = true;
+        const bool USE_OLD_RECIPE = false;
 #pragma warning disable CS0162
         if (USE_OLD_RECIPE)
         {
