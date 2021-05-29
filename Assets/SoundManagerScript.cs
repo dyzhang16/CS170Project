@@ -154,7 +154,7 @@ public class SoundManagerScript : MonoBehaviour {
                 audioSrc.PlayOneShot(documentTransform);
                 break;
             case "slurp":
-                audioSrc.PlayOneShot(slurp);
+                audioSrc.PlayOneShot(slurp, 0.25f); // lower slurp volume
                 break;
             case "score":
                 audioSrc.PlayOneShot(score);
