@@ -5,19 +5,21 @@ tags:
 <<ChangeSpeaker Player FriendEnd>>
 <<Focus FIRST>>
 Here it is, the cemetery where I was laid to rest.
-
+<<SetExpression happy>>
 And, look! They put you right next to me. Hm, they took care of your body awfully fast.
 
 <<Focus SECOND>>
 This is actually a pretty nice place. I thought it’d be more...grown over.
 
 <<Focus FIRST>>
+<<SetExpression neutral>>
 It’s new. I’m its first resident! Now, there’s a second.
 
 <<Focus SECOND>>
 Me. But I think you’re way too happy about this. I’m dead.
 
 <<Focus FIRST>>
+<<SetExpression shrug>>
 We were going to spend time together anyway. Look at it this way: we have an eternity to do so now.
 
 <<Focus SECOND>>
@@ -37,6 +39,7 @@ title: FredGrave
         Huh, is that all?
 
         <<Focus FIRST>>
+        <<SetExpression happy>>
         Yes, there isn’t much. It’s why I was really happy to find you!
 
         <<Focus SECOND>>
@@ -56,12 +59,14 @@ title: FredGrave
 
         <<ChangeSpeaker Player FriendEnd>>
         <<Focus FIRST>>
+        <<SetExpression shrug>>
         It’s just backwards! An honest mistake, probably.
 
         <<Focus SECOND>>
         Marson Monuments is the one that makes our headstones, you know? Maybe we should file a complaint.
 
         <<Focus FIRST>>
+        <<SetExpression disappointed>>
         Our complaint will only get denied.
 
         <<Focus SECOND>>
@@ -80,12 +85,14 @@ title: FredGrave
 
     <<ChangeSpeaker Player FriendEnd>>
     <<Focus FIRST>>
+    <<SetExpression shrug>>
     It’s just backwards! An honest mistake, probably.
 
     <<Focus SECOND>>
     Marson Monuments is the one that makes our headstones, you know? Maybe we should file a complaint.
 
     <<Focus FIRST>>
+    <<SetExpression disappointed>>
     Our complaint will only get denied.
 
     <<Focus SECOND>>
@@ -172,6 +179,7 @@ title: DoneGame
         Huh, is that all?
 
         <<Focus FIRST>>
+        <<SetExpression happy>>
         Yes, there isn’t much. It’s why I was really happy to find you!
 
         <<Focus SECOND>>
@@ -187,6 +195,7 @@ title: DoneGame
         Nice bouquet. The flowers look nice.
 
         <<Focus FIRST>>
+        <<SetExpression happy>>
         Thank you!
 
         <<ChangeSpeaker Grave>>
@@ -194,12 +203,13 @@ title: DoneGame
 
         <<ChangeSpeaker Player FriendEnd>>
         <<Focus FIRST>>
-        That is so not what it said last time.
+        That is <i>so</i> not what it said last time.
 
         <<Focus SECOND>>
         What did it say?
 
         <<Focus FIRST>>
+        <<SetExpression shrug>>
         ...Many things. I wouldn’t know how to start explaining it to you.
 
     <<endif>>
@@ -211,6 +221,7 @@ title: DoneGame
     Nice bouquet. The flowers look nice.
 
     <<Focus FIRST>>
+    <<SetExpression happy>>
     Thank you!
 
     <<ChangeSpeaker Grave>>
@@ -218,12 +229,13 @@ title: DoneGame
 
     <<ChangeSpeaker Player FriendEnd>>
     <<Focus FIRST>>
-    That is so not what it said last time.
+    That is <i>so</i> not what it said last time.
 
     <<Focus SECOND>>
     What did it say?
 
     <<Focus FIRST>>
+    <<SetExpression shrug>>
     ...Many things. I wouldn’t know how to start explaining it to you.
 
 <<endif>>
@@ -247,20 +259,24 @@ That’s the gravekeeper. It looks like we’re getting a new roommate.
 Already? I only just died.
 
 <<Focus FIRST>>
+<<SetExpression shrug>>
 Like you, I doubt they had a choice in that matter.
 
 <<Focus SECOND>>
 But unlike me, they didn’t have a ghost by their side when they died. Shouldn’t we search for them?
 
 <<Focus FIRST>>
+<<SetExpression happy>>
 You’re right! It’s up to us to find them and keep them company.
 
 <<Focus SECOND>>
 But what if we never find them?
 
 <<Focus FIRST>>
+<<SetExpression neutral>>
 We will. We have an eternity, remember?
 
+<<SetExpression happy>>
 But until then, we’ll still be together in spirit.
 
 <<Fade BlackScreen 1>>
