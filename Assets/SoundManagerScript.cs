@@ -4,7 +4,10 @@ using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.SceneManagement;
 
-public class SoundManagerScript : MonoBehaviour { 
+public class SoundManagerScript : MonoBehaviour {
+
+    public static SoundManagerScript instance;
+
     public static AudioClip pickFlower;
     public static AudioClip flowerSuccess;
     public static AudioClip wallBump;
@@ -18,7 +21,7 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip openGate;
     public static AudioClip whistle;
     public static AudioClip placeFlower;
-    public static AudioClip dialogueSound;
+    //public static AudioClip dialogueSound;
     public static AudioClip stamp;
     public static AudioClip sign;
     public static AudioClip drawer;
@@ -49,6 +52,17 @@ public class SoundManagerScript : MonoBehaviour {
     }
     void Awake()
     {
+
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+
         //moved to awake in an attempt to fix webgl bugs
         pickFlower = Resources.Load<AudioClip>("pickup_flower_2");
         flowerSuccess = Resources.Load<AudioClip>("flower_success");
@@ -62,7 +76,7 @@ public class SoundManagerScript : MonoBehaviour {
         openGate = Resources.Load<AudioClip>("open_gate");
         whistle = Resources.Load<AudioClip>("whistling_1");
         placeFlower = Resources.Load<AudioClip>("place_flower");
-        dialogueSound = Resources.Load<AudioClip>("dialogue_sound");
+       //dialogueSound = Resources.Load<AudioClip>("dialogue_sound");
         stamp = Resources.Load<AudioClip>("stamp");
         sign = Resources.Load<AudioClip>("sign");
         drawer = Resources.Load<AudioClip>("drawer");
@@ -84,10 +98,7 @@ public class SoundManagerScript : MonoBehaviour {
         
     }
 
-    public void lineStop()
-    {
-        audioSrc.Stop();
-    }
+    
 
     public static void PlaySound(string clip)
     {
@@ -132,9 +143,10 @@ public class SoundManagerScript : MonoBehaviour {
             case "place_flower":
                 audioSrc.PlayOneShot(placeFlower);
                 break;
-            case "dialogue_sound":
+           /* case "dialogue_sound":
                 audioSrc.PlayOneShot(dialogueSound);
                 break;
+           */
             case "sign_sound":
                 audioSrc.PlayOneShot(sign);
                 break;
@@ -183,22 +195,12 @@ public class SoundManagerScript : MonoBehaviour {
         audioSrc.PlayOneShot(pickFlower);
     }
 
-    public void diaSoundStart()
-    {
-        try
-        {
-            audioSrc.PlayOneShot(dialogueSound, 0.1f);
-        }
-        catch (System.Exception e)
-        {
-            // Debug.LogError(e.Message);
-        }
-       
-    }
+   
 
-    public void MainVolumeControl(float vol)
-    {   // currently not working
-        //Debug.Log("vol is: " + vol);
-        //audioSrc.volume = vol+'f';
+    public void updateSfxVol(float vol)
+    {
+        //vol = vol / 10f;
+        audioSrc.volume = vol;
+        Debug.Log("sfx vol = " + vol);
     }
 }

@@ -60,6 +60,15 @@ public class VolumeSlider : MonoBehaviour
         // Debug.Log(value);
     }
 
+    public void sfxVolumeUpdate(float value)
+    {
+        float f = value / 10f;
+        if(SoundManagerScript.instance != null)
+        {
+            SoundManagerScript.instance.updateSfxVol(f);
+        }
+    }
+
     public void textSpeedSliderUpdate(float value){
         if (GameManager.instance != null){
             GameManager.instance.textSpeed = value;

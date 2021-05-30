@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6081,18 +6081,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5b5a945a6d37584ebda5e9362efd1e3, type: 3}
---- !u!114 &1802826991 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 219682105556337434, guid: b5b5a945a6d37584ebda5e9362efd1e3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1802826990}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f60d13a9252c793478747b67284726a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1806710370
 GameObject:
   m_ObjectHideFlags: 0
@@ -6504,7 +6492,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onLineUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1802826991}
+      objectReference: {fileID: 1966294826}
     - target: {fileID: 720895104263553537, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
       propertyPath: onLineUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -6514,7 +6502,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onLineEnd.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1802826991}
+      objectReference: {fileID: 1966294826}
     - target: {fileID: 720895104263553537, guid: 32ecd2b4f32066d48bd773fa364541a0,
         type: 3}
       propertyPath: onLineEnd.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -6777,6 +6765,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32ecd2b4f32066d48bd773fa364541a0, type: 3}
+--- !u!114 &1966294826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5146194991920734092, guid: 32ecd2b4f32066d48bd773fa364541a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1966294825}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31714fb600f21de4b9829bfc8fd0ce0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2012270003
 GameObject:
   m_ObjectHideFlags: 0
