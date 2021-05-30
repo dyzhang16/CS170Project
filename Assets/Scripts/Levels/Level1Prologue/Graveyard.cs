@@ -83,6 +83,7 @@ public class Graveyard : MonoBehaviour
                 gate.GetComponent<RunDialogue>().dialogueToRun = "NoGate";
                 //change gravestone dialogue
                 gravestone.GetComponent<RunDialogue>().dialogueToRun = "YourGrave";
+                gravestone.GetComponent<RunDialogue>().startInstantly = false;
 
                 //change player positions
                 player.transform.position = player.transform.position + new Vector3(-40, 0, 0);
