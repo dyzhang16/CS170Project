@@ -4,103 +4,66 @@ tags:
 
 <<ChangeSpeaker Player FriendEnd>>
 <<Focus FIRST>>
-Here it is, the cemetery where I was laid to rest.
-<<SetExpression happy>>
-And, look! They put you right next to me. Hm, they took care of your body awfully fast.
+    
+    Here it is, the cemetery where I was laid to rest.
+    <<SetExpression happy>>
+    And, look! They put you right next to me. Hm, they took care of your body awfully fast.
 
 <<Focus SECOND>>
-This is actually a pretty nice place. I thought it’d be more...grown over.
+
+    This is actually a pretty nice place. I thought it’d be more... grown over.
 
 <<Focus FIRST>>
-<<SetExpression neutral>>
-It’s new. I’m its first resident! Now, there’s a second.
+    <<SetExpression neutral>>
+    It’s new. I’m its first resident! Now, there’s a second.
 
 <<Focus SECOND>>
-Me. But I think you’re way too happy about this. I’m dead.
+
+    Me. But I think you’re way too happy about this. I’m <i>dead</i>.
 
 <<Focus FIRST>>
-<<SetExpression shrug>>
-We were going to spend time together anyway. Look at it this way: we have an eternity to do so now.
+    <<SetExpression shrug>>
+    We were going to spend time together anyway. Look at it this way: we have an eternity to do so now.
 
-<<Focus SECOND>>
-Why don’t you take a slice of that eternity and show me around?
+ <<Focus SECOND>>
+
+    Why don’t you take a slice of that eternity and show me around?
 
 ===
 
 title: FredGrave
 ---
-
-<<if visited("FredGrave") is true>>
-
-    <<if visited("DoneGame") is true>>
-
-        <<ChangeSpeaker Player FriendEnd>>
-        <<Focus SECOND>>
-        Huh, is that all?
-
-        <<Focus FIRST>>
-        <<SetExpression happy>>
-        Yes, there isn’t much. It’s why I was really happy to find you!
-
-        <<Focus SECOND>>
-        You’re lucky you grew on me, or I’d be the one going off to find someone new to hang off of.
-
-        <<FollowObject DialogueCam Gravekeeper>>
-        <<EndingCutscene Gravekeeper>>
-
-    <<else>>
-
-        <<ChangeSpeaker Player FriendEnd>>
-        <<Focus SECOND>>
-        So this is my grave...
-
-        <<ChangeSpeaker Grave>>
-        Stranger to Many, Friend to None
-
-        <<ChangeSpeaker Player FriendEnd>>
-        <<Focus FIRST>>
-        <<SetExpression shrug>>
-        It’s just backwards! An honest mistake, probably.
-
-        <<Focus SECOND>>
-        Marson Monuments is the one that makes our headstones, you know? Maybe we should file a complaint.
-
-        <<Focus FIRST>>
-        <<SetExpression disappointed>>
-        Our complaint will only get denied.
-
-        <<Focus SECOND>>
-        Hm.
-
-    <<endif>>
-
-<<else>>
-
-    <<ChangeSpeaker Player FriendEnd>>
-    <<Focus SECOND>>
+<<ChangeSpeaker Player FriendEnd>>
+<<Focus SECOND>>
+    
     So this is my grave...
 
-    <<ChangeSpeaker Grave>>
-    Stranger to Many, Friend to None
+<<ChangeSpeaker Grave>>
+    
+    <i>Stranger to Many, Friend to None</i>
 
-    <<ChangeSpeaker Player FriendEnd>>
-    <<Focus FIRST>>
-    <<SetExpression shrug>>
+<<ChangeSpeaker Player FriendEnd>>
+<<Focus FIRST>>
+<<SetExpression shrug>>
+        
     It’s just backwards! An honest mistake, probably.
 
-    <<Focus SECOND>>
+<<Focus SECOND>>
+    
     Marson Monuments is the one that makes our headstones, you know? Maybe we should file a complaint.
 
-    <<Focus FIRST>>
-    <<SetExpression disappointed>>
+<<Focus FIRST>>
+<<SetExpression disappointed>>
+
     Our complaint will only get denied.
 
-    <<Focus SECOND>>
+<<Focus SECOND>>
+
     Hm.
 
+<<if visited("YourGrave") is true>>
+    [[DoneGame]]
 <<endif>>
-
-
 ===
 
 title: NoGate
@@ -114,81 +77,58 @@ Hey, I want to check out the gravestones before we go anywhere.
 
 title: YourGrave
 ---
+<<ChangeSpeaker Player FriendEnd>>
+<<Focus SECOND>>
 
-<<if visited("FredGrave") is true>>
-
-    <<if visited("DoneGame") is true>>
-
-        <<ChangeSpeaker Player FriendEnd>>
-        <<Focus SECOND>>
-        Huh, is that all?
-
-        <<Focus FIRST>>
-        <<SetExpression happy>>
-        Yes, there isn’t much. It’s why I was really happy to find you!
-
-        <<Focus SECOND>>
-        You’re lucky you grew on me, or I’d be the one going off to find someone new to hang off of.
-
-        <<FollowObject DialogueCam Gravekeeper>>
-        <<EndingCutscene Gravekeeper>>
-
-    <<else>>
-
-        <<ChangeSpeaker Player FriendEnd>>
-        <<Focus SECOND>>
-        Nice bouquet. The flowers look nice.
-
-        <<Focus FIRST>>
-        <<SetExpression happy>>
-        Thank you!
-
-        <<ChangeSpeaker Grave>>
-        Rest in Peace
-
-        <<ChangeSpeaker Player FriendEnd>>
-        <<Focus FIRST>>
-        That is <i>so</i> not what it said last time.
-
-        <<Focus SECOND>>
-        What did it say?
-
-        <<Focus FIRST>>
-        <<SetExpression shrug>>
-        ...Many things. I wouldn’t know how to start explaining it to you.
-
-    <<endif>>
-
-<<else>>
-
-    <<ChangeSpeaker Player FriendEnd>>
-    <<Focus SECOND>>
     Nice bouquet. The flowers look nice.
 
-    <<Focus FIRST>>
+<<Focus FIRST>>
     <<SetExpression happy>>
+        
     Thank you!
 
-    <<ChangeSpeaker Grave>>
-    Rest in Peace
+<<ChangeSpeaker Grave>>
 
-    <<ChangeSpeaker Player FriendEnd>>
-    <<Focus FIRST>>
+    <i>Rest in Peace</i>
+
+<<ChangeSpeaker Player FriendEnd>>
+<<Focus FIRST>>
+        
     That is <i>so</i> not what it said last time.
 
-    <<Focus SECOND>>
+<<Focus SECOND>>
+    
     What did it say?
 
-    <<Focus FIRST>>
+<<Focus FIRST>>
     <<SetExpression shrug>>
-    ...Many things. I wouldn’t know how to start explaining it to you.
+    ... Many things. I wouldn’t know how to start explaining it to you.
 
+<<if visited("FredGrave") is true>>
+    [[DoneGame]]
 <<endif>>
-
-
 ===
 
+title: DoneGame
+---
+<<ChangeSpeaker Player FriendEnd>>
+<<Focus SECOND>>
+    
+    Huh, is that all?
 
+<<Focus FIRST>>
+    <<SetExpression happy>>
+
+    Yes, there isn’t much. It’s why I was really happy to find you!
+
+    <<Focus SECOND>>
+
+    You’re lucky you grew on me, or <i>I’d</i> be the one going off to find someone new to hang off of.
+
+<<FollowObject DialogueCam Gravekeeper>>
+<<EndingCutscene Gravekeeper>>
+
+===
 title: Fred
 ---
 <<if visited("Fred") is false>>
@@ -249,38 +189,41 @@ title: endingScene
 
 <<ChangeSpeaker Player FriendEnd>>
 <<Focus SECOND>>
-Hey, what’s going on?
+
+    Hey, what’s going on?
 
 <<UnFollowObject DialogueCam>>
-
 <<Focus FIRST>>
-That’s the gravekeeper. It looks like we’re getting a new roommate.
+<<SetExpression neutral>>    
+    That’s the gravekeeper. It looks like we’re getting a new roommate.
 
 <<Focus SECOND>>
-Already? I only just died.
+    
+    Already? I only just died.
 
 <<Focus FIRST>>
-<<SetExpression shrug>>
-Like you, I doubt they had a choice in that matter.
+    <<SetExpression shrug>>
+    Like you, I doubt they had a choice in that matter.
 
 <<Focus SECOND>>
-But unlike me, they didn’t have a ghost by their side when they died. Shouldn’t we search for them?
+
+    But unlike me, they didn’t have a ghost by their side when they died. Shouldn’t we search for them?
 
 <<Focus FIRST>>
-<<SetExpression happy>>
-You’re right! It’s up to us to find them and keep them company.
+    <<SetExpression happy>>
+    You’re right! It’s up to us to find them and keep them company.
 
 <<Focus SECOND>>
-But what if we never find them?
+    
+    But what if we never find them?
 
 <<Focus FIRST>>
-<<SetExpression neutral>>
-We will. We have an eternity, remember?
+    <<SetExpression neutral>>
+    We will. We have an eternity, remember?
 
-<<SetExpression happy>>
-But until then, we’ll still be together in spirit.
+    <<SetExpression happy>>
+    But until then, we’ll still be together in spirit.
 
-<<Fade BlackScreen 1>>
-<<PanelOpen EndingPanel>>
-
+    <<Fade BlackScreen 1>>
+    <<PanelOpen EndingPanel>>
 ===
