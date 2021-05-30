@@ -33,6 +33,7 @@ public class SoundManagerScript : MonoBehaviour {
     public static AudioClip score;
     public static AudioClip paperThrow;
     public static AudioClip crumple;
+    public static AudioClip woosh;
 
 
 
@@ -89,6 +90,7 @@ public class SoundManagerScript : MonoBehaviour {
         score = Resources.Load<AudioClip>("ball_land");
         paperThrow = Resources.Load<AudioClip>("paper_toss");
         crumple = Resources.Load<AudioClip>("crumple");
+        woosh = Resources.Load<AudioClip>("walking_3");
         // click = Resources.Load<AudioClip>("button_click");
     }
 
@@ -102,85 +104,92 @@ public class SoundManagerScript : MonoBehaviour {
 
     public static void PlaySound(string clip)
     {
-        switch (clip)
+        if (!audioSrc.isPlaying)
         {
-            case "pickup_flower_2":
-                audioSrc.PlayOneShot(pickFlower);
-                break;
-            case "flower_success":
-                audioSrc.PlayOneShot(flowerSuccess);
-                break;
-            case "wall_bump":
-                audioSrc.PlayOneShot(wallBump, 0.2f);
-                break;
-            case "click":
-                audioSrc.PlayOneShot(click);
-                break;
-            case "player_talk":
-                audioSrc.PlayOneShot(playerTalk);
-                break;
-            case "pour_coffee":
-                audioSrc.PlayOneShot(pourCoffee);
-                break;
-            case "plop":
-                audioSrc.PlayOneShot(plopSound);
-                break;
-            case "place_cup":
-                audioSrc.PlayOneShot(placeCup);
-                break;
-            case "place_filter":
-                audioSrc.PlayOneShot(placeFilter);
-                break;
-            case "place_coffee":
-                audioSrc.PlayOneShot(placeCoffee);
-                break;
-            case "open_gate":
-                audioSrc.PlayOneShot(openGate, 0.2f); // lower gate volume
-                break;
-            case "whistle":
-                audioSrc.PlayOneShot(whistle);
-                break;
-            case "place_flower":
-                audioSrc.PlayOneShot(placeFlower);
-                break;
-           /* case "dialogue_sound":
-                audioSrc.PlayOneShot(dialogueSound);
-                break;
-           */
-            case "sign_sound":
-                audioSrc.PlayOneShot(sign);
-                break;
-            case "stamp_sound":
-                audioSrc.PlayOneShot(stamp);
-                break;
-            case "drawer_sound":
-                audioSrc.PlayOneShot(drawer);
-                break;
-            case "sliding_document":
-                audioSrc.PlayOneShot(slidingDocument);
-                break;
-            case "office_alert":
-                audioSrc.PlayOneShot(officeAlert);
-                break;
-            case "document_transform":
-                audioSrc.PlayOneShot(documentTransform);
-                break;
-            case "slurp":
-                audioSrc.PlayOneShot(slurp, 0.25f); // lower slurp volume
-                break;
-            case "score":
-                audioSrc.PlayOneShot(score);
-                break;
-            case "bounce":
-                audioSrc.PlayOneShot(bounce);
-                break;
-            case "paperThrow":
-                audioSrc.PlayOneShot(paperThrow);
-                break;
-            case "crumple":
-                audioSrc.PlayOneShot(crumple);
-                break;
+            switch (clip)
+            {
+                case "pickup_flower_2":
+                    audioSrc.PlayOneShot(pickFlower);
+                    break;
+                case "flower_success":
+                    audioSrc.PlayOneShot(flowerSuccess);
+                    break;
+                case "wall_bump":
+                    audioSrc.PlayOneShot(wallBump, 0.2f);
+                    break;
+                case "click":
+                    audioSrc.PlayOneShot(click);
+                    break;
+                case "player_talk":
+                    audioSrc.PlayOneShot(playerTalk);
+                    break;
+                case "pour_coffee":
+                    audioSrc.PlayOneShot(pourCoffee);
+                    break;
+                case "plop":
+                    audioSrc.PlayOneShot(plopSound);
+                    break;
+                case "place_cup":
+                    audioSrc.PlayOneShot(placeCup);
+                    break;
+                case "place_filter":
+                    audioSrc.PlayOneShot(placeFilter);
+                    break;
+                case "place_coffee":
+                    audioSrc.PlayOneShot(placeCoffee);
+                    break;
+                case "open_gate":
+                    audioSrc.PlayOneShot(openGate, 0.2f); // lower gate volume
+                    break;
+                case "whistle":
+                    audioSrc.PlayOneShot(whistle);
+                    break;
+                case "place_flower":
+                    audioSrc.PlayOneShot(placeFlower);
+                    break;
+                /* case "dialogue_sound":
+                     audioSrc.PlayOneShot(dialogueSound);
+                     break;
+                */
+                case "sign_sound":
+                    audioSrc.PlayOneShot(sign);
+                    break;
+                case "stamp_sound":
+                    audioSrc.PlayOneShot(stamp);
+                    break;
+                case "drawer_sound":
+                    audioSrc.PlayOneShot(drawer);
+                    break;
+                case "sliding_document":
+                    audioSrc.PlayOneShot(slidingDocument);
+                    break;
+                case "office_alert":
+                    audioSrc.PlayOneShot(officeAlert);
+                    break;
+                case "document_transform":
+                    audioSrc.PlayOneShot(documentTransform);
+                    break;
+                case "slurp":
+                    audioSrc.PlayOneShot(slurp, 0.25f); // lower slurp volume
+                    break;
+                case "score":
+                    audioSrc.PlayOneShot(score);
+                    break;
+                case "bounce":
+                    audioSrc.PlayOneShot(bounce);
+                    break;
+                case "paperThrow":
+                    audioSrc.PlayOneShot(paperThrow);
+                    break;
+                case "crumple":
+                    audioSrc.PlayOneShot(crumple);
+                    break;
+                case "woosh":
+                    audioSrc.PlayOneShot(woosh);
+                    break;
+            }
         }
+        
 
     }
     [YarnCommand("playSuccess")]

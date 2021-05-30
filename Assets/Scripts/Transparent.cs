@@ -13,7 +13,8 @@ public class Transparent : MonoBehaviour
                 if (GetComponent<SpriteRenderer>() != null) {
                     float dist = Vector3.Distance(this.transform.position, collider.gameObject.transform.position)/ (GetComponent<SpriteRenderer>().bounds.size.x);
 
-                    // Debug.Log(dist);
+                     Debug.Log("col");
+                     SoundManagerScript.PlaySound("woosh");
 
                     GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, dist);
                 } else if (transform.parent.GetComponent<SpriteRenderer>() != null){
@@ -41,6 +42,7 @@ public class Transparent : MonoBehaviour
         }
     }
 
+   
     // void OnCollisionStay(Collision collision){
     //     GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.25f);
     // }
