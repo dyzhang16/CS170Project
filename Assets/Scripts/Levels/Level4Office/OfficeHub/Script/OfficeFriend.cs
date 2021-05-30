@@ -6,7 +6,7 @@ using Yarn.Unity;
 public class OfficeFriend : MonoBehaviour
 {
     //positions that the NPC will move to;
-    public GameObject Destination1, Destination2, Destination3, Door;
+    public GameObject Destination1, Destination2, Destination3, Door, Exit;
 
     [HideInInspector]public bool isWalking = false;
 
@@ -91,8 +91,12 @@ public class OfficeFriend : MonoBehaviour
             }
             else if (cycle == 6)
             {
-                transform.position = Vector3.MoveTowards(transform.position, Door.transform.position, step);
-                if (Vector3.Distance(transform.position, Door.transform.position) < 0.001f)
+                transform.position = Vector3.MoveTowards(transform.position, Exit.transform.position, step);
+                if (Vector3.Distance(transform.position, Exit.transform.position) < 20f)
+                {
+                    Door.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 0f);
+                }
+                if (Vector3.Distance(transform.position, Exit.transform.position) < 0.001f)
                 {
                     isWalking = false;
                     StartCoroutine(changeDirection());
@@ -133,8 +137,9 @@ public class OfficeFriend : MonoBehaviour
         }
         else if (cycle == 6)
         {
-            gameObject.SetActive(false);
             yield return new WaitForSeconds(0.5f);
+            Door.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1);
+            gameObject.SetActive(false);
         }
         ++cycle;
         //Debug.Log(cycle);

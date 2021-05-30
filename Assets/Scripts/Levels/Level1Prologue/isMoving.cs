@@ -98,9 +98,10 @@ public class isMoving : MonoBehaviour
                     StartCoroutine(doneWalking());
                 }
             } else if (cycle == 1){ //diggy hole or something
-                transform.position = Vector3.MoveTowards(transform.position, insideGraveyard.transform.position, step);
+                Vector3 target = insideGraveyard.transform.position + new Vector3(-5, 0, 10);
+                transform.position = Vector3.MoveTowards(transform.position, target, step);
 
-                if (Vector3.Distance(transform.position, insideGraveyard.transform.position) < 0.001f)
+                if (Vector3.Distance(transform.position, target) < 0.001f)
                 {
                     isWalking = false;
                     StartCoroutine(doneWalking());

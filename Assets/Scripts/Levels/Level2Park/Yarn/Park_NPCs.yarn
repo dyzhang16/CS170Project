@@ -45,7 +45,7 @@ Don’t be a coward. Or are you embarrassed? Don’t worry, no one is paying att
 I am. I’m right here. What’s going on?
 
 <<ChangeSpeaker AnxiousPerson>>
-...Fine. I’ll do it, just because no one else is watching. But you better keep this a secret.
+... Fine. I’ll do it, just because no one else is watching. But you better keep this a secret.
 
 <<ChangeSpeaker PushyPerson>>
 I swear. Cross my heart and all that jazz.
@@ -79,7 +79,7 @@ tags:
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
     <<SetExpression disappointed>>
-    But they’re right there, on your head.…
+    But they’re right there, on your head...
 
 <<ChangeSpeaker Girl>>
 <<Focus FIRST>>
@@ -89,7 +89,7 @@ tags:
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
     <<SetExpression disappointed>>
-    Hello?? You’re wearing them! On! Your! Head! ...If only they could hear me…
+    Hello?? You’re wearing them! On! Your! Head! ... If only they could hear me...
 
 <<ChangeSpeaker Girl>>
 <<Focus FIRST>>
@@ -104,7 +104,7 @@ tags:
 <<ChangeSpeaker Man>>
 <<Focus FIRST>>
 
-    Ugh, can you beLIEVE the nerve? Jason forgot our anniversary...AGAIN!
+    Ugh, can you beLIEVE the nerve? Jason forgot our anniversary... AGAIN!
 
 <<ChangeSpeaker Woman>>
 <<Focus FIRST>>
@@ -119,7 +119,7 @@ tags:
 <<ChangeSpeaker Man>>
 <<Focus FIRST>>
 
-    But I still love him… I can’t just break it off so easily!
+    But I still love him... I can’t just break it off so easily!
 
 ===
 title: Squirrel
@@ -142,10 +142,25 @@ tags:
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
 
-	I didn’t see a squirrel at all..
+	I didn’t see a squirrel at all...
 
 <<ChangeSpeaker Girl>>
 <<Focus FIRST>>
 
 	Just because the tail isn’t fluffy doesn’t mean it’s not a squirrel.
+===
+
+title: Arcade
+---
+<<Pan Arcade>>
+<<ChangeSpeaker Player>>
+    <<SetExpression happy>>
+
+	Ooh, there are so many arcade cabinets in there! 
+
+    <<SetExpression sad>>
+
+    Oh, but no one’s playing them...
+
+<<UnPan Arcade>>
 ===

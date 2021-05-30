@@ -120,8 +120,9 @@ tags:
 title: TrashCan
 tags:
 ---
-<<ChangeSpeaker Player>>
-    You want to play some office basketball?
+<<ChangeSpeaker Player Friend>>
+<<Focus SECOND>>
+	Do you wanna take a break and play some trash can basketball? I’ve got some documents that need throwing away.
     -> Yes.
         <<Show BasketballCamRenderTexture>>
     -> No.

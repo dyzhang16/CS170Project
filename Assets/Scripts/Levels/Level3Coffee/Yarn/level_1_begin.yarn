@@ -6,13 +6,13 @@ tags:
 
 	No wonder the line is held up. The barista is sleeping on the job! 
 	
-	At least, I hope they’re just sleeping…
+	At least, I hope they’re just sleeping...
 	
 	If this goes on, that guy will never get their coffee and then they’ll never talk to me!
 	
 	There’s got to be something I can do to fix this. Maybe I can make their coffee for them? 
 	
-	But I don’t actually know how to make coffee…
+	But I don’t actually know how to make coffee...
 	
 	Is there an employee <b>instruction manual</b> anywhere?
 <<ChangeVariable GameManager visitedCoffee 1>>
@@ -22,7 +22,7 @@ title: wrong_coffee_with_receipt
 ---
 
 <<ChangeSpeaker Player>>
-	Hmmm I guess I made the wrong coffee
+	Hmmm I guess I made the wrong coffee...
 
 	Maybe I should check Frederic's receipt and the coffee recipe book again.
 ===
@@ -40,7 +40,6 @@ title: no_lid_or_sleeve
 
 <<ChangeSpeaker Player>>
 	This time I won't forget the lid and the sleeve!
-
 ===
 
 title: RecipeBook
@@ -74,13 +73,20 @@ tags:
 title: LeaveCoffee
 tags:
 ---
-
+<<CheckDrink Environment>>
 <<if HasItem("Bizarre Coffee") is true>>
 	<<ChangeSpeaker Player>>
 		Is this drink even on the menu?
 <<elseif HasItem("Random Coffee") is true>>
 	<<ChangeSpeaker Player>>
-		I think I need to add a sleeve and lid to my drink before I leave.
+		This is coffee alright... Am I missing anything?
+<<elseif $CompletedDrinkExists is 1>>
+	<<ChangeSpeaker Player>>
+	<<SetExpression happy>>
+		This should do it! I hope I got it right.
+<<else>>
+	<<ChangeSpeaker Player>>
+		Why did i come here
 <<endif>>
 
 <<ChangeSpeaker None>>

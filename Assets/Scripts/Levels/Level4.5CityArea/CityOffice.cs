@@ -63,6 +63,7 @@ public class CityOffice : MonoBehaviour
                 friend.transform.position = officedoor.transform.position;
                 // strange bug but set the friend's collider to be a trigger
                 friend.GetComponentInChildren<Collider>().isTrigger = true;
+                friend.GetComponent<SpriteRenderer>().flipX = true;
             } else if (GameManager.instance.idNeeded == 2){
                 officeDoorArrow.GetComponent<BoxCollider>().enabled = true;
             }

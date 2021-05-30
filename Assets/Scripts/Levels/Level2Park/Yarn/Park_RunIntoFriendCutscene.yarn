@@ -7,26 +7,21 @@ tags:
     <<wait 1>>
     <<DoRunIntoFriendCutscene Friend1>>
 
-<<ChangeSpeaker Player Friend>>
+<<ChangeSpeaker Player Sahnic>>
 
     <<Focus SECOND>>
     <<SetExpression angry>>
-        Get out the way, kid! I'm late for work but I still need my coffee!!
+        Hey, outta the way! 
 
     <<Focus FIRST>>
-        Woah!
+        Well, that’s rude. No one was even in their way.
 
     <<ChangeSpeaker Player>>
     <<wait 2>>
-        ...
-        <<SetExpression shrug>>
-        What a rude person.
         <<SetExpression neutral>>
         ...
 
-        Wait...
-
-        Did they actually just notice me?
+        Unless... He couldn’t have been talking to me, could he...s?
 
 <<ChangeVariable GameManager friendRanIntoPlayerCutscene 1>>
 ===

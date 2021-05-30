@@ -35,7 +35,7 @@ public class Graveyard : MonoBehaviour
                 //Debug.Log(CustomVariableStorage.GetValue("$checkpoint_1"));
                 // CustomVariableStorage.SetValue("$puzzle", 1);
 
-                gravestone.GetComponent<RunDialogue>().dialogueToRun = "prologue_doneFlowers";
+                gravestone.GetComponent<RunDialogue>().dialogueToRun = "returnToGrave";
                 gate.GetComponent<RunDialogue>().dialogueToRun = "return_gate";
 
                 // tracker.NodeComplete("prologue_begin");
@@ -82,7 +82,7 @@ public class Graveyard : MonoBehaviour
                 //change gate dialogue
                 gate.GetComponent<RunDialogue>().dialogueToRun = "NoGate";
                 //change gravestone dialogue
-                gravestone.GetComponent<RunDialogue>().dialogueToRun = "DoneGame";
+                gravestone.GetComponent<RunDialogue>().dialogueToRun = "YourGrave";
 
                 //change player positions
                 player.transform.position = player.transform.position + new Vector3(-40, 0, 0);
