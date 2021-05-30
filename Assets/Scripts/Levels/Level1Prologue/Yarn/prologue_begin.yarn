@@ -11,7 +11,7 @@
 
 	Whew, that was a long ride! I can finally breathe, Well- not, really.
 
-	Where is this? I don’t recognise this place. Where is everyone?
+	Where is this? I don’t recognize this place. Where is everyone?
 
 <<MoveNPC Gravekeeper>>
 <<else>>
@@ -64,7 +64,7 @@ title: prologue_doneExplore
 	
 	It doesn’t look like anyone else was buried here. 
 	<<SetExpression sad>>
-	So...I’m alone in this graveyard with a sad little gravestone that doesn’t even say anything meaningful...
+	So... I’m alone in this graveyard with a sad little gravestone that doesn’t even say anything meaningful...
     <<SetExpression neutral>>
 	I have to get out of here. Surely I’ll be able to find others outside of this cemetery, right?
 
@@ -87,6 +87,18 @@ title: prologue_doneFlowers
     <<SetExpression happy>>
 	Aaaand, there! Looking better already. Now I can go out and find other ghosts.
 
+===
+
+title: returnToGrave
+---
+<<ChangeSpeaker Grave>>
+<<Focus FIRST>>
+
+	(In the top left corner, click the GEAR to open the menu. Click the GHOST or use TAB to open your inventory.)
+
+<<ChangeSpeaker Player>>
+<<Focus FIRST>>
+Ghost:The words haven’t changed again. Hnng, just know I’m watching you.
 ===
 
 title: dragTutorial

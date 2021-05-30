@@ -3,7 +3,7 @@ tags:
 ---
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
-<<if visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Matthew's Table First time
+<<if visited("OfficeFriend") is true>>  //As Ghost Talked to friend, talking to Alphonse's Table First time
 	<<if $TookDocument is 0>>
 
 		That’s 1 of 3 stacks.
@@ -104,20 +104,34 @@ tags:
 ---
 <<ChangeSpeaker Ellie>>
 <<Focus FIRST>>
-//<<if visited("OfficeFriend") is true>>
+<<if visited("OfficeFriend") is true and $OfficePuzzle is 0>>
 
-	Testing if these documents from Fredric's desk are good fertilizer or not.... 
+	Yeah, I’ve been trying out a new fertilizer for the office’s potted plants. What do you mean your paperwork is missing?
 
-	Hopefully the plants next to Fredric's desk sprout so he can't work here anymore...
-//<<endif>>
+<<else>>
+
+	Today’s agenda is speed. If I can file this whole stack by the end of the day, I can spend the weekend playing tabletop games!
+
+<<endif>>
 ===
 title: AlphonseAndMatthew
 tags:
 ---
+<<ChangeSpeaker Alphonse>>
+<<Focus FIRST>>
+
+	You’re doing good work, Matthew.
+
+<<ChangeSpeaker Matthew>>
+<<Focus FIRST>>
+
+	Mreow~
+
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
 
-	This person isn’t working, just staring out the window. The nameplate on the desk next to them reads ‘Alphonse’.
+	They’re just staring out the window while their cat’s stamping papers...
+
 ===
 
 

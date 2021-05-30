@@ -81,6 +81,20 @@ public class CoffeeYarnCommands : MonoBehaviour
         so.itemDescription = "One could possibly put cream and sugar in this…";
         Inventory.instance.AddItem(so);
     }
+    [YarnCommand("CheckDrink")]
+    public void CheckCompletedCoffee()
+    {
+        if (Inventory.instance.FindItemOfTypeDrink())
+        {
+            Debug.Log("Found item");
+            CustomVariableStorage.SetValue("$CompletedDrinkExists", 1);
+        }
+        else
+        {
+            Debug.Log("Didnt find Item");
+            CustomVariableStorage.SetValue("$CompletedDrinkExists", 0);
+        }
+    }
     public void CheckCoffee(string[] parameters)
     {
         string Object = string.Join(" ", parameters);

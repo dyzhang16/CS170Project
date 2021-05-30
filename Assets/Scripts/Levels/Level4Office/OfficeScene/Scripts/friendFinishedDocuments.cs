@@ -10,7 +10,7 @@ public class friendFinishedDocuments : MonoBehaviour
     private float period = 0.0f;
     void Update()
     {
-        float time = Random.Range(3, 10);
+        float time = Random.Range(2, 9);
         if (Timer.GetComponent<Timer>().timerIsRunning)
         {
             if (period > time)

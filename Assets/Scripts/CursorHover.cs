@@ -38,4 +38,41 @@ public class CursorHover : MonoBehaviour
             }
         }
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            showCursor = true;
+        }
+    }
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (showCursor)
+            {
+                Cursor.SetActive(true);
+                if (changePos)
+                {
+                    Cursor.transform.position = this.transform.position + changeVector;
+                }
+                else
+                {
+                    Cursor.transform.position = this.transform.position;
+                }
+            }
+            else
+            {
+                Cursor.SetActive(false);
+            }
+        }
+    }
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            showCursor = false;
+            Cursor.SetActive(false);
+        }
+    }
 }

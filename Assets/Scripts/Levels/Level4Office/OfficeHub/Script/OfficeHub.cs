@@ -41,7 +41,10 @@ public class OfficeHub : MonoBehaviour
                 Destroy(documentB);
                 Destroy(documentC);
             }
-
+            if (GameManager.instance.previousScene == "CityOffice" && GameManager.instance.followFriendinOffice == 0)
+            {
+                GameManager.instance.clearInventory = true;
+            }
             if (GameManager.instance.clearInventory){
                 GameManager.instance.deleteItems();
                 GameManager.instance.clearItems();
