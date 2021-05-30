@@ -188,8 +188,10 @@ public class SoundManagerScript : MonoBehaviour {
                     audioSrc.PlayOneShot(woosh);
                     break;
             }
+
         }
-        
+        else if(audioSrc.isPlaying && clip == "whistle") audioSrc.PlayOneShot(whistle); // whistle sound doesnt play when spawn (because standing on grave)
+
 
     }
     [YarnCommand("playSuccess")]
