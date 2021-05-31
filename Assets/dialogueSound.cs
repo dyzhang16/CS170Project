@@ -37,4 +37,9 @@ public class dialogueSound : MonoBehaviour
         }
 
     }
+
+    public void updateTextSound(float vol)
+    {
+        dia.volume = vol;
+    }
 }
