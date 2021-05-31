@@ -80,8 +80,7 @@ public class MusicManagerScript : MonoBehaviour
                 tutorial_music.volume = musicVolume;
                 tutorial_music.Play();// start tut music
                 street_music.Stop();
-
-                Debug.Log("playing tutorial music");
+                menu_music.Stop();
                 break;
             case "Park":
                 tutorial_music.Stop(); // stop tutorial music
@@ -89,7 +88,7 @@ public class MusicManagerScript : MonoBehaviour
                     street_music.volume = musicVolume;
                     street_music.Play(); // start street music
                 }
-                Debug.Log("playing street music");
+                menu_music.Stop();
                 break;
             case "StreetCoffee":
                 coffee_music.Stop(); // stop coffee music after exiting 
@@ -98,11 +97,13 @@ public class MusicManagerScript : MonoBehaviour
                     street_music.volume = musicVolume;
                     street_music.Play(); //if street music is not playing then play (after exiting coffee)
                 }
+                menu_music.Stop();
                 break;
             case "CoffeeScene":
                 street_music.Stop();
                 coffee_music.volume = musicVolume;
                 coffee_music.Play();
+                menu_music.Stop();
                 break;
             case "CityOffice":
                 if (!street_music.isPlaying){
@@ -110,6 +111,7 @@ public class MusicManagerScript : MonoBehaviour
                     street_music.Play();
                 }
                 office_music.Stop();
+                menu_music.Stop();
                 break;
             case "OfficeScene":
                 street_music.Stop(); // stops street music
@@ -117,18 +119,19 @@ public class MusicManagerScript : MonoBehaviour
                     office_music.volume = musicVolume;
                     office_music.Play();
                 }
+                menu_music.Stop();
                 break;
             case "Office":
                 street_music.Stop(); // stops street music
                 office_music.volume = musicVolume;
                 office_music.Play();
+                menu_music.Stop();
                 break;
         }
     }
 
     public void updateVolume(float val){
         musicVolume = val;
-        Debug.LogWarning("Music Volume is: " + musicVolume);
         tutorial_music.volume = musicVolume; 
         street_music.volume = musicVolume;
         coffee_music.volume = musicVolume;
@@ -137,7 +140,7 @@ public class MusicManagerScript : MonoBehaviour
     }
     [YarnCommand("StopMusic")]
     public void stopMusic(){
-        Debug.Log("HiT here");
+        menu_music.Stop();
         tutorial_music.Stop();
         street_music.Stop();
         coffee_music.Stop();
