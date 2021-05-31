@@ -95,8 +95,8 @@ public class GameManager : MonoBehaviour
     public int ending = 0;
 
     //text speed
-    public float textSpeed = 0.025f;
-    public float sfxSound;
+    public float textSpeed = 6f;
+    public float sfxSound = 3f;
 
     //controls
     public KeyCode INTERACT_KEY = KeyCode.Space;
@@ -197,6 +197,46 @@ public class GameManager : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void ResetGameManager() 
+    {
+        clearItems();
+        clearInventory = false;
+        previousScene = "";
+        playerPosition = new Vector3(0,0,0);
+        flowerPuzzle = 0;
+        friendRanIntoPlayerCutscene = 0;
+        firstFriendMeeting = 0;
+        hasReceipt = 0;
+        gaveDrink = 0;
+        visitedAfterCoffee = 0;
+        wrongCoffee = 0;
+        visitedCoffee = 0;
+        readBook = 0;
+        openLeftDoor = 0;
+        openMidDoor = 0;
+        openRightDoor = 0;
+        addedCoffeeMachineItem = 0;
+        followFriendinOffice = 0;
+        documentNeeded = 0;
+        officePuzzle = 0;
+        officeDeskPuzzle = 0;
+        walkedToApartment = 0;
+        firstApartment = 0;
+        cleanedRoom = 0;
+        visitedBed = 0;
+        timeCapsule = 0;
+        firstDateDia = 0;
+        walkToStreet = 0;
+        arcadeFirstVisit = 0;
+        arcadeFirstCrane = 0;
+        arcadeFirstDance = 0;
+        arcadeNoCraneDirs = 0;
+        arcadeNoDanceDirs = 0;
+        idPickedUp = 0; 
+        idNeeded = 0;
+        ending = 0;
     }
 
     // Checks a variable

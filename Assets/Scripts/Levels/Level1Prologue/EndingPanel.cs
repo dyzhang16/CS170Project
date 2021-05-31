@@ -28,6 +28,7 @@ public class EndingPanel : MonoBehaviour
         Destroy(level);
         yield return new WaitForSeconds(5f);
         blackScreen.gameObject.GetComponent<Animator>().SetTrigger("StartLong");
+        GameManager.instance.ResetGameManager();
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("MainMenu");
     }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using Yarn.Unity;
 
 public class MusicManagerScript : MonoBehaviour
 {
@@ -130,8 +130,9 @@ public class MusicManagerScript : MonoBehaviour
         coffee_music.volume = musicVolume;
         office_music.volume = musicVolume;
     }
-
+    [YarnCommand("StopMusic")]
     public void stopMusic(){
+        Debug.Log("HiT here");
         tutorial_music.Stop();
         street_music.Stop();
         coffee_music.Stop();
