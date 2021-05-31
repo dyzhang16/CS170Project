@@ -67,22 +67,12 @@ tags:
 	<<ChangeSpeaker Guard>>
 	<<Focus FIRST>>
 		
-		I’m afraid I don’t know what you’re talking about, Fredric. I don’t recognise you at all.
+		I’m afraid I don’t know what you’re talking about, Fredric. I don’t recognize you at all.
 
 	<<ChangeSpeaker None Friend>>
 	<<Focus SECOND>>
         <<SetExpression angry>>
 		You just said my name!
-
-	<<ChangeSpeaker Guard>>
-	<<Focus FIRST>>
-
-		Did I? I don’t know what you’re talking about.
-
-	<<ChangeSpeaker None Friend>>
-	<<Focus SECOND>>
-        <<SetExpression angry>>
-		I’m already late for work. Let me in. Please?
 
 	<<ChangeSpeaker Guard>>
 	<<Focus FIRST>>
@@ -132,7 +122,7 @@ position: -483,89
 
 	<<Focus SECOND>>
         <<SetExpression hmm>>
-		Oh, it’s you again. Look, I really need to find my ID so I can get into my work building. So if- If you can help me find it…
+		Oh, it’s you again. Look, I really need to find my ID so I can get into my work building. So if- If you can help me find it...
 
 	<<Focus FIRST>>
         <<SetExpression sad>>
@@ -163,12 +153,12 @@ position: -483,89
 	<<ChangeSpeaker Guard>>
 	<<Focus FIRST>>
 
-		...You sure? You just stood over there and talked to yourself for a moment.	
+		... You sure? You just stood over there and talked to yourself for a moment.	
 
 	<<ChangeSpeaker Player Friend>>
 	<<Focus SECOND>>
         <<SetExpression hmm>>
-		Is that what it looked like? I had my ID all along, just...misplaced it. Anyway, see you later.
+		Is that what it looked like? I had my ID all along, just... misplaced it. Anyway, see you later.
         <<SetExpression neutral>>
 		C’mon, kid!
 
@@ -176,7 +166,6 @@ position: -483,89
 
 		I’m right behind you.
 
-	//Fred and Ghost enter office building, so they’re technically gone at this point
 	<<ChangeSpeaker Guard>>
 	<<Focus FIRST>>
 
@@ -263,11 +252,6 @@ position: 613,-249
 <<Focus SECOND>>
 <<SetExpression mad>>
     The road’s empty. It’s fine!
-
-<<FollowObject DialogueCam Friend1>>
-<<moveToStreet Friend1>>
-<<wait 3>>
-
 	[[friendHitByCar]]
 ===
 
@@ -276,17 +260,22 @@ tags:
 ---
 <<ChangeSpeaker Player>>
 <<Focus FIRST>>
-<<SetExpression sad>>
 
 	Wait, there’s a CAR!
-	//camera pan to incoming car
-	FREDRIC, NO-!
-
-<<hitByCar Friend1>>
+<<FollowObject DialogueCam car>>
+<<FollowObject DialogueCam Friend1>>
+<<moveToStreet Friend1>> <<hitByCar Friend1>>
+<<wait 2>>
 ===
 
 title: ScaredNPCs
 ---
+<<ChangeSpeaker Player>>
+<<Focus FIRST>>
+<<SetExpression sad>>
+
+	FREDRIC, NO-!
+
 <<ChangeSpeaker Guard>>
 <<Focus FIRST>>
 
@@ -321,7 +310,7 @@ tags:
 <<Focus FIRST>>
 <<SetExpression sad>>
 
-	Fredric! Are you… alright?
+	Fredric! Are you... alright?
 
 <<Focus SECOND>>
 
@@ -330,14 +319,14 @@ tags:
 <<Focus FIRST>>
 <<SetExpression disappointed>>
 
-	But...you’re going to be. I’m no medical professional, but I think the whole coughing-out-blood thing seals the deal?
+	But... you’re going to be. I’m no medical professional, but I think the whole coughing-out-blood thing seals the deal?
 
 <<Focus SECOND>>
 <<SetExpression mad>>
 
 	<i>Cough-</i>  Dammit… I never... got to... resign...
 <<Fade BlackScreen 2>>
-<<GhostifyFriend Friend1>> <<wait 2>>
+<<wait 2>> <<GhostifyFriend Friend1>> 
 <<ChangeSpeaker Player FriendEnd>>
 <<Focus FIRST>>
 <<SetExpression neutral>>	
@@ -351,7 +340,7 @@ tags:
 	I’m dead. I’m <i>dead.</i>
 
 <<Focus FIRST>>
-	... So, seeing as it’s likely going to be your new place of residence...do you want to come over to my place instead?
+	... So, seeing as it’s likely going to be your new place of residence... do you want to come over to my place instead?
 
 <<Focus SECOND>>
 	
@@ -360,7 +349,7 @@ tags:
 <<Focus FIRST>>
 <<SetExpression shrug>>
 	
-	It’ll sink in eventually…
+	It’ll sink in eventually...
 
 
 <<ChangeVariable GameManager ending 1>>

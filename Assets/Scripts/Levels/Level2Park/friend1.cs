@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement; // for getting the current scene
 public class friend1 : MonoBehaviour
 {
 
+    public Animator anim;
+
     public GameObject coffeeStand;
     public GameObject receipt;
     public VariableStorageBehaviour CustomVariableStorage;
@@ -45,6 +47,7 @@ public class friend1 : MonoBehaviour
             
             if (Vector3.Distance(transform.position, target) < 0.001f){
                 isWalking = false;
+                anim.SetBool("isMoving", false);
                 if (GameManager.instance != null)
                 {
                     if (GameManager.instance.firstFriendMeeting == 5) 
@@ -66,6 +69,7 @@ public class friend1 : MonoBehaviour
     [YarnCommand("MoveToOffice")]
     public void MoveToOffice(){
         isWalking = true;
+        anim.SetBool("isMoving", true);
         col.isTrigger = true;
         GameManager.instance.visitedAfterCoffee = 1;
         GameManager.instance.firstFriendMeeting = 2;
@@ -100,6 +104,7 @@ public class friend1 : MonoBehaviour
     [YarnCommand("MoveToOffice2")]
     public void MoveToOffice2(){
         isWalking = true;
+        anim.SetBool("isMoving", true);
         GameManager.instance.firstFriendMeeting = 3;
         // this.GetComponent<SpriteRenderer>().flipX = true;
     }
@@ -108,6 +113,7 @@ public class friend1 : MonoBehaviour
     [YarnCommand("MoveToOffice3")]
     public void MoveToOffice3(){
         isWalking = true;
+        anim.SetBool("isMoving", true);
         GameManager.instance.firstFriendMeeting = 4;
         // this.GetComponent<SpriteRenderer>().flipX = true;
     }
@@ -115,6 +121,7 @@ public class friend1 : MonoBehaviour
     [YarnCommand("MoveToOffice4")]
     public void MoveToOffice4(){
         isWalking = true;
+        anim.SetBool("isMoving", true);
         GameManager.instance.firstFriendMeeting = 5;
         
     }
@@ -124,6 +131,7 @@ public class friend1 : MonoBehaviour
         target = DestinationAfterOffice.transform.position + new Vector3(23, 0, 0);
         Debug.LogWarning("Transforming Target position");
         isWalking = true;
+        anim.SetBool("isMoving", true);
         this.GetComponent<SpriteRenderer>().flipX = true;
     }
 
@@ -131,6 +139,7 @@ public class friend1 : MonoBehaviour
     public void moveToStreet(){
         target = DestinationAfterOffice.transform.position + new Vector3(23, 0, -28);
         isWalking = true;
+        anim.SetBool("isMoving", true);
         GameManager.instance.walkToStreet = 1;
         this.GetComponent<SpriteRenderer>().flipX = true;
     }
@@ -142,7 +151,7 @@ public class friend1 : MonoBehaviour
 
     [YarnCommand("hitByCar")]
     public void hitByCar(){
-        car.transform.position = this.transform.position + new Vector3(-100, 0, 0);
+        car.transform.position = this.transform.position + new Vector3(-100, 0, -30);
         car.GetComponent<car>().cycle = 2;
         playerMove = true;
         // this.GetComponent<SpriteRenderer>().flipX = false;
@@ -232,7 +241,7 @@ public class friend1 : MonoBehaviour
         while (transform.position != destination)
 		{
             transform.position = Vector3.MoveTowards(transform.position, destination, 50 * Time.deltaTime);
-
+            anim.SetBool("isMoving", true);
             yield return null;
 		}
 

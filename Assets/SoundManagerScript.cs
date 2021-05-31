@@ -212,6 +212,6 @@ public class SoundManagerScript : MonoBehaviour {
     {
         //vol = vol / 10f;
         audioSrc.volume = vol;
-        Debug.Log("sfx vol = " + vol);
+        //Debug.Log("sfx vol = " + vol);
     }
 }

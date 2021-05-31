@@ -48,7 +48,7 @@ tags:
 <<if visited("RecipeBook") is false>>
     <<ChangeSpeaker Player>>
 
-        I can learn how to make coffee from this! Let’s see…
+        I can learn how to make coffee from this! Let’s see...
 <<ChangeVariable GameManager readBook 1>>
 <<Show Recipe_Book>>
 <<else>>

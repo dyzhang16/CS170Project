@@ -46,7 +46,7 @@ tags:
 	
 	Whether or not I think of you as a friend, I still have work to finish up.
 
-	Say, the time will pass by quicker if you help me out. When we finish, we can...hang out...like friends do.
+	Say, the time will pass by quicker if you help me out. When we finish, we can... hang out... like friends do.
 	
 	If you can find an extra <b>pen</b> and <b>stamp</b> around here, just pick up a document to get started.
 ===
@@ -77,19 +77,15 @@ tags:
 <<else>> 
 <<Focus FIRST>>
 
-	I am missing some tools....
+	I am missing some tools...
 
 <<endif>>
 ===
-title: Cabinet
+title: Stamp
 tags:
 ---
 <<ChangeSpeaker Player Friend>>
 <<Focus FIRST>>
-<<if $StampAdded is 1>>
-
-	You find nothing of importance in the cabinet.
-<<else>>
 	<<SetExpression disappointed>>
 	Is it just this one ‘DENIED’ stamp?
 
@@ -97,9 +93,9 @@ tags:
 
 	In this office, we don’t approve of things.
 
-<<Add Cabinet>>
+<<Add Stamp>>
+<<Destroy Stamp>>
 <<set $StampAdded to 1>>
-<<endif>>
 ===
 title: Pen
 tags:

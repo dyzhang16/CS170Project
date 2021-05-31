@@ -32,7 +32,7 @@ title: prologue_gravekeeper
 ---
 <<ChangeSpeaker Player>>
 	
-	Hello! Hi! ...Excuse me?
+	Hello! Hi! ... Excuse me?
 
 	Hmm. I guess the living can’t see me. That person must have been the one who dug my grave.
 
@@ -44,7 +44,7 @@ title: prologue_gravekeeper
 
 <<ChangeSpeaker Player>>
 
-	...Wait a second. But that’s not my name?
+	... Wait a second. But that’s not my name?
 
 	No, I shouldn’t be worrying about that right now.
 
@@ -62,7 +62,7 @@ title: prologue_doneExplore
 <<if visited("prologue_doneExplore") is false>>
 <<ChangeSpeaker Player>>
 	
-	It doesn’t look like anyone else was buried here. 
+	 It doesn’t look like anyone else was buried in this place.
 	<<SetExpression sad>>
 	So... I’m alone in this graveyard with a sad little gravestone that doesn’t even say anything meaningful...
     <<SetExpression neutral>>
@@ -70,7 +70,7 @@ title: prologue_doneExplore
 
 	But before I leave, I think I’ll brighten up my grave first.
 
-	I think I saw some pretty flowers lying around earlier…
+	I think I saw some pretty flowers lying around earlier...
 
 	Yes. If I can find some <b>flowers</b> to decorate with, my grave will look a lot more lively.
 

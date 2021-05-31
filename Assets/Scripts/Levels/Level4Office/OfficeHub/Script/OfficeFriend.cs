@@ -8,6 +8,8 @@ public class OfficeFriend : MonoBehaviour
     //positions that the NPC will move to;
     public GameObject Destination1, Destination2, Destination3, Door, Exit;
 
+    public Animator anim;
+
     [HideInInspector]public bool isWalking = false;
 
     public float Speed;
@@ -18,12 +20,14 @@ public class OfficeFriend : MonoBehaviour
     public void Move()
     {
         isWalking = true;
+        anim.SetBool("isMoving", true);
     }
     [YarnCommand("Leave")]
     public void Leave()
     {
         cycle = 4;
         isWalking = true;
+        anim.SetBool("isMoving", true);
     }
     void Update()
     {
@@ -49,7 +53,6 @@ public class OfficeFriend : MonoBehaviour
             //second destination
             else if (cycle == 1)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
                 transform.position = Vector3.MoveTowards(transform.position, Destination2.transform.position, step);
 
                 if (Vector3.Distance(transform.position, Destination2.transform.position) < 0.001f)
@@ -67,6 +70,7 @@ public class OfficeFriend : MonoBehaviour
                 if (Vector3.Distance(transform.position, Destination3.transform.position) < 0.001f)
                 {
                     isWalking = false;
+                    anim.SetBool("isMoving", false);
                     StartCoroutine(changeDirection());
                 }
             }

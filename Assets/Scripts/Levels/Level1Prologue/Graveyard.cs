@@ -66,7 +66,6 @@ public class Graveyard : MonoBehaviour
                 Vector3 pos = new Vector3((gateApproach.transform.position.x - 20), 
                     gateApproach.transform.position.y, gateApproach.transform.position.z);
                 player.transform.position = pos;
-
                 //destroy gate approach
                 Destroy(gateApproach);
 

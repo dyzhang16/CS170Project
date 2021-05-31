@@ -6,8 +6,6 @@ using Yarn.Unity;
 public class HighlightSprite : MonoBehaviour
 {
     public GameObject interact;
-    public Sprite Sprite1;
-    public Sprite Sprite2;
 
     private DialogueRunner diaRun = null;
     private Vector3 defaultValue;

@@ -225,7 +225,8 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             Time.timeScale = 1;
 
             controlsPanel.SetActive(false);
-            optionsPanel.SetActive(false);
+            optionsPanel.GetComponent<CanvasGroup>().alpha = 0;
+            optionsPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
         else
         {

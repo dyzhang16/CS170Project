@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
 
     //text speed
     public float textSpeed = 0.025f;
+    public float sfxSound;
 
     //controls
     public KeyCode INTERACT_KEY = KeyCode.Space;

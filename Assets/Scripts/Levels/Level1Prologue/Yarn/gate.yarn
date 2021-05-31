@@ -18,9 +18,9 @@ tags:
 <<else>>
 <<ChangeSpeaker Player>>
 
-   The gate is locked. I’ll worry about how I’ll get out later. I still need to familiarize myself with my new gravestone.
+   The gate is locked. I wanted to familiarize myself with my new home, anyway.
 
-   Maybe I should check my gravestone again.
+   Maybe I should check in on my gravestone.
 
    <<set $checkpoint_2 to 1>>
     
@@ -112,16 +112,12 @@ title: key
 title: Gravekeeper
 ---
 <<ChangeSpeaker Player>>
-
+<<Focus FIRST>>
     So, you come here often?
 
     ...
     <<SetExpression disappointed>>
     I guess not.
-    <<SetExpression sad>>
-    Not only am I unseen, but also unheard. Is there no one I can talk to at all?
-    <<SetExpression neutral>>
-    If I’m the only one buried here, and I can’t communicate with the living, maybe there will be other ghosts I can spend time with outside!
 
     <<PanToObj DialogueCam Gate -10 45 -50>>
 
@@ -130,5 +126,4 @@ title: Gravekeeper
     <<UnPanObj DialogueCam>>
 
     <<set $checkpoint_1 to 1>>
-
 ===
