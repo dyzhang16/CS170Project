@@ -19,7 +19,8 @@ public class MusicManagerScript : MonoBehaviour
     private AudioSource street_music;
     private AudioSource coffee_music;
     private AudioSource office_music;
-  
+    private AudioSource menu_music;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -35,8 +36,9 @@ public class MusicManagerScript : MonoBehaviour
         street_music = musicSource[1];
         coffee_music = musicSource[2];
         office_music = musicSource[3];
+        menu_music = musicSource[4];
 
-        Scene currentScene = SceneManager.GetActiveScene();
+    Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
 
         
@@ -69,10 +71,12 @@ public class MusicManagerScript : MonoBehaviour
                 street_music.Stop();
                 office_music.Stop();
                 coffee_music.Stop();
+                menu_music.Play();
         
                 break;
             
             case "Tutorial":
+                menu_music.Stop();
                 tutorial_music.volume = musicVolume;
                 tutorial_music.Play();// start tut music
                 street_music.Stop();
