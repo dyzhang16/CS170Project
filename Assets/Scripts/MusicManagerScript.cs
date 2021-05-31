@@ -133,6 +133,7 @@ public class MusicManagerScript : MonoBehaviour
         street_music.volume = musicVolume;
         coffee_music.volume = musicVolume;
         office_music.volume = musicVolume;
+        menu_music.volume = musicVolume;
     }
     [YarnCommand("StopMusic")]
     public void stopMusic(){
