@@ -107,10 +107,11 @@ public class isMoving : MonoBehaviour
                     StartCoroutine(doneWalking());
                 }
             } else if (cycle == 2){ //flower
-                transform.position = Vector3.MoveTowards(transform.position, flower.transform.position, step);
+                Vector3 target = flower.transform.position + new Vector3(-5, 0, -10);
+                transform.position = Vector3.MoveTowards(transform.position, target, step);
                 p.AllowMove(false);
 
-                if (Vector3.Distance(transform.position, flower.transform.position) < 0.001f)
+                if (Vector3.Distance(transform.position, target) < 0.001f)
                 {
                     isWalking = false;
                     StartCoroutine(doneWalking());
