@@ -37,7 +37,7 @@ public class SoundManagerScript : MonoBehaviour {
 
 
 
-    static AudioSource audioSrc;
+    public static AudioSource audioSrc;
 
 
     // Start is called before the first frame update
