@@ -104,8 +104,8 @@ public class SoundManagerScript : MonoBehaviour {
 
     public static void PlaySound(string clip)
     {
-        if (!audioSrc.isPlaying)
-        {
+        
+        
             switch (clip)
             {
                 case "pickup_flower_2":
@@ -187,10 +187,10 @@ public class SoundManagerScript : MonoBehaviour {
                 case "woosh":
                     audioSrc.PlayOneShot(woosh);
                     break;
-            }
+            
 
         }
-        else if(audioSrc.isPlaying && clip == "whistle") audioSrc.PlayOneShot(whistle); // whistle sound doesnt play when spawn (because standing on grave)
+        
 
 
     }
