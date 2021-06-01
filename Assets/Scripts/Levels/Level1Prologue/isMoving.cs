@@ -83,7 +83,6 @@ public class isMoving : MonoBehaviour
     {
         if (isWalking)
         {
-            this.GetComponent<RunDialogue>().enabled = false;
             //distance traveled per frame
             float step = Speed * Time.deltaTime;
 
@@ -107,6 +106,7 @@ public class isMoving : MonoBehaviour
                     StartCoroutine(doneWalking());
                 }
             } else if (cycle == 2){ //flower
+                this.GetComponent<RunDialogue>().enabled = false;
                 Vector3 target = flower.transform.position + new Vector3(-5, 0, -10);
                 transform.position = Vector3.MoveTowards(transform.position, target, step);
                 p.AllowMove(false);
@@ -141,10 +141,6 @@ public class isMoving : MonoBehaviour
                 playWhistle();
             }
         }
-        else
-        {
-            this.GetComponent<RunDialogue>().enabled = true;
-        }
     }
 
     IEnumerator doneWalking(){
@@ -158,7 +154,8 @@ public class isMoving : MonoBehaviour
             }
         } else if (cycle == 1){
             GetComponent<SpriteRenderer>().flipX = true;
-            // this.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = false;
+            this.GetComponent<RunDialogue>().enabled = true;
+            
         } else if (cycle == 2){
             if (!dia.IsDialogueRunning){
                 p.AllowMove(true);

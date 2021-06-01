@@ -33,8 +33,6 @@ public class OfficeFriend : MonoBehaviour
     {
         if (isWalking)
         {
-            //disable dialogue while NPC is moving
-            this.GetComponent<RunDialogue>().enabled = false;
             //distance traveled per frame
             float step = Speed * Time.deltaTime;
 
@@ -66,11 +64,11 @@ public class OfficeFriend : MonoBehaviour
             {
                 GetComponent<SpriteRenderer>().flipX = true;
                 transform.position = Vector3.MoveTowards(transform.position, Destination3.transform.position, step);
-
                 if (Vector3.Distance(transform.position, Destination3.transform.position) < 0.001f)
                 {
                     isWalking = false;
                     anim.SetBool("isMoving", false);
+                    this.GetComponent<RunDialogue>().enabled = true;
                     StartCoroutine(changeDirection());
                 }
             }
@@ -106,12 +104,6 @@ public class OfficeFriend : MonoBehaviour
                     StartCoroutine(changeDirection());
                 }
             }
-        }
-        else
-        {
-            //enable dialogue while NPC is standing
-            this.GetComponent<RunDialogue>().enabled = true;
-            
         }
     }
 
