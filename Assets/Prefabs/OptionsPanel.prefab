@@ -679,7 +679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4167142942938372889}
   - component: {fileID: 6946436044626910291}
-  - component: {fileID: 7349406862797444365}
+  - component: {fileID: 8364915785243807844}
   m_Layer: 5
   m_Name: SoundBackground
   m_TagString: Untagged
@@ -703,8 +703,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -571, y: 49}
-  m_SizeDelta: {x: 393.77148, y: 122.00006}
+  m_AnchoredPosition: {x: -542, y: 49}
+  m_SizeDelta: {x: 384, y: 101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6946436044626910291
 CanvasRenderer:
@@ -714,7 +714,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3412536453844688992}
   m_CullTransparentMesh: 0
---- !u!114 &7349406862797444365
+--- !u!114 &8364915785243807844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -723,11 +723,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3412536453844688992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9960785, g: 0.9960785, b: 0.9960785, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1742,7 +1742,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8548837469754258050}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
