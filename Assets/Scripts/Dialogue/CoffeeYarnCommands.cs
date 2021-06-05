@@ -75,7 +75,7 @@ public class CoffeeYarnCommands : MonoBehaviour
     [YarnCommand("AddBrewedCoffee")]
     public void AddBrewedCoffee()
     {
-        Debug.Log("Adding Drink!");
+        // Debug.Log("Adding Drink!");
         var so = Instantiate(cloneItem);
         so.itemName = "Random Coffee";
         so.itemDescription = "One could possibly put cream and sugar in this…";
@@ -86,12 +86,12 @@ public class CoffeeYarnCommands : MonoBehaviour
     {
         if (Inventory.instance.FindItemOfTypeDrink())
         {
-            Debug.Log("Found item");
+            // Debug.Log("Found item");
             CustomVariableStorage.SetValue("$CompletedDrinkExists", 1);
         }
         else
         {
-            Debug.Log("Didnt find Item");
+            // Debug.Log("Didnt find Item");
             CustomVariableStorage.SetValue("$CompletedDrinkExists", 0);
         }
     }
@@ -100,12 +100,12 @@ public class CoffeeYarnCommands : MonoBehaviour
         string Object = string.Join(" ", parameters);
         if (Inventory.instance.CheckItem(Object))
         {
-            Debug.Log("Found item");
+            // Debug.Log("Found item");
             CustomVariableStorage.SetValue("$DrinkExists", 1);
         }
         else
         {
-            Debug.Log("Didnt find Item");
+            // Debug.Log("Didnt find Item");
             CustomVariableStorage.SetValue("$DrinkExists", 0);
         }
         
@@ -115,12 +115,12 @@ public class CoffeeYarnCommands : MonoBehaviour
         string Object = string.Join("", parameters);
         if (Inventory.instance.CheckItem(Object))
         {
-            Debug.Log("Found item");
+            // Debug.Log("Found item");
             CustomVariableStorage.SetValue("$CupExists", 1);
         }
         else
         {
-            Debug.Log("Didn't find Item");
+            // Debug.Log("Didn't find Item");
             CustomVariableStorage.SetValue("$CupExists", 0);
         }
     }

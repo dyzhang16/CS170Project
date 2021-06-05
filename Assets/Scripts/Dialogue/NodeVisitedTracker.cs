@@ -22,7 +22,7 @@ public class NodeVisitedTracker : MonoBehaviour
         dialogueRunner.AddFunction("visited", 1, delegate (Yarn.Value[] parameters)
         {
             var nodeName = parameters[0];
-            Debug.Log("Added Node:" + nodeName);
+            // Debug.Log("Added Node:" + nodeName);
             return _visitedNodes.Contains(nodeName.AsString);
         });
 
@@ -46,7 +46,7 @@ public class NodeVisitedTracker : MonoBehaviour
 
         var tags = new List<string>(dialogueRunner.GetTagsForNode(nodeName));
 
-        Debug.Log($"Starting the execution of node {nodeName} with {tags.Count} tags.");
+        // Debug.Log($"Starting the execution of node {nodeName} with {tags.Count} tags.");
     }
 
 }

@@ -13,7 +13,7 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
 
     public void Start()
     {
-        Debug.Log("Created a new Document");
+        // Debug.Log("Created a new Document");
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -49,7 +49,7 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
                     signedDocument = true;
                     Debug.LogWarning("No Sign Area");
                 }
-                Debug.Log("Signing This document made it: " + signedDocument);
+                // Debug.Log("Signing This document made it: " + signedDocument);
             }
             if (eventData.button == PointerEventData.InputButton.Right)
             {
@@ -99,7 +99,7 @@ public class DocumentPuzzle : MonoBehaviour, IPointerClickHandler, IDragHandler,
                     Debug.LogWarning("No Stamp Area");
                     stampedDocument = true;
                 }
-                Debug.Log("Stamping This document made it:" + stampedDocument);
+                // Debug.Log("Stamping This document made it:" + stampedDocument);
             }
         }
     }

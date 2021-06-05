@@ -55,7 +55,7 @@ public class MusicManagerScript : MonoBehaviour
 
     public void sceneChecker()
     {
-        Debug.Log("tis running fine");
+        // Debug.Log("tis running fine");
 
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;

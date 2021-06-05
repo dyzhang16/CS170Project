@@ -13,7 +13,7 @@ public class ItemClickHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log("DraggingSomething");
+            // Debug.Log("DraggingSomething");
         }
     }
 }

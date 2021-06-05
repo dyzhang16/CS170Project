@@ -60,7 +60,7 @@ public class LoadUniversalDialogue : MonoBehaviour
             // Add the scripts listed in universalYarnProgramFilenames
             foreach (string filename in universalYarnProgramFilenames)
             {
-                Debug.Log(string.Format("Added {0}.yarn", filename));
+                // Debug.Log(string.Format("Added {0}.yarn", filename));
                 dialogueRunner.Add(Resources.Load<YarnProgram>(filename));
             }
         }

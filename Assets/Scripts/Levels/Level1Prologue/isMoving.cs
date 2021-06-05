@@ -26,7 +26,7 @@ public class isMoving : MonoBehaviour
 
     public bool isWalking;
     public bool timeToWalkBack;
-    private bool alreadyWalkedBack = false;
+    // private bool alreadyWalkedBack = false;
     public float Speed;
 
     private int cycle = 0;

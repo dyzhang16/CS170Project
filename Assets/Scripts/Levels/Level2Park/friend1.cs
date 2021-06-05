@@ -90,12 +90,12 @@ public class friend1 : MonoBehaviour
     {
         if (Inventory.instance.FindItemOfTypeDrink())
         {
-            Debug.Log("Found item");
+            // Debug.Log("Found item");
             CustomVariableStorage.SetValue("$CompletedDrinkExists", 1);
         }
         else
         {
-            Debug.Log("Didnt find Item");
+            // Debug.Log("Didnt find Item");
             CustomVariableStorage.SetValue("$CompletedDrinkExists", 0);
         }
     }

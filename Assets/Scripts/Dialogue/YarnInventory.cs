@@ -120,7 +120,7 @@ public class YarnInventory : MonoBehaviour
     {
         string Object = parameters[0];
         GameObject PotentialObject = GameObject.Find(Object);
-        Debug.Log("HidingObject" + PotentialObject);
+        // Debug.Log("HidingObject" + PotentialObject);
         PotentialObject.SetActive(false);
     }
     private void DestroyObject(string[] parameters)

@@ -24,7 +24,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 {
                     SoundManagerScript.PlaySound("sliding_document");// sound for right doc
                     ++documentFinished;
-                    Debug.Log("Correct Document Finished: " + documentFinished);
+                    // Debug.Log("Correct Document Finished: " + documentFinished);
                 }
                 else
                 {
@@ -40,7 +40,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 {
                     SoundManagerScript.PlaySound("sliding_document");
                     ++documentFinished;
-                    Debug.Log("Correct Document Finished: " + documentFinished);
+                    // Debug.Log("Correct Document Finished: " + documentFinished);
                 }
                 else
                 {
@@ -56,7 +56,7 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
                 {
                     SoundManagerScript.PlaySound("sliding_document");
                     ++documentFinished;
-                    Debug.Log("Correct Document Finished: " + documentFinished);
+                    // Debug.Log("Correct Document Finished: " + documentFinished);
                 }
                 else
                 {
@@ -117,6 +117,6 @@ public class FinishedDocument : MonoBehaviour, IDropHandler
         }
         GameObject SpawnedDocument = Instantiate(choice, pos, DocumentUI.transform.localRotation, DocumentUI.transform);
         SpawnedDocument.transform.SetAsFirstSibling();
-        Debug.Log("Spawning: " + choice);
+        // Debug.Log("Spawning: " + choice);
     }
 }

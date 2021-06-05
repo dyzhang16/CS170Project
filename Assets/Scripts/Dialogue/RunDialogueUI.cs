@@ -13,7 +13,7 @@ public class RunDialogueUI : MonoBehaviour , IPointerDownHandler
         if (!dialogueRunner.IsDialogueRunning)
         {
             dialogueRunner.StartDialogue(dialogueToRun);
-            Debug.Log("running" + dialogueToRun);
+            // Debug.Log("running" + dialogueToRun);
         }
     }
 

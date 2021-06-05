@@ -128,7 +128,7 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
         sugarUI.GetComponent<Image>().sprite = pushedSugar;
         ++sugarAdded;
         setSugar();
-        Debug.Log("You've added " + sugarAdded);
+        // Debug.Log("You've added " + sugarAdded);
         Vector3 pos = new Vector3(coffee.transform.position.x, coffee.transform.position.y + 400, coffee.transform.position.z);
         GameObject sugars = Instantiate(sugar, pos, coffee.transform.localRotation, transform);
         sugars.transform.SetAsFirstSibling();
@@ -136,6 +136,6 @@ public class sugarPuzzle : MonoBehaviour, IDropHandler
         sugarShaking = !sugarShaking;
         sugarUI.GetComponent<Image>().sprite = tempSprite;
         sugarButton.enabled = true;
-        Debug.Log("Finished Couroutine");
+        // Debug.Log("Finished Couroutine");
     }
 }
