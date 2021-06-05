@@ -134,15 +134,14 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
             //select the continue button upon pressing space
             if (Input.GetKeyDown(GameManager.instance.DIALOGUE_KEY))
             {
-                if (GameObject.Find("DiaSystem Prefab 1/DialogueRunner") != null)
+                GameObject dia = GameObject.Find("DiaSystem/DialogueRunner");
+                if (dia != null)
                 {
-                    // Debug.Log("found dialogue runner");
-                    GameObject dia = GameObject.Find("DiaSystem Prefab 1/DialogueRunner");
                     DialogueRunner diaRunner = dia.GetComponent<DialogueRunner>();
                     if (diaRunner.IsDialogueRunning)
                     {
                         //finding continue button
-                        GameObject contButton = GameObject.Find("DiaSystem Prefab 1/DialogueCanvas/DialogueContainer/ContinueButton");
+                        GameObject contButton = GameObject.Find("DiaSystem/DialogueCanvas/DialogueContainer/ContinueButton");
 
                         //if external event system
                         GameObject eveSys = GameObject.Find("EventSystem");
@@ -152,7 +151,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
                         }
 
                         //dialogue runnner event system
-                        GameObject.Find("DiaSystem Prefab 1/EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(contButton);
+                        GameObject.Find("DiaSystem/EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(contButton);
                     }
                 }
             }
@@ -177,7 +176,7 @@ public class Player : MonoBehaviour               //https://stackoverflow.com/qu
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed * Time.fixedDeltaTime));
+                rb.MovePosition(Vector3.MoveTowards(rb.position, hit.point, speed * Time.deltaTime));
 
                 moving = true;
                 drifting = false;

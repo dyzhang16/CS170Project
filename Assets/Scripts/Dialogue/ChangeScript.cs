@@ -30,7 +30,7 @@ public class ChangeScript : MonoBehaviour
         }
         else 
         {
-            Debug.Log("Run Dialogue Script does not exist");
+            // Debug.Log("Run Dialogue Script does not exist");
         }
     }
 }

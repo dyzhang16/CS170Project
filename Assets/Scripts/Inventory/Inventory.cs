@@ -150,7 +150,7 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            Debug.Log("Text Could not be found");
+            // Debug.Log("Text Could not be found");
             return null;
         }
     }
@@ -164,7 +164,7 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            Debug.Log("Text Could not be found");
+            // Debug.Log("Text Could not be found");
             return null;
         }
     }

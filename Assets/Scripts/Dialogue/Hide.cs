@@ -20,7 +20,7 @@ public class Hide : MonoBehaviour
     {
         string Object = parameters[0];
         GameObject PotentialObject = GameObject.Find(Object);
-        Debug.Log("Hiding:" + PotentialObject);
+        // Debug.Log("Hiding:" + PotentialObject);
         PotentialObject.GetComponent<CanvasGroup>().alpha = 0;
         PotentialObject.GetComponent<CanvasGroup>().blocksRaycasts = false;
         GameObject blocker = GameObject.Find("Canvas/Blocker");

@@ -49,10 +49,10 @@ public class DontDestroy : MonoBehaviour
     {
         musicSlider.value = 0.25f; // default music volume
 
-        Debug.Log("playing tutorial music");
+        // Debug.Log("playing tutorial music");
         if (sceneName == "Tutorial")
         {
-            Debug.Log("playing tutorial music");
+            // Debug.Log("playing tutorial music");
             musicSource[0].Play();// start tut music
             
         }
@@ -74,12 +74,12 @@ public class DontDestroy : MonoBehaviour
         {
             case "Tutorial":
                 musicSource[0].Play();// start tut music
-                Debug.Log("playing tutorial music");
+                // Debug.Log("playing tutorial music");
                 break;
             case "Park":
                 musicSource[0].Stop(); // stop tutorial music
                 musicSource[1].Play(); // start street music
-                Debug.Log("playing street music");
+                // Debug.Log("playing street music");
                 break;
             case "StreetCoffee":
                 musicSource[2].Stop(); // stop coffee music after exiting 

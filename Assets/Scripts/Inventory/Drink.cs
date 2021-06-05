@@ -20,8 +20,8 @@ public class Drink : Item
    
     public override void Use()
     {
-        Debug.Log("Sugar Added: " + Sugar);
-        Debug.Log("Cream Added: " + Cream);
+        // Debug.Log("Sugar Added: " + Sugar);
+        // Debug.Log("Cream Added: " + Cream);
     }
     public override string DisplayInfo()
     {

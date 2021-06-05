@@ -20,7 +20,7 @@ public class Command_sound : MonoBehaviour
     private void playSound(string[] noise)
 
     {
-        Debug.Log("playing sound");
+        // Debug.Log("playing sound");
         string sound = noise[0];
         SoundManagerScript.PlaySound(sound);
     }

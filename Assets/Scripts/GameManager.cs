@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour
     [YarnCommand("ChangeVariable")]
     public void ChangeVariable(string[] variables){
         if (variables.Length < 2){
-            Debug.Log("No value given");
+            // Debug.Log("No value given");
         } else {
             switch(variables[0]){
                 case "hasReceipt":

@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour //https://gamedevbeginner.com/how-to-make-cou
             }
             else
             {
-                Debug.Log("Time has run out!");
+                // Debug.Log("Time has run out!");
                 timeRemaining = 0;                  //reset variables to prevent function from executing repeatedly
                 timerIsRunning = false;
                 GameManager.instance.officeDeskPuzzle = 1;
